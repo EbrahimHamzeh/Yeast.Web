@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yeast.Web", "Yeast\Yeast.Web.csproj", "{3CCBFF95-1856-45A5-90D3-52B2E4476F45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yeast.Utilities", "Yeast.Utilities\Yeast.Utilities.csproj", "{B2B42C71-8F1B-472A-BA52-E3AA8959C187}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yeast.Servicelayer", "Yeast.Servicelayer\Yeast.Servicelayer.csproj", "{5E6430CE-8D4F-4FE0-9E79-D53EB0A7DDC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yeast.Model", "Yeast.Model\Yeast.Model.csproj", "{B016F31C-FF96-4839-8C4D-A0FF4376A51E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yeast.DomainClasses", "Yeast.DomainClasses\Yeast.DomainClasses.csproj", "{EFA70744-FCAD-48E8-9B55-52EEDD541CC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yeast.Datalayer", "Yeast.Datalayer\Yeast.Datalayer.csproj", "{B20A63F7-5485-4224-B8A3-65E603D07335}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CCBFF95-1856-45A5-90D3-52B2E4476F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCBFF95-1856-45A5-90D3-52B2E4476F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCBFF95-1856-45A5-90D3-52B2E4476F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCBFF95-1856-45A5-90D3-52B2E4476F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B42C71-8F1B-472A-BA52-E3AA8959C187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B42C71-8F1B-472A-BA52-E3AA8959C187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B42C71-8F1B-472A-BA52-E3AA8959C187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B42C71-8F1B-472A-BA52-E3AA8959C187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E6430CE-8D4F-4FE0-9E79-D53EB0A7DDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E6430CE-8D4F-4FE0-9E79-D53EB0A7DDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E6430CE-8D4F-4FE0-9E79-D53EB0A7DDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E6430CE-8D4F-4FE0-9E79-D53EB0A7DDC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B016F31C-FF96-4839-8C4D-A0FF4376A51E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B016F31C-FF96-4839-8C4D-A0FF4376A51E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B016F31C-FF96-4839-8C4D-A0FF4376A51E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B016F31C-FF96-4839-8C4D-A0FF4376A51E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA70744-FCAD-48E8-9B55-52EEDD541CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA70744-FCAD-48E8-9B55-52EEDD541CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA70744-FCAD-48E8-9B55-52EEDD541CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA70744-FCAD-48E8-9B55-52EEDD541CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B20A63F7-5485-4224-B8A3-65E603D07335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20A63F7-5485-4224-B8A3-65E603D07335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20A63F7-5485-4224-B8A3-65E603D07335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20A63F7-5485-4224-B8A3-65E603D07335}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
