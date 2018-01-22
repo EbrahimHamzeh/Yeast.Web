@@ -23,9 +23,18 @@ namespace Yeast.IocConfig
 		{
 			return new Container(x =>
 			{
-        x.For<HttpContextBase>().Use(() => new HttpContextWrapper(HttpContext.Current));
+				x.Scan(scan =>
+				{
+					scan.TheCallingAssembly();
+					scan.WithDefaultConventions();
+				});
+
+				//var dynamicProxy = new ProxyGenerator();     TODO: Hamzeh-CacheInterceptor
+
+				x.For<HttpContextBase>().Use(() => new HttpContextWrapper(HttpContext.Current));
         x.For<IUnitOfWork>().HttpContextScoped().Use<YeastDbContext>();
 				x.For<ICategoryService>().Use<CategoryService>();
+				//dynamicProxy.CreateInterfaceProxyWithTarget(myTypeInterface, new CacheInterceptor())).Use<UserService>();    TODO: Hamzeh-CacheInterceptor
 			});
 		}
 	}
