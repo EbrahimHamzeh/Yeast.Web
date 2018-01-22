@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Yeast.DomainClasses.Entities;
+using Yeast.Servicelayer.EFServices;
 
 namespace Yeast.Servicelayer.Interfaces
 {

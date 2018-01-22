@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Yeast.Datalayer.Context;
@@ -10,6 +11,11 @@ namespace Yeast.Servicelayer.EFServices
 	public class CategoryService : ICategoryService
 	{
 		private readonly IDbSet<Category> _categories;
+
+		public int Count
+		{
+			get { return _categories.Count(); }
+		}
 
 		public CategoryService(IUnitOfWork uow)
 		{
@@ -36,11 +42,11 @@ namespace Yeast.Servicelayer.EFServices
 			return _categories.AsNoTracking().ToList();
 		}
 
-		[CacheMethod(SecondsToCache = 120)]
+		//CacheMethod(SecondsToCache = 120)]
 		public IList<Category> GetAnnounceData(int count)
 		{
 			return
-					_categories.AsNoTracking().Include(category => category.Articles).Where(category => category.Order < 1)
+					_categories.AsNoTracking().Where(category => category.Order < 1)
 							.OrderBy(category => category.Order).Take(count)
 							.ToList();
 		}

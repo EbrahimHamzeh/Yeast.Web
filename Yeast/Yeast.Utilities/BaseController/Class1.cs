@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Yeast.Utilities
+namespace Yeast.Utilities.BaseController
 {
-	class Program
+	class Class1
 	{
-		static void Main(string[] args)
-		{
-		}
 	}
 }

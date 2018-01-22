@@ -4,7 +4,7 @@ using System.Data.Entity;
 
 namespace Yeast.Datalayer.Context
 {
-	public class YeastDbContext : DbContext
+	public class YeastDbContext : DbContext, IUnitOfWork
 	{
 		public DbSet<Comment> Comments { get; set; }
 		public DbSet<Tag> Tags { get; set; }
