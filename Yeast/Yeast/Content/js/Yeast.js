@@ -10855,22 +10855,7 @@
                 }), r
             }
             return r(e, t), e.prototype.privacyNotificationCheck = function() {
-                -1 !== document.cookie.indexOf("ACCEPT_COOKIE_USAGE") || this.remoteRequest("/cookie-notification", "GET", {}, function(t, e) {
-                    if (!t && e) {
-                        var n = e.data.PrivacyCookieEnabled,
-                            i = new Date,
-                            o = {
-                                defaultPrevented: !1,
-                                preventDefault: function() {
-                                    this.defaultPrevented = !0
-                                }
-                            };
-                        if (!n) return !1;
-                        i.setDate(i.getDate() + 365), u.a.emit("cookie-privacy-notification", o, e.data.PrivacyCookieNotification), o.defaultPrevented ? u.a.on("cookie-privacy-accepted", function() {
-                            document.cookie = "ACCEPT_COOKIE_USAGE=1;expires=" + i.toGMTString() + "; path=/"
-                        }) : confirm(e.data.PrivacyCookieNotification) && (document.cookie = "ACCEPT_COOKIE_USAGE=1;expires=" + i.toGMTString() + "; path=/")
-                    }
-                })
+
             }, e
         }(c.a);
     e.a = l

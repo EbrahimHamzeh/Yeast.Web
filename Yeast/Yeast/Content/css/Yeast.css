@@ -2681,7 +2681,8 @@ body.has-activeModal {
     font-family: FontAwesome;
     color: #989898;
     display: block;
-    transition: all .3s cubic-bezier(.25, .46, .45, .94)
+    transition: all .3s cubic-bezier(.25, .46, .45, .94);
+    content: "\f105"
 }
 
 .cart-total-grandTotal,
@@ -9917,7 +9918,8 @@ cite {
     padding: 90px 80px 40px 40px;
     display: inline-block;
     text-align: center;
-    max-width: 500px
+    max-width: 500px;
+		float:left;
 }
 
 @media (max-width:600px) {

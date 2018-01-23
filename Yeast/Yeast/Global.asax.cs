@@ -44,7 +44,10 @@ namespace Yeast
 		protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
 		{
 			if (controllerType == null)
-				throw new InvalidOperationException(string.Format("Page not found: {0}", requestContext.HttpContext.Request.RawUrl));
+			{
+				//throw new InvalidOperationException(string.Format("Page not found: {0}", requestContext.HttpContext.Request.RawUrl));
+				return null;
+			}
 			return SmObjectFactory.Container.GetInstance(controllerType) as Controller;
 		}
 	}

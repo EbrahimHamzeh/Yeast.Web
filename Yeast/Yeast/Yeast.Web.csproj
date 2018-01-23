@@ -105,14 +105,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\Yeast-ltr.css" />
     <Content Include="Content\css\Yeast.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\100-thickbox_default-min__11089.1499311175.jpg" />
     <Content Include="Content\images\104-thickbox_default-min__37458.1499308829.jpg" />
     <Content Include="Content\images\104-thickbox_default-min__94774.1499311192.jpg" />
     <Content Include="Content\images\132-thickbox_default-min__15237.1499306777.jpg" />
     <Content Include="Content\images\58-thickbox_default-min__02732.1499309302.jpg" />
     <Content Include="Content\images\59-thickbox_default-min__78909.1499309309.jpg" />
+    <Content Include="Content\images\85-thickbox_default-min__01047.1.jpg" />
     <Content Include="Content\images\85-thickbox_default-min__01047.1499309682.jpg" />
     <Content Include="Content\images\86-thickbox_default-min__39805.1499309776.jpg" />
     <Content Include="Content\images\88-thickbox_default-min-rs__76988.1499309560.jpg" />
@@ -129,12 +132,16 @@
     <Content Include="Content\images\imgpsh-fullsize-rs.jpg" />
     <Content Include="Content\images\logo-min_1506501989__87899.original.png" />
     <Content Include="Content\images\newletter-bg.png" />
+    <Content Include="Content\images\s1-min__94940.1499310560.jpg" />
     <Content Include="Content\images\s10-min-rs__09132.1499310114.jpg" />
     <Content Include="Content\images\s11-min__88583.1499310568.jpg" />
+    <Content Include="Content\images\s5-min__84178.1499310668.jpg" />
     <Content Include="Content\images\s6-min__43240.1499310437.jpg" />
     <Content Include="Content\images\s9-min-rs__06198.1499309930.jpg" />
-    <Content Include="Content\images\slideshow_image_1-min-rs %281%29.jpg" />
+    <Content Include="Content\images\slideshow_image_1-min-rs.jpg" />
     <Content Include="Content\images\slideshow_image_2-min.jpg" />
+    <Content Include="Content\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\js\theme-bundle.chunk.16.js" />
     <Content Include="Content\js\Yeast.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -160,6 +167,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\Shared\Ltr\_Layout.cshtml" />
     <Content Include="Views\Home\Ltr\Index.cshtml" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
