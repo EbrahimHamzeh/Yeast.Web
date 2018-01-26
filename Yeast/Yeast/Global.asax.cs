@@ -13,6 +13,7 @@ namespace Yeast
 	{
 		protected void Application_Start()
 		{
+			HibernatingRhinos.Profiler.Appender.EntityFramework.EntityFrameworkProfiler.Initialize(); // EF Profiler For Debug When Publish Project this line remove and web.config Entitylog File  
 			Database.SetInitializer(new MigrateDatabaseToLatestVersion<YeastDbContext, Configuration>());
 
 			AreaRegistration.RegisterAllAreas();
