@@ -12,6 +12,7 @@ namespace Yeast.Datalayer.Migrations
 		}
 		protected override void Seed(YeastDbContext context)
 		{
+
 		}
 	}
 }

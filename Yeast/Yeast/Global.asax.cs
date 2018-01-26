@@ -35,6 +35,7 @@ namespace Yeast
 
 		private static void initStructureMap()
 		{
+			SmObjectFactory.Container.GetInstance<IUnitOfWork>().ForceDatabaseInitialize();
 			//Set current Controller factory as StructureMapControllerFactory
 			ControllerBuilder.Current.SetControllerFactory(new StructureMapControllerFactory());
 		}
