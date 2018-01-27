@@ -121,34 +121,42 @@ namespace Yeast.Servicelayer.EFServices
 					throw new InvalidOperationException(string.Join(", ", roleResult.Errors));
 				}
 			}
-
-			var user = this.FindByName(name);
-			if (user == null)
+			try
 			{
-				user = new User { UserName = name, Email = name };
-				var createResult = this.Create(user, password);
-				if (!createResult.Succeeded)
+				var user = this.FindByName(name);
+				if (user == null)
 				{
-					throw new InvalidOperationException(string.Join(", ", createResult.Errors));
+					user = new User { UserName = name, Email = name };
+					var createResult = this.Create(user, password);
+					if (!createResult.Succeeded)
+					{
+						throw new InvalidOperationException(string.Join(", ", createResult.Errors));
+					}
+
+					var setLockoutResult = this.SetLockoutEnabled(user.Id, false);
+					if (!setLockoutResult.Succeeded)
+					{
+						throw new InvalidOperationException(string.Join(", ", setLockoutResult.Errors));
+					}
 				}
 
-				var setLockoutResult = this.SetLockoutEnabled(user.Id, false);
-				if (!setLockoutResult.Succeeded)
+				// Add user admin to Role Admin if not already added
+				var rolesForUser = this.GetRoles(user.Id);
+				if (!rolesForUser.Contains(role.Name))
 				{
-					throw new InvalidOperationException(string.Join(", ", setLockoutResult.Errors));
+					var addToRoleResult = this.AddToRole(user.Id, role.Name);
+					if (!addToRoleResult.Succeeded)
+					{
+						throw new InvalidOperationException(string.Join(", ", addToRoleResult.Errors));
+					}
 				}
 			}
-
-			// Add user admin to Role Admin if not already added
-			var rolesForUser = this.GetRoles(user.Id);
-			if (!rolesForUser.Contains(role.Name))
+			catch (Exception)
 			{
-				var addToRoleResult = this.AddToRole(user.Id, role.Name);
-				if (!addToRoleResult.Succeeded)
-				{
-					throw new InvalidOperationException(string.Join(", ", addToRoleResult.Errors));
-				}
+
+				throw;
 			}
+			
 		}
 
 		private void createApplicationUserManager()

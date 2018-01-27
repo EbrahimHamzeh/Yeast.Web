@@ -13,19 +13,21 @@ namespace Yeast.Controllers
 	public class HomeController : MyBaseController
 	{
 
-    private readonly IUnitOfWork _uow;
-		private readonly ICategoryService _CategoryService;
+    readonly IApplicationUserManager _userManager;
+		readonly ICategoryService _categoryService;
+		readonly IUnitOfWork _uow;
 
-		public HomeController(IUnitOfWork uow, ICategoryService categoryService)
+		public HomeController(IUnitOfWork uow, ICategoryService categoryService, IApplicationUserManager userManager)
 		{
-      _uow = uow;
-			_CategoryService = categoryService;
+			_uow = uow;
+			_categoryService = categoryService;
+			_userManager = userManager;
 		}
 
 		// GET: Home
 		public ActionResult Index()
 		{
-			var test = _CategoryService.Count;
+			var test = _categoryService.Count;
 			return View();
 		}
 	}

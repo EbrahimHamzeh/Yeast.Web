@@ -92,7 +92,7 @@
   <ItemGroup>
     <Compile Include="EFServices\CategoryService.cs" />
     <Compile Include="EFServices\Enums\Enum.cs" />
-    <Compile Include="EFServices\User\ApplicationUserManager - Copy.cs" />
+    <Compile Include="EFServices\User\ApplicationUserManager.cs" />
     <Compile Include="EFServices\User\SmsService.cs" />
     <Compile Include="EFServices\User\EmailService.cs" />
     <Compile Include="EFServices\User\CustomUserStore.cs" />

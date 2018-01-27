@@ -7,9 +7,6 @@ namespace Yeast.DomainClasses.EntityConfiguration
 	{
 		public UserConfig()
 		{
-			Property(x => x.UserName).HasMaxLength(20).IsRequired();
-			Property(x => x.Password).HasMaxLength(200).IsRequired();
-			Property(x => x.Email).HasMaxLength(100).IsRequired();
 			Property(x => x.IP).HasMaxLength(20).IsOptional();
 			Property(x => x.Description).HasMaxLength(1000).IsOptional();
 			Property(x => x.FirstName).HasMaxLength(50).IsOptional();

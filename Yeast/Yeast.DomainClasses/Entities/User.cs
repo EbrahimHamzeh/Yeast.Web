@@ -7,6 +7,10 @@ namespace Yeast.DomainClasses.Entities
 {
 	public class User : IdentityUser<int, CustomUserLogin, CustomUserRole, CustomUserClaim>
 	{
+		public User()
+		{
+			CreatedDate = DateTime.Now;
+		}
 		public virtual string FirstName { get; set; }
 		public virtual string LastName { get; set; }
 		public virtual string Description { get; set; }
