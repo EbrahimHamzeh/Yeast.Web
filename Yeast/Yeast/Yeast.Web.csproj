@@ -176,6 +176,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap-rtl.min.css" />
+    <Content Include="Content\css\bootstrap-switch-rtl.min.css" />
+    <Content Include="Content\css\components-rtl.css" />
+    <Content Include="Content\css\default-rtl.css" />
+    <Content Include="Content\css\layout-rtl.css" />
+    <Content Include="Content\css\plugins-rtl.css" />
+    <Content Include="Content\css\YeastFont.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\Yeast-ltr.css" />
     <Content Include="Content\css\Yeast.css" />
@@ -211,11 +218,21 @@
     <Content Include="Content\images\s9-min-rs__06198.1499309930.jpg" />
     <Content Include="Content\images\slideshow_image_1-min-rs.jpg" />
     <Content Include="Content\images\slideshow_image_2-min.jpg" />
+    <Content Include="Content\js\bootstrap-switch.min.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\js\jquery.blockui.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.slimscroll.min.js" />
+    <Content Include="Content\js\js.cookie.min.js" />
+    <Content Include="Content\js\layout.min.js" />
+    <Content Include="Content\js\quick-nav.min.js" />
     <Content Include="Content\js\theme-bundle.chunk.16.js" />
     <Content Include="Content\js\Yeast.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="IocConfig\Helper\SystemWebCookieManager.cs" />
     <Compile Include="Startup.cs" />
     <Content Include="Global.asax" />
@@ -248,6 +265,10 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Sidebar.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -257,6 +278,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Content\fonts\eot\" />
+    <Folder Include="Content\fonts\svg\" />
+    <Folder Include="Content\fonts\ttf\" />
+    <Folder Include="Content\fonts\woff2\" />
+    <Folder Include="Content\fonts\woff\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
