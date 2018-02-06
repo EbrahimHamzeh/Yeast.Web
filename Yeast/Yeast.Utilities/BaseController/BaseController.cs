@@ -23,6 +23,10 @@ namespace Yeast.Utilities.Controllers
 			{
 				Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(lang.ToString());
 			}
+			else
+			{
+				Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fa-IR"); // Defult lang (Persian) 
+			}
 			base.ExecuteCore();
 		}
 
