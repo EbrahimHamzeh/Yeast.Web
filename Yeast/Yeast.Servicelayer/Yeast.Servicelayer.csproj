@@ -124,6 +124,10 @@
       <Project>{b016f31c-ff96-4839-8c4d-a0ff4376a51e}</Project>
       <Name>Yeast.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Yeast.Resources\Yeast.Resources.csproj">
+      <Project>{d92dc5af-860e-4492-b088-21bf9b706caa}</Project>
+      <Name>Yeast.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Yeast.Utilities\Yeast.Utilities.csproj">
       <Project>{b2b42c71-8f1b-472a-ba52-e3aa8959c187}</Project>
       <Name>Yeast.Utilities</Name>

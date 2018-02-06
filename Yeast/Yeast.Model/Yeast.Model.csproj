@@ -112,6 +112,10 @@
       <Project>{efa70744-fcad-48e8-9b55-52eedd541cc3}</Project>
       <Name>Yeast.DomainClasses</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Yeast.Resources\Yeast.Resources.csproj">
+      <Project>{d92dc5af-860e-4492-b088-21bf9b706caa}</Project>
+      <Name>Yeast.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

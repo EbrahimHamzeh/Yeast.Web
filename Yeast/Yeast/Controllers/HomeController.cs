@@ -10,7 +10,7 @@ using Yeast.Utilities.Controllers;
 namespace Yeast.Controllers
 {
 	
-	public class HomeController : MyBaseController
+	public class HomeController : BaseController
 	{
 
     readonly IApplicationUserManager _userManager;
