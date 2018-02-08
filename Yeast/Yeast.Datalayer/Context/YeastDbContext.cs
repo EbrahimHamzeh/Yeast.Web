@@ -25,7 +25,7 @@ namespace Yeast.Datalayer.Context
 
 			modelBuilder.Configurations.Add(new CommentConfig());
 			modelBuilder.Configurations.Add(new UserConfig());
-			modelBuilder.Configurations.Add(new PostConfig());
+			modelBuilder.Configurations.Add(new PostTranslateConfig());
 			modelBuilder.Configurations.Add(new CategoryConfig());
 			modelBuilder.Configurations.Add(new OptionConfig());
 

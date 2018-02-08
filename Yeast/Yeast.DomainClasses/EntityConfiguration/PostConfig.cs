@@ -3,9 +3,9 @@ using Yeast.DomainClasses.Entities;
 
 namespace Yeast.DomainClasses.EntityConfiguration
 {
-	public class PostConfig : EntityTypeConfiguration<Post>
+	public class PostTranslateConfig : EntityTypeConfiguration<PostTranslate>
 	{
-		public PostConfig()
+		public PostTranslateConfig()
 		{
 			Property(x => x.Body).IsMaxLength().IsOptional();
 			Property(x => x.Description).HasMaxLength(400).IsOptional();

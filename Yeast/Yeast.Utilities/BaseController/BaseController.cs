@@ -19,7 +19,8 @@ namespace Yeast.Utilities.Controllers
 		/// </summary>
 		protected override void ExecuteCore()
 		{
-			var lang = RouteData.Values["lang"];
+			var lang = RouteData.Values["lang"] ?? string.Empty;
+
 			Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(CultureHelper.GetImplementedCulture(lang.ToString()));
 			base.ExecuteCore();
 		}

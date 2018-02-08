@@ -75,7 +75,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseController\Class1.cs" />
     <Compile Include="BaseController\BaseController.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
