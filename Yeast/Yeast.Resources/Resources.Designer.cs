@@ -59,5 +59,59 @@ namespace Yeast.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to درباره‌ی ما.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وبلاگ.
+        /// </summary>
+        public static string Blog {
+            get {
+                return ResourceManager.GetString("Blog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تماس‌باما.
+        /// </summary>
+        public static string ContactUs {
+            get {
+                return ResourceManager.GetString("ContactUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to صفحه‌ی‌نخست.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to محصولات.
+        /// </summary>
+        public static string Product {
+            get {
+                return ResourceManager.GetString("Product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نمایندگی.
+        /// </summary>
+        public static string Representation {
+            get {
+                return ResourceManager.GetString("Representation", resourceCulture);
+            }
+        }
     }
 }

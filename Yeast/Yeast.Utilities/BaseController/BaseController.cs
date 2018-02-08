@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using System.Threading;
 using System.Web.Mvc;
+using Yeast.Utilities.Helpers;
 
 namespace Yeast.Utilities.Controllers
 {
@@ -19,17 +20,14 @@ namespace Yeast.Utilities.Controllers
 		protected override void ExecuteCore()
 		{
 			var lang = RouteData.Values["lang"];
-			if (lang != null && !string.IsNullOrWhiteSpace(lang.ToString()) && SupportLangues(lang.ToString()))
-			{
-				Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(lang.ToString());
-			}
-			else
-			{
-				Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fa-IR"); // Defult lang (Persian) 
-			}
+			Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(CultureHelper.GetImplementedCulture(lang.ToString()));
 			base.ExecuteCore();
 		}
 
+		/// <summary>
+		/// انتخاب نوع ویوی چپ چین یا  راست چین توسط درخواست کانتکس با توجه به  url
+		/// </summary>
+		/// <param name="context"></param>
 		protected override void OnActionExecuted(ActionExecutedContext context)
 		{
 			var view = context.Result as ViewResultBase;
@@ -38,6 +36,13 @@ namespace Yeast.Utilities.Controllers
 			view.ViewName = GetGlobalizationViewName(viewName, context);
 			base.OnActionExecuted(context);
 		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="viewName"></param>
+		/// <param name="context"></param>
+		/// <returns></returns>
 		private static string GetGlobalizationViewName(string viewName, ControllerContext context)
 		{
 			var cultureName = Thread.CurrentThread.CurrentUICulture.Name;
@@ -48,20 +53,6 @@ namespace Yeast.Utilities.Controllers
 				return "Ltr/" + viewName; // "Index" ==> "Index.fa"
 			}
 			return viewName; // default culture (Persian and Arabi)
-		}
-
-		private bool SupportLangues(string lang)
-		{
-			if (lang == "fa" || lang == "ar")
-			{
-				return true;
-			}
-			if (lang == "en" || lang == "ru")
-			{
-				ViewBag.Direction = "Ltr";
-				return true;
-			}
-			return false;
 		}
 	}
 }

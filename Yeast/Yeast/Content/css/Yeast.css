@@ -1,4 +1,5 @@
 ﻿@charset "UTF-8";
+@import url('YeastFont.css');
 .u-textNoWrap,
 .u-textTruncate {
     white-space: nowrap!important
@@ -6676,7 +6677,7 @@ cite {
     text-transform: uppercase;
     background-color: transparent;
     border-left: 1px dotted #999;
-    font-weight: 600;
+    font-weight: 400;
     transition: all 350ms ease-out
 }
 

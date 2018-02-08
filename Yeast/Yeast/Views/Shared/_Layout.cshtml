@@ -1,8 +1,8 @@
-﻿
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+﻿<!DOCTYPE html>
+<html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRighToLeft() ? "rtl" : "ltr")" >
 <head>
 	<title>Ap NewFashion</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<link href="http://cdn8.bigcommerce.com/r-1eed8bf5c3eb25ab7b98ca46ba9f43c2f08cda74/img/bc_favicon.ico" rel="shortcut icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
@@ -188,212 +188,22 @@
 						</div>
 						<ul class="navPages-list">
 							<li class="navPages-item">
-								<a class="navPages-action has-subMenu" href="http://ap-newfashion.mybigcommerce.com/home-demo/" data-collapsible="navPages-35">
-									Home Demo <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
-								</a>
-								<div class="navPage-subMenu" id="navPages-35" aria-hidden="true" tabindex="-1">
-
-
-
-
-									<!-- MEGAMENU -->
-									<ul class="navPage-subMenu-list">
-										<li class="navPage-subMenu-item">
-											<a target="_blank" class="navPage-subMenu-action navPages-action no-border" href="http://ap-newfashion.mybigcommerce.com/">Home 1</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a target="_blank" class="navPage-subMenu-action navPages-action no-border" href="http://ap-newfashion2.mybigcommerce.com/">Home 2</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a target="_blank" class="navPage-subMenu-action navPages-action no-border" href="http://ap-newfashion3.mybigcommerce.com/">Home 3</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a target="_blank" class="navPage-subMenu-action navPages-action no-border" href="http://ap-newfashion4.mybigcommerce.com/">Home 4</a>
-										</li>
-									</ul>
-
-
-								</div>
+								<a class="navPages-action" href="">@Resources.Home<i class="icon navPages-action-moreIcon" aria-hidden="true"></i></a>
 							</li>
 							<li class="navPages-item">
-								<a class="navPages-action" href="http://ap-newfashion.mybigcommerce.com/collections/">Collections</a>
+								<a class="navPages-action" href="">@Resources.Product</a>
 							</li>
 							<li class="navPages-item">
-								<a class="navPages-action has-subMenu" href="#" data-collapsible="navPages-26">
-									Women <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
-								</a>
-								<div class="navPage-subMenu" id="navPages-26" aria-hidden="true" tabindex="-1">
-
-
-
-
-									<!-- MEGAMENU -->
-									<ul class="navPage-subMenu-list sub-menu-hasmega col-md-4 on">
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="#">All Women</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/utility/">Utility</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/most-view/">Most View</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/garden/">Garden</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/kitchen/">Kitchen</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/incoming/">Incoming</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/on-sale/">On Sale</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/top-rate/">Top rate</a>
-										</li>
-									</ul>
-									<div class="on hidden-sm hidden-xs">
-										<div class="category-menu col-md-8">
-											<section>
-												<div class="" data-ap-category-url="#">
-												</div>
-											</section>
-										</div>
-									</div>
-									<div class="on hidden-sm hidden-xs">
-										<div class="html-menu col-md-8">
-											<div class="title-html-menu">Text HTML</div>
-											<div class="content-html-menu">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa similique, aspernatur tempore explicabo odio earum fuga incidunt iusto perferendis qui ducimus repudiandae, placeat dolor, dolorum veritatis saepe perspiciatis corporis aliquid.</div>
-											<div class="image-html-menu on">
-												<img src="~/Content/images/bg-breadcrumb-min.jpg" alt="Image Menu">
-											</div>
-										</div>
-									</div>
-									<div class="off hidden-sm hidden-xs">
-										<div class="video-menu col-md-2">
-											<div class="title-video-menu">Video Menu</div>
-											<div class="content-video-menu">
-												@*<iframe src="https://www.youtube.com/embed/Z9KyarKVK7E" allowfullscreen></iframe>*@
-											</div>
-										</div>
-									</div>
-
-
-								</div>
+								<a class="navPages-action" href="">@Resources.Representation</a>
 							</li>
 							<li class="navPages-item">
-								<a class="navPages-action has-subMenu" href="#" data-collapsible="navPages-25">
-									Men <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
-								</a>
-								<div class="navPage-subMenu" id="navPages-25" aria-hidden="true" tabindex="-1">
-
-
-
-
-									<!-- MEGAMENU -->
-									<ul class="navPage-subMenu-list sub-menu-hasmega col-md-4 on">
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="#">All Men</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/toys/">Toys</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/shop-all/">Shop</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/publications/">Publications</a>
-										</li>
-									</ul>
-									<div class="on hidden-sm hidden-xs">
-										<div class="category-menu col-md-8">
-											<section>
-												<div class="" data-ap-category-url="#">
-												</div>
-											</section>
-										</div>
-									</div>
-									<div class="on hidden-sm hidden-xs">
-										<div class="html-menu col-md-12">
-											<div class="title-html-menu"> </div>
-											<div class="content-html-menu"> </div>
-											<div class="image-html-menu on">
-												<img src="~/Content/images/bg-breadcrumb-min.jpg" alt="Image Menu">
-											</div>
-										</div>
-									</div>
-									<div class="off hidden-sm hidden-xs">
-										<div class="video-menu col-md-2">
-											<div class="title-video-menu">Video Menu</div>
-											<div class="content-video-menu">
-												@*<iframe src="https://www.youtube.com/embed/Z9KyarKVK7E" allowfullscreen></iframe>*@
-											</div>
-										</div>
-									</div>
-
-
-								</div>
+								<a class="navPages-action" href="">@Resources.Blog</a>
 							</li>
 							<li class="navPages-item">
-								<a class="navPages-action has-subMenu" href="#" data-collapsible="navPages-27">
-									Accessories <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
-								</a>
-								<div class="navPage-subMenu" id="navPages-27" aria-hidden="true" tabindex="-1">
-
-
-
-
-									<!-- MEGAMENU -->
-									<ul class="navPage-subMenu-list sub-menu-hasmega col-md-6 on">
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="#">All Accessories</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/unique/">Unique</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/bath/">Bath</a>
-										</li>
-										<li class="navPage-subMenu-item">
-											<a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion.mybigcommerce.com/utility/bags/">Bags</a>
-										</li>
-									</ul>
-									<div class="off hidden-sm hidden-xs">
-										<div class="category-menu col-md-12">
-											<section>
-												<div class="" data-ap-category-url="#">
-												</div>
-											</section>
-										</div>
-									</div>
-									<div class="off hidden-sm hidden-xs">
-										<div class="html-menu col-md-6">
-											<div class="title-html-menu">Text HTML</div>
-											<div class="content-html-menu">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa similique, aspernatur tempore explicabo odio earum fuga incidunt iusto perferendis qui ducimus repudiandae, placeat dolor, dolorum veritatis saepe perspiciatis corporis aliquid.</div>
-											<div class="image-html-menu off">
-												<img src="https://cdn6.bigcommerce.com/s-lzu3903d7n/product_images/uploaded_images/newletter-bg.png" alt="Image Menu">
-											</div>
-										</div>
-									</div>
-									<div class="on hidden-sm hidden-xs">
-										<div class="video-menu col-md-6">
-											<div class="title-video-menu">Video Menu</div>
-											<div class="content-video-menu">
-												@*<iframe src="https://www.youtube.com/embed/Z9KyarKVK7E" allowfullscreen></iframe>*@
-											</div>
-										</div>
-									</div>
-
-
-								</div>
+								<a class="navPages-action" href="">@Resources.ContactUs</a>
 							</li>
-							<li class="navPages-item navPages-item-page">
-								<a class="navPages-action" href="http://ap-newfashion.mybigcommerce.com/about-us/">About Us</a>
-							</li>
-							<li class="navPages-item navPages-item-page">
-								<a class="navPages-action" href="http://ap-newfashion.mybigcommerce.com/blog/">Blog</a>
+							<li class="navPages-item">
+								<a class="navPages-action" href="">@Resources.About</a>
 							</li>
 						</ul>
 						<ul class="navPages-list navPages-list--user">
