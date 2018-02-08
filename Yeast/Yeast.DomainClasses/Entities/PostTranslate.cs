@@ -16,5 +16,8 @@ namespace Yeast.DomainClasses.Entities
 		public virtual string Body { get; set; }
 
 		public virtual string LanguageCode { get; set; }
+
+		public virtual ICollection<Post> Posts { get; set; }
+
 	}
 }
