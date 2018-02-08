@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EFSecondLevelCache;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Yeast.Servicelayer.EFServices
 
 		public int Count
 		{
-			get { return _categories.Count(); }
+			get { return _categories.Cacheable().Count(); }
 		}
 
 		public CategoryService(IUnitOfWork uow)
@@ -39,7 +40,7 @@ namespace Yeast.Servicelayer.EFServices
 
 		public IList<Category> GetAll()
 		{
-			return _categories.AsNoTracking().ToList();
+			return _categories.AsNoTracking().Cacheable().ToList();
 		}
 
 		//CacheMethod(SecondsToCache = 120)]
@@ -48,6 +49,7 @@ namespace Yeast.Servicelayer.EFServices
 			return
 					_categories.AsNoTracking().Where(category => category.Order < 1)
 							.OrderBy(category => category.Order).Take(count)
+							.Cacheable()
 							.ToList();
 		}
 

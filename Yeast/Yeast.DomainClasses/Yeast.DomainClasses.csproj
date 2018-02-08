@@ -68,6 +68,7 @@
     <Compile Include="Entities\CustomUserClaim.cs" />
     <Compile Include="Entities\CustomUserLogin.cs" />
     <Compile Include="Entities\CustomUserRole.cs" />
+    <Compile Include="Entities\PostTranslate.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="Entities\Option.cs" />
     <Compile Include="Entities\User.cs" />

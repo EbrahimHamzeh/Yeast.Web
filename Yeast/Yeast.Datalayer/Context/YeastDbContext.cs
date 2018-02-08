@@ -4,6 +4,7 @@ using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.Linq;
+using EFSecondLevelCache;
 
 namespace Yeast.Datalayer.Context
 {
@@ -15,13 +16,7 @@ namespace Yeast.Datalayer.Context
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Option> Options { get; set; }
 
-		/// <summary>
-		/// It looks for a connection string named connectionString1 in the web.config file.
-		/// </summary>
-		public YeastDbContext(): base("YeastDbContext")
-		{
-			//this.Database.Log = data => System.Diagnostics.Debug.WriteLine(data);
-		}
+		public YeastDbContext(): base("YeastDbContext"){}
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
@@ -69,6 +64,35 @@ namespace Yeast.Datalayer.Context
 		public void ForceDatabaseInitialize()
 		{
 			this.Database.Initialize(force: true);
+		}
+		#endregion
+
+		#region EFSecondLevelCache
+		public override int SaveChanges()
+		{
+			return SaveAllChanges(invalidateCacheDependencies: true);
+		}
+
+		public int SaveAllChanges(bool invalidateCacheDependencies = true)
+		{
+			var changedEntityNames = getChangedEntityNames();
+			var result = base.SaveChanges();
+			if (invalidateCacheDependencies)
+			{
+				new EFCacheServiceProvider().InvalidateCacheDependencies(changedEntityNames);
+			}
+			return result;
+		}
+		private string[] getChangedEntityNames()
+		{
+			// Updated version of this method: \EFSecondLevelCache\EFSecondLevelCache.Tests\EFSecondLevelCache.TestDataLayer\DataLayer\SampleContext.cs
+			return this.ChangeTracker.Entries()
+					.Where(x => x.State == EntityState.Added ||
+											x.State == EntityState.Modified ||
+											x.State == EntityState.Deleted)
+					.Select(x => System.Data.Entity.Core.Objects.ObjectContext.GetObjectType(x.Entity.GetType()).FullName)
+					.Distinct()
+					.ToArray();
 		}
 		#endregion
 	}
