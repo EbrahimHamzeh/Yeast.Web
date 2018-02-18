@@ -9,11 +9,11 @@ using Yeast.Utilities.Controllers;
 
 namespace Yeast.Controllers
 {
-	
-	public class HomeController : BaseController
+
+	public partial class HomeController : BaseController
 	{
 
-    readonly IApplicationUserManager _userManager;
+		readonly IApplicationUserManager _userManager;
 		readonly ICategoryService _categoryService;
 		readonly IUnitOfWork _uow;
 
@@ -25,7 +25,7 @@ namespace Yeast.Controllers
 		}
 
 		// GET: Home
-		public ActionResult Index()
+		public virtual ActionResult Index()
 		{
 			var test = _categoryService.Count;
 			return View();

@@ -6,12 +6,12 @@ using System.Web.Mvc;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-    public class DashboardController : Controller
-    {
-        // GET: Admin/Dashboard
-        public ActionResult Index()
-        {
-            return View();
-        }
-    }
+	public partial class DashboardController : Controller
+	{
+		// GET: Admin/Dashboard
+		public virtual ActionResult Index()
+		{
+			return View();
+		}
+	}
 }
