@@ -243,4 +243,6 @@ blockquote {
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 }
-
+.popover, .tooltip{
+	font-family:IRANSans !important;
+}

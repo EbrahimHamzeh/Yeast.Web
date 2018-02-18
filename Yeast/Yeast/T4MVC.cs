@@ -40,6 +40,7 @@ namespace T4MVC
     {
         public readonly string Name = "Admin";
         public Yeast.Areas.Admin.Controllers.DashboardController Dashboard = new Yeast.Areas.Admin.Controllers.T4MVC_DashboardController();
+        public Yeast.Areas.Admin.Controllers.PostController Post = new Yeast.Areas.Admin.Controllers.T4MVC_PostController();
         public Yeast.Areas.Admin.Controllers.TagController Tag = new Yeast.Areas.Admin.Controllers.T4MVC_TagController();
         public T4MVC.Admin.SharedController Shared = new T4MVC.Admin.SharedController();
     }
