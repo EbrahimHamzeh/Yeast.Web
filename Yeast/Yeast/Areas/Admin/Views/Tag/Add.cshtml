@@ -6,8 +6,6 @@
 
 }
 @section CssStyle{
-<link href="~/Content/css/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
-<link href="~/Content/css/bootstrap-table/bootstrap-editable.css" rel="stylesheet" />
 }
 <div class="page-content">
 	<!-- BEGIN PAGE HEADER-->
@@ -60,21 +58,33 @@
 					</div>
 				</div>
 				<div class="portlet-body form">
-					<table data-toggle="table"
-								 data-url="http://issues.wenzhixin.net.cn/examples/bootstrap_table/data"
-								 data-pagination="true"
-								 data-side-pagination="server"
-								 data-page-list="[5, 10, 20, 50, 100, 200]"
-								 data-search="true">
-						<thead>
-							<tr>
-								<th data-field="state" data-checkbox="true"></th>
-								<th data-field="id" data-align="right" data-sortable="true">ردیف</th>
-								<th data-field="name" data-align="center" data-sortable="true">عنوان</th>
-								<th data-field="price" data-sortable="true">عملیات</th>
-							</tr>
-						</thead>
-					</table>
+					<form role="form" class="form-horizontal">
+						<div class="form-body">
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Title">عنوان</label>
+								<div class="col-md-11">
+									<input type="text" class="form-control" id="Title" required name="Title" placeholder="عنوان را وارد نمایید">
+									<div class="form-control-focus"> </div>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Description">توضیحات</label>
+								<div class="col-md-11">
+									<input type="text" class="form-control" id="Description" name="Description" placeholder="توضیحات را وارد نمایید">
+									<div class="form-control-focus"> </div>
+									<span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-actions">
+							<div class="row">
+								<div class="col-md-offset-2 col-md-10">
+									<button type="button" class="btn default">کنسل</button>
+									<button type="button" class="btn blue">تایید</button>
+								</div>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 			<!-- END SAMPLE FORM PORTLET-->
@@ -82,5 +92,4 @@
 	</div>
 </div>
 @section Javascripts{
-<script src="~/Content/js/bootstrap-table/bootstrap-table.js"></script>
 }
