@@ -6,6 +6,7 @@
 
 }
 @section CssStyle{
+<link href="~/Content/css/ladda-themeless-rtl.min.css" rel="stylesheet" />
 }
 <div class="page-content">
 	<!-- BEGIN PAGE HEADER-->
@@ -58,7 +59,8 @@
 					</div>
 				</div>
 				<div class="portlet-body form">
-					<form role="form" class="form-horizontal">
+					<form role="form" class="form-horizontal" method="post" action="@Url.Action("Add")">
+						@Html.AntiForgeryToken()
 						<div class="form-body">
 							<div class="form-group form-md-line-input">
 								<label class="col-md-1 control-label" for="Title">عنوان</label>
@@ -79,8 +81,12 @@
 						<div class="form-actions">
 							<div class="row">
 								<div class="col-md-offset-2 col-md-10">
-									<button type="button" class="btn default">کنسل</button>
-									<button type="button" class="btn blue">تایید</button>
+									<button type="reset" class="btn default">کنسل</button>
+									<button type="submit" class="btn blue">تایید</button>
+									<button type="submit" data-loading-text="ارسال..." class="btn-loading btn blue">ذخیره و جدید</button>
+									<button type="button" data-loading-text="ارسال..." class="btn-loading btn blue mt-ladda-btn ladda-button mt-progress-demo btn-circle" data-style="slide-right">
+										<span class="ladda-label">Loading State</span>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -92,4 +98,59 @@
 	</div>
 </div>
 @section Javascripts{
+	<!-- http://msurguy.github.io/ladda-bootstrap/ -->
+<script src="~/Content/js/ladda.min.js"></script>
+<script src="~/Content/js/spin.min.js"></script>
+	<script type="text/javascript">
+		var UIButtons = function ()
+		{
+
+			var handleButtons = function ()
+			{
+				$('.btn-loading').click(function ()
+				{
+					var btn = $(this)
+					btn.button('loading')
+					setTimeout(function ()
+					{
+						btn.button('reset')
+					}, 3000)
+				});
+
+				Ladda.bind('.mt-ladda-btn', { timeout: 2000 });
+				Ladda.bind('.mt-ladda-btn.mt-progress-demo ', {
+					callback: function (instance)
+					{
+						var progress = 0;
+						var interval = setInterval(function ()
+						{
+							progress = Math.min(progress + Math.random() * 0.1, 1);
+							instance.setProgress(progress);
+
+							if (progress === 1) {
+								instance.stop();
+								clearInterval(interval);
+							}
+						}, 200);
+					}
+				});
+			}
+
+
+			return {
+				//main function to initiate the module
+				init: function ()
+				{
+					handleButtons();
+				}
+
+			};
+
+		}();
+
+		jQuery(document).ready(function ()
+		{
+			UIButtons.init();
+		});
+	</script>
 }
