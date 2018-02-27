@@ -81,6 +81,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Tag\TagList.cs" />
+    <Compile Include="Admin\Tag\TagEdit.cs" />
+    <Compile Include="Admin\Tag\TagAdd.cs" />
     <Compile Include="Asp.net Identity\AddPhoneNumberViewModel.cs" />
     <Compile Include="Asp.net Identity\ChangePasswordViewModel.cs" />
     <Compile Include="Asp.net Identity\ConfigureTwoFactorViewModel.cs" />

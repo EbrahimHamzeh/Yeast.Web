@@ -94,6 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EFServices\TagService.cs" />
     <Compile Include="EFServices\CategoryService.cs" />
     <Compile Include="EFServices\Enums\Enum.cs" />
     <Compile Include="EFServices\User\ApplicationUserManager.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="EFServices\User\CustomRoleStore.cs" />
     <Compile Include="EFServices\User\ApplicationSignInManager.cs" />
     <Compile Include="EFServices\User\ApplicationRoleManager.cs" />
+    <Compile Include="Interfaces\TagService.cs" />
     <Compile Include="Interfaces\ICategoryService.cs" />
     <Compile Include="Interfaces\User\ICustomUserStore.cs" />
     <Compile Include="Interfaces\User\ICustomRoleStore.cs" />

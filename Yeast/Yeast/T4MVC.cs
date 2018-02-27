@@ -99,11 +99,21 @@ namespace Links
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string bootstrap_rtl_min_css = Url("bootstrap-rtl.min.css");
             public static readonly string bootstrap_switch_rtl_min_css = Url("bootstrap-switch-rtl.min.css");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class bootstrap_table {
+                public const string UrlPath = "~/Content/css/bootstrap-table";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string bootstrap_editable_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-editable.min.css") ? Url("bootstrap-editable.min.css") : Url("bootstrap-editable.css");
+                public static readonly string bootstrap_table_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-table.min.css") ? Url("bootstrap-table.min.css") : Url("bootstrap-table.css");
+            }
+        
             public static readonly string components_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/components-rtl.min.css") ? Url("components-rtl.min.css") : Url("components-rtl.css");
             public static readonly string default_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/default-rtl.min.css") ? Url("default-rtl.min.css") : Url("default-rtl.css");
             public static readonly string font_awesome_min_css = Url("font-awesome.min.css");
             public static readonly string layout_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/layout-rtl.min.css") ? Url("layout-rtl.min.css") : Url("layout-rtl.css");
             public static readonly string plugins_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/plugins-rtl.min.css") ? Url("plugins-rtl.min.css") : Url("plugins-rtl.css");
+            public static readonly string simple_line_icons_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/simple-line-icons.min.css") ? Url("simple-line-icons.min.css") : Url("simple-line-icons.css");
             public static readonly string Yeast_ltr_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Yeast-ltr.min.css") ? Url("Yeast-ltr.min.css") : Url("Yeast-ltr.css");
             public static readonly string Yeast_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Yeast.min.css") ? Url("Yeast.min.css") : Url("Yeast.css");
             public static readonly string YeastFont_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/YeastFont.min.css") ? Url("YeastFont.min.css") : Url("YeastFont.css");
@@ -127,6 +137,11 @@ namespace Links
             public static readonly string fontawesome_webfont_woff = Url("fontawesome-webfont.woff");
             public static readonly string fontawesome_webfont_woff2 = Url("fontawesome-webfont.woff2");
             public static readonly string FontAwesome_otf = Url("FontAwesome.otf");
+            public static readonly string Simple_Line_Icons_dev_svg = Url("Simple-Line-Icons.dev.svg");
+            public static readonly string Simple_Line_Icons_eot = Url("Simple-Line-Icons.eot");
+            public static readonly string Simple_Line_Icons_svg = Url("Simple-Line-Icons.svg");
+            public static readonly string Simple_Line_Icons_ttf = Url("Simple-Line-Icons.ttf");
+            public static readonly string Simple_Line_Icons_woff = Url("Simple-Line-Icons.woff");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class svg {
                 public const string UrlPath = "~/Content/fonts/svg";
@@ -201,6 +216,14 @@ namespace Links
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string bootstrap_switch_min_js = Url("bootstrap-switch.min.js");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class bootstrap_table {
+                public const string UrlPath = "~/Content/js/bootstrap-table";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string bootstrap_table_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-table.min.js") ? Url("bootstrap-table.min.js") : Url("bootstrap-table.js");
+            }
+        
             public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
             public static readonly string jquery_3_3_1_min_js = Url("jquery-3.3.1.min.js");
             public static readonly string jquery_blockui_min_js = Url("jquery.blockui.min.js");
@@ -231,6 +254,14 @@ namespace Links
         {
             public static partial class css 
             {
+                public static partial class bootstrap_table 
+                {
+                    public static class Assets
+                    {
+                        public static readonly string bootstrap_editable_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/bootstrap-table/bootstrap-editable.css");
+                        public static readonly string bootstrap_table_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/bootstrap-table/bootstrap-table.css");
+                    }
+                }
                 public static class Assets
                 {
                     public static readonly string bootstrap_rtl_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/bootstrap-rtl.min.css");
@@ -240,6 +271,7 @@ namespace Links
                     public static readonly string font_awesome_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/font-awesome.min.css");
                     public static readonly string layout_rtl_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/layout-rtl.css");
                     public static readonly string plugins_rtl_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/plugins-rtl.css");
+                    public static readonly string simple_line_icons_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/simple-line-icons.css");
                     public static readonly string Yeast_ltr_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/Yeast-ltr.css");
                     public static readonly string Yeast_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/Yeast.css");
                     public static readonly string YeastFont_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/YeastFont.css");
@@ -289,6 +321,13 @@ namespace Links
             }
             public static partial class js 
             {
+                public static partial class bootstrap_table 
+                {
+                    public static class Assets
+                    {
+                        public static readonly string bootstrap_table_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-table/bootstrap-table.js"); 
+                    }
+                }
                 public static class Assets
                 {
                     public static readonly string bootstrap_switch_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-switch.min.js"); 

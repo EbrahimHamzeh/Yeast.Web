@@ -28,9 +28,6 @@ namespace Yeast.Areas.Admin.Controllers
     public partial class TagController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public TagController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected TagController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -95,7 +92,7 @@ namespace Yeast.Areas.Admin.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Add
         {
-            public readonly string id = "id";
+            public readonly string model = "model";
         }
         static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -115,8 +112,12 @@ namespace Yeast.Areas.Admin.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Add = "Add";
+                public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
             }
+            public readonly string Add = "~/Areas/Admin/Views/Tag/Add.cshtml";
+            public readonly string Edit = "~/Areas/Admin/Views/Tag/Edit.cshtml";
             public readonly string Index = "~/Areas/Admin/Views/Tag/Index.cshtml";
         }
     }
@@ -149,14 +150,14 @@ namespace Yeast.Areas.Admin.Controllers
         }
 
         [NonAction]
-        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? id);
+        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Yeast.Model.Admin.TagAdd model);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Add(int? id)
+        public override System.Web.Mvc.ActionResult Add(Yeast.Model.Admin.TagAdd model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Add);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            AddOverride(callInfo, id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            AddOverride(callInfo, model);
             return callInfo;
         }
 

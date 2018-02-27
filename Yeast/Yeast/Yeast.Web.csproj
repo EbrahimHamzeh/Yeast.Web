@@ -282,6 +282,7 @@
     <Content Include="Content\fonts\Simple-Line-Icons.ttf" />
     <Content Include="Content\fonts\Simple-Line-Icons.woff" />
     <Content Include="Areas\Admin\Views\Tag\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Tag\Edit.cshtml" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
@@ -314,7 +315,9 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
-    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Sidebar.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
