@@ -62,7 +62,7 @@
 				<div class="portlet-body form">
 					<a href="@Url.Action("Add")" class="btn btn-default popovers" data-container="body" data-trigger="hover" data-placement="bottom" data-content="میتوانید نوع جدید ایجاد کنید" data-original-title="ایحاد">جدید</a>
 					<table data-toggle="table"
-								 data-url="http://issues.wenzhixin.net.cn/examples/bootstrap_table/data"
+								 data-url="@Url.Action("DataList")"
 								 data-pagination="true"
 								 data-side-pagination="server"
 								 data-page-list="[5, 10, 20, 50, 100, 200]"
@@ -70,9 +70,9 @@
 						<thead>
 							<tr>
 								<th data-field="state" data-checkbox="true"></th>
-								<th data-field="id" data-align="right" data-sortable="true">ردیف</th>
-								<th data-field="name" data-align="center" data-sortable="true">عنوان</th>
-								<th data-field="price" data-sortable="true">عملیات</th>
+								<th data-field="Id" data-align="right" data-sortable="true">ردیف</th>
+								<th data-field="Name" data-align="center" data-sortable="true">عنوان</th>
+								<th data-field="Description" data-align="center" data-sortable="true">عنوان</th>
 							</tr>
 						</thead>
 					</table>

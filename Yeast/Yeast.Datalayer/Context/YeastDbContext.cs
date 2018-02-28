@@ -42,10 +42,6 @@ namespace Yeast.Datalayer.Context
 		{
 			return base.Set<TEntity>();
 		}
-		public int SaveAllChanges()
-		{
-			return base.SaveChanges();
-		}
 
 		public IEnumerable<TEntity> AddThisRange<TEntity>(IEnumerable<TEntity> entities) where TEntity : class
 		{

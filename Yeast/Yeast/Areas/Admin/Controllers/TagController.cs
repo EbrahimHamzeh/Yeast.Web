@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Yeast.Datalayer.Context;
+using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
 
@@ -24,6 +26,12 @@ namespace Yeast.Areas.Admin.Controllers
 			return View();
 		}
 
+		public virtual ActionResult DataList()
+		{
+			var temp = new { rows = _tagService.GetAll(), total = _tagService.Count };
+			return Json(temp, JsonRequestBehavior.AllowGet);
+		}
+
 		// GET: Admin/Tag/Add
 		public virtual ActionResult Add()
 		{
@@ -39,30 +47,36 @@ namespace Yeast.Areas.Admin.Controllers
 			{
 				return View(model);
 			}
-			try
-			{
-				_tagService.Add(model);
-				_uow.SaveAllChanges();
-			}
-			catch (Exception)
-			{
-
-			}
-			
-			return View();
+			_tagService.Add(model);
+			_uow.SaveAllChanges();	
+			return RedirectToAction("Index");
 		}
 
 		// GET: Admin/Tag/Edit
-		public virtual ActionResult Edit()
+		public virtual ActionResult Edit(int? id)
 		{
-			return View();
+			if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			Tag tag = _tagService.Find(id??0);
+			if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			return View(tag);
 		}
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public virtual ActionResult Edit(int? id)
+		public virtual ActionResult Edit(int id)
 		{
-			return View();
+			Tag tagUpdate = _tagService.Find(id);
+			if (tagUpdate == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+			if (TryUpdateModel(tagUpdate, "", new string[] { "Title", "Description" }))
+			{
+				if(!ModelState.IsValid)
+				{
+					return View(tagUpdate);
+				}
+				_uow.SaveAllChanges();
+			}
+				return View();
 		}
 	}
 }
