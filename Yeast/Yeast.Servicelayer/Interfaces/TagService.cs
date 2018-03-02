@@ -12,5 +12,7 @@ namespace Yeast.Servicelayer.Interfaces
 		void Update(TagEdit tag);
 		Tag Find(int id);
 		IList<Tag> GetAll();
+		IList<TagList> GetPaging(string order = "asc", int offset = 0, int limit = 10);
+		DataTableList<TagList> GetDataTable(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10);
 	}
 }

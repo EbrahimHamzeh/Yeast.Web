@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generic\DataTableList.cs" />
     <Compile Include="Admin\Tag\TagList.cs" />
     <Compile Include="Admin\Tag\TagEdit.cs" />
     <Compile Include="Admin\Tag\TagAdd.cs" />

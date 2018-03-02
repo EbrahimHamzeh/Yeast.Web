@@ -26,10 +26,9 @@ namespace Yeast.Areas.Admin.Controllers
 			return View();
 		}
 
-		public virtual ActionResult DataList()
+		public virtual ActionResult DataList(string search, string sort= "Title", string order = "asc" , int offset = 0 ,int limit = 10)
 		{
-			var temp = new { rows = _tagService.GetAll(), total = _tagService.Count };
-			return Json(temp, JsonRequestBehavior.AllowGet);
+			return Json(_tagService.GetDataTable(search, sort, order, offset, limit), JsonRequestBehavior.AllowGet);
 		}
 
 		// GET: Admin/Tag/Add
