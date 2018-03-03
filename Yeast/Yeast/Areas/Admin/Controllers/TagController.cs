@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Yeast.Datalayer.Context;
@@ -26,9 +27,9 @@ namespace Yeast.Areas.Admin.Controllers
 			return View();
 		}
 
-		public virtual ActionResult DataList(string search, string sort= "Title", string order = "asc" , int offset = 0 ,int limit = 10)
+		public virtual async Task<ActionResult> DataList(string search, string sort= "Title", string order = "asc" , int offset = 0 ,int limit = 10)
 		{
-			return Json(_tagService.GetDataTable(search, sort, order, offset, limit), JsonRequestBehavior.AllowGet);
+			return Json(await _tagService.GetDataTable(search, sort, order, offset, limit).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
 		}
 
 		// GET: Admin/Tag/Add

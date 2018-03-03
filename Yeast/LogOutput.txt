@@ -11846,3 +11846,4540 @@ SELECT
 -- Completed in 38 ms with result: ProfiledDataReader
 
 Closed connection at 11/12/1396 01:10:04 +03:30
+Failed to open connection at 12/12/1396 00:04:49 +03:30 with error: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Failed to open connection at 12/12/1396 00:05:04 +03:30 with error: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Failed to open connection at 12/12/1396 00:05:06 +03:30 with error: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Failed to open connection at 12/12/1396 00:05:21 +03:30 with error: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Failed to open connection at 12/12/1396 00:05:37 +03:30 with error: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Opened connection at 12/12/1396 00:06:48 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:06:48 +03:30
+-- Completed in 214 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:48 +03:30
+Opened connection at 12/12/1396 00:06:50 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:06:50 +03:30
+-- Completed in 1070 ms with result: 1
+
+Closed connection at 12/12/1396 00:06:51 +03:30
+Opened connection at 12/12/1396 00:06:51 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:06:51 +03:30
+-- Completed in 70 ms with result: 1
+
+Closed connection at 12/12/1396 00:06:51 +03:30
+Opened connection at 12/12/1396 00:06:51 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:06:53 +03:30
+-- Completed in 106 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:53 +03:30
+Opened connection at 12/12/1396 00:06:53 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:06:53 +03:30
+-- Failed in 380 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:06:53 +03:30
+Opened connection at 12/12/1396 00:06:54 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:06:54 +03:30
+-- Completed in 44 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:54 +03:30
+Opened connection at 12/12/1396 00:06:54 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:06:54 +03:30
+-- Completed in 59 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:54 +03:30
+Opened connection at 12/12/1396 00:06:54 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:06:54 +03:30
+-- Completed in 44 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:54 +03:30
+Opened connection asynchronously at 12/12/1396 00:06:55 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:06:55 +03:30
+-- Completed in 133 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:56 +03:30
+Opened connection asynchronously at 12/12/1396 00:06:56 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:06:56 +03:30
+-- Completed in 145 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:56 +03:30
+Opened connection asynchronously at 12/12/1396 00:06:56 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:06:56 +03:30
+-- Completed in 64 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:56 +03:30
+Opened connection asynchronously at 12/12/1396 00:06:56 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:06:56 +03:30
+-- Completed in 21 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:56 +03:30
+Opened connection asynchronously at 12/12/1396 00:06:56 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:06:56 +03:30
+-- Completed in 36 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:56 +03:30
+Opened connection asynchronously at 12/12/1396 00:06:56 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:06:56 +03:30
+-- Completed in 78 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:06:56 +03:30
+Opened connection at 12/12/1396 00:07:08 +03:30
+SELECT 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[C1] AS [C1], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[Description] AS [Description]
+    FROM ( SELECT TOP (10) [Project1].[Id] AS [Id], [Project1].[Name] AS [Name], [Project1].[Description] AS [Description], [Project1].[C1] AS [C1]
+        FROM ( SELECT 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Description] AS [Description], 
+            1 AS [C1]
+            FROM [dbo].[Tags] AS [Extent1]
+            WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+        )  AS [Project1]
+        ORDER BY [Project1].[Name] ASC
+    )  AS [Limit1]
+    ORDER BY row_number() OVER (ORDER BY [Limit1].[Name] ASC)
+    OFFSET 0 ROWS 
+-- p__linq__0: 'null' (Type = String, Size = 4000)
+-- p__linq__1: 'null' (Type = String, Size = 4000)
+-- p__linq__2: 'null' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:07:08 +03:30
+-- Completed in 670 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:07:09 +03:30
+Opened connection at 12/12/1396 00:07:23 +03:30
+SELECT 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[C1] AS [C1], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[Description] AS [Description]
+    FROM ( SELECT TOP (10) [Project1].[Id] AS [Id], [Project1].[Name] AS [Name], [Project1].[Description] AS [Description], [Project1].[C1] AS [C1]
+        FROM ( SELECT 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Description] AS [Description], 
+            1 AS [C1]
+            FROM [dbo].[Tags] AS [Extent1]
+            WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+        )  AS [Project1]
+        ORDER BY [Project1].[Name] ASC
+    )  AS [Limit1]
+    ORDER BY row_number() OVER (ORDER BY [Limit1].[Name] ASC)
+    OFFSET 0 ROWS 
+-- p__linq__0: '%%' (Type = String, Size = 4000)
+-- p__linq__1: '%%' (Type = String, Size = 4000)
+-- p__linq__2: '%%' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:07:23 +03:30
+-- Completed in 53 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:07:23 +03:30
+Opened connection at 12/12/1396 00:07:26 +03:30
+SELECT 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[C1] AS [C1], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[Description] AS [Description]
+    FROM ( SELECT TOP (10) [Project1].[Id] AS [Id], [Project1].[Name] AS [Name], [Project1].[Description] AS [Description], [Project1].[C1] AS [C1]
+        FROM ( SELECT 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Description] AS [Description], 
+            1 AS [C1]
+            FROM [dbo].[Tags] AS [Extent1]
+            WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+        )  AS [Project1]
+        ORDER BY [Project1].[Name] ASC
+    )  AS [Limit1]
+    ORDER BY row_number() OVER (ORDER BY [Limit1].[Name] ASC)
+    OFFSET 0 ROWS 
+-- p__linq__0: '%0%' (Type = String, Size = 4000)
+-- p__linq__1: '%0%' (Type = String, Size = 4000)
+-- p__linq__2: '%0%' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:07:26 +03:30
+-- Completed in 28 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:07:26 +03:30
+Opened connection at 12/12/1396 00:07:33 +03:30
+SELECT 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[C1] AS [C1], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[Description] AS [Description]
+    FROM ( SELECT TOP (10) [Project1].[Id] AS [Id], [Project1].[Name] AS [Name], [Project1].[Description] AS [Description], [Project1].[C1] AS [C1]
+        FROM ( SELECT 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Description] AS [Description], 
+            1 AS [C1]
+            FROM [dbo].[Tags] AS [Extent1]
+            WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+        )  AS [Project1]
+        ORDER BY [Project1].[Name] ASC
+    )  AS [Limit1]
+    ORDER BY row_number() OVER (ORDER BY [Limit1].[Name] ASC)
+    OFFSET 0 ROWS 
+-- p__linq__0: '%455%' (Type = String, Size = 4000)
+-- p__linq__1: '%455%' (Type = String, Size = 4000)
+-- p__linq__2: '%455%' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:07:33 +03:30
+-- Completed in 31 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:07:33 +03:30
+Opened connection at 12/12/1396 00:08:00 +03:30
+SELECT 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[C1] AS [C1], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[Description] AS [Description]
+    FROM ( SELECT TOP (10) [Project1].[Id] AS [Id], [Project1].[Name] AS [Name], [Project1].[Description] AS [Description], [Project1].[C1] AS [C1]
+        FROM ( SELECT 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Description] AS [Description], 
+            1 AS [C1]
+            FROM [dbo].[Tags] AS [Extent1]
+            WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+        )  AS [Project1]
+        ORDER BY [Project1].[Name] ASC
+    )  AS [Limit1]
+    ORDER BY row_number() OVER (ORDER BY [Limit1].[Name] ASC)
+    OFFSET 0 ROWS 
+-- p__linq__0: '%45%' (Type = String, Size = 4000)
+-- p__linq__1: '%45%' (Type = String, Size = 4000)
+-- p__linq__2: '%45%' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:08:00 +03:30
+-- Completed in 35 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:08:00 +03:30
+Opened connection at 12/12/1396 00:08:55 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:08:55 +03:30
+-- Completed in 25 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:08:55 +03:30
+Opened connection at 12/12/1396 00:13:42 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:13:42 +03:30
+-- Completed in 53 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:42 +03:30
+Opened connection at 12/12/1396 00:13:43 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:13:43 +03:30
+-- Completed in 26 ms with result: 1
+
+Closed connection at 12/12/1396 00:13:43 +03:30
+Opened connection at 12/12/1396 00:13:43 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:13:43 +03:30
+-- Completed in 19 ms with result: 1
+
+Closed connection at 12/12/1396 00:13:43 +03:30
+Opened connection at 12/12/1396 00:13:44 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:13:45 +03:30
+-- Completed in 187 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:45 +03:30
+Opened connection at 12/12/1396 00:13:45 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:13:45 +03:30
+-- Failed in 494 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:13:46 +03:30
+Opened connection at 12/12/1396 00:13:46 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:13:46 +03:30
+-- Completed in 18 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:46 +03:30
+Opened connection at 12/12/1396 00:13:46 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:13:46 +03:30
+-- Completed in 25 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:46 +03:30
+Opened connection at 12/12/1396 00:13:46 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:13:46 +03:30
+-- Completed in 23 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:46 +03:30
+Opened connection asynchronously at 12/12/1396 00:13:47 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:13:47 +03:30
+-- Completed in 42 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:47 +03:30
+Opened connection asynchronously at 12/12/1396 00:13:47 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:13:47 +03:30
+-- Completed in 62 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:48 +03:30
+Opened connection asynchronously at 12/12/1396 00:13:48 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:13:48 +03:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:48 +03:30
+Opened connection asynchronously at 12/12/1396 00:13:48 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:13:48 +03:30
+-- Completed in 32 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:48 +03:30
+Opened connection asynchronously at 12/12/1396 00:13:48 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:13:48 +03:30
+-- Completed in 27 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:48 +03:30
+Opened connection asynchronously at 12/12/1396 00:13:48 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:13:48 +03:30
+-- Completed in 83 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:48 +03:30
+Opened connection at 12/12/1396 00:13:49 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:13:49 +03:30
+-- Completed in 55 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:13:49 +03:30
+Opened connection at 12/12/1396 00:14:04 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:14:04 +03:30
+-- Completed in 313 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:14:05 +03:30
+Opened connection at 12/12/1396 00:14:05 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:14:05 +03:30
+-- Completed in 243 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:14:05 +03:30
+Opened connection at 12/12/1396 00:14:16 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:14:16 +03:30
+-- Completed in 70 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:14:17 +03:30
+Opened connection at 12/12/1396 00:14:48 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:14:48 +03:30
+-- Completed in 49 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:14:48 +03:30
+Opened connection at 12/12/1396 00:15:28 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:15:28 +03:30
+-- Completed in 23 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:15:28 +03:30
+Opened connection at 12/12/1396 00:15:37 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:15:37 +03:30
+-- Completed in 25 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:15:37 +03:30
+Opened connection at 12/12/1396 00:15:42 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:15:42 +03:30
+-- Completed in 21 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:15:42 +03:30
+Opened connection at 12/12/1396 00:15:51 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%dsfsdfsdf%' (Type = String, Size = 4000)
+-- p__linq__1: '%dsfsdfsdf%' (Type = String, Size = 4000)
+-- p__linq__2: '%dsfsdfsdf%' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:15:51 +03:30
+-- Completed in 21 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:15:51 +03:30
+Opened connection at 12/12/1396 00:16:04 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:16:04 +03:30
+-- Completed in 57 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:16:05 +03:30
+Opened connection at 12/12/1396 00:19:13 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:19:13 +03:30
+-- Completed in 30 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:13 +03:30
+Opened connection at 12/12/1396 00:19:15 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:19:15 +03:30
+-- Completed in 23 ms with result: 1
+
+Closed connection at 12/12/1396 00:19:15 +03:30
+Opened connection at 12/12/1396 00:19:15 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:19:15 +03:30
+-- Completed in 19 ms with result: 1
+
+Closed connection at 12/12/1396 00:19:15 +03:30
+Opened connection at 12/12/1396 00:19:15 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:19:16 +03:30
+-- Completed in 126 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:17 +03:30
+Opened connection at 12/12/1396 00:19:17 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:19:17 +03:30
+-- Failed in 282 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:19:17 +03:30
+Opened connection at 12/12/1396 00:19:17 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:19:17 +03:30
+-- Completed in 19 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:17 +03:30
+Opened connection at 12/12/1396 00:19:17 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:19:17 +03:30
+-- Completed in 46 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:17 +03:30
+Opened connection at 12/12/1396 00:19:17 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:19:17 +03:30
+-- Completed in 25 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:17 +03:30
+Opened connection asynchronously at 12/12/1396 00:19:18 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:19:18 +03:30
+-- Completed in 38 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:18 +03:30
+Opened connection asynchronously at 12/12/1396 00:19:18 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:19:18 +03:30
+-- Completed in 34 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:18 +03:30
+Opened connection asynchronously at 12/12/1396 00:19:18 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:19:18 +03:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:18 +03:30
+Opened connection asynchronously at 12/12/1396 00:19:18 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:19:18 +03:30
+-- Completed in 33 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:19 +03:30
+Opened connection asynchronously at 12/12/1396 00:19:19 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:19:19 +03:30
+-- Completed in 32 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:19 +03:30
+Opened connection asynchronously at 12/12/1396 00:19:19 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:19:19 +03:30
+-- Completed in 40 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:19 +03:30
+Opened connection at 12/12/1396 00:19:19 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:19:19 +03:30
+-- Completed in 69 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:20 +03:30
+Opened connection asynchronously at 12/12/1396 00:19:26 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:19:26 +03:30
+-- Completed in 100 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:26 +03:30
+Opened connection asynchronously at 12/12/1396 00:19:37 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:19:37 +03:30
+-- Completed in 151 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:37 +03:30
+Opened connection asynchronously at 12/12/1396 00:19:47 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:19:47 +03:30
+-- Completed in 560 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:19:48 +03:30
+Opened connection at 12/12/1396 00:26:00 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:26:00 +03:30
+-- Completed in 26 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:00 +03:30
+Opened connection at 12/12/1396 00:26:01 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:26:01 +03:30
+-- Completed in 18 ms with result: 1
+
+Closed connection at 12/12/1396 00:26:01 +03:30
+Opened connection at 12/12/1396 00:26:01 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:26:01 +03:30
+-- Completed in 24 ms with result: 1
+
+Closed connection at 12/12/1396 00:26:01 +03:30
+Opened connection at 12/12/1396 00:26:01 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:26:03 +03:30
+-- Completed in 141 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:03 +03:30
+Opened connection at 12/12/1396 00:26:03 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:26:03 +03:30
+-- Failed in 348 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:26:04 +03:30
+Opened connection at 12/12/1396 00:26:04 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:26:04 +03:30
+-- Completed in 36 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:04 +03:30
+Opened connection at 12/12/1396 00:26:04 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:26:04 +03:30
+-- Completed in 42 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:04 +03:30
+Opened connection at 12/12/1396 00:26:04 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:26:04 +03:30
+-- Completed in 17 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:04 +03:30
+Opened connection asynchronously at 12/12/1396 00:26:05 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:26:05 +03:30
+-- Completed in 52 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:05 +03:30
+Opened connection asynchronously at 12/12/1396 00:26:05 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:26:05 +03:30
+-- Completed in 101 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:05 +03:30
+Opened connection asynchronously at 12/12/1396 00:26:06 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:26:06 +03:30
+-- Completed in 36 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:06 +03:30
+Opened connection asynchronously at 12/12/1396 00:26:06 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:26:06 +03:30
+-- Completed in 34 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:06 +03:30
+Opened connection asynchronously at 12/12/1396 00:26:06 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:26:06 +03:30
+-- Completed in 21 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:06 +03:30
+Opened connection asynchronously at 12/12/1396 00:26:06 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:26:06 +03:30
+-- Completed in 49 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:06 +03:30
+Opened connection at 12/12/1396 00:26:07 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:26:07 +03:30
+-- Completed in 63 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:07 +03:30
+Opened connection asynchronously at 12/12/1396 00:26:18 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:26:18 +03:30
+-- Completed in 115 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:18 +03:30
+Opened connection at 12/12/1396 00:26:18 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:26:18 +03:30
+-- Completed in 48 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:18 +03:30
+Opened connection asynchronously at 12/12/1396 00:26:22 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:26:22 +03:30
+-- Completed in 120 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:22 +03:30
+Opened connection asynchronously at 12/12/1396 00:26:59 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:26:59 +03:30
+-- Completed in 2 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:26:59 +03:30
+Opened connection asynchronously at 12/12/1396 00:27:18 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:27:18 +03:30
+-- Completed in 48 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:27:18 +03:30
+Opened connection asynchronously at 12/12/1396 00:27:58 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:27:58 +03:30
+-- Completed in 47 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:27:58 +03:30
+Opened connection at 12/12/1396 00:29:17 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:29:17 +03:30
+-- Completed in 35 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:17 +03:30
+Opened connection at 12/12/1396 00:29:18 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:29:18 +03:30
+-- Completed in 19 ms with result: 1
+
+Closed connection at 12/12/1396 00:29:18 +03:30
+Opened connection at 12/12/1396 00:29:18 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:29:18 +03:30
+-- Completed in 18 ms with result: 1
+
+Closed connection at 12/12/1396 00:29:18 +03:30
+Opened connection at 12/12/1396 00:29:18 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:29:20 +03:30
+-- Completed in 186 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:20 +03:30
+Opened connection at 12/12/1396 00:29:20 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:29:20 +03:30
+-- Failed in 703 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:29:21 +03:30
+Opened connection at 12/12/1396 00:29:21 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:29:21 +03:30
+-- Completed in 37 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:21 +03:30
+Opened connection at 12/12/1396 00:29:21 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:29:21 +03:30
+-- Completed in 22 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:21 +03:30
+Opened connection at 12/12/1396 00:29:21 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:29:21 +03:30
+-- Completed in 33 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:21 +03:30
+Opened connection asynchronously at 12/12/1396 00:29:22 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:29:22 +03:30
+-- Completed in 40 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:22 +03:30
+Opened connection asynchronously at 12/12/1396 00:29:22 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:29:22 +03:30
+-- Completed in 48 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:22 +03:30
+Opened connection asynchronously at 12/12/1396 00:29:23 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:29:23 +03:30
+-- Completed in 46 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:23 +03:30
+Opened connection asynchronously at 12/12/1396 00:29:23 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:29:23 +03:30
+-- Completed in 19 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:23 +03:30
+Opened connection asynchronously at 12/12/1396 00:29:23 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:29:23 +03:30
+-- Completed in 44 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:23 +03:30
+Opened connection asynchronously at 12/12/1396 00:29:23 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:29:23 +03:30
+-- Completed in 31 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:23 +03:30
+Opened connection at 12/12/1396 00:29:23 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:29:23 +03:30
+-- Completed in 58 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:29:24 +03:30
+Opened connection at 12/12/1396 00:31:29 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:31:29 +03:30
+-- Completed in 38 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:29 +03:30
+Opened connection at 12/12/1396 00:31:31 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:31:31 +03:30
+-- Completed in 23 ms with result: 1
+
+Closed connection at 12/12/1396 00:31:31 +03:30
+Opened connection at 12/12/1396 00:31:31 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:31:31 +03:30
+-- Completed in 41 ms with result: 1
+
+Closed connection at 12/12/1396 00:31:31 +03:30
+Opened connection at 12/12/1396 00:31:31 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:31:33 +03:30
+-- Completed in 162 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:33 +03:30
+Opened connection at 12/12/1396 00:31:33 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:31:33 +03:30
+-- Failed in 309 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:31:33 +03:30
+Opened connection at 12/12/1396 00:31:33 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:31:33 +03:30
+-- Completed in 18 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:33 +03:30
+Opened connection at 12/12/1396 00:31:33 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:31:33 +03:30
+-- Completed in 39 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:33 +03:30
+Opened connection at 12/12/1396 00:31:33 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:31:34 +03:30
+-- Completed in 21 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:34 +03:30
+Opened connection asynchronously at 12/12/1396 00:31:34 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:31:34 +03:30
+-- Completed in 47 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:34 +03:30
+Opened connection asynchronously at 12/12/1396 00:31:34 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:31:34 +03:30
+-- Completed in 20 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:34 +03:30
+Opened connection asynchronously at 12/12/1396 00:31:35 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:31:35 +03:30
+-- Completed in 22 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:35 +03:30
+Opened connection asynchronously at 12/12/1396 00:31:35 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:31:35 +03:30
+-- Completed in 37 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:35 +03:30
+Opened connection asynchronously at 12/12/1396 00:31:35 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:31:35 +03:30
+-- Completed in 26 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:35 +03:30
+Opened connection asynchronously at 12/12/1396 00:31:35 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:31:35 +03:30
+-- Completed in 36 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:35 +03:30
+Opened connection at 12/12/1396 00:31:36 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:31:36 +03:30
+-- Completed in 35 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:31:36 +03:30
+Opened connection asynchronously at 12/12/1396 00:32:00 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:32:00 +03:30
+-- Completed in 37 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:32:00 +03:30
+Opened connection asynchronously at 12/12/1396 00:32:00 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 00:32:00 +03:30
+-- Completed in 48 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:32:00 +03:30
+Opened connection asynchronously at 12/12/1396 00:32:19 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:32:19 +03:30
+-- Completed in 46 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:32:19 +03:30
+Opened connection asynchronously at 12/12/1396 00:32:19 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 00:32:19 +03:30
+-- Completed in 23 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:32:19 +03:30
+Opened connection asynchronously at 12/12/1396 00:33:26 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:33:26 +03:30
+-- Completed in 18 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:33:26 +03:30
+Opened connection asynchronously at 12/12/1396 00:34:18 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 00:34:18 +03:30
+-- Completed in 5 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:34:18 +03:30
+Opened connection at 12/12/1396 00:37:28 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:37:28 +03:30
+-- Completed in 31 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:28 +03:30
+Opened connection at 12/12/1396 00:37:29 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:37:29 +03:30
+-- Completed in 507 ms with result: 1
+
+Closed connection at 12/12/1396 00:37:30 +03:30
+Opened connection at 12/12/1396 00:37:30 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:37:30 +03:30
+-- Completed in 37 ms with result: 1
+
+Closed connection at 12/12/1396 00:37:30 +03:30
+Opened connection at 12/12/1396 00:37:30 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:37:32 +03:30
+-- Completed in 225 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:32 +03:30
+Opened connection at 12/12/1396 00:37:32 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:37:32 +03:30
+-- Failed in 320 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:37:32 +03:30
+Opened connection at 12/12/1396 00:37:32 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:37:32 +03:30
+-- Completed in 19 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:32 +03:30
+Opened connection at 12/12/1396 00:37:32 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:37:33 +03:30
+-- Completed in 20 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:33 +03:30
+Opened connection at 12/12/1396 00:37:33 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:37:33 +03:30
+-- Completed in 36 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:33 +03:30
+Opened connection asynchronously at 12/12/1396 00:37:33 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:37:33 +03:30
+-- Completed in 64 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:33 +03:30
+Opened connection asynchronously at 12/12/1396 00:37:33 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:37:34 +03:30
+-- Completed in 47 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:34 +03:30
+Opened connection asynchronously at 12/12/1396 00:37:34 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:37:34 +03:30
+-- Completed in 29 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:34 +03:30
+Opened connection asynchronously at 12/12/1396 00:37:34 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:37:34 +03:30
+-- Completed in 58 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:34 +03:30
+Opened connection asynchronously at 12/12/1396 00:37:34 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:37:34 +03:30
+-- Completed in 134 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:34 +03:30
+Opened connection asynchronously at 12/12/1396 00:37:34 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:37:34 +03:30
+-- Completed in 67 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:34 +03:30
+Opened connection at 12/12/1396 00:37:35 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:37:35 +03:30
+-- Completed in 56 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:35 +03:30
+Opened connection asynchronously at 12/12/1396 00:37:51 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:37:51 +03:30
+-- Completed in 83 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:51 +03:30
+Opened connection asynchronously at 12/12/1396 00:37:51 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 00:37:51 +03:30
+-- Completed in 129 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:37:51 +03:30
+Opened connection asynchronously at 12/12/1396 00:38:33 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:38:33 +03:30
+-- Completed in 84 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:38:33 +03:30
+Opened connection asynchronously at 12/12/1396 00:38:33 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 00:38:33 +03:30
+-- Completed in 50 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:38:33 +03:30
+Opened connection asynchronously at 12/12/1396 00:38:44 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:38:44 +03:30
+-- Completed in 39 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:38:44 +03:30
+Opened connection asynchronously at 12/12/1396 00:38:44 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 00:38:44 +03:30
+-- Completed in 27 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:38:44 +03:30
+Opened connection asynchronously at 12/12/1396 00:38:51 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:38:51 +03:30
+-- Completed in 3 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:38:51 +03:30
+Opened connection at 12/12/1396 00:42:15 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:42:15 +03:30
+-- Completed in 34 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:15 +03:30
+Opened connection at 12/12/1396 00:42:18 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:42:18 +03:30
+-- Completed in 699 ms with result: 1
+
+Closed connection at 12/12/1396 00:42:19 +03:30
+Opened connection at 12/12/1396 00:42:19 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:42:19 +03:30
+-- Completed in 21 ms with result: 1
+
+Closed connection at 12/12/1396 00:42:19 +03:30
+Opened connection at 12/12/1396 00:42:19 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:42:20 +03:30
+-- Completed in 161 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:21 +03:30
+Opened connection at 12/12/1396 00:42:21 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:42:21 +03:30
+-- Failed in 338 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:42:21 +03:30
+Opened connection at 12/12/1396 00:42:21 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:42:21 +03:30
+-- Completed in 19 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:21 +03:30
+Opened connection at 12/12/1396 00:42:21 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:42:21 +03:30
+-- Completed in 23 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:21 +03:30
+Opened connection at 12/12/1396 00:42:21 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:42:21 +03:30
+-- Completed in 40 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:21 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:22 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:42:22 +03:30
+-- Completed in 53 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:22 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:22 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:42:22 +03:30
+-- Completed in 22 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:22 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:23 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:42:23 +03:30
+-- Completed in 43 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:23 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:23 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:42:23 +03:30
+-- Completed in 19 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:23 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:23 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:42:23 +03:30
+-- Completed in 29 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:23 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:23 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:42:23 +03:30
+-- Completed in 27 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:23 +03:30
+Opened connection at 12/12/1396 00:42:23 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:42:23 +03:30
+-- Completed in 36 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:23 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:40 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:42:40 +03:30
+-- Completed in 30 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:40 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:40 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 00:42:40 +03:30
+-- Completed in 35 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:40 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:50 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:42:50 +03:30
+-- Completed in 42 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:50 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:50 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 00:42:50 +03:30
+-- Completed in 22 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:42:50 +03:30
+Opened connection asynchronously at 12/12/1396 00:42:55 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:42:55 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 00:42:59 +03:30
+-- Failed in 57 ms with error: ExecuteReader requires an open and available Connection. The connection's current state is closed.
+
+Opened connection at 12/12/1396 00:44:48 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:44:48 +03:30
+-- Completed in 43 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:48 +03:30
+Opened connection at 12/12/1396 00:44:50 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:44:50 +03:30
+-- Completed in 580 ms with result: 1
+
+Closed connection at 12/12/1396 00:44:50 +03:30
+Opened connection at 12/12/1396 00:44:50 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:44:50 +03:30
+-- Completed in 30 ms with result: 1
+
+Closed connection at 12/12/1396 00:44:50 +03:30
+Opened connection at 12/12/1396 00:44:50 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:44:52 +03:30
+-- Completed in 208 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:52 +03:30
+Opened connection at 12/12/1396 00:44:52 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:44:52 +03:30
+-- Failed in 349 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:44:53 +03:30
+Opened connection at 12/12/1396 00:44:53 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:44:53 +03:30
+-- Completed in 27 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:53 +03:30
+Opened connection at 12/12/1396 00:44:53 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:44:53 +03:30
+-- Completed in 23 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:53 +03:30
+Opened connection at 12/12/1396 00:44:53 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:44:53 +03:30
+-- Completed in 20 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:53 +03:30
+Opened connection asynchronously at 12/12/1396 00:44:53 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:44:54 +03:30
+-- Completed in 70 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:54 +03:30
+Opened connection asynchronously at 12/12/1396 00:44:54 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:44:54 +03:30
+-- Completed in 118 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:54 +03:30
+Opened connection asynchronously at 12/12/1396 00:44:54 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:44:55 +03:30
+-- Completed in 22 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:55 +03:30
+Opened connection asynchronously at 12/12/1396 00:44:55 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:44:55 +03:30
+-- Completed in 20 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:55 +03:30
+Opened connection asynchronously at 12/12/1396 00:44:55 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:44:55 +03:30
+-- Completed in 39 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:55 +03:30
+Opened connection asynchronously at 12/12/1396 00:44:55 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:44:55 +03:30
+-- Completed in 25 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:55 +03:30
+Opened connection at 12/12/1396 00:44:56 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:44:56 +03:30
+-- Completed in 221 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:44:56 +03:30
+Opened connection at 12/12/1396 00:45:18 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:45:18 +03:30
+-- Completed in 134 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:45:18 +03:30
+Opened connection at 12/12/1396 00:45:18 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:45:18 +03:30
+-- Completed in 53 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:45:18 +03:30
+Opened connection at 12/12/1396 00:45:37 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:45:37 +03:30
+-- Completed in 3 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:45:37 +03:30
+Opened connection at 12/12/1396 00:45:51 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:45:51 +03:30
+-- Completed in 3 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:45:51 +03:30
+Opened connection at 12/12/1396 00:45:55 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:45:55 +03:30
+-- Completed in 21 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:45:55 +03:30
+Opened connection at 12/12/1396 00:45:55 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:45:55 +03:30
+-- Completed in 37 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:45:55 +03:30
+Opened connection at 12/12/1396 00:46:36 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:46:36 +03:30
+-- Completed in 208 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:46:37 +03:30
+Opened connection at 12/12/1396 00:46:37 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:46:37 +03:30
+-- Completed in 42 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:46:37 +03:30
+Opened connection at 12/12/1396 00:46:55 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] DESC
+-- Executing at 12/12/1396 00:46:55 +03:30
+-- Completed in 26 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:46:55 +03:30
+Opened connection at 12/12/1396 00:46:55 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:46:55 +03:30
+-- Completed in 21 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:46:55 +03:30
+Opened connection at 12/12/1396 00:48:10 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:48:10 +03:30
+-- Completed in 32 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:10 +03:30
+Opened connection at 12/12/1396 00:48:12 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:48:12 +03:30
+-- Completed in 825 ms with result: 1
+
+Closed connection at 12/12/1396 00:48:13 +03:30
+Opened connection at 12/12/1396 00:48:13 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:48:13 +03:30
+-- Completed in 18 ms with result: 1
+
+Closed connection at 12/12/1396 00:48:13 +03:30
+Opened connection at 12/12/1396 00:48:13 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:48:15 +03:30
+-- Completed in 786 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:16 +03:30
+Opened connection at 12/12/1396 00:48:16 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:48:16 +03:30
+-- Failed in 482 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:48:16 +03:30
+Opened connection at 12/12/1396 00:48:17 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:48:17 +03:30
+-- Completed in 51 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:17 +03:30
+Opened connection at 12/12/1396 00:48:17 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:48:17 +03:30
+-- Completed in 21 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:17 +03:30
+Opened connection at 12/12/1396 00:48:17 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:48:17 +03:30
+-- Completed in 16 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:17 +03:30
+Opened connection asynchronously at 12/12/1396 00:48:17 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:48:18 +03:30
+-- Completed in 67 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:18 +03:30
+Opened connection asynchronously at 12/12/1396 00:48:18 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:48:18 +03:30
+-- Completed in 38 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:18 +03:30
+Opened connection asynchronously at 12/12/1396 00:48:18 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:48:18 +03:30
+-- Completed in 40 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:18 +03:30
+Opened connection asynchronously at 12/12/1396 00:48:18 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:48:18 +03:30
+-- Completed in 45 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:18 +03:30
+Opened connection asynchronously at 12/12/1396 00:48:18 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:48:18 +03:30
+-- Completed in 42 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:18 +03:30
+Opened connection asynchronously at 12/12/1396 00:48:18 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:48:19 +03:30
+-- Completed in 27 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:19 +03:30
+Opened connection at 12/12/1396 00:48:19 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:48:19 +03:30
+-- Completed in 1344 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:21 +03:30
+Opened connection at 12/12/1396 00:48:54 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:48:54 +03:30
+-- Completed in 54 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:54 +03:30
+Opened connection at 12/12/1396 00:48:54 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:48:54 +03:30
+-- Completed in 20 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:48:54 +03:30
+Opened connection at 12/12/1396 00:50:12 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 00:50:12 +03:30
+-- Completed in 30 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:12 +03:30
+Opened connection at 12/12/1396 00:50:13 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:50:13 +03:30
+-- Completed in 447 ms with result: 1
+
+Closed connection at 12/12/1396 00:50:14 +03:30
+Opened connection at 12/12/1396 00:50:14 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 00:50:14 +03:30
+-- Completed in 18 ms with result: 1
+
+Closed connection at 12/12/1396 00:50:14 +03:30
+Opened connection at 12/12/1396 00:50:14 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:50:16 +03:30
+-- Completed in 311 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:16 +03:30
+Opened connection at 12/12/1396 00:50:17 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 00:50:17 +03:30
+-- Failed in 552 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 00:50:17 +03:30
+Opened connection at 12/12/1396 00:50:17 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:50:17 +03:30
+-- Completed in 22 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:17 +03:30
+Opened connection at 12/12/1396 00:50:17 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:50:17 +03:30
+-- Completed in 21 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:17 +03:30
+Opened connection at 12/12/1396 00:50:17 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 00:50:17 +03:30
+-- Completed in 25 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:17 +03:30
+Opened connection asynchronously at 12/12/1396 00:50:18 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:50:18 +03:30
+-- Completed in 62 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:19 +03:30
+Opened connection asynchronously at 12/12/1396 00:50:19 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 00:50:19 +03:30
+-- Completed in 23 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:19 +03:30
+Opened connection asynchronously at 12/12/1396 00:50:19 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:50:19 +03:30
+-- Completed in 40 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:19 +03:30
+Opened connection asynchronously at 12/12/1396 00:50:19 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:50:19 +03:30
+-- Completed in 20 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:19 +03:30
+Opened connection asynchronously at 12/12/1396 00:50:19 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:50:19 +03:30
+-- Completed in 52 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:19 +03:30
+Opened connection asynchronously at 12/12/1396 00:50:19 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 00:50:19 +03:30
+-- Completed in 91 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:19 +03:30
+Opened connection at 12/12/1396 00:50:20 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:50:20 +03:30
+-- Completed in 59 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:20 +03:30
+Opened connection at 12/12/1396 00:50:37 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing at 12/12/1396 00:50:37 +03:30
+-- Completed in 132 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:37 +03:30
+Opened connection at 12/12/1396 00:50:37 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 00:50:37 +03:30
+-- Completed in 1218 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 00:50:38 +03:30
+Opened connection at 12/12/1396 01:00:05 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 01:00:05 +03:30
+-- Completed in 32 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:05 +03:30
+Opened connection at 12/12/1396 01:00:06 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 01:00:06 +03:30
+-- Completed in 547 ms with result: 1
+
+Closed connection at 12/12/1396 01:00:07 +03:30
+Opened connection at 12/12/1396 01:00:07 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 01:00:07 +03:30
+-- Completed in 38 ms with result: 1
+
+Closed connection at 12/12/1396 01:00:07 +03:30
+Opened connection at 12/12/1396 01:00:07 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 01:00:08 +03:30
+-- Completed in 222 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:08 +03:30
+Opened connection at 12/12/1396 01:00:09 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 01:00:09 +03:30
+-- Failed in 374 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 01:00:09 +03:30
+Opened connection at 12/12/1396 01:00:09 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 01:00:09 +03:30
+-- Completed in 19 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:09 +03:30
+Opened connection at 12/12/1396 01:00:09 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 01:00:09 +03:30
+-- Completed in 65 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:09 +03:30
+Opened connection at 12/12/1396 01:00:09 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 01:00:09 +03:30
+-- Completed in 28 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:09 +03:30
+Opened connection asynchronously at 12/12/1396 01:00:10 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:00:10 +03:30
+-- Completed in 69 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:10 +03:30
+Opened connection asynchronously at 12/12/1396 01:00:10 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:00:10 +03:30
+-- Completed in 71 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:10 +03:30
+Opened connection asynchronously at 12/12/1396 01:00:11 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 01:00:11 +03:30
+-- Completed in 42 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:11 +03:30
+Opened connection asynchronously at 12/12/1396 01:00:11 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 01:00:11 +03:30
+-- Completed in 20 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:11 +03:30
+Opened connection asynchronously at 12/12/1396 01:00:11 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 01:00:11 +03:30
+-- Completed in 56 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:11 +03:30
+Opened connection asynchronously at 12/12/1396 01:00:11 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 01:00:11 +03:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:11 +03:30
+Opened connection at 12/12/1396 01:00:12 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 12/12/1396 01:00:12 +03:30
+-- Completed in 51 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:12 +03:30
+Opened connection asynchronously at 12/12/1396 01:00:31 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:00:31 +03:30
+-- Completed in 132 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:31 +03:30
+Opened connection asynchronously at 12/12/1396 01:00:31 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:00:31 +03:30
+-- Completed in 45 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:00:31 +03:30
+Opened connection at 12/12/1396 01:01:36 +03:30
+Started transaction at 12/12/1396 01:01:36 +03:30
+INSERT [dbo].[Tags]([Name], [Description])
+VALUES (@0, NULL)
+SELECT [Id]
+FROM [dbo].[Tags]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+-- @0: 'تست دفع دوم' (Type = String, Size = -1)
+-- Executing at 12/12/1396 01:01:36 +03:30
+-- Completed in 307 ms with result: ProfiledDataReader
+
+Committed transaction at 12/12/1396 01:01:37 +03:30
+Closed connection at 12/12/1396 01:01:37 +03:30
+Disposed transaction at 12/12/1396 01:01:37 +03:30
+Opened connection asynchronously at 12/12/1396 01:01:38 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:01:38 +03:30
+-- Completed in 73 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:01:38 +03:30
+Opened connection asynchronously at 12/12/1396 01:01:38 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:01:38 +03:30
+-- Completed in 45 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:01:38 +03:30
+Opened connection asynchronously at 12/12/1396 01:01:57 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:01:57 +03:30
+-- Completed in 102 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:01:57 +03:30
+Opened connection asynchronously at 12/12/1396 01:01:57 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:01:57 +03:30
+-- Completed in 154 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:01:57 +03:30
+Opened connection asynchronously at 12/12/1396 01:02:01 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%ک%' (Type = String, Size = 4000)
+-- p__linq__1: '%ک%' (Type = String, Size = 4000)
+-- p__linq__2: '%ک%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:02:01 +03:30
+-- Completed in 62 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:02:01 +03:30
+Opened connection asynchronously at 12/12/1396 01:02:01 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%ک%' (Type = String, Size = 4000)
+-- p__linq__1: '%ک%' (Type = String, Size = 4000)
+-- p__linq__2: '%ک%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:02:01 +03:30
+-- Completed in 35 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:02:01 +03:30
+Opened connection asynchronously at 12/12/1396 01:02:05 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%کش%' (Type = String, Size = 4000)
+-- p__linq__1: '%کش%' (Type = String, Size = 4000)
+-- p__linq__2: '%کش%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:02:05 +03:30
+-- Completed in 33 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:02:05 +03:30
+Opened connection asynchronously at 12/12/1396 01:02:05 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%کش%' (Type = String, Size = 4000)
+-- p__linq__1: '%کش%' (Type = String, Size = 4000)
+-- p__linq__2: '%کش%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:02:05 +03:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:02:05 +03:30
+Opened connection asynchronously at 12/12/1396 01:02:13 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:02:13 +03:30
+-- Completed in 41 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:02:13 +03:30
+Opened connection asynchronously at 12/12/1396 01:02:13 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:02:13 +03:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:02:13 +03:30
+Opened connection asynchronously at 12/12/1396 01:02:14 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%3%' (Type = String, Size = 4000)
+-- p__linq__1: '%3%' (Type = String, Size = 4000)
+-- p__linq__2: '%3%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:02:14 +03:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:02:14 +03:30
+Opened connection asynchronously at 12/12/1396 01:02:14 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%3%' (Type = String, Size = 4000)
+-- p__linq__1: '%3%' (Type = String, Size = 4000)
+-- p__linq__2: '%3%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:02:14 +03:30
+-- Completed in 41 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:02:14 +03:30
+Opened connection asynchronously at 12/12/1396 01:02:17 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:02:17 +03:30
+-- Completed in 27 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:02:17 +03:30
+Opened connection asynchronously at 12/12/1396 01:02:17 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:02:17 +03:30
+-- Completed in 31 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:02:17 +03:30
+Opened connection asynchronously at 12/12/1396 01:03:37 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:03:37 +03:30
+-- Completed in 143 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:03:38 +03:30
+Opened connection asynchronously at 12/12/1396 01:03:38 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:03:38 +03:30
+-- Completed in 50 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:03:38 +03:30
+Opened connection asynchronously at 12/12/1396 01:03:46 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%1002%' (Type = String, Size = 4000)
+-- p__linq__1: '%1002%' (Type = String, Size = 4000)
+-- p__linq__2: '%1002%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:03:46 +03:30
+-- Completed in 72 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:03:46 +03:30
+Opened connection asynchronously at 12/12/1396 01:03:46 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%1002%' (Type = String, Size = 4000)
+-- p__linq__1: '%1002%' (Type = String, Size = 4000)
+-- p__linq__2: '%1002%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:03:46 +03:30
+-- Completed in 40 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:03:46 +03:30
+Opened connection asynchronously at 12/12/1396 01:03:50 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%52%' (Type = String, Size = 4000)
+-- p__linq__1: '%52%' (Type = String, Size = 4000)
+-- p__linq__2: '%52%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:03:50 +03:30
+-- Completed in 36 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:03:50 +03:30
+Opened connection asynchronously at 12/12/1396 01:03:50 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%52%' (Type = String, Size = 4000)
+-- p__linq__1: '%52%' (Type = String, Size = 4000)
+-- p__linq__2: '%52%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:03:50 +03:30
+-- Completed in 34 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:03:50 +03:30
+Opened connection asynchronously at 12/12/1396 01:04:01 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:04:01 +03:30
+-- Completed in 27 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:04:01 +03:30
+Opened connection asynchronously at 12/12/1396 01:04:01 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:04:01 +03:30
+-- Completed in 42 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:04:01 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:32 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:10:32 +03:30
+-- Completed in 121 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:32 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:32 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:10:32 +03:30
+-- Completed in 49 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:32 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:38 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] DESC
+-- Executing asynchronously at 12/12/1396 01:10:38 +03:30
+-- Completed in 31 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:38 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:38 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:10:38 +03:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:38 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:40 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] DESC
+-- Executing asynchronously at 12/12/1396 01:10:40 +03:30
+-- Completed in 58 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:40 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:40 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:10:40 +03:30
+-- Completed in 68 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:41 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:43 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] DESC
+-- Executing asynchronously at 12/12/1396 01:10:43 +03:30
+-- Completed in 183 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:43 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:43 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:10:43 +03:30
+-- Completed in 63 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:43 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:45 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] DESC
+-- Executing asynchronously at 12/12/1396 01:10:45 +03:30
+-- Completed in 39 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:45 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:45 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:10:45 +03:30
+-- Completed in 26 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:45 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:48 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:10:48 +03:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:48 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:48 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:10:48 +03:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:48 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:53 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:10:53 +03:30
+-- Completed in 65 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:53 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:53 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:10:53 +03:30
+-- Completed in 79 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:53 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:55 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:10:55 +03:30
+-- Completed in 30 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:55 +03:30
+Opened connection asynchronously at 12/12/1396 01:10:55 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:10:55 +03:30
+-- Completed in 106 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:10:55 +03:30
+Opened connection asynchronously at 12/12/1396 01:11:02 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:11:02 +03:30
+-- Completed in 52 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:11:02 +03:30
+Opened connection asynchronously at 12/12/1396 01:11:02 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:11:02 +03:30
+-- Completed in 54 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:11:02 +03:30
+Opened connection asynchronously at 12/12/1396 01:11:05 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:11:05 +03:30
+-- Completed in 84 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:11:05 +03:30
+Opened connection asynchronously at 12/12/1396 01:11:05 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:11:05 +03:30
+-- Completed in 73 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:11:05 +03:30
+Opened connection asynchronously at 12/12/1396 01:11:05 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:11:05 +03:30
+-- Completed in 59 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:11:05 +03:30
+Opened connection asynchronously at 12/12/1396 01:11:05 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:11:05 +03:30
+-- Completed in 58 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:11:05 +03:30
+Opened connection asynchronously at 12/12/1396 01:13:48 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:13:48 +03:30
+-- Completed in 135 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:13:48 +03:30
+Opened connection asynchronously at 12/12/1396 01:13:48 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:13:48 +03:30
+-- Completed in 89 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:13:48 +03:30
+Opened connection asynchronously at 12/12/1396 01:13:48 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:13:48 +03:30
+-- Completed in 126 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:13:48 +03:30
+Opened connection asynchronously at 12/12/1396 01:13:48 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:13:48 +03:30
+-- Completed in 38 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:13:48 +03:30
+Opened connection asynchronously at 12/12/1396 01:15:58 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:15:58 +03:30
+-- Completed in 76 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:15:58 +03:30
+Opened connection asynchronously at 12/12/1396 01:15:58 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:15:58 +03:30
+-- Completed in 52 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:15:58 +03:30
+Opened connection asynchronously at 12/12/1396 01:15:58 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:15:58 +03:30
+-- Completed in 42 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:15:59 +03:30
+Opened connection asynchronously at 12/12/1396 01:15:59 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:15:59 +03:30
+-- Completed in 92 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:15:59 +03:30
+Opened connection asynchronously at 12/12/1396 01:19:35 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:19:35 +03:30
+Opened connection asynchronously at 12/12/1396 01:19:35 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:19:35 +03:30
+-- Completed in 280 ms with result: ProfiledDataReader
+
+-- Completed in 280 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:19:35 +03:30
+Closed connection at 12/12/1396 01:19:35 +03:30
+Opened connection asynchronously at 12/12/1396 01:19:35 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:19:35 +03:30
+Opened connection asynchronously at 12/12/1396 01:19:35 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:19:35 +03:30
+-- Completed in 106 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:19:35 +03:30
+-- Completed in 106 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:19:35 +03:30
+Opened connection asynchronously at 12/12/1396 01:20:29 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:20:29 +03:30
+-- Completed in 488 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:20:29 +03:30
+Opened connection asynchronously at 12/12/1396 01:20:29 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:20:29 +03:30
+Opened connection asynchronously at 12/12/1396 01:20:29 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:20:29 +03:30
+-- Completed in 5 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:20:29 +03:30
+-- Completed in 5 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:20:29 +03:30
+Opened connection asynchronously at 12/12/1396 01:20:29 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+        WHERE ([Extent1].[Name] LIKE @p__linq__0 ESCAPE N'~') OR ([Extent1].[Description] LIKE @p__linq__1 ESCAPE N'~') OR ( CAST( [Extent1].[Id] AS nvarchar(max)) LIKE @p__linq__2 ESCAPE N'~')
+    )  AS [GroupBy1]
+-- p__linq__0: '%تست%' (Type = String, Size = 4000)
+-- p__linq__1: '%تست%' (Type = String, Size = 4000)
+-- p__linq__2: '%تست%' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:20:29 +03:30
+-- Completed in 75 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:20:30 +03:30
+Opened connection asynchronously at 12/12/1396 01:20:42 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:20:42 +03:30
+-- Completed in 54 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:20:42 +03:30
+Opened connection asynchronously at 12/12/1396 01:20:42 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:20:42 +03:30
+-- Completed in 67 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:20:42 +03:30
+Opened connection asynchronously at 12/12/1396 01:20:53 +03:30
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[Description] AS [Description]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[Description] AS [Description], 
+        1 AS [C1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [Project1]
+    ORDER BY [Project1].[Name] ASC
+-- Executing asynchronously at 12/12/1396 01:20:53 +03:30
+-- Completed in 35 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:20:53 +03:30
+Opened connection asynchronously at 12/12/1396 01:20:53 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Tags] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 12/12/1396 01:20:53 +03:30
+-- Completed in 48 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:20:53 +03:30
+Opened connection at 12/12/1396 01:26:58 +03:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 12/12/1396 01:26:59 +03:30
+-- Completed in 29 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:26:59 +03:30
+Opened connection at 12/12/1396 01:27:01 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 01:27:01 +03:30
+-- Completed in 788 ms with result: 1
+
+Closed connection at 12/12/1396 01:27:02 +03:30
+Opened connection at 12/12/1396 01:27:02 +03:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 12/12/1396 01:27:02 +03:30
+-- Completed in 17 ms with result: 1
+
+Closed connection at 12/12/1396 01:27:02 +03:30
+Opened connection at 12/12/1396 01:27:02 +03:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 01:27:03 +03:30
+-- Completed in 126 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:27:03 +03:30
+Opened connection at 12/12/1396 01:27:03 +03:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 12/12/1396 01:27:03 +03:30
+-- Failed in 378 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 12/12/1396 01:27:04 +03:30
+Opened connection at 12/12/1396 01:27:04 +03:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 01:27:04 +03:30
+-- Completed in 52 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:27:04 +03:30
+Opened connection at 12/12/1396 01:27:04 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 01:27:04 +03:30
+-- Completed in 32 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:27:04 +03:30
+Opened connection at 12/12/1396 01:27:04 +03:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 12/12/1396 01:27:04 +03:30
+-- Completed in 17 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:27:04 +03:30
+Opened connection asynchronously at 12/12/1396 01:27:06 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:27:06 +03:30
+-- Completed in 98 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:27:06 +03:30
+Opened connection asynchronously at 12/12/1396 01:27:06 +03:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 12/12/1396 01:27:06 +03:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:27:07 +03:30
+Opened connection asynchronously at 12/12/1396 01:27:07 +03:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 01:27:07 +03:30
+-- Completed in 26 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:27:07 +03:30
+Opened connection asynchronously at 12/12/1396 01:27:07 +03:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 01:27:07 +03:30
+-- Completed in 46 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:27:07 +03:30
+Opened connection asynchronously at 12/12/1396 01:27:07 +03:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 01:27:07 +03:30
+-- Completed in 69 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:27:07 +03:30
+Opened connection asynchronously at 12/12/1396 01:27:07 +03:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 12/12/1396 01:27:07 +03:30
+-- Completed in 48 ms with result: ProfiledDataReader
+
+Closed connection at 12/12/1396 01:27:07 +03:30

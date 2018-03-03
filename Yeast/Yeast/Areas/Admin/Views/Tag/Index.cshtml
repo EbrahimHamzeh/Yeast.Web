@@ -61,18 +61,24 @@
 				</div>
 				<div class="portlet-body form">
 					<a href="@Url.Action("Add")" class="btn btn-default popovers" data-container="body" data-trigger="hover" data-placement="bottom" data-content="میتوانید نوع جدید ایجاد کنید" data-original-title="ایحاد">جدید</a>
-					<table data-toggle="table"
+					<table  id="tableTagList"
+								 data-toggle="table"
 								 data-url="@Url.Action("DataList")"
 								 data-pagination="true"
 								 data-side-pagination="server"
 								 data-page-list="[5, 10, 20, 50, 100, 200]"
 								 data-search="true"
-								 data-maintain-selected="true">
+								 data-search-on-enter-key="true"
+								 data-maintain-selected="true"
+								 data-cookie="true"
+								 data-cookie-id-table="saveId"
+								 data-mobile-responsive="true"
+								 data-check-on-init="true">
 						<thead>
 							<tr>
 								<th data-field="state" data-checkbox="true"></th>
 								<th data-field="Id" data-align="right" data-sortable="false">ردیف</th>
-								<th data-field="Name" data-align="center" data-sortable="true">عنوان</th>
+								<th data-field="Title" data-align="center" data-sortable="true">عنوان</th>
 								<th data-field="Description" data-align="center" data-sortable="true">توضیحات</th>
 								<th data-field="" data-align="center" data-sortable="true">عملیات</th>
 							</tr>
@@ -86,4 +92,5 @@
 </div>
 @section Javascripts{
 <script src="~/Content/js/bootstrap-table/bootstrap-table.js"></script>
+<script src="~/Content/js/bootstrap-table/bootstrap-table-cookie.min.js"></script>
 }

@@ -41,23 +41,28 @@ namespace Yeast.Servicelayer.EFServices
 			return await _tags.AsNoTracking().Cacheable().ToListAsync();
 		}
 
-		public IList<TagList> GetPaging(string search = "", string order = "asc", int offset = 0, int limit = 10)
+		public async Task<DataTableList<TagList>> GetDataTable(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10)
 		{
 			IQueryable<TagList> tagList;
+			tagList = _tags.AsNoTracking().Select(x => new TagList { No = 1, Title = x.Name, Description = x.Description, Id = x.Id });
+
+			if (!string.IsNullOrEmpty(search))
+			{
+				tagList = tagList.Where(x => x.Title.Contains(search) || x.Description.Contains(search) || x.Id.ToString().Contains(search));
+			}
+
 			if (order == "asc")
 			{
-				tagList = _tags.AsNoTracking().Select(x => new TagList { No = 1, Title = x.Name, Description = x.Description, Id = x.Id }).Where(x => x.Title.Contains(search) || x.Description.Contains(search) || x.Id.ToString().Contains(search)).OrderBy(x => x.Title).Take(limit).Skip(offset).Cacheable();
+				tagList = tagList.OrderBy(x => x.Title);
 			}
 			else
 			{
-				tagList = _tags.AsNoTracking().Select(x => new TagList { No = 1, Title = x.Name, Description = x.Description, Id = x.Id }).Where(x => x.Title.Contains(search) || x.Description.Contains(search) || x.Id.ToString().Contains(search)).OrderByDescending(x => x.Title).Take(limit).Skip(offset).Cacheable();
+				tagList = tagList.OrderByDescending(x => x.Title);
 			}
-			return (IList<TagList>)tagList.ToListAsync();
-		}
 
-		public DataTableList<TagList> GetDataTable(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10)
-		{
-			return new DataTableList<TagList> { rows = GetPaging(search, order, offset, limit), total = Count };
+			tagList.Take(limit).Skip(offset).Cacheable();
+
+			return new DataTableList<TagList> { rows = await tagList.ToListAsync(), total = await tagList.CountAsync() };
 		}
 
 		public void Remove(int id)
