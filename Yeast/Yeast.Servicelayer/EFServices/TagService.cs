@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Dynamic;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Servicelayer.Interfaces;
 using Yeast.Model.Admin;
 using System.Threading.Tasks;
+using Yeast.Utilities.Helpers;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -43,26 +45,34 @@ namespace Yeast.Servicelayer.EFServices
 
 		public async Task<DataTableList<TagList>> GetDataTable(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10)
 		{
-			IQueryable<TagList> tagList;
-			tagList = _tags.AsNoTracking().Select(x => new TagList { No = 1, Title = x.Name, Description = x.Description, Id = x.Id });
+			IQueryable<Tag> tagList;
+			tagList = _tags.AsNoTracking();
 
 			if (!string.IsNullOrEmpty(search))
 			{
-				tagList = tagList.Where(x => x.Title.Contains(search) || x.Description.Contains(search) || x.Id.ToString().Contains(search));
+				tagList = tagList.Where("Name.Contains(@0) or Description.Contains(@0)", search);
 			}
-
 			if (order == "asc")
 			{
-				tagList = tagList.OrderBy(x => x.Title);
+				tagList = tagList.OrderBy(sort);
+
 			}
 			else
 			{
-				tagList = tagList.OrderByDescending(x => x.Title);
+				tagList = tagList.OrderBy(sort + " descending");
 			}
 
 			tagList.Take(limit).Skip(offset).Cacheable();
 
-			return new DataTableList<TagList> { rows = await tagList.ToListAsync(), total = await tagList.CountAsync() };
+			var tag = tagList.AsEnumerable().Select((x, index) => new TagList
+			{
+				No = (++index).ConvertToPersianString(),
+				Title = x.Name,
+				Description = x.Description,
+				Id = x.Id
+			});
+
+			return new DataTableList<TagList> { rows = tag.ToList(), total = await tagList.CountAsync() };
 		}
 
 		public void Remove(int id)
