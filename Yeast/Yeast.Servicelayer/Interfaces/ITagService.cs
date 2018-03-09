@@ -2,17 +2,19 @@
 using System.Threading.Tasks;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
+using System.Runtime.CompilerServices;
 
 namespace Yeast.Servicelayer.Interfaces
 {
 	public interface ITagService
 	{
-		int Count { get; }
+		ConfiguredTaskAwaitable<int> CountAsync { get; }
 		void Add(TagAdd tag);
 		void Remove(int id);
-		void Update(TagEdit tag);
+		void Update(Tag tag);
 		Tag Find(int id);
-		Task<IList<Tag>> GetAll();
-		Task<DataTableList<TagList>> GetDataTable(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10);
+		TagEdit FindForEdit(int id);
+		Task<IList<Tag>> GetAllAsync();
+		Task<DataTableList<TagList>> GetDataTableAsync(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10);
 	}
 }

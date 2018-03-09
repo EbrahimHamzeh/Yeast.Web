@@ -1,4 +1,4 @@
-﻿
+﻿@using Yeast.Utilities.Helpers;
 @{
 	ViewBag.Title = "تگ‌ها";
 	ViewBag.SelectedPage = "Tag";
@@ -6,8 +6,8 @@
 
 }
 @section CssStyle{
-<link href="~/Content/css/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
-<link href="~/Content/css/bootstrap-table/bootstrap-editable.css" rel="stylesheet" />
+	<link href="~/Content/css/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
+	<link href="~/Content/css/sweetalert.css" rel="stylesheet" />
 }
 <div class="page-content">
 	<!-- BEGIN PAGE HEADER-->
@@ -60,10 +60,12 @@
 					</div>
 				</div>
 				<div class="portlet-body form">
+					@Html.AntiForgeryToken()
 					<a href="@Url.Action("Add")" class="btn btn-default popovers" data-container="body" data-trigger="hover" data-placement="bottom" data-content="میتوانید نوع جدید ایجاد کنید" data-original-title="ایحاد">جدید</a>
-					<table  id="tableTagList"
+					<table id="tableTagList"
 								 data-toggle="table"
 								 data-url="@Url.Action("DataList")"
+								 data-unique-id="Id"
 								 data-pagination="true"
 								 data-side-pagination="server"
 								 data-page-list="[5, 10, 20, 50, 100, 200]"
@@ -73,14 +75,21 @@
 								 data-cookie="true"
 								 data-cookie-id-table="saveId"
 								 data-mobile-responsive="true"
-								 data-check-on-init="true">
+								 data-check-on-init="true"
+								 data-show-refresh="true"
+								 data-show-toggle="true"
+								 data-show-columns="true"
+								 data-buttons-align="right"
+							   data-filter-control="true"
+							   data-click-to-select="true" 
+								 data-icons-prefix="fa">
 						<thead>
 							<tr>
 								<th data-field="state" data-checkbox="true"></th>
-								<th data-field="No" data-align="center" data-width="10px" data-sortable="false">ردیف</th>
-								<th data-field="Title" data-align="center" data-sortable="true">عنوان</th>
-								<th data-field="Description" data-align="center" data-sortable="true">توضیحات</th>
-								<th data-field="" data-align="center">عملیات</th>
+								<th data-field="No" data-align="center" data-width="10px">ردیف</th>
+								<th data-field="Name" data-align="center" data-sortable="true" data-filter-control="input">عنوان</th>
+								<th data-field="Description" data-align="center" data-sortable="true" data-filter-control="input">توضیحات</th>
+								<th data-formatter="actionFormatter" data-events="actionEvents" data-align="center">عملیات</th>
 							</tr>
 						</thead>
 					</table>
@@ -91,6 +100,58 @@
 	</div>
 </div>
 @section Javascripts{
-<script src="~/Content/js/bootstrap-table/bootstrap-table.js"></script>
+	<script src="~/Content/js/bootstrap-table/bootstrap-table.js"></script>
+	<script src="~/Content/js/bootstrap-table/bootstrap-table-select2-filter.js"></script>
 <script src="~/Content/js/bootstrap-table/bootstrap-table-cookie.min.js"></script>
+	<script src="~/Content/js/sweetalert.js"></script>
+	<script type="text/javascript">
+		function actionFormatter(value, row, index)
+		{
+			return [
+					'<a class="edit ml10" href="@Url.Action("Edit")/' + row.Id + '" data-placement="top" data-toggle="tooltip" data-original-title ="ویرایش" title ="ویرایش این ردیف" style="color:green; font-size:24px; padding:0 5px;">',
+					'<i class="fa fa-edit"></i>',
+					'</a>',
+					'<a class="remove ml10" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title ="حذف" title ="حذف این ردیف" style="color:#f86c6b; font-size:24px; padding:0 5px;">',
+					'<i class="fa fa-remove"></i>',
+					'</a>'
+			].join('');
+		}
+		window.actionEvents = {
+			'click .remove': function (e, value, row, index)
+			{
+				swal({
+					title: 'هشدار',
+					text: 'آیا از حذف' + ' ' + row.Name + ' ' + 'مظمئن هستید؟',
+					type: "warning",
+					showCancelButton: true,
+					confirmButtonColor: '#DD6B55',
+					confirmButtonText: 'بله',
+					cancelButtonText: 'نه',
+					closeOnConfirm: false,
+					closeOnCancel: false
+				},
+			function (isConfirm)
+			{
+				if (isConfirm) {
+					var url = '@Url.Action("Delete")';
+					var data = { id: row.Id, @Html.AntiForgeryTokenForAjaxPost()};
+					$.ajax({
+						type: "POST",
+						url: url,
+						data: data
+					}).done(function (msg)
+					{
+						swal("موفیت آمیز", "با موفقیت حذف شد", "success")
+						$('#tableTagList').bootstrapTable('removeByUniqueId', row.Id);
+					}).fail(function (jqXHR, textStatus)
+					{
+						swal("خطا", "متاسفانه با شکست مواجه شد", "error");
+					});
+				} else {
+					swal("کنسل", "روند حذف کنسل شد", "error");
+				}
+			});
+			}
+		};
+	</script>
 }

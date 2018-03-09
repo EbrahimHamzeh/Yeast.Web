@@ -200,9 +200,11 @@
     <Content Include="Content\css\bootstrap-table\bootstrap-table.css" />
     <Content Include="Content\css\components-rtl.css" />
     <Content Include="Content\css\default-rtl.css" />
+    <Content Include="Content\css\ladda-themeless-rtl.min.css" />
     <Content Include="Content\css\layout-rtl.css" />
     <Content Include="Content\css\plugins-rtl.css" />
     <Content Include="Content\css\simple-line-icons.css" />
+    <Content Include="Content\css\sweetalert.css" />
     <Content Include="Content\css\YeastFont.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\Yeast-ltr.css" />
@@ -241,7 +243,10 @@
     <Content Include="Content\images\s9-min-rs__06198.1499309930.jpg" />
     <Content Include="Content\images\slideshow_image_1-min-rs.jpg" />
     <Content Include="Content\images\slideshow_image_2-min.jpg" />
+    <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\bootstrap-switch.min.js" />
+    <Content Include="Content\js\bootstrap-table\bootstrap-table-cookie.min.js" />
+    <Content Include="Content\js\bootstrap-table\bootstrap-table-select2-filter.js" />
     <Content Include="Content\js\bootstrap-table\bootstrap-table.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery-3.3.1.min.js" />
@@ -249,8 +254,11 @@
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\jquery.slimscroll.min.js" />
     <Content Include="Content\js\js.cookie.min.js" />
+    <Content Include="Content\js\ladda.min.js" />
     <Content Include="Content\js\layout.min.js" />
     <Content Include="Content\js\quick-nav.min.js" />
+    <Content Include="Content\js\spin.min.js" />
+    <Content Include="Content\js\sweetalert.js" />
     <Content Include="Content\js\theme-bundle.chunk.16.js" />
     <Content Include="Content\js\Yeast.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="BaseController\BaseController.cs" />
     <Compile Include="Helpers\Extention.cs" />
+    <Compile Include="Helpers\HtmlAjax.cs" />
     <Compile Include="Helpers\PersianHelper.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

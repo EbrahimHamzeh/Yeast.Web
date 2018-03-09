@@ -16,20 +16,23 @@ namespace Yeast.Areas.Admin.Controllers
 	{
 		readonly ITagService _tagService;
 		readonly IUnitOfWork _uow;
+
 		public TagController(IUnitOfWork uow, ITagService tagService)
 		{
 			_uow = uow;
 			_tagService = tagService;
 		}
+
 		// GET: Admin/Tag
 		public virtual ActionResult Index()
 		{
 			return View();
 		}
 
-		public virtual async Task<ActionResult> DataList(string search, string sort= "Title", string order = "asc" , int offset = 0 ,int limit = 10)
+		// Get: Ajax Admin/DataList
+		public virtual async Task<ActionResult> DataList(string search, string sort = "Name", string order = "asc", int offset = 0, int limit = 10)
 		{
-			return Json(await _tagService.GetDataTable(search, sort, order, offset, limit).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
+			return Json(await _tagService.GetDataTableAsync(search, sort, order, offset, limit).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
 		}
 
 		// GET: Admin/Tag/Add
@@ -41,14 +44,16 @@ namespace Yeast.Areas.Admin.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
+		// Post: Admin/Tag/Add/id
 		public virtual ActionResult Add(TagAdd model)
 		{
 			if (!ModelState.IsValid)
 			{
 				return View(model);
 			}
+
 			_tagService.Add(model);
-			_uow.SaveAllChanges();	
+			_uow.SaveAllChanges();
 			return RedirectToAction("Index");
 		}
 
@@ -56,27 +61,40 @@ namespace Yeast.Areas.Admin.Controllers
 		public virtual ActionResult Edit(int? id)
 		{
 			if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			Tag tag = _tagService.Find(id??0);
+			TagEdit tag = _tagService.FindForEdit(id ?? 0);
 			if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			return View(tag);
 		}
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
+		// Post: Admin/Tag/Edit/id
 		public virtual ActionResult Edit(int id)
 		{
 			Tag tagUpdate = _tagService.Find(id);
 			if (tagUpdate == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-			if (TryUpdateModel(tagUpdate, "", new string[] { "Title", "Description" }))
+			if (TryUpdateModel(tagUpdate, "", new string[] { "Name", "Description" }))
 			{
-				if(!ModelState.IsValid)
+				if (!ModelState.IsValid)
 				{
 					return View(tagUpdate);
 				}
 				_uow.SaveAllChanges();
 			}
-				return View();
+			return RedirectToAction("Index"); ;
+		}
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		// Post: Admin/Tag/Delete/id
+		public virtual ActionResult Delete(int id)
+		{
+			Tag tag = _tagService.Find(id);
+			if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			_tagService.Remove(id);
+			_uow.SaveAllChanges();
+			return Json(new { success = true });
 		}
 	}
 }

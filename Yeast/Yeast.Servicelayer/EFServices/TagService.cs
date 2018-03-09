@@ -10,6 +10,7 @@ using Yeast.Servicelayer.Interfaces;
 using Yeast.Model.Admin;
 using System.Threading.Tasks;
 using Yeast.Utilities.Helpers;
+using System.Runtime.CompilerServices;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -20,17 +21,17 @@ namespace Yeast.Servicelayer.EFServices
 		{
 			_tags = uow.Set<Tag>();
 		}
-		public int Count
+		public ConfiguredTaskAwaitable<int> CountAsync
 		{
 			get
 			{
-				return _tags.Cacheable().Count();
+				return _tags.Cacheable().CountAsync().ConfigureAwait(false);
 			}
 		}
 
 		public void Add(TagAdd tag)
 		{
-			_tags.Add(new Tag { Name = tag.Title, Description = tag.Description });
+			_tags.Add(new Tag { Name = tag.Name, Description = tag.Description });
 		}
 
 		public Tag Find(int id)
@@ -38,41 +39,49 @@ namespace Yeast.Servicelayer.EFServices
 			return _tags.Find(id);
 		}
 
-		public async Task<IList<Tag>> GetAll()
+		public TagEdit FindForEdit(int id)
+		{
+			Tag tag = _tags.Find(id);
+			return new TagEdit {
+				Name = tag.Name,
+				Description = tag.Description
+			};
+		}
+
+		public async Task<IList<Tag>> GetAllAsync()
 		{
 			return await _tags.AsNoTracking().Cacheable().ToListAsync();
 		}
 
-		public async Task<DataTableList<TagList>> GetDataTable(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10)
+		public async Task<DataTableList<TagList>> GetDataTableAsync(string search = "", string sort = "Name", string order = "asc", int offset = 0, int limit = 10)
 		{
-			IQueryable<Tag> tagList;
-			tagList = _tags.AsNoTracking();
+			IQueryable<Tag> tagList = _tags.AsNoTracking();
+			int total = 0;
 
+			// Search
 			if (!string.IsNullOrEmpty(search))
 			{
 				tagList = tagList.Where("Name.Contains(@0) or Description.Contains(@0)", search);
 			}
-			if (order == "asc")
-			{
-				tagList = tagList.OrderBy(sort);
 
-			}
-			else
-			{
-				tagList = tagList.OrderBy(sort + " descending");
-			}
+			total = await tagList.CountAsync();
 
+			// Ordering data 
+			tagList = tagList.OrderBy(sort + (order == "asc" ? string.Empty : " descending"));
+
+			// Paging
 			tagList.Take(limit).Skip(offset).Cacheable();
 
-			var tag = tagList.AsEnumerable().Select((x, index) => new TagList
+			// Create List Of viewModel
+			var tag = (await tagList.ToListAsync()).Select((x, index) => new TagList
 			{
 				No = (++index).ConvertToPersianString(),
-				Title = x.Name,
-				Description = x.Description,
-				Id = x.Id
+				Id = x.Id,
+				Name = x.Name,
+				Description = x.Description
 			});
 
-			return new DataTableList<TagList> { rows = tag.ToList(), total = await tagList.CountAsync() };
+			return new DataTableList<TagList> { rows = tag.ToList(), total = total };
 		}
 
 		public void Remove(int id)
@@ -80,10 +89,10 @@ namespace Yeast.Servicelayer.EFServices
 			_tags.Remove(_tags.Find(id));
 		}
 
-		public void Update(TagEdit tag)
+		public void Update(Tag tag)
 		{
 			Tag selectedTag = _tags.Find(tag.Id);
-			selectedTag.Name = tag.Title;
+			selectedTag.Name = tag.Name;
 			selectedTag.Description = tag.Description;
 		}
 	}
