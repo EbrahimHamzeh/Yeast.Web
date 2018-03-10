@@ -41,6 +41,7 @@ namespace T4MVC
         public readonly string Name = "Admin";
         public Yeast.Areas.Admin.Controllers.DashboardController Dashboard = new Yeast.Areas.Admin.Controllers.T4MVC_DashboardController();
         public Yeast.Areas.Admin.Controllers.PostController Post = new Yeast.Areas.Admin.Controllers.T4MVC_PostController();
+        public Yeast.Areas.Admin.Controllers.ProductController Product = new Yeast.Areas.Admin.Controllers.T4MVC_ProductController();
         public Yeast.Areas.Admin.Controllers.TagController Tag = new Yeast.Areas.Admin.Controllers.T4MVC_TagController();
         public T4MVC.Admin.SharedController Shared = new T4MVC.Admin.SharedController();
     }
@@ -111,9 +112,11 @@ namespace Links
             public static readonly string components_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/components-rtl.min.css") ? Url("components-rtl.min.css") : Url("components-rtl.css");
             public static readonly string default_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/default-rtl.min.css") ? Url("default-rtl.min.css") : Url("default-rtl.css");
             public static readonly string font_awesome_min_css = Url("font-awesome.min.css");
+            public static readonly string ladda_themeless_rtl_min_css = Url("ladda-themeless-rtl.min.css");
             public static readonly string layout_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/layout-rtl.min.css") ? Url("layout-rtl.min.css") : Url("layout-rtl.css");
             public static readonly string plugins_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/plugins-rtl.min.css") ? Url("plugins-rtl.min.css") : Url("plugins-rtl.css");
             public static readonly string simple_line_icons_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/simple-line-icons.min.css") ? Url("simple-line-icons.min.css") : Url("simple-line-icons.css");
+            public static readonly string sweetalert_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/sweetalert.min.css") ? Url("sweetalert.min.css") : Url("sweetalert.css");
             public static readonly string Yeast_ltr_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Yeast-ltr.min.css") ? Url("Yeast-ltr.min.css") : Url("Yeast-ltr.css");
             public static readonly string Yeast_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Yeast.min.css") ? Url("Yeast.min.css") : Url("Yeast.css");
             public static readonly string YeastFont_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/YeastFont.min.css") ? Url("YeastFont.min.css") : Url("YeastFont.css");
@@ -215,12 +218,15 @@ namespace Links
             public const string UrlPath = "~/Content/js";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string app_min_js = Url("app.min.js");
             public static readonly string bootstrap_switch_min_js = Url("bootstrap-switch.min.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class bootstrap_table {
                 public const string UrlPath = "~/Content/js/bootstrap-table";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string bootstrap_table_cookie_min_js = Url("bootstrap-table-cookie.min.js");
+                public static readonly string bootstrap_table_select2_filter_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-table-select2-filter.min.js") ? Url("bootstrap-table-select2-filter.min.js") : Url("bootstrap-table-select2-filter.js");
                 public static readonly string bootstrap_table_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-table.min.js") ? Url("bootstrap-table.min.js") : Url("bootstrap-table.js");
             }
         
@@ -230,8 +236,11 @@ namespace Links
             public static readonly string jquery_min_js = Url("jquery.min.js");
             public static readonly string jquery_slimscroll_min_js = Url("jquery.slimscroll.min.js");
             public static readonly string js_cookie_min_js = Url("js.cookie.min.js");
+            public static readonly string ladda_min_js = Url("ladda.min.js");
             public static readonly string layout_min_js = Url("layout.min.js");
             public static readonly string quick_nav_min_js = Url("quick-nav.min.js");
+            public static readonly string spin_min_js = Url("spin.min.js");
+            public static readonly string sweetalert_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/sweetalert.min.js") ? Url("sweetalert.min.js") : Url("sweetalert.js");
             public static readonly string theme_bundle_chunk_16_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/theme-bundle.chunk.16.min.js") ? Url("theme-bundle.chunk.16.min.js") : Url("theme-bundle.chunk.16.js");
             public static readonly string Yeast_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Yeast.min.js") ? Url("Yeast.min.js") : Url("Yeast.js");
         }
@@ -269,9 +278,11 @@ namespace Links
                     public static readonly string components_rtl_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/components-rtl.css");
                     public static readonly string default_rtl_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/default-rtl.css");
                     public static readonly string font_awesome_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/font-awesome.min.css");
+                    public static readonly string ladda_themeless_rtl_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/ladda-themeless-rtl.min.css");
                     public static readonly string layout_rtl_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/layout-rtl.css");
                     public static readonly string plugins_rtl_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/plugins-rtl.css");
                     public static readonly string simple_line_icons_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/simple-line-icons.css");
+                    public static readonly string sweetalert_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/sweetalert.css");
                     public static readonly string Yeast_ltr_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/Yeast-ltr.css");
                     public static readonly string Yeast_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/Yeast.css");
                     public static readonly string YeastFont_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/YeastFont.css");
@@ -325,11 +336,14 @@ namespace Links
                 {
                     public static class Assets
                     {
+                        public static readonly string bootstrap_table_cookie_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-table/bootstrap-table-cookie.min.js"); 
+                        public static readonly string bootstrap_table_select2_filter_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-table/bootstrap-table-select2-filter.js"); 
                         public static readonly string bootstrap_table_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-table/bootstrap-table.js"); 
                     }
                 }
                 public static class Assets
                 {
+                    public static readonly string app_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/app.min.js"); 
                     public static readonly string bootstrap_switch_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-switch.min.js"); 
                     public static readonly string bootstrap_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap.min.js"); 
                     public static readonly string jquery_3_3_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery-3.3.1.min.js"); 
@@ -337,8 +351,11 @@ namespace Links
                     public static readonly string jquery_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery.min.js"); 
                     public static readonly string jquery_slimscroll_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery.slimscroll.min.js"); 
                     public static readonly string js_cookie_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/js.cookie.min.js"); 
+                    public static readonly string ladda_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/ladda.min.js"); 
                     public static readonly string layout_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/layout.min.js"); 
                     public static readonly string quick_nav_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/quick-nav.min.js"); 
+                    public static readonly string spin_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/spin.min.js"); 
+                    public static readonly string sweetalert_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/sweetalert.js"); 
                     public static readonly string theme_bundle_chunk_16_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/theme-bundle.chunk.16.js"); 
                     public static readonly string Yeast_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/Yeast.js"); 
                 }

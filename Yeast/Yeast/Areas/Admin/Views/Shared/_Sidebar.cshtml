@@ -103,11 +103,12 @@ foreach (string item in args)
 					@GetSelectedTag("Tag")
 				</a>
 			</li>
-			<li class="nav-item  ">
-				<a href="javascript:;" class="nav-link nav-toggle">
-					<i class="fa fa-briefcase"></i>
-					<span class="title">محصولات</span>
-				</a>
+			<li class="nav-item  @GetActive("Product")">
+                <a href="@Url.Action(MVC.Admin.Product.Index())" class="nav-link nav-toggle">
+                    <i class="fa fa-briefcase"></i>
+                    <span class="title">محصولات</span>
+                    @GetSelectedTag("Product")
+                </a>
 				
 			</li>
 			<li class="nav-item  ">

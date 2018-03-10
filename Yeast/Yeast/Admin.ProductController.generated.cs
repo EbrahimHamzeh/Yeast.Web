@@ -25,10 +25,10 @@ using System.Web.Routing;
 using T4MVC;
 namespace Yeast.Areas.Admin.Controllers
 {
-    public partial class TagController
+    public partial class ProductController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected TagController(Dummy d) { }
+        protected ProductController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -77,13 +77,13 @@ namespace Yeast.Areas.Admin.Controllers
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public TagController Actions { get { return MVC.Admin.Tag; } }
+        public ProductController Actions { get { return MVC.Admin.Product; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "Admin";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Tag";
+        public readonly string Name = "Product";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Tag";
+        public const string NameConst = "Product";
         [GeneratedCode("T4MVC", "2.0")]
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -159,16 +159,16 @@ namespace Yeast.Areas.Admin.Controllers
                 public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
             }
-            public readonly string Add = "~/Areas/Admin/Views/Tag/Add.cshtml";
-            public readonly string Edit = "~/Areas/Admin/Views/Tag/Edit.cshtml";
-            public readonly string Index = "~/Areas/Admin/Views/Tag/Index.cshtml";
+            public readonly string Add = "~/Areas/Admin/Views/Product/Add.cshtml";
+            public readonly string Edit = "~/Areas/Admin/Views/Product/Edit.cshtml";
+            public readonly string Index = "~/Areas/Admin/Views/Product/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_TagController : Yeast.Areas.Admin.Controllers.TagController
+    public partial class T4MVC_ProductController : Yeast.Areas.Admin.Controllers.ProductController
     {
-        public T4MVC_TagController() : base(Dummy.Instance) { }
+        public T4MVC_ProductController() : base(Dummy.Instance) { }
 
         [NonAction]
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
@@ -209,10 +209,10 @@ namespace Yeast.Areas.Admin.Controllers
         }
 
         [NonAction]
-        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Yeast.Model.Admin.TagAdd model);
+        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Yeast.Model.Admin.ProductAdd model);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Add(Yeast.Model.Admin.TagAdd model)
+        public override System.Web.Mvc.ActionResult Add(Yeast.Model.Admin.ProductAdd model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Add);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);

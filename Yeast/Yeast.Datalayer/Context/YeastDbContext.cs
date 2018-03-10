@@ -12,6 +12,7 @@ namespace Yeast.Datalayer.Context
 	{
 		public DbSet<Comment> Comments { get; set; }
 		public DbSet<Tag> Tags { get; set; }
+		public DbSet<Product> Products { get; set; }
 		public DbSet<Post> Posts { get; set; }
 		public DbSet<PostTranslate> PostTranslates { get; set; }
 		public DbSet<Category> Categories { get; set; }
@@ -25,6 +26,8 @@ namespace Yeast.Datalayer.Context
 
 			modelBuilder.Configurations.Add(new CommentConfig());
 			modelBuilder.Configurations.Add(new UserConfig());
+			modelBuilder.Configurations.Add(new TagConfig());
+			modelBuilder.Configurations.Add(new ProductConfig());
 			modelBuilder.Configurations.Add(new PostTranslateConfig());
 			modelBuilder.Configurations.Add(new CategoryConfig());
 			modelBuilder.Configurations.Add(new OptionConfig());

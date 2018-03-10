@@ -69,6 +69,7 @@
     <Compile Include="Entities\CustomUserLogin.cs" />
     <Compile Include="Entities\CustomUserRole.cs" />
     <Compile Include="Entities\PostTranslate.cs" />
+    <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="Entities\Option.cs" />
     <Compile Include="Entities\User.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="EntityConfiguration\CategoryConfig.cs" />
     <Compile Include="EntityConfiguration\OptionConfig.cs" />
     <Compile Include="EntityConfiguration\PostConfig.cs" />
+    <Compile Include="EntityConfiguration\ProductConfig.cs" />
     <Compile Include="EntityConfiguration\UserConfig.cs" />
     <Compile Include="EntityConfiguration\TagConfig.cs" />
     <Compile Include="EntityConfiguration\CommentConfig.cs" />

@@ -65,6 +65,7 @@ namespace Yeast.IocConfig
 
 				x.For<ICategoryService>().Use<CategoryService>();
 				x.For<ITagService>().Use<TagService>();
+				x.For<IProductService>().Use<ProductService>();
 				//dynamicProxy.CreateInterfaceProxyWithTarget(myTypeInterface, new CacheInterceptor())).Use<UserService>();    TODO: Hamzeh-CacheInterceptor
 			});
 		}
