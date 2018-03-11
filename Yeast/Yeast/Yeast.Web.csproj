@@ -251,8 +251,10 @@
     <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\bootstrap-switch.min.js" />
     <Content Include="Content\js\bootstrap-table\bootstrap-table-cookie.min.js" />
+    <Content Include="Content\js\bootstrap-table\bootstrap-table-export.js" />
     <Content Include="Content\js\bootstrap-table\bootstrap-table-select2-filter.js" />
     <Content Include="Content\js\bootstrap-table\bootstrap-table.js" />
+    <Content Include="Content\js\bootstrap-table\tableExport.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery-3.3.1.min.js" />
     <Content Include="Content\js\jquery.blockui.min.js" />

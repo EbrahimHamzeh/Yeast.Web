@@ -7,6 +7,7 @@
 }
 @section CssStyle{
 	<link href="~/Content/css/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
+<link href="~/Content/css/bootstrap-table/bootstrap-table-sticky-header.css" rel="stylesheet" />
 	<link href="~/Content/css/sweetalert.css" rel="stylesheet" />
 }
 <div class="page-content">
@@ -62,6 +63,14 @@
 				<div class="portlet-body form">
 					@Html.AntiForgeryToken()
 					<a href="@Url.Action("Add")" class="btn btn-default popovers" data-container="body" data-trigger="hover" data-placement="bottom" data-content="میتوانید نوع جدید ایجاد کنید" data-original-title="ایحاد">جدید</a>
+					<h1>خروجی</h1>
+					<div id="toolbar">
+						<select class="form-control">
+							<option value="">اصلی</option>
+							<option value="all">همه</option>
+							<option value="selected">انتخاب شده‌ها</option>
+						</select>
+					</div>
 					<table id="tableTagList"
 								 data-toggle="table"
 								 data-url="@Url.Action("DataList")"
@@ -73,16 +82,22 @@
 								 data-search-on-enter-key="true"
 								 data-maintain-selected="true"
 								 data-cookie="true"
-								 data-cookie-id-table="saveId"
+								 data-cookie-id-table="tableTagList"
 								 data-mobile-responsive="true"
 								 data-check-on-init="true"
 								 data-show-refresh="true"
 								 data-show-toggle="true"
 								 data-show-columns="true"
 								 data-buttons-align="right"
-							   data-filter-control="true"
-							   data-click-to-select="true" 
-								 data-icons-prefix="fa">
+								 data-filter-control="true"
+								 data-click-to-select="true"
+								 data-icons-prefix="fa"
+								 data-toolbar="#toolbar"
+								 data-show-export="true"
+								 data-export-options='{"fileName": "Tags"}'
+								 data-export-types="['json','xml','csv', 'txt',, 'doc','excel']"
+								 data-sticky-header="true"
+								 data-sticky-header-Offset-y="50px">
 						<thead>
 							<tr>
 								<th data-field="state" data-checkbox="true"></th>
@@ -101,10 +116,24 @@
 </div>
 @section Javascripts{
 	<script src="~/Content/js/bootstrap-table/bootstrap-table.js"></script>
+	<script src="~/Content/js/bootstrap-table/bootstrap-table-export.js"></script>
+	<script src="~/Content/js/bootstrap-table/tableExport.js"></script>
+	<script src="~/Content/js/bootstrap-table/bootstrap-table-cookie.min.js"></script>
 	<script src="~/Content/js/bootstrap-table/bootstrap-table-select2-filter.js"></script>
-<script src="~/Content/js/bootstrap-table/bootstrap-table-cookie.min.js"></script>
+<script src="~/Content/js/bootstrap-table/bootstrap-table-mobile.js"></script>
+<script src="~/Content/js/bootstrap-table/bootstrap-table-sticky-header.js"></script>
 	<script src="~/Content/js/sweetalert.js"></script>
 	<script type="text/javascript">
+		var $table = $('#tableTagList');
+		$(function ()
+		{
+			$('#toolbar').find('select').change(function ()
+			{
+				$table.bootstrapTable('destroy').bootstrapTable({
+					exportDataType: $(this).val()
+				});
+			});
+		})
 		function actionFormatter(value, row, index)
 		{
 			return [
@@ -134,7 +163,7 @@
 			{
 				if (isConfirm) {
 					var url = '@Url.Action("Delete")';
-					var data = { id: row.Id, @Html.AntiForgeryTokenForAjaxPost()};
+					var data = { id: row.Id, @Html.AntiForgeryTokenForAjaxPost() };
 					$.ajax({
 						type: "POST",
 						url: url,
@@ -142,7 +171,7 @@
 					}).done(function (msg)
 					{
 						swal("موفیت آمیز", "با موفقیت حذف شد", "success")
-						$('#tableTagList').bootstrapTable('removeByUniqueId', row.Id);
+						table.bootstrapTable('removeByUniqueId', row.Id);
 					}).fail(function (jqXHR, textStatus)
 					{
 						swal("خطا", "متاسفانه با شکست مواجه شد", "error");

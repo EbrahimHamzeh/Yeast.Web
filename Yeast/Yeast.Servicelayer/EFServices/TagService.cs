@@ -70,7 +70,7 @@ namespace Yeast.Servicelayer.EFServices
 			tagList = tagList.OrderBy(sort + (order == "asc" ? string.Empty : " descending"));
 
 			// Paging
-			tagList.Take(limit).Skip(offset).Cacheable();
+			tagList.Skip(offset).Take(limit).Cacheable();
 
 			// Create List Of viewModel
 			var tag = (await tagList.ToListAsync()).Select((x, index) => new TagList

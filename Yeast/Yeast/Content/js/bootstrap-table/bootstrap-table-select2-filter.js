@@ -1,9 +1,9 @@
 ﻿/**
  * @author: Dennis Hernández
  * @webSite: http://djhvscf.github.io/Blog
+ * Sample https://codepen.io/AurelieT/pen/JGxMgo
  * @version: v1.0.0
  */
-
 !function ($)
 {
 
