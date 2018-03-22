@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
+using Yeast.Attribute;
+using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Areas.Admin.Controllers
 {
@@ -30,9 +28,10 @@ namespace Yeast.Areas.Admin.Controllers
 		}
 
 		// Get: Ajax Admin/DataList
-		public virtual async Task<ActionResult> DataList(string search, string sort = "Name", string order = "asc", int offset = 0, int limit = 10)
+		[HttpGet, AjaxOnly, NoOutputCache]
+		public virtual async Task<ActionResult> DataList(PagedQueryViewModel model)
 		{
-			return Json(await _tagService.GetDataTableAsync(search, sort, order, offset, limit).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
+			return Json(await _tagService.GetDataTableAsync(model).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
 		}
 
 		// GET: Admin/Tag/Add

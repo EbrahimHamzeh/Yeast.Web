@@ -226,8 +226,10 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
                 public static readonly string bootstrap_table_cookie_min_js = Url("bootstrap-table-cookie.min.js");
+                public static readonly string bootstrap_table_export_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-table-export.min.js") ? Url("bootstrap-table-export.min.js") : Url("bootstrap-table-export.js");
                 public static readonly string bootstrap_table_select2_filter_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-table-select2-filter.min.js") ? Url("bootstrap-table-select2-filter.min.js") : Url("bootstrap-table-select2-filter.js");
                 public static readonly string bootstrap_table_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-table.min.js") ? Url("bootstrap-table.min.js") : Url("bootstrap-table.js");
+                public static readonly string tableExport_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/tableExport.min.js") ? Url("tableExport.min.js") : Url("tableExport.js");
             }
         
             public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
@@ -337,8 +339,10 @@ namespace Links
                     public static class Assets
                     {
                         public static readonly string bootstrap_table_cookie_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-table/bootstrap-table-cookie.min.js"); 
+                        public static readonly string bootstrap_table_export_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-table/bootstrap-table-export.js"); 
                         public static readonly string bootstrap_table_select2_filter_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-table/bootstrap-table-select2-filter.js"); 
                         public static readonly string bootstrap_table_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-table/bootstrap-table.js"); 
+                        public static readonly string tableExport_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-table/tableExport.js"); 
                     }
                 }
                 public static class Assets

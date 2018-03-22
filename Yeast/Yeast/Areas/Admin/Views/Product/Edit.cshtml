@@ -34,7 +34,7 @@
 	<!-- END PAGE TITLE-->
 	<!-- END PAGE HEADER-->
 	<div class="note note-info">
-		<p> برچسب گذاری برای مدیریت مطالب و دسته‌بندی جزئی </p>
+		<p> محصولات تولیدی خود را در این جا وارد کنید </p>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
@@ -42,19 +42,10 @@
 			<div class="portlet light bordered">
 				<div class="portlet-title">
 					<div class="caption font-green-haze">
-						<i class="icon-settings font-green-haze"></i>
-						<span class="caption-subject bold uppercase"> ویزایش محصول</span>
+						<i class="fa fa-check font-green-haze"></i>
+						<span class="caption-subject bold uppercase">اصلاح</span>
 					</div>
 					<div class="actions">
-						<a class="btn btn-circle btn-icon-only blue" href="javascript:;">
-							<i class="icon-cloud-upload"></i>
-						</a>
-						<a class="btn btn-circle btn-icon-only green" href="javascript:;">
-							<i class="icon-wrench"></i>
-						</a>
-						<a class="btn btn-circle btn-icon-only red" href="javascript:;">
-							<i class="icon-trash"></i>
-						</a>
 						<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="تمام صفحه" title=""> </a>
 					</div>
 				</div>
@@ -62,10 +53,13 @@
 					<form role="form" class="form-horizontal" method="post" action="@Url.Action("Edit")">
 						@Html.AntiForgeryToken()
 						<div class="form-body">
+							<div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
+							<div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
 							<div class="form-group form-md-line-input">
 								<label class="col-md-1 control-label" for="Name">عنوان</label>
 								<div class="col-md-11">
 									<input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" required placeholder="عنوان را وارد نمایید">
+									@Html.ValidationMessageFor(model => model.Name)
 									<div class="form-control-focus"> </div>
 								</div>
 							</div>
@@ -73,6 +67,7 @@
 								<label class="col-md-1 control-label" for="Description">توضیحات</label>
 								<div class="col-md-11">
 									<input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" placeholder="توضیحات را وارد نمایید">
+									@Html.ValidationMessageFor(model => model.Description)
 									<div class="form-control-focus"> </div>
 									<span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
 								</div>
@@ -82,11 +77,7 @@
 							<div class="row">
 								<div class="col-md-offset-2 col-md-10">
 									<button type="reset" class="btn default">کنسل</button>
-									<button type="submit" class="btn blue">تایید</button>
-									<button type="submit" data-loading-text="ارسال..." class="btn-loading btn blue">ذخیره و جدید</button>
-									<button type="button" data-loading-text="ارسال..." class="btn-loading btn blue mt-ladda-btn ladda-button mt-progress-demo btn-circle" data-style="slide-right">
-										<span class="ladda-label">Loading State</span>
-									</button>
+									<button type="submit" data-loading-text="ارسال..." class="btn blue btn-loading ">تایید</button>
 								</div>
 							</div>
 						</div>
@@ -98,59 +89,64 @@
 	</div>
 </div>
 @section Javascripts{
-	<!-- http://msurguy.github.io/ladda-bootstrap/ -->
-<script src="~/Content/js/ladda.min.js"></script>
-<script src="~/Content/js/spin.min.js"></script>
+	<script src="~/Content/js/jquery.validate.js"></script>
+	<script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
+	<script src="~/Content/js/spin.min.js"></script>
+	<script src="~/Content/js/ladda.min.js"></script>
 	<script type="text/javascript">
-		var UIButtons = function ()
-		{
 
-			var handleButtons = function ()
-			{
-				$('.btn-loading').click(function ()
-				{
-					var btn = $(this)
-					btn.button('loading')
-					setTimeout(function ()
-					{
-						btn.button('reset')
-					}, 3000)
-				});
+		var form1 = $('form[data-loading-text]');
+		var error1 = $('.alert-danger', form1);
+		var success1 = $('.alert-success', form1);
 
-				Ladda.bind('.mt-ladda-btn', { timeout: 2000 });
-				Ladda.bind('.mt-ladda-btn.mt-progress-demo ', {
-					callback: function (instance)
-					{
-						var progress = 0;
-						var interval = setInterval(function ()
-						{
-							progress = Math.min(progress + Math.random() * 0.1, 1);
-							instance.setProgress(progress);
+		form1.validate({
+			errorElement: 'span', //default input error message container
+			errorClass: 'help-block help-block-error', // default input error message class
+			focusInvalid: false, // do not focus the last invalid input
+			ignore: "",  // validate all fields including form hidden input
+			invalidHandler: function (event, validator)
+			{ //display error alert on form submit
+				success1.hide();
+				error1.show();
+				App.scrollTo(error1, -200);
+			},
 
-							if (progress === 1) {
-								instance.stop();
-								clearInterval(interval);
-							}
-						}, 200);
-					}
-				});
-			}
-
-
-			return {
-				//main function to initiate the module
-				init: function ()
-				{
-					handleButtons();
+			errorPlacement: function (error, element)
+			{ // render error placement for each input type
+				var cont = $(element).parent('.input-group');
+				if (cont.size() > 0) {
+					cont.after(error);
+				} else {
+					element.after(error);
 				}
+			},
 
-			};
+			highlight: function (element)
+			{ // hightlight error inputs
 
-		}();
+				$(element)
+						.closest('.form-group').addClass('has-error'); // set error class to the control group
+			},
 
-		jQuery(document).ready(function ()
-		{
-			UIButtons.init();
+			unhighlight: function (element)
+			{ // revert the change done by hightlight
+				$(element)
+						.closest('.form-group').removeClass('has-error'); // set error class to the control group
+			},
+
+			success: function (label)
+			{
+				label
+						.closest('.form-group').removeClass('has-error'); // set success class to the control group
+			},
+
+			submitHandler: function (form)
+			{
+				success1.show();
+				error1.hide();
+				form.submit();
+				form1.button('loading')
+			}
 		});
 	</script>
 }

@@ -215,6 +215,7 @@
     <Content Include="Content\css\Yeast-ltr.css" />
     <Content Include="Content\css\Yeast.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\Simple-Line-Icons.dev.svg" />
     <Content Include="Content\fonts\Simple-Line-Icons.svg" />
     <Content Include="Content\images\100-thickbox_default-min__11089.1499311175.jpg" />
@@ -256,10 +257,14 @@
     <Content Include="Content\js\bootstrap-table\bootstrap-table.js" />
     <Content Include="Content\js\bootstrap-table\tableExport.js" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\jquery-3.3.1.min.js" />
     <Content Include="Content\js\jquery.blockui.min.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\jquery.slimscroll.min.js" />
+    <None Include="Content\js\jquery.validate-vsdoc.js" />
+    <Content Include="Content\js\jquery.validate.js" />
+    <Content Include="Content\js\jquery.validate.unobtrusive.js" />
     <Content Include="Content\js\js.cookie.min.js" />
     <Content Include="Content\js\ladda.min.js" />
     <Content Include="Content\js\layout.min.js" />
@@ -291,8 +296,6 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
-    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
     <Content Include="Content\fonts\Simple-Line-Icons.eot" />
     <Content Include="Content\fonts\Simple-Line-Icons.ttf" />
     <Content Include="Content\fonts\Simple-Line-Icons.woff" />
@@ -301,6 +304,10 @@
     <Content Include="Areas\Admin\Views\Product\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
@@ -356,7 +363,6 @@
     <Folder Include="Content\fonts\ttf\" />
     <Folder Include="Content\fonts\woff2\" />
     <Folder Include="Content\fonts\woff\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Yeast.Datalayer\Yeast.Datalayer.csproj">

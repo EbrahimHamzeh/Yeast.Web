@@ -115,11 +115,7 @@ namespace Yeast.Areas.Admin.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_DataList
         {
-            public readonly string search = "search";
-            public readonly string sort = "sort";
-            public readonly string order = "order";
-            public readonly string offset = "offset";
-            public readonly string limit = "limit";
+            public readonly string model = "model";
         }
         static readonly ActionParamsClass_Add s_params_Add = new ActionParamsClass_Add();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -182,18 +178,14 @@ namespace Yeast.Areas.Admin.Controllers
         }
 
         [NonAction]
-        partial void DataListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string search, string sort, string order, int offset, int limit);
+        partial void DataListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Yeast.Utilities.BootstrapTable.PagedQueryViewModel model);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> DataList(string search, string sort, string order, int offset, int limit)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> DataList(Yeast.Utilities.BootstrapTable.PagedQueryViewModel model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DataList);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "search", search);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "sort", sort);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "order", order);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "offset", offset);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "limit", limit);
-            DataListOverride(callInfo, search, sort, order, offset, limit);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            DataListOverride(callInfo, model);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

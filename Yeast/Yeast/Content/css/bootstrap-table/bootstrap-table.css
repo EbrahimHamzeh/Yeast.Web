@@ -43,7 +43,7 @@
 .fixed-table-pagination .dropup .dropdown-menu { margin-bottom: 0; }
 .fixed-table-pagination .page-list { display: inline-block; }
 .fixed-table-toolbar .columns-left { margin-right: 5px; }
-.fixed-table-toolbar .columns-right { margin-left: 5px; }
+.fixed-table-toolbar .columns-right { margin-right: 5px; }
 .fixed-table-toolbar .columns label { display: block; padding: 3px 20px; clear: both; font-weight: normal; line-height: 1.428571429; }
 .fixed-table-toolbar .bs-bars,
 .fixed-table-toolbar .search,
@@ -63,7 +63,7 @@
 .bootstrap-table .table tbody > tr > td { padding: 0; margin: 0; text-align:center; }
 .bootstrap-table .fixed-table-footer tbody > tr > td { padding: 0 !important; }
 .bootstrap-table .fixed-table-footer .table { border-bottom: none; border-radius: 0; padding: 0 !important; }
-.bootstrap-table .pull-right .dropdown-menu { right: 0; left: auto; }
+.bootstrap-table .pull-right .dropdown-menu { right: auto; left: 0; }
 p.fixed-table-scroll-inner { width: 100%; height: 200px; }
 div.fixed-table-scroll-outer { top: 0; left: 0; visibility: hidden; width: 200px; height: 150px; overflow: hidden; }
 .fixed-table-toolbar:after, .fixed-table-pagination:after { content: ""; display: block; clear: both; }

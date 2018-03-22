@@ -7,6 +7,7 @@
 }
 @section CssStyle{
 	<link href="~/Content/css/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
+	<link href="~/Content/css/bootstrap-table/bootstrap-table-sticky-header.css" rel="stylesheet" />
 	<link href="~/Content/css/sweetalert.css" rel="stylesheet" />
 }
 <div class="page-content">
@@ -35,7 +36,7 @@
 	<!-- END PAGE TITLE-->
 	<!-- END PAGE HEADER-->
 	<div class="note note-info">
-		<p> برچسب گذاری برای مدیریت مطالب و دسته‌بندی جزئی </p>
+		<p> محصولات تولیدی خود را در این جا وارد کنید </p>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
@@ -43,46 +44,49 @@
 			<div class="portlet light bordered">
 				<div class="portlet-title">
 					<div class="caption font-green-haze">
-						<i class="icon-settings font-green-haze"></i>
-						<span class="caption-subject bold uppercase"> تگ جدید</span>
+						<i class="fa fa-list-ul font-green-haze"></i>
+						<span class="caption-subject bold uppercase"> لیست</span>
 					</div>
 					<div class="actions">
-						<a class="btn btn-circle btn-icon-only blue" href="javascript:;">
-							<i class="icon-cloud-upload"></i>
-						</a>
-						<a class="btn btn-circle btn-icon-only green" href="javascript:;">
-							<i class="icon-wrench"></i>
-						</a>
-						<a class="btn btn-circle btn-icon-only red" href="javascript:;">
-							<i class="icon-trash"></i>
-						</a>
 						<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="تمام صفحه" title=""> </a>
 					</div>
 				</div>
 				<div class="portlet-body form">
 					@Html.AntiForgeryToken()
 					<a href="@Url.Action("Add")" class="btn btn-default popovers" data-container="body" data-trigger="hover" data-placement="bottom" data-content="میتوانید نوع جدید ایجاد کنید" data-original-title="ایحاد">جدید</a>
+					<div id="toolbar">
+						<select class="form-control">
+							<option value="">اصلی</option>
+							<option value="all">همه</option>
+							<option value="selected">انتخاب شده‌ها</option>
+						</select>
+					</div>
 					<table id="tableProductList"
-								 data-toggle="table"
+								  data-toggle="table"
 								 data-url="@Url.Action("DataList")"
 								 data-unique-id="Id"
 								 data-pagination="true"
 								 data-side-pagination="server"
-								 data-page-list="[5, 10, 20, 50, 100, 200]"
+								 data-page-list="[10, 20, 50, 100, 200]"
 								 data-search="true"
 								 data-search-on-enter-key="true"
 								 data-maintain-selected="true"
 								 data-cookie="true"
-								 data-cookie-id-table="tableProductList"
+								 data-cookie-id-table="tableTagList"
 								 data-mobile-responsive="true"
 								 data-check-on-init="true"
 								 data-show-refresh="true"
 								 data-show-toggle="true"
 								 data-show-columns="true"
 								 data-buttons-align="right"
-							   data-filter-control="true"
-							   data-click-to-select="true" 
-								 data-icons-prefix="fa">
+								 data-filter-control="true"
+								 data-click-to-select="true"
+								 data-toolbar="#toolbar"
+								 data-show-export="true"
+								 data-export-options='{"fileName": "Tags"}'
+								 data-export-types="['json','xml','csv', 'txt',, 'doc','excel']"
+								 data-sticky-header="true"
+								 data-sticky-header-Offset-y="50px">
 						<thead>
 							<tr>
 								<th data-field="state" data-checkbox="true"></th>
@@ -100,11 +104,25 @@
 	</div>
 </div>
 @section Javascripts{
-	<script src="~/Content/js/bootstrap-table/bootstrap-table.js"></script>
-	<script src="~/Content/js/bootstrap-table/bootstrap-table-select2-filter.js"></script>
+<script src="~/Content/js/bootstrap-table/bootstrap-table.js"></script>
+<script src="~/Content/js/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="~/Content/js/bootstrap-table/tableExport.js"></script>
 <script src="~/Content/js/bootstrap-table/bootstrap-table-cookie.min.js"></script>
-	<script src="~/Content/js/sweetalert.js"></script>
+<script src="~/Content/js/bootstrap-table/bootstrap-table-select2-filter.js"></script>
+<script src="~/Content/js/bootstrap-table/bootstrap-table-mobile.js"></script>
+<script src="~/Content/js/bootstrap-table/bootstrap-table-sticky-header.js"></script>
+<script src="~/Content/js/sweetalert.js"></script>
 	<script type="text/javascript">
+		var $table = $('#tableProductList');
+		$(function ()
+		{
+			$('#toolbar').find('select').change(function ()
+			{
+				$table.bootstrapTable('destroy').bootstrapTable({
+					exportDataType: $(this).val()
+				});
+			});
+		})
 		function actionFormatter(value, row, index)
 		{
 			return [
@@ -134,7 +152,7 @@
 			{
 				if (isConfirm) {
 					var url = '@Url.Action("Delete")';
-					var data = { id: row.Id, @Html.AntiForgeryTokenForAjaxPost()};
+					var data = { id: row.Id, @Html.AntiForgeryTokenForAjaxPost() };
 					$.ajax({
 						type: "POST",
 						url: url,
@@ -142,7 +160,7 @@
 					}).done(function (msg)
 					{
 						swal("موفیت آمیز", "با موفقیت حذف شد", "success")
-                        $('#tableProductList').bootstrapTable('removeByUniqueId', row.Id);
+						$table.bootstrapTable('removeByUniqueId', row.Id);
 					}).fail(function (jqXHR, textStatus)
 					{
 						swal("خطا", "متاسفانه با شکست مواجه شد", "error");

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
 using System.Runtime.CompilerServices;
+using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Servicelayer.Interfaces
 {
@@ -15,6 +16,6 @@ namespace Yeast.Servicelayer.Interfaces
 		Tag Find(int id);
 		TagEdit FindForEdit(int id);
 		Task<IList<Tag>> GetAllAsync();
-		Task<DataTableList<TagList>> GetDataTableAsync(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10);
+		Task<DataTableList<TagList>> GetDataTableAsync(PagedQueryViewModel model);
 	}
 }

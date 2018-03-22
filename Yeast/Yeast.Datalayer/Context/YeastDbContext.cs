@@ -5,6 +5,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.Linq;
 using EFSecondLevelCache;
+using System.Data.Entity.Infrastructure;
+using Yeast.Utilities;
 
 namespace Yeast.Datalayer.Context
 {
@@ -76,6 +78,11 @@ namespace Yeast.Datalayer.Context
 		public int SaveAllChanges(bool invalidateCacheDependencies = true)
 		{
 			var changedEntityNames = getChangedEntityNames();
+
+			//By Defult Edit Ye Ke Arabi (Always)
+			((IObjectContextAdapter)this).ObjectContext.ApplyCorrectYeKe();
+
+			//Save EFSecondLevelCache
 			var result = base.SaveChanges();
 			if (invalidateCacheDependencies)
 			{
@@ -83,6 +90,7 @@ namespace Yeast.Datalayer.Context
 			}
 			return result;
 		}
+
 		private string[] getChangedEntityNames()
 		{
 			// Updated version of this method: \EFSecondLevelCache\EFSecondLevelCache.Tests\EFSecondLevelCache.TestDataLayer\DataLayer\SampleContext.cs

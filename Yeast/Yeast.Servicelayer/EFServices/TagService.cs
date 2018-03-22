@@ -11,6 +11,7 @@ using Yeast.Model.Admin;
 using System.Threading.Tasks;
 using Yeast.Utilities.Helpers;
 using System.Runtime.CompilerServices;
+using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -53,29 +54,26 @@ namespace Yeast.Servicelayer.EFServices
 			return await _tags.AsNoTracking().Cacheable().ToListAsync();
 		}
 
-		public async Task<DataTableList<TagList>> GetDataTableAsync(string search = "", string sort = "Name", string order = "asc", int offset = 0, int limit = 10)
+		public async Task<DataTableList<TagList>> GetDataTableAsync(PagedQueryViewModel model)
 		{
 			IQueryable<Tag> tagList = _tags.AsNoTracking();
 			int total = 0;
 
 			// Search
-			if (!string.IsNullOrEmpty(search))
-			{
-				tagList = tagList.Where("Name.Contains(@0) or Description.Contains(@0)", search);
-			}
+			//tagList = tagList.ApplySearch(model);
 
-			total = await tagList.CountAsync();
+			total = await tagList.CountAsync().ConfigureAwait(false);
 
 			// Ordering data 
-			tagList = tagList.OrderBy(sort + (order == "asc" ? string.Empty : " descending"));
+			tagList = tagList.ApplyOrdering(model);
 
-			// Paging
-			tagList = tagList.Skip(offset).Take(limit).Cacheable();
-
+			// Paging And Save Cach
+			tagList = tagList.ApplyPaging(model).Cacheable();
+			model.offset = model.offset - 1;
 			// Create List Of viewModel
 			var tag = (await tagList.ToListAsync()).Select((x, index) => new TagList
 			{
-				No = (++index).ConvertToPersianString(),
+				No = (++index + model.offset).ConvertToPersianString(),
 				Id = x.Id,
 				Name = x.Name,
 				Description = x.Description

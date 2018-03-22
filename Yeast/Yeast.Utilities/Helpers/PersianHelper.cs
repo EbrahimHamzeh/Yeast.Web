@@ -51,7 +51,7 @@ namespace Yeast.Utilities.Helpers
 
 		public static DateTime ConvertToGregorian(int year, int month, int day, DateType dateType = DateType.Persian)
 		{
-			return PersianHelper.ConvertToGregorian(year, month, day,0 ,0,0, dateType);
+			return PersianHelper.ConvertToGregorian(year, month, day, 0, 0, 0, dateType);
 		}
 		#endregion
 
@@ -98,10 +98,10 @@ namespace Yeast.Utilities.Helpers
 		#region Ye Ke
 		public static string ApplyCorrectYeKe(string input)
 		{
-			var newVal = input.ToString().Replace("ی", "ی").Replace("ک", "ک");
-			return newVal;
+			if (string.IsNullOrEmpty(input)) return input;
+			return input.ToString().Replace("ی", "ی").Replace("ک", "ک");
 		}
-		public static string ApplyCorrectYeKe1(this string input)
+		public static string ApplyCorrectYeKee(this string input)
 		{
 			return PersianHelper.ApplyCorrectYeKe(input);
 		}
