@@ -34,9 +34,9 @@ namespace Yeast.Utilities.BootstrapTable
 		/// <returns></returns>
 		public static IQueryable<T> ApplyOrdering<T>(this IQueryable<T> query,IPagedQueryModel model)
 		{
-			if (string.IsNullOrWhiteSpace(model.sort))
+			if (string.IsNullOrWhiteSpace(model.sort) || model.sort == null)
 			{
-				return query.OrderBy("Name");
+				return query.OrderBy("Id");
 			}
 
 			return query.OrderBy(model.sort + (model.order == "asc" ? string.Empty : " descending"));

@@ -6,6 +6,7 @@ using Yeast.Datalayer.Context;
 using Yeast.Datalayer.Migrations;
 using StructureMap.Web.Pipeline;
 using Yeast.IocConfig;
+using Yeast.Utilities.ModelBinder;
 
 namespace Yeast
 {
@@ -24,10 +25,16 @@ namespace Yeast
 			ViewEngines.Engines.Add(new RazorViewEngine());
 			MvcHandler.DisableMvcResponseHeader = true;
 
+			// Automatic When Model Binding Edit YeKe Arabi Always
+			ModelBinders.Binders.Add(typeof(string), new YeKeModelBinder());
+			// Automatic When Model Binding Edit DateTime Always
+			ModelBinders.Binders.Add(typeof(DateTime?), new PersianDateModelBinder());
+
 			initStructureMap();
 
 			//CaptchaUtils.CaptchaManager.StorageProvider = new CookieStorageProvider();
 		}
+
 		private void Application_EndRequest(object sender, EventArgs e)
 		{
 			HttpContextLifecycle.DisposeAndClearAll();

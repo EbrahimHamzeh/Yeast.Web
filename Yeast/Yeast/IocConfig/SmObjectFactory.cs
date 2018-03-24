@@ -16,8 +16,7 @@ namespace Yeast.IocConfig
 {
 	public static class SmObjectFactory
 	{
-		private static readonly Lazy<Container> _containerBuilder =
-					 new Lazy<Container>(defaultContainer, LazyThreadSafetyMode.ExecutionAndPublication);
+		private static readonly Lazy<Container> _containerBuilder = new Lazy<Container>(defaultContainer, LazyThreadSafetyMode.ExecutionAndPublication);
 
 		public static IContainer Container
 		{
@@ -66,11 +65,11 @@ namespace Yeast.IocConfig
 				x.For<ICategoryService>().Use<CategoryService>();
 				x.For<ITagService>().Use<TagService>();
 				x.For<IProductService>().Use<ProductService>();
+				x.For<IPostService>().Use<PostService>();
 				//dynamicProxy.CreateInterfaceProxyWithTarget(myTypeInterface, new CacheInterceptor())).Use<UserService>();    TODO: Hamzeh-CacheInterceptor
 			});
 		}
-
-
+		
 		private static IIdentity getIdentity()
 		{
 			if (HttpContext.Current != null && HttpContext.Current.User != null)

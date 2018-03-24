@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Web.Mvc;
 
 namespace Yeast.DomainClasses.Entities
 {
@@ -11,13 +10,12 @@ namespace Yeast.DomainClasses.Entities
 
 		public virtual string Keyword { get; set; }
 
-		public virtual string Description { get; set; }
-
+		[AllowHtml]
 		public virtual string Body { get; set; }
 
 		public virtual string LanguageCode { get; set; }
 
-		public virtual ICollection<Post> Posts { get; set; }
+		public virtual Post Post { get; set; }
 
 	}
 }

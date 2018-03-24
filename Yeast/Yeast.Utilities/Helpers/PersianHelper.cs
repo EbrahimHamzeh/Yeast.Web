@@ -1,10 +1,5 @@
 ﻿using Persia;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Yeast.Utilities.Helpers
 {
@@ -25,6 +20,12 @@ namespace Yeast.Utilities.Helpers
 		public static string ConvertToPersian()
 		{
 			return PersianHelper.ConvertToPersian(DateTime.Now);
+		}
+
+		public static string ConvertToPersianJustYear(this DateTime datetime)
+		{
+			string year = datetime.ToPersianDate("E");
+			return year.Substring(year.Length - 4);
 		}
 
 		public static string ToPersianDate(this DateTime datetime, string mod = "")

@@ -7,6 +7,7 @@
 }
 @section CssStyle{
 	<link href="~/Content/css/ladda-themeless-rtl.min.css" rel="stylesheet" />
+	<link href="~/Content/css/enjoyhint.css" rel="stylesheet" />
 }
 <div class="page-content">
 	<!-- BEGIN PAGE HEADER-->
@@ -93,6 +94,7 @@
 	<script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
 	<script src="~/Content/js/spin.min.js"></script>
 	<script src="~/Content/js/ladda.min.js"></script>
+	<script src="~/Content/js/enjoyhint.js"></script>
 	<script type="text/javascript">
 
 		var form1 = $('form[data-loading-text]');
@@ -148,5 +150,27 @@
 				form1.button('loading')
 			}
 		});
+
+
+
+		$(document).ready(function ()
+		{
+			//initialize instance
+			var enjoyhint_instance = new EnjoyHint({});
+
+			//simple config. 
+			//Only one step - highlighting(with description) "New" button 
+			//hide EnjoyHint after a click on the button.
+			var enjoyhint_script_steps = [
+				{
+					'click .default': 'باعث بازنشانی فرم به حالت صفر می‌شود.'
+				}
+			];
+
+			//set script config
+			enjoyhint_instance.set(enjoyhint_script_steps);
+			enjoyhint_instance.run();
+		});
+		//run Enjoyhint script
 	</script>
 }

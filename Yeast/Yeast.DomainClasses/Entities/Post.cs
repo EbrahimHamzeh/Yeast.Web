@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Yeast.DomainClasses.Entities
 {
@@ -16,14 +17,15 @@ namespace Yeast.DomainClasses.Entities
 		public virtual int Id { get; set; }
 		public virtual DateTime CreatedDate { get; set; }
 		public virtual DateTime? ModifiedDate { get; set; }
-		public virtual string Status { get; set; } // visible hidden draft archive
-		public virtual bool? CommentStatus { get; set; }
-		public virtual int VisitedNumber { get; set; }
-		public virtual int Like { get; set; }
-		public virtual ICollection<Comment> Comments { get; set; }
-		public virtual User User { get; set; }
+		public virtual string Title { get; set; }
+		public virtual string Keyword { get; set; }
+		[AllowHtml]
+		public virtual string Body { get; set; }
 		public virtual string Slug { get; set; }
+		//public virtual User User { get; set; }   TODO: Hamzeh?????????????
+		public virtual ICollection<Comment> Comments { get; set; }
 		public virtual ICollection<Tag> Tags { get; set; }
-		public virtual ICollection<PostTranslate> PostTranslates { get; set; }
+		public virtual string Description { get; set; }
+
 	}
 }

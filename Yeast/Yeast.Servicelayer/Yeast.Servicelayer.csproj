@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EFServices\ProductService.cs" />
+    <Compile Include="EFServices\PostService.cs" />
     <Compile Include="EFServices\TagService.cs" />
     <Compile Include="EFServices\CategoryService.cs" />
     <Compile Include="EFServices\Enums\Enum.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="EFServices\User\ApplicationSignInManager.cs" />
     <Compile Include="EFServices\User\ApplicationRoleManager.cs" />
     <Compile Include="Interfaces\IProductService.cs" />
+    <Compile Include="Interfaces\IPostService.cs" />
     <Compile Include="Interfaces\ITagService.cs" />
     <Compile Include="Interfaces\ICategoryService.cs" />
     <Compile Include="Interfaces\User\ICustomUserStore.cs" />

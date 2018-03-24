@@ -109,6 +109,9 @@
     <Compile Include="Admin\Product\ProductAdd.cs" />
     <Compile Include="Admin\Product\ProductEdit.cs" />
     <Compile Include="Admin\Product\ProductList.cs" />
+    <Compile Include="Admin\Post\PostAdd.cs" />
+    <Compile Include="Admin\Post\PostEdit.cs" />
+    <Compile Include="Admin\Post\PostList.cs" />
     <Compile Include="Generic\DataTableList.cs" />
     <Compile Include="Admin\Tag\TagList.cs" />
     <Compile Include="Admin\Tag\TagEdit.cs" />

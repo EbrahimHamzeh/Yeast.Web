@@ -12,14 +12,16 @@ namespace Yeast.Datalayer.Context
 {
 	public class YeastDbContext : IdentityDbContext<User, CustomRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>, IUnitOfWork
 	{
+		#region DbSet 
 		public DbSet<Comment> Comments { get; set; }
 		public DbSet<Tag> Tags { get; set; }
 		public DbSet<Product> Products { get; set; }
 		public DbSet<Post> Posts { get; set; }
-		public DbSet<PostTranslate> PostTranslates { get; set; }
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Option> Options { get; set; }
+		#endregion
 
+		#region constucter and EF ModelCreating
 		public YeastDbContext(): base("YeastDbContext"){}
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -41,6 +43,7 @@ namespace Yeast.Datalayer.Context
 			modelBuilder.Entity<CustomUserRole>().ToTable("UserRoles");
 			modelBuilder.Entity<CustomUserLogin>().ToTable("UserLogins");
 		}
+		#endregion
 
 		#region IUnitOfWork Members
 		public new IDbSet<TEntity> Set<TEntity>() where TEntity : class

@@ -28,9 +28,6 @@ namespace Yeast.Areas.Admin.Controllers
     public partial class PostController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public PostController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected PostController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -59,6 +56,43 @@ namespace Yeast.Areas.Admin.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> DataList()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DataList);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Edit()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Delete()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult FroalaUploadImage()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.FroalaUploadImage);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult FroalaUploadFile()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.FroalaUploadFile);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult FroalaUploadVideo()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.FroalaUploadVideo);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public PostController Actions { get { return MVC.Admin.Post; } }
@@ -76,26 +110,44 @@ namespace Yeast.Areas.Admin.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string DataList = "DataList";
             public readonly string Add = "Add";
             public readonly string Edit = "Edit";
+            public readonly string Delete = "Delete";
+            public readonly string FroalaUploadImage = "FroalaUploadImage";
+            public readonly string FroalaUploadFile = "FroalaUploadFile";
+            public readonly string FroalaUploadVideo = "FroalaUploadVideo";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string DataList = "DataList";
             public const string Add = "Add";
             public const string Edit = "Edit";
+            public const string Delete = "Delete";
+            public const string FroalaUploadImage = "FroalaUploadImage";
+            public const string FroalaUploadFile = "FroalaUploadFile";
+            public const string FroalaUploadVideo = "FroalaUploadVideo";
         }
 
 
+        static readonly ActionParamsClass_DataList s_params_DataList = new ActionParamsClass_DataList();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_DataList DataListParams { get { return s_params_DataList; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_DataList
+        {
+            public readonly string model = "model";
+        }
         static readonly ActionParamsClass_Add s_params_Add = new ActionParamsClass_Add();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_Add AddParams { get { return s_params_Add; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Add
         {
-            public readonly string id = "id";
+            public readonly string model = "model";
         }
         static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -104,6 +156,38 @@ namespace Yeast.Areas.Admin.Controllers
         public class ActionParamsClass_Edit
         {
             public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_Delete s_params_Delete = new ActionParamsClass_Delete();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Delete DeleteParams { get { return s_params_Delete; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Delete
+        {
+            public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_FroalaUploadImage s_params_FroalaUploadImage = new ActionParamsClass_FroalaUploadImage();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_FroalaUploadImage FroalaUploadImageParams { get { return s_params_FroalaUploadImage; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_FroalaUploadImage
+        {
+            public readonly string file = "file";
+        }
+        static readonly ActionParamsClass_FroalaUploadFile s_params_FroalaUploadFile = new ActionParamsClass_FroalaUploadFile();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_FroalaUploadFile FroalaUploadFileParams { get { return s_params_FroalaUploadFile; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_FroalaUploadFile
+        {
+            public readonly string file = "file";
+        }
+        static readonly ActionParamsClass_FroalaUploadVideo s_params_FroalaUploadVideo = new ActionParamsClass_FroalaUploadVideo();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_FroalaUploadVideo FroalaUploadVideoParams { get { return s_params_FroalaUploadVideo; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_FroalaUploadVideo
+        {
+            public readonly string file = "file";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -115,7 +199,13 @@ namespace Yeast.Areas.Admin.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Add = "Add";
+                public readonly string Edit = "Edit";
+                public readonly string Index = "Index";
             }
+            public readonly string Add = "~/Areas/Admin/Views/Post/Add.cshtml";
+            public readonly string Edit = "~/Areas/Admin/Views/Post/Edit.cshtml";
+            public readonly string Index = "~/Areas/Admin/Views/Post/Index.cshtml";
         }
     }
 
@@ -136,6 +226,18 @@ namespace Yeast.Areas.Admin.Controllers
         }
 
         [NonAction]
+        partial void DataListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Yeast.Utilities.BootstrapTable.PagedQueryViewModel model);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> DataList(Yeast.Utilities.BootstrapTable.PagedQueryViewModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DataList);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            DataListOverride(callInfo, model);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
         partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
@@ -147,25 +249,14 @@ namespace Yeast.Areas.Admin.Controllers
         }
 
         [NonAction]
-        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? id);
+        partial void AddOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Yeast.Model.Admin.PostAdd model);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Add(int? id)
+        public override System.Web.Mvc.ActionResult Add(Yeast.Model.Admin.PostAdd model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Add);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            AddOverride(callInfo, id);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Edit()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
-            EditOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            AddOverride(callInfo, model);
             return callInfo;
         }
 
@@ -178,6 +269,66 @@ namespace Yeast.Areas.Admin.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             EditOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Edit(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            EditOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DeleteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Delete(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            DeleteOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void FroalaUploadImageOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Web.HttpPostedFileBase file);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult FroalaUploadImage(System.Web.HttpPostedFileBase file)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.FroalaUploadImage);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "file", file);
+            FroalaUploadImageOverride(callInfo, file);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void FroalaUploadFileOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Web.HttpPostedFileBase file);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult FroalaUploadFile(System.Web.HttpPostedFileBase file)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.FroalaUploadFile);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "file", file);
+            FroalaUploadFileOverride(callInfo, file);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void FroalaUploadVideoOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Web.HttpPostedFileBase file);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult FroalaUploadVideo(System.Web.HttpPostedFileBase file)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.FroalaUploadVideo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "file", file);
+            FroalaUploadVideoOverride(callInfo, file);
             return callInfo;
         }
 
