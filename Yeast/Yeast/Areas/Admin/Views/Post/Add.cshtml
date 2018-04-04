@@ -39,6 +39,8 @@
 	<link href="~/Content/froala/css/plugins/video.css" rel="stylesheet" />
 	<link href="~/Content/froala/css/plugins/video.min.css" rel="stylesheet" />
 	<link href="~/Content/css/select2.min.css" rel="stylesheet" />
+	<link href="~/Content/css/select2-bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/css/jstree.min.css" rel="stylesheet" />
 }
 <div class="page-content">
 	<!-- BEGIN PAGE HEADER-->
@@ -83,61 +85,77 @@
 				</div>
 				<div class="portlet-body form">
 					<div class="form-group">
-						<select id="Tags" name="Tags[]" class="form-control select2-multiple" multiple>
-							<option>white</option>
-							<option>white</option>
-							<option>white</option>
-						</select>
 					</div>
-						<form role="form" data-loading-text="در حال ارسال فرم! لطفا منتظر باشید" class="form-horizontal" method="post" action="@Url.Action("Add")">
-							@Html.AntiForgeryToken()
-							<div class="form-body">
-								<div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
-								<div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
-								<div class="form-group form-md-line-input">
-									<label class="col-md-1 control-label" for="Name">عنوان</label>
-									<div class="col-md-11">
-										<input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required placeholder="عنوان را وارد نمایید">
-										@Html.ValidationMessageFor(model => model.Title)
-										<div class="form-control-focus"> </div>
-									</div>
-								</div>
-								<div class="form-group form-md-line-input">
-									<label class="col-md-1 control-label" for="Name">محتوا</label>
-									<div class="col-md-11">
-										<textarea id="Body" name="Body" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.Body</textarea>
-										@Html.ValidationMessageFor(model => model.Body)
-										<div class="form-control-focus"> </div>
-									</div>
-								</div>
-								<div class="form-group form-md-line-input">
-									<label class="col-md-1 control-label" for="Tags">تگ‌ها</label>
-									<div class="col-md-11">
-
-										@Html.ValidationMessageFor(model => model.Body)
-										<div class="form-control-focus"> </div>
-									</div>
-								</div>
-								<div class="form-group form-md-line-input">
-									<label class="col-md-1 control-label" for="Description">توضیحات</label>
-									<div class="col-md-11">
-										<input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" placeholder="توضیحات را وارد نمایید">
-										@Html.ValidationMessageFor(model => model.Description)
-										<div class="form-control-focus"> </div>
-										<span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
-									</div>
+					<form role="form" data-loading-text="در حال ارسال فرم! لطفا منتظر باشید" class="form-horizontal" method="post" action="@Url.Action("Add")">
+						@Html.AntiForgeryToken()
+						<div class="form-body">
+							<div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
+							<div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Name">عنوان</label>
+								<div class="col-md-11">
+									<input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required placeholder="عنوان را وارد نمایید">
+									@Html.ValidationMessageFor(model => model.Title)
+									<div class="form-control-focus"> </div>
 								</div>
 							</div>
-							<div class="form-actions">
-								<div class="row">
-									<div class="col-md-offset-2 col-md-10">
-										<button type="reset" class="btn default">کنسل</button>
-										<button type="submit" data-loading-text="ارسال..." class="btn blue btn-loading ">تایید</button>
-									</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Name">محتوا</label>
+								<div class="col-md-11">
+									<textarea id="Body" name="Body" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.Body</textarea>
+									@Html.ValidationMessageFor(model => model.Body)
+									<div class="form-control-focus"> </div>
+									<span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
 								</div>
 							</div>
-						</form>
-					</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Name">لینک پیوند</label>
+								<div class="col-md-11">
+									<input type="text" class="form-control" id="Slug" name="Slug" value="@Model.Slug" required placeholder="پیوند را وارد نمایید">
+									@Html.ValidationMessageFor(model => model.Slug)
+									<div class="form-control-focus"> </div>
+									<span class="help-block">لینک پیوند بهتر است که انگلیسی و مرتبط با محتوا باشد. آدرس وب محتوا محسوب می‌شود.</span>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Tags">تگ‌ها</label>
+								<div class="col-md-11">
+									<select id="Tags" name="Tags[]" class="form-control select2-multiple" multiple>
+										<option value="1">white</option>
+										<option value="2">white</option>
+										<option value="3">white</option>
+									</select>
+									<div class="form-control-focus"> </div>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Tags">تگ‌ها</label>
+								<div class="col-md-11">
+									<div id="jstree"> </div>
+									<div class="form-control-focus"> </div>
+									<span class="help-block">مطاب خود را دسته بندی نمایید تا محتوای یکتای مناسبی دست پیدا کنید.</span>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Description">توضیحات</label>
+								<div class="col-md-11">
+									<input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" placeholder="توضیحات را وارد نمایید">
+									@Html.ValidationMessageFor(model => model.Description)
+									<div class="form-control-focus"> </div>
+									<span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-actions">
+							<div class="row">
+								<div class="col-md-offset-2 col-md-10">
+									<button type="reset" class="btn default">کنسل</button>
+									<button type="submit" data-loading-text="ارسال..." class="btn blue btn-loading ">تایید</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 			<!-- END SAMPLE FORM PORTLET-->
 		</div>
@@ -181,7 +199,8 @@
 	<script src="~/Content/froala/js/plugins/video.min.js"></script>
 	<script src="~/Content/froala/js/plugins/word_paste.min.js"></script>
 	<script src="~/Content/froala/js/languages/fa.js"></script>
-<script src="~/Content/js/select2.min.js"></script>
+	<script src="~/Content/js/select2.min.js"></script>
+<script src="~/Content/js/jstree.min.css"></script>
 	<script type="text/javascript">
 		jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
 		var form1 = $('form[data-loading-text]');
@@ -195,7 +214,7 @@
 				height: 300,
 				language: "fa",
 				direction: "rtl",
-				fontList: ["IranSans","Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
+				fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
 				plainPaste: true,
 				borderColor: '#00008b',
 				imageUploadURL: '@Url.Action(MVC.Admin.Post.FroalaUploadImage())',
@@ -281,7 +300,55 @@
 
 		$('document').ready(function ()
 		{
-			$('#Tags').select2();
+			$('#Tags').select2(
+				{
+					tags: true,
+					dir: "rtl",
+					language: "fa"
+				});
+		});
+
+		$('#jstree').jstree({
+			"core": {
+				"multiple": true,
+				"check_callback": true,
+				'data': {
+					'url': '@getTreeJsonUrl',
+					"type": "POST",
+					"dataType": "json",
+					"contentType": "application/json; charset=utf8",
+					'data': function (node)
+					{
+						return { 'id': node.id };
+					}
+				},
+				'themes': {
+					'variant': 'small',
+					'stripes': true
+				}
+			},
+			"types": {
+				"default": {
+					"icon": '@Url.Content("~/Content/images/bookmark_book_open.png")'
+				},
+			},
+			"plugins": ["contextmenu", "dnd", "state", "types", "wholerow", "sort", "unique"],
+			"contextmenu": {
+				"items": function (o, cb)
+				{
+					var items = $.jstree.defaults.contextmenu.items();
+					items["create"].label = "ایجاد زیر شاخه";
+					items["rename"].label = "تغییر نام";
+					items["remove"].label = "حذف";
+					var cpp = items["ccp"];
+					cpp.label = "ویرایش";
+					var subMenu = cpp["submenu"];
+					subMenu["copy"].label = "کپی";
+					subMenu["paste"].label = "پیست";
+					subMenu["cut"].label = "برش";
+					return items;
+				}
+			}
 		});
 	</script>
 }

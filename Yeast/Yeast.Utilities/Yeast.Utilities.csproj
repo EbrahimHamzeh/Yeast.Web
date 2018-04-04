@@ -104,6 +104,7 @@
     <Compile Include="Helpers\PersianHelper.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="Helpers\PropertyReflector.cs" />
+    <Compile Include="JsTree\Helper.cs" />
     <Compile Include="ModelBinder\PersianDateModelBinder.cs" />
     <Compile Include="ModelBinder\YeKeModelBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

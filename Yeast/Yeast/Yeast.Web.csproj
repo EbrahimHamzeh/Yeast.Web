@@ -199,6 +199,8 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Content\css\32px.png" />
+    <Content Include="Content\css\40px.png" />
     <Content Include="Content\css\bootstrap-rtl.min.css" />
     <Content Include="Content\css\bootstrap-switch-rtl.min.css" />
     <Content Include="Content\css\bootstrap-table\bootstrap-editable.css" />
@@ -206,9 +208,12 @@
     <Content Include="Content\css\components-rtl.css" />
     <Content Include="Content\css\default-rtl.css" />
     <Content Include="Content\css\enjoyhint.css" />
+    <Content Include="Content\css\jstree.min.css" />
     <Content Include="Content\css\ladda-themeless-rtl.min.css" />
     <Content Include="Content\css\layout-rtl.css" />
     <Content Include="Content\css\plugins-rtl.css" />
+    <Content Include="Content\css\select2-bootstrap.min.css" />
+    <Content Include="Content\css\select2.min.css" />
     <Content Include="Content\css\simple-line-icons.css" />
     <Content Include="Content\css\sweetalert.css" />
     <Content Include="Content\css\YeastFont.css" />
@@ -399,8 +404,10 @@
     <Content Include="Content\js\jquery.validate.js" />
     <Content Include="Content\js\jquery.validate.unobtrusive.js" />
     <Content Include="Content\js\js.cookie.min.js" />
+    <Content Include="Content\js\jstree.min.js" />
     <Content Include="Content\js\ladda.min.js" />
     <Content Include="Content\js\layout.min.js" />
+    <Content Include="Content\js\persianumber.js" />
     <Content Include="Content\js\quick-nav.min.js" />
     <Content Include="Content\js\select2.min.js" />
     <Content Include="Content\js\spin.min.js" />
