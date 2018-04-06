@@ -77,9 +77,16 @@ foreach (string item in args)
 			</li>
 			<li class="nav-item @GetActive("Post")">
 				<a href="@Url.Action(MVC.Admin.Post.Index())" class="nav-link nav-toggle">
-					<i class="fa fa-file-o"></i>
+					<i class="fa fa-sitemap"></i>
 					<span class="title">پست‌ها</span>
 					@GetSelectedTag("Post")
+				</a>
+			</li>
+			<li class="nav-item @GetActive("Category")">
+				<a href="@Url.Action(MVC.Admin.Category.Index())" class="nav-link nav-toggle">
+					<i class="fa fa-file-o"></i>
+					<span class="title">دسته‌بندی‌ها</span>
+					@GetSelectedTag("Category")
 				</a>
 			</li>
 			<li class="nav-item @GetActive("")">

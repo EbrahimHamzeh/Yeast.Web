@@ -12,7 +12,7 @@ namespace Yeast.Model.Admin
 		[Required(ErrorMessage = "عنوان تگ برای ثبت الزامی می‌باشد"),
 		MaxLength(20, ErrorMessage = "عنوان تگ حداکثر ۲۰ حرف می‌باشد"),
 		MinLength(3, ErrorMessage = "عنوان تگ باید بیشتر از ۳ حرف باشد")]
-		public string Name { get; set; }
+		public string Title { get; set; }
 
 		[MaxLength(ErrorMessage ="حداکثر ۱۰۰۰ کاراکتر می‌توانید وارد کنید")]
 		public string Description { get; set; }

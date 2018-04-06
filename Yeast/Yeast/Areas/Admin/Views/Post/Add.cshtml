@@ -40,7 +40,7 @@
 	<link href="~/Content/froala/css/plugins/video.min.css" rel="stylesheet" />
 	<link href="~/Content/css/select2.min.css" rel="stylesheet" />
 	<link href="~/Content/css/select2-bootstrap.min.css" rel="stylesheet" />
-<link href="~/Content/css/jstree.min.css" rel="stylesheet" />
+	<link href="~/Content/css/jstree.min.css" rel="stylesheet" />
 }
 <div class="page-content">
 	<!-- BEGIN PAGE HEADER-->
@@ -120,22 +120,19 @@
 							<div class="form-group form-md-line-input">
 								<label class="col-md-1 control-label" for="Tags">تگ‌ها</label>
 								<div class="col-md-11">
-									<select id="Tags" name="Tags[]" class="form-control select2-multiple" multiple>
-										<option value="1">white</option>
-										<option value="2">white</option>
-										<option value="3">white</option>
-									</select>
+									@Html.DropDownList("Tags[]", Model.TagList, new { @class = "form-control select2-multiple", @multiple = true, @id = "Tags" })
 									<div class="form-control-focus"> </div>
+									<span class="help-block">اگر تگ مورد نظر شما در لیست موجود نمی‌باشد می‌توانید تایپ کتیذ و با اینتر آن‌ها را ثبت نمایید.</span>
 								</div>
 							</div>
-							<div class="form-group form-md-line-input">
-								<label class="col-md-1 control-label" for="Tags">تگ‌ها</label>
+							@*<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Tags">دسته‌بندی</label>
 								<div class="col-md-11">
 									<div id="jstree"> </div>
 									<div class="form-control-focus"> </div>
 									<span class="help-block">مطاب خود را دسته بندی نمایید تا محتوای یکتای مناسبی دست پیدا کنید.</span>
 								</div>
-							</div>
+							</div>*@
 							<div class="form-group form-md-line-input">
 								<label class="col-md-1 control-label" for="Description">توضیحات</label>
 								<div class="col-md-11">
@@ -200,7 +197,7 @@
 	<script src="~/Content/froala/js/plugins/word_paste.min.js"></script>
 	<script src="~/Content/froala/js/languages/fa.js"></script>
 	<script src="~/Content/js/select2.min.js"></script>
-<script src="~/Content/js/jstree.min.css"></script>
+	<script src="~/Content/js/jstree.min.css"></script>
 	<script type="text/javascript">
 		jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
 		var form1 = $('form[data-loading-text]');
@@ -313,7 +310,7 @@
 				"multiple": true,
 				"check_callback": true,
 				'data': {
-					'url': '@getTreeJsonUrl',
+					'url':'', @*'@getTreeJsonUrl',*@
 					"type": "POST",
 					"dataType": "json",
 					"contentType": "application/json; charset=utf8",

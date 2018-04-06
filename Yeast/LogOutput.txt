@@ -48258,3 +48258,1477 @@ SELECT
 -- Completed in 47 ms with result: ProfiledDataReader
 
 Closed connection at 12/01/1397 19:09:25 +04:30
+Opened connection at 15/01/1397 23:54:12 +04:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 15/01/1397 23:54:12 +04:30
+-- Completed in 253 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:13 +04:30
+Opened connection at 15/01/1397 23:54:17 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 15/01/1397 23:54:17 +04:30
+-- Completed in 3423 ms with result: 1
+
+Closed connection at 15/01/1397 23:54:20 +04:30
+Opened connection at 15/01/1397 23:54:20 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 15/01/1397 23:54:20 +04:30
+-- Completed in 238 ms with result: 1
+
+Closed connection at 15/01/1397 23:54:20 +04:30
+Opened connection at 15/01/1397 23:54:21 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:54:24 +04:30
+-- Completed in 875 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:25 +04:30
+Opened connection at 15/01/1397 23:54:25 +04:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 15/01/1397 23:54:25 +04:30
+-- Failed in 1073 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 15/01/1397 23:54:27 +04:30
+Opened connection at 15/01/1397 23:54:27 +04:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:54:27 +04:30
+-- Completed in 31 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:27 +04:30
+Opened connection at 15/01/1397 23:54:28 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:54:28 +04:30
+-- Completed in 130 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:28 +04:30
+Opened connection at 15/01/1397 23:54:29 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:54:29 +04:30
+-- Completed in 27 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:29 +04:30
+Opened connection at 15/01/1397 23:54:29 +04:30
+SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE  NOT (([Extent1].[ContextKey] = @p__linq__0) AND (0 = (CASE WHEN (@p__linq__0 IS NULL) THEN cast(1 as bit) ELSE cast(0 as bit) END)))
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:54:29 +04:30
+-- Completed in 382 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:30 +04:30
+Opened connection at 15/01/1397 23:54:31 +04:30
+Started transaction at 15/01/1397 23:54:32 +04:30
+ALTER TABLE [dbo].[Tags] ADD [Title] [nvarchar](200)
+-- Executing at 15/01/1397 23:54:32 +04:30
+-- Completed in 3736 ms with result: -1
+
+ALTER TABLE [dbo].[Tags] ADD [Enable] [bit] NOT NULL DEFAULT 0
+-- Executing at 15/01/1397 23:54:36 +04:30
+-- Completed in 1206 ms with result: -1
+
+DECLARE @var0 nvarchar(128)
+SELECT @var0 = name
+FROM sys.default_constraints
+WHERE parent_object_id = object_id(N'dbo.Tags')
+AND col_name(parent_object_id, parent_column_id) = 'Name';
+IF @var0 IS NOT NULL
+    EXECUTE('ALTER TABLE [dbo].[Tags] DROP CONSTRAINT [' + @var0 + ']')
+ALTER TABLE [dbo].[Tags] DROP COLUMN [Name]
+-- Executing at 15/01/1397 23:54:37 +04:30
+-- Completed in 3869 ms with result: -1
+
+INSERT [dbo].[__MigrationHistory]([MigrationId], [ContextKey], [Model], [ProductVersion])
+VALUES (N'201804041924293_AutomaticMigration', N'Yeast.Datalayer.Migrations.Configuration',  0x1F8B0800000000000400ED1D5D6FDCB8F1BD40FFC3629FDA43CEEB384D710DEC3B38EBE46A341F46EC1CDAA780DEA5D7C269A53D49EBB351DC2FEB437F52FF42498992F831A4488AD2AE7D4180C04B8A430E39331C0E8733FFFBCF7F8F7FB85FC7933B9CE5519A9C4C9F1F1C4E273859A4CB28599D4CB7C5CDB7DF4D7FF8FE8F7F387EB35CDF4F7EAABF7B41BF232D93FC647A5B149B57B359BEB8C56B941FACA34596E6E94D71B048D733B44C674787877F9B3D7F3EC304C494C09A4C8E3F6D93225AE3F207F9394F9305DE145B14BF4F9738CE5939A9B92CA14E3EA035CE3768814FA6FFC2282F0ECE508162F480B303D2B6C0F7C574721A47880CE712C737D3094A92B4400519ECABCF39BE2CB234595D6E48018AAF1E36987C7783E21C33245EB59FDBE2737844F199B50D6B508B6D5EA46B4780CF5FB0099AC9CDBDA679DA4C2099C23764AA8B078A75398D27D3392AF02ACD1EA613B9B357F338A31F36B34C2AA3641EA33CC7F9410928227FD4009E4D80CF9E3554428889FE7B36996FE3629BE193046F8B0CC5CF2617DBEB385AFC033F5CA53FE3E424D9C6313F64326852271490A28B2CDDE0AC78F8846F1822E7CBE96426B69BC90D9B665C9B0AC5F3A47871349D7C209DA3EB183714C14DC7659166F8479CE08C60BCBC404581B384C2C0E59C2ABD4B7DD1FFEBDE080912969A4EDEA3FB77385915B784D90E0913BD8DEEF1B22E6123F89C44840349A322DBE2AE4ECE70BEC8A24D452BA6BE4274F6315BE24C9A40738BCB78BB0A3F071FD05DB42AD748EAEE22CD8B7C3AF984E3B236BF8D3695486888F60BFBE46D96AE3FA531C70F55CD97CB749B2DE8BAA560F515CA56B81047743C6B99CCC87A148437DBD1C65F59CE4C6EF30CD376647B68388FFE7D15514E54FA35C3227B517413E98099DB5E45456CE27DF26700762433FF6B9A2D07EFE775BA7C18BC930E4911A6133B69E9D997562ACDD3F59AD0AF463055955F2AD9C08925AEBC913A8D50E22B6B89653B9C2BB48287422A54F1D8142A83686BA011580B45868BBF3A52B5FF2A1A7B31F15FC26808A7CB6520F17B9E9F6E36597A879B397A9D12B2438933A477D1CF789E6E29899927DB0CE6026564A69525B31602B751BC2410CC42A0EC031403658D5E1054D5AEA2A0EEAFCF901485091EB18B0AE72F28B583E1A5A8ED50C8D1310387422BBEB452BD1D8B50A12C9658DB4B685643F39498B4F1577169E6F6B75196171D27B8972124E63B344E3FA31E144FEF50813232E9B786BE8E8274F53ACA8ADB33F4E0AAA25F108A1F457B3EBF30CE41881EF2D728E9BF4F863C3C9503F2393951767897AEA2C4B771BDAEF35B94ACBC209C2E8AE8AE14116E6DDF10491A0F4E4E652FF334B989B275FF35AF67EBEF2837B16AA0231E5E6C3332B197055A6F06EFEDE2364DF087EDFABA35598DD157B0A5B9FA357D8B1664177B93D056FDD5E074F173BA2DDE24255F7E2E16CEBC510308329CD3C502E7F95B42CC7819403BA73A4DC7361AFC581FA3680D9FA42B4D8FD5CBEA6159AC68AA7C9DABA26A3430582AABF0786455D67644A508378CA7AE97465315C36361753EE709C340147B475B0A0F436F06368D8202308C82554BA3284BE1515455BD8CD1F3F2F040A19554E76F7F11E17C3D58740BAAEEFE3A34353AD114C0E01B5BD9D34F28DE86EECA834C4B0110804C4B38BB26D37210A4F82E2AAFD466DD2DEA8F0978ABEF6B427365066964FAA3E2D17756ABEEAA91F2688EDDB93B737AD03195DD01C89882D93515C334067E4A87EB438E21E465DDF700CB7A8556DE6B49DAEE7A01F77DB7ECBA480D63431AD536569D9F9C8F4F1E0A6EC77D9EAC58AA377D5E1CF191CDA3275354CDBFF2C51EF81675E97D3EBDD8FBCA64E972BBE8E12E53B5FF4A48BD08694CF9EA7505EDA87F05D0BDF641EF7AEC54F5F2AF41B477E3CDADC6DDA659C32FEC23EE2659AA536F93E50F7A7B035E6528C9E3F2AAA3875B6003E52B5DEE833AD9ED97F732CCD5E7187E79EF50B2DAA2159E9316231AD7B56E2002BD2BCE206AADC2C4C0272E6C7C9AE7E9222A47255ADF6B4F1911C137C97262769BA96694F37021F34AD833DA108624FD9F4CBF51664D0BB4F138E9047A7870F05C814B1819533811A2378C39110D5152A85C1F258B688362E310A45696D2824E7B035FAE39C31B9C5046374EA84DC7AD2B97DA7DD38B24C6BAE6E678C6518625C150E2ED5C598186C3108BE052DA82AC9809A01379923E266738C6059ED0AB72FAC6658EF2055AAAEC4D7868E93747FC0D9A0E1FF03AAD45A7F29112D109878B7624100FCA572D5D6BE6C588C0748CC08500EA36BD6A2D876330A078256A5E54E57ED44C60A05CD5C1B417D7DFC89B931BAEECBAD5382AF9EE75778C24DDF4828CC42E83866324713AC6622411F5C7C1489589D1B8A292C1B13F0B492F12CC7B584FE6A92EE78DC3916EEA77C73AA25F00C83995096438C611E6622CBE11F0DE7BB6690DF3BAC504ACF4ED5A96774EF66A1FF08267287E915E596A1551CD934B8E5C9B47CA4EB241F35873387C656B9276605AD392CCA2107B0E2431B4E6ACB1E5866E76C638446AE6C0A66BF84A7B241902D84174EB6C328A889CC19923EDE58BC1A06273B8B4E3BDCA1843A33D9029C3199B84D2DA7976DD0481506CA8644D991935671628190B0AF61217A2008BA8375E6BFF5184923217221476E9AA00A8E6A0A371EBAAA90EA03E1C748060966DA57DA58D74F52F1E56C171C8E7596B90B5DFA70124D3ECAD4132DF4903C44A727500AC5EC52A50CABDB6A36975650DB5AEEFC2BBE8A5BAAB0449A6BE06ED00619E05AB1910F85847BE9C8490C0718CAB1073F38A90FB087E67288BD24EFB698305CF398A44EEB4985A80116413F9D205FD92F10DC82BE2BBDB16E88D382FA039204C68F5C659F07D5751D61AF63A4D7BDC58998033600B59E4F81953845C20BC9B95D0610E5A9D2CEC4E1ED8CB66A661685CF0E7D7600DD99F3A2D50EE184B862370BDEB9186C19B318D066DE014D4651B71475A3CEA0CC5D06C7FD1200A9848BA8C24EE888AB60D7071D9287BA3CC79CEA9186B4EEF1DE7776EBC95AA6140573DB10FB0AC7244246077329CE66DCEF3FC12717AB5698F82CFEF4360AFF88100F81B4FF776E77B6EE82071DA1DC8072576E8465D9D8CAEF3A6ED89535A4B5EE134CC8CE18CD98338EA3BFEE658D9D41DCFAAD083ACE078A6895178FC1E6D3651B2E26216B292C96515B070FEEDA57B10BF750563B610684E3E04373D1569865658AAA59BFC1297710C68B8C46B44BD31E6CBB5F2997488D61C12EACE9473B2BA68F5B1A16E42FFE6CEEB6AF4C6F664AD9A5D1890B70443AAB194C86255B2004D27347E24E928031C8EE669BC5D277A0B92BE75E5DAC6B7AF4AEC2108DE903C20A1C21E1E8BCAC7436245F630AAE85B3C88AA4485703C935644317E2904A058244592B22238DD16E44E6B90E8B2A033B8D93034264462E0C10815F6F0C450763C40B1C61E2273A4E341B1227B188D9B1C0FA529B48753B9C1F140AA9221A83F344FEF889B0CA7500FE1CDAC921EB25BD77218B6EA4F285C78331E0C576C0F8B0F7026E0C495DB43E3829CF1C0B8627B58AD7B1C0F4AEF34B73332D669E5EE345C5AC6DD09186E360CF57211A978205CB103B52008545BBA3B65868F1C25B01857EEC0F14D702881EB9B52179EA8C345893C51973AF0FD854405176E5283C57A1245062BDC9D8AC1057C12A6BA2D76A34E2E06944CA25C951B4C3934940C58AE7783DE868D92E1B635F6105930291E142B7284C1C52352807175EE9C50858C82B8A1AA7150BFC4B850821E2656398C928FFE240C92AFF082A79951F80B07955A89F72468D74AAD0375AA919F041255AB3D60036396EB1C7601353894B019A8D5F6B0DB48513CC8B6746FB41BE58E2A88B22E5DDD7B28ED5D1086517F6A873D79D11C4FD66DE41C61D36B8B1D61B137D20A3056BE87C4A4BD8BEB434C95D3461F62D240D0CB1D214A8D28768CA175F43085D03382683785DED1C37323D99D1386EE12AF0F5D948E277DC8020630AC90A8FDFA78283A5FBF9DAD5B79891862B1A88793FB0A81AD8691FC216C8DA18FA975101741A566657B4322B55F5A082A619E6CEE84A26BB8AFB733C086BE6F7B79E32E18E43A8439187ADC88E85AEEEBD23E32237DE8FDB8D75EECB60F8FB5D23BBC8CE41C1742DD4AB6BEB57ED79386F6FBBB33EFCF2DA018E94234E2F135E393A1E8C0025EE531BF1DEBDB3AF6BDE58D1CF5C4914FBF803BB13A3156445782801FD270FD3A0E49FB84C89B0F8CA321D3BB8CCAE739E7390D60D3C43FB14054F65072A601C9F5D8EEBA8B6BE04F05A0AFB2E79C97B0029001E8FCBC5774A0C1340C1D3027384B22605FDB78BBE8A65A70FADC87B5179C477F170BCFF92B5B1DF875CB4EAA2C575E7170F69C670A27C0BA2B1ED3E36D45BD174F76C4B67797ECC9BDB0DBB6E7CC35C0426CE4A01BF85E71B201DDDE040139643B9E2034EA9DF194002C84DEED7AC7AA9EDEC17CAFA8C45BE1533CD3E54F9A23072B697E379EE9CC2B5C70572F67833A9F97B390330F75D94DBCFA643AA9AF3D4EA6970F7981D725D11D5CFE12CFE388AA87CD07EF5112DD60B22265F0C8E9D1E1F3A3E9E4348E505E3D1E600EF0AFE4E7D9561EF1CF5FB0B4F633B9B9BB5F3D8592E74B21B625102A1674291F23026694D44C6B8A71E918FDBE329E541D2477285BDCA24C8DE3DC02F58CE8AB03ED0C5BC8325FCE885B7B3E93B41FBE6E09DD9F069500D9FF96E4EF2254EA740898CD6A5EF1215BEBE5FCD31ADDFFD915921496B5172C3EF46A2F4010B17A013270A417BCE6A8C2D19C125EE33C59E2FB93E9BFCB36AF26E7FFFCC29A3D9B945CFC6A7238F9CDB56741B572EB9D6B6A3F02E74CE54F83E1211206E2B1BBAD9D92FFDB5B86A8F9BFAFA3C2198A92FB5BDA4FBC327FDB5263DDAE0F33341AA463D755B33E3D8F2500DC725E3F0DDE53B24B830CF8D299FDE464D281C00EA9EDA9A9A241D047EE90E5CCD0BE1A889C29BAD7B6DA6683D6A0E90C504CFEEC232443AA7E4AE267DF59071341F701062786EE03514E14ED0B4B481CDD8BBAE0E4D03E34012586EEA7E842C99F7B4104123C878217640A75099CBDF4185DF2666FFA059339FB0C4D9BC8D947D56ADDF09D17D43BF1EDD35029C43C892EDA9A5E59F34B46DB8B09D584B3C392802EA96C3355BFFD0EB2BBC2CA1C4DB1DA3F796B30D8231178B884AEFD48481BA05AFD344C6AD5114586988FD5B6E3AAD5104BA938B33FDA5D00B496F63D480D79FC13B3A176EB1FAE69489FC6B20E7185036EB243DD9340AEE24F773506E4B16EA3AC4F46CCA7BC2E5D3B0B9D00FA5759FC6C729E7F4EA25FB6A4E28A4C2DDD63E4C49561E493C115E3D12EC020BB8FE6DA4ECDA7B8A31B3C2841623F3BC448267F17F5C8F7A25BEBDE079C8074BE325D445DF7E1365D55AB5E6AEC300BE52054FAE6A2F44E14A940AABC7CBAA1854A18A20D39662327271E59264B046DBA7B0CB9255B97C2B1323FFA525F207AD1C47C1C8A58EC0845EF0A395A0AC4EEFC9ABBCA66A6A418E16965B4749AE3652032456471300EED57F6CCBEA9FEC61714A32DBA83A030BC8D196BB52DF287EE5E5030533E2828864E173AAEA0D045DBD94741D19D1DB4AF94B0D2661ED95A5B2B2C7B201CBAF3A3EE5E36545734A06818381FEAB8924113E361CF0483F9F1A09808A52BF3E940A453DB3CA4DE07142D701CA6E0B4A279E2E966BD199748A02767AEF2FFC990C9584759173AD9ED51D631E970883CC363AA1C86DC28BB533B3A5EFB8EB1EAEEA997F721DBF2EE94116310A87D50491E533A658FD4C60A0C2E95AA04CC210DF35EEF215D41AD76BB93482FAC1B03BA9C344B5E43F69A5E9284C67CD1D58BEA93E9F23A258B5DDDF3E853E2819979B5E9A421D870223465E8B5294D1D795D030E5C973B54865F9DF414E0553104194C04D995A0DA263FB5AE334DF2577D8FCC8E64E8917DA1EB51937E54DF63B523183AAC3ED0F507270994BB2BCF554A1F652904184A60A9C98A6D488A0D416E52697771449D165B658ABA06E48B26D1B6D5FC1BE75E3FEF76732E097A90BBB97A1D9BEB132842ABAC91244D8D66B561793252C66F287131B04168EEA4BBDBEE2EAF37BF1A6DE01E0BD406428BBF14EC95BA5B49EF6B460A16E860B681504806CAD3ED88E8F0AB172211B7EFEA099B2318DE3F1092FDB36EBBA168C5A7BBCBACEDBB5EFCF60685DDEF8FA09A06DB904E5B13C149360773E32D7F1B5095363C21C45D48E4EA54C426E4E0B859BD368361D11B203F3894121C7AEE343CE729D6A350E9BF017E827869671C3950B26F37C205555F20409D3DBA0E99BCD5B868C7B34FDB843EA2AD7E9DE13C5AB52068A4B7042F04EB41F3CD797293D6560C6944F527726C245CA0252AD0695644376851906AFA7E364A88282B9F64D057DCD778799E7CDC169B6D4150C6EBEB5860136A0C31F55FA62B17C77CCC4E56215020C38CE8BBE38FC9EB6D142F9B71BF053C573520A89585399ED3B52CA803FAEAA181F4214D2C01B1E96B8C435778BD294F431F934B74877DC646B8ED1D5EA1C543FB4C5207A47B21C4693F3E8BD02A43EB9CC168DB939F848697EBFBEFFF0F22D8B2D397CF0000 , N'6.2.0-61023')
+-- Executing at 15/01/1397 23:54:41 +04:30
+-- Completed in 610 ms with result: 1
+
+Committed transaction at 15/01/1397 23:54:41 +04:30
+Disposed transaction at 15/01/1397 23:54:41 +04:30
+Disposed connection at 15/01/1397 23:54:41 +04:30
+Opened connection at 15/01/1397 23:54:41 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 15/01/1397 23:54:41 +04:30
+-- Completed in 1191 ms with result: 1
+
+Closed connection at 15/01/1397 23:54:43 +04:30
+Opened connection at 15/01/1397 23:54:43 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:54:43 +04:30
+-- Completed in 47 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:43 +04:30
+Opened connection at 15/01/1397 23:54:43 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:54:43 +04:30
+-- Completed in 25 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:43 +04:30
+Opened connection asynchronously at 15/01/1397 23:54:44 +04:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 15/01/1397 23:54:44 +04:30
+-- Completed in 173 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:45 +04:30
+Opened connection asynchronously at 15/01/1397 23:54:45 +04:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 15/01/1397 23:54:45 +04:30
+-- Completed in 93 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:45 +04:30
+Opened connection asynchronously at 15/01/1397 23:54:45 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 15/01/1397 23:54:45 +04:30
+-- Completed in 98 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:45 +04:30
+Opened connection asynchronously at 15/01/1397 23:54:45 +04:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 15/01/1397 23:54:45 +04:30
+-- Completed in 48 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:45 +04:30
+Opened connection asynchronously at 15/01/1397 23:54:46 +04:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 15/01/1397 23:54:46 +04:30
+-- Completed in 56 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:46 +04:30
+Opened connection asynchronously at 15/01/1397 23:54:46 +04:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 15/01/1397 23:54:46 +04:30
+-- Completed in 247 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:54:46 +04:30
+Opened connection at 15/01/1397 23:59:23 +04:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 15/01/1397 23:59:23 +04:30
+-- Completed in 66 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:23 +04:30
+Opened connection at 15/01/1397 23:59:26 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 15/01/1397 23:59:26 +04:30
+-- Completed in 1199 ms with result: 1
+
+Closed connection at 15/01/1397 23:59:28 +04:30
+Opened connection at 15/01/1397 23:59:28 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 15/01/1397 23:59:28 +04:30
+-- Completed in 34 ms with result: 1
+
+Closed connection at 15/01/1397 23:59:28 +04:30
+Opened connection at 15/01/1397 23:59:28 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:59:31 +04:30
+-- Completed in 200 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:31 +04:30
+Opened connection at 15/01/1397 23:59:31 +04:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 15/01/1397 23:59:31 +04:30
+-- Failed in 405 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 15/01/1397 23:59:31 +04:30
+Opened connection at 15/01/1397 23:59:33 +04:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:59:33 +04:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:33 +04:30
+Opened connection at 15/01/1397 23:59:33 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:59:33 +04:30
+-- Completed in 29 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:33 +04:30
+Opened connection at 15/01/1397 23:59:33 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 15/01/1397 23:59:33 +04:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:33 +04:30
+Opened connection asynchronously at 15/01/1397 23:59:34 +04:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 15/01/1397 23:59:34 +04:30
+-- Completed in 92 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:35 +04:30
+Opened connection asynchronously at 15/01/1397 23:59:35 +04:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 15/01/1397 23:59:35 +04:30
+-- Completed in 97 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:35 +04:30
+Opened connection asynchronously at 15/01/1397 23:59:35 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 15/01/1397 23:59:35 +04:30
+-- Completed in 192 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:35 +04:30
+Opened connection asynchronously at 15/01/1397 23:59:35 +04:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 15/01/1397 23:59:35 +04:30
+-- Completed in 35 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:35 +04:30
+Opened connection asynchronously at 15/01/1397 23:59:35 +04:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 15/01/1397 23:59:36 +04:30
+-- Completed in 134 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:36 +04:30
+Opened connection asynchronously at 15/01/1397 23:59:36 +04:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 15/01/1397 23:59:36 +04:30
+-- Completed in 119 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:36 +04:30
+Opened connection at 15/01/1397 23:59:37 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 15/01/1397 23:59:37 +04:30
+-- Completed in 246 ms with result: ProfiledDataReader
+
+Closed connection at 15/01/1397 23:59:37 +04:30
+Opened connection at 16/01/1397 00:00:11 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+     CAST( [Extent1].[Id] AS nvarchar(max)) AS [C1]
+    FROM [dbo].[Tags] AS [Extent1]
+    WHERE [Extent1].[Enable] = 1
+-- Executing at 16/01/1397 00:00:11 +04:30
+-- Completed in 1564 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 00:00:13 +04:30
+Opened connection at 16/01/1397 23:21:12 +04:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 16/01/1397 23:21:12 +04:30
+-- Completed in 486 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:12 +04:30
+Opened connection at 16/01/1397 23:21:20 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 16/01/1397 23:21:20 +04:30
+-- Completed in 220 ms with result: 1
+
+Closed connection at 16/01/1397 23:21:21 +04:30
+Opened connection at 16/01/1397 23:21:21 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 16/01/1397 23:21:21 +04:30
+-- Completed in 202 ms with result: 1
+
+Closed connection at 16/01/1397 23:21:21 +04:30
+Opened connection at 16/01/1397 23:21:23 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 16/01/1397 23:21:29 +04:30
+-- Completed in 256 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:29 +04:30
+Opened connection at 16/01/1397 23:21:29 +04:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 16/01/1397 23:21:30 +04:30
+-- Failed in 1389 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 16/01/1397 23:21:31 +04:30
+Opened connection at 16/01/1397 23:21:32 +04:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 16/01/1397 23:21:32 +04:30
+-- Completed in 88 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:32 +04:30
+Opened connection at 16/01/1397 23:21:32 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 16/01/1397 23:21:32 +04:30
+-- Completed in 518 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:33 +04:30
+Opened connection at 16/01/1397 23:21:33 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 16/01/1397 23:21:33 +04:30
+-- Completed in 32 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:33 +04:30
+Opened connection asynchronously at 16/01/1397 23:21:55 +04:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 16/01/1397 23:21:56 +04:30
+-- Completed in 211 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:56 +04:30
+Opened connection asynchronously at 16/01/1397 23:21:56 +04:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 16/01/1397 23:21:57 +04:30
+-- Completed in 252 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:57 +04:30
+Opened connection asynchronously at 16/01/1397 23:21:57 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 16/01/1397 23:21:57 +04:30
+-- Completed in 47 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:57 +04:30
+Opened connection asynchronously at 16/01/1397 23:21:57 +04:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 16/01/1397 23:21:57 +04:30
+-- Completed in 79 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:57 +04:30
+Opened connection asynchronously at 16/01/1397 23:21:57 +04:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 16/01/1397 23:21:57 +04:30
+-- Completed in 132 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:58 +04:30
+Opened connection asynchronously at 16/01/1397 23:21:58 +04:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 16/01/1397 23:21:58 +04:30
+-- Completed in 219 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:21:58 +04:30
+Opened connection at 16/01/1397 23:22:02 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing at 16/01/1397 23:22:02 +04:30
+-- Completed in 518 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:22:02 +04:30
+Opened connection asynchronously at 16/01/1397 23:25:16 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Posts] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 16/01/1397 23:25:16 +04:30
+-- Completed in 493 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:25:16 +04:30
+Opened connection at 16/01/1397 23:25:16 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[ModifiedDate] AS [ModifiedDate], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Keyword] AS [Keyword], 
+    [Extent1].[Body] AS [Body], 
+    [Extent1].[Slug] AS [Slug], 
+    [Extent1].[Description] AS [Description]
+    FROM [dbo].[Posts] AS [Extent1]
+    ORDER BY row_number() OVER (ORDER BY [Extent1].[Id] ASC)
+    OFFSET @p__linq__0 ROWS FETCH NEXT @p__linq__1 ROWS ONLY 
+-- p__linq__0: '0' (Type = Int32, IsNullable = false)
+-- p__linq__1: '10' (Type = Int32, IsNullable = false)
+-- Executing at 16/01/1397 23:25:16 +04:30
+-- Completed in 112 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:25:17 +04:30
+Opened connection at 16/01/1397 23:25:36 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+     CAST( [Extent1].[Id] AS nvarchar(max)) AS [C1]
+    FROM [dbo].[Tags] AS [Extent1]
+    WHERE [Extent1].[Enable] = 1
+-- Executing at 16/01/1397 23:25:37 +04:30
+-- Completed in 27 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:25:37 +04:30
+Opened connection at 16/01/1397 23:26:34 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+     CAST( [Extent1].[Id] AS nvarchar(max)) AS [C1]
+    FROM [dbo].[Tags] AS [Extent1]
+    WHERE [Extent1].[Enable] = 1
+-- Executing at 16/01/1397 23:26:34 +04:30
+-- Completed in 68 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:26:34 +04:30
+Opened connection at 16/01/1397 23:27:48 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+     CAST( [Extent1].[Id] AS nvarchar(max)) AS [C1]
+    FROM [dbo].[Tags] AS [Extent1]
+    WHERE [Extent1].[Enable] = 1
+-- Executing at 16/01/1397 23:27:48 +04:30
+-- Completed in 25 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:27:48 +04:30
+Opened connection at 16/01/1397 23:28:16 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Enable] AS [Enable]
+    FROM [dbo].[Tags] AS [Extent1]
+-- Executing at 16/01/1397 23:28:16 +04:30
+-- Completed in 5 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:28:16 +04:30
+Opened connection at 16/01/1397 23:28:20 +04:30
+Closed connection at 16/01/1397 23:28:20 +04:30
+Opened connection at 16/01/1397 23:28:26 +04:30
+Closed connection at 16/01/1397 23:28:26 +04:30
+Opened connection at 16/01/1397 23:28:30 +04:30
+Closed connection at 16/01/1397 23:28:30 +04:30
+Opened connection at 16/01/1397 23:31:40 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+     CAST( [Extent1].[Id] AS nvarchar(max)) AS [C1]
+    FROM [dbo].[Tags] AS [Extent1]
+    WHERE [Extent1].[Enable] = 1
+-- Executing at 16/01/1397 23:31:40 +04:30
+-- Completed in 38 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:31:40 +04:30
+Opened connection at 16/01/1397 23:32:18 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+     CAST( [Extent1].[Id] AS nvarchar(max)) AS [C1]
+    FROM [dbo].[Tags] AS [Extent1]
+    WHERE [Extent1].[Enable] = 1
+-- Executing at 16/01/1397 23:32:18 +04:30
+-- Completed in 24 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:32:18 +04:30
+Opened connection at 16/01/1397 23:33:44 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+     CAST( [Extent1].[Id] AS nvarchar(max)) AS [C1]
+    FROM [dbo].[Tags] AS [Extent1]
+    WHERE [Extent1].[Enable] = 1
+-- Executing at 16/01/1397 23:33:44 +04:30
+-- Completed in 226 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:33:44 +04:30
+Opened connection at 16/01/1397 23:37:12 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+     CAST( [Extent1].[Id] AS nvarchar(max)) AS [C1]
+    FROM [dbo].[Tags] AS [Extent1]
+    WHERE [Extent1].[Enable] = 1
+-- Executing at 16/01/1397 23:37:12 +04:30
+-- Completed in 38 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:37:12 +04:30
+Opened connection at 16/01/1397 23:37:14 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+     CAST( [Extent1].[Id] AS nvarchar(max)) AS [C1]
+    FROM [dbo].[Tags] AS [Extent1]
+    WHERE [Extent1].[Enable] = 1
+-- Executing at 16/01/1397 23:37:14 +04:30
+-- Completed in 49 ms with result: ProfiledDataReader
+
+Closed connection at 16/01/1397 23:37:14 +04:30
+Opened connection at 17/01/1397 06:31:08 +04:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 17/01/1397 06:31:08 +04:30
+-- Completed in 65 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:08 +04:30
+Opened connection at 17/01/1397 06:31:10 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 17/01/1397 06:31:10 +04:30
+-- Completed in 133 ms with result: 1
+
+Closed connection at 17/01/1397 06:31:10 +04:30
+Opened connection at 17/01/1397 06:31:10 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 17/01/1397 06:31:10 +04:30
+-- Completed in 48 ms with result: 1
+
+Closed connection at 17/01/1397 06:31:10 +04:30
+Opened connection at 17/01/1397 06:31:10 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:31:12 +04:30
+-- Completed in 214 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:12 +04:30
+Opened connection at 17/01/1397 06:31:12 +04:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 17/01/1397 06:31:12 +04:30
+-- Failed in 426 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 17/01/1397 06:31:13 +04:30
+Opened connection at 17/01/1397 06:31:13 +04:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:31:13 +04:30
+-- Completed in 27 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:13 +04:30
+Opened connection at 17/01/1397 06:31:13 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:31:13 +04:30
+-- Completed in 100 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:13 +04:30
+Opened connection at 17/01/1397 06:31:14 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:31:14 +04:30
+-- Completed in 37 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:14 +04:30
+Opened connection at 17/01/1397 06:31:14 +04:30
+SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE  NOT (([Extent1].[ContextKey] = @p__linq__0) AND (0 = (CASE WHEN (@p__linq__0 IS NULL) THEN cast(1 as bit) ELSE cast(0 as bit) END)))
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:31:14 +04:30
+-- Completed in 139 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:14 +04:30
+Opened connection at 17/01/1397 06:31:15 +04:30
+Started transaction at 17/01/1397 06:31:15 +04:30
+ALTER TABLE [dbo].[Categories] ADD [Title] [nvarchar](100)
+-- Executing at 17/01/1397 06:31:15 +04:30
+-- Completed in 201 ms with result: -1
+
+DECLARE @var0 nvarchar(128)
+SELECT @var0 = name
+FROM sys.default_constraints
+WHERE parent_object_id = object_id(N'dbo.Categories')
+AND col_name(parent_object_id, parent_column_id) = 'Name';
+IF @var0 IS NOT NULL
+    EXECUTE('ALTER TABLE [dbo].[Categories] DROP CONSTRAINT [' + @var0 + ']')
+ALTER TABLE [dbo].[Categories] DROP COLUMN [Name]
+-- Executing at 17/01/1397 06:31:15 +04:30
+-- Completed in 86 ms with result: -1
+
+INSERT [dbo].[__MigrationHistory]([MigrationId], [ContextKey], [Model], [ProductVersion])
+VALUES (N'201804060201147_AutomaticMigration', N'Yeast.Datalayer.Migrations.Configuration',  0x1F8B0800000000000400ED1D5D6FE3B8F1BD40FF83E1A7F6B01767B3DDE2BA48EE907576AF41F723D8640FEDD382B119473859F249722E4171BFAC0FFD49FD0B25254AE2C79022294A76728BBC38A438E49033C3E17038F3BFFFFCF7F887FB753CB9C3591EA5C9C9F4F9C1E174829345BA8C92D5C9745BDC7CFBDDF487EFFFF887E337CBF5FDE4A7FABB17F43BD232C94FA6B745B179359BE58B5BBC46F9C13A5A64699EDE14078B743D43CB74767478F8B7D9F3E7334C404C09ACC9E4F8D33629A2352EFF21FFCED3648137C516C5EFD3258E73564E6A2E4BA8930F688DF30D5AE093E9BF30CA8B833354A0183DE0EC80B42DF07D319D9CC61122C3B9C4F1CD748292242D504106FBEA738E2F8B2C4D56971B5280E2AB870D26DFDDA038C70C8957EDE7B6F81C1E517C666DC31AD4629B17E9DA11E0F3176C82667273AF699E361348A6F00D99EAE281625D4EE3C9748E0ABC4AB387E944EEECD53CCEE887CD2C93CA2899C728CF717E50028AC88F1AC0B309F0D9B3864A0831D1BF6793F9362EB6193E49F0B6C850FC6C72B1BD8EA3C53FF0C355FA334E4E926D1CF34326832675420129BAC8D20DCE8A874FF8862172BE9C4E6662BB99DCB069C6B5A9503C4F8A1747D3C907D239BA8E714311DC745C1669867FC409CE08C6CB0B5414384B280C5CCEA9D2BBD4D75554C4B8EE8ED020E1A9E9E43DBA7F879355714BB8ED9070D1DBE81E2FEB123684CF49445890342AB22DEEEAE50CE78B2CDA54C462EA2B44671FB325CEA41934B7B88CB7ABF073F001DD45AB7291A4EE2ED2BCC8A7934F382E6BF3DB6853C984866ABFB04FDE66E9FA531A730C51D57CB94CB7D982AE5B0A565FA16C850B7144C7B396CB8CBC474178F31D6DFC95E7CCE436CF306D47F68786F3E8EF2BB2DB00FD9A6191CD28BA8974C0FAF13EF919801DC9CCFF9A66CBC1FB799D2E1F06EFA4435284E9C44E5A7AF6A5954AF374BD26F4AB114C55E5974A367062892B6FA44E2394F8CA5A62D90EE70AADE0A1900A553C3685CA20DA1A6804D64291E1E2AF8F54EDBF8AC65E4CFC97301AC2E9721948FC9EE7A79B4D96DEE1668E5EA784EC50E20CE95DF4339EA75B4A62E6C93683B94019996965C9AC85C06D142F0904B31028FB00C54059A3170455B5AB28A8FBEB332445618247ECA2C2F90B4AED6078296A3B147276CCC0A1D08A2FAD546FC72254288B25D6F6129AD5D03C25266DFC555C9AB9FD6D94E505FD6990992F4348CC77689C7E463D289EDEA1026564D26F0D7D1D05E9EA759415B767E8C15545BF20143F8AF67C7E619C83103DE4AF51D27F9F0C79782A07E47372A2ECF02E5D45896FE37A5DE7B728597941385D14D15D2922DCDABE2192341E9C9CCA5EE669721365EBFE6B5ECFD6DF516E62D540473CBCD86664622F0BB4DE0CDEDBC56D9AE00FDBF5756BB21AA3AF604B73F56BFA162DC82EF626A1ADFAABC1E9E2E7745BBC494ABEFC5C2C9C79A306106438A78B05CEF3B78498F13280764E759A8E6D34F8B13E46D11A3E49579A1EAB97D5C3B258D154F93A5745D56860B05456E1F1C8AAACED884A116E184F5D2F8DA62A86C7C2EA7CCE13868128F68EB6141E86DE0C6C1A0505601805AB96465196C2A3A8AA7A19A3E7E5E181422BA9CEDFFE22C2F97AB0E81654DDFD75686A74A22980C137B6B2A79F50BC0DDD95079996022000999670764DA6E52048F15D545EA9CDBA5BD41F13F056DFD784E6CA0CD2C8F447C5A3EFAC56DD5523E5D11CBB7377E6F4A0632ABB03903105B36B2A86690CFC940ED7871C43C8CBBAEF0196F50AADBCD792B4DDF502EEFB6ED975911AC68634AA6DAC3A3F391F9F3C14DC8EFB3C59B1546FFABC38E2239B474FA6A89A7FE50B3311751C75C3F81675E97D3EBDD8FBCA64E972BBE8E12E53B5FF4A48BD08694CF9EA7505EDA87F05D0BDF641EF7AEC54F5F2AF41B477E3CDADC6DDA659C32FEC23EE2659AA536F93E50F7A7B035E6528C9E3F2AAA3875B6003E52B5DEE833AD9ED97F732CCD5E7187E79EF50B2DAA2159E9316231AD7B56E2002BD2BCE206AADC2C4C0272E6C7C9AE7E9222A47255ADF6B4F1911C137C97262769BA96694F37021F34AD833DA108624FD9F4CBF51664D0BB4F138E9047A7870F05C814B1819533811A2378C39110D5152A85C1F258B688362E310A45696D2824E7B035FAE39C31B9C5046374EA84DC7AD2B97DA7DD38B24C6BAE6E678C6518625C150E2ED5C598186C3108BE052DA82AC9809A01379923E266738C6059ED0AB72FAC8658EF2055AAAEC4D7868E93747FC0D9A0E1FF03AAD45A7F29112D109878B7624100FCA572D5D6BE6C588C0748CC08500EA36BD6A2D876330A078256A5E54E57ED44C60A05CD5C1B417D7DFC89B931BAEECBAD5382AF9EE75778C24DDF4828CC42E83866324713AC6622411F5C7C1489589D1B8A292C1B13F0B492F12CC7B584FE6A92EE78DC3916EEA77C73AA25F00C83995096438C611E6622CBE11F0DE7BB6690DF3BAC504ACF4ED5A96774EF66A1FF08267287E915E596A1551CD934B8E5C9B57CA4EB241F35873387C656B9276605AD392CCA2107B0E2431B4E6ACB1E5866E76C638446AE6C0A66BF84A7B241902D84174EB6C328A889CC19923EDE58BC1A06273B8B4E3BDCA1843C33D9029C3199B84D2DA7976DD4481506CA8644D991935671628190B0AF61217A2008BA8375E6BFF5184923217221476E9AA00A8E6A0A371EBAAA90EA03E1C748060966DA57DA58D74F52F1E56C171C8E7596B90B5DFA70124D3ECAD4132DF4903C44A727500AC5EC52A50CABDB6A36975650DB5AEEFC2BBE8A5BAAB0449A6BE06ED00619E05AB1910F85847BE9C8490C0718CAB1073F38A90FB087E67288BD24EFB698305CF398A44EEB4985A80116413F9D205FD92F10DC82BE2BBDB16E88D382FA039204C68F5C659F07D5751D61AF63A4D7BDC58998033600B59E4F81953845C20BC9B95D0610E5A9D2CEC4E1ED8CB66A661685CF0E7D7600DD99F3A2D50EE184B862370BDEB9186C19B318D066DE014D4651B71475A3CEA0CC5D06C7FD1200A9848BA8C24EE888AB60D7071D9287BA3CC79CEA9186B4EEF1DE7776EBC95AA6140573DB10FB0AC7244246077329CE66DCEF3FC12717AB5698F82CFEF4360AFF88100F81B4FF776E77B6EE82071DA1DC8072576E8465D9D8CAEF3A6ED89535A4B5EE134CC8CE18CD98338EA3BFEE658D9D41DCFAAD883ACE078A6095278FC1E6D3651B2E28216B292C96515B170FEEDA57B14BF750563B610684E3E04373D1569865658AAA59BFC1297710C68BCC46B44BD31E6CBB5F2997488D61C12EACE9473B2BA68F5B1A16E427F73E775357C637BB256CD2E0CC85B8221D5584A64B12A5980A6131A40927494010E47F334DEAE13BD0549DF9AB910F10058913D0CC11F92872454D8C36371F97848ACC81E46157F8B075195A8108E67D29A28E62F8504149BA448545624A7DB84DCA90D125E169406371B86CA84580C3C18A1C21E9E18CC8E0728D68CCB078DA31C0FA529B4875339C2F140AA9221A83F344FEF889B0CE7500FF1CDEC921ED25BD77218B6EA4F285C80331E0C576C0F8B0F7126E0C495DB43E3C29CF1C0B8627B58AD831C0F4AEF36B73332D6E9E5EE345CDAC6DD09186E360CF57231A978205CB103B52008545BBA3B65868F1D25B01857EEC0F14D782881EB9B52179EA80346893C51973AF0FD854405176E5283457B1245062BDC9D8AC1857C12A6BA2D76A34E2E0A944CA25C951B4C3938940C58AE7783DE068E92E1B635F6105938291E142B7284C1452452807175EE9C50058D82B8A1AA7150BFC4C850821E2656398C928FFF240C92AFF082A79951F80B07955A89F82468D74AAD0375AAB19F041255AB3D60036396EB1C7601353C94B019A8D5F6B0DB58513CC8B6746FB41BE5962A88B22E5DDE7B28ED5D1086517F6A973D79D11C4FD66DEC1C61D36B8B1D61B157D20A3056BE87C4A4BD8DEB434C95DB461F62D240D0CB1D214E8D28768CC175F43085E03382683705DFD1C37323D99D1386EE1AAF0F5D94AE277DC8020630AC90A83DFB78283A6FBF9DAD5B798D1862B1A88F93FB0A81AD7E3F36F73A8C8BA052B3B2BD2191DA332D0495305F367742D1351C865654C5CED5A0016CE8FBB697370E8341AE43988BA1C78D88AEE5BE2EED2333D287DE8F7BEDC56EFBF0582BBDC3CB48CE7521D4AD64EB5DEB773D6968BFBF3BF3FEDC028AB12E44231E5F333E198A2E2CE0551EF3DCB1BEAD63DF5BDEC8515F1CF9F40B3814AB136345742508F8290DD7AFE390B48F88BCF9C0381A32BDCBA87CA0739ED310364D04140B44651F25671A909C8FEDAEBBB806FE54007A2B7BCE79092B001980EECF7B45071A4CC3D0017383B32402F6B58DB78B6EAA05B7CF7D587BC17DF477B1F09CC7B2D5815FB7ECA4CA72E5151767CF79A67002ACBBE2333DDE56D47BF164576C7B87C99EDC0B3B6E7BCE5C032CC4460E3A82EF15271BD0ED4D10904BB6E30942A3DE194F09C042E81DAF77ACEAE95DCCF78A4ABC153EC5375DFEA43972B092E6FFC6379DF9850B0EEBE56C50F7F3721672E6A32E3B8A579F4C27F5B5C7C9F4F2212FF0BA24BA83CB5FE2791C51F5B0F9E03D4AA21B4C56A40C1F393D3A7C7E349D9CC611CAABE703CC05FE95FC40DBCA27FEF90B96D97E263777F7ACA750F27C2944B70482C5824EE563C4C08C929A694D512E5D5349F1612F933B942D6E51A686726EA17A06F5D58176862D249A2FA7C4AD3D9F4CDA0F5FB79CEE4F834C8004804BF2BB08953D1D0266B39A20F9FE698DEEFFEC0A498ACCDA0B161F7DB517208858BD001938D20B5E7356E1684E89B0719E2CF1FDC9F4DF659B5793F37F7E61CD9E4D4A2E7E35399CFCE6DAB3A05BB9F5CE35B51F8173B2F2A7C1F010090321D9DDD64E4901EE2D43D414E0D751E10C4549FF2DED275EC9BF6DA9B16ED787191A15D2B1EBAA599F9EC712006E69AF9F06EF2909A641067CE9CC7E723EE9406087D4F6D46CD120E82377C87272685F0D444E16DD6B5B6D13426BD0740628E67FF6119221553F25F7B3EFAC83B9A0FB00837343F78128E78AF68525E48EEE455D707E681F9A807243F75374A1FCCFBD2002399E43C10B3285BA1CCE5E7A8C2E7FB337FD82F99C7D86A6CDE5ECA36AB57EF8CE0BEA9DFBF669A81462AA44176D4DAFACF9E5A3EDC5846ACED96149409757B699AADF7E07095E61658E6659ED9FBF3518EC91083C5C4ED77E24A48D51AD7E1A26BBEA8822434CC96ADB71D56A88A554BCD91FED2ED06DECF738480D79FC1313A276EB1FAE99489FC6B2769EE93DAE70C04D76A87B12C857FCE9AEC6803CD66D94F5498AF994D7A56B67A113407F95C5CF26E7F9E724FA654B2AAEC8D4D23D46CE5D19463E197C311EED020CB2FB68AEEDD4948A3BBAC1837224F6B3438C64F277518F7C2FBAB5FE7DC00948E72CD345D4751F6ED355B5EAA5C60EB3500E42A56F3A4AEF5C910AA4CACDA71B5AA89C21DA9863367272E29168B244D0A6BBC7905EB2F5291C2BF9A32FF505A2174DD0C7A188C58E50F4BE90A36541EC4EB1B9AB84664A96119E5646CBA8395E122253481607E3D07E25D0EC9BED6F7C4131DAA23B080AC3E398B156DB2285E8EE050533E5838262E88CA1E30A0A5DB89D7D1414DD0942FB4A092B6DE691ADB5B5C2B207C2A13B45EAEE65437545038A868153A28E2B1934411EF64C30985F0F8AB950BA929F0E443AB5CD43EA7D40D10207620A4E2B9A379E6ED69B7189047A73E62AFF9F0C998C759475A193DD1E651DF30E8748353CA6CA61488FB23BB5A3E3B9EF18ABEE9E7D791F122EEF4E19314681DA0795E4316554F6C86EACC0E0B2A94AC01C3231EFF51ED215D56AB73B89F4C4BA31A0CB79B3E43564CFE92549684C195D3DA93E992EAF53B2D8D53D8F3E2B1E989C579B511A820DE74253865E9BD2D491D735E0C075E94365F8D5494F015E154390C15C905D39AA6D5254EB3AD3E47FD5F7C8EC48861ED917BA1E351948F53D563B82A1C3EA035D7F709E40B9BBF25CA5F451964280A11C969AC4D886BCD810E4269B761747D499B155A6A86B40BE68726D5BCDBF71EEF5F36E37E792A007B99BABD7B1B93E8722B4CA1A49D2D468561B96272325FD867217031B84E64EBABBEDEE527BF3ABD146EEB1406D20B4F84BC15ED9BB950CBF66A460810EA61B088564A054DD8E880EBF7A217271FBAE9EB03982F1FD0321D93FF1B61B8A567CBABBE4DABEEBC56F6F50DCFDFE08AA99B00D19B535219C64733037DEF27F03AAD28627C4B80B895C9D8DD8841C1C38ABD766302C7A03A40887B28243CF9D86E73CC57A142A0338C04F102FED8C2307CAF7ED46B8A0EA0B44A8B347D72199B71A18ED78F6699BD047B4D57F67388F562D081AEA2DC10BC17AD07C739EDCA4B515431A51FD891C1B091768890A749A15D10D5A14A49ABE9F8D1222CACA2719F415F7355E9E271FB7C5665B1094F1FA3A16D8841A434CFD9719CBC5311FB393550814C83023FAEEF863F27A1BC5CB66DC6F01CF550D086A65618EE7742D0BEA80BE7A68207D48134B406CFA1AE3D0155E6FCAD3D0C7E412DD619FB1116E7B875768F1D03E93D401E95E0871DA8FCF22B4CAD03A6730DAF6E45F42C3CBF5FDF7FF0710146F749BCF0000 , N'6.2.0-61023')
+-- Executing at 17/01/1397 06:31:15 +04:30
+-- Completed in 49 ms with result: 1
+
+Committed transaction at 17/01/1397 06:31:15 +04:30
+Disposed transaction at 17/01/1397 06:31:15 +04:30
+Disposed connection at 17/01/1397 06:31:15 +04:30
+Opened connection at 17/01/1397 06:31:15 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 17/01/1397 06:31:15 +04:30
+-- Completed in 20 ms with result: 1
+
+Closed connection at 17/01/1397 06:31:16 +04:30
+Opened connection at 17/01/1397 06:31:16 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:31:16 +04:30
+-- Completed in 19 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:16 +04:30
+Opened connection at 17/01/1397 06:31:16 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:31:16 +04:30
+-- Completed in 19 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:16 +04:30
+Opened connection asynchronously at 17/01/1397 06:31:16 +04:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 17/01/1397 06:31:17 +04:30
+-- Completed in 56 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:17 +04:30
+Opened connection asynchronously at 17/01/1397 06:31:17 +04:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 17/01/1397 06:31:17 +04:30
+-- Completed in 81 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:17 +04:30
+Opened connection asynchronously at 17/01/1397 06:31:17 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 17/01/1397 06:31:17 +04:30
+-- Completed in 29 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:17 +04:30
+Opened connection asynchronously at 17/01/1397 06:31:17 +04:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 17/01/1397 06:31:17 +04:30
+-- Completed in 106 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:17 +04:30
+Opened connection asynchronously at 17/01/1397 06:31:17 +04:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 17/01/1397 06:31:17 +04:30
+-- Completed in 31 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:17 +04:30
+Opened connection asynchronously at 17/01/1397 06:31:18 +04:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 17/01/1397 06:31:18 +04:30
+-- Completed in 63 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:31:18 +04:30
+Opened connection at 17/01/1397 06:33:09 +04:30
+Started transaction at 17/01/1397 06:33:09 +04:30
+INSERT [dbo].[Categories]([Title], [Description], [Order], [Slug])
+VALUES (@0, NULL, NULL, NULL)
+SELECT [Id]
+FROM [dbo].[Categories]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+-- @0: 'غذایی' (Type = String, Size = 100)
+-- Executing at 17/01/1397 06:33:09 +04:30
+-- Completed in 128 ms with result: ProfiledDataReader
+
+Committed transaction at 17/01/1397 06:33:10 +04:30
+Closed connection at 17/01/1397 06:33:10 +04:30
+Disposed transaction at 17/01/1397 06:33:10 +04:30
+Opened connection asynchronously at 17/01/1397 06:33:11 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 17/01/1397 06:33:11 +04:30
+-- Completed in 165 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:33:11 +04:30
+Opened connection at 17/01/1397 06:33:11 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Order] AS [Order], 
+    [Extent1].[Slug] AS [Slug]
+    FROM [dbo].[Categories] AS [Extent1]
+    ORDER BY row_number() OVER (ORDER BY [Extent1].[Id] ASC)
+    OFFSET @p__linq__0 ROWS FETCH NEXT @p__linq__1 ROWS ONLY 
+-- p__linq__0: '0' (Type = Int32, IsNullable = false)
+-- p__linq__1: '10' (Type = Int32, IsNullable = false)
+-- Executing at 17/01/1397 06:33:11 +04:30
+-- Completed in 262 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:33:12 +04:30
+Opened connection at 17/01/1397 06:33:19 +04:30
+SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Order] AS [Order], 
+    [Extent1].[Slug] AS [Slug]
+    FROM [dbo].[Categories] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+-- p0: '1' (Type = Int32)
+-- Executing at 17/01/1397 06:33:19 +04:30
+-- Completed in 42 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:33:19 +04:30
+Opened connection at 17/01/1397 06:34:07 +04:30
+SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Order] AS [Order], 
+    [Extent1].[Slug] AS [Slug]
+    FROM [dbo].[Categories] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+-- p0: '1' (Type = Int32)
+-- Executing at 17/01/1397 06:34:07 +04:30
+-- Completed in 25 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:34:07 +04:30
+Opened connection at 17/01/1397 06:34:14 +04:30
+Closed connection at 17/01/1397 06:34:15 +04:30
+Opened connection at 17/01/1397 06:34:45 +04:30
+Closed connection at 17/01/1397 06:34:45 +04:30
+Opened connection at 17/01/1397 06:40:23 +04:30
+select cast(serverproperty('EngineEdition') as int)
+-- Executing at 17/01/1397 06:40:23 +04:30
+-- Completed in 64 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:23 +04:30
+Opened connection at 17/01/1397 06:40:25 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 17/01/1397 06:40:25 +04:30
+-- Completed in 72 ms with result: 1
+
+Closed connection at 17/01/1397 06:40:25 +04:30
+Opened connection at 17/01/1397 06:40:25 +04:30
+IF db_id(N'YeastDB') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'YeastDB'
+-- Executing at 17/01/1397 06:40:25 +04:30
+-- Completed in 143 ms with result: 1
+
+Closed connection at 17/01/1397 06:40:25 +04:30
+Opened connection at 17/01/1397 06:40:25 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:40:28 +04:30
+-- Completed in 470 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:28 +04:30
+Opened connection at 17/01/1397 06:40:28 +04:30
+SELECT TOP (1) 
+    [c].[CreatedOn] AS [CreatedOn]
+    FROM [dbo].[__MigrationHistory] AS [c]
+-- Executing at 17/01/1397 06:40:28 +04:30
+-- Failed in 487 ms with error: Invalid column name 'CreatedOn'.
+
+Closed connection at 17/01/1397 06:40:29 +04:30
+Opened connection at 17/01/1397 06:40:29 +04:30
+SELECT 
+    [Extent1].[MigrationId] AS [MigrationId]
+    FROM [dbo].[__MigrationHistory] AS [Extent1]
+    WHERE [Extent1].[ContextKey] = @p__linq__0
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:40:29 +04:30
+-- Completed in 107 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:29 +04:30
+Opened connection at 17/01/1397 06:40:29 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:40:29 +04:30
+-- Completed in 105 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:30 +04:30
+Opened connection at 17/01/1397 06:40:30 +04:30
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+-- p__linq__0: 'Yeast.Datalayer.Migrations.Configuration' (Type = String, Size = 4000)
+-- Executing at 17/01/1397 06:40:30 +04:30
+-- Completed in 32 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:30 +04:30
+Opened connection asynchronously at 17/01/1397 06:40:30 +04:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM [dbo].[Roles] AS [Extent1]
+    WHERE ((UPPER([Extent1].[Name])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[Name]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'Admin' (Type = String, Size = 4000)
+-- Executing asynchronously at 17/01/1397 06:40:31 +04:30
+-- Completed in 123 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:31 +04:30
+Opened connection asynchronously at 17/01/1397 06:40:31 +04:30
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[AvatarPath] AS [AvatarPath], 
+    [Extent1].[BirthDay] AS [BirthDay], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[IP] AS [IP], 
+    [Extent1].[IsBaned] AS [IsBaned], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[BanedDate] AS [BanedDate], 
+    [Extent1].[LastLoginDate] AS [LastLoginDate], 
+    [Extent1].[LastPasswordChange] AS [LastPasswordChange], 
+    [Extent1].[LastActivity] AS [LastActivity], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName]
+    FROM [dbo].[Users] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+-- p__linq__0: 'admin@example.com' (Type = String, Size = 4000)
+-- Executing asynchronously at 17/01/1397 06:40:31 +04:30
+-- Completed in 30 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:31 +04:30
+Opened connection asynchronously at 17/01/1397 06:40:31 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaims] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 17/01/1397 06:40:31 +04:30
+-- Completed in 33 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:31 +04:30
+Opened connection asynchronously at 17/01/1397 06:40:31 +04:30
+SELECT 
+    [Extent1].[LoginProvider] AS [LoginProvider], 
+    [Extent1].[ProviderKey] AS [ProviderKey], 
+    [Extent1].[UserId] AS [UserId]
+    FROM [dbo].[UserLogins] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 17/01/1397 06:40:31 +04:30
+-- Completed in 36 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:31 +04:30
+Opened connection asynchronously at 17/01/1397 06:40:32 +04:30
+SELECT 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[RoleId] AS [RoleId]
+    FROM [dbo].[UserRoles] AS [Extent1]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 17/01/1397 06:40:32 +04:30
+-- Completed in 108 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:32 +04:30
+Opened connection asynchronously at 17/01/1397 06:40:32 +04:30
+SELECT 
+    [Extent2].[Name] AS [Name]
+    FROM  [dbo].[UserRoles] AS [Extent1]
+    INNER JOIN [dbo].[Roles] AS [Extent2] ON [Extent1].[RoleId] = [Extent2].[Id]
+    WHERE [Extent1].[UserId] = @p__linq__0
+-- p__linq__0: '2' (Type = Int32, IsNullable = false)
+-- Executing asynchronously at 17/01/1397 06:40:32 +04:30
+-- Completed in 45 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:32 +04:30
+Opened connection asynchronously at 17/01/1397 06:40:54 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 17/01/1397 06:40:54 +04:30
+-- Completed in 142 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:54 +04:30
+Opened connection at 17/01/1397 06:40:54 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Order] AS [Order], 
+    [Extent1].[Slug] AS [Slug]
+    FROM [dbo].[Categories] AS [Extent1]
+    ORDER BY row_number() OVER (ORDER BY [Extent1].[Id] ASC)
+    OFFSET @p__linq__0 ROWS FETCH NEXT @p__linq__1 ROWS ONLY 
+-- p__linq__0: '0' (Type = Int32, IsNullable = false)
+-- p__linq__1: '10' (Type = Int32, IsNullable = false)
+-- Executing at 17/01/1397 06:40:54 +04:30
+-- Completed in 49 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:40:54 +04:30
+Opened connection at 17/01/1397 06:47:07 +04:30
+Started transaction at 17/01/1397 06:47:07 +04:30
+INSERT [dbo].[Categories]([Title], [Description], [Order], [Slug])
+VALUES (@0, NULL, @1, @2)
+SELECT [Id]
+FROM [dbo].[Categories]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+-- @0: 'خمیر ماییه' (Type = String, Size = 100)
+-- @1: '1' (Type = Int32)
+-- @2: 'yeast' (Type = String, Size = 100)
+-- Executing at 17/01/1397 06:47:07 +04:30
+-- Completed in 60 ms with result: ProfiledDataReader
+
+Committed transaction at 17/01/1397 06:47:07 +04:30
+Closed connection at 17/01/1397 06:47:07 +04:30
+Disposed transaction at 17/01/1397 06:47:07 +04:30
+Opened connection asynchronously at 17/01/1397 06:47:17 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 17/01/1397 06:47:17 +04:30
+-- Completed in 105 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:47:17 +04:30
+Opened connection at 17/01/1397 06:47:17 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Order] AS [Order], 
+    [Extent1].[Slug] AS [Slug]
+    FROM [dbo].[Categories] AS [Extent1]
+    ORDER BY row_number() OVER (ORDER BY [Extent1].[Id] ASC)
+    OFFSET @p__linq__0 ROWS FETCH NEXT @p__linq__1 ROWS ONLY 
+-- p__linq__0: '0' (Type = Int32, IsNullable = false)
+-- p__linq__1: '10' (Type = Int32, IsNullable = false)
+-- Executing at 17/01/1397 06:47:17 +04:30
+-- Completed in 41 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:47:17 +04:30
+Opened connection at 17/01/1397 06:47:21 +04:30
+SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Order] AS [Order], 
+    [Extent1].[Slug] AS [Slug]
+    FROM [dbo].[Categories] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+-- p0: '2' (Type = Int32)
+-- Executing at 17/01/1397 06:47:21 +04:30
+-- Completed in 43 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:47:21 +04:30
+Opened connection at 17/01/1397 06:47:34 +04:30
+SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Order] AS [Order], 
+    [Extent1].[Slug] AS [Slug]
+    FROM [dbo].[Categories] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+-- p0: '2' (Type = Int32)
+-- Executing at 17/01/1397 06:47:34 +04:30
+-- Completed in 42 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:47:34 +04:30
+Opened connection at 17/01/1397 06:47:34 +04:30
+Started transaction at 17/01/1397 06:47:34 +04:30
+UPDATE [dbo].[Categories]
+SET [Title] = @0, [Description] = NULL, [Order] = @1, [Slug] = @2
+WHERE ([Id] = @3)
+-- @0: 'خمیر ماییه' (Type = String, Size = 100)
+-- @1: '1' (Type = Int32)
+-- @2: 'yeast' (Type = String, Size = 100)
+-- @3: '2' (Type = Int32)
+-- Executing at 17/01/1397 06:47:34 +04:30
+-- Completed in 36 ms with result: 1
+
+Committed transaction at 17/01/1397 06:47:34 +04:30
+Closed connection at 17/01/1397 06:47:34 +04:30
+Disposed transaction at 17/01/1397 06:47:34 +04:30
+Opened connection asynchronously at 17/01/1397 06:47:35 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Categories] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 17/01/1397 06:47:35 +04:30
+-- Completed in 110 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:47:35 +04:30
+Opened connection at 17/01/1397 06:47:35 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Order] AS [Order], 
+    [Extent1].[Slug] AS [Slug]
+    FROM [dbo].[Categories] AS [Extent1]
+    ORDER BY row_number() OVER (ORDER BY [Extent1].[Id] ASC)
+    OFFSET @p__linq__0 ROWS FETCH NEXT @p__linq__1 ROWS ONLY 
+-- p__linq__0: '0' (Type = Int32, IsNullable = false)
+-- p__linq__1: '10' (Type = Int32, IsNullable = false)
+-- Executing at 17/01/1397 06:47:35 +04:30
+-- Completed in 103 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:47:35 +04:30
+Opened connection asynchronously at 17/01/1397 06:47:48 +04:30
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Posts] AS [Extent1]
+    )  AS [GroupBy1]
+-- Executing asynchronously at 17/01/1397 06:47:48 +04:30
+-- Completed in 158 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:47:48 +04:30
+Opened connection at 17/01/1397 06:47:48 +04:30
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[CreatedDate] AS [CreatedDate], 
+    [Extent1].[ModifiedDate] AS [ModifiedDate], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[Keyword] AS [Keyword], 
+    [Extent1].[Body] AS [Body], 
+    [Extent1].[Slug] AS [Slug], 
+    [Extent1].[Description] AS [Description]
+    FROM [dbo].[Posts] AS [Extent1]
+    ORDER BY row_number() OVER (ORDER BY [Extent1].[Id] ASC)
+    OFFSET @p__linq__0 ROWS FETCH NEXT @p__linq__1 ROWS ONLY 
+-- p__linq__0: '0' (Type = Int32, IsNullable = false)
+-- p__linq__1: '10' (Type = Int32, IsNullable = false)
+-- Executing at 17/01/1397 06:47:48 +04:30
+-- Completed in 82 ms with result: ProfiledDataReader
+
+Closed connection at 17/01/1397 06:47:49 +04:30

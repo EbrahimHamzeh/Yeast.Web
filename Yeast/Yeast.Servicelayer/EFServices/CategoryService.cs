@@ -6,6 +6,12 @@ using System.Linq;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Servicelayer.Interfaces;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using Yeast.Model.Admin;
+using Yeast.Utilities.BootstrapTable;
+using Yeast.Utilities.Helpers;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -13,19 +19,21 @@ namespace Yeast.Servicelayer.EFServices
 	{
 		private readonly IDbSet<Category> _categories;
 
-		public int Count
-		{
-			get { return _categories.Cacheable().Count(); }
-		}
-
 		public CategoryService(IUnitOfWork uow)
 		{
 			_categories = uow.Set<Category>();
 		}
-
-		public void Add(Category category)
+		public ConfiguredTaskAwaitable<int> CountAsync
 		{
-			_categories.Add(category);
+			get
+			{
+				return _categories.Cacheable().CountAsync().ConfigureAwait(false);
+			}
+		}
+
+		public void Add(CategoryAdd category)
+		{
+			_categories.Add(new Category { Title = category.Title, Description = category.Description, Slug = category.Slug, Order = category.Order });
 		}
 
 		public Category Find(int id)
@@ -33,96 +41,50 @@ namespace Yeast.Servicelayer.EFServices
 			return _categories.Find(id);
 		}
 
-		public Category Find(string categoryName)
+		public CategoryEdit FindForEdit(int id)
 		{
-			return _categories.FirstOrDefault(category => category.Name == categoryName);
+			Category category = _categories.Find(id);
+			return new CategoryEdit
+			{
+				Title = category.Title,
+				Description = category.Description,
+				Slug = category.Slug,
+				Order = category.Order
+			};
 		}
 
-		public IList<Category> GetAll()
+		public async Task<IList<Category>> GetAllAsync()
 		{
-			return _categories.AsNoTracking().Cacheable().ToList();
+			return await _categories.AsNoTracking().Cacheable().ToListAsync();
 		}
 
-		//CacheMethod(SecondsToCache = 120)]
-		public IList<Category> GetAnnounceData(int count)
+		public async Task<DataTableList<CategoryList>> GetDataTableAsync(PagedQueryViewModel model)
 		{
-			return
-					_categories.AsNoTracking().Where(category => category.Order < 1)
-							.OrderBy(category => category.Order).Take(count)
-							.Cacheable()
-							.ToList();
-		}
+			IQueryable<Category> categoryList = _categories.AsNoTracking();
+			int total = 0;
 
-		//public IList<CategoryDataTableModel> GetDataTable(string term, int page, int count,
-		//				Order order, CategoryOrderBy orderBy, CategorySearchBy searchBy)
-		//{
-		//	IQueryable<Category> selectedCategories = _categories.AsQueryable();
+			// Search
+			//tagList = tagList.ApplySearch(model);
 
-		//	if (!string.IsNullOrEmpty(term))
-		//	{
-		//		switch (searchBy)
-		//		{
-		//			case CategorySearchBy.Name:
-		//				selectedCategories =
-		//						selectedCategories.Where(category => category.Name.Contains(term)).AsQueryable();
-		//				break;
-		//			case CategorySearchBy.Description:
-		//				selectedCategories =
-		//						selectedCategories.Where(category => category.Description.Contains(term)).AsQueryable();
-		//				break;
-		//		}
-		//	}
+			total = await categoryList.CountAsync().ConfigureAwait(false);
 
-		//	if (order == Order.Asscending)
-		//	{
-		//		switch (orderBy)
-		//		{
-		//			case CategoryOrderBy.Id:
-		//				selectedCategories = selectedCategories.OrderBy(category => category.Id).AsQueryable();
-		//				break;
-		//			case CategoryOrderBy.Name:
-		//				selectedCategories = selectedCategories.OrderBy(category => category.Name).AsQueryable();
-		//				break;
-		//		}
-		//	}
-		//	else
-		//	{
-		//		switch (orderBy)
-		//		{
-		//			case CategoryOrderBy.Id:
-		//				selectedCategories = selectedCategories.OrderByDescending(category => category.Id).AsQueryable();
-		//				break;
-		//			case CategoryOrderBy.Name:
-		//				selectedCategories =
-		//						selectedCategories.OrderByDescending(category => category.Name).AsQueryable();
-		//				break;
-		//		}
-		//	}
+			// Ordering data 
+			categoryList = categoryList.ApplyOrdering(model);
 
-		//[CacheMethod(SecondsToCache = 120)]
-		//public IList<CategoryModel> GetSideBarData(int articleCount)
-		//{
-		//	return
-		//			_categories.AsNoTracking().Include(category => category.Articles)
-		//					.Where(category => category.Order > 0)
-		//					.OrderBy(category => category.Order)
-		//					.Select(category => new CategoryModel
-		//					{
-		//						articles = category.Articles.Select(x => new ArticleSideBarModel { ArticleId = x.Id, ArticleTitle = x.Title }),
-		//						CategoryId = category.Id,
-		//						CategoryName = category.Name,
-		//						CategoryDescription = category.Description
-		//					}).Take(articleCount).ToList();
-		//}
+			// Paging And Save Cach
+			categoryList = categoryList.ApplyPaging(model).Cacheable();
+			model.offset = model.offset - 1;
+			// Create List Of viewModel
+			var category = (await categoryList.ToListAsync()).Select((x, index) => new CategoryList
+			{
+				No = (++index + model.offset).ConvertToPersianString(),
+				Id = x.Id,
+				Title = x.Title,
+				Description = x.Description,
+				Order = x.Order
+			});
 
-		public bool IsExistByName(string name)
-		{
-			return _categories.Any(category => category.Name == name);
-		}
-
-		public bool IsExistByOrder(int orderNumber)
-		{
-			return _categories.Any(category => category.Order == orderNumber);
+			return new DataTableList<CategoryList> { rows = category.ToList(), total = total };
 		}
 
 		public void Remove(int id)
@@ -132,16 +94,17 @@ namespace Yeast.Servicelayer.EFServices
 
 		public void Update(Category category)
 		{
-			Category selectedCategory = _categories.Find(category.Id);
-			selectedCategory.Name = category.Name;
-			selectedCategory.Description = category.Description;
-			selectedCategory.Order = category.Order;
-			selectedCategory.Slug = category.Slug;
+			Category selectedcategory = _categories.Find(category.Id);
+			selectedcategory.Title = category.Title;
+			selectedcategory.Description = category.Description;
+			selectedcategory.Slug = category.Slug;
+			selectedcategory.Order = category.Order;
 		}
 
-		public int GetMaxOrder()
+		public SelectList DropDownList(int categorySelectedId = 0)
 		{
-			return _categories.Max(category => category.Order) ?? 0;
+			List<SelectListItem> selectListItemList = _categories.Select(x => new SelectListItem { Text = x.Title, Value = x.Id.ToString() }).ToList();
+			return new SelectList(selectListItemList, "Value", "Text", categorySelectedId.ToString());
 		}
 	}
 }

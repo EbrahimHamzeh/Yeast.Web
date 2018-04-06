@@ -4,6 +4,7 @@ using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
 using System.Runtime.CompilerServices;
 using Yeast.Utilities.BootstrapTable;
+using System.Web.Mvc;
 
 namespace Yeast.Servicelayer.Interfaces
 {
@@ -17,5 +18,6 @@ namespace Yeast.Servicelayer.Interfaces
 		TagEdit FindForEdit(int id);
 		Task<IList<Tag>> GetAllAsync();
 		Task<DataTableList<TagList>> GetDataTableAsync(PagedQueryViewModel model);
+		SelectList DropDownList(int tagSelectedId = 0);
 	}
 }

@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Yeast.Utilities.Helpers;
 using System.Runtime.CompilerServices;
 using Yeast.Utilities.BootstrapTable;
+using System.Web.Mvc;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -32,7 +33,7 @@ namespace Yeast.Servicelayer.EFServices
 
 		public void Add(TagAdd tag)
 		{
-			_tags.Add(new Tag { Name = tag.Name, Description = tag.Description });
+			_tags.Add(new Tag { Title = tag.Title, Description = tag.Description });
 		}
 
 		public Tag Find(int id)
@@ -43,8 +44,9 @@ namespace Yeast.Servicelayer.EFServices
 		public TagEdit FindForEdit(int id)
 		{
 			Tag tag = _tags.Find(id);
-			return new TagEdit {
-				Name = tag.Name,
+			return new TagEdit
+			{
+				Title = tag.Title,
 				Description = tag.Description
 			};
 		}
@@ -75,7 +77,7 @@ namespace Yeast.Servicelayer.EFServices
 			{
 				No = (++index + model.offset).ConvertToPersianString(),
 				Id = x.Id,
-				Name = x.Name,
+				Title = x.Title,
 				Description = x.Description
 			});
 
@@ -90,8 +92,14 @@ namespace Yeast.Servicelayer.EFServices
 		public void Update(Tag tag)
 		{
 			Tag selectedTag = _tags.Find(tag.Id);
-			selectedTag.Name = tag.Name;
+			selectedTag.Title = tag.Title;
 			selectedTag.Description = tag.Description;
+		}
+
+		public SelectList DropDownList(int tagSelectedId = 0)
+		{
+			List<SelectListItem> selectListItemList = _tags.Where(x => x.Enable).Select(x => new SelectListItem { Text = x.Title, Value = x.Id.ToString() }).ToList();
+			return new SelectList(selectListItemList, "Value", "Text", tagSelectedId.ToString());
 		}
 	}
 }

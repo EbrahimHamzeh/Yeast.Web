@@ -112,6 +112,9 @@
     <Compile Include="Admin\Post\PostAdd.cs" />
     <Compile Include="Admin\Post\PostEdit.cs" />
     <Compile Include="Admin\Post\PostList.cs" />
+    <Compile Include="Admin\Category\CategoryAdd.cs" />
+    <Compile Include="Admin\Category\CategoryEdit.cs" />
+    <Compile Include="Admin\Category\CategoryList.cs" />
     <Compile Include="Generic\DataTableList.cs" />
     <Compile Include="Admin\Tag\TagList.cs" />
     <Compile Include="Admin\Tag\TagEdit.cs" />

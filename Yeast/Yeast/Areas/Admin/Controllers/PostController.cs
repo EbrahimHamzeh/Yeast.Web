@@ -9,6 +9,7 @@ using Yeast.Attribute;
 using Yeast.Utilities.BootstrapTable;
 using System.Web;
 using System.IO;
+using System.Linq;
 using System;
 
 namespace Yeast.Areas.Admin.Controllers
@@ -16,12 +17,14 @@ namespace Yeast.Areas.Admin.Controllers
 	public partial class PostController : Controller
 	{
 		readonly IPostService _postService;
+		readonly ITagService _tagService;
 		readonly IUnitOfWork _uow;
 
-		public PostController(IUnitOfWork uow, IPostService postService)
+		public PostController(IUnitOfWork uow, IPostService postService, ITagService tagService)
 		{
 			_uow = uow;
 			_postService = postService;
+			_tagService = tagService;
 		}
 
 		// GET: Admin/Post
@@ -41,6 +44,7 @@ namespace Yeast.Areas.Admin.Controllers
 		public virtual ActionResult Add()
 		{
 			PostAdd Post = new PostAdd();
+			Post.TagList = _tagService.DropDownList();
 			return View(Post);
 		}
 

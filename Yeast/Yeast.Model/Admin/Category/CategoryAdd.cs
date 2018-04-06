@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Yeast.Model.Admin
 {
-	public class PostAdd
+	public class CategoryAdd
 	{
 		[Required(ErrorMessage = "عنوان تگ برای ثبت الزامی می‌باشد"),
 		MaxLength(20, ErrorMessage = "عنوان تگ حداکثر ۲۰ حرف می‌باشد"),
@@ -13,10 +16,9 @@ namespace Yeast.Model.Admin
 
 		[MaxLength(ErrorMessage ="حداکثر ۱۰۰۰ کاراکتر می‌توانید وارد کنید")]
 		public string Description { get; set; }
-		public string Body { get; set; }
+
 		public string Slug { get; set; }
-		public string Tags { get; set; }
-		public string Keyword { get; set; }
-		public SelectList TagList { get; set; }
+
+		public int? Order { get; set; }
 	}
 }

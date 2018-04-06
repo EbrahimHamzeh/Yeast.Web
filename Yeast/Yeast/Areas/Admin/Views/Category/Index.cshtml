@@ -1,9 +1,8 @@
 ﻿@using Yeast.Utilities.Helpers;
 @{
-	ViewBag.Title = "تگ‌ها";
-	ViewBag.SelectedPage = "Tag";
+	ViewBag.Title = "دسته‌بندی";
+	ViewBag.SelectedPage = "Category";
 	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-
 }
 @section CssStyle{
 	<link href="~/Content/css/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
@@ -24,7 +23,7 @@
 				<i class="fa fa-circle"></i>
 			</li>
 			<li>
-				<span>تگ‌ها</span>
+				<span>دسته‌بندی</span>
 			</li>
 		</ul>
 	</div>
@@ -36,7 +35,7 @@
 	<!-- END PAGE TITLE-->
 	<!-- END PAGE HEADER-->
 	<div class="note note-info">
-		<p> برچسب گذاری برای مدیریت مطالب و دسته‌بندی جزئی </p>
+		<p> گروه بندی مطالب اصلی وب سایت </p>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
@@ -61,7 +60,7 @@
 							<option value="selected">انتخاب شده‌ها</option>
 						</select>
 					</div>
-					<table id="tableTagList"
+					<table id="tableCategoryList"
 								 data-toggle="table"
 								 data-url="@Url.Action("DataList")"
 								 data-unique-id="Id"
@@ -72,7 +71,7 @@
 								 data-search-on-enter-key="true"
 								 data-maintain-selected="true"
 								 data-cookie="true"
-								 data-cookie-id-table="tableTagList"
+								 data-cookie-id-table="tableCategoryList"
 								 data-mobile-responsive="true"
 								 data-check-on-init="true"
 								 data-show-refresh="true"
@@ -92,6 +91,7 @@
 								<th data-field="state" data-checkbox="true"></th>
 								<th data-field="No" data-align="center" data-width="10px">ردیف</th>
 								<th data-field="Title" data-align="center" data-sortable="true" data-filter-control="input">عنوان</th>
+								<th data-field="Order" data-align="center" data-sortable="true" data-filter-control="input">الویت</th>
 								<th data-field="Description" data-align="center" data-sortable="true" data-filter-control="input">توضیحات</th>
 								<th data-formatter="actionFormatter" data-events="actionEvents" data-align="center">عملیات</th>
 							</tr>
@@ -113,7 +113,7 @@
 	<script src="~/Content/js/bootstrap-table/bootstrap-table-sticky-header.js"></script>
 	<script src="~/Content/js/sweetalert.js"></script>
 	<script type="text/javascript">
-		var $table = $('#tableTagList');
+		var $table = $('#tableCategoryList');
 		$(function ()
 		{
 			$('#toolbar').find('select').change(function ()

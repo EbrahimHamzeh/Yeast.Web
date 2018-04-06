@@ -7,7 +7,7 @@ namespace Yeast.DomainClasses.EntityConfiguration
 	{
 		public TagConfig()
 		{
-			Property(x => x.Name).HasMaxLength(200);
+			Property(x => x.Title).HasMaxLength(200);
 			Property(x => x.Description).HasMaxLength(1000);
 		}
 	}

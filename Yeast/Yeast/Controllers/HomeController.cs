@@ -23,7 +23,6 @@ namespace Yeast.Controllers
 		// GET: Home
 		public virtual ActionResult Index()
 		{
-			var test = _categoryService.Count;
 			return View();
 		}
 	}

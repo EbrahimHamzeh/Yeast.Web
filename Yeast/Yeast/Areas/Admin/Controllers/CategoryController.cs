@@ -10,18 +10,18 @@ using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class TagController : Controller
+	public partial class CategoryController : Controller
 	{
-		readonly ITagService _tagService;
+		readonly ICategoryService _categoryService;
 		readonly IUnitOfWork _uow;
 
-		public TagController(IUnitOfWork uow, ITagService tagService)
+		public CategoryController(IUnitOfWork uow, ICategoryService categoryService)
 		{
 			_uow = uow;
-			_tagService = tagService;
+			_categoryService = categoryService;
 		}
 
-		// GET: Admin/Tag
+		// GET: Admin/Category
 		public virtual ActionResult Index()
 		{
 			return View();
@@ -31,53 +31,53 @@ namespace Yeast.Areas.Admin.Controllers
 		[HttpGet, AjaxOnly, NoOutputCache]
 		public virtual async Task<ActionResult> DataList(PagedQueryViewModel model)
 		{
-			return Json(await _tagService.GetDataTableAsync(model).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
+			return Json(await _categoryService.GetDataTableAsync(model).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
 		}
 
-		// GET: Admin/Tag/Add
+		// GET: Admin/Category/Add
 		public virtual ActionResult Add()
 		{
-			TagAdd Tag = new TagAdd();
-			return View(Tag);
+			CategoryAdd Category = new CategoryAdd();
+			return View(Category);
 		}
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		// Post: Admin/Tag/Add/id
-		public virtual ActionResult Add(TagAdd model)
+		// Post: Admin/Category/Add/id
+		public virtual ActionResult Add(CategoryAdd model)
 		{
 			if (!ModelState.IsValid)
 			{
 				return View(model);
 			}
 
-			_tagService.Add(model);
+			_categoryService.Add(model);
 			_uow.SaveAllChanges();
 			return RedirectToAction("Index");
 		}
 
-		// GET: Admin/Tag/Edit
+		// GET: Admin/Category/Edit
 		public virtual ActionResult Edit(int? id)
 		{
 			if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			TagEdit tag = _tagService.FindForEdit(id ?? 0);
-			if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			return View(tag);
+			CategoryEdit category = _categoryService.FindForEdit(id ?? 0);
+			if (category == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			return View(category);
 		}
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		// Post: Admin/Tag/Edit/id
+		// Post: Admin/Category/Edit/id
 		public virtual ActionResult Edit(int id)
 		{
-			Tag tagUpdate = _tagService.Find(id);
-			if (tagUpdate == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			Category categoryUpdate = _categoryService.Find(id);
+			if (categoryUpdate == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-			if (TryUpdateModel(tagUpdate, "", new string[] { "Title", "Description" }))
+			if (TryUpdateModel(categoryUpdate, "", new string[] { "Title", "Description", "Slug", "Order" }))
 			{
 				if (!ModelState.IsValid)
 				{
-					return View(tagUpdate);
+					return View(categoryUpdate);
 				}
 				_uow.SaveAllChanges();
 			}
@@ -86,12 +86,12 @@ namespace Yeast.Areas.Admin.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		// Post: Admin/Tag/Delete/id
+		// Post: Admin/Category/Delete/id
 		public virtual ActionResult Delete(int id)
 		{
-			Tag tag = _tagService.Find(id);
-			if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			_tagService.Remove(id);
+			Category category = _categoryService.Find(id);
+			if (category == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			_categoryService.Remove(id);
 			_uow.SaveAllChanges();
 			return Json(new { success = true });
 		}
