@@ -156,6 +156,7 @@ namespace Yeast.Areas.Admin.Controllers
         public class ActionParamsClass_Edit
         {
             public readonly string id = "id";
+            public readonly string postEdit = "postEdit";
         }
         static readonly ActionParamsClass_Delete s_params_Delete = new ActionParamsClass_Delete();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -273,14 +274,15 @@ namespace Yeast.Areas.Admin.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, Yeast.Model.Admin.PostEdit postEdit);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Edit(int id)
+        public override System.Web.Mvc.ActionResult Edit(int id, Yeast.Model.Admin.PostEdit postEdit)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            EditOverride(callInfo, id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "postEdit", postEdit);
+            EditOverride(callInfo, id, postEdit);
             return callInfo;
         }
 

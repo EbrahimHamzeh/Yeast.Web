@@ -4,7 +4,6 @@
 .u-textTruncate {
     white-space: nowrap!important
 }
-
 .previewCartList,
 table {
     border-collapse: collapse
@@ -12329,7 +12328,8 @@ body.hasAdminBar .navPages-container.is-open {
 
 @media (min-width:1200px) {
     .footer-info .about {
-        width: 85%
+        direction: rtl;
+    text-align: justify;
     }
 }
 

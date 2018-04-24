@@ -130,7 +130,7 @@
     <Compile Include="EFServices\PostService.cs" />
     <Compile Include="EFServices\TagService.cs" />
     <Compile Include="EFServices\CategoryService.cs" />
-    <Compile Include="EFServices\Enums\Enum.cs" />
+    <Compile Include="Enums\Enum.cs" />
     <Compile Include="EFServices\User\ApplicationUserManager.cs" />
     <Compile Include="EFServices\User\SmsService.cs" />
     <Compile Include="EFServices\User\EmailService.cs" />

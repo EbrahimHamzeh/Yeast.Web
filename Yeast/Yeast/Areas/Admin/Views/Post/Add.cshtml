@@ -40,7 +40,6 @@
 	<link href="~/Content/froala/css/plugins/video.min.css" rel="stylesheet" />
 	<link href="~/Content/css/select2.min.css" rel="stylesheet" />
 	<link href="~/Content/css/select2-bootstrap.min.css" rel="stylesheet" />
-	<link href="~/Content/css/jstree.min.css" rel="stylesheet" />
 }
 <div class="page-content">
 	<!-- BEGIN PAGE HEADER-->
@@ -118,21 +117,40 @@
 								</div>
 							</div>
 							<div class="form-group form-md-line-input">
-								<label class="col-md-1 control-label" for="Tags">تگ‌ها</label>
+								<label class="col-md-1 control-label" for="Category">دسته‌بندی</label>
 								<div class="col-md-11">
-									@Html.DropDownList("Tags[]", Model.TagList, new { @class = "form-control select2-multiple", @multiple = true, @id = "Tags" })
+									<select id="CategoryIds" name="CategoryIds[]" class="form-control select2-multiple" multiple>
+										@foreach (var item in Model.CategoryList)
+										{
+											<option value="@item.Value" @(item.Selected ? "selected" : "")>@item.Text</option>
+										}
+									</select>
+									<div class="form-control-focus"> </div>
+									<span class="help-block"></span>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="TagIds">تگ‌ها</label>
+								<div class="col-md-11">
+									<select id="TagIds" name="TagIds[]" class="form-control select2-multiple" multiple>
+										@foreach (var item in Model.TagList)
+										{
+											<option value="@item.Value" @(item.Selected ? "selected" : "")>@item.Text</option>
+										}
+									</select>
 									<div class="form-control-focus"> </div>
 									<span class="help-block">اگر تگ مورد نظر شما در لیست موجود نمی‌باشد می‌توانید تایپ کتیذ و با اینتر آن‌ها را ثبت نمایید.</span>
 								</div>
 							</div>
-							@*<div class="form-group form-md-line-input">
-								<label class="col-md-1 control-label" for="Tags">دسته‌بندی</label>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Name">کلید واژه</label>
 								<div class="col-md-11">
-									<div id="jstree"> </div>
+									<input type="text" class="form-control" id="Keyword" name="Keyword" value="@Model.Keyword" required placeholder="کلید واژه را وارد نمایید">
+									@Html.ValidationMessageFor(model => model.Keyword)
 									<div class="form-control-focus"> </div>
-									<span class="help-block">مطاب خود را دسته بندی نمایید تا محتوای یکتای مناسبی دست پیدا کنید.</span>
+									<span class="help-block">این فیلد مربوط به جستجوی های گوگل میشود. لطفا کلات را با علامت | ازهم جدا کنید.</span>
 								</div>
-							</div>*@
+							</div>
 							<div class="form-group form-md-line-input">
 								<label class="col-md-1 control-label" for="Description">توضیحات</label>
 								<div class="col-md-11">
@@ -197,7 +215,6 @@
 	<script src="~/Content/froala/js/plugins/word_paste.min.js"></script>
 	<script src="~/Content/froala/js/languages/fa.js"></script>
 	<script src="~/Content/js/select2.min.js"></script>
-	<script src="~/Content/js/jstree.min.css"></script>
 	<script type="text/javascript">
 		jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
 		var form1 = $('form[data-loading-text]');
@@ -297,55 +314,8 @@
 
 		$('document').ready(function ()
 		{
-			$('#Tags').select2(
-				{
-					tags: true,
-					dir: "rtl",
-					language: "fa"
-				});
-		});
-
-		$('#jstree').jstree({
-			"core": {
-				"multiple": true,
-				"check_callback": true,
-				'data': {
-					'url':'', @*'@getTreeJsonUrl',*@
-					"type": "POST",
-					"dataType": "json",
-					"contentType": "application/json; charset=utf8",
-					'data': function (node)
-					{
-						return { 'id': node.id };
-					}
-				},
-				'themes': {
-					'variant': 'small',
-					'stripes': true
-				}
-			},
-			"types": {
-				"default": {
-					"icon": '@Url.Content("~/Content/images/bookmark_book_open.png")'
-				},
-			},
-			"plugins": ["contextmenu", "dnd", "state", "types", "wholerow", "sort", "unique"],
-			"contextmenu": {
-				"items": function (o, cb)
-				{
-					var items = $.jstree.defaults.contextmenu.items();
-					items["create"].label = "ایجاد زیر شاخه";
-					items["rename"].label = "تغییر نام";
-					items["remove"].label = "حذف";
-					var cpp = items["ccp"];
-					cpp.label = "ویرایش";
-					var subMenu = cpp["submenu"];
-					subMenu["copy"].label = "کپی";
-					subMenu["paste"].label = "پیست";
-					subMenu["cut"].label = "برش";
-					return items;
-				}
-			}
+			$('#TagIds').select2({ dir: "rtl", language: "fa" });
+			$('#CategoryIds').select2({ dir: "rtl", language: "fa" });
 		});
 	</script>
 }

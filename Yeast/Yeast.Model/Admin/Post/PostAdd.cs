@@ -13,10 +13,13 @@ namespace Yeast.Model.Admin
 
 		[MaxLength(ErrorMessage ="حداکثر ۱۰۰۰ کاراکتر می‌توانید وارد کنید")]
 		public string Description { get; set; }
+		[AllowHtml]
 		public string Body { get; set; }
 		public string Slug { get; set; }
-		public string Tags { get; set; }
+		public List<int> CategoryIds { get; set; }
+		public List<int> TagIds { get; set; }
 		public string Keyword { get; set; }
-		public SelectList TagList { get; set; }
+		public MultiSelectList TagList { get; set; }
+		public MultiSelectList CategoryList { get; set; }
 	}
 }

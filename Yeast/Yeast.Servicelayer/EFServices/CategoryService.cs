@@ -101,10 +101,22 @@ namespace Yeast.Servicelayer.EFServices
 			selectedcategory.Order = category.Order;
 		}
 
-		public SelectList DropDownList(int categorySelectedId = 0)
+		public SelectList DropDownList(List<int> categorySelectedId = null)
 		{
-			List<SelectListItem> selectListItemList = _categories.Select(x => new SelectListItem { Text = x.Title, Value = x.Id.ToString() }).ToList();
-			return new SelectList(selectListItemList, "Value", "Text", categorySelectedId.ToString());
+			List<SelectListItem> selectListItemList;
+			if (categorySelectedId == null)
+			{
+				selectListItemList = _categories.Select(x => new SelectListItem { Text = x.Title, Value = x.Id.ToString() }).ToList();
+			}
+			else
+			{
+				selectListItemList = _categories.Select(x => new SelectListItem { 
+					Text = x.Title,
+					Value = x.Id.ToString(),
+					Selected = categorySelectedId.Contains(x.Id)
+				}).ToList();
+			}
+			return new SelectList(selectListItemList, "Value", "Text", categorySelectedId);
 		}
 	}
 }

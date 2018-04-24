@@ -114,8 +114,8 @@
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
@@ -200,6 +200,7 @@
     <Compile Include="Admin.ProductController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
@@ -221,6 +222,7 @@
     <Content Include="Content\css\jstree.min.css" />
     <Content Include="Content\css\ladda-themeless-rtl.min.css" />
     <Content Include="Content\css\layout-rtl.css" />
+    <Content Include="Content\css\ma5slider.min.css" />
     <Content Include="Content\css\plugins-rtl.css" />
     <Content Include="Content\css\select2-bootstrap.min.css" />
     <Content Include="Content\css\select2.min.css" />
@@ -385,6 +387,7 @@
     <Content Include="Content\images\s5-min__84178.1499310668.jpg" />
     <Content Include="Content\images\s6-min__43240.1499310437.jpg" />
     <Content Include="Content\images\s9-min-rs__06198.1499309930.jpg" />
+    <Content Include="Content\images\searchicon.png" />
     <Content Include="Content\images\slideshow_image_1-min-rs.jpg" />
     <Content Include="Content\images\slideshow_image_2-min.jpg" />
     <Content Include="Content\js\app.min.js" />
@@ -410,16 +413,19 @@
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\enjoyhint.js" />
     <Content Include="Content\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\js\jquery-ui.min.js" />
     <Content Include="Content\js\jquery.blockui.min.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\jquery.slimscroll.min.js" />
     <None Include="Content\js\jquery.validate-vsdoc.js" />
+    <Content Include="Content\js\jquery.ui.touch-punch.min.js" />
     <Content Include="Content\js\jquery.validate.js" />
     <Content Include="Content\js\jquery.validate.unobtrusive.js" />
     <Content Include="Content\js\js.cookie.min.js" />
     <Content Include="Content\js\jstree.min.js" />
     <Content Include="Content\js\ladda.min.js" />
     <Content Include="Content\js\layout.min.js" />
+    <Content Include="Content\js\ma5slider.min.js" />
     <Content Include="Content\js\persianumber.js" />
     <Content Include="Content\js\quick-nav.min.js" />
     <Content Include="Content\js\select2.min.js" />

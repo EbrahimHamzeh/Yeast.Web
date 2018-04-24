@@ -1,6 +1,10 @@
 ﻿using System.Linq;
 using System.Data.Entity;
 using System.Linq.Dynamic;
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using Newtonsoft.Json.Linq;
 
 namespace Yeast.Utilities.BootstrapTable
 {
@@ -32,7 +36,7 @@ namespace Yeast.Utilities.BootstrapTable
 		/// <param name="query">IQueryable</param>
 		/// <param name="model">Bootstrap Table Model</param>
 		/// <returns></returns>
-		public static IQueryable<T> ApplyOrdering<T>(this IQueryable<T> query,IPagedQueryModel model)
+		public static IQueryable<T> ApplyOrdering<T>(this IQueryable<T> query, IPagedQueryModel model)
 		{
 			if (string.IsNullOrWhiteSpace(model.sort) || model.sort == null)
 			{
@@ -58,12 +62,26 @@ namespace Yeast.Utilities.BootstrapTable
 			var properties = typeof(T).GetProperties();
 			string searchQuery = string.Empty;
 
+			if (!string.IsNullOrEmpty(model.filter))
+			{
+				JObject jObject = JObject.Parse(model.filter);
+				foreach (var item in jObject)
+				{
+					if (properties.Where(x => x.Name == item.Key).Any())
+					{
+						 
+					}
+				}
+			}
+
 			foreach (var item in properties)
 			{
+				Type propertyType = item.PropertyType;
+				if (propertyType.AssemblyQualifiedName.Contains("Collections.Generic.ICollection") || propertyType == typeof(DateTime) || propertyType == typeof(DateTime?)) continue;
 				// propertie no show or no search
 				if (item.Name == "Id" || item.Name == "Guid") continue;
 				if (searchQuery != string.Empty) searchQuery += searchOrterm;
-				searchQuery +=  item.Name + searchContinsterm;
+				searchQuery += item.Name + searchContinsterm;
 			}
 
 			if (string.IsNullOrEmpty(searchQuery))
@@ -71,7 +89,7 @@ namespace Yeast.Utilities.BootstrapTable
 				return query;
 			}
 
-			return query.Where(searchQuery,model.search);
+			return query.Where(searchQuery, model.search);
 		}
 	}
 }

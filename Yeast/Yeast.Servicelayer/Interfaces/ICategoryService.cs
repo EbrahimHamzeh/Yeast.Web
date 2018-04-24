@@ -18,6 +18,6 @@ namespace Yeast.Servicelayer.Interfaces
 		CategoryEdit FindForEdit(int id);
 		Task<IList<Category>> GetAllAsync();
 		Task<DataTableList<CategoryList>> GetDataTableAsync(PagedQueryViewModel model);
-		SelectList DropDownList(int categorySelectedId = 0);
+		SelectList DropDownList(List<int> categorySelectedId = null);
 	}
 }

@@ -8,6 +8,7 @@
 	<link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
 	<link href="~/Content/css/Yeast.css" rel="stylesheet" />
 	<!-- snippet location htmlhead -->
+	@RenderSection("CssStyle", false)
 </head>
 <body class="nf-home1">
 	<div id="popup-overlay"></div>
@@ -296,33 +297,34 @@
 			<div class="container">
 				<section class="footer-info">
 					<article class="footer-info-col col-md-6 col-sm-12 col-xs-12" data-section-type="storeInfo">
-						<h3 class="">Contact Info</h3>
-						<div class="about">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae Cerat consequat auctor eu in elit.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</div>
-						<h5 class="footer-info-heading">Store</h5>
+						<h3 class="">درباره ما</h3>
+						<div class="about">
+							بازرگانی مهاجر ازسال ۱۳۷۴ با مدیریت آقای هاشم مهاجری خراسانی در زمینه صادرات ،واردات و ترانزیت فعالیت خود را آغاز نمود  در طی این سال ها تمرکز و فعالیت اصلی این شرکت برروی خمیرمایه بوجود آمده و یکی از صادرکنندگان برتر ایران در این حوزه میباشد.صادرات این شرکت به بیش از ۱۵ کشور دنیا در ۵ قاره جهان صورت گرفته است. .
+						</div>
+						<h5 class="footer-info-heading">کارخانه</h5>
 						<address>
-							No 1123, Sky Tower Street, New York, USA<br>
-							contac@yourcompany.com
+							افغانستان هرات چهارسوق پاساژ زلمي<br>
 						</address>
-						<strong>Call us at +844 123 456 78</strong>
+						<strong>شماره تماسها دفتر ٠٠٩٣٤٠٢٢٢٣٤٨٢ مبايلها ٠٠٩٣٧٩٩٤٢٥٣٥٣  ٠٠٩٣٧٢٩٠٦٠٠٠٠</strong>
 					</article>
 					<div class="col-md-6 col-sm-12 col-xs-12">
 						<article class="footer-info-col col-md-4 col-sm-4 col-xs-12 no-padding" data-section-type="footer-webPages">
 							<h5 class="footer-info-heading">Navigate</h5>
 							<ul class="footer-info-list">
 								<li>
-									<a href="http://ap-newfashion.mybigcommerce.com/about-us/">About Us</a>
+									<a href="http://ap-newfashion.mybigcommerce.com/about-us/">درباره‌ی ما</a>
 								</li>
 								<li>
-									<a href="http://ap-newfashion.mybigcommerce.com/blog/">Blog</a>
+									<a href="http://ap-newfashion.mybigcommerce.com/blog/">بلاگ</a>
 								</li>
 								<li>
-									<a href="/sitemap.php">Sitemap</a>
+									<a href="/sitemap.php">سایت‌مپ</a>
 								</li>
 							</ul>
 						</article>
 
 						<article class="footer-info-col col-md-4 col-sm-4 col-xs-12 no-padding" data-section-type="footer-categories">
-							<h5 class="footer-info-heading">Categories</h5>
+							<h5 class="footer-info-heading">دسته‌بندی محصولات</h5>
 							<ul class="footer-info-list">
 								<li>
 									<a href="http://ap-newfashion.mybigcommerce.com/home-demo/">Home Demo</a>
@@ -343,18 +345,17 @@
 						</article>
 
 						<article class="footer-info-col col-md-4 col-sm-4 col-xs-12 no-padding" data-section-type="footer-brands">
-							<h5 class="footer-info-heading">Popular Brands</h5>
+							<h5 class="footer-info-heading">برندهای ما</h5>
 							<ul class="footer-info-list">
 								<li>
-									<a href="http://ap-newfashion.mybigcommerce.com/brands/OFS.html">OFS</a>
+									<a href="http://ap-newfashion.mybigcommerce.com/brands/OFS.html">همرسین</a>
 								</li>
 								<li>
-									<a href="http://ap-newfashion.mybigcommerce.com/brands/Common-Good.html">Common Good</a>
+									<a href="http://ap-newfashion.mybigcommerce.com/brands/Common-Good.html">دزمایه</a>
 								</li>
 								<li>
-									<a href="http://ap-newfashion.mybigcommerce.com/brands/Sagaform.html">Sagaform</a>
+									<a href="http://ap-newfashion.mybigcommerce.com/brands/Sagaform.html">ناب مایه</a>
 								</li>
-								<li><a href="http://ap-newfashion.mybigcommerce.com/brands/">View All</a></li>
 							</ul>
 						</article>
 					</div>
@@ -385,7 +386,7 @@
 					<ul class="socialLinks socialLinks--alt">
 						<li class="socialLinks-item">
 							<a class="icon icon--facebook" href="https://www.facebook.com" target="_blank">
-								<svg><use xlink:href="#icon-facebook" /></svg>
+								<i></i>
 							</a>
 						</li>
 						<li class="socialLinks-item">
@@ -428,5 +429,6 @@
 	<script src="~/Content/js/Yeast.js"></script>
 	<script src="~/Content/js/theme-bundle.chunk.16.js"></script>
 	<!-- snippet location footer -->
+	@RenderSection("Javascripts", false)
 </body>
 </html>

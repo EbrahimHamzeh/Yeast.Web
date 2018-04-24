@@ -18,13 +18,15 @@ namespace Yeast.Areas.Admin.Controllers
 	{
 		readonly IPostService _postService;
 		readonly ITagService _tagService;
+		readonly ICategoryService _categoryService;
 		readonly IUnitOfWork _uow;
 
-		public PostController(IUnitOfWork uow, IPostService postService, ITagService tagService)
+		public PostController(IUnitOfWork uow, IPostService postService, ITagService tagService, ICategoryService categotyService)
 		{
 			_uow = uow;
 			_postService = postService;
 			_tagService = tagService;
+			_categoryService = categotyService;
 		}
 
 		// GET: Admin/Post
@@ -45,6 +47,7 @@ namespace Yeast.Areas.Admin.Controllers
 		{
 			PostAdd Post = new PostAdd();
 			Post.TagList = _tagService.DropDownList();
+			Post.CategoryList = _categoryService.DropDownList();
 			return View(Post);
 		}
 
@@ -55,6 +58,8 @@ namespace Yeast.Areas.Admin.Controllers
 		{
 			if (!ModelState.IsValid)
 			{
+				model.TagList = _tagService.DropDownList(model.TagIds);
+				model.CategoryList = _categoryService.DropDownList(model.CategoryIds);
 				return View(model);
 			}
 
@@ -68,6 +73,8 @@ namespace Yeast.Areas.Admin.Controllers
 		{
 			if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			PostEdit post = _postService.FindForEdit(id ?? 0);
+			post.TagList = _tagService.DropDownList(post.TagIds);
+			post.CategoryList = _categoryService.DropDownList(post.CategoryIds);
 			if (post == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			return View(post);
 		}
@@ -75,19 +82,17 @@ namespace Yeast.Areas.Admin.Controllers
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		// Post: Admin/Post/Edit/id
-		public virtual ActionResult Edit(int id)
+		public virtual ActionResult Edit(int id, PostEdit postEdit)
 		{
-			Post postUpdate = _postService.Find(id);
-			if (postUpdate == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-
-			if (TryUpdateModel(postUpdate, "", new string[] { "Name", "Description" }))
+			if (!ModelState.IsValid)
 			{
-				if (!ModelState.IsValid)
-				{
-					return View(postUpdate);
-				}
-				_uow.SaveAllChanges();
+				postEdit.TagList = _tagService.DropDownList(postEdit.TagIds);
+				postEdit.CategoryList = _categoryService.DropDownList(postEdit.CategoryIds);
+				return View(postEdit);
 			}
+
+			_postService.Update(postEdit, id);
+			_uow.SaveAllChanges();
 			return RedirectToAction("Index"); ;
 		}
 

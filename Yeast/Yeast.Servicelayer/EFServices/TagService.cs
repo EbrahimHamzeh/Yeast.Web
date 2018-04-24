@@ -96,10 +96,23 @@ namespace Yeast.Servicelayer.EFServices
 			selectedTag.Description = tag.Description;
 		}
 
-		public SelectList DropDownList(int tagSelectedId = 0)
+		public SelectList DropDownList(List<int> tagSelectedId = null)
 		{
-			List<SelectListItem> selectListItemList = _tags.Where(x => x.Enable).Select(x => new SelectListItem { Text = x.Title, Value = x.Id.ToString() }).ToList();
-			return new SelectList(selectListItemList, "Value", "Text", tagSelectedId.ToString());
+			List<SelectListItem> selectListItemList;
+			if (tagSelectedId == null)
+			{
+				selectListItemList = _tags.Where(x => x.Enable).Select(x => new SelectListItem { Text = x.Title, Value = x.Id.ToString() }).ToList();
+			}
+			else
+			{
+				selectListItemList = _tags.Where(x => x.Enable).Select(x => new SelectListItem
+				{
+					Text = x.Title,
+					Value = x.Id.ToString(),
+					Selected = tagSelectedId.Contains(x.Id)
+				}).ToList();
+			}
+			return new SelectList(selectListItemList, "Value", "Text", tagSelectedId);
 		}
 	}
 }

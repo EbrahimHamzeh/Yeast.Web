@@ -22,10 +22,11 @@ namespace Yeast.DomainClasses.Entities
 		[AllowHtml]
 		public virtual string Body { get; set; }
 		public virtual string Slug { get; set; }
+		public virtual string Description { get; set; }
 		//public virtual User User { get; set; }   TODO: Hamzeh?????????????
 		public virtual ICollection<Comment> Comments { get; set; }
 		public virtual ICollection<Tag> Tags { get; set; }
-		public virtual string Description { get; set; }
+		public virtual ICollection<Category> Categories { get; set; }
 
 	}
 }

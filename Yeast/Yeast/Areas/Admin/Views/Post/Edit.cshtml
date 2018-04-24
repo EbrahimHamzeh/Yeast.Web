@@ -6,6 +6,40 @@
 }
 @section CssStyle{
 	<link href="~/Content/css/ladda-themeless-rtl.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/froala_editor.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/froala_style.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/char_counter.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/char_counter.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/code_view.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/code_view.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/colors.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/colors.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/draggable.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/draggable.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/emoticons.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/emoticons.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/file.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/file.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/fullscreen.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/fullscreen.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/help.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/help.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/image.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/image.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/image_manager.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/image_manager.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/line_breaker.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/line_breaker.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/quick_insert.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/quick_insert.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/special_characters.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/special_characters.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/table.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/table.min.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/video.css" rel="stylesheet" />
+	<link href="~/Content/froala/css/plugins/video.min.css" rel="stylesheet" />
+	<link href="~/Content/css/select2.min.css" rel="stylesheet" />
+	<link href="~/Content/css/select2-bootstrap.min.css" rel="stylesheet" />
 }
 <div class="page-content">
 	<!-- BEGIN PAGE HEADER-->
@@ -63,6 +97,59 @@
 								</div>
 							</div>
 							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Name">محتوا</label>
+								<div class="col-md-11">
+									<textarea id="Body" name="Body" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.Body</textarea>
+									@Html.ValidationMessageFor(model => model.Body)
+									<div class="form-control-focus"> </div>
+									<span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Name">لینک پیوند</label>
+								<div class="col-md-11">
+									<input type="text" class="form-control" id="Slug" name="Slug" value="@Model.Slug" required placeholder="پیوند را وارد نمایید">
+									@Html.ValidationMessageFor(model => model.Slug)
+									<div class="form-control-focus"> </div>
+									<span class="help-block">لینک پیوند بهتر است که انگلیسی و مرتبط با محتوا باشد. آدرس وب محتوا محسوب می‌شود.</span>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="CategoryIds">دسته‌بندی</label>
+								<div class="col-md-11">
+									<select id="CategoryIds" name="CategoryIds[]" class="form-control select2-multiple" multiple>
+										@foreach (var item in Model.CategoryList)
+										{
+											<option value="@item.Value" @(Model.CategoryIds.Contains(int.Parse(item.Value)) ? "selected" : "")>@item.Text</option>	
+											}
+									</select>
+									<div class="form-control-focus"> </div>
+									<span class="help-block"></span>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="TagIds">تگ‌ها</label>
+								<div class="col-md-11">
+									<select id="TagIds" name="TagIds[]" class="form-control select2-multiple" multiple>
+										@foreach (var item in Model.TagList)
+										{
+											<option value="@item.Value" @(Model.TagIds.Contains(int.Parse(item.Value == null ? "0" : item.Value)) ? "selected" : "")>@item.Text</option>	
+										}
+									</select>
+									<div class="form-control-focus"> </div>
+									<span class="help-block">اگر تگ مورد نظر شما در لیست موجود نمی‌باشد می‌توانید تایپ کتیذ و با اینتر آن‌ها را ثبت نمایید.</span>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Name">کلید واژه</label>
+								<div class="col-md-11">
+									<input type="text" class="form-control" id="Keyword" name="Keyword" value="@Model.Keyword" required placeholder="کلید واژه را وارد نمایید">
+									@Html.ValidationMessageFor(model => model.Keyword)
+									<div class="form-control-focus"> </div>
+									<span class="help-block">این فیلد مربوط به جستجوی های گوگل میشود. لطفا کلات را با علامت | ازهم جدا کنید.</span>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
 								<label class="col-md-1 control-label" for="Description">توضیحات</label>
 								<div class="col-md-11">
 									<input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" placeholder="توضیحات را وارد نمایید">
@@ -72,6 +159,7 @@
 								</div>
 							</div>
 						</div>
+
 						<div class="form-actions">
 							<div class="row">
 								<div class="col-md-offset-2 col-md-10">
@@ -88,21 +176,97 @@
 	</div>
 </div>
 @section Javascripts{
+
 	<script src="~/Content/js/jquery.validate.js"></script>
 	<script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
 	<script src="~/Content/js/spin.min.js"></script>
 	<script src="~/Content/js/ladda.min.js"></script>
+	<script src="~/Content/froala/js/froala_editor.min.js"></script>
+	<script src="~/Content/froala/js/plugins/align.min.js"></script>
+	<script src="~/Content/froala/js/plugins/char_counter.min.js"></script>
+	<script src="~/Content/froala/js/plugins/code_beautifier.min.js"></script>
+	<script src="~/Content/froala/js/plugins/code_view.min.js"></script>
+	<script src="~/Content/froala/js/plugins/colors.min.js"></script>
+	<script src="~/Content/froala/js/plugins/draggable.min.js"></script>
+	<script src="~/Content/froala/js/plugins/emoticons.min.js"></script>
+	<script src="~/Content/froala/js/plugins/entities.min.js"></script>
+	<script src="~/Content/froala/js/plugins/file.min.js"></script>
+	<script src="~/Content/froala/js/plugins/font_family.min.js"></script>
+	<script src="~/Content/froala/js/plugins/font_size.min.js"></script>
+	<script src="~/Content/froala/js/plugins/forms.min.js"></script>
+	<script src="~/Content/froala/js/plugins/fullscreen.min.js"></script>
+	<script src="~/Content/froala/js/plugins/help.min.js"></script>
+	<script src="~/Content/froala/js/plugins/image.min.js"></script>
+	<script src="~/Content/froala/js/plugins/image_manager.min.js"></script>
+	<script src="~/Content/froala/js/plugins/inline_style.min.js"></script>
+	<script src="~/Content/froala/js/plugins/line_breaker.min.js"></script>
+	<script src="~/Content/froala/js/plugins/link.min.js"></script>
+	<script src="~/Content/froala/js/plugins/lists.min.js"></script>
+	<script src="~/Content/froala/js/plugins/paragraph_format.min.js"></script>
+	<script src="~/Content/froala/js/plugins/paragraph_style.min.js"></script>
+	<script src="~/Content/froala/js/plugins/print.min.js"></script>
+	<script src="~/Content/froala/js/plugins/quick_insert.min.js"></script>
+	<script src="~/Content/froala/js/plugins/quote.min.js"></script>
+	<script src="~/Content/froala/js/plugins/save.min.js"></script>
+	<script src="~/Content/froala/js/plugins/special_characters.min.js"></script>
+	<script src="~/Content/froala/js/plugins/table.min.js"></script>
+	<script src="~/Content/froala/js/plugins/url.min.js"></script>
+	<script src="~/Content/froala/js/plugins/video.min.js"></script>
+	<script src="~/Content/froala/js/plugins/word_paste.min.js"></script>
+	<script src="~/Content/froala/js/languages/fa.js"></script>
+	<script src="~/Content/js/select2.min.js"></script>
 	<script type="text/javascript">
-
+		jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
 		var form1 = $('form[data-loading-text]');
 		var error1 = $('.alert-danger', form1);
 		var success1 = $('.alert-success', form1);
+
+		$(function ()
+		{
+			$('#Body').froalaEditor({
+				allowedImageTypes: ["jpeg", "jpg", "png"],
+				height: 300,
+				language: "fa",
+				direction: "rtl",
+				fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
+				plainPaste: true,
+				borderColor: '#00008b',
+				imageUploadURL: '@Url.Action(MVC.Admin.Post.FroalaUploadImage())',
+				fileUploadURL: '@Url.Action(MVC.Admin.Post.FroalaUploadFile ())',
+				videoUploadURL: '@Url.Action(MVC.Admin.Post.FroalaUploadVideo())',
+				enableScript: false
+			})
+		});
+
+		// حذف تمام تگ‌هاي يك قطعه متن
+		function removeAllTagsAndTrim(html)
+		{
+			return !html ? "" : jQuery.trim(html.replace(/(<([^>]+)>)/ig, ""));
+		}
+
+		// اين تنظيم براي پردازش اعتبارسنجي اديتور مخفي وب لازم است
+		jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
+
+		// متد اصلي اعتبارسنجي را ابتدا ذخيره مي‌كنيم
+		jQuery.validator.methods.originalRequired = jQuery.validator.methods.required;
+		// نحوه بازنويسي متد توكار اعتبار سنجي جهت استفاده از يك متد سفارشي
+		jQuery.validator.addMethod("required", function (value, element, param)
+		{
+			value = removeAllTagsAndTrim(value);
+			if (!value) {
+				$(".froala-element").focus();
+				$(".froala-element").css({ "border-color": "red" });
+				return false;
+			}
+			//  فراخواني متد اصلي اعتبار سنجي در صورت شكست تابع سفارشي
+			return jQuery.validator.methods.originalRequired.call(this, value, element, param);
+		}, jQuery.validator.messages.required);
 
 		form1.validate({
 			errorElement: 'span', //default input error message container
 			errorClass: 'help-block help-block-error', // default input error message class
 			focusInvalid: false, // do not focus the last invalid input
-			ignore: "",  // validate all fields including form hidden input
+			ignore: ":hidden:not(textarea)",  // validate all fields including form hidden input
 			invalidHandler: function (event, validator)
 			{ //display error alert on form submit
 				success1.hide();
@@ -147,7 +311,13 @@
 				form1.button('loading')
 			}
 		});
-	</script>
+
+		$('document').ready(function ()
+		{
+			$('#TagIds').select2({ dir: "rtl", language: "fa" });
+			$('#CategoryIds').select2({ dir: "rtl", language: "fa" });
+		});
+</script>
 }
 
 

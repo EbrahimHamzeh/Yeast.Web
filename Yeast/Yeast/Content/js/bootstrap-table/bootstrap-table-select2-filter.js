@@ -144,7 +144,7 @@
 				}
 				switch (column.filterControl.toLowerCase()) {
 					case 'input':
-						html.push(sprintf('<input type="text" class="form-control" style="width: 100%; visibility: %s">', isVisible));
+						html.push(sprintf('<input type="text" class="form-control searchBox" style="width: 100%; visibility: %s">', isVisible));
 						break;
 					case 'select':
 						html.push(sprintf('<select class="%s form-control" style="width: 100%; visibility: %s"></select>',

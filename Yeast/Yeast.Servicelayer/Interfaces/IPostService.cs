@@ -12,7 +12,7 @@ namespace Yeast.Servicelayer.Interfaces
 		ConfiguredTaskAwaitable<int> CountAsync { get; }
 		void Add(PostAdd Post);
 		void Remove(int id);
-		void Update(Post Post);
+		void Update(PostEdit post, int id);
 		Post Find(int id);
 		PostEdit FindForEdit(int id);
 		Task<IList<Post>> GetAllAsync();
