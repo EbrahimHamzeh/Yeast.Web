@@ -44,6 +44,7 @@ namespace T4MVC
         public Yeast.Areas.Admin.Controllers.PostController Post = new Yeast.Areas.Admin.Controllers.T4MVC_PostController();
         public Yeast.Areas.Admin.Controllers.ProductController Product = new Yeast.Areas.Admin.Controllers.T4MVC_ProductController();
         public Yeast.Areas.Admin.Controllers.TagController Tag = new Yeast.Areas.Admin.Controllers.T4MVC_TagController();
+        public Yeast.Areas.Admin.Controllers.UserController User = new Yeast.Areas.Admin.Controllers.T4MVC_UserController();
         public T4MVC.Admin.SharedController Shared = new T4MVC.Admin.SharedController();
     }
 }
@@ -100,16 +101,19 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
                 public static readonly string bootstrap_editable_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-editable.min.css") ? Url("bootstrap-editable.min.css") : Url("bootstrap-editable.css");
+                public static readonly string bootstrap_table_sticky_header_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-table-sticky-header.min.css") ? Url("bootstrap-table-sticky-header.min.css") : Url("bootstrap-table-sticky-header.css");
                 public static readonly string bootstrap_table_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-table.min.css") ? Url("bootstrap-table.min.css") : Url("bootstrap-table.css");
             }
         
             public static readonly string components_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/components-rtl.min.css") ? Url("components-rtl.min.css") : Url("components-rtl.css");
             public static readonly string default_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/default-rtl.min.css") ? Url("default-rtl.min.css") : Url("default-rtl.css");
             public static readonly string enjoyhint_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/enjoyhint.min.css") ? Url("enjoyhint.min.css") : Url("enjoyhint.css");
+            public static readonly string filepond_min_css = Url("filepond.min.css");
             public static readonly string font_awesome_min_css = Url("font-awesome.min.css");
             public static readonly string jstree_min_css = Url("jstree.min.css");
             public static readonly string ladda_themeless_rtl_min_css = Url("ladda-themeless-rtl.min.css");
             public static readonly string layout_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/layout-rtl.min.css") ? Url("layout-rtl.min.css") : Url("layout-rtl.css");
+            public static readonly string ma5slider_min_css = Url("ma5slider.min.css");
             public static readonly string plugins_rtl_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/plugins-rtl.min.css") ? Url("plugins-rtl.min.css") : Url("plugins-rtl.css");
             public static readonly string select2_bootstrap_min_css = Url("select2-bootstrap.min.css");
             public static readonly string select2_min_css = Url("select2.min.css");
@@ -404,6 +408,7 @@ namespace Links
             public static readonly string s5_min__84178_1499310668_jpg = Url("s5-min__84178.1499310668.jpg");
             public static readonly string s6_min__43240_1499310437_jpg = Url("s6-min__43240.1499310437.jpg");
             public static readonly string s9_min_rs__06198_1499309930_jpg = Url("s9-min-rs__06198.1499309930.jpg");
+            public static readonly string searchicon_png = Url("searchicon.png");
             public static readonly string slideshow_image_1_min_rs_jpg = Url("slideshow_image_1-min-rs.jpg");
             public static readonly string slideshow_image_2_min_jpg = Url("slideshow_image_2-min.jpg");
         }
@@ -431,11 +436,14 @@ namespace Links
         
             public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
             public static readonly string enjoyhint_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/enjoyhint.min.js") ? Url("enjoyhint.min.js") : Url("enjoyhint.js");
+            public static readonly string filepond_esm_min_js = Url("filepond.esm.min.js");
             public static readonly string jquery_1_10_2_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-1.10.2.intellisense.min.js") ? Url("jquery-1.10.2.intellisense.min.js") : Url("jquery-1.10.2.intellisense.js");
             public static readonly string jquery_3_3_1_min_js = Url("jquery-3.3.1.min.js");
+            public static readonly string jquery_ui_min_js = Url("jquery-ui.min.js");
             public static readonly string jquery_blockui_min_js = Url("jquery.blockui.min.js");
             public static readonly string jquery_min_js = Url("jquery.min.js");
             public static readonly string jquery_slimscroll_min_js = Url("jquery.slimscroll.min.js");
+            public static readonly string jquery_ui_touch_punch_min_js = Url("jquery.ui.touch-punch.min.js");
             public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
             public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
             public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate.unobtrusive.min.js") ? Url("jquery.validate.unobtrusive.min.js") : Url("jquery.validate.unobtrusive.js");
@@ -443,6 +451,7 @@ namespace Links
             public static readonly string jstree_min_js = Url("jstree.min.js");
             public static readonly string ladda_min_js = Url("ladda.min.js");
             public static readonly string layout_min_js = Url("layout.min.js");
+            public static readonly string ma5slider_min_js = Url("ma5slider.min.js");
             public static readonly string persianumber_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/persianumber.min.js") ? Url("persianumber.min.js") : Url("persianumber.js");
             public static readonly string quick_nav_min_js = Url("quick-nav.min.js");
             public static readonly string select2_min_js = Url("select2.min.js");
@@ -495,6 +504,7 @@ namespace Links
                     public static class Assets
                     {
                         public static readonly string bootstrap_editable_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/bootstrap-table/bootstrap-editable.css");
+                        public static readonly string bootstrap_table_sticky_header_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/bootstrap-table/bootstrap-table-sticky-header.css");
                         public static readonly string bootstrap_table_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/bootstrap-table/bootstrap-table.css");
                     }
                 }
@@ -505,10 +515,12 @@ namespace Links
                     public static readonly string components_rtl_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/components-rtl.css");
                     public static readonly string default_rtl_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/default-rtl.css");
                     public static readonly string enjoyhint_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/enjoyhint.css");
+                    public static readonly string filepond_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/filepond.min.css");
                     public static readonly string font_awesome_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/font-awesome.min.css");
                     public static readonly string jstree_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/jstree.min.css");
                     public static readonly string ladda_themeless_rtl_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/ladda-themeless-rtl.min.css");
                     public static readonly string layout_rtl_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/layout-rtl.css");
+                    public static readonly string ma5slider_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/ma5slider.min.css");
                     public static readonly string plugins_rtl_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/plugins-rtl.css");
                     public static readonly string select2_bootstrap_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/select2-bootstrap.min.css");
                     public static readonly string select2_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/select2.min.css");
@@ -762,17 +774,21 @@ namespace Links
                     public static readonly string bootstrap_switch_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap-switch.min.js"); 
                     public static readonly string bootstrap_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/bootstrap.min.js"); 
                     public static readonly string enjoyhint_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/enjoyhint.js"); 
+                    public static readonly string filepond_esm_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/filepond.esm.min.js"); 
                     public static readonly string jquery_1_10_2_intellisense_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery-1.10.2.intellisense.js"); 
                     public static readonly string jquery_3_3_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery-3.3.1.min.js"); 
+                    public static readonly string jquery_ui_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery-ui.min.js"); 
                     public static readonly string jquery_blockui_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery.blockui.min.js"); 
                     public static readonly string jquery_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery.min.js"); 
                     public static readonly string jquery_slimscroll_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery.slimscroll.min.js"); 
+                    public static readonly string jquery_ui_touch_punch_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery.ui.touch-punch.min.js"); 
                     public static readonly string jquery_validate_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery.validate.js"); 
                     public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jquery.validate.unobtrusive.js"); 
                     public static readonly string js_cookie_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/js.cookie.min.js"); 
                     public static readonly string jstree_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/jstree.min.js"); 
                     public static readonly string ladda_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/ladda.min.js"); 
                     public static readonly string layout_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/layout.min.js"); 
+                    public static readonly string ma5slider_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/ma5slider.min.js"); 
                     public static readonly string persianumber_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/persianumber.js"); 
                     public static readonly string quick_nav_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/quick-nav.min.js"); 
                     public static readonly string select2_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/js/select2.min.js"); 

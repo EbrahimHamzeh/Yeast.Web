@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Yeast.Attribute;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
@@ -52,7 +54,7 @@ namespace Yeast.Areas.Admin.Controllers
 				return View(model);
 			}
 
-			_ProductService.Add(model);
+            _ProductService.Add(model);
 			_uow.SaveAllChanges();
 			return RedirectToAction("Index");
 		}
@@ -95,6 +97,16 @@ namespace Yeast.Areas.Admin.Controllers
 			_ProductService.Remove(id);
 			_uow.SaveAllChanges();
 			return Json(new { success = true });
-		}
-	}
+        }
+
+        [HttpPost]
+        public virtual ActionResult Filepond(HttpPostedFileBase Image1)
+        {
+            var fileName = Path.GetFileName(Image1.FileName);
+            var rootPath = Server.MapPath("~/Content/upload/images/");
+            string fileNameFinal = Guid.NewGuid().ToString("N") + fileName;
+            Image1.SaveAs(Path.Combine(rootPath, fileNameFinal));
+            return Json(new { link = Url.Content("~/Content/upload/images/") + fileNameFinal }, JsonRequestBehavior.AllowGet);
+        }
+    }
 }

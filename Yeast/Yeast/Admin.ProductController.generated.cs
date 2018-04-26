@@ -75,6 +75,12 @@ namespace Yeast.Areas.Admin.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Filepond()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Filepond);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ProductController Actions { get { return MVC.Admin.Product; } }
@@ -96,6 +102,7 @@ namespace Yeast.Areas.Admin.Controllers
             public readonly string Add = "Add";
             public readonly string Edit = "Edit";
             public readonly string Delete = "Delete";
+            public readonly string Filepond = "Filepond";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -106,6 +113,7 @@ namespace Yeast.Areas.Admin.Controllers
             public const string Add = "Add";
             public const string Edit = "Edit";
             public const string Delete = "Delete";
+            public const string Filepond = "Filepond";
         }
 
 
@@ -144,6 +152,14 @@ namespace Yeast.Areas.Admin.Controllers
         public class ActionParamsClass_Delete
         {
             public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_Filepond s_params_Filepond = new ActionParamsClass_Filepond();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Filepond FilepondParams { get { return s_params_Filepond; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Filepond
+        {
+            public readonly string Image1 = "Image1";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -253,6 +269,18 @@ namespace Yeast.Areas.Admin.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             DeleteOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void FilepondOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Web.HttpPostedFileBase Image1);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Filepond(System.Web.HttpPostedFileBase Image1)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Filepond);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "Image1", Image1);
+            FilepondOverride(callInfo, Image1);
             return callInfo;
         }
 

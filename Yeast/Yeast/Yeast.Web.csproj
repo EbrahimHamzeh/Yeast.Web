@@ -177,8 +177,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\T4MVCExtensions.4.1.0\lib\net45\T4MVCExtensions.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\T4MVCExtensions.4.1.1\lib\net45\T4MVCExtensions.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -194,31 +193,48 @@
     <Compile Include="Admin.CategoryController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Admin.DashboardController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Admin.PostController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Admin.ProductController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Admin.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.TagController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.UserController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
-    <Compile Include="T4MVC1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
+    <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC1.cs" />
     <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Content\css\32px.png" />
     <Content Include="Content\css\40px.png" />
     <Content Include="Content\css\bootstrap-rtl.min.css" />
     <Content Include="Content\css\bootstrap-switch-rtl.min.css" />
     <Content Include="Content\css\bootstrap-table\bootstrap-editable.css" />
+    <Content Include="Content\css\bootstrap-table\bootstrap-table-sticky-header.css" />
     <Content Include="Content\css\bootstrap-table\bootstrap-table.css" />
     <Content Include="Content\css\components-rtl.css" />
     <Content Include="Content\css\default-rtl.css" />
     <Content Include="Content\css\enjoyhint.css" />
+    <Content Include="Content\css\filepond-plugin-image-preview.min.css" />
+    <Content Include="Content\css\filepond.min.css" />
     <Content Include="Content\css\jstree.min.css" />
     <Content Include="Content\css\ladda-themeless-rtl.min.css" />
     <Content Include="Content\css\layout-rtl.css" />
@@ -412,6 +428,14 @@
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\enjoyhint.js" />
+    <Content Include="Content\js\filepond-plugin-file-validate-size.min.js" />
+    <Content Include="Content\js\filepond-plugin-file-validate-type.min.js" />
+    <Content Include="Content\js\filepond-plugin-image-crop.min.js" />
+    <Content Include="Content\js\filepond-plugin-image-exif-orientation.min.js" />
+    <Content Include="Content\js\filepond-plugin-image-preview.min.js" />
+    <Content Include="Content\js\filepond-plugin-image-resize.min.js" />
+    <Content Include="Content\js\filepond-plugin-image-transform.min.js" />
+    <Content Include="Content\js\filepond.min.js" />
     <Content Include="Content\js\jquery-3.3.1.min.js" />
     <Content Include="Content\js\jquery-ui.min.js" />
     <Content Include="Content\js\jquery.blockui.min.js" />
@@ -434,26 +458,11 @@
     <Content Include="Content\js\theme-bundle.chunk.16.js" />
     <Content Include="Content\js\Yeast.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Compile Include="Admin.DashboardController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Admin.SharedController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Admin.TagController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\TagController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
-    <Compile Include="HomeController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="IocConfig\Helper\SystemWebCookieManager.cs" />
-    <Compile Include="SharedController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
     <Content Include="Global.asax" />
     <Content Include="Content\fonts\Simple-Line-Icons.eot" />
@@ -464,11 +473,12 @@
     <Content Include="Areas\Admin\Views\Product\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <None Include="T4MVC.tt.hooks.t4" />
+    <None Include="T4MVC.tt.settings.xml" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>T4MVC1.cs</LastGenOutput>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
-    <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -503,7 +513,6 @@
     <Content Include="Areas\Admin\Views\Shared\_Sidebar.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Tag\Index.cshtml" />
-    <None Include="T4MVC.tt.hooks.t4" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
