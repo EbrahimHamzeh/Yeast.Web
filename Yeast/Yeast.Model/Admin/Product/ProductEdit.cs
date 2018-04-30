@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
+using Yeast.Utilities;
 
 namespace Yeast.Model.Admin
 {
@@ -15,5 +17,12 @@ namespace Yeast.Model.Admin
 
 		[MaxLength(ErrorMessage = "حداکثر ۱۰۰۰ کاراکتر می‌توانید وارد کنید")]
 		public string Description { get; set; }
-	}
+
+        [AllowHtml]
+        public virtual string Body { get; set; }
+        public decimal Price { get; set; }
+        public string[] Image1 { get; set; }
+        public string MetaData { get; set; }
+        public List<ImageJSON> ImageJSONs { get; set; }
+    }
 }

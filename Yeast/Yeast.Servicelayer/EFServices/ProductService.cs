@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Dynamic;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Yeast.Utilities;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
@@ -32,7 +33,7 @@ namespace Yeast.Servicelayer.EFServices
 
 		public void Add(ProductAdd Product)
 		{
-			_products.Add(new Product { Name = Product.Name, Description = Product.Description, Body = Product.Body, Price = Product.Price, Images = Product.Image1.ToString() });
+            _products.Add(new Product { Name = Product.Name, Description = Product.Description, Body = Product.Body, Price = Product.Price, Images = Filepond.SaveArrayImageToJsonString(Product.Image1) });
 		}
 
 		public Product Find(int id)
@@ -45,8 +46,12 @@ namespace Yeast.Servicelayer.EFServices
 			Product Product = _products.Find(id);
 			return new ProductEdit {
 				Name = Product.Name,
-				Description = Product.Description
-			};
+				Description = Product.Description,
+				Body = Product.Body,
+                ImageJSONs = Filepond.DeserializeImageUpload(Product.Images),
+                MetaData = Product.MetaData,
+                Price = Product.Price
+            };
 		}
 
 		public async Task<IList<Product>> GetAllAsync()

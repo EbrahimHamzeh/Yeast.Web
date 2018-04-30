@@ -12,6 +12,8 @@ using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
 
 namespace Yeast.Areas.Admin.Controllers
 {
@@ -54,10 +56,7 @@ namespace Yeast.Areas.Admin.Controllers
 			{
 				return View(model);
 			}
-
-
-            List<ImageJSON> a = JsonConvert.DeserializeObject<List<ImageJSON>>(Request["Image1"]); 
-
+            
             _ProductService.Add(model);
 			_uow.SaveAllChanges();
 			return RedirectToAction("Index");
