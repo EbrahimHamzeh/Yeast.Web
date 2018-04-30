@@ -100,8 +100,8 @@
                             <div class="form-group form-md-line-input">
                                 <label class="col-md-1 control-label" for="Name">قیمت</label>
                                 <div class="col-md-11">
-                                    <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" required placeholder="عنوان را وارد نمایید">
-                                    @Html.ValidationMessageFor(model => model.Name)
+                                    <input type="text" class="form-control" id="Price" name="Price" value="@Model.Price" required placeholder="قیمت را به تومان وارد کنید">
+                                    @Html.ValidationMessageFor(model => model.Price)
                                     <div class="form-control-focus"> </div>
                                 </div>
                             </div>
@@ -126,8 +126,8 @@
                             <div class="form-group form-md-line-input">
                                 <label class="col-md-1 control-label" for="Name">محتوا</label>
                                 <div class="col-md-11">
-                                    <textarea id="Body" name="Body" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@*@Model.Body*@</textarea>
-                                    @*@Html.ValidationMessageFor(model => model.Body)*@
+                                    <textarea id="Body" name="Body" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.Body</textarea>
+                                    @Html.ValidationMessageFor(model => model.Body)
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
                                 </div>

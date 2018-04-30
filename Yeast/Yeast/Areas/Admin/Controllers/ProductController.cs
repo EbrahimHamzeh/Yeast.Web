@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -53,6 +54,9 @@ namespace Yeast.Areas.Admin.Controllers
 			{
 				return View(model);
 			}
+
+
+            List<ImageJSON> a = JsonConvert.DeserializeObject<List<ImageJSON>>(Request["Image1"]); 
 
             _ProductService.Add(model);
 			_uow.SaveAllChanges();

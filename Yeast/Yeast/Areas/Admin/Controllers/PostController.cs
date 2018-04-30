@@ -108,7 +108,7 @@ namespace Yeast.Areas.Admin.Controllers
 			return Json(new { success = true });
 		}
 
-		[HttpPost, AjaxOnly]
+		[HttpPost]
 		public virtual ActionResult FroalaUploadImage(HttpPostedFileBase file)
 		{
 			var fileName = Path.GetFileName(file.FileName);
@@ -118,7 +118,7 @@ namespace Yeast.Areas.Admin.Controllers
 			return Json(new { link = Url.Content("~/Content/upload/images/") + fileNameFinal }, JsonRequestBehavior.AllowGet);
 		}
 
-		[HttpPost, AjaxOnly]
+		[HttpPost]
 		public virtual ActionResult FroalaUploadFile(HttpPostedFileBase file)
 		{
 			var fileName = Path.GetFileName(file.FileName);
@@ -128,7 +128,7 @@ namespace Yeast.Areas.Admin.Controllers
 			return Json(new { link = Url.Content("~/Content/upload/files/") + fileNameFinal }, JsonRequestBehavior.AllowGet);
 		}
 
-		[HttpPost, AjaxOnly]
+		[HttpPost]
 		public virtual ActionResult FroalaUploadVideo(HttpPostedFileBase file)
 		{
 			var fileName = Path.GetFileName(file.FileName);

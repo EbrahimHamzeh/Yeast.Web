@@ -32,7 +32,7 @@ namespace Yeast.Servicelayer.EFServices
 
 		public void Add(ProductAdd Product)
 		{
-			_products.Add(new Product { Name = Product.Name, Description = Product.Description });
+			_products.Add(new Product { Name = Product.Name, Description = Product.Description, Body = Product.Body, Price = Product.Price, Images = Product.Image1.ToString() });
 		}
 
 		public Product Find(int id)

@@ -222,7 +222,6 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4MVC1.cs" />
-    <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Content\css\32px.png" />
     <Content Include="Content\css\40px.png" />
     <Content Include="Content\css\bootstrap-rtl.min.css" />
