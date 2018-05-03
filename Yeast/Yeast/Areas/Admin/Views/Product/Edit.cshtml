@@ -226,8 +226,15 @@
                             type: 'local'
                         }
                     }
-                ]
+                ],
+                server: {
+                    url: '@Request.Url.Authority'
+                }
+
             });
+
+        //pond.addFile('@Model.ImageJSONs.FirstOrDefault().link')
+
         FilePond.setOptions({
             server: '@Url.Action(MVC.Admin.Product.Filepond())'
         });
