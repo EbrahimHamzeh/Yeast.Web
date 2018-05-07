@@ -200,10 +200,10 @@
         FilePond.registerPlugin(
             FilePondPluginFileValidateType,
             FilePondPluginImagePreview,
-            FilePondPluginImageExifOrientation,
+            //FilePondPluginImageExifOrientation,
             FilePondPluginFileValidateSize,
-            FilePondPluginImageCrop,
-            FilePondPluginImageResize
+            //FilePondPluginImageCrop,
+            //FilePondPluginImageResize
         );
         const pond = FilePond.create(document.querySelector('input[type="file"]'),
             {
@@ -213,22 +213,29 @@
                 labelTotalFileSizeExceeded: 'تعداد تصاویر بیشتر از 3 نمیتواند باشد',
                 labelFileTypeNotAllowed: 'فرمت تصویر نامعتر می‌باشد',
                 imagePreviewHeight: 120,
-                imageResizeMode: 'cover',
-                imageResizeTargetWidth: 500,
-                imageResizeTargetHeight: 648,
+                //imageResizeMode: 'cover',
+                //imageResizeTargetWidth: 500,
+                //imageResizeTargetHeight: 648,
                 files: [
+                @foreach (var item in Model.ImageJSONs)
+                {
+                    <text>
                     {
-                        // the server file reference
-                        source: '@(string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority) + Model.ImageJSONs.FirstOrDefault().link)',
+                        source: '@item.link',
 
-                        // set type to limbo to tell FilePond this is a temp file
-                        options: {
-                            type: 'local'
+                        options:
+                        {
+                            type: 'local',
+                            allowImagePreview: true,
+                            imagePreviewHeight: 120,
                         }
-                    }
+                    },
+                    </text>
+                }
+                
                 ],
                 server: {
-                    url: '@Request.Url.Authority'
+                    url: '@string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority)'
                 }
 
             });

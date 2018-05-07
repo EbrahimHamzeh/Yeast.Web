@@ -116,6 +116,7 @@
     <Compile Include="Admin\Category\CategoryAdd.cs" />
     <Compile Include="Admin\Category\CategoryEdit.cs" />
     <Compile Include="Admin\Category\CategoryList.cs" />
+    <Compile Include="FrontEnd\Product.cs" />
     <Compile Include="Generic\DataTableList.cs" />
     <Compile Include="Admin\Tag\TagList.cs" />
     <Compile Include="Admin\Tag\TagEdit.cs" />
