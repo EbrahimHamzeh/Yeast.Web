@@ -28,7 +28,7 @@ namespace Yeast.Controllers
         }
 
         // GET: /{lang}/Product/5
-        public virtual ActionResult Index(int id)
+        public virtual ActionResult Detial(int id)
 		{
             ProductEdit product = _productService.FindForEdit(id);
 
