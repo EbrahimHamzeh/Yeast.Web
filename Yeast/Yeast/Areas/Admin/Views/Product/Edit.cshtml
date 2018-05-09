@@ -48,7 +48,7 @@
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
-                <a href="@Url.Action(MVC.Admin.Dashboard.Index())">داشبورد</a>
+                <a href="@Url.Action("Index","Dashboard", new { Area = "Admin" })">داشبورد</a>
                 <i class="fa fa-circle"></i>
             </li>
             <li>
@@ -243,7 +243,7 @@
         //pond.addFile('@Model.ImageJSONs.FirstOrDefault().link')
 
         FilePond.setOptions({
-            server: '@Url.Action(MVC.Admin.Product.Filepond())'
+            server: '@Url.Action("Product", "Filepond", new { Area = "Admin" })'
         });
 
         $(function ()
@@ -256,9 +256,9 @@
 				fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
 				plainPaste: true,
 				borderColor: '#00008b',
-				imageUploadURL: '@Url.Action(MVC.Admin.Post.FroalaUploadImage())',
-				fileUploadURL: '@Url.Action(MVC.Admin.Post.FroalaUploadFile ())',
-				videoUploadURL: '@Url.Action(MVC.Admin.Post.FroalaUploadVideo())',
+				imageUploadURL: '@Url.Action("FroalaUploadImage", "Post", new { Area = "Admin" })',
+				fileUploadURL: '@Url.Action("FroalaUploadFile", "Post", new { Area = "Admin" }))',
+				videoUploadURL: '@Url.Action("FroalaUploadVideo", "Post", new { Area = "Admin" })',
 				enableScript: false
 			})
 		});

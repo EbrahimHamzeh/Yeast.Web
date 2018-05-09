@@ -66,7 +66,7 @@ foreach (string item in args)
 				</form>
 			</li>
 			<li class="nav-item start @GetActive("Dashboard")">
-				<a href="@Url.Action(MVC.Admin.Dashboard.Index())" class="nav-link nav-toggle">
+				<a href="@Url.Action("Index","Dashboard", new { Area = "Admin" })" class="nav-link nav-toggle">
 					<i class="fa fa-tachometer"></i>
 					<span class="title">داشبورد</span>
 					@GetSelectedTag("Dashboard")
@@ -76,14 +76,14 @@ foreach (string item in args)
 				<h3 class="uppercase">مطالب</h3>
 			</li>
 			<li class="nav-item @GetActive("Post")">
-				<a href="@Url.Action(MVC.Admin.Post.Index())" class="nav-link nav-toggle">
+				<a href="@Url.Action("Index","Post", new { Area = "Admin" })" class="nav-link nav-toggle">
 					<i class="fa fa-sitemap"></i>
 					<span class="title">پست‌ها</span>
 					@GetSelectedTag("Post")
 				</a>
 			</li>
 			<li class="nav-item @GetActive("Category")">
-				<a href="@Url.Action(MVC.Admin.Category.Index())" class="nav-link nav-toggle">
+				<a href="@Url.Action("Index","Category", new { Area = "Admin" })" class="nav-link nav-toggle">
 					<i class="fa fa-file-o"></i>
 					<span class="title">دسته‌بندی‌ها</span>
 					@GetSelectedTag("Category")
@@ -104,14 +104,14 @@ foreach (string item in args)
 				</a>
 			</li>
 			<li class="nav-item @GetActive("Tag")">
-				<a href="@Url.Action(MVC.Admin.Tag.Index())" class="nav-link nav-toggle">
+				<a href="@Url.Action("Index", "Tag", new { Area = "Admin" })" class="nav-link nav-toggle">
 					<i class="fa fa-tags"></i>
 					<span class="title">تگ‌ها</span>
 					@GetSelectedTag("Tag")
 				</a>
 			</li>
 			<li class="nav-item  @GetActive("Product")">
-                <a href="@Url.Action(MVC.Admin.Product.Index())" class="nav-link nav-toggle">
+                <a href="@Url.Action("Index", "Product", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-dropbox"></i>
                     <span class="title">محصولات</span>
                     @GetSelectedTag("Product")

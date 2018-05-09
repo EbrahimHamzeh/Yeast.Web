@@ -7,7 +7,7 @@ using Yeast.Utilities.Controllers;
 namespace Yeast.Controllers
 {
 
-	public partial class ProductController : BaseController
+	public class ProductController : BaseController
 	{
 
 		readonly IProductService _productService;
@@ -19,8 +19,16 @@ namespace Yeast.Controllers
             _productService = productService;
 		}
 
-		// GET: Home
-		public virtual ActionResult Index(int id)
+        // GET: /{lang}/Product
+        public virtual ActionResult Index()
+        {
+            var products = _productService.GetAllAsync();
+
+            return View(products);
+        }
+
+        // GET: /{lang}/Product/5
+        public virtual ActionResult Index(int id)
 		{
             ProductEdit product = _productService.FindForEdit(id);
 
