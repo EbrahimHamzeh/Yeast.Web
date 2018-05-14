@@ -1,0 +1,2217 @@
+﻿@model Yeast.Model.Admin.ProductEdit;
+@{
+    ViewBag.Title = "Product";
+}
+@section CssStyle{
+    <link href="~/Content/css/ma5slider.min.css" rel="stylesheet" />
+}
+
+<div class="body stop-float-body clearfix" style="padding-top: 194px;">
+    <div class=" container page-main">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb ">
+                <a href="http://ap-newfashion.mybigcommerce.com/" class="breadcrumb-label">Home</a>
+            </li>
+            <li class="breadcrumb ">
+                <a href="http://ap-newfashion.mybigcommerce.com/utility/accessories/" class="breadcrumb-label">Accessories</a>
+            </li>
+            <li class="breadcrumb is-active">
+                <span class="breadcrumb-label">Aenean consequat sagittis</span>
+            </li>
+        </ul>
+
+        <div itemscope="" itemtype="http://schema.org/Product">
+            <div class="productView">
+                <section class="productView-details">
+                    <div class="productView-product">
+                        <h1 class="productView-title" itemprop="name">Aenean consequat sagittis</h1>
+                        <h2 class="productView-brand" itemprop="brand" itemscope="" itemtype="http://schema.org/Brand">
+                            <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/" itemprop="url"><span itemprop="name"></span></a>
+                        </h2>
+                        <div class="productView-rating" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                            <span class="icon icon--ratingEmpty">
+                                <svg>
+                                    <use xlink:href="#icon-star"></use>
+                                </svg>
+                            </span>
+                            <span class="icon icon--ratingEmpty">
+                                <svg>
+                                    <use xlink:href="#icon-star"></use>
+                                </svg>
+                            </span>
+                            <span class="icon icon--ratingEmpty">
+                                <svg>
+                                    <use xlink:href="#icon-star"></use>
+                                </svg>
+                            </span>
+                            <span class="icon icon--ratingEmpty">
+                                <svg>
+                                    <use xlink:href="#icon-star"></use>
+                                </svg>
+                            </span>
+                            <span class="icon icon--ratingEmpty">
+                                <svg>
+                                    <use xlink:href="#icon-star"></use>
+                                </svg>
+                            </span>
+                            <!-- snippet location product_rating -->
+                            <span class="productView-reviewLink">
+                                (No reviews yet)
+                            </span>
+                            <span class="productView-reviewLink">
+                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/" data-reveal-id="modal-review-form">
+                                    Write a Review
+                                </a>
+                            </span>
+                            <div id="modal-review-form" class="modal" data-reveal="">
+
+
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-header-title">Write a Review</h2>
+                                        <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="modal-close" aria-label="Close" role="button">
+                                            <span aria-hidden="true">×</span>
+                                        </a>
+                                    </div><div class="modal-body">
+                                        <div class="writeReview-productDetails">
+                                            <img src="./Aenean consequat sagittis - Ap NewFashion_files/93-thickbox_default-min__61912.1499246836.jpg">
+                                            <h6 class="product-brand"></h6>
+                                            <h5 class="product-title">@Model.Name</h5>
+                                        </div>
+                                        <form class="form writeReview-form" action="http://ap-newfashion.mybigcommerce.com/postreview.php" method="post">
+                                            <fieldset class="form-fieldset">
+                                                <div class="form-field form-field--select">
+                                                    <label class="form-label" for="rating-rate">
+                                                        Rating
+                                                        <small>Required</small>
+                                                    </label>
+                                                    <!-- Stars -->
+                                                    <!-- TODO: Review Stars need to be componentised, both for display and input -->
+                                                    <select id="rating-rate" class="form-select" name="revrating">
+                                                        <option value="">Select Rating</option>
+                                                        <option value="1">1 star (worst)</option>
+                                                        <option value="2">2 stars</option>
+                                                        <option value="3">3 stars (average)</option>
+                                                        <option value="4">4 stars</option>
+                                                        <option value="5">5 stars (best)</option>
+                                                    </select>
+                                                </div>
+                                                <!-- Name -->
+                                                <div class="form-field form-field--input form-field--inputText" id="" data-validation="">
+                                                    <label class="form-label" for="_input">
+                                                        Name
+
+                                                    </label>
+                                                    <input type="text" id="_input" data-label="Name" name="revfromname" class="form-input" aria-required="">
+                                                </div>
+                                                <!-- Email -->
+                                                <div class="form-field form-field--input form-field--inputText" id="" data-validation="">
+                                                    <label class="form-label" for="_input">
+                                                        Email
+                                                        <small>Required</small>
+                                                    </label>
+                                                    <input type="text" id="_input" data-label="Email" name="email" class="form-input" aria-required="false">
+                                                </div>
+                                                <!-- Review Subject -->
+                                                <div class="form-field form-field--input form-field--inputText" id="" data-validation="">
+                                                    <label class="form-label" for="_input">
+                                                        Review Subject
+                                                        <small>Required</small>
+                                                    </label>
+                                                    <input type="text" id="_input" data-label="Review Subject" name="revtitle" class="form-input" aria-required="true">
+                                                </div>
+                                                <!-- Comments -->
+                                                <div class="form-field form-field--textarea" id="" data-validation="">
+                                                    <label class="form-label" for="_input">
+                                                        Comments
+                                                        <small>Required</small>
+                                                    </label>
+                                                    <textarea name="revtext" id="_input" data-label="Comments" rows="" aria-required="true" class="form-input"></textarea>
+                                                </div>
+
+                                                <div class="form-field form-field--submit">
+                                                    <input type="submit" class="button button--primary" value="Submit Review">
+                                                </div>
+                                                <input type="hidden" name="product_id" value="111">
+                                                <input type="hidden" name="action" value="post_review">
+
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div><div class="loadingOverlay" style="display: none;"></div>
+                            </div>
+                        </div>
+                        <div class="productView-price">
+                            <div class="price-section price-section--withoutTax " itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                <meta itemprop="price" content="25.0022">
+                                <meta itemprop="priceCurrency" content="EUR">
+                                <meta itemprop="availability" content="">
+                                <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/Condition">
+                                <span data-product-price-without-tax="" class="price price--withoutTax">@Model.Price</span>
+                            </div>
+                        </div>
+                        <div class="product-share">
+                            <div class="addthis_toolbox addthis_32x32_style" addthis:url="" addthis:title="">
+                                <ul class="socialLinks">
+                                    <li class="socialLinks-item socialLinks-item--google_plusone">
+                                        <a class="addthis_button_google_plusone icon icon--google_plusone at300b" g:plusone:count="false">
+
+                                            <!-- No custom icons allowed with g+ -->
+                                            <svg>
+                                                <use xlink:href="#icon-google"></use>
+                                            </svg>
+                                            <span>Google+</span>
+
+
+
+
+                                            <div class="google_plusone_iframe_widget" style="width: 90px; height: 25px;"><span><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 38px; height: 24px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1525706094222" name="I0_1525706094222" src="./Aenean consequat sagittis - Ap NewFashion_files/fastbutton.html" data-gapiattached="true" title="G+"></iframe></div></span></div>
+                                        </a>
+                                    </li>
+                                    <li class="socialLinks-item socialLinks-item--facebook">
+                                        <a class="addthis_button_facebook icon icon--facebook" title="Facebook" href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#">
+                                            <svg>
+                                                <use xlink:href="#icon-facebook"></use>
+                                            </svg>
+                                            <span>Facebook</span>
+
+
+
+
+
+                                        </a>
+                                    </li>
+                                    <li class="socialLinks-item socialLinks-item--twitter">
+                                        <a class="addthis_button_twitter icon icon--twitter" title="Twitter" href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#">
+                                            <svg>
+                                                <use xlink:href="#icon-twitter"></use>
+                                            </svg>
+                                            <span>Twitter</span>
+
+
+
+
+
+                                        </a>
+                                    </li>
+                                    <li class="socialLinks-item socialLinks-item--pinterest">
+                                        <a class="addthis_button_pinterest icon icon--pinterest at300b">
+
+
+                                            <svg>
+                                                <use xlink:href="#icon-pinterest"></use>
+                                            </svg>
+                                            <span>Pinterest</span>
+
+
+
+                                        </a>
+                                    </li>
+                                </ul>
+                                <script type="text/javascript" src="./Aenean consequat sagittis - Ap NewFashion_files/addthis_widget.js.download"></script>
+                                <script>
+                                    if (typeof (addthis) === "object") {
+                                        addthis.toolbox('.addthis_toolbox');
+                                    }
+                                </script>
+                                <div class="atclear"></div>
+                            </div>
+                        </div>
+
+                        <dl class="productView-info">
+                            <dt class="productView-info-name">SKU:</dt>
+                            <dd class="productView-info-value" data-product-sku="">SM13</dd>
+                            <dt class="productView-info-name">card_color:</dt>
+                            <dd class="productView-info-value">#000000,#cccccc,#e6a240</dd>
+                        </dl>
+                        <div class="description">
+                            <p></p><p>Volume 13 of Smith Journal is crammed with more than its fair share of sharp minds. Top of the list would have to be Solomon Shereshevsky, who remembered every single thing he’d ever come across – a great skill to have when it came to party tricks, but enough to send him crackers. And then there’s Delbert Trew who spends more time than you can imagine thinking about something very sharp indeed: barbed wire. You can’t go past Samuel Morse, either, who was a famous portrait painter before he gave his name to the code he invented. What a genius! And we’re pretty taken with Noel Turner, who was smart enough to get around some pretty weird New Zealand laws to invent a car that, for a while, was a huge success. As well, you’ll find stories on a cross-dressing spy, a couple of Sydney nerds who revolutionised modern music, court illustration, big wheels, the dubious science of controlling the weather and a whole stack of other stuff.</p>
+                            <p>143 Pages</p><p></p>
+                        </div>
+                    </div>
+                </section>
+                <section class="productView-images" data-image-gallery="">
+                    <figure class="productView-image" data-image-gallery-main="" data-zoom-image="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/1280x1280/products/111/376/93-thickbox_default-min__61912.1499246836.jpg?c=2&amp;imbypass=on" style="position: relative; overflow: hidden;">
+                        <a href="./Aenean consequat sagittis - Ap NewFashion_files/93-thickbox_default-min__61912.1499246836(2).jpg">
+                            <img class="productView-image--default" src="./Aenean consequat sagittis - Ap NewFashion_files/93-thickbox_default-min__61912.1499246836(1).jpg" alt="Aenean consequat sagittis" title="Aenean consequat sagittis" data-main-image="">
+                        </a>
+                        <img role="presentation" src="./Aenean consequat sagittis - Ap NewFashion_files/93-thickbox_default-min__61912.1499246836(2).jpg" class="zoomImg" style="position: absolute; top: -304.756px; left: -2.81349px; opacity: 0; width: 760px; height: 985px; border: none; max-width: none; max-height: none;">
+                    </figure>
+                    <ul class="productView-thumbnails slick-initialized slick-slider">
+                        <div aria-live="polite" class="slick-list draggable" tabindex="0">
+                            <div class="slick-track" style="opacity: 1; width: 302px; transform: translate3d(0px, 0px, 0px);">
+                                <li class="productView-thumbnail slick-slide slick-active" data-slick-index="0" aria-hidden="false" style="width: 151px;">
+                                    <a class="productView-thumbnail-link is-active" href="./Aenean consequat sagittis - Ap NewFashion_files/93-thickbox_default-min__61912.1499246836(1).jpg" data-image-gallery-item="" data-image-gallery-new-image-url="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/111/376/93-thickbox_default-min__61912.1499246836.jpg?c=2" data-image-gallery-zoom-image-url="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/1280x1280/products/111/376/93-thickbox_default-min__61912.1499246836.jpg?c=2&amp;imbypass=on">
+                                        <img src="./Aenean consequat sagittis - Ap NewFashion_files/93-thickbox_default-min__61912.1499246836(3).jpg" alt="Aenean consequat sagittis" title="Aenean consequat sagittis">
+                                    </a>
+                                </li><li class="productView-thumbnail slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 151px;">
+                                    <a class="productView-thumbnail-link" href="./Aenean consequat sagittis - Ap NewFashion_files/94-thickbox_default-min__52854.1499246844.jpg" data-image-gallery-item="" data-image-gallery-new-image-url="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/111/377/94-thickbox_default-min__52854.1499246844.jpg?c=2" data-image-gallery-zoom-image-url="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/1280x1280/products/111/377/94-thickbox_default-min__52854.1499246844.jpg?c=2&amp;imbypass=on">
+                                        <img src="./Aenean consequat sagittis - Ap NewFashion_files/94-thickbox_default-min__52854.1499246844(1).jpg" alt="Aenean consequat sagittis" title="Aenean consequat sagittis">
+                                    </a>
+                                </li>
+                            </div>
+                        </div>
+
+                    </ul>
+                </section>
+                <section class="productView-details">
+                    <div class="productView-options">
+                        <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/cart.php" enctype="multipart/form-data" data-cart-item-add="">
+                            <input type="hidden" name="action" value="add">
+                            <input type="hidden" name="product_id" value="111">
+                            <div class="options-swatch" data-product-option-change="" style="">
+                                <div class="form-field" data-product-attribute="set-rectangle">
+                                    <label class="form-label form-label--alternate form-label--inlineSmall">
+                                        Size:
+                                        <span data-option-value=""></span>
+                                        <small>Required</small>
+                                    </label>
+                                    <input class="form-radio" type="radio" id="attribute_68" name="attribute[118]" value="68" required="" data-state="false">
+                                    <label class="form-option" for="attribute_68" data-product-attribute-value="68">
+                                        <span class="form-option-variant">XS</span>
+                                    </label>
+                                    <input class="form-radio" type="radio" id="attribute_69" name="attribute[118]" value="69" required="" data-state="false">
+                                    <label class="form-option" for="attribute_69" data-product-attribute-value="69">
+                                        <span class="form-option-variant">S</span>
+                                    </label>
+                                    <input class="form-radio" type="radio" id="attribute_70" name="attribute[118]" value="70" checked="" required="" data-state="true">
+                                    <label class="form-option" for="attribute_70" data-product-attribute-value="70">
+                                        <span class="form-option-variant">M</span>
+                                    </label>
+                                    <input class="form-radio" type="radio" id="attribute_71" name="attribute[118]" value="71" required="" data-state="false">
+                                    <label class="form-option" for="attribute_71" data-product-attribute-value="71">
+                                        <span class="form-option-variant">L</span>
+                                    </label>
+                                    <input class="form-radio" type="radio" id="attribute_72" name="attribute[118]" value="72" required="" data-state="false">
+                                    <label class="form-option" for="attribute_72" data-product-attribute-value="72">
+                                        <span class="form-option-variant">XL</span>
+                                    </label>
+                                </div>
+                                <div class="form-field" data-product-attribute="swatch">
+                                    <label class="form-label form-label--alternate form-label--inlineSmall">
+                                        Color:
+                                        <span data-option-value=""></span>
+                                        <small>Required</small>
+                                    </label>
+                                    <input class="form-radio" type="radio" name="attribute[119]" value="7" id="attribute_7" required="" data-state="false">
+                                    <label class="form-option form-option-swatch" for="attribute_7" data-product-attribute-value="7">
+                                        <span class="form-option-variant form-option-variant--color" title="Silver" style="background-color: #cccccc"></span>
+                                    </label>
+                                    <input class="form-radio" type="radio" name="attribute[119]" value="8" id="attribute_8" required="" data-state="false">
+                                    <label class="form-option form-option-swatch" for="attribute_8" data-product-attribute-value="8">
+                                        <span class="form-option-variant form-option-variant--color" title="Black" style="background-color: #000000"></span>
+                                    </label>
+                                    <input class="form-radio" type="radio" name="attribute[119]" value="9" id="attribute_9" required="" data-state="false">
+                                    <label class="form-option form-option-swatch" for="attribute_9" data-product-attribute-value="9">
+                                        <span class="form-option-variant form-option-variant--color" title="Purple" style="background-color: #700170"></span>
+                                    </label>
+                                    <input class="form-radio" type="radio" name="attribute[119]" value="10" id="attribute_10" required="" data-state="true">
+                                    <label class="form-option form-option-swatch" for="attribute_10" data-product-attribute-value="10">
+                                        <span class="form-option-variant form-option-variant--color" title="Blue" style="background-color: #123c91"></span>
+                                    </label>
+                                    <input class="form-radio" type="radio" name="attribute[119]" value="11" id="attribute_11" required="" data-state="false">
+                                    <label class="form-option form-option-swatch" for="attribute_11" data-product-attribute-value="11">
+                                        <span class="form-option-variant form-option-variant--color" title="Green" style="background-color: #0f961e"></span>
+                                    </label>
+                                    <input class="form-radio" type="radio" name="attribute[119]" value="12" id="attribute_12" required="" data-state="false">
+                                    <label class="form-option form-option-swatch" for="attribute_12" data-product-attribute-value="12">
+                                        <span class="form-option-variant form-option-variant--color" title="Yellow" style="background-color: #f0f005"></span>
+                                    </label>
+                                    <input class="form-radio" type="radio" name="attribute[119]" value="13" id="attribute_13" required="" data-state="false">
+                                    <label class="form-option form-option-swatch" for="attribute_13" data-product-attribute-value="13">
+                                        <span class="form-option-variant form-option-variant--color" title="Orange" style="background-color: #e35e20"></span>
+                                    </label>
+                                    <input class="form-radio" type="radio" name="attribute[119]" value="39" id="attribute_39" required="" data-state="false">
+                                    <label class="form-option form-option-swatch" for="attribute_39" data-product-attribute-value="39">
+                                        <span class="form-option-variant form-option-variant--color" title="Red" style="background-color: #e60c0c"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-field form-field--stock u-hiddenVisually">
+                                <label class="form-label form-label--alternate">
+                                    Current Stock:
+                                    <span data-product-stock=""></span>
+                                </label>
+                            </div>
+                            <div class="form-field form-field--increments">
+                                <label class="form-label form-label--alternate" for="qty[]">Quantity:</label>
+                                <div class="form-increment" data-quantity-change="">
+                                    <input class="form-input form-input--incrementTotal" id="qty[]" name="qty[]" type="tel" value="1" data-quantity-min="0" data-quantity-max="0" min="1" pattern="[0-9]*" aria-live="polite">
+                                    <div class="up-down-button">
+                                        <button class="button button--icon" data-action="inc">
+                                            <span class="is-srOnly">Increase Quantity:</span>
+                                            <i class="icon fa fa-plus" aria-hidden="true">
+                                                <svg>
+                                                    <use xlink:href="#icon-keyboard-arrow-up"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                        <button class="button button--icon" data-action="dec">
+                                            <span class="is-srOnly">Decrease Quantity:</span>
+                                            <i class="icon fa fa-minus" aria-hidden="true">
+                                                <svg>
+                                                    <use xlink:href="#icon-keyboard-arrow-down"></use>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alertBox productAttributes-message" style="display:none">
+                                <div class="alertBox-column alertBox-icon">
+                                    <icon glyph="ic-success" class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg></icon>
+                                </div>
+                                <p class="alertBox-column alertBox-message"></p>
+                            </div>
+                            <div class="form-action">
+                                <i class="fa fa-shopping-cart"></i>
+                                <input id="form-action-addToCart" data-wait-message="Adding to cart…" class="button button--primary" type="submit" value="Add to Cart">
+                            </div>
+                            <!-- snippet location product_addtocart -->
+                        </form>
+                        <div class="usefull_link_block">
+                            <div class="product-print">
+                                <a href="javascript:print();"><i class="fa fa-print"></i> Print</a>
+                            </div>
+                            <form class="form wishlist-button-pp" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=111" data-wishlist-add="">
+                                <div class="form-action">
+                                    <i class="fa fa-heart"></i>
+                                    <input type="hidden" name="variation_id" value="">
+                                    <input class="button" type="submit" value="Wishlist">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--<p class="share-title">Share this product</p>-->
+                    <!-- snippet location product_details -->
+                </section>
+            </div>
+            <article class="productView-description" itemprop="description">
+                <ul class="tabs" data-tab="">
+                    <li class="tab is-active">
+                        <a class="tab-title" href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#tab-description">Description</a>
+                    </li>
+                </ul>
+                <div class="tabs-contents">
+                    <div class="tab-content is-active" id="tab-description">
+                        <p>Volume 13 of Smith Journal is crammed with more than its fair share of sharp minds. Top of the list would have to be Solomon Shereshevsky, who remembered every single thing he’d ever come across – a great skill to have when it came to party tricks, but enough to send him crackers. And then there’s Delbert Trew who spends more time than you can imagine thinking about something very sharp indeed: barbed wire. You can’t go past Samuel Morse, either, who was a famous portrait painter before he gave his name to the code he invented. What a genius! And we’re pretty taken with Noel Turner, who was smart enough to get around some pretty weird New Zealand laws to invent a car that, for a while, was a huge success. As well, you’ll find stories on a cross-dressing spy, a couple of Sydney nerds who revolutionised modern music, court illustration, big wheels, the dubious science of controlling the weather and a whole stack of other stuff.</p>
+                        <p>143 Pages</p>
+                        <!-- snippet location product_description -->
+                    </div>
+                </div>
+            </article>
+            <div id="previewModal" class="modal modal--large" data-reveal="">
+                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="modal-close" aria-label="Close" role="button">
+                    <span aria-hidden="true">×</span>
+                </a>
+                <div class="modal-content"></div>
+                <div class="loadingOverlay" style="display: none;"></div>
+            </div>
+            <section class="toggle videoGallery" data-video-gallery="">
+                <h4 class="toggle-title">
+                    Videos
+                    <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#videoGallery-content" class="toggleLink" data-collapsible="" aria-controls="videoGallery-content" aria-expanded="false">
+                        <span class="toggleLink-text toggleLink-text--on">
+                            Hide Videos
+                        </span>
+                        <span class="toggleLink-text toggleLink-text--off">
+                            Show Videos
+                        </span>
+                    </a>
+                </h4>
+                <div class="toggle-content" id="videoGallery-content" aria-hidden="true">
+                    <div class="videoGallery-main">
+                        <iframe id="player" type="text/html" width="640" height="390" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" src="./Aenean consequat sagittis - Ap NewFashion_files/Hhkt7qQ3m1Y.html" data-video-player=""></iframe>
+                    </div>
+                    <ul class="videoGallery-list">
+                        <li class="videoGallery-item">
+                            <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="video is-active" data-video-item="" data-video-id="Hhkt7qQ3m1Y">
+                                <div class="video-figure">
+                                    <img src="./Aenean consequat sagittis - Ap NewFashion_files/default.jpg">
+                                </div>
+                                <div class="video-body">
+                                    <h5 class="video-title">blending nature &amp; fashion || OOTD</h5>
+                                    <p class="video-description">Thanks so much for watching </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- snippet location reviews -->
+            <ul class="tabs" data-tab="" role="tablist">
+                <li class="tab is-active" role="presentational">
+                    <a class="tab-title" href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#tab-related" role="tab" tabindex="0" aria-selected="true" controls="tab-related">Related Products</a>
+                </li>
+                <li class="tab" role="presentational">
+                    <a class="tab-title" href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#tab-similar" role="tab" tabindex="0" aria-selected="false" controls="tab-similar">Customers Also Viewed</a>
+                </li>
+            </ul>
+            <div class="tabs-contents">
+                <div role="tabpanel" aria-hidden="false" class="tab-content has-jsContent is-active" id="tab-related">
+                    <section class="productGrid productGrid--maxCol4 slick-initialized slick-slider" data-slick="{
+        &quot;dots&quot;: false,
+            &quot;arrows&quot;: true,
+            &quot;infinite&quot;: true,
+             &quot;slidesToShow&quot;: 4,
+               &quot;slidesToScroll&quot;: 1,
+           &quot;responsive&quot;: [
+                {
+                  &quot;breakpoint&quot;: 1024,
+                  &quot;settings&quot;: {
+                    &quot;slidesToShow&quot;: 3,
+                    &quot;slidesToScroll&quot;: 1
+                  }
+                },
+                {
+                  &quot;breakpoint&quot;: 600,
+                  &quot;settings&quot;: {
+                    &quot;slidesToShow&quot;: 2,
+                    &quot;slidesToScroll&quot;: 2
+                  }
+                },
+                {
+                  &quot;breakpoint&quot;: 480,
+                  &quot;settings&quot;: {
+                    &quot;slidesToShow&quot;: 1,
+                    &quot;slidesToScroll&quot;: 1
+                  }
+                }
+            ]
+    }">
+                        <div aria-live="polite" class="slick-list draggable" tabindex="0">
+                            <div class="slick-track" style="opacity: 1; width: 293px; transform: translate3d(0px, 0px, 0px);">
+                                <div class="product slick-slide slick-active" data-slick-index="0" aria-hidden="false" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/abitasse-commodo-aenean/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/86-thickbox_default-min__39805.1499309776.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/93/386/86-thickbox_default-min__39805.1499309776.jpg?c=2" alt="Abitasse Commodo aenean" title="Abitasse Commodo aenean" sizes="272px">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="93">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/abitasse-commodo-aenean/" class="button button--small card-figcaption-button add-cart-button" data-product-id="93">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=93" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-93" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="93" id="compare-93" data-compare-id="93">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/abitasse-commodo-aenean/">Abitasse Commodo aenean</a>
+                                                </h4>
+                                                <p class="card-text brand-name" data-test-info-type="brandName">OFS</p>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingFull">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingFull">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingFull">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingFull">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingFull">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€264.29</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>When translated Le Parfait means "the perfect one" - and that's just what this air-tight jar is. Designed for canning, these jars will ensure your harvest does not spoil, but is kept well-preserved...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-93-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                    12-31-2018
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div role="tabpanel" aria-hidden="true" class="tab-content has-jsContent" id="tab-similar">
+                    <section class="productGrid productGrid--maxCol4 slick-initialized slick-slider" data-slick="{
+        &quot;dots&quot;: false,
+            &quot;arrows&quot;: true,
+            &quot;infinite&quot;: true,
+             &quot;slidesToShow&quot;: 4,
+               &quot;slidesToScroll&quot;: 1,
+           &quot;responsive&quot;: [
+                {
+                  &quot;breakpoint&quot;: 1024,
+                  &quot;settings&quot;: {
+                    &quot;slidesToShow&quot;: 3,
+                    &quot;slidesToScroll&quot;: 1
+                  }
+                },
+                {
+                  &quot;breakpoint&quot;: 600,
+                  &quot;settings&quot;: {
+                    &quot;slidesToShow&quot;: 2,
+                    &quot;slidesToScroll&quot;: 2
+                  }
+                },
+                {
+                  &quot;breakpoint&quot;: 480,
+                  &quot;settings&quot;: {
+                    &quot;slidesToShow&quot;: 1,
+                    &quot;slidesToScroll&quot;: 1
+                  }
+                }
+            ]
+    }">
+                        <div aria-live="polite" class="slick-list draggable" tabindex="0">
+                            <div class="slick-track" style="opacity: 1; width: 5274px; transform: translate3d(-1172px, 0px, 0px);">
+                                <div class="product slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/quam-vitnibh-aliqueobo/" class="product_img_link">
+                                                <img class="card-image lazyload" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/loading.svg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/98/382/58-thickbox_default-min__02732.1499309302.jpg?c=2" alt="Quam vitnibh aliqueobo " title="Quam vitnibh aliqueobo ">
+                                                <span class="product-additional" data-product-id="">
+                                                    <img class="replace-2x img-responsive" src="./Aenean consequat sagittis - Ap NewFashion_files/59-thickbox_default-min__78909.1499309309.jpg" alt="Quam vitnibh aliqueobo " title="Quam vitnibh aliqueobo ">
+                                                </span>
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="98">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/quam-vitnibh-aliqueobo/" class="button button--small card-figcaption-button add-cart-button" data-product-id="98">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=98" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-98" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="98" id="" data-compare-id="98">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/quam-vitnibh-aliqueobo/">Quam vitnibh aliqueobo </a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€88.10</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>A 100% biodegradable plant based 3x concentrated laundry detergent for use in conventional and high efficiency machines. This product is leaping bunny certified and has not been tested on animals...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-98-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                    10-31-2018
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/appliqued-cotton/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/85-thickbox_default-min__01047.1499309682.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/94/385/85-thickbox_default-min__01047.1499309682.jpg?c=2" alt="Appliquéd Cotton" title="Appliquéd Cotton" sizes="272px">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="94">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/cart.php?action=add&amp;product_id=94" class="button button--small card-figcaption-button add-cart-button">Add to Cart<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=94" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-94" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="94" id="" data-compare-id="94">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/appliqued-cotton/">Appliquéd Cotton</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€105.72</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>Crafted from oak and stainless steel this handy cheese grater is the perfect addition for the considered tabletop. Works wonderfully for grated parmesan: the fine stainless steel teeth grate the...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-94-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                    12-31-2018
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/egestas-lorem-commodo/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/132-thickbox_default-min__15237.1499306777.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/104/380/132-thickbox_default-min__15237.1499306777.jpg?c=2" alt="Egestas lorem commodo " title="Egestas lorem commodo " sizes="272px">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="104">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/egestas-lorem-commodo/" class="button button--small card-figcaption-button add-cart-button" data-product-id="104">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=104" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-104" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="104" id="" data-compare-id="104">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/egestas-lorem-commodo/">Egestas lorem commodo </a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€125.00</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>This powder coated steel utility caddy ensures your cleaning essentials are stowed away in one spot ready for your household chores. Brushes, cloths, liquid soaps can all easily be stashed away. Also...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-104-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/miero-enim-vehicula/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/s6-min__43240.1499310437.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/86/389/s6-min__43240.1499310437.jpg?c=2" alt="Miero enim vehicula" title="Miero enim vehicula" sizes="272px">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="86">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/cart.php?action=add&amp;product_id=86" class="button button--small card-figcaption-button add-cart-button">Add to Cart<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=86" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-86" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="86" id="" data-compare-id="86">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/miero-enim-vehicula/">Miero enim vehicula</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€350.63</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>Stemming from an intense passion for the most flavourful cup of coffee, Able Brewing set out to create a brewer that was as aesthetically pleasing as it was functional. They imagined a product that...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-86-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-active" data-slick-index="0" aria-hidden="false" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/commodo-habitasse-lacus/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/89-thickbox_default_1-min__08955.1499250554.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/107/378/89-thickbox_default_1-min__08955.1499250554.jpg?c=2" alt=" Commodo habitasse lacus" title=" Commodo habitasse lacus" sizes="272px">
+                                                <span class="product-additional" data-product-id="">
+                                                    <img class="replace-2x img-responsive" src="./Aenean consequat sagittis - Ap NewFashion_files/90-thickbox_default-min__24015.1499250559.jpg" alt=" Commodo habitasse lacus" title=" Commodo habitasse lacus">
+                                                </span>
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="107">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/commodo-habitasse-lacus/" class="button button--small card-figcaption-button add-cart-button" data-product-id="107">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=107" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-107" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="107" id="compare-107" data-compare-id="107">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/commodo-habitasse-lacus/"> Commodo habitasse lacus</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€50.00</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>A seemingly simple dustpan with a few features to make life easier. The arch and length of the dustpan eases cleanup, the wood turned handle provides firm grip and the rubber liner along the edge of...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-107-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/baseball-cap/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/s9-min-rs__06198.1499309930.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/88/387/s9-min-rs__06198.1499309930.jpg?c=2" alt=" Baseball Cap" title=" Baseball Cap" sizes="272px">
+                                                <span class="product-additional" data-product-id="">
+                                                    <img class="replace-2x img-responsive" src="./Aenean consequat sagittis - Ap NewFashion_files/s10-min-rs__09132.1499310114.jpg" alt=" Baseball Cap" title=" Baseball Cap">
+                                                </span>
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="88">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/baseball-cap/" class="button button--small card-figcaption-button add-cart-button" data-product-id="88">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=88" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-88" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="88" id="compare-88" data-compare-id="88">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/baseball-cap/"> Baseball Cap</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€217.60</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>
+                                                    The Chemex Coffeemaker was created in 1939 by famed inventor Peter J. Schlumbohm.
+                                                    Applying his knowledge of filtration and extraction, Mr. Schlumbohm was able to craft the vessel that would pour the...
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-88-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/demoak-manderls-nf/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/100-thickbox_default-min__11089.1499311175.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/77/394/100-thickbox_default-min__11089.1499311175.jpg?c=2" alt="Demoak manderls NF" title="Demoak manderls NF" sizes="272px">
+                                                <span class="product-additional" data-product-id="">
+                                                    <img class="replace-2x img-responsive" src="./Aenean consequat sagittis - Ap NewFashion_files/104-thickbox_default-min__94774.1499311192.jpg" alt="Demoak manderls NF" title="Demoak manderls NF">
+                                                </span>
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="77">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/demoak-manderls-nf/" class="button button--small card-figcaption-button add-cart-button" data-product-id="77">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=77" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-77" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="77" id="compare-77" data-compare-id="77">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/demoak-manderls-nf/">Demoak manderls NF</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€105.72</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>The perfect beach towel: thin, lightweight and highly absorbent. Crafted by Fog Linen in Japan using soft Lithuanian linen, each towel rolls up for compact stowaway. Dry off after a refreshing dip in...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-77-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/begestas-lorem-commodo/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/88-thickbox_default-min-rs__76988.1499309560.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/97/384/88-thickbox_default-min-rs__76988.1499309560.jpg?c=2" alt="Begestas lorem commodo" title="Begestas lorem commodo" sizes="272px">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="97">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/cart.php?action=add&amp;product_id=97" class="button button--small card-figcaption-button add-cart-button">Add to Cart<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=97" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-97" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="97" id="compare-97" data-compare-id="97">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/begestas-lorem-commodo/">Begestas lorem commodo</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€176.20</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>Here's a three tiered wire basket to clean up your countertop and elevate your storage space. Display a selection of fresh fruit to encourage healthy snacking: pile it high and watch it fly. Can also...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-97-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                    10-31-2018
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide" data-slick-index="4" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/abitasse-commodo-aenean/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/86-thickbox_default-min__39805.1499309776.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/93/386/86-thickbox_default-min__39805.1499309776.jpg?c=2" alt="Abitasse Commodo aenean" title="Abitasse Commodo aenean" sizes="272px">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="93">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/abitasse-commodo-aenean/" class="button button--small card-figcaption-button add-cart-button" data-product-id="93">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=93" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-93" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="93" id="compare-93" data-compare-id="93">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/abitasse-commodo-aenean/">Abitasse Commodo aenean</a>
+                                                </h4>
+                                                <p class="card-text brand-name" data-test-info-type="brandName">OFS</p>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingFull">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingFull">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingFull">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingFull">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingFull">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€264.29</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>When translated Le Parfait means "the perfect one" - and that's just what this air-tight jar is. Designed for canning, these jars will ensure your harvest does not spoil, but is kept well-preserved...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-93-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                    12-31-2018
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide" data-slick-index="5" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <div class="sale-flag-side">
+                                                <span class="sale-text">Sale</span>
+                                            </div>
+                                            <a href="http://ap-newfashion.mybigcommerce.com/libero-quis-enim-vehicula/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/104-thickbox_default-min__37458.1499308829.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/103/381/104-thickbox_default-min__37458.1499308829.jpg?c=2" alt="Libero quis enim vehicula" title="Libero quis enim vehicula" sizes="272px">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="103">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/cart.php?action=add&amp;product_id=103" class="button button--small card-figcaption-button add-cart-button">Add to Cart<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=103" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-103" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="103" id="compare-103" data-compare-id="103">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/libero-quis-enim-vehicula/">Libero quis enim vehicula</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-rrp-without-tax="" class="price price--rrp">€176.20</span>
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€132.15</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>
+                                                    The last laundry cart you'll ever buy. This industrial non-collapsable cart is constructed with a steel framed body using heavyweight canvas capped with a soft leather rim sitting on four smooth...
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-103-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide" data-slick-index="6" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/quam-vitnibh-aliqueobo/" class="product_img_link">
+                                                <img class="card-image lazyautosizes lazyloaded" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/58-thickbox_default-min__02732.1499309302.jpg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/98/382/58-thickbox_default-min__02732.1499309302.jpg?c=2" alt="Quam vitnibh aliqueobo " title="Quam vitnibh aliqueobo " sizes="272px">
+                                                <span class="product-additional" data-product-id="">
+                                                    <img class="replace-2x img-responsive" src="./Aenean consequat sagittis - Ap NewFashion_files/59-thickbox_default-min__78909.1499309309.jpg" alt="Quam vitnibh aliqueobo " title="Quam vitnibh aliqueobo ">
+                                                </span>
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="98">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/quam-vitnibh-aliqueobo/" class="button button--small card-figcaption-button add-cart-button" data-product-id="98">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=98" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-98" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="98" id="compare-98" data-compare-id="98">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/quam-vitnibh-aliqueobo/">Quam vitnibh aliqueobo </a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€88.10</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>A 100% biodegradable plant based 3x concentrated laundry detergent for use in conventional and high efficiency machines. This product is leaping bunny certified and has not been tested on animals...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-98-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                    10-31-2018
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide" data-slick-index="7" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/appliqued-cotton/" class="product_img_link">
+                                                <img class="card-image lazyload" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/loading.svg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/94/385/85-thickbox_default-min__01047.1499309682.jpg?c=2" alt="Appliquéd Cotton" title="Appliquéd Cotton">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="94">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/cart.php?action=add&amp;product_id=94" class="button button--small card-figcaption-button add-cart-button">Add to Cart<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=94" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-94" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="94" id="compare-94" data-compare-id="94">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/appliqued-cotton/">Appliquéd Cotton</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€105.72</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>Crafted from oak and stainless steel this handy cheese grater is the perfect addition for the considered tabletop. Works wonderfully for grated parmesan: the fine stainless steel teeth grate the...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-94-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                    12-31-2018
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide" data-slick-index="8" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/egestas-lorem-commodo/" class="product_img_link">
+                                                <img class="card-image lazyload" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/loading.svg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/104/380/132-thickbox_default-min__15237.1499306777.jpg?c=2" alt="Egestas lorem commodo " title="Egestas lorem commodo ">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="104">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/egestas-lorem-commodo/" class="button button--small card-figcaption-button add-cart-button" data-product-id="104">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=104" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-104" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="104" id="compare-104" data-compare-id="104">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/egestas-lorem-commodo/">Egestas lorem commodo </a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€125.00</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>This powder coated steel utility caddy ensures your cleaning essentials are stowed away in one spot ready for your household chores. Brushes, cloths, liquid soaps can all easily be stashed away. Also...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-104-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide" data-slick-index="9" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/miero-enim-vehicula/" class="product_img_link">
+                                                <img class="card-image lazyload" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/loading.svg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/86/389/s6-min__43240.1499310437.jpg?c=2" alt="Miero enim vehicula" title="Miero enim vehicula">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="86">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/cart.php?action=add&amp;product_id=86" class="button button--small card-figcaption-button add-cart-button">Add to Cart<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=86" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-86" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="86" id="compare-86" data-compare-id="86">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/miero-enim-vehicula/">Miero enim vehicula</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€350.63</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>Stemming from an intense passion for the most flavourful cup of coffee, Able Brewing set out to create a brewer that was as aesthetically pleasing as it was functional. They imagined a product that...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-86-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/commodo-habitasse-lacus/" class="product_img_link">
+                                                <img class="card-image lazyload" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/loading.svg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/107/378/89-thickbox_default_1-min__08955.1499250554.jpg?c=2" alt=" Commodo habitasse lacus" title=" Commodo habitasse lacus">
+                                                <span class="product-additional" data-product-id="">
+                                                    <img class="replace-2x img-responsive" src="./Aenean consequat sagittis - Ap NewFashion_files/90-thickbox_default-min__24015.1499250559.jpg" alt=" Commodo habitasse lacus" title=" Commodo habitasse lacus">
+                                                </span>
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="107">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/commodo-habitasse-lacus/" class="button button--small card-figcaption-button add-cart-button" data-product-id="107">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=107" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-107" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="107" id="" data-compare-id="107">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/commodo-habitasse-lacus/"> Commodo habitasse lacus</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€50.00</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>A seemingly simple dustpan with a few features to make life easier. The arch and length of the dustpan eases cleanup, the wood turned handle provides firm grip and the rubber liner along the edge of...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-107-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/baseball-cap/" class="product_img_link">
+                                                <img class="card-image lazyload" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/loading.svg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/88/387/s9-min-rs__06198.1499309930.jpg?c=2" alt=" Baseball Cap" title=" Baseball Cap">
+                                                <span class="product-additional" data-product-id="">
+                                                    <img class="replace-2x img-responsive" src="./Aenean consequat sagittis - Ap NewFashion_files/s10-min-rs__09132.1499310114.jpg" alt=" Baseball Cap" title=" Baseball Cap">
+                                                </span>
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="88">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/baseball-cap/" class="button button--small card-figcaption-button add-cart-button" data-product-id="88">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=88" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-88" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="88" id="" data-compare-id="88">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/baseball-cap/"> Baseball Cap</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€217.60</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>
+                                                    The Chemex Coffeemaker was created in 1939 by famed inventor Peter J. Schlumbohm.
+                                                    Applying his knowledge of filtration and extraction, Mr. Schlumbohm was able to craft the vessel that would pour the...
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-88-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-cloned" data-slick-index="12" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/demoak-manderls-nf/" class="product_img_link">
+                                                <img class="card-image lazyload" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/loading.svg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/77/394/100-thickbox_default-min__11089.1499311175.jpg?c=2" alt="Demoak manderls NF" title="Demoak manderls NF">
+                                                <span class="product-additional" data-product-id="">
+                                                    <img class="replace-2x img-responsive" src="./Aenean consequat sagittis - Ap NewFashion_files/104-thickbox_default-min__94774.1499311192.jpg" alt="Demoak manderls NF" title="Demoak manderls NF">
+                                                </span>
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="77">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/demoak-manderls-nf/" class="button button--small card-figcaption-button add-cart-button" data-product-id="77">Choose Options<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=77" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-77" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="77" id="" data-compare-id="77">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/demoak-manderls-nf/">Demoak manderls NF</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€105.72</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>The perfect beach towel: thin, lightweight and highly absorbent. Crafted by Fog Linen in Japan using soft Lithuanian linen, each towel rolls up for compact stowaway. Dry off after a refreshing dip in...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-77-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div><div class="product slick-slide slick-cloned" data-slick-index="13" aria-hidden="true" style="width: 293px;">
+                                    <article class="card ">
+                                        <figure class="card-figure">
+                                            <a href="http://ap-newfashion.mybigcommerce.com/begestas-lorem-commodo/" class="product_img_link">
+                                                <img class="card-image lazyload" data-sizes="auto" src="./Aenean consequat sagittis - Ap NewFashion_files/loading.svg" data-src="http://cdn8.bigcommerce.com/s-fo69q4de8e/images/stencil/500x659/products/97/384/88-thickbox_default-min-rs__76988.1499309560.jpg?c=2" alt="Begestas lorem commodo" title="Begestas lorem commodo">
+                                            </a>
+                                            <div class="button-quickview">
+                                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="button button--small card-figcaption-button quickview" data-product-id="97">Quick view <span class="fa fa-eye"></span></a>
+                                            </div>
+                                            <figcaption class="card-figcaption">
+                                                <div class="card-figcaption-body">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/cart.php?action=add&amp;product_id=97" class="button button--small card-figcaption-button add-cart-button">Add to Cart<span class="fa fa-shopping-cart"></span></a>
+                                                    <div class="product-meta">
+                                                        <div class="box-wishlist true-compare " title="Wishlist">
+                                                            <form class="form" method="post" action="http://ap-newfashion.mybigcommerce.com/wishlist.php?action=add&amp;product_id=97" data-wishlist-add="">
+                                                                <div class="form-action">
+                                                                    <input type="hidden" name="variation_id" value="">
+                                                                    <button class="button button--small card-figcaption-button" type="submit">
+                                                                        <span class="title-button">Wishlist</span>
+                                                                        <span class="fa fa-heart"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <label class="button button--small card-figcaption-button button-compare" for="compare-97" title="Compare">
+                                                            <span class="title-button">Compare</span>
+                                                            <input type="checkbox" name="products[]" value="97" id="" data-compare-id="97">
+                                                            <i class="fa fa-copy"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="card-body">
+                                            <div class="card-body-left">
+                                                <h4 class="card-title">
+                                                    <a href="http://ap-newfashion.mybigcommerce.com/begestas-lorem-commodo/">Begestas lorem commodo</a>
+                                                </h4>
+                                                <p class="card-text" data-test-info-type="productRating">
+                                                    <span class="rating--small">
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="icon icon--ratingEmpty">
+                                                            <svg>
+                                                                <use xlink:href="#icon-star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <!-- snippet location product_rating -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="card-text content-price" data-test-info-type="price">
+                                                <div class="price-section price-section--withoutTax ">
+                                                    <span data-product-price-without-tax="" class="price price--withoutTax">€176.20</span>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <p>Here's a three tiered wire basket to clean up your countertop and elevate your storage space. Display a selection of fresh fruit to encourage healthy snacking: pile it high and watch it fly. Can also...</p>
+                                            </div>
+                                        </div>
+                                        <div class="deal-clock lof-clock-97-detail">
+                                            <div class="deal-clock-box">
+                                                <span>
+                                                    10-31-2018
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <button type="button" data-role="none" class="slick-prev" aria-label="previous" style="display: block;">Previous</button><button type="button" data-role="none" class="slick-next" aria-label="next" style="display: block;">Next</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="modal" class="modal" data-reveal="" data-prevent-quick-search-close="">
+        <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/#" class="modal-close" aria-label="Close" role="button">
+            <span aria-hidden="true">×</span>
+        </a>
+        <div class="modal-content"></div>
+        <div class="loadingOverlay" style="display: none;"></div>
+    </div>
+</div>
+@section Javascripts{
+    <script src="~/Content/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="~/Content/js/ma5slider.min.js"></script>
+    <script>
+        $('.ma5slider').ma5slider();
+    </script>
+}

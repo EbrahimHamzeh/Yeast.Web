@@ -132,6 +132,9 @@
   <data name="Product" xml:space="preserve">
     <value>محصولات</value>
   </data>
+  <data name="Quickview" xml:space="preserve">
+    <value>نمایش سریع</value>
+  </data>
   <data name="Representation" xml:space="preserve">
     <value>نمایندگی</value>
   </data>

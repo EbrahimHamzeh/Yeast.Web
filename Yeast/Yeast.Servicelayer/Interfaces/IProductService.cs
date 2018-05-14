@@ -14,7 +14,7 @@ namespace Yeast.Servicelayer.Interfaces
 		void Update(Product Product);
 		Product Find(int id);
 		ProductEdit FindForEdit(int id);
-		Task<IList<Product>> GetAllAsync();
-		Task<DataTableList<ProductList>> GetDataTableAsync(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10);
+        Task<IList<Model.FrontEnd.Product>> GetAllAsync();
+        Task<DataTableList<ProductList>> GetDataTableAsync(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10);
 	}
 }

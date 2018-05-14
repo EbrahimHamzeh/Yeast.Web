@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 using Yeast.Datalayer.Context;
 using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
@@ -22,7 +24,7 @@ namespace Yeast.Controllers
         // GET: /{lang}/Product
         public virtual ActionResult Index()
         {
-            var products = _productService.GetAllAsync();
+            IList<Model.FrontEnd.Product> products = _productService.GetAllAsync().Result;
 
             return View(products);
         }

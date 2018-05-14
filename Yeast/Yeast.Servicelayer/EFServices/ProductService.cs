@@ -54,9 +54,9 @@ namespace Yeast.Servicelayer.EFServices
             };
 		}
 
-		public async Task<IList<Product>> GetAllAsync()
+		public async Task<IList<Model.FrontEnd.Product>> GetAllAsync()
 		{
-			return await _products.AsNoTracking().Cacheable().ToListAsync();
+			return await _products.AsNoTracking().Select(x=> new Model.FrontEnd.Product { Id = x.Id, Body = x.Body, Description = x.Description, Image = x.Images , Name = x.Name, Price = x.Price }).Cacheable().ToListAsync();
 		}
 
 		public async Task<DataTableList<ProductList>> GetDataTableAsync(string search = "", string sort = "Name", string order = "asc", int offset = 0, int limit = 10)
