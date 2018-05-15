@@ -120,22 +120,40 @@
   <data name="About" xml:space="preserve">
     <value>درباره‌ی ما</value>
   </data>
+  <data name="AboutUsOnFooter" xml:space="preserve">
+    <value>درباره ما</value>
+  </data>
   <data name="Blog" xml:space="preserve">
     <value>وبلاگ</value>
   </data>
   <data name="ContactUs" xml:space="preserve">
     <value>تماس‌باما</value>
   </data>
+  <data name="Factor" xml:space="preserve">
+    <value>کارخانه</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>صفحه‌ی‌نخست</value>
   </data>
+  <data name="MyBrands" xml:space="preserve">
+    <value>برندهای ما</value>
+  </data>
   <data name="Product" xml:space="preserve">
     <value>محصولات</value>
+  </data>
+  <data name="ProductCategory" xml:space="preserve">
+    <value>دسته‌بندی محصولات</value>
   </data>
   <data name="Quickview" xml:space="preserve">
     <value>نمایش سریع</value>
   </data>
   <data name="Representation" xml:space="preserve">
     <value>نمایندگی</value>
+  </data>
+  <data name="RepresentationMyOnWorld" xml:space="preserve">
+    <value>لیست نمایندگی‌های ما</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>خدمات</value>
   </data>
 </root>

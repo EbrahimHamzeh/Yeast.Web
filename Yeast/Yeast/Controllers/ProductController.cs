@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using Yeast.Datalayer.Context;
-using Yeast.Model.Admin;
+using Yeast.DomainClasses.Entities;
 using Yeast.Servicelayer.Interfaces;
 using Yeast.Utilities.Controllers;
 
@@ -32,7 +31,7 @@ namespace Yeast.Controllers
         // GET: /{lang}/Product/5
         public virtual ActionResult Detial(int id)
 		{
-            ProductEdit product = _productService.FindForEdit(id);
+            Product product = _productService.Find(id);
 
             return View(product);
 		}

@@ -187,26 +187,29 @@
 								<section class="quickSearchResults" data-bind="html: results"></section>
 							</div>
 						</div>
-						<ul class="navPages-list">
-							<li class="navPages-item">
-								<a class="navPages-action" href="">@Resources.Home<i class="icon navPages-action-moreIcon" aria-hidden="true"></i></a>
-							</li>
-							<li class="navPages-item">
-								<a class="navPages-action" href="@Url.Action("Index","Product", new { Lang = CultureHelper.GetCurrentNeutralCulture() })">@Resources.Product</a>
-							</li>
-							<li class="navPages-item">
-								<a class="navPages-action" href="">@Resources.Representation</a>
-							</li>
-							<li class="navPages-item">
-								<a class="navPages-action" href="">@Resources.Blog</a>
-							</li>
-							<li class="navPages-item">
-								<a class="navPages-action" href="">@Resources.ContactUs</a>
-							</li>
-							<li class="navPages-item">
-								<a class="navPages-action" href="">@Resources.About</a>
-							</li>
-						</ul>
+                        <ul class="navPages-list">
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="">@Resources.Home<i class="icon navPages-action-moreIcon" aria-hidden="true"></i></a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="@Url.Action("Index","Product", new { Lang = CultureHelper.GetCurrentNeutralCulture() })">@Resources.Product</a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="@Url.Action("Index","Representation")">@Resources.Representation</a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="">@Resources.Blog</a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="">@Resources.Service</a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="">@Resources.ContactUs</a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="">@Resources.About</a>
+                            </li>
+                        </ul>
 						<ul class="navPages-list navPages-list--user">
 							<li class="navPages-item">
 								<a class="navPages-action has-subMenu" href="#" data-collapsible="navPages-currency" aria-controls="navPages-currency" aria-expanded="false">
@@ -297,11 +300,11 @@
 			<div class="container">
 				<section class="footer-info">
 					<article class="footer-info-col col-md-6 col-sm-12 col-xs-12" data-section-type="storeInfo">
-						<h3 class="">درباره ما</h3>
+						<h3 class="">@Resources.AboutUsOnFooter</h3>
 						<div class="about">
 							بازرگانی مهاجر ازسال ۱۳۷۴ با مدیریت آقای هاشم مهاجری خراسانی در زمینه صادرات ،واردات و ترانزیت فعالیت خود را آغاز نمود  در طی این سال ها تمرکز و فعالیت اصلی این شرکت برروی خمیرمایه بوجود آمده و یکی از صادرکنندگان برتر ایران در این حوزه میباشد.صادرات این شرکت به بیش از ۱۵ کشور دنیا در ۵ قاره جهان صورت گرفته است. .
 						</div>
-						<h5 class="footer-info-heading">کارخانه</h5>
+						<h5 class="footer-info-heading">@Resources.Factor</h5>
 						<address>
 							افغانستان هرات چهارسوق پاساژ زلمي<br>
 						</address>
@@ -324,7 +327,7 @@
 						</article>
 
 						<article class="footer-info-col col-md-4 col-sm-4 col-xs-12 no-padding" data-section-type="footer-categories">
-							<h5 class="footer-info-heading">دسته‌بندی محصولات</h5>
+							<h5 class="footer-info-heading">@Resources.ProductCategory</h5>
 							<ul class="footer-info-list">
 								<li>
 									<a href="http://ap-newfashion.mybigcommerce.com/home-demo/">Home Demo</a>
@@ -345,7 +348,7 @@
 						</article>
 
 						<article class="footer-info-col col-md-4 col-sm-4 col-xs-12 no-padding" data-section-type="footer-brands">
-							<h5 class="footer-info-heading">برندهای ما</h5>
+							<h5 class="footer-info-heading">@Resources.MyBrands</h5>
 							<ul class="footer-info-list">
 								<li>
 									<a href="http://ap-newfashion.mybigcommerce.com/brands/OFS.html">همرسین</a>

@@ -187,10 +187,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\SiteInformationController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\RepresentationController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Content Include="Content\css\32px.png" />
     <Content Include="Content\css\40px.png" />
@@ -341,6 +343,10 @@
     <Content Include="Content\froala\js\third_party\embedly.min.js" />
     <Content Include="Content\froala\js\third_party\image_aviary.min.js" />
     <Content Include="Content\froala\js\third_party\spell_checker.min.js" />
+    <Content Include="Content\highmap\data.js" />
+    <Content Include="Content\highmap\exporting.js" />
+    <Content Include="Content\highmap\ftp-map.css" />
+    <Content Include="Content\highmap\ftp-map.js" />
     <Content Include="Content\images\100-thickbox_default-min__11089.1499311175.jpg" />
     <Content Include="Content\images\104-thickbox_default-min__37458.1499308829.jpg" />
     <Content Include="Content\images\104-thickbox_default-min__94774.1499311192.jpg" />
@@ -479,6 +485,8 @@
     <Content Include="Views\Product\Ltr\Index.cshtml" />
     <Content Include="Views\Product\Detial.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Representation\Index.cshtml" />
+    <Content Include="Views\Representation\Ltr\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -489,6 +497,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\SiteInformation\" />
     <Folder Include="Content\fonts\eot\" />
     <Folder Include="Content\fonts\svg\" />
     <Folder Include="Content\fonts\ttf\" />

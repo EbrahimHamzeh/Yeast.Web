@@ -70,6 +70,15 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to درباره ما.
+        /// </summary>
+        public static string AboutUsOnFooter {
+            get {
+                return ResourceManager.GetString("AboutUsOnFooter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to وبلاگ.
         /// </summary>
         public static string Blog {
@@ -88,6 +97,15 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کارخانه.
+        /// </summary>
+        public static string Factor {
+            get {
+                return ResourceManager.GetString("Factor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to صفحه‌ی‌نخست.
         /// </summary>
         public static string Home {
@@ -97,11 +115,29 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to برندهای ما.
+        /// </summary>
+        public static string MyBrands {
+            get {
+                return ResourceManager.GetString("MyBrands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to محصولات.
         /// </summary>
         public static string Product {
             get {
                 return ResourceManager.GetString("Product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to دسته‌بندی محصولات.
+        /// </summary>
+        public static string ProductCategory {
+            get {
+                return ResourceManager.GetString("ProductCategory", resourceCulture);
             }
         }
         
@@ -120,6 +156,24 @@ namespace Yeast.Resources {
         public static string Representation {
             get {
                 return ResourceManager.GetString("Representation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لیست نمایندگی‌های ما.
+        /// </summary>
+        public static string RepresentationMyOnWorld {
+            get {
+                return ResourceManager.GetString("RepresentationMyOnWorld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خدمات.
+        /// </summary>
+        public static string Service {
+            get {
+                return ResourceManager.GetString("Service", resourceCulture);
             }
         }
     }

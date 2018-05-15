@@ -1,4 +1,4 @@
-﻿@model Yeast.Model.Admin.ProductEdit;
+﻿@model Yeast.DomainClasses.Entities.Product
 @{
     ViewBag.Title = "Product";
 }
@@ -16,7 +16,7 @@
                 <a href="http://ap-newfashion.mybigcommerce.com/utility/accessories/" class="breadcrumb-label">Accessories</a>
             </li>
             <li class="breadcrumb is-active">
-                <span class="breadcrumb-label">Aenean consequat sagittis</span>
+                <span class="breadcrumb-label">@Model.Name</span>
             </li>
         </ul>
 
@@ -24,7 +24,7 @@
             <div class="productView">
                 <section class="productView-details">
                     <div class="productView-product">
-                        <h1 class="productView-title" itemprop="name">Aenean consequat sagittis</h1>
+                        <h1 class="productView-title" itemprop="name">@Model.Name</h1>
                         <h2 class="productView-brand" itemprop="brand" itemscope="" itemtype="http://schema.org/Brand">
                             <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/" itemprop="url"><span itemprop="name"></span></a>
                         </h2>
@@ -225,7 +225,7 @@
                             <dd class="productView-info-value">#000000,#cccccc,#e6a240</dd>
                         </dl>
                         <div class="description">
-                            <p></p><p>Volume 13 of Smith Journal is crammed with more than its fair share of sharp minds. Top of the list would have to be Solomon Shereshevsky, who remembered every single thing he’d ever come across – a great skill to have when it came to party tricks, but enough to send him crackers. And then there’s Delbert Trew who spends more time than you can imagine thinking about something very sharp indeed: barbed wire. You can’t go past Samuel Morse, either, who was a famous portrait painter before he gave his name to the code he invented. What a genius! And we’re pretty taken with Noel Turner, who was smart enough to get around some pretty weird New Zealand laws to invent a car that, for a while, was a huge success. As well, you’ll find stories on a cross-dressing spy, a couple of Sydney nerds who revolutionised modern music, court illustration, big wheels, the dubious science of controlling the weather and a whole stack of other stuff.</p>
+                            <p></p><p>@Model.Description</p>
                             <p>143 Pages</p><p></p>
                         </div>
                     </div>
@@ -394,8 +394,7 @@
                 </ul>
                 <div class="tabs-contents">
                     <div class="tab-content is-active" id="tab-description">
-                        <p>Volume 13 of Smith Journal is crammed with more than its fair share of sharp minds. Top of the list would have to be Solomon Shereshevsky, who remembered every single thing he’d ever come across – a great skill to have when it came to party tricks, but enough to send him crackers. And then there’s Delbert Trew who spends more time than you can imagine thinking about something very sharp indeed: barbed wire. You can’t go past Samuel Morse, either, who was a famous portrait painter before he gave his name to the code he invented. What a genius! And we’re pretty taken with Noel Turner, who was smart enough to get around some pretty weird New Zealand laws to invent a car that, for a while, was a huge success. As well, you’ll find stories on a cross-dressing spy, a couple of Sydney nerds who revolutionised modern music, court illustration, big wheels, the dubious science of controlling the weather and a whole stack of other stuff.</p>
-                        <p>143 Pages</p>
+                        <p>@Html.Raw(Model.Body)</p>
                         <!-- snippet location product_description -->
                     </div>
                 </div>
