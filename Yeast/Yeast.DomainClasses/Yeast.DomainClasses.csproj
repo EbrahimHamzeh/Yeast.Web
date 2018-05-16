@@ -109,6 +109,7 @@
     <Compile Include="EntityConfiguration\UserConfig.cs" />
     <Compile Include="EntityConfiguration\TagConfig.cs" />
     <Compile Include="EntityConfiguration\CommentConfig.cs" />
+    <Compile Include="Enums\Enum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

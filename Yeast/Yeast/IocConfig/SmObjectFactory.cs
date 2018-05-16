@@ -33,15 +33,9 @@ namespace Yeast.IocConfig
 					scan.WithDefaultConventions();
 				});
 
-				//var dynamicProxy = new ProxyGenerator();     TODO: Hamzeh-CacheInterceptor
-
-				//x.For<Microsoft.AspNet.SignalR.IDependencyResolver>()
-				//					 .Singleton()
-				//					 .Add<StructureMapSignalRDependencyResolver>();
-
 				x.For<IIdentity>().Use(() => getIdentity());
 				x.For<HttpContextBase>().Use(() => new HttpContextWrapper(HttpContext.Current));
-        x.For<IUnitOfWork>().Use<YeastDbContext>();
+                x.For<IUnitOfWork>().Use<YeastDbContext>();
 				x.For<YeastDbContext>().Use(context => (YeastDbContext)context.GetInstance<IUnitOfWork>());
 				x.For<DbContext>().Use(context => (YeastDbContext)context.GetInstance<IUnitOfWork>());
 				x.For<IUserStore<User, int>>().Use<CustomUserStore>();
@@ -67,7 +61,7 @@ namespace Yeast.IocConfig
 				x.For<IProductService>().Use<ProductService>();
 				x.For<IPostService>().Use<PostService>();
 				x.For<ICategoryService>().Use<CategoryService>();
-				//dynamicProxy.CreateInterfaceProxyWithTarget(myTypeInterface, new CacheInterceptor())).Use<UserService>();    TODO: Hamzeh-CacheInterceptor
+				x.For<IOptionService>().Use<OptionService>();
 			});
 		}
 		

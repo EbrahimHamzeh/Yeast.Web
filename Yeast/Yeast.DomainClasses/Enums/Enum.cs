@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Yeast.Servicelayer.EFServices.Enums
+namespace Yeast.DomainClasses.Enums
 {
-	//public  Enum
-	//{
-	//}
+	public  enum SettingType 
+	{
+       Normal,
+       AboutUs,
+       Settong
+	}
 }

@@ -90,14 +90,7 @@ foreach (string item in args)
                 </a>
             </li>
             <li class="nav-item @GetActive("")">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-comments-o"></i>
-                    <span class="title">نظرات</span>
-                    @GetSelectedTag("")
-                </a>
-            </li>
-            <li class="nav-item @GetActive("")">
-                <a href="javascript:;" class="nav-link nav-toggle">
+                <a href="@Url.Action("Index","User", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-users"></i>
                     <span class="title">کاربران</span>
                     @GetSelectedTag("")
@@ -150,19 +143,13 @@ foreach (string item in args)
                 </a>
             </li>
             <li class="nav-item  ">
-                <a href="?p=" class="nav-link nav-toggle">
+                <a href="@Url.Action("Index", "SliderSetting", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-bars"></i>
                     <span class="title">اسلایدر</span>
                 </a>
             </li>
             <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-telegram"></i>
-                    <span class="title">تلگرام</span>
-                </a>
-            </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+                <a href="@Url.Action("Index", "Email", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-envelope-o"></i>
                     <span class="title">ایمیل</span>
                 </a>
@@ -174,6 +161,13 @@ foreach (string item in args)
                 <a href="@Url.Action("Index","SiteInformation", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-envelope-o"></i>
                     <span class="title">اطلاعات وبسایت</span>
+                </a>
+            </li>
+            <li class="nav-item @GetActive("Aboutus")">
+                <a href="@Url.Action("Index","AboutUs", new { Area = "Admin" })" class="nav-link nav-toggle">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="title">درباره‌ی‌ما</span>
+                    @GetSelectedTag("Aboutus")
                 </a>
             </li>
         </ul>
