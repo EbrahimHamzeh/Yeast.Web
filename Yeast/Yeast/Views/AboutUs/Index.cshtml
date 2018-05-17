@@ -1,0 +1,67 @@
+﻿@model Yeast.Model.FrontEnd.AboutUsViewModel
+@{
+	ViewBag.Title = "Index";
+}
+@section CssStyle{
+	<link href="~/Content/css/ma5slider.min.css" rel="stylesheet" />
+}
+
+<div class="body stop-float-body clearfix">
+
+	<div class="not-container page-main">
+		<div class="on">
+			@*<div id="example-26" class="ma5slider anim-horizontal outside-dots center-dots inside-navs loop-mode">
+				<div class="slides">
+					<a href="#slide-1"><img src="@Url.Content("~/Content/images/slideshow_image_2-min.jpg")" alt=""></a>
+					<a href="#slide-2"><img src="@Url.Content("~/Content/images/slideshow_image_1-min-rs.jpg")" alt=""></a>
+					<a href="#slide-3"><img src="@Url.Content("~/Content/images/slideshow_image_2-min.jpg")" alt=""></a>
+				</div>
+			</div>*@
+			<!-- snippet location home_content -->
+		</div>
+		<div class="main full">
+			<div class="on row">
+				@*<div class="col-lg-2-4 col-md-12 col-sm-12 col-xs-12 block-product-left">
+					<div class="block_left">
+						<div class="page-subheading ">
+							<p class="title--main">Women</p>
+							<p class="title--sub">
+								<span>Shop The Look</span>
+							</p>
+						</div>
+						<div class="effect_image_3">
+							<div class="effect-img">
+								<img src="~/Content/images/img-cate-min.jpg" alt="Women" class="img-responsive">
+							</div>
+						</div>
+					</div>
+				</div>*@
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
+					<h2 class="page-heading">New Products</h2>
+					<section class="productGrid productGrid--maxCol4" dir="ltr">
+                            <div class="product">
+							<h3> @Model.Title</h3>
+                                <p> @Html.Raw(Model.Body)</p>
+						</div>
+					</section>
+					<!-- MEGAMENU -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
+		<a href="#" class="modal-close" aria-label="Close" role="button">
+			<span aria-hidden="true">&#215;</span>
+		</a>
+		<div class="modal-content"></div>
+		<div class="loadingOverlay"></div>
+	</div>
+</div>
+@section Javascripts{
+	<script src="~/Content/js/jquery-ui.min.js"></script>
+<script src="~/Content/js/jquery.ui.touch-punch.min.js"></script>
+<script src="~/Content/js/ma5slider.min.js"></script>
+	<script>
+		$('.ma5slider').ma5slider();
+	</script>
+}

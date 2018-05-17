@@ -34,7 +34,7 @@ namespace Yeast.Areas.Admin.Controllers
         // GET: Admin/AboutUs
         [HttpPost]
 		[ValidateAntiForgeryToken]
-        public virtual ActionResult Index(AboutusViewModel model)
+        public virtual ActionResult Index(AboutUs model)
 		{
             _optionService.Update(model);
             _uow.SaveAllChanges();

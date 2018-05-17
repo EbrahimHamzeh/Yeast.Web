@@ -130,6 +130,7 @@
     <Compile Include="EFServices\OptionService.cs" />
     <Compile Include="EFServices\ProductService.cs" />
     <Compile Include="EFServices\PostService.cs" />
+    <Compile Include="EFServices\ContactUsService.cs" />
     <Compile Include="EFServices\TagService.cs" />
     <Compile Include="EFServices\CategoryService.cs" />
     <Compile Include="EFServices\User\ApplicationUserManager.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Interfaces\IProductService.cs" />
     <Compile Include="Interfaces\IPostService.cs" />
     <Compile Include="Interfaces\ICategoryService.cs" />
+    <Compile Include="Interfaces\IContactUsService.cs" />
     <Compile Include="Interfaces\ITagService.cs" />
     <Compile Include="Interfaces\User\ICustomUserStore.cs" />
     <Compile Include="Interfaces\User\ICustomRoleStore.cs" />

@@ -1,20 +1,10 @@
-﻿using System.Net;
-using System.Threading.Tasks;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Yeast.Datalayer.Context;
-using Yeast.DomainClasses.Entities;
-using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
-using Yeast.Attribute;
-using Yeast.Utilities.BootstrapTable;
-using System.Web;
-using System.IO;
-using System.Linq;
-using System;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class SiteInformationController : Controller
+    public partial class SiteInformationController : Controller
 	{
 		//readonly ISiteInformationService _postService;
 		readonly ITagService _tagService;

@@ -19,6 +19,7 @@ namespace Yeast.Datalayer.Context
 		public DbSet<Post> Posts { get; set; }
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Option> Options { get; set; }
+		public DbSet<ContactUs> ContactUs { get; set; }
 		#endregion
 
 		#region constucter and EF ModelCreating

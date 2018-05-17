@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Yeast.Model.Admin;
+using Yeast.Model.FrontEnd;
 
 namespace Yeast.Servicelayer.Interfaces
 {
@@ -7,6 +8,8 @@ namespace Yeast.Servicelayer.Interfaces
     {
 		void Update(object settings);
         SettingViewModel GetAllSetting();
-        AboutusViewModel GetAllAboutUs();
-	}
+        AboutUs GetAllAboutUs();
+        AboutUsViewModel GetByCulter();
+
+    }
 }

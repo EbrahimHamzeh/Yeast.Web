@@ -189,10 +189,13 @@
   <ItemGroup>
     <Compile Include="Areas\Admin\Controllers\AboutUsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SiteInformationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContacyUsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\RepresentationController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Content Include="Content\css\32px.png" />
@@ -489,6 +492,10 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Representation\Index.cshtml" />
     <Content Include="Views\Representation\Ltr\Index.cshtml" />
+    <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\AboutUs\Ltr\Index.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
+    <Content Include="Views\ContactUs\Ltr\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -6,6 +6,8 @@ using Yeast.DomainClasses.Entities;
 using Yeast.Servicelayer.Interfaces;
 using Yeast.Model.Admin;
 using System.Reflection;
+using Yeast.Model.FrontEnd;
+using Yeast.Utilities.Helpers;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -64,11 +66,11 @@ namespace Yeast.Servicelayer.EFServices
             return settingViewModel;
         }
 
-        public AboutusViewModel GetAllAboutUs()
+        public AboutUs GetAllAboutUs()
         {
             var option = _option.ToList();
 
-            AboutusViewModel aboutusViewModel = new AboutusViewModel();
+            AboutUs aboutusViewModel = new AboutUs();
             if (option.Where(x => x.Name == "TitleFa").Any())
                 aboutusViewModel.TitleFa = option.Where(x => x.Name == "TitleFa").FirstOrDefault().Value;
             if (option.Where(x => x.Name == "BodyFa").Any())
@@ -90,6 +92,35 @@ namespace Yeast.Servicelayer.EFServices
                 aboutusViewModel.BodySa = option.Where(x => x.Name == "BodySa").FirstOrDefault().Value;
 
             return aboutusViewModel;
+        }
+
+        public AboutUsViewModel GetByCulter()
+        {
+            string cultur = CultureHelper.GetCurrentNeutralCulture();
+            AboutUsViewModel aboutUsViewModel = new AboutUsViewModel();
+            switch (cultur)
+            {
+                case "fa":
+                    aboutUsViewModel.Title = _option.Where(x => x.Name == "TitleFa").FirstOrDefault().Value;
+                    aboutUsViewModel.Body = _option.Where(x => x.Name == "BodyFa").FirstOrDefault().Value;
+                    break;
+                case "en":
+                    aboutUsViewModel.Title = _option.Where(x => x.Name == "TitleEn").FirstOrDefault().Value;
+                    aboutUsViewModel.Body = _option.Where(x => x.Name == "BodyEn").FirstOrDefault().Value;
+                    break;
+                case "ar":
+                    aboutUsViewModel.Title = _option.Where(x => x.Name == "TitleSa").FirstOrDefault().Value;
+                    aboutUsViewModel.Body = _option.Where(x => x.Name == "BodySa").FirstOrDefault().Value;
+                    break;
+                case "ru":
+                    aboutUsViewModel.Title = _option.Where(x => x.Name == "TitleRu").FirstOrDefault().Value;
+                    aboutUsViewModel.Body = _option.Where(x => x.Name == "BodyRu").FirstOrDefault().Value;
+                    break;
+                default:
+                    break;
+            }
+
+            return aboutUsViewModel;
         }
     }
 }

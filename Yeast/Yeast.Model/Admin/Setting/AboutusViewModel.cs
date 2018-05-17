@@ -2,7 +2,7 @@
 
 namespace Yeast.Model.Admin
 {
-    public class AboutusViewModel
+    public class AboutUs
     {
         public string TitleFa { get; set; }
         [AllowHtml]
