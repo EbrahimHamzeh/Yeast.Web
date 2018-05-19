@@ -128,16 +128,21 @@ foreach (string item in args)
                     @GetSelectedTag("Post")
                 </a>
             </li>
-            <li class="nav-item  ">
-                <a href="@Url.Action("Index", "SliderSetting", new { Area = "Admin" })" class="nav-link nav-toggle">
-                    <i class="fa fa-bars"></i>
-                    <span class="title">اسلایدر</span>
-                </a>
+
+            <li class="heading">
+                <h3 class="uppercase">ارتباط با مشتری</h3>
             </li>
             <li class="nav-item  ">
                 <a href="@Url.Action("Index", "Email", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-envelope-o"></i>
                     <span class="title">ایمیل</span>
+                </a>
+            </li>
+            <li class="nav-item @GetActive("ContactUs")">
+                <a href="@Url.Action("Index","ContactUs", new { Area = "Admin" })" class="nav-link nav-toggle">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="title">ارتباط با ما</span>
+                    @GetSelectedTag("ContactUs")
                 </a>
             </li>
             <li class="heading">
@@ -156,11 +161,11 @@ foreach (string item in args)
                     @GetSelectedTag("Aboutus")
                 </a>
             </li>
-            <li class="nav-item @GetActive("ContactUs")">
-                <a href="@Url.Action("Index","ContactUs", new { Area = "Admin" })" class="nav-link nav-toggle">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="title">ارتباط با ما</span>
-                    @GetSelectedTag("ContactUs")
+            <li class="nav-item  @GetActive("SliderSetting")">
+                <a href="@Url.Action("Index", "SliderSetting", new { Area = "Admin" })" class="nav-link nav-toggle">
+                    <i class="fa fa-bars"></i>
+                    <span class="title">اسلایدر</span>
+                    @GetSelectedTag("SliderSetting")
                 </a>
             </li>
         </ul>
