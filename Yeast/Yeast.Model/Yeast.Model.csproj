@@ -118,7 +118,9 @@
     <Compile Include="Admin\Category\CategoryList.cs" />
     <Compile Include="Admin\Setting\AboutusViewModel.cs" />
     <Compile Include="Admin\Setting\SettingViewModel.cs" />
+    <Compile Include="Admin\ContactUs\ContactUsList.cs" />
     <Compile Include="FrontEnd\AboutUsViewModel.cs" />
+    <Compile Include="FrontEnd\ContactUsViewModel.cs" />
     <Compile Include="FrontEnd\Product.cs" />
     <Compile Include="Generic\DataTableList.cs" />
     <Compile Include="Admin\Tag\TagList.cs" />

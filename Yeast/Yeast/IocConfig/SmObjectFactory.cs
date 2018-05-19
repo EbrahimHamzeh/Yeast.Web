@@ -62,6 +62,7 @@ namespace Yeast.IocConfig
 				x.For<IPostService>().Use<PostService>();
 				x.For<ICategoryService>().Use<CategoryService>();
 				x.For<IOptionService>().Use<OptionService>();
+				x.For<IContactUsService>().Use<ContactUsService>();
 			});
 		}
 		

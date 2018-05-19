@@ -7,13 +7,13 @@ using Yeast.Utilities.Controllers;
 namespace Yeast.Controllers
 {
 
-	public partial class AboutUsController : BaseController
+	public partial class ContactUsController : BaseController
 	{
 
 		readonly IOptionService _optionService;
 		readonly IUnitOfWork _uow;
 
-		public AboutUsController(IUnitOfWork uow, IOptionService optionService)
+		public ContactUsController(IUnitOfWork uow, IOptionService optionService)
 		{
 			_uow = uow;
             _optionService = optionService;

@@ -1,0 +1,203 @@
+﻿@model Yeast.Model.FrontEnd.ContactUsViewModel
+@{
+    ViewBag.Title = "ارتباط با ما";
+    ViewBag.SelectedPage = "ContactUs";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section CssStyle{
+    <link href="~/Content/css/ladda-themeless-rtl.min.css" rel="stylesheet" />
+}
+<div class="page-content">
+    <!-- BEGIN PAGE HEADER-->
+    <!-- BEGIN PAGE BAR -->
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a href="@Url.Action("Index","Dashboard", new { Area = "Admin" })">داشبورد</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="#">مطلب</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span>ارتباط با ما</span>
+            </li>
+        </ul>
+    </div>
+    <!-- END PAGE BAR -->
+    <!-- BEGIN PAGE TITLE-->
+    <h1 class="page-title">
+        <small></small>
+    </h1>
+    <!-- END PAGE TITLE-->
+    <!-- END PAGE HEADER-->
+    <div class="note note-info">
+        <p> تمام مطالب وب سایت بخش وبلاگ آن در این جا لیست می‌شود </p>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN SAMPLE FORM PORTLET-->
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-green-haze">
+                        <i class="fa fa-check font-green-haze"></i>
+                        <span class="caption-subject bold uppercase">اصلاح</span>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="تمام صفحه" title=""> </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <form role="form" class="form-horizontal" method="post" action="">
+                        @Html.AntiForgeryToken()
+                        <div class="form-body">
+                            <div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
+                            <div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Name">عنوان</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required placeholder="عنوان را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.Title)
+                                    <div class="form-control-focus"> </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Name">نام و نام‌خانوادگی</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="FullName" name="FullName" value="@Model.FullName" required placeholder="عنوان را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.FullName)
+                                    <div class="form-control-focus"> </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Name">ایمیل</label>
+                                <div class="col-md-11">
+                                    <input type="Email" class="form-control" id="Email" name="Email" value="@Model.Email" required placeholder="عنوان را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.Email)
+                                    <div class="form-control-focus"> </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Name">شماره همراه</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="Mobile" name="Mobile" value="@Model.Mobile" required placeholder="عنوان را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.Mobile)
+                                    <div class="form-control-focus"> </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Name">پیام</label>
+                                <div class="col-md-11">
+                                    <textarea id="Message" name="Message" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.Message</textarea>
+                                    @Html.ValidationMessageFor(model => model.Message)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <button type="reset" class="btn default">کنسل</button>
+                                    <button type="submit" data-loading-text="ارسال..." class="btn blue btn-loading ">تایید</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END SAMPLE FORM PORTLET-->
+        </div>
+    </div>
+</div>
+@section Javascripts{
+
+    <script src="~/Content/js/jquery.validate.js"></script>
+    <script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Content/js/spin.min.js"></script>
+    <script src="~/Content/js/ladda.min.js"></script>
+    <script type="text/javascript">
+		jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
+		var form1 = $('form[data-loading-text]');
+		var error1 = $('.alert-danger', form1);
+		var success1 = $('.alert-success', form1);
+
+		// حذف تمام تگ‌هاي يك قطعه متن
+		function removeAllTagsAndTrim(html)
+		{
+			return !html ? "" : jQuery.trim(html.replace(/(<([^>]+)>)/ig, ""));
+		}
+
+		// اين تنظيم براي پردازش اعتبارسنجي اديتور مخفي وب لازم است
+		jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
+
+		// متد اصلي اعتبارسنجي را ابتدا ذخيره مي‌كنيم
+		jQuery.validator.methods.originalRequired = jQuery.validator.methods.required;
+		// نحوه بازنويسي متد توكار اعتبار سنجي جهت استفاده از يك متد سفارشي
+		jQuery.validator.addMethod("required", function (value, element, param)
+		{
+			value = removeAllTagsAndTrim(value);
+			if (!value) {
+				$(".froala-element").focus();
+				$(".froala-element").css({ "border-color": "red" });
+				return false;
+			}
+			//  فراخواني متد اصلي اعتبار سنجي در صورت شكست تابع سفارشي
+			return jQuery.validator.methods.originalRequired.call(this, value, element, param);
+		}, jQuery.validator.messages.required);
+
+		form1.validate({
+			errorElement: 'span', //default input error message container
+			errorClass: 'help-block help-block-error', // default input error message class
+			focusInvalid: false, // do not focus the last invalid input
+			ignore: ":hidden:not(textarea)",  // validate all fields including form hidden input
+			invalidHandler: function (event, validator)
+			{ //display error alert on form submit
+				success1.hide();
+				error1.show();
+				App.scrollTo(error1, -200);
+			},
+
+			errorPlacement: function (error, element)
+			{ // render error placement for each input type
+				var cont = $(element).parent('.input-group');
+				if (cont.size() > 0) {
+					cont.after(error);
+				} else {
+					element.after(error);
+				}
+			},
+
+			highlight: function (element)
+			{ // hightlight error inputs
+
+				$(element)
+						.closest('.form-group').addClass('has-error'); // set error class to the control group
+			},
+
+			unhighlight: function (element)
+			{ // revert the change done by hightlight
+				$(element)
+						.closest('.form-group').removeClass('has-error'); // set error class to the control group
+			},
+
+			success: function (label)
+			{
+				label
+						.closest('.form-group').removeClass('has-error'); // set success class to the control group
+			},
+
+			submitHandler: function (form)
+			{
+				success1.show();
+				error1.hide();
+				form.submit();
+				form1.button('loading')
+			}
+		});
+    </script>
+}
+
+

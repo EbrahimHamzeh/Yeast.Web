@@ -1,21 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Yeast.DomainClasses.Entities;
+﻿using System.Threading.Tasks;
 using Yeast.Model.Admin;
-using System.Runtime.CompilerServices;
 using Yeast.Utilities.BootstrapTable;
-using System.Web.Mvc;
+using Yeast.Model.FrontEnd;
+using Yeast.DomainClasses.Entities;
 
 namespace Yeast.Servicelayer.Interfaces
 {
 	public interface IContactUsService
     {
-		void Add(TagAdd tag);
-		void Remove(int id);
-		void Update(Tag tag);
-		Tag Find(int id);
-		TagEdit FindForEdit(int id);
-		Task<IList<Tag>> GetAllAsync();
-		Task<DataTableList<TagList>> GetDataTableAsync(PagedQueryViewModel model);
+        void Add(ContactUsViewModel model);
+        void Remove(int id);
+        ContactUsViewModel View(int id);
+        ContactUs Find(int id);
+		Task<DataTableList<ContactUsList>> GetDataTableAsync(PagedQueryViewModel model);
 	}
 }

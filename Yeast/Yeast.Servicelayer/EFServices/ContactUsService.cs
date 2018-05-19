@@ -13,6 +13,7 @@ using Yeast.Utilities.Helpers;
 using System.Runtime.CompilerServices;
 using Yeast.Utilities.BootstrapTable;
 using System.Web.Mvc;
+using Yeast.Model.FrontEnd;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -23,42 +24,23 @@ namespace Yeast.Servicelayer.EFServices
 		{
             _contactUs = uow.Set<ContactUs>();
 		}
-		public ConfiguredTaskAwaitable<int> CountAsync
+
+		public ContactUsViewModel View(int id)
 		{
-			get
-			{
-				return _tags.Cacheable().CountAsync().ConfigureAwait(false);
-			}
+            ContactUs contactUs = _contactUs.Find(id);
+            return new ContactUsViewModel
+            {
+                Title = contactUs.Title,
+                Mobile = contactUs.Mobile,
+                Message = contactUs.Message,
+                FullName = contactUs.FullName,
+                Email = contactUs.Email
+            };
 		}
 
-		public void Add(TagAdd tag)
+		public async Task<DataTableList<ContactUsList>> GetDataTableAsync(PagedQueryViewModel model)
 		{
-			_tags.Add(new Tag { Title = tag.Title, Description = tag.Description });
-		}
-
-		public Tag Find(int id)
-		{
-			return _tags.Find(id);
-		}
-
-		public TagEdit FindForEdit(int id)
-		{
-			Tag tag = _tags.Find(id);
-			return new TagEdit
-			{
-				Title = tag.Title,
-				Description = tag.Description
-			};
-		}
-
-		public async Task<IList<Tag>> GetAllAsync()
-		{
-			return await _tags.AsNoTracking().Cacheable().ToListAsync();
-		}
-
-		public async Task<DataTableList<TagList>> GetDataTableAsync(PagedQueryViewModel model)
-		{
-			IQueryable<Tag> tagList = _tags.AsNoTracking();
+			IQueryable<ContactUs> tagList = _contactUs.AsNoTracking();
 			int total = 0;
 
 			// Search
@@ -73,46 +55,37 @@ namespace Yeast.Servicelayer.EFServices
 			tagList = tagList.ApplyPaging(model).Cacheable();
 			model.offset = model.offset - 1;
 			// Create List Of viewModel
-			var tag = (await tagList.ToListAsync()).Select((x, index) => new TagList
-			{
+			var tag = (await tagList.ToListAsync()).Select((x, index) => new ContactUsList
+            {
 				No = (++index + model.offset).ConvertToPersianString(),
 				Id = x.Id,
 				Title = x.Title,
-				Description = x.Description
-			});
+                FullName = x.FullName,
+                Mobile = x.Mobile,
+                Email = x.Email,
+                Message = x.Message
+            });
 
-			return new DataTableList<TagList> { rows = tag.ToList(), total = total };
+			return new DataTableList<ContactUsList> { rows = tag.ToList(), total = total };
 		}
 
 		public void Remove(int id)
 		{
-			_tags.Remove(_tags.Find(id));
+            _contactUs.Remove(_contactUs.Find(id));
 		}
 
-		public void Update(Tag tag)
-		{
-			Tag selectedTag = _tags.Find(tag.Id);
-			selectedTag.Title = tag.Title;
-			selectedTag.Description = tag.Description;
-		}
+        public void Add(ContactUsViewModel model)
+        {
+            _contactUs.Add(new ContactUs { Email = model.Email,
+                                           FullName = model.FullName,
+                                           Message = model.Message,
+                                           Mobile = model.Mobile,
+                                           Title = model.Title});
+        }
 
-		public SelectList DropDownList(List<int> tagSelectedId = null)
-		{
-			List<SelectListItem> selectListItemList;
-			if (tagSelectedId == null)
-			{
-				selectListItemList = _tags.Where(x => x.Enable).Select(x => new SelectListItem { Text = x.Title, Value = x.Id.ToString() }).ToList();
-			}
-			else
-			{
-				selectListItemList = _tags.Where(x => x.Enable).Select(x => new SelectListItem
-				{
-					Text = x.Title,
-					Value = x.Id.ToString(),
-					Selected = tagSelectedId.Contains(x.Id)
-				}).ToList();
-			}
-			return new SelectList(selectListItemList, "Value", "Text", tagSelectedId);
-		}
-	}
+        public ContactUs Find(int id)
+        {
+            return _contactUs.Find(id);
+        }
+    }
 }

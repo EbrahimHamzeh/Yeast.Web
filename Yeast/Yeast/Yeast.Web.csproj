@@ -187,9 +187,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\SliderSettingController.cs" />
     <Compile Include="Areas\Admin\Controllers\AboutUsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SiteInformationController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ContacyUsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactUsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
@@ -213,7 +214,6 @@
     <Content Include="Content\css\jstree.min.css" />
     <Content Include="Content\css\ladda-themeless-rtl.min.css" />
     <Content Include="Content\css\layout-rtl.css" />
-    <Content Include="Content\css\ma5slider.min.css" />
     <Content Include="Content\css\plugins-rtl.css" />
     <Content Include="Content\css\select2-bootstrap.min.css" />
     <Content Include="Content\css\select2.min.css" />
@@ -406,6 +406,9 @@
     <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AboutUs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactUs\View.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactUs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SliderSetting\Index.cshtml" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\enjoyhint.js" />
     <Content Include="Content\js\filepond-plugin-file-validate-size.min.js" />
@@ -429,7 +432,6 @@
     <Content Include="Content\js\jstree.min.js" />
     <Content Include="Content\js\ladda.min.js" />
     <Content Include="Content\js\layout.min.js" />
-    <Content Include="Content\js\ma5slider.min.js" />
     <Content Include="Content\js\persianumber.js" />
     <Content Include="Content\js\quick-nav.min.js" />
     <Content Include="Content\js\select2.min.js" />
@@ -437,6 +439,22 @@
     <Content Include="Content\js\sweetalert.js" />
     <Content Include="Content\js\theme-bundle.chunk.16.js" />
     <Content Include="Content\js\Yeast.js" />
+    <Content Include="Content\Slider\data1\images\slideshow_image_1minrs.jpg" />
+    <Content Include="Content\Slider\data1\images\slideshow_image_2min.jpg" />
+    <Content Include="Content\Slider\data1\tooltips\slideshow_image_1minrs.jpg" />
+    <Content Include="Content\Slider\data1\tooltips\slideshow_image_2min.jpg" />
+    <Content Include="Content\Slider\engine1\arrows.png" />
+    <Content Include="Content\Slider\engine1\bg.png" />
+    <Content Include="Content\Slider\engine1\bullet.png" />
+    <Content Include="Content\Slider\engine1\jquery.js" />
+    <Content Include="Content\Slider\engine1\pause.png" />
+    <Content Include="Content\Slider\engine1\play.png" />
+    <Content Include="Content\Slider\engine1\script.js" />
+    <Content Include="Content\Slider\engine1\style.css" />
+    <Content Include="Content\Slider\engine1\style.mod.css" />
+    <Content Include="Content\Slider\engine1\triangle.png" />
+    <Content Include="Content\Slider\engine1\wowslider.js" />
+    <Content Include="Content\Slider\engine1\wowslider.mod.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -505,7 +523,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\SiteInformation\" />
     <Folder Include="Content\fonts\eot\" />
     <Folder Include="Content\fonts\svg\" />
