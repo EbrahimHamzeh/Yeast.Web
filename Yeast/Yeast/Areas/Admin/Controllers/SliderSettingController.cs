@@ -1,16 +1,11 @@
-﻿using System.Net;
-using System.Threading.Tasks;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Yeast.Datalayer.Context;
-using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
-using Yeast.Attribute;
-using Yeast.Utilities.BootstrapTable;
 using System.Web;
 using System.IO;
-using System.Linq;
 using System;
+using System.Collections.Generic;
 
 namespace Yeast.Areas.Admin.Controllers
 {
@@ -40,5 +35,20 @@ namespace Yeast.Areas.Admin.Controllers
             _uow.SaveAllChanges();
 			return RedirectToAction("Index");
 		}
-	}
+
+        [HttpPost]
+        public virtual ActionResult FroalaUploadImage(HttpPostedFileBase file)
+        {
+            if (file == null)
+            {
+                file = Request.Files["file[]"];
+            }
+            var fileName = Path.GetFileName(file.FileName);
+            var rootPath = Server.MapPath("~/Content/upload/images/");
+            string fileNameFinal = Guid.NewGuid().ToString("N") + fileName;
+            file.SaveAs(Path.Combine(rootPath, fileNameFinal));
+            return Json(new { error="", initialPreview = new List<string> { "<img src='" + Url.Content("~/Content/upload/images/") + fileNameFinal + "' class='file-preview-image' alt='Desert' title='Desert'>" },
+                initialPreviewConfig = new { caption = "desert.jpg", width = "120px", url = "http://localhost/avatar/delete", key = "100", extra = new { id = 100}} }, JsonRequestBehavior.AllowGet);
+        }
+    }
 }

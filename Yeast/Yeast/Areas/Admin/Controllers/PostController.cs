@@ -111,6 +111,10 @@ namespace Yeast.Areas.Admin.Controllers
 		[HttpPost]
 		public virtual ActionResult FroalaUploadImage(HttpPostedFileBase file)
 		{
+            if (file == null)
+            {
+                file = Request.Files["file[]"];
+            }
 			var fileName = Path.GetFileName(file.FileName);
 			var rootPath = Server.MapPath("~/Content/upload/images/");
 			string fileNameFinal = Guid.NewGuid().ToString("N") + fileName;
