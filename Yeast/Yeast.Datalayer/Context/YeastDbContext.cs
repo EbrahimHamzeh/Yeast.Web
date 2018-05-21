@@ -18,6 +18,8 @@ namespace Yeast.Datalayer.Context
 		public DbSet<Product> Products { get; set; }
 		public DbSet<Post> Posts { get; set; }
 		public DbSet<Category> Categories { get; set; }
+		public DbSet<Service> Services { get; set; }
+		public DbSet<ServiceCategory> ServiceCategories { get; set; }
 		public DbSet<Option> Options { get; set; }
 		public DbSet<ContactUs> ContactUs { get; set; }
 		#endregion

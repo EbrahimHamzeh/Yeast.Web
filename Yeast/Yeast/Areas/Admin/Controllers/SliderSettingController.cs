@@ -31,6 +31,12 @@ namespace Yeast.Areas.Admin.Controllers
 		[ValidateAntiForgeryToken]
         public virtual ActionResult Index(AboutUs model)
 		{
+            HttpPostedFileBase file;
+            file = Request.Files["file[]"];
+            var fileName = Path.GetFileName(file.FileName);
+            var rootPath = Server.MapPath("~/Content/upload/images/");
+            string fileNameFinal = Guid.NewGuid().ToString("N") + fileName;
+            file.SaveAs(Path.Combine(rootPath, fileNameFinal));
             _optionService.Update(model);
             _uow.SaveAllChanges();
 			return RedirectToAction("Index");

@@ -8,16 +8,16 @@ using System.Web.Mvc;
 
 namespace Yeast.Servicelayer.Interfaces
 {
-	public interface ICategoryService
-	{
+	public interface IServiceCategoryService
+    {
 		ConfiguredTaskAwaitable<int> CountAsync { get; }
-		void Add(CategoryAdd category);
+		void Add(ServiceCategoryAdd category);
 		void Remove(int id);
-		void Update(Category category);
-        Category Find(int id);
-        CategoryEdit FindForEdit(int id);
-		Task<IList<Category>> GetAllAsync();
-		Task<DataTableList<CategoryList>> GetDataTableAsync(PagedQueryViewModel model);
+		void Update(ServiceCategory category);
+		ServiceCategory Find(int id);
+        ServiceCategoryEdit FindForEdit(int id);
+		Task<IList<ServiceCategory>> GetAllAsync();
+		Task<DataTableList<ServiceCategoryList>> GetDataTableAsync(PagedQueryViewModel model);
 		SelectList DropDownList(List<int> categorySelectedId = null);
 	}
 }

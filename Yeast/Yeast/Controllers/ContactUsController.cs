@@ -22,7 +22,7 @@ namespace Yeast.Controllers
 		// GET: Home
 		public virtual ActionResult Index()
 		{
-            AboutUsViewModel aboutUsViewModel = _optionService.GetByCulter();
+            AboutUsViewModel aboutUsViewModel = _optionService.GetByCulterAboutUsV();
             return View(aboutUsViewModel);
 		}
 	}

@@ -1,12 +1,12 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic;
+using System.Reflection;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
-using Yeast.Servicelayer.Interfaces;
 using Yeast.Model.Admin;
-using System.Reflection;
 using Yeast.Model.FrontEnd;
+using Yeast.Servicelayer.Interfaces;
 using Yeast.Utilities.Helpers;
 
 namespace Yeast.Servicelayer.EFServices
@@ -94,7 +94,7 @@ namespace Yeast.Servicelayer.EFServices
             return aboutusViewModel;
         }
 
-        public AboutUsViewModel GetByCulter()
+        public AboutUsViewModel GetByCulterAboutUsV()
         {
             string cultur = CultureHelper.GetCurrentNeutralCulture();
             AboutUsViewModel aboutUsViewModel = new AboutUsViewModel();

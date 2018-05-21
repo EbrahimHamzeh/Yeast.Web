@@ -114,18 +114,18 @@ foreach (string item in args)
             <li class="heading">
                 <h3 class="uppercase">خدمات</h3>
             </li>
-            <li class="nav-item @GetActive("Post")">
+            <li class="nav-item @GetActive("Service")">
                 <a href="@Url.Action("Index","Service", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-sitemap"></i>
-                    <span class="title">خدمات‌ها</span>
-                    @GetSelectedTag("Post")
+                    <span class="title">خدمات‌</span>
+                    @GetSelectedTag("Service")
                 </a>
             </li>
-            <li class="nav-item @GetActive("Post")">
-                <a href="@Url.Action("Index","CategoryService", new { Area = "Admin" })" class="nav-link nav-toggle">
+            <li class="nav-item @GetActive("ServiceCategory")">
+                <a href="@Url.Action("Index","ServiceCategory", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-sitemap"></i>
                     <span class="title">دسته‌بندی خدمات</span>
-                    @GetSelectedTag("Post")
+                    @GetSelectedTag("ServiceCategory")
                 </a>
             </li>
 
@@ -148,10 +148,11 @@ foreach (string item in args)
             <li class="heading">
                 <h3 class="uppercase">تنظیمات</h3>
             </li>
-            <li class="nav-item  ">
+            <li class="nav-item @GetActive("SiteInformation")">
                 <a href="@Url.Action("Index","SiteInformation", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-envelope-o"></i>
                     <span class="title">اطلاعات وبسایت</span>
+                    @GetSelectedTag("SiteInformation")
                 </a>
             </li>
             <li class="nav-item @GetActive("Aboutus")">

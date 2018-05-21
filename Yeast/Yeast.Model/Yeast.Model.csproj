@@ -107,6 +107,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\ServiceCategory\ServiceCategoryAdd.cs" />
+    <Compile Include="Admin\ServiceCategory\ServiceCategoryEdit.cs" />
+    <Compile Include="Admin\ServiceCategory\ServiceCategoryList.cs" />
+    <Compile Include="Admin\Service\ServiceAdd.cs" />
+    <Compile Include="Admin\Service\ServiceEdit.cs" />
+    <Compile Include="Admin\Service\ServiceList.cs" />
     <Compile Include="Admin\Product\ProductAdd.cs" />
     <Compile Include="Admin\Product\ProductEdit.cs" />
     <Compile Include="Admin\Product\ProductList.cs" />

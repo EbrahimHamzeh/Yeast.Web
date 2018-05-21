@@ -187,6 +187,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\ServiceCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\SliderSettingController.cs" />
     <Compile Include="Areas\Admin\Controllers\AboutUsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SiteInformationController.cs" />
@@ -409,6 +410,13 @@
     <Content Include="Areas\Admin\Views\ContactUs\View.cshtml" />
     <Content Include="Areas\Admin\Views\ContactUs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\SliderSetting\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SiteInformation\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ServiceCategory\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\ServiceCategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ServiceCategory\Index.cshtml" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\enjoyhint.js" />
     <Content Include="Content\js\filepond-plugin-file-validate-size.min.js" />
@@ -595,7 +603,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\SiteInformation\" />
     <Folder Include="Content\fonts\eot\" />
     <Folder Include="Content\fonts\svg\" />
     <Folder Include="Content\fonts\ttf\" />

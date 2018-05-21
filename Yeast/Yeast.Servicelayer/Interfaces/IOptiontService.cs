@@ -9,7 +9,6 @@ namespace Yeast.Servicelayer.Interfaces
 		void Update(object settings);
         SettingViewModel GetAllSetting();
         AboutUs GetAllAboutUs();
-        AboutUsViewModel GetByCulter();
-
+        AboutUsViewModel GetByCulterAboutUsV();
     }
 }
