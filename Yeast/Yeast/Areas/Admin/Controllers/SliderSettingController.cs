@@ -45,16 +45,19 @@ namespace Yeast.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult FroalaUploadImage(HttpPostedFileBase file)
         {
+                file = Request.Files["file[]"];
             if (file == null)
             {
-                file = Request.Files["file[]"];
+                return Json("", JsonRequestBehavior.AllowGet);
             }
             var fileName = Path.GetFileName(file.FileName);
             var rootPath = Server.MapPath("~/Content/upload/images/");
             string fileNameFinal = Guid.NewGuid().ToString("N") + fileName;
             file.SaveAs(Path.Combine(rootPath, fileNameFinal));
-            return Json(new { error="", initialPreview = new List<string> { "<img src='" + Url.Content("~/Content/upload/images/") + fileNameFinal + "' class='file-preview-image' alt='Desert' title='Desert'>" },
-                initialPreviewConfig = new { caption = "desert.jpg", width = "120px", url = "http://localhost/avatar/delete", key = "100", extra = new { id = 100}} }, JsonRequestBehavior.AllowGet);
+            return Json(new {
+                initialPreview = new List<string> { "<img src='" + Url.Content("~/Content/upload/images/") + fileNameFinal + "' class='file-preview-image' alt='Desert' title='Desert' style='width: 210px;'>"},
+                initialPreviewConfig = new { caption = fileNameFinal, width = "120px", url = Url.Action("FroalaUploadImage", "SliderSetting", new { Area = "Admin" }), key = 123654, vkey = 123654 }
+            }, JsonRequestBehavior.AllowGet);
         }
     }
 }
