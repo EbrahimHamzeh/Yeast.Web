@@ -123,6 +123,7 @@
     <Compile Include="Admin\Category\CategoryEdit.cs" />
     <Compile Include="Admin\Category\CategoryList.cs" />
     <Compile Include="Admin\Setting\AboutusViewModel.cs" />
+    <Compile Include="Admin\Setting\SloderViewModel.cs" />
     <Compile Include="Admin\Setting\SettingViewModel.cs" />
     <Compile Include="Admin\ContactUs\ContactUsList.cs" />
     <Compile Include="FrontEnd\AboutUsViewModel.cs" />

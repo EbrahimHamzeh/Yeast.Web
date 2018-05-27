@@ -10,5 +10,6 @@ namespace Yeast.Servicelayer.Interfaces
         SettingViewModel GetAllSetting();
         AboutUs GetAllAboutUs();
         AboutUsViewModel GetByCulterAboutUsV();
+        SliderViewModel GetAllSliderImage();
     }
 }

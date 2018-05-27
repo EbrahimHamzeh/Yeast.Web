@@ -1,4 +1,4 @@
-﻿@model Yeast.Model.Admin.AboutUs
+﻿@model Yeast.Model.Admin.SliderViewModel
 @{
     ViewBag.Title = "اسلایدر";
     ViewBag.SelectedPage = "SliderSetting";
@@ -52,7 +52,8 @@
                 <div class="portlet-body form">
                     <form role="form" class="form-horizontal" method="post" action="@Url.Action("Index")" enctype="multipart/form-data">
                         @Html.AntiForgeryToken()
-                        <input type="hidden" name="ImageName" id="ImageName">
+                        <input type="hidden" name="ImageName" id="ImageName" value="@(string.Format("{0}|{1}|{2}",Model.Image1, Model.Image2, Model.Image3))">
+                        <input type="hidden" name="ImageNameDeleted" id="ImageNameDeleted">
                         <div class="form-body">
                             <div class="form-group form-md-line-input">
                                 <label class="col-md-1 control-label" for="Name">تصاویر</label>
@@ -170,7 +171,6 @@
             uploadUrl: "@Url.Action("FroalaUploadImage", "SliderSetting", new { Area = "Admin" })",
             deleteUrl: '@Url.Action("FroalaUploadImage", "SliderSetting", new { Area = "Admin" })',
             uploadAsync: true,
-            ajaxDeleteSettings: { method: "Post" },
             minFileCount: 0,
             maxFileCount: 2,
             validateInitialCount: true,
@@ -179,6 +179,34 @@
             previewFileType: "image",
             allowedFileExtensions: ["jpg", "png"],
             maxFileSize: 1024,
+            initialPreview: [
+                @if (!string.IsNullOrEmpty(Model.Image1))
+                {
+                    <text>"<img class='file-preview-image kv-preview-data' src='@Url.Content(Model.Image1)'>",</text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Image2))
+                {
+                    <text>"<img class='file-preview-image kv-preview-data' src='@Url.Content(Model.Image2)'>",</text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Image3))
+                {
+                    <text>"<img class='file-preview-image kv-preview-data' src='@Url.Content(Model.Image3)'>",</text>
+                }
+            ],
+            initialPreviewConfig: [
+                @if (!string.IsNullOrEmpty(Model.Image1))
+                {
+                     <text>{ key: '@Url.Content(Model.Image1).Replace("/Content/upload/images/", string.Empty)' },</text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Image2))
+                {
+                     <text>{ key: '@Url.Content(Model.Image2).Replace("/Content/upload/images/", string.Empty)' },</text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Image3))
+                {
+                     <text>{ key: '@Url.Content(Model.Image3).Replace("/Content/upload/images/", string.Empty)' },</text>
+                }
+            ],
             initialCaption: "تصاویر اسلاید شو صفحه نخست سایت"
         });
 
@@ -188,25 +216,34 @@
             if (images.length > 0) {
                 var arrayImage = images.split('|');
                 for (var i = 0; i < length; i++) {
-                    if (arrayImage[i] == data.response)isDublicat = true;
+                    if (arrayImage[i] == data.response.initialPreviewConfig[0].key)isDublicat = true;
                 }
-                if (isDublicat == false) $('#ImageName').val(images + '|' + data.response)
+                if (isDublicat == false) $('#ImageName').val(images + '|' + '/Content/upload/images/' + data.response.initialPreviewConfig[0].key)
             }
             else {
-                $('#ImageName').val(data.response)
+                $('#ImageName').val('/Content/upload/images/' + data.response.initialPreviewConfig[0].key)
             }
-        });
-
-        $('#input-id').on('filedeleted', function () {
-            
         });
 
         $('#input-id').on('filebeforedelete', function (event, key, data) {
-            console.log('Key = ' + key);
-        });
+            var images = $('#ImageNameDeleted').val();
+            var isDublicat = false;
+            if (images.length > 0) {
+                var arrayImage = images.split('|');
+                for (var i = 0; i < length; i++) {
+                    if (arrayImage[i] == data.response) isDublicat = true;
+                }
+                if (isDublicat == false) {
+                    $('#ImageNameDeleted').val(images + '|' + key);
+                    $('#ImageName').val($('#ImageName').val().replace('/Content/upload/images/' + key, '')); 
+                }
+            }
+            else {
+                $('#ImageNameDeleted').val('/Content/upload/images/' + key)
+                $('#ImageName').val($('#ImageName').val().replace('/Content/upload/images/' + key, '')); 
+            }
 
-        $('#input-id').on('filepredelete', function (event, key, jqXHR, data) {
-            console.log('Key = ' + key);
+            $('#ImageName').val($('#ImageName').val().replace('||', '')); 
         });
     </script>
 }

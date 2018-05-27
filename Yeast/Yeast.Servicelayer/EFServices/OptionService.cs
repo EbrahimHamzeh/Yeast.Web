@@ -22,12 +22,12 @@ namespace Yeast.Servicelayer.EFServices
 
         public void Update(object settings)
         {
-            var propertis = settings.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance); ;
+            var propertis = settings.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
             foreach (var prop in propertis)
             {
-                if (_option.Where(x => x.Value == prop.Name).Any())
-                    _option.Where(x => x.Value == prop.Name).FirstOrDefault().Value = prop.GetValue(settings).ToString();
+                if (_option.Where(x => x.Name == prop.Name).Any())
+                    _option.Where(x => x.Name == prop.Name).FirstOrDefault().Value = prop.GetValue(settings) != null ? prop.GetValue(settings).ToString() : "";
                 else
                     _option.Add(new Option { Name = prop.Name, Value = prop.GetValue(settings) != null ? prop.GetValue(settings).ToString() : "" });
             }
@@ -121,6 +121,29 @@ namespace Yeast.Servicelayer.EFServices
             }
 
             return aboutUsViewModel;
+        }
+
+        public SliderViewModel GetAllSliderImage()
+        {
+            var option = _option.ToList();
+
+            SliderViewModel sliderViewModel = new SliderViewModel();
+
+            if (option.Where(x => x.Name == "Image1").Any())
+                sliderViewModel.Image1 = option.Where(x => x.Name == "Image1").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "Image2").Any())
+                sliderViewModel.Image2 = option.Where(x => x.Name == "Image2").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "Image3").Any())
+                sliderViewModel.Image3 = option.Where(x => x.Name == "Image3").FirstOrDefault().Value;
+
+            if (option.Where(x => x.Name == "TextImag1").Any())
+                sliderViewModel.TextImag1 = option.Where(x => x.Name == "TextImag1").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "TextImag2").Any())
+                sliderViewModel.TextImag2 = option.Where(x => x.Name == "TextImag2").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "TextImag3").Any())
+                sliderViewModel.TextImag3 = option.Where(x => x.Name == "TextImag3").FirstOrDefault().Value;
+
+            return sliderViewModel;
         }
     }
 }

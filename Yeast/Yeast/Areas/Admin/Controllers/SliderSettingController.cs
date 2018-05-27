@@ -23,20 +23,21 @@ namespace Yeast.Areas.Admin.Controllers
         // GET: Admin/AboutUs
         public virtual ActionResult Index()
 		{
-			return View(_optionService.GetAllAboutUs());
+			return View(_optionService.GetAllSliderImage());
 		}
 
         // GET: Admin/AboutUs
         [HttpPost]
 		[ValidateAntiForgeryToken]
-        public virtual ActionResult Index(AboutUs model)
+        public virtual ActionResult Index(SliderViewModel model)
 		{
-            HttpPostedFileBase file;
-            file = Request.Files["file[]"];
-            var fileName = Path.GetFileName(file.FileName);
-            var rootPath = Server.MapPath("~/Content/upload/images/");
-            string fileNameFinal = Guid.NewGuid().ToString("N") + fileName;
-            file.SaveAs(Path.Combine(rootPath, fileNameFinal));
+            string imageText = Request["ImageName"];
+            string[] images = imageText.Split('|');
+
+            if (images.Length >= 1) model.Image1 = images[0];
+            if (images.Length >= 2) model.Image2 = images[1];
+            if (images.Length >= 3) model.Image3 = images[2];
+
             _optionService.Update(model);
             _uow.SaveAllChanges();
 			return RedirectToAction("Index");
@@ -54,10 +55,17 @@ namespace Yeast.Areas.Admin.Controllers
             var rootPath = Server.MapPath("~/Content/upload/images/");
             string fileNameFinal = Guid.NewGuid().ToString("N") + fileName;
             file.SaveAs(Path.Combine(rootPath, fileNameFinal));
-            return Json(new {
-                initialPreview = new List<string> { "<img src='" + Url.Content("~/Content/upload/images/") + fileNameFinal + "' class='file-preview-image' alt='Desert' title='Desert' style='width: 210px;'>"},
-                initialPreviewConfig = new { caption = fileNameFinal, width = "120px", url = Url.Action("FroalaUploadImage", "SliderSetting", new { Area = "Admin" }), key = 123654, vkey = 123654 }
-            }, JsonRequestBehavior.AllowGet);
+            return Json(new
+            { 
+                initialPreview = new List<string> { "<img src='" + Url.Content("~/Content/upload/images/") + fileNameFinal + "' class='file-preview-image kv-preview-data' style='width: 210px;'>" },
+                initialPreviewConfig = new List<image> { new image { key = fileNameFinal } }
+                }, JsonRequestBehavior.AllowGet);
         }
+
+
+    }
+    public class image
+    {
+        public string key { get; set; }
     }
 }
