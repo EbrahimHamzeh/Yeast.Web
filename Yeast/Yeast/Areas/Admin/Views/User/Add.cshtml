@@ -1,0 +1,176 @@
+﻿@model Yeast.Model.Admin.TagAdd
+@{
+	ViewBag.Title = "تگ‌ها";
+	ViewBag.SelectedPage = "Tag";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+@section CssStyle{
+	<link href="~/Content/css/ladda-themeless-rtl.min.css" rel="stylesheet" />
+	<link href="~/Content/css/enjoyhint.css" rel="stylesheet" />
+}
+<div class="page-content">
+	<!-- BEGIN PAGE HEADER-->
+	<!-- BEGIN PAGE BAR -->
+	<div class="page-bar">
+		<ul class="page-breadcrumb">
+			<li>
+				<a href="@Url.Action("Index","Dashboard", new { Area = "Admin" })">داشبورد</a>
+				<i class="fa fa-circle"></i>
+			</li>
+			<li>
+				<a href="#">مطلب</a>
+				<i class="fa fa-circle"></i>
+			</li>
+			<li>
+				<span>تگ‌ها</span>
+			</li>
+		</ul>
+	</div>
+	<!-- END PAGE BAR -->
+	<!-- BEGIN PAGE TITLE-->
+	<h1 class="page-title">
+		<small></small>
+	</h1>
+	<!-- END PAGE TITLE-->
+	<!-- END PAGE HEADER-->
+	<div class="note note-info">
+		<p> برچسب گذاری برای مدیریت مطالب و دسته‌بندی جزئی </p>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<!-- BEGIN SAMPLE FORM PORTLET-->
+			<div class="portlet light bordered">
+				<div class="portlet-title">
+					<div class="caption font-green-haze">
+						<i class="fa fa-plus font-green-haze"></i>
+						<span class="caption-subject bold uppercase">جدید</span>
+					</div>
+					<div class="actions">
+						<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="تمام صفحه" title=""> </a>
+					</div>
+				</div>
+				<div class="portlet-body form">
+					<form role="form" data-loading-text="در حال ارسال فرم! لطفا منتظر باشید" class="form-horizontal" method="post" action="@Url.Action("Add")">
+						@Html.AntiForgeryToken()
+						<div class="form-body">
+							<div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
+							<div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Title">عنوان</label>
+								<div class="col-md-11">
+									<input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required placeholder="عنوان را وارد نمایید">
+									@Html.ValidationMessageFor(model => model.Title)
+									<div class="form-control-focus"> </div>
+								</div>
+							</div>
+							<div class="form-group form-md-line-input">
+								<label class="col-md-1 control-label" for="Description">توضیحات</label>
+								<div class="col-md-11">
+									<input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" placeholder="توضیحات را وارد نمایید">
+									@Html.ValidationMessageFor(model => model.Description)
+									<div class="form-control-focus"> </div>
+									<span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-actions">
+							<div class="row">
+								<div class="col-md-offset-2 col-md-10">
+									<button type="reset" class="btn default">کنسل</button>
+									<button type="submit" data-loading-text="ارسال..." class="btn blue btn-loading ">تایید</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- END SAMPLE FORM PORTLET-->
+		</div>
+	</div>
+</div>
+@section Javascripts{
+	<script src="~/Content/js/jquery.validate.js"></script>
+	<script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
+	<script src="~/Content/js/spin.min.js"></script>
+	<script src="~/Content/js/ladda.min.js"></script>
+	<script src="~/Content/js/enjoyhint.js"></script>
+	<script type="text/javascript">
+
+		var form1 = $('form[data-loading-text]');
+		var error1 = $('.alert-danger', form1);
+		var success1 = $('.alert-success', form1);
+
+		form1.validate({
+			errorElement: 'span', //default input error message container
+			errorClass: 'help-block help-block-error', // default input error message class
+			focusInvalid: false, // do not focus the last invalid input
+			ignore: "",  // validate all fields including form hidden input
+			invalidHandler: function (event, validator)
+			{ //display error alert on form submit
+				success1.hide();
+				error1.show();
+				App.scrollTo(error1, -200);
+			},
+
+			errorPlacement: function (error, element)
+			{ // render error placement for each input type
+				var cont = $(element).parent('.input-group');
+				if (cont.size() > 0) {
+					cont.after(error);
+				} else {
+					element.after(error);
+				}
+			},
+
+			highlight: function (element)
+			{ // hightlight error inputs
+
+				$(element)
+						.closest('.form-group').addClass('has-error'); // set error class to the control group
+			},
+
+			unhighlight: function (element)
+			{ // revert the change done by hightlight
+				$(element)
+						.closest('.form-group').removeClass('has-error'); // set error class to the control group
+			},
+
+			success: function (label)
+			{
+				label
+						.closest('.form-group').removeClass('has-error'); // set success class to the control group
+			},
+
+			submitHandler: function (form)
+			{
+				success1.show();
+				error1.hide();
+				form.submit();
+				form1.button('loading')
+			}
+		});
+
+
+
+		$(document).ready(function ()
+		{
+			//initialize instance
+			var enjoyhint_instance = new EnjoyHint({});
+
+			//simple config. 
+			//Only one step - highlighting(with description) "New" button 
+			//hide EnjoyHint after a click on the button.
+			var enjoyhint_script_steps = [
+				{
+					'click .default': 'باعث بازنشانی فرم به حالت صفر می‌شود.'
+				}
+			];
+
+			//set script config
+			enjoyhint_instance.set(enjoyhint_script_steps);
+			enjoyhint_instance.run();
+		});
+		//run Enjoyhint script
+	</script>
+}

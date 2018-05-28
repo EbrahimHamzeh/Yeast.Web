@@ -1,16 +1,21 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using EFSecondLevelCache;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
+using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
+using Yeast.Utilities.BootstrapTable;
+using Yeast.Utilities.Helpers;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -201,5 +206,33 @@ namespace Yeast.Servicelayer.EFServices
 				this.UserTokenProvider = new DataProtectorTokenProvider<User, int>(dataProtector);
 			}
 		}
-	}
+
+        public async Task<DataTableList<UserList>> GetDataTableAsync(PagedQueryViewModel model)
+        {
+            IQueryable<User> userList = _users.AsNoTracking();
+            int total = 0;
+
+            // Search
+            //tagList = tagList.ApplySearch(model);
+
+            total = await userList.CountAsync().ConfigureAwait(false);
+
+            // Ordering data 
+            userList = userList.ApplyOrdering(model);
+
+            // Paging And Save Cach
+            userList = userList.ApplyPaging(model).Cacheable();
+            model.offset = model.offset - 1;
+            // Create List Of viewModel
+            var users = (await userList.ToListAsync()).Select((x, index) => new UserList
+            {
+                No = (++index + model.offset).ConvertToPersianString(),
+                Id = x.Id,
+                Title = x.UserName,
+                Description = x.Description,
+            });
+
+            return new DataTableList<UserList> { rows = users.ToList(), total = total };
+        }
+    }
 }

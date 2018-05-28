@@ -418,6 +418,9 @@
     <Content Include="Areas\Admin\Views\ServiceCategory\Add.cshtml" />
     <Content Include="Areas\Admin\Views\ServiceCategory\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ServiceCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\enjoyhint.js" />
     <Content Include="Content\js\filepond-plugin-file-validate-size.min.js" />

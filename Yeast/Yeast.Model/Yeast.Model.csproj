@@ -126,6 +126,9 @@
     <Compile Include="Admin\Setting\SloderViewModel.cs" />
     <Compile Include="Admin\Setting\SettingViewModel.cs" />
     <Compile Include="Admin\ContactUs\ContactUsList.cs" />
+    <Compile Include="Admin\User\UserAdd.cs" />
+    <Compile Include="Admin\User\UserEdit.cs" />
+    <Compile Include="Admin\User\UserList.cs" />
     <Compile Include="FrontEnd\AboutUsViewModel.cs" />
     <Compile Include="FrontEnd\ContactUsViewModel.cs" />
     <Compile Include="FrontEnd\Product.cs" />

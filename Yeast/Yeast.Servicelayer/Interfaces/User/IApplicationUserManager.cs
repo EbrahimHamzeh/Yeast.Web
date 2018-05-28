@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Yeast.DomainClasses.Entities;
+using Yeast.Model.Admin;
+using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Servicelayer.Interfaces
 {
@@ -556,5 +558,7 @@ namespace Yeast.Servicelayer.Interfaces
 		User GetCurrentUser();
 		Task<User> GetCurrentUserAsync();
 		int GetCurrentUserId();
-	}
+        Task<DataTableList<UserList>> GetDataTableAsync(PagedQueryViewModel model);
+
+    }
 }

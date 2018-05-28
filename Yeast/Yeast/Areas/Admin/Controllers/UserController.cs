@@ -31,15 +31,15 @@ namespace Yeast.Areas.Admin.Controllers
 			return View();
 		}
 
-		// Get: Ajax Admin/DataList
-		//[HttpGet, AjaxOnly, NoOutputCache]
-		//public virtual async Task<ActionResult> DataList(PagedQueryViewModel model)
-		//{
-		//	return Json(await _userService.GetDataTableAsync(model).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
-		//}
+        // Get: Ajax Admin/DataList
+        [HttpGet, AjaxOnly, NoOutputCache]
+        public virtual async Task<ActionResult> DataList(PagedQueryViewModel model)
+        {
+            return Json(await _userService.GetDataTableAsync(model).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
+        }
 
-		// GET: Admin/User/Add
-		public virtual ActionResult Add()
+        // GET: Admin/User/Add
+        public virtual ActionResult Add()
 		{
 			User User = new User();
 			return View(User);
