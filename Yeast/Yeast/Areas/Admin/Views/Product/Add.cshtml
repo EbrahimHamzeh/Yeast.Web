@@ -7,8 +7,7 @@
 }
 @section CssStyle{
     <link href="~/Content/css/ladda-themeless-rtl.min.css" rel="stylesheet" />
-    <link href="~/Content/css/filepond.min.css" rel="stylesheet" />
-    <link href="~/Content/css/filepond-plugin-image-preview.min.css" rel="stylesheet" />
+    <link href="~/Content/kartik-v-bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" />
     <link href="~/Content/froala/css/froala_editor.min.css" rel="stylesheet" />
     <link href="~/Content/froala/css/froala_style.min.css" rel="stylesheet" />
     <link href="~/Content/froala/css/plugins/char_counter.css" rel="stylesheet" />
@@ -86,6 +85,8 @@
                 <div class="portlet-body form">
                     <form role="form" data-loading-text="در حال ارسال فرم! لطفا منتظر باشید" class="form-horizontal" method="post" action="@Url.Action("Add")" enctype="multipart/form-data">
                         @Html.AntiForgeryToken()
+                        <input type="hidden" name="ImageName" id="ImageName" value="">
+                        <input type="hidden" name="ImageNameDeleted" id="ImageNameDeleted">
                         <div class="form-body">
                             <div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
                             <div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
@@ -115,12 +116,11 @@
                                 </div>
                             </div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Description">تصاویر</label>
-                                <div class="col-md-5">
-                                    <input type="file" class="filepond" name="Image1" id="Image1" multiple data-max-file-size="3MB" data-max-files="3" accept="image/png, image/jpeg, image/gif" />
-                                    @*@Html.ValidationMessageFor(model => model.Description)*@
+                                <label class="col-md-1 control-label" for="Name">تصاویر</label>
+                                <div class="col-md-11">
+                                    <input id="input-id" type="file" class="file" name="file[]" multiple data-show-preview="true" data-msg-placeholder="تصاویر انتخابی...">
                                     <div class="form-control-focus"> </div>
-                                    <span class="help-block">تصاویر خود را در این جا رها کنید</span>
+                                    <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
                                 </div>
                             </div>
                             <div class="form-group form-md-line-input">
@@ -153,14 +153,11 @@
     <script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
     <script src="~/Content/js/spin.min.js"></script>
     <script src="~/Content/js/ladda.min.js"></script>
-    <script src="~/Content/js/filepond.min.js"></script>
-    <script src="~/Content/js/filepond-plugin-file-validate-size.min.js"></script>
-    <script src="~/Content/js/filepond-plugin-file-validate-type.min.js"></script>
-    <script src="~/Content/js/filepond-plugin-image-crop.min.js"></script>
-    <script src="~/Content/js/filepond-plugin-image-exif-orientation.min.js"></script>
-    <script src="~/Content/js/filepond-plugin-image-preview.min.js"></script>
-    <script src="~/Content/js/filepond-plugin-image-resize.min.js"></script>
-    <script src="~/Content/js/filepond-plugin-image-transform.min.js"></script>
+    <script src="~/Content/kartik-v-bootstrap-fileinput/js/plugins/piexif.min.js"></script>
+    <script src="~/Content/kartik-v-bootstrap-fileinput/js/plugins/sortable.min.js"></script>
+    <script src="~/Content/kartik-v-bootstrap-fileinput/js/plugins/purify.min.js"></script>
+    <script src="~/Content/kartik-v-bootstrap-fileinput/js/fileinput.js"></script>
+    <script src="~/Content/kartik-v-bootstrap-fileinput/js/locales/fa.js"></script>
     <script src="~/Content/froala/js/froala_editor.min.js"></script>
     <script src="~/Content/froala/js/plugins/align.min.js"></script>
     <script src="~/Content/froala/js/plugins/char_counter.min.js"></script>
@@ -196,30 +193,6 @@
     <script src="~/Content/froala/js/languages/fa.js"></script>
     <script src="~/Content/js/select2.min.js"></script>
     <script type="text/javascript">
-
-        FilePond.registerPlugin(
-            FilePondPluginFileValidateType,
-            FilePondPluginImagePreview,
-            FilePondPluginImageExifOrientation,
-            FilePondPluginFileValidateSize,
-            FilePondPluginImageCrop,
-            FilePondPluginImageResize
-        );
-        const pond = FilePond.create(document.querySelector('input[type="file"]'),
-            {
-                labelIdle: `تصاویر خود را در اینجا رها کنید`,
-                labelMaxFileSizeExceeded: 'حجم فایل خیلی زیاد است.',
-                labelMaxFileSize: 'حجم مجاز برای آپلود 1 مگ است',
-                labelTotalFileSizeExceeded: 'تعداد تصاویر بیشتر از 3 نمیتواند باشد',
-                labelFileTypeNotAllowed: 'فرمت تصویر نامعتر می‌باشد',
-                imagePreviewHeight: 120,
-                imageResizeMode: 'cover',
-                imageResizeTargetWidth: 500,
-                imageResizeTargetHeight: 648
-            });
-        FilePond.setOptions({
-            server: '@Url.Action("Product", "Filepond", new { Area = "Admin" })'
-        });
 
         $(function ()
 		{
@@ -284,6 +257,59 @@
                 form.submit();
                 form1.button('loading')
             }
+        });
+
+         $("#input-id").fileinput({
+            rtl: true,
+            required: true,
+            uploadUrl: "@Url.Action("FroalaUploadImage", "SliderSetting", new { Area = "Admin" })",
+            deleteUrl: '@Url.Action("FroalaUploadImage", "SliderSetting", new { Area = "Admin" })',
+            uploadAsync: true,
+            minFileCount: 1,
+            maxFileCount: 3,
+            validateInitialCount: true,
+            overwriteInitial: false,
+            language: "fa",
+            previewFileType: "image",
+            allowedFileExtensions: ["jpg", "png"],
+            maxFileSize: 1024,
+            initialCaption: "تصاویر اسلاید شو صفحه نخست سایت"
+        });
+
+        $('#input-id').on('fileuploaded', function (event, data, previewId, index) {
+            var images = $('#ImageName').val();
+            var isDublicat = false;
+            if (images.length > 0) {
+                var arrayImage = images.split('|');
+                for (var i = 0; i < length; i++) {
+                    if (arrayImage[i] == data.response.initialPreviewConfig[0].key)isDublicat = true;
+                }
+                if (isDublicat == false) $('#ImageName').val(images + '|' + '/Content/upload/images/' + data.response.initialPreviewConfig[0].key)
+            }
+            else {
+                $('#ImageName').val('/Content/upload/images/' + data.response.initialPreviewConfig[0].key)
+            }
+        });
+
+        $('#input-id').on('filebeforedelete', function (event, key, data) {
+            var images = $('#ImageNameDeleted').val();
+            var isDublicat = false;
+            if (images.length > 0) {
+                var arrayImage = images.split('|');
+                for (var i = 0; i < length; i++) {
+                    if (arrayImage[i] == data.response) isDublicat = true;
+                }
+                if (isDublicat == false) {
+                    $('#ImageNameDeleted').val(images + '|' + '/Content/upload/images/' + key);
+                    $('#ImageName').val($('#ImageName').val().replace('/Content/upload/images/' + key, '')); 
+                }
+            }
+            else {
+                $('#ImageNameDeleted').val('/Content/upload/images/' + key)
+                $('#ImageName').val($('#ImageName').val().replace('/Content/upload/images/' + key, '')); 
+            }
+
+            $('#ImageName').val($('#ImageName').val().replace('||', '')); 
         });
     </script>
 }

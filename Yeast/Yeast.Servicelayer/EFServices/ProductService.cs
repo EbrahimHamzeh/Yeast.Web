@@ -33,7 +33,19 @@ namespace Yeast.Servicelayer.EFServices
 
 		public void Add(ProductAdd Product)
 		{
-            _products.Add(new Product { Name = Product.Name, Description = Product.Description, Body = Product.Body, Price = Product.Price, Images = Filepond.SaveArrayImageToJsonString(Product.Image1) });
+            Product product = new Product();
+            product.Name = Product.Name;
+            product.Description = Product.Description;
+            product.Body = Product.Body;
+            product.Price = Product.Price;
+
+            string[] images = Product.ImageName.Split('|');
+
+            if (images.Length >= 1) product.Image1 = images[0];
+            if (images.Length >= 2) product.Image2 = images[1];
+            if (images.Length >= 3) product.Image3 = images[2];
+
+            _products.Add(product);
 		}
 
 		public Product Find(int id)
@@ -44,11 +56,14 @@ namespace Yeast.Servicelayer.EFServices
 		public ProductEdit FindForEdit(int id)
 		{
 			Product Product = _products.Find(id);
-			return new ProductEdit {
-				Name = Product.Name,
-				Description = Product.Description,
-				Body = Product.Body,
-                ImageJSONs = Filepond.DeserializeImageUpload(Product.Images),
+            return new ProductEdit {
+                Name = Product.Name,
+                Description = Product.Description,
+                Body = Product.Body,
+                Image1 = Product.Image1,
+                Image2 = Product.Image2,
+                Image3 = Product.Image3,
+                ImageName = string.Format("{0}|{1}|{2}", Product.Image1, Product.Image2, Product.Image3),
                 MetaData = Product.MetaData,
                 Price = Product.Price
             };
@@ -56,7 +71,7 @@ namespace Yeast.Servicelayer.EFServices
 
 		public async Task<IList<Model.FrontEnd.Product>> GetAllAsync()
 		{
-			return await _products.AsNoTracking().Select(x=> new Model.FrontEnd.Product { Id = x.Id, Body = x.Body, Description = x.Description, Image = x.Images , Name = x.Name, Price = x.Price }).Cacheable().ToListAsync();
+			return await _products.AsNoTracking().Select(x=> new Model.FrontEnd.Product { Id = x.Id, Body = x.Body, Description = x.Description, Image1 = x.Image1, Image2 = x.Image2, Image3 = x.Image3 , Name = x.Name, Price = x.Price }).Cacheable().ToListAsync();
 		}
 
 		public async Task<DataTableList<ProductList>> GetDataTableAsync(string search = "", string sort = "Name", string order = "asc", int offset = 0, int limit = 10)

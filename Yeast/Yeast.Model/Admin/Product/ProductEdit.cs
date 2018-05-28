@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using Yeast.Utilities;
 
@@ -21,7 +17,11 @@ namespace Yeast.Model.Admin
         [AllowHtml]
         public virtual string Body { get; set; }
         public decimal Price { get; set; }
-        public string[] Image1 { get; set; }
+        public string ImageName { get; set; }
+        public string ImageNameDeleted { get; set; }
+        public string Image1 { get; set; }
+        public string Image2 { get; set; }
+        public string Image3 { get; set; }
         public string MetaData { get; set; }
         public List<ImageJSON> ImageJSONs { get; set; }
     }

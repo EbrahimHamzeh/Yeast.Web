@@ -33,14 +33,27 @@ namespace Yeast.Areas.Admin.Controllers
 		{
             string imageText = Request["ImageName"];
             string[] images = imageText.Split('|');
+            string[] ImageNameDeleted = Request["ImageNameDeleted"].Split('|');
 
             if (images.Length >= 1) model.Image1 = images[0];
+            else model.Image1 = "";
             if (images.Length >= 2) model.Image2 = images[1];
+            else model.Image2 = "";
             if (images.Length >= 3) model.Image3 = images[2];
+            else model.Image3 = "";
 
             _optionService.Update(model);
             _uow.SaveAllChanges();
-			return RedirectToAction("Index");
+            foreach (var item in ImageNameDeleted)
+            {
+                string fullPath = Request.MapPath(item);
+                if (System.IO.File.Exists(fullPath))
+                {
+                    System.IO.File.Delete(fullPath);
+                }
+            }
+            
+            return RedirectToAction("Index");
 		}
 
         [HttpPost]

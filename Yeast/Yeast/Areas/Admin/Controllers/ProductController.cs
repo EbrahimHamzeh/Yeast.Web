@@ -79,15 +79,35 @@ namespace Yeast.Areas.Admin.Controllers
 			Product ProductUpdate = _ProductService.Find(id);
 			if (ProductUpdate == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-			if (TryUpdateModel(ProductUpdate, "", new string[] { "Name", "Description" }))
+			if (TryUpdateModel(ProductUpdate, "", new string[] { "Name", "Description", "Price", "Body"}))
 			{
-				if (!ModelState.IsValid)
+                string imageText = Request["ImageName"];
+                string[] images = imageText.Split('|');
+
+                if (images.Length >= 1) ProductUpdate.Image1 = images[0];
+                else ProductUpdate.Image1 = "";
+                if (images.Length >= 2) ProductUpdate.Image2 = images[1];
+                else ProductUpdate.Image2 = "";
+                if (images.Length >= 3) ProductUpdate.Image3 = images[2];
+                else ProductUpdate.Image3 = "";
+
+                if (!ModelState.IsValid)
 				{
 					return View(ProductUpdate);
 				}
 				_uow.SaveAllChanges();
-			}
-			return RedirectToAction("Index"); ;
+
+                string[] ImageNameDeleted = Request["ImageNameDeleted"].Split('|');
+                foreach (var item in ImageNameDeleted)
+                {
+                    string fullPath = Request.MapPath(item);
+                    if (System.IO.File.Exists(fullPath))
+                    {
+                        System.IO.File.Delete(fullPath);
+                    }
+                }
+            }
+            return RedirectToAction("Index"); ;
 		}
 
 		[HttpPost]
