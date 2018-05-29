@@ -369,6 +369,7 @@
     <Content Include="Content\images\94-thickbox_default-min__52854.1499246844.jpg" />
     <Content Include="Content\images\bg-breadcrumb-min.jpg" />
     <Content Include="Content\images\bg-image-min.jpg" />
+    <Content Include="Content\images\default_avatar_male.jpg" />
     <Content Include="Content\images\img-about-min.jpg" />
     <Content Include="Content\images\img-cate-2-min.jpg" />
     <Content Include="Content\images\img-cate-3-min.jpg" />
@@ -555,6 +556,7 @@
     <Content Include="Areas\Admin\Views\Product\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="uploads\default_avatar_male.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -612,6 +614,7 @@
     <Folder Include="Content\fonts\ttf\" />
     <Folder Include="Content\fonts\woff2\" />
     <Folder Include="Content\fonts\woff\" />
+    <Folder Include="Content\upload\avatar\" />
     <Folder Include="Content\upload\files\" />
     <Folder Include="Content\upload\images\" />
     <Folder Include="Content\upload\videos\" />

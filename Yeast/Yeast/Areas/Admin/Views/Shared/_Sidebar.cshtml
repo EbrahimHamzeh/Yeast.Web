@@ -89,11 +89,11 @@ foreach (string item in args)
                     @GetSelectedTag("Category")
                 </a>
             </li>
-            <li class="nav-item @GetActive("")">
+            <li class="nav-item @GetActive("User")">
                 <a href="@Url.Action("Index","User", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-users"></i>
                     <span class="title">کاربران</span>
-                    @GetSelectedTag("")
+                    @GetSelectedTag("User")
                 </a>
             </li>
             <li class="nav-item @GetActive("Tag")">

@@ -57,8 +57,20 @@ namespace Yeast.Servicelayer.EFServices
 		{
 			return _users.Find(userId);
 		}
+        public bool UpdateAsync(User user)
+        {
+            User updateuser= _users.Find(user.Id);
+            updateuser.FirstName = user.FirstName;
+            updateuser.LastName = user.LastName;
+            updateuser.Password = user.Password;
+            updateuser.AvatarPath = user.AvatarPath;
+            updateuser.UserName = user.UserName;
+            updateuser.Email = user.Email;
+            updateuser.Description = user.Description;
+            return true;
+        }
 
-		public async Task<ClaimsIdentity> GenerateUserIdentityAsync(User applicationUser)
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(User applicationUser)
 		{
 			// Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
 			var userIdentity = await CreateIdentityAsync(applicationUser, DefaultAuthenticationTypes.ApplicationCookie).ConfigureAwait(false);
@@ -177,10 +189,10 @@ namespace Yeast.Servicelayer.EFServices
 			this.PasswordValidator = new PasswordValidator
 			{
 				RequiredLength = 6,
-				RequireNonLetterOrDigit = true,
-				RequireDigit = true,
-				RequireLowercase = true,
-				RequireUppercase = true,
+				RequireNonLetterOrDigit = false,
+				RequireDigit = false,
+				RequireLowercase = false,
+				RequireUppercase = false,
 			};
 
 			// Configure user lockout defaults

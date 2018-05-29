@@ -50,43 +50,76 @@ namespace Yeast.Areas.Admin.Controllers
 		// User: Admin/User/Add/id
 		public virtual ActionResult Add(User model)
 		{
-			if (!ModelState.IsValid)
-			
+
+            if (!ModelState.IsValid)
 				return View(model);
-			_userService.CreateAsync(model,"123456789");
-			_uow.SaveAllChanges();
+
+            HttpPostedFileBase file = Request.Files["user-avatar"];
+            model.AvatarPath = file.FileName;
+            model.Email = model.Email;
+            model.UserName = model.Email;
+            model.CreatedDate = DateTime.Now;
+            model.BirthDay = DateTime.Now;
+            model.IP = Request.UserHostAddress;
+            model.IsBaned = false;
+            var path = Path.Combine(Server.MapPath("~/Content/upload/avatar/"), file.FileName);
+            file.SaveAs(path);
+            var userCreate = _userService.CreateAsync(model,model.Password);
+            foreach (var item in userCreate.Result.Errors)
+            {
+                        ModelState.AddModelError(Guid.NewGuid().ToString(),item.ToString());
+            }
+            if (!ModelState.IsValid)
+                return View(model);
+            _uow.SaveAllChanges();
 			return RedirectToAction("Index");
 		}
 
-		// GET: Admin/User/Edit
-		//public virtual ActionResult Edit(int? id)
-		//{
-		//	if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-		//	UserEdit user = _userService.FindForEdit(id ?? 0);
-		//	user.TagList = _tagService.DropDownList(user.TagIds);
-		//	user.CategoryList = _categoryService.DropDownList(user.CategoryIds);
-		//	if (user == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-		//	return View(user);
-		//}
+        //GET: Admin/User/Edit
+        public virtual ActionResult Edit(int? id)
+        {
+            if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            User user = _userService.FindById(id ?? 0);
+            if (user == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            return View(user);
+        }
 
-		//[HttpPost]
-		//[ValidateAntiForgeryToken]
-		//// User: Admin/User/Edit/id
-		//public virtual ActionResult Edit(int id, UserEdit userEdit)
-		//{
-		//	if (!ModelState.IsValid)
-		//	{
-		//		userEdit.TagList = _tagService.DropDownList(userEdit.TagIds);
-		//		userEdit.CategoryList = _categoryService.DropDownList(userEdit.CategoryIds);
-		//		return View(userEdit);
-		//	}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        // User: Admin/User/Edit/id
+        public virtual ActionResult Edit(int id, User userEdit)
+        {
+            HttpPostedFileBase file = Request.Files["user-avatar"];
+            userEdit.BirthDay = DateTime.Now;
+            if(file.FileName!="")
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(userEdit);
+                }
+                var path = Path.Combine(Server.MapPath("~/Content/upload/avatar/"), file.FileName);
+                file.SaveAs(path);
+                userEdit.AvatarPath = file.FileName;
+                userEdit.UserName = userEdit.Email;
+                _userService.UpdateAsync(userEdit);
+                _uow.SaveAllChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(userEdit);
+                }
+                userEdit.UserName = userEdit.Email;
+                _userService.UpdateAsync(userEdit);
+                _uow.SaveAllChanges();
+                return RedirectToAction("Index");
+            }
+           
+        }
 
-		//	_userService.Update(userEdit, id);
-		//	_uow.SaveAllChanges();
-		//	return RedirectToAction("Index"); ;
-		//}
-
-		[HttpPost]
+        [HttpPost]
 		[ValidateAntiForgeryToken]
 		// User: Admin/User/Delete/id
 		public virtual async Task<ActionResult> Delete(int id)

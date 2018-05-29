@@ -72,6 +72,14 @@
                                 </div>
                             </div>
                             <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Name">ایمیل</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="" name="TextImag1" value="@Model.Email" required placeholder="عنوان را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.TextImag1)
+                                    <div class="form-control-focus"> </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
                                 <label class="col-md-1 control-label" for="Name">متن اسلایدر اول</label>
                                 <div class="col-md-11">
                                     <input type="text" class="form-control" id="TextImag2" name="TextImag2" value="@Model.TextImag2" required placeholder="عنوان را وارد نمایید">
@@ -208,10 +216,16 @@
                 {
                     <text>"<img class='file-preview-image kv-preview-data' src='@Url.Content(Model.Image1)'>",</text>
                 }
+/**/
+/**/
+/**/
                 @if (!string.IsNullOrEmpty(Model.Image2))
                 {
                     <text>"<img class='file-preview-image kv-preview-data' src='@Url.Content(Model.Image2)'>",</text>
                 }
+/**/
+/**/
+/**/
                 @if (!string.IsNullOrEmpty(Model.Image3))
                 {
                     <text>"<img class='file-preview-image kv-preview-data' src='@Url.Content(Model.Image3)'>",</text>
@@ -222,10 +236,16 @@
                 {
                      <text>{ key: '@Url.Content(Model.Image1).Replace("/Content/upload/images/", string.Empty)' },</text>
                 }
+/**/
+/**/
+/**/
                 @if (!string.IsNullOrEmpty(Model.Image2))
                 {
                      <text>{ key: '@Url.Content(Model.Image2).Replace("/Content/upload/images/", string.Empty)' },</text>
                 }
+/**/
+/**/
+/**/
                 @if (!string.IsNullOrEmpty(Model.Image3))
                 {
                      <text>{ key: '@Url.Content(Model.Image3).Replace("/Content/upload/images/", string.Empty)' },</text>
