@@ -9,12 +9,15 @@ namespace Yeast.Model.Admin
 {
 	public class UserAdd
     {
-		[Required(ErrorMessage = "عنوان تگ برای ثبت الزامی می‌باشد"),
-		MaxLength(20, ErrorMessage = "عنوان تگ حداکثر ۲۰ حرف می‌باشد"),
-		MinLength(3, ErrorMessage = "عنوان تگ باید بیشتر از ۳ حرف باشد")]
-		public string Title { get; set; }
-
-		[MaxLength(ErrorMessage ="حداکثر ۱۰۰۰ کاراکتر می‌توانید وارد کنید")]
+		public string FirstName { get; set; }
+		public string LastName { get; set; }
+		public string AvatarPath { get; set; }
+		public DateTime BirthDay { get; set; }
+		public string IP { get; set; }
+		public bool IsBaned { get; set; }
+		public string Email { get; set; }
+		public string PhoneNumber { get; set; }
+		public string UserName { get; set; }
 		public string Description { get; set; }
 	}
 }
