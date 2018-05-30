@@ -73,8 +73,13 @@ namespace Yeast.Servicelayer.EFServices
 		{
 			return await _products.AsNoTracking().Select(x=> new Model.FrontEnd.Product { Id = x.Id, Body = x.Body, Description = x.Description, Image1 = x.Image1, Image2 = x.Image2, Image3 = x.Image3 , Name = x.Name, Price = x.Price }).Cacheable().ToListAsync();
 		}
+        public IList<Product> GetAllproduct()
+        {
+            //_products.OrderByDescending(x => new Product { Id = x.Id, Body = x.Body, Description = x.Description, Image1 = x.Image1, Image2 = x.Image2, Image3 = x.Image3, Name = x.Name, Price = x.Price }).OrderByDescending(m => m.Id).ToList();
+            return _products.OrderByDescending(x=>x.Id).ToList();
+        }
 
-		public async Task<DataTableList<ProductList>> GetDataTableAsync(string search = "", string sort = "Name", string order = "asc", int offset = 0, int limit = 10)
+        public async Task<DataTableList<ProductList>> GetDataTableAsync(string search = "", string sort = "Name", string order = "asc", int offset = 0, int limit = 10)
 		{
 			IQueryable<Product> ProductList = _products.AsNoTracking();
 			int total = 0;

@@ -10,20 +10,21 @@ namespace Yeast.Controllers
 	{
 
 		readonly IApplicationUserManager _userManager;
-		readonly ICategoryService _categoryService;
-		readonly IUnitOfWork _uow;
+        readonly IProductService _productService;
+        readonly IUnitOfWork _uow;
 
-		public HomeController(IUnitOfWork uow, ICategoryService categoryService, IApplicationUserManager userManager)
+		public HomeController(IUnitOfWork uow, IProductService productService, IApplicationUserManager userManager)
 		{
 			_uow = uow;
-			_categoryService = categoryService;
+            _productService = productService;
 			_userManager = userManager;
 		}
 
 		// GET: Home
-		public virtual ActionResult Index()
+		public ActionResult Index()
 		{
-			return View();
+            var list=_productService.GetAllproduct();
+            return View(list);
 		}
 	}
 }
