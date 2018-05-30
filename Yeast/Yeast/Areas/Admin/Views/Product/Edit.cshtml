@@ -330,6 +330,7 @@
                 }
                 if (isDublicat == false) {
                     $('#ImageNameDeleted').val(images + '|' + '/Content/upload/images/' + key);
+                    $('#ImageName').val($('#ImageName').val().replace('|/Content/upload/images/' + key, '')); 
                     $('#ImageName').val($('#ImageName').val().replace('/Content/upload/images/' + key, '')); 
                 }
             }
@@ -338,6 +339,7 @@
                 $('#ImageName').val($('#ImageName').val().replace('/Content/upload/images/' + key, '')); 
             }
 
+            $('#ImageName').val($('#ImageName').val().replace('||', '|')); 
             $('#ImageName').val($('#ImageName').val().replace('||', '|')); 
         });
     </script>
