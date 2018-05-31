@@ -22,6 +22,8 @@ namespace Yeast.Datalayer.Context
 		public DbSet<ServiceCategory> ServiceCategories { get; set; }
 		public DbSet<Option> Options { get; set; }
 		public DbSet<ContactUs> ContactUs { get; set; }
+		public DbSet<Email> Email { get; set; }
+		public DbSet<EmailTemplate> EmailTemplates { get; set; }
 		#endregion
 
 		#region constucter and EF ModelCreating

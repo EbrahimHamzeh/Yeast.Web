@@ -90,6 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Email.cs" />
     <Compile Include="Entities\Service.cs" />
     <Compile Include="Entities\ServiceCategory.cs" />
     <Compile Include="Entities\Category.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Entities\PostTranslate.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ContactUs.cs" />
+    <Compile Include="Entities\EmailTemplate.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="Entities\Option.cs" />
     <Compile Include="Entities\User.cs" />

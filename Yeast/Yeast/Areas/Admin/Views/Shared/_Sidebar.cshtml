@@ -138,6 +138,13 @@ foreach (string item in args)
                     <span class="title">ایمیل</span>
                 </a>
             </li>
+            <li class="nav-item  @GetActive("EmailTemplate")">
+                <a href="@Url.Action("Index", "EmailTemplate", new { Area = "Admin" })" class="nav-link nav-toggle">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="title">قالب ایمیل</span>
+                    @GetSelectedTag("EmailTemplate")
+                </a>
+            </li>
             <li class="nav-item @GetActive("ContactUs")">
                 <a href="@Url.Action("Index","ContactUs", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-envelope-o"></i>
