@@ -63,7 +63,7 @@ namespace Yeast.Utilities.Helpers
 		}
 		public static string GetCurrentNeutralCulture()
 		{
-			return GetNeutralCulture(Thread.CurrentThread.CurrentCulture.Name);
+			return GetNeutralCulture(Thread.CurrentThread.CurrentUICulture.Name);
 		}
 		public static string GetNeutralCulture(string name)
 		{

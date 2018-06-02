@@ -20,33 +20,45 @@
 			<!-- snippet location home_content -->
 		</div>
 		<div class="main full">
-			<div class="on row">
-				@*<div class="col-lg-2-4 col-md-12 col-sm-12 col-xs-12 block-product-left">
-					<div class="block_left">
-						<div class="page-subheading ">
-							<p class="title--main">Women</p>
-							<p class="title--sub">
-								<span>Shop The Look</span>
-							</p>
-						</div>
-						<div class="effect_image_3">
-							<div class="effect-img">
-								<img src="~/Content/images/img-cate-min.jpg" alt="Women" class="img-responsive">
-							</div>
-						</div>
-					</div>
-				</div>*@
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
-					<h2 class="page-heading">New Products</h2>
-					<section class="productGrid productGrid--maxCol4" dir="ltr">
-                            <div class="product">
-							<h3> @Model.Title</h3>
+            <div class="on row">
+                @*<div class="col-lg-2-4 col-md-12 col-sm-12 col-xs-12 block-product-left">
+            <div class="block_left">
+                <div class="page-subheading ">
+                    <p class="title--main">Women</p>
+                    <p class="title--sub">
+                        <span>Shop The Look</span>
+                    </p>
+                </div>
+                <div class="effect_image_3">
+                    <div class="effect-img">
+                        <img src="~/Content/images/img-cate-min.jpg" alt="Women" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>*@
+                <div class="content-about-us row" style="background:center top no-repeat;">
+                    <div class="container">
+                        <p></p><h1 class="page-header bottom-indent text-center" style="text-align: center;">ABOUT US</h1>
+                        <div class="page-content" style="text-align: center;">
+                            <div class="rte">
+                                <h3> @Model.Title</h3>
                                 <p> @Html.Raw(Model.Body)</p>
-						</div>
-					</section>
-					<!-- MEGAMENU -->
-				</div>
-			</div>
+                            </div>
+                        </div><p></p>
+                    </div>
+                </div>
+
+                @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
+                    <h2 class="page-heading">New Products</h2>
+                    <section class="productGrid productGrid--maxCol4" dir="ltr">
+                        <div class="product">
+                            <h3> @Model.Title</h3>
+                            <p> @Html.Raw(Model.Body)</p>
+                        </div>
+                    </section>
+                     MEGAMENU 
+                </div>*@
+            </div>
 		</div>
 	</div>
 	<div id="modal" class="modal" data-reveal data-prevent-quick-search-close>

@@ -1,0 +1,12 @@
+﻿using System.Collections.Generic;
+using Yeast.Model.Admin;
+
+namespace Yeast.Model.FrontEnd
+{
+    public class HomeViewModel
+    {
+        public IEnumerable<Yeast.DomainClasses.Entities.Product> ProductList { get; set; }
+        public HomeModel homeModel { get; set; }
+
+    }
+}

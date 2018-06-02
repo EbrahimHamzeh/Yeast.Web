@@ -1,5 +1,5 @@
-﻿@using Yeast.DomainClasses.Entities
-@model IList<Product>
+﻿@using Yeast.Model.FrontEnd
+@model HomeViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -31,20 +31,20 @@
         <div class="main full">
             <div class="on row">
                 @*<div class="col-lg-2-4 col-md-12 col-sm-12 col-xs-12 block-product-left">
-                        <div class="block_left">
-                            <div class="page-subheading ">
-                                <p class="title--main">Women</p>
-                                <p class="title--sub">
-                                    <span>Shop The Look</span>
-                                </p>
-                            </div>
-                            <div class="effect_image_3">
-                                <div class="effect-img">
-                                    <img src="~/Content/images/img-cate-min.jpg" alt="Women" class="img-responsive">
-                                </div>
-                            </div>
+                <div class="block_left">
+                    <div class="page-subheading ">
+                        <p class="title--main">Women</p>
+                        <p class="title--sub">
+                            <span>Shop The Look</span>
+                        </p>
+                    </div>
+                    <div class="effect_image_3">
+                        <div class="effect-img">
+                            <img src="~/Content/images/img-cate-min.jpg" alt="Women" class="img-responsive">
                         </div>
-                    </div>*@
+                    </div>
+                </div>
+            </div>*@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
                     <h2 class="page-heading">New Products</h2>
                     <section class="productGrid productGrid--maxCol4" dir="ltr" data-slick='{
@@ -77,8 +77,8 @@
                 }
             ]
     }'>
-                        @foreach (var item in Model)
-                        {
+                        @foreach (var item in Model.ProductList)
+                {
                     <div class="product">
                         <article class="card ">
                             <figure class="card-figure" style="height:485px;background-color:#e6e0e0;">
@@ -168,8 +168,8 @@
                             </div>
                         </article>
                     </div>
-}
-            
+        }
+
                     </section>
 
                     <!-- MEGAMENU -->
@@ -180,16 +180,16 @@
                 <div class="blockstore row">
                     <div class="col-md-12 col-lg-6 no-padding blockstore__left">
                         <div class="blockstore__left--logo">
-                            <img src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/logo-store.png" alt="We love fashion" class="img-responsive">
+                            <img src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/logo-store.png" alt="@Html.Raw(Model.homeModel.Titlepart1)" class="img-responsive">
                         </div>
-                        <h4 class="blockstore__left--title">We love fashion</h4>
+                        <h4 class="blockstore__left--title"> @Html.Raw(Model.homeModel.Titlepart1)</h4>
                         <div class="blockstore__left--des">
-                            Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat
+                            @Html.Raw(Model.homeModel.Bodypart1)
                         </div>
                         <a class="blockstore__left--btn btn btn-outline-inverse" href="http://apollo-demoshop13.mybigcommerce.com">More Detail</a>
                     </div>
                     <div class="col-md-12 col-lg-6 no-padding blockstore_right">
-                        <img src="~/Content/images/img-about-min.jpg" alt="We love fashion" class="img-responsive">
+                        <img src="~/Content/images/images.jpg" alt="We love fashion" class="img-responsive">
                     </div>
                 </div>
             </div>
@@ -591,7 +591,7 @@
 
                 </div>
             </div>
-            <div class="on clearfix">
+            @*<div class="on clearfix">
                 <div class="block-email" style="background:#ededeb">
                     <div class="container">
                         <div class="blockemail__img col-md-6 col-sm-6">
@@ -621,23 +621,41 @@
                         </div>
                     </div>
                 </div>
+            </div>*@
+            <div class="on clearfix">
+                <div class="blockstore row" style="background:#ededeb">
+
+                    <div class="col-md-12 col-lg-6 no-padding blockstore_right" style="background:#ededeb">
+                        <img src="/Content/images/images.jpg" alt="We love fashion" class="img-responsive">
+                    </div>
+                    <div class="col-md-12 col-lg-6 no-padding blockstore__left" style="text-align: center;background:#ededeb">
+
+                        <div class="blockstore__left--logo">
+                            <img src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/logo-store.png" alt="@Html.Raw(Model.homeModel.Titlepart2)" class="img-responsive">
+                        </div>
+                        <h4 class="blockstore__left--title" style="color: black;">@Html.Raw(Model.homeModel.Titlepart2) </h4>
+                        <div class="blockstore__left--des" style="color: black;">
+                            @Html.Raw(Model.homeModel.Bodypart2)
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="on row">
                 @*<div class="col-lg-2-4 col-md-12 col-sm-12 col-xs-12 block-product-left">
-                        <div class="block_left">
-                            <div class="page-subheading ">
-                                <p class="title--main">Accessories</p>
-                                <p class="title--sub">
-                                    <span>The Collections</span>
-                                </p>
-                            </div>
-                            <div class="effect_image_3">
-                                <div class="effect-img">
-                                    <img src="~/Content/images/img-cate-3-min.jpg" alt="Accessories" class="img-responsive">
-                                </div>
-                            </div>
+                <div class="block_left">
+                    <div class="page-subheading ">
+                        <p class="title--main">Accessories</p>
+                        <p class="title--sub">
+                            <span>The Collections</span>
+                        </p>
+                    </div>
+                    <div class="effect_image_3">
+                        <div class="effect-img">
+                            <img src="~/Content/images/img-cate-3-min.jpg" alt="Accessories" class="img-responsive">
                         </div>
-                    </div>*@
+                    </div>
+                </div>
+            </div>*@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
                     <h2 class="page-heading">Most Popular Products</h2>
                     <ul class="productGrid productGrid--maxCol4" data-product-type="top_sellers" dir="ltr" data-slick='{

@@ -143,7 +143,122 @@ namespace Yeast.Servicelayer.EFServices
             if (option.Where(x => x.Name == "TextImag3").Any())
                 sliderViewModel.TextImag3 = option.Where(x => x.Name == "TextImag3").FirstOrDefault().Value;
 
+            sliderViewModel.BodyEn = option.Where(x => x.Name == "BodyEn").FirstOrDefault().Value; ;
+            sliderViewModel.BodyEn1 = option.Where(x => x.Name == "BodyEn1").FirstOrDefault().Value; 
+            sliderViewModel.BodyFa = option.Where(x => x.Name == "BodyFa").FirstOrDefault().Value; ;
+            sliderViewModel.BodyFa1 = option.Where(x => x.Name == "BodyFa1").FirstOrDefault().Value; 
+            sliderViewModel.BodyRu = option.Where(x => x.Name == "BodyRu").FirstOrDefault().Value; ;
+            sliderViewModel.BodyRu1 = option.Where(x => x.Name == "BodyRu1").FirstOrDefault().Value; 
+            sliderViewModel.BodySa = option.Where(x => x.Name == "BodySa").FirstOrDefault().Value; ;
+            sliderViewModel.BodySa1 = option.Where(x => x.Name == "BodySa1").FirstOrDefault().Value; 
+
+            sliderViewModel.TitleEn = option.Where(x => x.Name == "TitleEn").FirstOrDefault().Value; ;
+            sliderViewModel.TitleEn1 = option.Where(x => x.Name == "TitleEn1").FirstOrDefault().Value; 
+            sliderViewModel.TitleFa = option.Where(x => x.Name == "TitleFa").FirstOrDefault().Value; ;
+            sliderViewModel.TitleFa1 = option.Where(x => x.Name == "TitleFa1").FirstOrDefault().Value; 
+            sliderViewModel.TitleRu = option.Where(x => x.Name == "TitleRu").FirstOrDefault().Value; ;
+            sliderViewModel.TitleRu1 = option.Where(x => x.Name == "TitleRu1").FirstOrDefault().Value; 
+            sliderViewModel.TitleSa = option.Where(x => x.Name == "TitleSa").FirstOrDefault().Value; ;
+            sliderViewModel.TitleSa1 = option.Where(x => x.Name == "TitleSa1").FirstOrDefault().Value; 
+
             return sliderViewModel;
+        }
+
+
+        public HomeModel GetHome()
+        {
+            var option = _option.ToList();
+
+            HomeModel home = new HomeModel();
+            string cultur = CultureHelper.GetCurrentNeutralCulture();
+
+            switch (cultur)
+            {
+                case "fa":
+                    if (option.Where(x => x.Name == "Image1").Any())
+                        home.Image1 = option.Where(x => x.Name == "Image1").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "Image2").Any())
+                        home.Image2 = option.Where(x => x.Name == "Image2").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "Image3").Any())
+                        home.Image3 = option.Where(x => x.Name == "Image3").FirstOrDefault().Value;
+
+                    if (option.Where(x => x.Name == "TextImag1").Any())
+                        home.TextImag1 = option.Where(x => x.Name == "TextImag1").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "TextImag2").Any())
+                        home.TextImag2 = option.Where(x => x.Name == "TextImag2").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "TextImag3").Any())
+                        home.TextImag3 = option.Where(x => x.Name == "TextImag3").FirstOrDefault().Value;
+
+                    home.Bodypart1 = _option.Where(x => x.Name == "BodyFa").FirstOrDefault().Value;
+                    home.Bodypart2 = _option.Where(x => x.Name == "BodyFa1").FirstOrDefault().Value;
+                    home.Titlepart1 = _option.Where(x => x.Name == "TitleFa").FirstOrDefault().Value;
+                    home.Titlepart2 = _option.Where(x => x.Name == "TitleFa1").FirstOrDefault().Value;
+                    break;
+                case "en":
+                    if (option.Where(x => x.Name == "Image1").Any())
+                        home.Image1 = option.Where(x => x.Name == "Image1").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "Image2").Any())
+                        home.Image2 = option.Where(x => x.Name == "Image2").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "Image3").Any())
+                        home.Image3 = option.Where(x => x.Name == "Image3").FirstOrDefault().Value;
+
+                    if (option.Where(x => x.Name == "TextImag1").Any())
+                        home.TextImag1 = option.Where(x => x.Name == "TextImag1").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "TextImag2").Any())
+                        home.TextImag2 = option.Where(x => x.Name == "TextImag2").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "TextImag3").Any())
+                        home.TextImag3 = option.Where(x => x.Name == "TextImag3").FirstOrDefault().Value;
+
+                    home.Bodypart1 = _option.Where(x => x.Name == "BodyEn").FirstOrDefault().Value;
+                    home.Bodypart2 = _option.Where(x => x.Name == "BodyEn1").FirstOrDefault().Value;
+                    home.Titlepart1 = _option.Where(x => x.Name == "TitleEn").FirstOrDefault().Value;
+                    home.Titlepart2 = _option.Where(x => x.Name == "TitleEn1").FirstOrDefault().Value;
+                    break;
+                case "ar":
+                    if (option.Where(x => x.Name == "Image1").Any())
+                        home.Image1 = option.Where(x => x.Name == "Image1").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "Image2").Any())
+                        home.Image2 = option.Where(x => x.Name == "Image2").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "Image3").Any())
+                        home.Image3 = option.Where(x => x.Name == "Image3").FirstOrDefault().Value;
+
+                    if (option.Where(x => x.Name == "TextImag1").Any())
+                        home.TextImag1 = option.Where(x => x.Name == "TextImag1").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "TextImag2").Any())
+                        home.TextImag2 = option.Where(x => x.Name == "TextImag2").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "TextImag3").Any())
+                        home.TextImag3 = option.Where(x => x.Name == "TextImag3").FirstOrDefault().Value;
+
+                    home.Bodypart1 = _option.Where(x => x.Name == "BodySa").FirstOrDefault().Value;
+                    home.Bodypart2 = _option.Where(x => x.Name == "BodySa1").FirstOrDefault().Value;
+                    home.Titlepart1 = _option.Where(x => x.Name == "TitleSa").FirstOrDefault().Value;
+                    home.Titlepart2 = _option.Where(x => x.Name == "TitleSa1").FirstOrDefault().Value;
+                    break;
+                case "ru":
+                    if (option.Where(x => x.Name == "Image1").Any())
+                        home.Image1 = option.Where(x => x.Name == "Image1").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "Image2").Any())
+                        home.Image2 = option.Where(x => x.Name == "Image2").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "Image3").Any())
+                        home.Image3 = option.Where(x => x.Name == "Image3").FirstOrDefault().Value;
+
+                    if (option.Where(x => x.Name == "TextImag1").Any())
+                        home.TextImag1 = option.Where(x => x.Name == "TextImag1").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "TextImag2").Any())
+                        home.TextImag2 = option.Where(x => x.Name == "TextImag2").FirstOrDefault().Value;
+                    if (option.Where(x => x.Name == "TextImag3").Any())
+                        home.TextImag3 = option.Where(x => x.Name == "TextImag3").FirstOrDefault().Value;
+
+                    home.Bodypart1 = _option.Where(x => x.Name == "BodyRu").FirstOrDefault().Value;
+                    home.Bodypart2 = _option.Where(x => x.Name == "BodyRu1").FirstOrDefault().Value;
+                    home.Titlepart1 = _option.Where(x => x.Name == "TitleRu").FirstOrDefault().Value;
+                    home.Titlepart2 = _option.Where(x => x.Name == "TitleRu1").FirstOrDefault().Value;
+                    break;
+                default:
+                    break;
+            }
+
+            return home;
         }
     }
 }

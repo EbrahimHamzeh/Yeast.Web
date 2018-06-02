@@ -8,7 +8,6 @@ namespace Yeast.DomainClasses.EntityConfiguration
 		public OptionConfig()
 		{
 			Property(option => option.Name).HasMaxLength(100);
-			Property(option => option.Value).HasMaxLength(100);
 		}
 	}
 }

@@ -403,7 +403,9 @@
     <Content Include="Content\images\94-thickbox_default-min__52854.1499246844.jpg" />
     <Content Include="Content\images\bg-breadcrumb-min.jpg" />
     <Content Include="Content\images\bg-image-min.jpg" />
+    <Content Include="Content\images\blog2.jpg" />
     <Content Include="Content\images\default_avatar_male.jpg" />
+    <Content Include="Content\images\images.jpg" />
     <Content Include="Content\images\img-about-min.jpg" />
     <Content Include="Content\images\img-cate-2-min.jpg" />
     <Content Include="Content\images\img-cate-3-min.jpg" />

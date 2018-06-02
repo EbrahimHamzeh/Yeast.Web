@@ -11,5 +11,6 @@ namespace Yeast.Servicelayer.Interfaces
         AboutUs GetAllAboutUs();
         AboutUsViewModel GetByCulterAboutUsV();
         SliderViewModel GetAllSliderImage();
+        HomeModel GetHome();
     }
 }
