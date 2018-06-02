@@ -66,6 +66,7 @@ namespace Yeast.IocConfig
 				x.For<IServiceCategoryService>().Use<ServiceCategoryService>();
 				x.For<IServiceService>().Use<ServiceService>();
 				x.For<IEmailTemplateService>().Use<EmailTemplateService>();
+				x.For<IEmailService>().Use<EmailsService>();
 
 			});
 		}

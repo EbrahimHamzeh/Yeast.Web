@@ -132,10 +132,11 @@ foreach (string item in args)
             <li class="heading">
                 <h3 class="uppercase">ارتباط با مشتری</h3>
             </li>
-            <li class="nav-item  ">
+            <li class="nav-item @GetActive("Email")">
                 <a href="@Url.Action("Index", "Email", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-envelope-o"></i>
                     <span class="title">ایمیل</span>
+                    @GetSelectedTag("Email")
                 </a>
             </li>
             <li class="nav-item  @GetActive("EmailTemplate")">

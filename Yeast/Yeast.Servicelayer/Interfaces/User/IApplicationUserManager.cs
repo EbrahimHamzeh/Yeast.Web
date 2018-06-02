@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
 using Yeast.Utilities.BootstrapTable;
@@ -559,6 +560,6 @@ namespace Yeast.Servicelayer.Interfaces
 		Task<User> GetCurrentUserAsync();
 		int GetCurrentUserId();
         Task<DataTableList<UserList>> GetDataTableAsync(PagedQueryViewModel model);
-
+        SelectList DropDownList();
     }
 }

@@ -134,6 +134,7 @@
     <Compile Include="EFServices\PostService.cs" />
     <Compile Include="EFServices\ContactUsService.cs" />
     <Compile Include="EFServices\EmailTemplateService.cs" />
+    <Compile Include="EFServices\EmailService.cs" />
     <Compile Include="EFServices\TagService.cs" />
     <Compile Include="EFServices\CategoryService.cs" />
     <Compile Include="EFServices\User\ApplicationUserManager.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Interfaces\ICategoryService.cs" />
     <Compile Include="Interfaces\IContactUsService.cs" />
     <Compile Include="Interfaces\IEmailTemplateService.cs" />
+    <Compile Include="Interfaces\IEmailService.cs" />
     <Compile Include="Interfaces\ITagService.cs" />
     <Compile Include="Interfaces\User\ICustomUserStore.cs" />
     <Compile Include="Interfaces\User\ICustomRoleStore.cs" />

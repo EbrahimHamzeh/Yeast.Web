@@ -102,11 +102,11 @@ namespace Yeast.Servicelayer.EFServices
 			List<SelectListItem> selectListItemList;
 			if (tagSelectedId == null)
 			{
-				selectListItemList = _emailTemplate.Where(x => x.Enable).Select(x => new SelectListItem { Text = x.Title, Value = x.Id.ToString() }).ToList();
+				selectListItemList = _emailTemplate.Select(x => new SelectListItem { Text = x.Title, Value = x.Id.ToString() }).ToList();
 			}
 			else
 			{
-				selectListItemList = _emailTemplate.Where(x => x.Enable).Select(x => new SelectListItem
+				selectListItemList = _emailTemplate.Select(x => new SelectListItem
 				{
 					Text = x.Title,
 					Value = x.Id.ToString(),

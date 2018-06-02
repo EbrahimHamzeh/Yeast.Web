@@ -10,6 +10,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
@@ -245,6 +246,13 @@ namespace Yeast.Servicelayer.EFServices
             });
 
             return new DataTableList<UserList> { rows = users.ToList(), total = total };
+        }
+
+        public SelectList DropDownList()
+        {
+            List<SelectListItem> selectListItemList;
+            selectListItemList = _users.Select(x => new SelectListItem { Text = x.FirstName + " " + x.LastName, Value = x.Id.ToString() }).ToList();
+            return new SelectList(selectListItemList, "Value", "Text");
         }
     }
 }

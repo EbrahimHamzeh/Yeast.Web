@@ -194,6 +194,7 @@
     <Compile Include="Areas\Admin\Controllers\SiteInformationController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactUsController.cs" />
     <Compile Include="Areas\Admin\Controllers\EmailTemplateController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmailController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
@@ -461,6 +462,8 @@
     <Content Include="Content\drag-and-drop-newsletter-builder-using-jquery\_css\Icomoon\icomoon.eot" />
     <Content Include="Content\drag-and-drop-newsletter-builder-using-jquery\_css\Icomoon\icomoon.ttf" />
     <Content Include="Content\drag-and-drop-newsletter-builder-using-jquery\_css\Icomoon\icomoon.woff" />
+    <Content Include="Areas\Admin\Views\Email\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Email\Index.cshtml" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\enjoyhint.js" />
     <Content Include="Content\js\filepond-plugin-file-validate-size.min.js" />

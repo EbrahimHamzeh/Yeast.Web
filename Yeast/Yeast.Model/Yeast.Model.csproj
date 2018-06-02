@@ -107,6 +107,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Email\EmailAdd.cs" />
+    <Compile Include="Admin\Email\EmailList.cs" />
     <Compile Include="Admin\ServiceCategory\ServiceCategoryAdd.cs" />
     <Compile Include="Admin\ServiceCategory\ServiceCategoryEdit.cs" />
     <Compile Include="Admin\ServiceCategory\ServiceCategoryList.cs" />
