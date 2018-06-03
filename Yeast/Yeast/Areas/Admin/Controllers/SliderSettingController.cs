@@ -6,6 +6,7 @@ using System.Web;
 using System.IO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Yeast.Areas.Admin.Controllers
 {
@@ -31,8 +32,8 @@ namespace Yeast.Areas.Admin.Controllers
 		[ValidateAntiForgeryToken]
         public virtual ActionResult Index(SliderViewModel model)
 		{
-            string imageText = Request["ImageName"];
-            string[] images = imageText.Split('|');
+            string imageText = Request["ImageName"].Replace("||/", "|/");
+            string[] images = imageText.Split('|').Where(x => !string.IsNullOrEmpty(x)).ToArray();
             string[] ImageNameDeleted = Request["ImageNameDeleted"].Split('|');
 
             if (images.Length >= 1) model.Image1 = images[0];

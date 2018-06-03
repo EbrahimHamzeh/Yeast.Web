@@ -81,7 +81,7 @@ namespace Yeast.Areas.Admin.Controllers
 
 			if (TryUpdateModel(ProductUpdate, "", new string[] { "Name", "Description", "Price", "Body"}))
 			{
-                string imageText = Request["ImageName"].Replace("||/","|");
+                string imageText = Request["ImageName"].Replace("||/","|/");
                 string[] images = imageText.Split('|').Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
                 if (images.Length >= 1) ProductUpdate.Image1 = images[0];
