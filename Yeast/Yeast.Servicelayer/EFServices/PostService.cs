@@ -54,6 +54,7 @@ namespace Yeast.Servicelayer.EFServices
 				Title = post.Title,
 				Body = post.Body,
 				Slug = post.Slug,
+                ImageTitle=post.ImageTitle,
 				Tags = tags,
 				Categories = categories,
 				Keyword = post.Keyword,
@@ -84,8 +85,12 @@ namespace Yeast.Servicelayer.EFServices
 		{
 			return await _posts.AsNoTracking().Cacheable().ToListAsync();
 		}
+        public List<Post> GetAll()
+        {
+            return _posts.AsNoTracking().Cacheable().ToList();
+        }
 
-		public async Task<DataTableList<PostList>> GetDataTableAsync(PagedQueryViewModel model)
+        public async Task<DataTableList<PostList>> GetDataTableAsync(PagedQueryViewModel model)
 		{
 			IQueryable<Post> postList = _posts.AsNoTracking();
 			int total = 0;

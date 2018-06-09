@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Yeast.DomainClasses.Entities.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="grid" data-masonry="{ &quot;itemSelector&quot;: &quot;.grid-item&quot;, &quot;columnWidth&quot;: 0 }" style="position: relative; min-height: 1000px;">
+    @foreach (var item in Model)
+    {
+        <article class="blog grid-item  " style="position: absolute; left: 0px; top: 0px;">
+            <div class="blog-post-figure">
+                <figure class="blog-thumbnail">
+                    @if (!string.IsNullOrEmpty(item.ImageTitle))
+                    {
+                        <a href="">
+                            <img src="~/Content/upload/images/@item.ImageTitle " alt="Blog NewFashion" title="Blog NewFashion">
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="">
+                            <img src="/uploads/noimg.png" alt="Blog NewFashion" title="Blog NewFashion">
+                        </a>
+                    }
+
+                </figure>
+            </div>
+
+            <div class="blog-post-body">
+                <header class="blog-header">
+                    <h2 class="blog-title">
+                        @Html.ActionLink(item.Title, "Details", new { id = item.Id })
+                    </h2>
+                    <p class="blog-date">@item.CreatedDate</p>
+                </header>
+                <div class="blog-post">
+                    @item.Description
+
+                    @Html.ActionLink("جزئیات بیشتر", "Details", new { id = item.Id })
+                </div>
+            </div>
+        </article>
+    }
+</div>

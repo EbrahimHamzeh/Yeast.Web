@@ -18,7 +18,8 @@ namespace Yeast.DomainClasses.Entities
 		public virtual DateTime CreatedDate { get; set; }
 		public virtual DateTime? ModifiedDate { get; set; }
 		public virtual string Title { get; set; }
-		public virtual string Keyword { get; set; }
+        public virtual string ImageTitle { get; set; }
+        public virtual string Keyword { get; set; }
 		[AllowHtml]
 		public virtual string Body { get; set; }
 		public virtual string Slug { get; set; }

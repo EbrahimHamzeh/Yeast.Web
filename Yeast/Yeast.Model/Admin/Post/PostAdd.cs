@@ -10,8 +10,9 @@ namespace Yeast.Model.Admin
 		MaxLength(20, ErrorMessage = "عنوان تگ حداکثر ۲۰ حرف می‌باشد"),
 		MinLength(3, ErrorMessage = "عنوان تگ باید بیشتر از ۳ حرف باشد")]
 		public string Title { get; set; }
+        public string ImageTitle { get; set; }
 
-		[MaxLength(ErrorMessage ="حداکثر ۱۰۰۰ کاراکتر می‌توانید وارد کنید")]
+        [MaxLength(ErrorMessage ="حداکثر ۱۰۰۰ کاراکتر می‌توانید وارد کنید")]
 		public string Description { get; set; }
 		[AllowHtml]
 		public string Body { get; set; }

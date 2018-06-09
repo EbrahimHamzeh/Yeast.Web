@@ -62,8 +62,11 @@ namespace Yeast.Areas.Admin.Controllers
 				model.CategoryList = _categoryService.DropDownList(model.CategoryIds);
 				return View(model);
 			}
-
-			_postService.Add(model);
+            HttpPostedFileBase file = Request.Files["user-avatar"];
+            var path = Path.Combine(Server.MapPath("~/Content/upload/images/"), file.FileName);
+            file.SaveAs(path);
+            model.ImageTitle = file.FileName;
+            _postService.Add(model);
 			_uow.SaveAllChanges();
 			return RedirectToAction("Index");
 		}

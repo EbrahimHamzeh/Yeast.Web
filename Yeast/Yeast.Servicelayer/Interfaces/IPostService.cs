@@ -16,6 +16,7 @@ namespace Yeast.Servicelayer.Interfaces
 		Post Find(int id);
 		PostEdit FindForEdit(int id);
 		Task<IList<Post>> GetAllAsync();
-		Task<DataTableList<PostList>> GetDataTableAsync(PagedQueryViewModel model);
+        List<Post> GetAll();
+        Task<DataTableList<PostList>> GetDataTableAsync(PagedQueryViewModel model);
 	}
 }
