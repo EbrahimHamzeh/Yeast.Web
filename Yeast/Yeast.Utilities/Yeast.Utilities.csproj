@@ -100,6 +100,7 @@
     <Compile Include="Attribute\NoOutputCache.cs" />
     <Compile Include="Attribute\AjaxOnly.cs" />
     <Compile Include="BaseController\BaseController.cs" />
+    <Compile Include="DynamicRoleBase\ControllerHelper.cs" />
     <Compile Include="Filepond\Filepond.cs" />
     <Compile Include="BootstrapTable\Interface\IPagedQueryModel.cs" />
     <Compile Include="BootstrapTable\IQueryableExtensions.cs" />

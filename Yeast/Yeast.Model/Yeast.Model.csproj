@@ -131,6 +131,9 @@
     <Compile Include="Admin\EmailTemplate\EmailTemplateAdd.cs" />
     <Compile Include="Admin\EmailTemplate\EmailTemplateEdit.cs" />
     <Compile Include="Admin\EmailTemplate\EmailTemplateList.cs" />
+    <Compile Include="Admin\RoleAccess\RoleAccessAdd.cs" />
+    <Compile Include="Admin\RoleAccess\RoleAccessEdit.cs" />
+    <Compile Include="Admin\RoleAccess\RoleAccessList.cs" />
     <Compile Include="Admin\User\UserAdd.cs" />
     <Compile Include="Admin\User\UserEdit.cs" />
     <Compile Include="Admin\User\UserList.cs" />

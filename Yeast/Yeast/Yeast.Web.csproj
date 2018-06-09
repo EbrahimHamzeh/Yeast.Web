@@ -195,6 +195,7 @@
     <Compile Include="Areas\Admin\Controllers\ContactUsController.cs" />
     <Compile Include="Areas\Admin\Controllers\EmailTemplateController.cs" />
     <Compile Include="Areas\Admin\Controllers\EmailController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoleAccessController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
@@ -215,6 +216,7 @@
     <Content Include="Content\css\enjoyhint.css" />
     <Content Include="Content\css\filepond-plugin-image-preview.min.css" />
     <Content Include="Content\css\filepond.min.css" />
+    <Content Include="Content\css\jstree.css" />
     <Content Include="Content\css\jstree.min.css" />
     <Content Include="Content\css\ladda-themeless-rtl.min.css" />
     <Content Include="Content\css\layout-rtl.css" />
@@ -391,6 +393,10 @@
     <Content Include="Content\images\104-thickbox_default-min__37458.1499308829.jpg" />
     <Content Include="Content\images\104-thickbox_default-min__94774.1499311192.jpg" />
     <Content Include="Content\images\132-thickbox_default-min__15237.1499306777.jpg" />
+    <Content Include="Content\images\32px.png" />
+    <Content Include="Content\images\32px_line.png" />
+    <Content Include="Content\images\32px_original.png" />
+    <Content Include="Content\images\40px.png" />
     <Content Include="Content\images\58-thickbox_default-min__02732.1499309302.jpg" />
     <Content Include="Content\images\59-thickbox_default-min__78909.1499309309.jpg" />
     <Content Include="Content\images\85-thickbox_default-min__01047.1.jpg" />
@@ -401,9 +407,11 @@
     <Content Include="Content\images\90-thickbox_default-min__24015.1499250559.jpg" />
     <Content Include="Content\images\93-thickbox_default-min__61912.1499246850.jpg" />
     <Content Include="Content\images\94-thickbox_default-min__52854.1499246844.jpg" />
+    <Content Include="Content\images\arrow.png" />
     <Content Include="Content\images\bg-breadcrumb-min.jpg" />
     <Content Include="Content\images\bg-image-min.jpg" />
     <Content Include="Content\images\blog2.jpg" />
+    <Content Include="Content\images\bullet_shape.png" />
     <Content Include="Content\images\default_avatar_male.jpg" />
     <Content Include="Content\images\images.jpg" />
     <Content Include="Content\images\img-about-min.jpg" />
@@ -466,6 +474,9 @@
     <Content Include="Content\drag-and-drop-newsletter-builder-using-jquery\_css\Icomoon\icomoon.woff" />
     <Content Include="Areas\Admin\Views\Email\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Email\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\RoleAccess\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\RoleAccess\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\RoleAccess\Index.cshtml" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\enjoyhint.js" />
     <Content Include="Content\js\filepond-plugin-file-validate-size.min.js" />

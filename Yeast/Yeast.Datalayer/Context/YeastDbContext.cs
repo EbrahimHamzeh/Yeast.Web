@@ -24,10 +24,11 @@ namespace Yeast.Datalayer.Context
 		public DbSet<ContactUs> ContactUs { get; set; }
 		public DbSet<Email> Email { get; set; }
 		public DbSet<EmailTemplate> EmailTemplates { get; set; }
-		#endregion
+        public DbSet<RoleAccess> RoleAccesses { get; set; }
+        #endregion
 
-		#region constucter and EF ModelCreating
-		public YeastDbContext(): base("YeastDbContext"){}
+        #region constucter and EF ModelCreating
+        public YeastDbContext(): base("YeastDbContext"){}
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
@@ -40,7 +41,7 @@ namespace Yeast.Datalayer.Context
 			modelBuilder.Configurations.Add(new PostTranslateConfig());
 			modelBuilder.Configurations.Add(new CategoryConfig());
 			modelBuilder.Configurations.Add(new OptionConfig());
-
+			modelBuilder.Configurations.Add(new RoleAccessConfig());
 
 			modelBuilder.Entity<User>().ToTable("Users");
 			modelBuilder.Entity<CustomRole>().ToTable("Roles");

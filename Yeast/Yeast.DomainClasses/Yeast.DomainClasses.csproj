@@ -90,6 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\RoleAccess.cs" />
     <Compile Include="Entities\Email.cs" />
     <Compile Include="Entities\Service.cs" />
     <Compile Include="Entities\ServiceCategory.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="EntityConfiguration\OptionConfig.cs" />
     <Compile Include="EntityConfiguration\PostTranslateConfig.cs" />
     <Compile Include="EntityConfiguration\ProductConfig.cs" />
+    <Compile Include="EntityConfiguration\RoleAccessConfig.cs" />
     <Compile Include="EntityConfiguration\UserConfig.cs" />
     <Compile Include="EntityConfiguration\TagConfig.cs" />
     <Compile Include="EntityConfiguration\CommentConfig.cs" />

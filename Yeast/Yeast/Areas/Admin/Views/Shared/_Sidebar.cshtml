@@ -96,6 +96,13 @@ foreach (string item in args)
                     @GetSelectedTag("User")
                 </a>
             </li>
+            <li class="nav-item @GetActive("RoleAccess")">
+                <a href="@Url.Action("Index","RoleAccess", new { Area = "Admin" })" class="nav-link nav-toggle">
+                    <i class="fa fa-users"></i>
+                    <span class="title">سطج دسترسی</span>
+                    @GetSelectedTag("RoleAccess")
+                </a>
+            </li>
             <li class="nav-item @GetActive("Tag")">
                 <a href="@Url.Action("Index", "Tag", new { Area = "Admin" })" class="nav-link nav-toggle">
                     <i class="fa fa-tags"></i>
