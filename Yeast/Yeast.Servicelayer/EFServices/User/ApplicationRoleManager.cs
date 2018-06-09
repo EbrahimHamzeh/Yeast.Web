@@ -33,7 +33,8 @@ namespace Yeast.Servicelayer.EFServices
 
 		public IdentityResult CreateRole(CustomRole role)
 		{
-			return this.Create(role); // RoleManagerExtensions
+
+            return this.Create(role); // RoleManagerExtensions
 		}
 
 		public IList<CustomUserRole> GetCustomUsersInRole(string roleName)

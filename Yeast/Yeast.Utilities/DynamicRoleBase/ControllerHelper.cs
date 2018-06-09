@@ -105,4 +105,22 @@ namespace Yeast.Utilities.DynamicRoleBase
         /// <value>The description.</value>
         public string Description { get; set; }
     }
+
+
+    /// <summary>
+    /// Deserialze Json
+    /// </summary>
+    public class ActionControllers
+    {
+        /// <summary>
+        /// Controller Name
+        /// </summary>
+        public string Controller { get; set; }
+
+        /// <summary>
+        /// Action Name
+        /// </summary>
+        public string Action { get; set; }
+
+    }
 }

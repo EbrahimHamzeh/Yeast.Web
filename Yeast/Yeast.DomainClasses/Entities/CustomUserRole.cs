@@ -5,6 +5,6 @@ namespace Yeast.DomainClasses.Entities
 {
     public class CustomUserRole : IdentityUserRole<int>
     {
-        public virtual ICollection<RoleAccess> RoleAccesses { get; set; }
+
     }
 }

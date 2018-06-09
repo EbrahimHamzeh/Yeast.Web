@@ -10,19 +10,21 @@ using Yeast.Utilities.BootstrapTable;
 using System.Collections.Generic;
 using System;
 using Yeast.Utilities.DynamicRoleBase;
+using Yeast.Servicelayer.EFServices;
 
 namespace Yeast.Areas.Admin.Controllers
 {
 	public partial class RoleAccessController : Controller
 	{
-		readonly ITagService _tagService;
-		readonly IUnitOfWork _uow;
+        readonly IApplicationRoleManager _roleService;
+        readonly IUnitOfWork _uow;
         private static Lazy<IEnumerable<ControllerDescription>> _controllerList = new Lazy<IEnumerable<ControllerDescription>>();
-        public RoleAccessController(IUnitOfWork uow, ITagService tagService)
+
+        public RoleAccessController(IUnitOfWork uow, IApplicationRoleManager roleService)
 		{
-			_uow = uow;
-			_tagService = tagService;
-		}
+            _uow = uow;
+            _roleService = roleService;
+        }
 
 		// GET: Admin/Tag
 		public virtual ActionResult Index()
@@ -31,11 +33,11 @@ namespace Yeast.Areas.Admin.Controllers
 		}
 
 		// Get: Ajax Admin/DataList
-		[HttpGet, AjaxOnly, NoOutputCache]
-		public virtual async Task<ActionResult> DataList(PagedQueryViewModel model)
-		{
-			return Json(await _tagService.GetDataTableAsync(model).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
-		}
+		//[HttpGet, AjaxOnly, NoOutputCache]
+		//public virtual async Task<ActionResult> DataList(PagedQueryViewModel model)
+		//{
+		//	return Json(await _userService.GetDataTableAsync(model).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
+		//}
 
 		// GET: Admin/Tag/Add
 		public virtual ActionResult Add()
@@ -50,57 +52,84 @@ namespace Yeast.Areas.Admin.Controllers
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		// Post: Admin/Tag/Add/id
-		public virtual ActionResult Add(TagAdd model)
+		public virtual ActionResult Add(RoleAccessAdd model)
 		{
-			if (!ModelState.IsValid)
-			{
-				return View(model);
-			}
+            if (!ModelState.IsValid)
+            {
+                model.Controllers = GetControllers();
+                return View(model);
+            }
 
-			_tagService.Add(model);
-			_uow.SaveAllChanges();
-			return RedirectToAction("Index");
-		}
+            var role = new CustomRole
+            {
+                Title = model.Title,
+                Name = model.Title,
+                RoleAccesses = new List<RoleAccess>(),
+                Description = model.Description,
+            };
+
+            if (!string.IsNullOrEmpty(Request["RoleTotal"]))
+            {
+                var selected = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ActionControllers>>(Request["RoleTotal"]);
+                foreach (var item in selected)
+                {
+                    if (item.Controller == "#")
+                    {
+                    }
+                    else
+                    {
+                        role.RoleAccesses.Add(new RoleAccess { Controller = item.Controller, Action = item.Action });
+                    }
+                }
+                _roleService.CreateAsync(role);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                model.Controllers = GetControllers();
+                return View(model);
+            }
+        }
 
 		// GET: Admin/Tag/Edit
-		public virtual ActionResult Edit(int? id)
-		{
-			if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			TagEdit tag = _tagService.FindForEdit(id ?? 0);
-			if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			return View(tag);
-		}
+		//public virtual ActionResult Edit(int? id)
+		//{
+		//	if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+		//	TagEdit tag = _tagService.FindForEdit(id ?? 0);
+		//	if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+		//	return View(tag);
+		//}
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		// Post: Admin/Tag/Edit/id
-		public virtual ActionResult Edit(int id)
-		{
-			Tag tagUpdate = _tagService.Find(id);
-			if (tagUpdate == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+		//[HttpPost]
+		//[ValidateAntiForgeryToken]
+		//// Post: Admin/Tag/Edit/id
+		//public virtual ActionResult Edit(int id)
+		//{
+		//	Tag tagUpdate = _tagService.Find(id);
+		//	if (tagUpdate == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-			if (TryUpdateModel(tagUpdate, "", new string[] { "Title", "Description" }))
-			{
-				if (!ModelState.IsValid)
-				{
-					return View(tagUpdate);
-				}
-				_uow.SaveAllChanges();
-			}
-			return RedirectToAction("Index"); ;
-		}
+		//	if (TryUpdateModel(tagUpdate, "", new string[] { "Title", "Description" }))
+		//	{
+		//		if (!ModelState.IsValid)
+		//		{
+		//			return View(tagUpdate);
+		//		}
+		//		_uow.SaveAllChanges();
+		//	}
+		//	return RedirectToAction("Index"); ;
+		//}
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		// Post: Admin/Tag/Delete/id
-		public virtual ActionResult Delete(int id)
-		{
-			Tag tag = _tagService.Find(id);
-			if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			_tagService.Remove(id);
-			_uow.SaveAllChanges();
-			return Json(new { success = true });
-		}
+		//[HttpPost]
+		//[ValidateAntiForgeryToken]
+		//// Post: Admin/Tag/Delete/id
+		//public virtual ActionResult Delete(int id)
+		//{
+		//	Tag tag = _tagService.Find(id);
+		//	if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+		//	_tagService.Remove(id);
+		//	_uow.SaveAllChanges();
+		//	return Json(new { success = true });
+		//}
 
         private static IEnumerable<ControllerDescription> GetControllers()
         {
