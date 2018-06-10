@@ -93,8 +93,18 @@ namespace Yeast.Areas.Admin.Controllers
 				postEdit.CategoryList = _categoryService.DropDownList(postEdit.CategoryIds);
 				return View(postEdit);
 			}
+            HttpPostedFileBase file = Request.Files["user-avatar"];
+            if (file==null)
+            {
 
-			_postService.Update(postEdit, id);
+            }
+            else
+            {
+                var path = Path.Combine(Server.MapPath("~/Content/upload/images/"), file.FileName);
+                file.SaveAs(path);
+                postEdit.TitleImg = file.FileName;
+            }
+            _postService.Update(postEdit, id);
 			_uow.SaveAllChanges();
 			return RedirectToAction("Index"); ;
 		}

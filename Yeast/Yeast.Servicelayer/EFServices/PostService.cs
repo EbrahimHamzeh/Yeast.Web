@@ -52,14 +52,23 @@ namespace Yeast.Servicelayer.EFServices
 			_posts.Add(new Post {
 				CreatedDate = DateTime.Now,
 				Title = post.Title,
-				Body = post.Body,
-				Slug = post.Slug,
+                TitleEn = post.TitleEn,
+                TitleAr = post.TitleAr,
+                TitleRu = post.TitleRu,
+                Body = post.Body,
+                BodyEn = post.BodyEn,
+                BodyAr = post.BodyAr,
+                BodyRu = post.BodyRu,
+                Slug = post.Slug,
                 ImageTitle=post.ImageTitle,
 				Tags = tags,
 				Categories = categories,
 				Keyword = post.Keyword,
-				Description = post.Description
-			});
+				Description = post.Description,
+                DescriptionEn = post.DescriptionEn,
+                DescriptionAr = post.DescriptionAr,
+                DescriptionRu = post.DescriptionRu
+            });
 		}
 
 		public Post Find(int id)
@@ -72,12 +81,21 @@ namespace Yeast.Servicelayer.EFServices
 			Post post = _posts.Find(id);
 			return new PostEdit {
 				Title = post.Title,
-				Slug = post.Slug,
+                TitleEn = post.TitleEn,
+                TitleAr = post.TitleAr,
+                TitleRu = post.TitleRu,
+                Slug = post.Slug,
 				Body = post.Body,
-				TagIds = post.Tags.Select(x => x.Id).ToList(),
+                BodyEn = post.BodyEn,
+                BodyAr = post.BodyAr,
+                BodyRu = post.BodyRu,
+                TagIds = post.Tags.Select(x => x.Id).ToList(),
 				CategoryIds = post.Categories.Select(x => x.Id).ToList(),
 				Description = post.Description,
-				Keyword = post.Keyword
+                DescriptionEn = post.DescriptionEn,
+                DescriptionAr = post.DescriptionAr,
+                DescriptionRu = post.DescriptionRu,
+                Keyword = post.Keyword
 			};
 		}
 
@@ -147,11 +165,21 @@ namespace Yeast.Servicelayer.EFServices
 			}
 
 			selectedpost.CreatedDate = DateTime.Now;
-			selectedpost.Title = post.Title;
-			selectedpost.Body = post.Body;
-			selectedpost.Slug = post.Slug;
+            selectedpost.ImageTitle = post.TitleImg;
+            selectedpost.Title = post.Title;
+            selectedpost.TitleEn = post.TitleEn;
+            selectedpost.TitleAr = post.TitleAr;
+            selectedpost.TitleRu = post.TitleRu;
+            selectedpost.Body = post.Body;
+            selectedpost.BodyEn = post.BodyEn;
+            selectedpost.BodyAr = post.BodyAr;
+            selectedpost.BodyRu = post.BodyRu;
+            selectedpost.Slug = post.Slug;
 			selectedpost.Keyword = post.Keyword;
 			selectedpost.Description = post.Description;
-		}
+            selectedpost.DescriptionEn = post.DescriptionEn;
+            selectedpost.DescriptionAr = post.DescriptionAr;
+            selectedpost.DescriptionRu = post.DescriptionRu;
+        }
 	}
 }

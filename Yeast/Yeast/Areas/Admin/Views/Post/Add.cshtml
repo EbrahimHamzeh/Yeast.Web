@@ -42,13 +42,14 @@
     <link href="~/Content/css/select2-bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/kartik-v-bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" />
 }
+
 <div class="page-content">
     <!-- BEGIN PAGE HEADER-->
     <!-- BEGIN PAGE BAR -->
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
-                <a href="@Url.Action("Index","Dashboard", new { Area = "Admin" })">داشبورد</a>
+                <a href="@Url.Action(" Index","Dashboard", new { Area="Admin" })">داشبورد</a>
                 <i class="fa fa-circle"></i>
             </li>
             <li>
@@ -60,6 +61,8 @@
             </li>
         </ul>
     </div>
+
+
     <!-- END PAGE BAR -->
     <!-- BEGIN PAGE TITLE-->
     <h1 class="page-title">
@@ -83,107 +86,260 @@
                         <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="تمام صفحه" title=""> </a>
                     </div>
                 </div>
-                <div class="portlet-body form">
-                    <div class="form-group">
-                    </div>
-                    <form role="form" data-loading-text="در حال ارسال فرم! لطفا منتظر باشید" class="form-horizontal" method="post" action="@Url.Action("Add")" enctype="multipart/form-data">
-                        @Html.AntiForgeryToken()
-                        <div class="form-body">
-                            <div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
-                            <div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
 
-                            <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Name">عنوان</label>
-                                <div class="col-md-11">
-                                    <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required placeholder="عنوان را وارد نمایید">
-                                    @Html.ValidationMessageFor(model => model.Title)
-                                    <div class="form-control-focus"> </div>
-                                </div>
-                            </div>
-                            <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Title">انتخاب عکس</label>
-                                <div class="col-sm-4 text-center">
-                                    <div class="kv-avatar">
-                                        <div class="file-loading">
-                                            <input id="user-avatar" name="user-avatar" type="file" required>
+
+                <form role="form" data-loading-text="در حال ارسال فرم! لطفا منتظر باشید" class="form-horizontal" method="post" action="@Url.Action("Add")" enctype="multipart/form-data">
+
+                    @Html.AntiForgeryToken()
+                    <div class="form-body">
+                        <div class="tabbable tabbable-tabdrop">
+                            <ul class="nav nav-pills">
+
+                                <li class="active">
+                                    <a href="#tab11" data-toggle="tab">فارسی</a>
+                                </li>
+                                <li>
+                                    <a href="#tab12" data-toggle="tab">انگلیسی</a>
+                                </li>
+                                <li>
+                                    <a href="#tab13" data-toggle="tab">عربی</a>
+                                </li>
+                                <li>
+                                    <a href="#tab14" data-toggle="tab">روسی</a>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab11">
+                                    <div class="portlet-body form">
+                                        <div class="form-group">
+                                        </div>
+                                        <div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
+                                        <div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
+
+                                        <div class="form-group form-md-line-input">
+                                            <label class="col-md-1 control-label" for="Name">عنوان</label>
+                                            <div class="col-md-11">
+                                                <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required placeholder="عنوان را وارد نمایید">
+                                                @Html.ValidationMessageFor(model => model.Title)
+                                                <div class="form-control-focus"> </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group form-md-line-input">
+                                            <label class="col-md-1 control-label" for="Name">محتوا </label>
+                                            <div class="col-md-11">
+                                                <textarea id="Body" name="Body" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.Body</textarea>
+                                                @Html.ValidationMessageFor(model => model.Body)
+                                                <div class="form-control-focus"> </div>
+                                                <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group form-md-line-input">
+                                            <label class="col-md-1 control-label" for="Description">توضیحات</label>
+                                            <div class="col-md-11">
+                                                <input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" placeholder="توضیحات را وارد نمایید">
+                                                @Html.ValidationMessageFor(model => model.Description)
+                                                <div class="form-control-focus"> </div>
+                                                <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="kv-avatar-hint"><small>سایز فایل باید کمتر از 1500 کیلوبایت باشد</small></div>
+
+
                                 </div>
-                            </div>
-                            <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Name">محتوا</label>
-                                <div class="col-md-11">
-                                    <textarea id="Body" name="Body" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.Body</textarea>
-                                    @Html.ValidationMessageFor(model => model.Body)
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
+                                <div class="tab-pane" id="tab12">
+                                    <div class="tab-pane active" id="tab11">
+                                        <div class="portlet-body form">
+                                            <div class="form-group">
+                                            </div>
+                                            <div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
+                                            <div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
+
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-1 control-label" for="Name">عنوان</label>
+                                                <div class="col-md-11">
+                                                    <input type="text" class="form-control" id="TitleEn" name="TitleEn" value="@Model.TitleEn" required placeholder="عنوان را وارد نمایید">
+                                                    @Html.ValidationMessageFor(model => model.TitleEn)
+                                                    <div class="form-control-focus"> </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-1 control-label" for="Name">محتوا</label>
+                                                <div class="col-md-11">
+                                                    <textarea id="BodyEn" name="BodyEn" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.BodyEn</textarea>
+                                                    @Html.ValidationMessageFor(model => model.BodyEn)
+                                                    <div class="form-control-focus"> </div>
+                                                    <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-1 control-label" for="Description">توضیحات</label>
+                                                <div class="col-md-11">
+                                                    <input type="text" class="form-control" id="DescriptionEn" name="DescriptionEn" value="@Model.DescriptionEn" placeholder="توضیحات را وارد نمایید">
+                                                    @Html.ValidationMessageFor(model => model.DescriptionEn)
+                                                    <div class="form-control-focus"> </div>
+                                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Name">لینک پیوند</label>
-                                <div class="col-md-11">
-                                    <input type="text" class="form-control" id="Slug" name="Slug" value="@Model.Slug" required placeholder="پیوند را وارد نمایید">
-                                    @Html.ValidationMessageFor(model => model.Slug)
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block">لینک پیوند بهتر است که انگلیسی و مرتبط با محتوا باشد. آدرس وب محتوا محسوب می‌شود.</span>
+                                <div class="tab-pane" id="tab13">
+                                    <div class="tab-pane active" id="tab11">
+                                        <div class="portlet-body form">
+                                            <div class="form-group">
+                                            </div>
+                                            <div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
+                                            <div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
+
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-1 control-label" for="Name">عنوان</label>
+                                                <div class="col-md-11">
+                                                    <input type="text" class="form-control" id="TitleAr" name="TitleAr" value="@Model.TitleAr" required placeholder="عنوان را وارد نمایید">
+                                                    @Html.ValidationMessageFor(model => model.TitleAr)
+                                                    <div class="form-control-focus"> </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-1 control-label" for="Name">محتوا</label>
+                                                <div class="col-md-11">
+                                                    <textarea id="BodyAr" name="BodyAr" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.BodyAr</textarea>
+                                                    @Html.ValidationMessageFor(model => model.BodyAr)
+                                                    <div class="form-control-focus"> </div>
+                                                    <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-1 control-label" for="Description">توضیحات</label>
+                                                <div class="col-md-11">
+                                                    <input type="text" class="form-control" id="DescriptionAr" name="DescriptionAr" value="@Model.DescriptionAr" placeholder="توضیحات را وارد نمایید">
+                                                    @Html.ValidationMessageFor(model => model.DescriptionAr)
+                                                    <div class="form-control-focus"> </div>
+                                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Category">دسته‌بندی</label>
-                                <div class="col-md-11">
-                                    <select id="CategoryIds" name="CategoryIds[]" class="form-control select2-multiple" multiple>
-                                        @foreach (var item in Model.CategoryList)
-                {
-                        <option value="@item.Value" @(item.Selected ? "selected" : "")>@item.Text</option>
-}
-                                    </select>
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block"></span>
-                                </div>
-                            </div>
-                            <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="TagIds">تگ‌ها</label>
-                                <div class="col-md-11">
-                                    <select id="TagIds" name="TagIds[]" class="form-control select2-multiple" multiple>
-                                        @foreach (var item in Model.TagList)
-                {
-                        <option value="@item.Value" @(item.Selected ? "selected" : "")>@item.Text</option>
-}
-                                    </select>
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block">اگر تگ مورد نظر شما در لیست موجود نمی‌باشد می‌توانید تایپ کتیذ و با اینتر آن‌ها را ثبت نمایید.</span>
-                                </div>
-                            </div>
-                            <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Name">کلید واژه</label>
-                                <div class="col-md-11">
-                                    <input type="text" class="form-control" id="Keyword" name="Keyword" value="@Model.Keyword" required placeholder="کلید واژه را وارد نمایید">
-                                    @Html.ValidationMessageFor(model => model.Keyword)
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block">این فیلد مربوط به جستجوی های گوگل میشود. لطفا کلات را با علامت | ازهم جدا کنید.</span>
-                                </div>
-                            </div>
-                            <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Description">توضیحات</label>
-                                <div class="col-md-11">
-                                    <input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" placeholder="توضیحات را وارد نمایید">
-                                    @Html.ValidationMessageFor(model => model.Description)
-                                    <div class="form-control-focus"> </div>
-                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                <div class="tab-pane" id="tab14">
+                                    <div class="tab-pane active" id="tab11">
+                                        <div class="portlet-body form">
+                                            <div class="form-group">
+                                            </div>
+                                            <div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
+                                            <div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
+
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-1 control-label" for="Name">عنوان</label>
+                                                <div class="col-md-11">
+                                                    <input type="text" class="form-control" id="TitleRu" name="TitleRu" value="@Model.TitleRu" required placeholder="عنوان را وارد نمایید">
+                                                    @Html.ValidationMessageFor(model => model.TitleRu)
+                                                    <div class="form-control-focus"> </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-1 control-label" for="Name">محتوا</label>
+                                                <div class="col-md-11">
+                                                    <textarea id="BodyRu" name="BodyRu" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.BodyRu</textarea>
+                                                    @Html.ValidationMessageFor(model => model.BodyRu)
+                                                    <div class="form-control-focus"> </div>
+                                                    <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-1 control-label" for="Description">توضیحات</label>
+                                                <div class="col-md-11">
+                                                    <input type="text" class="form-control" id="DescriptionRu" name="DescriptionRu" value="@Model.DescriptionRu" placeholder="توضیحات را وارد نمایید">
+                                                    @Html.ValidationMessageFor(model => model.DescriptionRu)
+                                                    <div class="form-control-focus"> </div>
+                                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-actions">
-                            <div class="row">
-                                <div class="col-md-offset-2 col-md-10">
-                                    <button type="reset" class="btn default">کنسل</button>
-                                    <button type="submit" data-loading-text="ارسال..." class="btn blue btn-loading ">تایید</button>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-1 control-label" for="Title">انتخاب عکس</label>
+                        <div class="col-sm-4 text-center">
+                            <div class="kv-avatar">
+                                <div class="file-loading">
+                                    <input id="user-avatar" name="user-avatar" type="file" required>
                                 </div>
                             </div>
+                            <div class="kv-avatar-hint"><small>سایز فایل باید کمتر از 1500 کیلوبایت باشد</small></div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-1 control-label" for="Name">لینک پیوند</label>
+                        <div class="col-md-11">
+                            <input type="text" class="form-control" id="Slug" name="Slug" value="@Model.Slug" required placeholder="پیوند را وارد نمایید">
+                            @Html.ValidationMessageFor(model => model.Slug)
+                            <div class="form-control-focus"> </div>
+                            <span class="help-block">لینک پیوند بهتر است که انگلیسی و مرتبط با محتوا باشد. آدرس وب محتوا محسوب می‌شود.</span>
+                        </div>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-1 control-label" for="Category">دسته‌بندی</label>
+                        <div class="col-md-11">
+                            <select id="CategoryIds" name="CategoryIds[]" class="form-control select2-multiple" multiple>
+                                @foreach (var item in Model.CategoryList)
+                                {
+                                    <option value="@item.Value" @(item.Selected ? "selected" : "" )>@item.Text</option>
+                                }
+                            </select>
+                            <div class="form-control-focus"> </div>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-1 control-label" for="TagIds">تگ‌ها</label>
+                        <div class="col-md-11">
+                            <select id="TagIds" name="TagIds[]" class="form-control select2-multiple" multiple>
+                                @foreach (var item in Model.TagList)
+                                {
+                                    <option value="@item.Value" @(item.Selected ? "selected" : "" )>@item.Text</option>
+                                }
+                            </select>
+                            <div class="form-control-focus"> </div>
+                            <span class="help-block">اگر تگ مورد نظر شما در لیست موجود نمی‌باشد می‌توانید تایپ کتیذ و با اینتر آن‌ها را ثبت نمایید.</span>
+                        </div>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-1 control-label" for="Name">کلید واژه</label>
+                        <div class="col-md-11">
+                            <input type="text" class="form-control" id="Keyword" name="Keyword" value="@Model.Keyword" required placeholder="کلید واژه را وارد نمایید">
+                            @Html.ValidationMessageFor(model => model.Keyword)
+                            <div class="form-control-focus"> </div>
+                            <span class="help-block">این فیلد مربوط به جستجوی های گوگل میشود. لطفا کلات را با علامت | ازهم جدا کنید.</span>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="reset" class="btn default">کنسل</button>
+                                <button type="submit" data-loading-text="ارسال..." class="btn blue btn-loading ">تایید</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
             </div>
             <!-- END SAMPLE FORM PORTLET-->
         </div>
@@ -231,134 +387,198 @@
     <script src="~/Content/kartik-v-bootstrap-fileinput/js/plugins/piexif.min.js"></script>
     <script src="~/Content/kartik-v-bootstrap-fileinput/js/plugins/sortable.min.js"></script>
     <script src="~/Content/kartik-v-bootstrap-fileinput/js/plugins/purify.min.js"></script>
-    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    @*
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" type="text/javascript"></script>*@
     <script src="~/Content/kartik-v-bootstrap-fileinput/js/fileinput.js"></script>
     <script type="text/javascript">
-		jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
-		var form1 = $('form[data-loading-text]');
-		var error1 = $('.alert-danger', form1);
-		var success1 = $('.alert-success', form1);
+    jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
+    var form1 = $('form[data-loading-text]');
+    var error1 = $('.alert-danger', form1);
+    var success1 = $('.alert-success', form1);
 
-		$(function ()
-		{
-			$('#Body').froalaEditor({
-				allowedImageTypes: ["jpeg", "jpg", "png"],
-				height: 300,
-				language: "fa",
-				direction: "rtl",
-				fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
-				plainPaste: true,
-				borderColor: '#00008b',
-				imageUploadURL: '@Url.Action("FroalaUploadImage", "Post", new { Area = "Admin" })',
-				fileUploadURL: '@Url.Action("FroalaUploadFile", "Post", new { Area = "Admin" }))',
-				videoUploadURL: '@Url.Action("FroalaUploadVideo", "Post", new { Area = "Admin" })',
-				enableScript: false
-			})
-		});
-
-		// حذف تمام تگ‌هاي يك قطعه متن
-		function removeAllTagsAndTrim(html)
-		{
-			return !html ? "" : jQuery.trim(html.replace(/(<([^>]+)>)/ig, ""));
-		}
-
-		// اين تنظيم براي پردازش اعتبارسنجي اديتور مخفي وب لازم است
-		jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
-
-		// متد اصلي اعتبارسنجي را ابتدا ذخيره مي‌كنيم
-		jQuery.validator.methods.originalRequired = jQuery.validator.methods.required;
-		// نحوه بازنويسي متد توكار اعتبار سنجي جهت استفاده از يك متد سفارشي
-		jQuery.validator.addMethod("required", function (value, element, param)
-		{
-			value = removeAllTagsAndTrim(value);
-			if (!value) {
-				$(".froala-element").focus();
-				$(".froala-element").css({ "border-color": "red" });
-				return false;
-			}
-			//  فراخواني متد اصلي اعتبار سنجي در صورت شكست تابع سفارشي
-			return jQuery.validator.methods.originalRequired.call(this, value, element, param);
-		}, jQuery.validator.messages.required);
-
-		form1.validate({
-			errorElement: 'span', //default input error message container
-			errorClass: 'help-block help-block-error', // default input error message class
-			focusInvalid: false, // do not focus the last invalid input
-			ignore: ":hidden:not(textarea)",  // validate all fields including form hidden input
-			invalidHandler: function (event, validator)
-			{ //display error alert on form submit
-				success1.hide();
-				error1.show();
-				App.scrollTo(error1, -200);
-			},
-
-			errorPlacement: function (error, element)
-			{ // render error placement for each input type
-				var cont = $(element).parent('.input-group');
-				if (cont.size() > 0) {
-					cont.after(error);
-				} else {
-					element.after(error);
-				}
-			},
-
-			highlight: function (element)
-			{ // hightlight error inputs
-
-				$(element)
-						.closest('.form-group').addClass('has-error'); // set error class to the control group
-			},
-
-			unhighlight: function (element)
-			{ // revert the change done by hightlight
-				$(element)
-						.closest('.form-group').removeClass('has-error'); // set error class to the control group
-			},
-
-			success: function (label)
-			{
-				label
-						.closest('.form-group').removeClass('has-error'); // set success class to the control group
-			},
-
-			submitHandler: function (form)
-			{
-				success1.show();
-				error1.hide();
-				form.submit();
-				form1.button('loading')
-			}
-		});
-
-		$('document').ready(function ()
-		{
-			$('#TagIds').select2({ dir: "rtl", language: "fa" });
-			$('#CategoryIds').select2({ dir: "rtl", language: "fa" });
+    $(function () {
+        $('#Body').froalaEditor({
+            allowedImageTypes: ["jpeg", "jpg", "png"],
+            height: 300,
+            language: "fa",
+            direction: "rtl",
+            fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
+            plainPaste: true,
+            borderColor: '#00008b',
+            /**/
+            imageUploadURL: '@Url.Action("FroalaUploadImage", "Post", new { Area = "Admin" })',
+    /**/
+    /**/
+    fileUploadURL: '@Url.Action("FroalaUploadFile", "Post", new { Area = "Admin" }))',
+    /**/
+    /**/
+    videoUploadURL: '@Url.Action("FroalaUploadVideo", "Post", new { Area = "Admin" })',
+    /**/
+    enableScript: false
+})
         });
 
 
-
-
-        var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' +
-            'onclick="alert(\'Call your custom code here.\')">' +
-            '<i class="glyphicon glyphicon-tag"></i>' +
-            '</button>';
-        $("#user-avatar").fileinput({
-            overwriteInitial: true,
-            maxFileSize: 1500,
-            showClose: false,
-            showCaption: false,
-            browseLabel: '',
-            removeLabel: '',
-            browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
-            removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
-            removeTitle: 'Cancel or reset changes',
-            elErrorContainer: '#kv-avatar-errors-1',
-            msgErrorClass: 'alert alert-block alert-danger',
-            defaultPreviewContent: '<img src="/uploads/noimg.png" alt="Your Avatar">',
-            layoutTemplates: { main2: '{preview} ' + btnCust + ' {remove} {browse}' },
-            allowedFileExtensions: ["jpg", "png", "gif"]
+    $(function () {
+        $('#BodyEn').froalaEditor({
+            allowedImageTypes: ["jpeg", "jpg", "png"],
+            height: 300,
+            language: "fa",
+            direction: "rtl",
+            fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
+            plainPaste: true,
+            borderColor: '#00008b',
+            /**/
+            imageUploadURL: '@Url.Action("FroalaUploadImage", "Post", new { Area = "Admin" })',
+    /**/
+    /**/
+    fileUploadURL: '@Url.Action("FroalaUploadFile", "Post", new { Area = "Admin" }))',
+    /**/
+    /**/
+    videoUploadURL: '@Url.Action("FroalaUploadVideo", "Post", new { Area = "Admin" })',
+    /**/
+    enableScript: false
+})
         });
+
+          $(function () {
+        $('#BodyAr').froalaEditor({
+            allowedImageTypes: ["jpeg", "jpg", "png"],
+            height: 300,
+            language: "fa",
+            direction: "rtl",
+            fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
+            plainPaste: true,
+            borderColor: '#00008b',
+            /**/
+            imageUploadURL: '@Url.Action("FroalaUploadImage", "Post", new { Area = "Admin" })',
+    /**/
+    /**/
+    fileUploadURL: '@Url.Action("FroalaUploadFile", "Post", new { Area = "Admin" }))',
+    /**/
+    /**/
+    videoUploadURL: '@Url.Action("FroalaUploadVideo", "Post", new { Area = "Admin" })',
+    /**/
+    enableScript: false
+})
+        });
+
+          $(function () {
+        $('#BodyRu').froalaEditor({
+            allowedImageTypes: ["jpeg", "jpg", "png"],
+            height: 300,
+            language: "fa",
+            direction: "rtl",
+            fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
+            plainPaste: true,
+            borderColor: '#00008b',
+            /**/
+            imageUploadURL: '@Url.Action("FroalaUploadImage", "Post", new { Area = "Admin" })',
+    /**/
+    /**/
+    fileUploadURL: '@Url.Action("FroalaUploadFile", "Post", new { Area = "Admin" }))',
+    /**/
+    /**/
+    videoUploadURL: '@Url.Action("FroalaUploadVideo", "Post", new { Area = "Admin" })',
+    /**/
+    enableScript: false
+})
+});
+
+// حذف تمام تگ‌هاي يك قطعه متن
+function removeAllTagsAndTrim(html) {
+return !html ? "" : jQuery.trim(html.replace(/(<([^>]+)>)/ig, ""));
+}
+
+// اين تنظيم براي پردازش اعتبارسنجي اديتور مخفي وب لازم است
+jQuery.validator.setDefaults({ ignore: ":hidden:not(textarea)" });
+
+// متد اصلي اعتبارسنجي را ابتدا ذخيره مي‌كنيم
+jQuery.validator.methods.originalRequired = jQuery.validator.methods.required;
+// نحوه بازنويسي متد توكار اعتبار سنجي جهت استفاده از يك متد سفارشي
+jQuery.validator.addMethod("required", function (value, element, param) {
+value = removeAllTagsAndTrim(value);
+if (!value) {
+    $(".froala-element").focus();
+    $(".froala-element").css({ "border-color": "red" });
+    return false;
+}
+//  فراخواني متد اصلي اعتبار سنجي در صورت شكست تابع سفارشي
+return jQuery.validator.methods.originalRequired.call(this, value, element, param);
+}, jQuery.validator.messages.required);
+
+form1.validate({
+errorElement: 'span', //default input error message container
+errorClass: 'help-block help-block-error', // default input error message class
+focusInvalid: false, // do not focus the last invalid input
+ignore: ":hidden:not(textarea)",  // validate all fields including form hidden input
+invalidHandler: function (event, validator) { //display error alert on form submit
+    success1.hide();
+    error1.show();
+    App.scrollTo(error1, -200);
+},
+
+errorPlacement: function (error, element) { // render error placement for each input type
+    var cont = $(element).parent('.input-group');
+    if (cont.size() > 0) {
+        cont.after(error);
+    } else {
+        element.after(error);
+    }
+},
+
+highlight: function (element) { // hightlight error inputs
+
+    $(element)
+        .closest('.form-group').addClass('has-error'); // set error class to the control group
+},
+
+unhighlight: function (element) { // revert the change done by hightlight
+    $(element)
+        .closest('.form-group').removeClass('has-error'); // set error class to the control group
+},
+
+success: function (label) {
+    label
+        .closest('.form-group').removeClass('has-error'); // set success class to the control group
+},
+
+submitHandler: function (form) {
+    success1.show();
+    error1.hide();
+    form.submit();
+    form1.button('loading')
+}
+});
+
+$('document').ready(function () {
+$('#TagIds').select2({ dir: "rtl", language: "fa" });
+$('#CategoryIds').select2({ dir: "rtl", language: "fa" });
+});
+
+
+
+
+var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' +
+'onclick="alert(\'Call your custom code here.\')">' +
+'<i class="glyphicon glyphicon-tag"></i>' +
+'</button>';
+$("#user-avatar").fileinput({
+overwriteInitial: true,
+maxFileSize: 1500,
+showClose: false,
+showCaption: false,
+browseLabel: '',
+removeLabel: '',
+browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+removeTitle: 'Cancel or reset changes',
+elErrorContainer: '#kv-avatar-errors-1',
+msgErrorClass: 'alert alert-block alert-danger',
+defaultPreviewContent: '<img src="/uploads/noimg.png" alt="Your Avatar">',
+layoutTemplates: { main2: '{preview} ' + btnCust + ' {remove} {browse}' },
+allowedFileExtensions: ["jpg", "png", "gif"]
+});
     </script>
 }
