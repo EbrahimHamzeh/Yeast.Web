@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using EFSecondLevelCache;
+using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
+using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
+using Yeast.Utilities.BootstrapTable;
+using Yeast.Utilities.Helpers;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -91,5 +95,33 @@ namespace Yeast.Servicelayer.EFServices
 		{
 			return this.Roles.ToListAsync();
 		}
-	}
+
+        public async Task<DataTableList<RoleAccessList>> GetDataTableAsync(PagedQueryViewModel model)
+        {
+            IQueryable<CustomRole> customRoleList = _roleStore.Roles.AsNoTracking();
+            int total = 0;
+
+            // Search
+            //tagList = tagList.ApplySearch(model);
+
+            total = await customRoleList.CountAsync().ConfigureAwait(false);
+
+            // Ordering data 
+            customRoleList = customRoleList.ApplyOrdering(model);
+
+            // Paging And Save Cach
+            customRoleList = customRoleList.ApplyPaging(model).Cacheable();
+            model.offset = model.offset - 1;
+            // Create List Of viewModel
+            var category = (await customRoleList.ToListAsync()).Select((x, index) => new RoleAccessList
+            {
+                No = (++index + model.offset).ConvertToPersianString(),
+                Id = x.Id,
+                Title = x.Title,
+                Description = x.Description
+            });
+
+            return new DataTableList<RoleAccessList> { rows = category.ToList(), total = total };
+        }
+    }
 }
