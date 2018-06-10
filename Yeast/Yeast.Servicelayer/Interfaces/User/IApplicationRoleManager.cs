@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Yeast.DomainClasses.Entities;
+using Yeast.Model.Admin;
+using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Servicelayer.Interfaces
 {
@@ -66,5 +68,6 @@ namespace Yeast.Servicelayer.Interfaces
 		string[] GetRolesForUser(int userId);
 		bool IsUserInRole(int userId, string roleName);
 		Task<List<CustomRole>> GetAllCustomRolesAsync();
-	}
+		Task<DataTableList<RoleAccessList>> GetDataTableAsync(PagedQueryViewModel model);
+    }
 }

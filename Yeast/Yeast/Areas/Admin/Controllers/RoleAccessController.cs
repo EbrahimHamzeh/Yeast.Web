@@ -32,15 +32,15 @@ namespace Yeast.Areas.Admin.Controllers
 			return View();
 		}
 
-		// Get: Ajax Admin/DataList
-		//[HttpGet, AjaxOnly, NoOutputCache]
-		//public virtual async Task<ActionResult> DataList(PagedQueryViewModel model)
-		//{
-		//	return Json(await _userService.GetDataTableAsync(model).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
-		//}
+        // Get: Ajax Admin/DataList
+        [HttpGet, AjaxOnly, NoOutputCache]
+        public virtual async Task<ActionResult> DataList(PagedQueryViewModel model)
+        {
+            return Json(await _roleService.GetDataTableAsync(model).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
+        }
 
-		// GET: Admin/Tag/Add
-		public virtual ActionResult Add()
+        // GET: Admin/Tag/Add
+        public virtual ActionResult Add()
 		{
             var createRoleViewModel = new RoleAccessAdd
             {
@@ -91,45 +91,68 @@ namespace Yeast.Areas.Admin.Controllers
             }
         }
 
-		// GET: Admin/Tag/Edit
-		//public virtual ActionResult Edit(int? id)
-		//{
-		//	if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-		//	TagEdit tag = _tagService.FindForEdit(id ?? 0);
-		//	if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-		//	return View(tag);
-		//}
+        // GET: Admin/Tag/Edit
+        public virtual ActionResult Edit(int id)
+        {
+            if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            CustomRole customRole = _roleService.FindByIdAsync(id).Result;
+            if (customRole == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            RoleAccessEdit roleAccessEdit = new RoleAccessEdit()
+            {
+                Controllers = GetControllers(),
+                Description = customRole.Description,
+                Title = customRole.Title
+            };
+            return View(roleAccessEdit);
+        }
 
-		//[HttpPost]
-		//[ValidateAntiForgeryToken]
-		//// Post: Admin/Tag/Edit/id
-		//public virtual ActionResult Edit(int id)
-		//{
-		//	Tag tagUpdate = _tagService.Find(id);
-		//	if (tagUpdate == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        // Post: Admin/Tag/Edit/id
+        public virtual ActionResult Edit(int id, RoleAccessEdit model)
+        {
+            if (!ModelState.IsValid)
+            {
+                model.Controllers = GetControllers();
+                return View(model);
+            }
 
-		//	if (TryUpdateModel(tagUpdate, "", new string[] { "Title", "Description" }))
-		//	{
-		//		if (!ModelState.IsValid)
-		//		{
-		//			return View(tagUpdate);
-		//		}
-		//		_uow.SaveAllChanges();
-		//	}
-		//	return RedirectToAction("Index"); ;
-		//}
+            var role = _roleService.FindByIdAsync(id).Result;
 
-		//[HttpPost]
-		//[ValidateAntiForgeryToken]
-		//// Post: Admin/Tag/Delete/id
-		//public virtual ActionResult Delete(int id)
-		//{
-		//	Tag tag = _tagService.Find(id);
-		//	if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-		//	_tagService.Remove(id);
-		//	_uow.SaveAllChanges();
-		//	return Json(new { success = true });
-		//}
+            if (!string.IsNullOrEmpty(Request["RoleTotal"]))
+            {
+                var selected = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ActionControllers>>(Request["RoleTotal"]);
+                foreach (var item in selected)
+                {
+                    if (item.Controller == "#")
+                    {
+                    }
+                    else
+                    {
+                        role.RoleAccesses.Add(new RoleAccess { Controller = item.Controller, Action = item.Action });
+                    }
+                }
+                _roleService.UpdateAsync(role);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                model.Controllers = GetControllers();
+                return View(model);
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        // Post: Admin/Tag/Delete/id
+        public virtual ActionResult Delete(int id)
+        {
+            CustomRole tag = _roleService.FindByIdAsync(id).Result;
+            if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            _roleService.DeleteAsync(tag);
+            _uow.SaveAllChanges();
+            return Json(new { success = true });
+        }
 
         private static IEnumerable<ControllerDescription> GetControllers()
         {
