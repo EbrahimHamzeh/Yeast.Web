@@ -276,7 +276,7 @@
                                 <div class="col-sm-4 text-center">
                                     <div class="kv-avatar">
                                         <div class="file-loading">
-                                            <input id="user-avatar" name="user-avatar" type="file" required>
+                                            <input id="user-avatar" name="user-avatar" type="file" >
                                         </div>
                                     </div>
                                     <div class="kv-avatar-hint"><small>سایز فایل باید کمتر از 1500 کیلوبایت باشد</small></div>
@@ -554,7 +554,14 @@
             removeTitle: 'Cancel or reset changes',
             elErrorContainer: '#kv-avatar-errors-1',
             msgErrorClass: 'alert alert-block alert-danger',
-            defaultPreviewContent: '<img src="/uploads/@Model.TitleImg" alt="Your Avatar">',
+            defaultPreviewContent:  @if (!string.IsNullOrEmpty(Model.TitleImg))
+            {
+                <text>'<img class="file-preview-image kv-preview-data" style="height:200px;weight:100px;" src="@Url.Content("~/Content/upload/images/" + Model.TitleImg)">'</text>
+            }
+            else
+            {
+                <text> '<img src="/uploads/default_avatar_male.jpg" alt="Your Avatar">'</text>
+            },
             layoutTemplates: { main2: '{preview} ' + btnCust + ' {remove} {browse}' },
             allowedFileExtensions: ["jpg", "png", "gif"]
         });

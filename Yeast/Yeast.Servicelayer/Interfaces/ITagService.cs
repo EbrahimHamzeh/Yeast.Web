@@ -16,7 +16,8 @@ namespace Yeast.Servicelayer.Interfaces
 		void Update(Tag tag);
 		Tag Find(int id);
 		TagEdit FindForEdit(int id);
-		Task<IList<Tag>> GetAllAsync();
+        IList<Tag> GetAll();
+        Task<IList<Tag>> GetAllAsync();
 		Task<DataTableList<TagList>> GetDataTableAsync(PagedQueryViewModel model);
 		SelectList DropDownList(List<int> tagSelectedId = null);
 	}

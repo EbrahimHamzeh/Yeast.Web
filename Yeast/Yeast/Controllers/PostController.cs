@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
+using Yeast.Model.FrontEnd;
 using Yeast.Servicelayer.Interfaces;
 
 namespace Yeast.Controllers
@@ -27,13 +28,14 @@ namespace Yeast.Controllers
         // GET: Post
         public ActionResult Index()
         {
-            List<Post> list =_postService.GetAll();
+            List<PostModel> list =_postService.GetByCulterPost();
             return View(list);
 
         }
         public ActionResult Details(int id)
         {
-            Post blog = _postService.Find(id);
+            PostModel blog = _postService.Find(id);
+            
             return View(blog);
 
         }

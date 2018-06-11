@@ -141,6 +141,7 @@
     <Compile Include="FrontEnd\ContactUsViewModel.cs" />
     <Compile Include="FrontEnd\HomeModel.cs" />
     <Compile Include="FrontEnd\HomeViewModel.cs" />
+    <Compile Include="FrontEnd\PostModel.cs" />
     <Compile Include="FrontEnd\Product.cs" />
     <Compile Include="Generic\DataTableList.cs" />
     <Compile Include="Admin\Tag\TagList.cs" />

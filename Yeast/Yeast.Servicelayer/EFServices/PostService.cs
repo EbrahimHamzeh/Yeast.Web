@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Yeast.Utilities.Helpers;
 using System.Runtime.CompilerServices;
 using Yeast.Utilities.BootstrapTable;
+using Yeast.Model.FrontEnd;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -71,10 +72,51 @@ namespace Yeast.Servicelayer.EFServices
             });
 		}
 
-		public Post Find(int id)
+		public PostModel Find(int id)
 		{
-			return _posts.Find(id);
-		}
+            string cultur = CultureHelper.GetCurrentNeutralCulture();
+            PostModel postModel = new PostModel();
+            var post= _posts.Find(id);
+            switch (cultur)
+            {
+                case "fa":
+                    postModel.Title = post.Title;
+                    postModel.Body = post.Body;
+                    postModel.Description = post.Description;
+                    postModel.CreatedDate = post.CreatedDate.ToString();
+                    postModel.Slug = post.Slug;
+                    postModel.TitleImg = post.ImageTitle;
+                    break;
+                case "en":
+                    postModel.Title = post.TitleEn;
+                    postModel.Body = post.BodyEn;
+                    postModel.Description = post.DescriptionEn;
+                    postModel.CreatedDate = post.CreatedDate.ToString();
+                    postModel.Slug = post.Slug;
+                    postModel.TitleImg = post.ImageTitle;
+                    break;
+                case "ar":
+                    postModel.Title = post.TitleAr;
+                    postModel.Body = post.BodyAr;
+                    postModel.Description = post.DescriptionAr;
+                    postModel.CreatedDate = post.CreatedDate.ToString();
+                    postModel.Slug = post.Slug;
+                    postModel.TitleImg = post.ImageTitle;
+                    break;
+                case "ru":
+                    postModel.Title = post.TitleRu;
+                    postModel.Body = post.BodyRu;
+                    postModel.Description = post.DescriptionRu;
+                    postModel.CreatedDate = post.CreatedDate.ToString();
+                    postModel.Slug = post.Slug;
+                    postModel.TitleImg = post.ImageTitle;
+                    break;
+                default:
+                    break;
+            }
+            return postModel;
+
+        }
 
 		public PostEdit FindForEdit(int id)
 		{
@@ -84,6 +126,7 @@ namespace Yeast.Servicelayer.EFServices
                 TitleEn = post.TitleEn,
                 TitleAr = post.TitleAr,
                 TitleRu = post.TitleRu,
+                TitleImg = post.ImageTitle,
                 Slug = post.Slug,
 				Body = post.Body,
                 BodyEn = post.BodyEn,
@@ -141,7 +184,25 @@ namespace Yeast.Servicelayer.EFServices
 			_posts.Remove(_posts.Find(id));
 		}
 
-		public void Update(PostEdit post, int id)
+
+        public List<PostModel> GetByCulterPost()
+        {
+            string cultur = CultureHelper.GetCurrentNeutralCulture();
+
+            List <PostModel> list =_posts.AsNoTracking().Cacheable().Select(x => new PostModel {
+                Body = cultur == "fa" ? x.Body : cultur == "en" ? x.BodyEn : cultur == "ar" ? x.BodyAr : cultur == "ru" ? x.BodyRu : "",
+                Title = cultur == "fa" ? x.Title : cultur == "en" ? x.TitleEn : cultur == "ar" ? x.TitleAr : cultur == "ru" ? x.TitleRu : "",
+                Description = cultur == "fa" ? x.Description : cultur == "en" ? x.DescriptionEn : cultur == "ar" ? x.DescriptionAr : cultur == "ru" ? x.DescriptionRu : "",
+                Slug = x.Slug,
+                Id = x.Id,
+                CreatedDate=x.CreatedDate.ToString(),
+                TitleImg = x.ImageTitle
+            }).ToList();
+            return list;
+        }
+
+
+        public void Update(PostEdit post, int id)
 		{
 			Post selectedpost = _posts.Find(id);
 			foreach (var item in selectedpost.Tags.Where(x => !post.TagIds.Contains(x.Id)).ToList())

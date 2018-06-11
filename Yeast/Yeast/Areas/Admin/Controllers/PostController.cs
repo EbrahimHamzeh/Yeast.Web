@@ -11,6 +11,7 @@ using System.Web;
 using System.IO;
 using System.Linq;
 using System;
+using Yeast.Model.FrontEnd;
 
 namespace Yeast.Areas.Admin.Controllers
 {
@@ -94,9 +95,10 @@ namespace Yeast.Areas.Admin.Controllers
 				return View(postEdit);
 			}
             HttpPostedFileBase file = Request.Files["user-avatar"];
-            if (file==null)
+            if (string.IsNullOrEmpty(file.FileName))
             {
-
+                var post=_postService.Find(id);
+                postEdit.TitleImg = post.TitleImg;
             }
             else
             {
@@ -114,7 +116,7 @@ namespace Yeast.Areas.Admin.Controllers
 		// Post: Admin/Post/Delete/id
 		public virtual ActionResult Delete(int id)
 		{
-			Post post = _postService.Find(id);
+            PostModel post = _postService.Find(id);
 			if (post == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			_postService.Remove(id);
 			_uow.SaveAllChanges();

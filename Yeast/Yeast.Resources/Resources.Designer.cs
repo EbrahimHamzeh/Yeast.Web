@@ -151,6 +151,15 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ادامه مطلب.
+        /// </summary>
+        public static string ReadMore {
+            get {
+                return ResourceManager.GetString("ReadMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نمایندگی.
         /// </summary>
         public static string Representation {

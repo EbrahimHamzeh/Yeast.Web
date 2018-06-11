@@ -55,8 +55,12 @@ namespace Yeast.Servicelayer.EFServices
 		{
 			return await _tags.AsNoTracking().Cacheable().ToListAsync();
 		}
+        public  IList<Tag> GetAll()
+        {
+            return _tags.AsNoTracking().Cacheable().ToList();
+        }
 
-		public async Task<DataTableList<TagList>> GetDataTableAsync(PagedQueryViewModel model)
+        public async Task<DataTableList<TagList>> GetDataTableAsync(PagedQueryViewModel model)
 		{
 			IQueryable<Tag> tagList = _tags.AsNoTracking();
 			int total = 0;
