@@ -14,7 +14,7 @@
         </figure>
     </div>
 
-    <div class="blog-post-body" style="width: 80%;" >
+    <div class="blog-post-body" style="width: 80%;">
         <header class="blog-header">
             <h2 class="blog-title">
                 <a href="http://ap-newfashion.mybigcommerce.com/blog/blog-newfashion/">@Model.Title</a>
@@ -22,17 +22,18 @@
             <p class="blog-date">@Model.CreatedDate</p>
         </header>
         <div class="blog-post">
-           @Html.Raw(Model.Body)
+            @Html.Raw(Model.Body)
         </div>
 
 
         <ul class="tags">
-            <li class="tag">
-                <a href="http://ap-newfashion.mybigcommerce.com/blog/tag/Blog">#Blog</a>
-            </li>
-            <li class="tag">
-                <a href="http://ap-newfashion.mybigcommerce.com/blog/tag/Seo">#Seo</a>
-            </li>
+            @foreach (var item in Model.TagList)
+            {
+                <li class="tag">
+                    <a href="#">@item.Text</a>
+                </li>
+            }
+
         </ul>
     </div>
 </article>

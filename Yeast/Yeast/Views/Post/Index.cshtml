@@ -83,14 +83,14 @@
         @foreach (var item in Model)
         {
 
-            <div class="item  col-xs-12 col-lg-4">
+            <div class="item  col-xs-12 col-lg-4" style="height:70%;">
                 <div class="thumbnail">
                     <img class="group list-group-image" style="height:250px;width:400px;" src="~/Content/upload/images/@item.TitleImg" alt="" />
                     <div class="caption">
                         <h4 class="group inner list-group-item-heading">
                             @item.Title
                         </h4>
-                        <p class="group inner list-group-item-text">
+                        <p class="group inner list-group-item-text" style="overflow:hidden;">
                             @item.Description
                         </p>
                         <div class="row">

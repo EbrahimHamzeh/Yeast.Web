@@ -76,7 +76,7 @@ namespace Yeast.Servicelayer.EFServices
 		{
             string cultur = CultureHelper.GetCurrentNeutralCulture();
             PostModel postModel = new PostModel();
-            var post= _posts.Find(id);
+            Post post= _posts.Find(id);
             switch (cultur)
             {
                 case "fa":
@@ -86,6 +86,8 @@ namespace Yeast.Servicelayer.EFServices
                     postModel.CreatedDate = post.CreatedDate.ToString();
                     postModel.Slug = post.Slug;
                     postModel.TitleImg = post.ImageTitle;
+                    postModel.TagIds = post.Tags.Select(x => x.Id).ToList();
+                    postModel.CategoryIds = post.Categories.Select(x => x.Id).ToList();
                     break;
                 case "en":
                     postModel.Title = post.TitleEn;
@@ -94,6 +96,8 @@ namespace Yeast.Servicelayer.EFServices
                     postModel.CreatedDate = post.CreatedDate.ToString();
                     postModel.Slug = post.Slug;
                     postModel.TitleImg = post.ImageTitle;
+                    postModel.TagIds = post.Tags.Select(x => x.Id).ToList();
+                    postModel.CategoryIds = post.Categories.Select(x => x.Id).ToList();
                     break;
                 case "ar":
                     postModel.Title = post.TitleAr;
@@ -102,6 +106,8 @@ namespace Yeast.Servicelayer.EFServices
                     postModel.CreatedDate = post.CreatedDate.ToString();
                     postModel.Slug = post.Slug;
                     postModel.TitleImg = post.ImageTitle;
+                    postModel.TagIds = post.Tags.Select(x => x.Id).ToList();
+                    postModel.CategoryIds = post.Categories.Select(x => x.Id).ToList();
                     break;
                 case "ru":
                     postModel.Title = post.TitleRu;
@@ -110,6 +116,8 @@ namespace Yeast.Servicelayer.EFServices
                     postModel.CreatedDate = post.CreatedDate.ToString();
                     postModel.Slug = post.Slug;
                     postModel.TitleImg = post.ImageTitle;
+                    postModel.TagIds = post.Tags.Select(x => x.Id).ToList();
+                    postModel.CategoryIds = post.Categories.Select(x => x.Id).ToList();
                     break;
                 default:
                     break;

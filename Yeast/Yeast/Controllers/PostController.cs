@@ -7,10 +7,11 @@ using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.FrontEnd;
 using Yeast.Servicelayer.Interfaces;
+using Yeast.Utilities.Controllers;
 
 namespace Yeast.Controllers
 {
-    public class PostController : Controller
+    public class PostController : BaseController
     {
         readonly IPostService _postService;
         readonly ITagService _tagService;
@@ -35,7 +36,8 @@ namespace Yeast.Controllers
         public ActionResult Details(int id)
         {
             PostModel blog = _postService.Find(id);
-            
+            blog.TagList = _tagService.DropDownList(blog.TagIds);
+            blog.CategoryList = _categoryService.DropDownList(blog.CategoryIds);
             return View(blog);
 
         }
