@@ -37,7 +37,7 @@ namespace Yeast.Areas.Admin.Controllers
 		// GET: Admin/Category/Add
 		public virtual ActionResult Add()
 		{
-			CategoryAdd Category = new CategoryAdd();
+            ServiceCategoryAdd Category = new ServiceCategoryAdd();
 			return View(Category);
 		}
 

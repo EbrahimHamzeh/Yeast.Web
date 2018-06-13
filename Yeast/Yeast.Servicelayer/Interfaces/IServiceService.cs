@@ -4,6 +4,7 @@ using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
 using System.Runtime.CompilerServices;
 using Yeast.Utilities.BootstrapTable;
+using Yeast.Model.FrontEnd;
 
 namespace Yeast.Servicelayer.Interfaces
 {
@@ -13,9 +14,11 @@ namespace Yeast.Servicelayer.Interfaces
 		void Add(ServiceAdd Post);
 		void Remove(int id);
 		void Update(ServiceEdit post, int id);
-        Service Find(int id);
+        ServiceModel Find(int id);
         ServiceEdit FindForEdit(int id);
 		Task<IList<Service>> GetAllAsync();
-		Task<DataTableList<ServiceList>> GetDataTableAsync(PagedQueryViewModel model);
+        List<ServiceModel> GetByCulterPost();
+
+        Task<DataTableList<ServiceList>> GetDataTableAsync(PagedQueryViewModel model);
 	}
 }

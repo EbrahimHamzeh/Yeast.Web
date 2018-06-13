@@ -11,6 +11,7 @@ using System.Web;
 using System.IO;
 using System.Linq;
 using System;
+using Yeast.Model.FrontEnd;
 
 namespace Yeast.Areas.Admin.Controllers
 {
@@ -62,8 +63,11 @@ namespace Yeast.Areas.Admin.Controllers
 				model.CategoryList = _serviceCategoryService.DropDownList(model.CategoryIds);
 				return View(model);
 			}
-
-			_serviceService.Add(model);
+            HttpPostedFileBase file = Request.Files["user-avatar"];
+            var path = Path.Combine(Server.MapPath("~/Content/upload/images/"), file.FileName);
+            file.SaveAs(path);
+            model.ImageTitle = file.FileName;
+            _serviceService.Add(model);
 			_uow.SaveAllChanges();
 			return RedirectToAction("Index");
 		}
@@ -90,8 +94,19 @@ namespace Yeast.Areas.Admin.Controllers
 				postEdit.CategoryList = _serviceCategoryService.DropDownList(postEdit.CategoryIds);
 				return View(postEdit);
 			}
-
-			_serviceService.Update(postEdit, id);
+            HttpPostedFileBase file = Request.Files["user-avatar"];
+            if (string.IsNullOrEmpty(file.FileName))
+            {
+                var post = _serviceService.Find(id);
+                postEdit.TitleImg = post.TitleImg;
+            }
+            else
+            {
+                var path = Path.Combine(Server.MapPath("~/Content/upload/images/"), file.FileName);
+                file.SaveAs(path);
+                postEdit.TitleImg = file.FileName;
+            }
+            _serviceService.Update(postEdit, id);
 			_uow.SaveAllChanges();
 			return RedirectToAction("Index"); ;
 		}
@@ -101,7 +116,7 @@ namespace Yeast.Areas.Admin.Controllers
 		// Service: Admin/Service/Delete/id
 		public virtual ActionResult Delete(int id)
 		{
-			Service post = _serviceService.Find(id);
+			ServiceModel post = _serviceService.Find(id);
 			if (post == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			_serviceService.Remove(id);
 			_uow.SaveAllChanges();

@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Yeast.Utilities.Helpers;
 using System.Runtime.CompilerServices;
 using Yeast.Utilities.BootstrapTable;
+using Yeast.Model.FrontEnd;
 
 namespace Yeast.Servicelayer.EFServices
 {
@@ -50,33 +51,102 @@ namespace Yeast.Servicelayer.EFServices
 			}
 
 			_service.Add(new Service {
-				CreatedDate = DateTime.Now,
-				Title = post.Title,
-				Body = post.Body,
-				Slug = post.Slug,
-				Tags = tags,
-				ServiceCategories = categories,
-				Keyword = post.Keyword,
-				Description = post.Description
-			});
+                CreatedDate = DateTime.Now,
+                Title = post.Title,
+                TitleEn = post.TitleEn,
+                TitleAr = post.TitleAr,
+                TitleRu = post.TitleRu,
+                Body = post.Body,
+                BodyEn = post.BodyEn,
+                BodyAr = post.BodyAr,
+                BodyRu = post.BodyRu,
+                Slug = post.Slug,
+                ImageTitle = post.ImageTitle,
+                Tags = tags,
+                ServiceCategories = categories,
+                Keyword = post.Keyword,
+                Description = post.Description,
+                DescriptionEn = post.DescriptionEn,
+                DescriptionAr = post.DescriptionAr,
+                DescriptionRu = post.DescriptionRu
+            });
 		}
 
-		public Service Find(int id)
-		{
-			return _service.Find(id);
-		}
+        public ServiceModel Find(int id)
+        {
+            string cultur = CultureHelper.GetCurrentNeutralCulture();
+            ServiceModel postModel = new ServiceModel();
+            Service service = _service.Find(id);
+            switch (cultur)
+            {
+                case "fa":
+                    postModel.Title = service.Title;
+                    postModel.Body = service.Body;
+                    postModel.Description = service.Description;
+                    postModel.CreatedDate = service.CreatedDate.ToString();
+                    postModel.Slug = service.Slug;
+                    postModel.TitleImg = service.ImageTitle;
+                    postModel.TagIds = service.Tags.Select(x => x.Id).ToList();
+                    postModel.CategoryIds = service.ServiceCategories.Select(x => x.Id).ToList();
+                    break;
+                case "en":
+                    postModel.Title = service.TitleEn;
+                    postModel.Body = service.BodyEn;
+                    postModel.Description = service.DescriptionEn;
+                    postModel.CreatedDate = service.CreatedDate.ToString();
+                    postModel.Slug = service.Slug;
+                    postModel.TitleImg = service.ImageTitle;
+                    postModel.TagIds = service.Tags.Select(x => x.Id).ToList();
+                    postModel.CategoryIds = service.ServiceCategories.Select(x => x.Id).ToList();
+                    break;
+                case "ar":
+                    postModel.Title = service.TitleAr;
+                    postModel.Body = service.BodyAr;
+                    postModel.Description = service.DescriptionAr;
+                    postModel.CreatedDate = service.CreatedDate.ToString();
+                    postModel.Slug = service.Slug;
+                    postModel.TitleImg = service.ImageTitle;
+                    postModel.TagIds = service.Tags.Select(x => x.Id).ToList();
+                    postModel.CategoryIds = service.ServiceCategories.Select(x => x.Id).ToList();
+                    break;
+                case "ru":
+                    postModel.Title = service.TitleRu;
+                    postModel.Body = service.BodyRu;
+                    postModel.Description = service.DescriptionRu;
+                    postModel.CreatedDate = service.CreatedDate.ToString();
+                    postModel.Slug = service.Slug;
+                    postModel.TitleImg = service.ImageTitle;
+                    postModel.TagIds = service.Tags.Select(x => x.Id).ToList();
+                    postModel.CategoryIds = service.ServiceCategories.Select(x => x.Id).ToList();
+                    break;
+                default:
+                    break;
+            }
+            return postModel;
 
-		public ServiceEdit FindForEdit(int id)
+        }
+
+        public ServiceEdit FindForEdit(int id)
 		{
 			Service post = _service.Find(id);
 			return new ServiceEdit {
 				Title = post.Title,
-				Slug = post.Slug,
+                TitleEn = post.TitleEn,
+                TitleAr = post.TitleAr,
+                TitleRu = post.TitleRu,
+                TitleImg = post.ImageTitle,
+                Slug = post.Slug,
 				Body = post.Body,
-				TagIds = post.Tags.Select(x => x.Id).ToList(),
+                BodyEn = post.BodyEn,
+                BodyAr = post.BodyAr,
+                BodyRu = post.BodyRu,
+                TagIds = post.Tags.Select(x => x.Id).ToList(),
 				CategoryIds = post.ServiceCategories.Select(x => x.Id).ToList(),
 				Description = post.Description,
-				Keyword = post.Keyword
+                DescriptionEn = post.DescriptionEn,
+                DescriptionAr = post.DescriptionAr,
+                DescriptionRu = post.DescriptionRu,
+                Keyword = post.Keyword
 			};
 		}
 
@@ -117,8 +187,23 @@ namespace Yeast.Servicelayer.EFServices
 		{
 			_service.Remove(_service.Find(id));
 		}
+        public List<ServiceModel> GetByCulterPost()
+        {
+            string cultur = CultureHelper.GetCurrentNeutralCulture();
 
-		public void Update(ServiceEdit post, int id)
+            List<ServiceModel> list = _service.AsNoTracking().Cacheable().Select(x => new ServiceModel
+            {
+                Body = cultur == "fa" ? x.Body : cultur == "en" ? x.BodyEn : cultur == "ar" ? x.BodyAr : cultur == "ru" ? x.BodyRu : "",
+                Title = cultur == "fa" ? x.Title : cultur == "en" ? x.TitleEn : cultur == "ar" ? x.TitleAr : cultur == "ru" ? x.TitleRu : "",
+                Description = cultur == "fa" ? x.Description : cultur == "en" ? x.DescriptionEn : cultur == "ar" ? x.DescriptionAr : cultur == "ru" ? x.DescriptionRu : "",
+                Slug = x.Slug,
+                Id = x.Id,
+                CreatedDate = x.CreatedDate.ToString(),
+                TitleImg = x.ImageTitle
+            }).ToList();
+            return list;
+        }
+        public void Update(ServiceEdit post, int id)
 		{
 			Service selectedpost = _service.Find(id);
 			foreach (var item in selectedpost.Tags.Where(x => !post.TagIds.Contains(x.Id)).ToList())
@@ -141,12 +226,23 @@ namespace Yeast.Servicelayer.EFServices
 				selectedpost.ServiceCategories.Add(_serviceCategory.Find(item));
 			}
 
-			selectedpost.CreatedDate = DateTime.Now;
-			selectedpost.Title = post.Title;
-			selectedpost.Body = post.Body;
-			selectedpost.Slug = post.Slug;
-			selectedpost.Keyword = post.Keyword;
-			selectedpost.Description = post.Description;
-		}
+
+            selectedpost.CreatedDate = DateTime.Now;
+            selectedpost.ImageTitle = post.TitleImg;
+            selectedpost.Title = post.Title;
+            selectedpost.TitleEn = post.TitleEn;
+            selectedpost.TitleAr = post.TitleAr;
+            selectedpost.TitleRu = post.TitleRu;
+            selectedpost.Body = post.Body;
+            selectedpost.BodyEn = post.BodyEn;
+            selectedpost.BodyAr = post.BodyAr;
+            selectedpost.BodyRu = post.BodyRu;
+            selectedpost.Slug = post.Slug;
+            selectedpost.Keyword = post.Keyword;
+            selectedpost.Description = post.Description;
+            selectedpost.DescriptionEn = post.DescriptionEn;
+            selectedpost.DescriptionAr = post.DescriptionAr;
+            selectedpost.DescriptionRu = post.DescriptionRu;
+        }
 	}
 }
