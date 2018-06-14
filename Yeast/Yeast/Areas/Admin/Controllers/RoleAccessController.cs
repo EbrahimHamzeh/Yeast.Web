@@ -159,7 +159,7 @@ namespace Yeast.Areas.Admin.Controllers
             if (_controllerList.IsValueCreated)
                 return _controllerList.Value;
 
-            _controllerList = new Lazy<IEnumerable<ControllerDescription>>(() => new ControllerHelper().GetControllersNameAnDescription());
+            _controllerList = new Lazy<IEnumerable<ControllerDescription>>(() => new ControllerHelper().GetControllersNameAnDescription("Yeast.Controllers")); // تمام کنترلرها به فیر از همانی که داخل پرانتز نوشتیم
             return _controllerList.Value;
         }
     }

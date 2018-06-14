@@ -25,7 +25,7 @@ namespace Yeast.Utilities.DynamicRoleBase
                 .ToList();
 
             if (!string.IsNullOrWhiteSpace(filter))
-                controllers = controllers.Where(t => !t.Name.Contains(filter)).ToList();
+                controllers = controllers.Where(t => !t.FullName.Contains(filter)).ToList();
 
             var controllerList = (
                     from controller in controllers

@@ -123,20 +123,53 @@
   <data name="AboutUsOnFooter" xml:space="preserve">
     <value>درباره ما</value>
   </data>
+  <data name="Address" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازگشت</value>
+  </data>
   <data name="Blog" xml:space="preserve">
     <value>وبلاگ</value>
   </data>
   <data name="ContactUs" xml:space="preserve">
     <value>تماس‌باما</value>
   </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>ثبت‌نام کنید.</value>
+  </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>آیا حساب کاربری ندارید؟</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>آدرس ایمیل</value>
+  </data>
+  <data name="EnterEmailToResetPassword" xml:space="preserve">
+    <value>ایمیل خودتان را برای ریست کردن رمز وارد نمایید.</value>
+  </data>
+  <data name="EnterYourPersonData" xml:space="preserve">
+    <value>اطلاعات حساب کاربری را وارد نمایید:</value>
+  </data>
   <data name="Factor" xml:space="preserve">
     <value>کارخانه</value>
+  </data>
+  <data name="ForgotYourPassword" xml:space="preserve">
+    <value>ایا رمز عبور را فراموش کردید؟</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>نام و نام‌خانوادگی</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>صفحه‌ی‌نخست</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>ورود</value>
+  </data>
   <data name="MyBrands" xml:space="preserve">
     <value>برندهای ما</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>رمزعبور</value>
   </data>
   <data name="Product" xml:space="preserve">
     <value>محصولات</value>
@@ -150,13 +183,28 @@
   <data name="ReadMore" xml:space="preserve">
     <value>ادامه مطلب</value>
   </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>مرا به خاطر بسپار</value>
+  </data>
   <data name="Representation" xml:space="preserve">
     <value>نمایندگی</value>
   </data>
   <data name="RepresentationMyOnWorld" xml:space="preserve">
     <value>لیست نمایندگی‌های ما</value>
   </data>
+  <data name="Reset" xml:space="preserve">
+    <value>بازنشانی</value>
+  </data>
   <data name="Service" xml:space="preserve">
     <value>خدمات</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>ثبت‌نام</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>تایید</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>نام‌کاربری</value>
   </data>
 </root>
