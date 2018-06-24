@@ -171,6 +171,9 @@
   <data name="Password" xml:space="preserve">
     <value>رمزعبور</value>
   </data>
+  <data name="PasswordIsRequired" xml:space="preserve">
+    <value>رمز عبور را لطفا وارد نمایید.</value>
+  </data>
   <data name="Product" xml:space="preserve">
     <value>محصولات</value>
   </data>
@@ -206,5 +209,8 @@
   </data>
   <data name="Username" xml:space="preserve">
     <value>نام‌کاربری</value>
+  </data>
+  <data name="UsernameIsRequired" xml:space="preserve">
+    <value>نام کاربری را لطفا وارد نمایید.</value>
   </data>
 </root>

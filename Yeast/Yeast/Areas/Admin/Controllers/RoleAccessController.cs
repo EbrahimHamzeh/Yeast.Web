@@ -63,7 +63,7 @@ namespace Yeast.Areas.Admin.Controllers
             var role = new CustomRole
             {
                 Title = model.Title,
-                Name = model.Title,
+                Name = Guid.NewGuid().ToString("N"),
                 RoleAccesses = new List<RoleAccess>(),
                 Description = model.Description,
             };

@@ -11,22 +11,25 @@ using System.Web;
 using System.IO;
 using System.Linq;
 using System;
+using System.Collections.Generic;
 
 namespace Yeast.Areas.Admin.Controllers
 {
 	public partial class UserController : Controller
 	{
-		readonly IApplicationUserManager _userService;
+        readonly IApplicationRoleManager _roleService;
+        readonly IApplicationUserManager _userService;
 		readonly IUnitOfWork _uow;
 
-		public UserController(IUnitOfWork uow, IApplicationUserManager userService)
+		public UserController(IUnitOfWork uow, IApplicationUserManager userService, IApplicationRoleManager roleService)
 		{
 			_uow = uow;
 			_userService = userService;
-		}
+            _roleService = roleService;
+        }
 
-		// GET: Admin/User
-		public virtual ActionResult Index()
+        // GET: Admin/User
+        public virtual ActionResult Index()
 		{
 			return View();
 		}
@@ -42,7 +45,8 @@ namespace Yeast.Areas.Admin.Controllers
         public virtual ActionResult Add()
 		{
 			User User = new User();
-			return View(User);
+            ViewBag.RoleList = _roleService.GetAllCustomRolesAsync().Result;
+            return View(User);
 		}
 
 		[HttpPost]
@@ -62,9 +66,20 @@ namespace Yeast.Areas.Admin.Controllers
             model.BirthDay = DateTime.Now;
             model.IP = Request.UserHostAddress;
             model.IsBaned = false;
+
             var path = Path.Combine(Server.MapPath("~/Content/upload/avatar/"), file.FileName);
             file.SaveAs(path);
             var userCreate = _userService.CreateAsync(model,model.Password);
+
+            if (userCreate.Result.Errors.Count() == 0)
+            {
+                string[] roleIds = Request["CategoryIds"].Split(',');
+                foreach (var item in roleIds)
+                {
+                    _userService.AddToRoleAsync(userCreate.Id, _roleService.FindByIdAsync(Convert.ToInt32(item)).Result.Name);
+                }
+            }
+
             foreach (var item in userCreate.Result.Errors)
             {
                         ModelState.AddModelError(Guid.NewGuid().ToString(),item.ToString());

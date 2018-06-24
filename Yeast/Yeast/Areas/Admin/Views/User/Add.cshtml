@@ -8,32 +8,19 @@
 @section CssStyle{
     <link href="~/Content/css/ladda-themeless-rtl.min.css" rel="stylesheet" />
     <link href="~/Content/kartik-v-bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" />
+    <link href="~/Content/css/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/css/select2-bootstrap.min.css" rel="stylesheet" />
 }
 
 
 <style>
-    .kv-avatar .krajee-default.file-preview-frame, .kv-avatar .krajee-default.file-preview-frame:hover {
-        margin: 0;
-        padding: 0;
-        border: none;
-        box-shadow: none;
-        text-align: center;
-    }
+    .kv-avatar .krajee-default.file-preview-frame, .kv-avatar .krajee-default.file-preview-frame:hover { margin: 0; padding: 0; border: none; box-shadow: none; text-align: center; }
 
-    .kv-avatar {
-        display: inline-block;
-    }
+    .kv-avatar { display: inline-block; }
 
-        .kv-avatar .file-input {
-            display: table-cell;
-            width: 213px;
-        }
+        .kv-avatar .file-input { display: table-cell; width: 213px; }
 
-    .kv-reqd {
-        color: red;
-        font-family: monospace;
-        font-weight: normal;
-    }
+    .kv-reqd { color: red; font-family: monospace; font-weight: normal; }
 </style>
 
 <div class="page-content">
@@ -129,6 +116,23 @@
                                 </div>
                             </div>
                             <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="BirthDay">کلمه عبور</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="Password" name="Password" value="" placeholder="توضیحات را وارد نمایید">
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="BirthDay">تکرار کلمه عبور</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="ConfirmPassword" name="ConfirmPassword" value="" placeholder="توضیحات را وارد نمایید">
+                                    <div class="form-control-focus"> </div>
+                                    @Html.ValidationMessageFor(model => model.Password)
+                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
                                 <label class="col-md-1 control-label" for="Description">توضیحات</label>
                                 <div class="col-md-11">
                                     <input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" placeholder="توضیحات را وارد نمایید">
@@ -138,11 +142,16 @@
                                 </div>
                             </div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Password">پسورد</label>
+                                <label class="col-md-1 control-label" for="Category">سطح دسترسی</label>
                                 <div class="col-md-11">
-                                    <input type="Password" class="form-control" id="Password" name="Password" value="@Model.Password" required placeholder="عنوان را وارد نمایید">
-                                    @Html.ValidationMessageFor(model => model.Password)
+                                    <select id="CategoryIds" name="CategoryIds[]" class="form-control select2-multiple" multiple>
+                                        @foreach (var item in ViewBag.RoleList)
+                                        {
+                                            <option value="@item.Id">@item.Title</option>
+                                        }
+                                    </select>
                                     <div class="form-control-focus"> </div>
+                                    <span class="help-block"></span>
                                 </div>
                             </div>
                         </div>
@@ -173,6 +182,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" type="text/javascript"></script>*@
     <script src="~/Content/kartik-v-bootstrap-fileinput/js/fileinput.js"></script>
     <script src="~/Content/kartik-v-bootstrap-fileinput/js/locales/fa.js"></script>
+    <script src="~/Content/js/select2.min.js"></script>
     <script type="text/javascript">
 
         var form1 = $('form[data-loading-text]');
@@ -189,7 +199,11 @@
                 error1.show();
                 App.scrollTo(error1, -200);
             },
-
+            rules: {
+                password: "required",
+                password_again: {
+                    equalTo: "#password"
+                }
             errorPlacement: function (error, element) { // render error placement for each input type
                 var cont = $(element).parent('.input-group');
                 if (cont.size() > 0) {
@@ -243,6 +257,10 @@
             layoutTemplates: { main2: '{preview} ' + btnCust + ' {remove} {browse}' },
             allowedFileExtensions: ["jpg", "png", "gif"]
         });
+
+        $('document').ready(function () {
+            $('#CategoryIds').select2({ dir: "rtl", language: "fa" });
+        });
     </script>
-   
+
 }
