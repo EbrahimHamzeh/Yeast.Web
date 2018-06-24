@@ -143,6 +143,7 @@
     <Compile Include="FrontEnd\HomeViewModel.cs" />
     <Compile Include="FrontEnd\PostModel.cs" />
     <Compile Include="FrontEnd\Product.cs" />
+    <Compile Include="FrontEnd\LoginModel.cs" />
     <Compile Include="FrontEnd\ServiceModel.cs" />
     <Compile Include="Generic\DataTableList.cs" />
     <Compile Include="Admin\Tag\TagList.cs" />
