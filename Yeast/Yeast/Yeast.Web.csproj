@@ -222,6 +222,7 @@
     <Content Include="Content\css\jstree.min.css" />
     <Content Include="Content\css\ladda-themeless-rtl.min.css" />
     <Content Include="Content\css\layout-rtl.css" />
+    <Content Include="Content\css\login-5-rtl.min.css" />
     <Content Include="Content\css\plugins-rtl.css" />
     <Content Include="Content\css\select2-bootstrap.min.css" />
     <Content Include="Content\css\select2.min.css" />
@@ -435,6 +436,7 @@
     <Content Include="Content\images\searchicon.png" />
     <Content Include="Content\images\slideshow_image_1-min-rs.jpg" />
     <Content Include="Content\images\slideshow_image_2-min.jpg" />
+    <Content Include="Content\js\additional-methods.js" />
     <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\bootstrap-switch.min.js" />
     <Content Include="Content\js\bootstrap-table\bootstrap-table-cookie.min.js" />
@@ -492,6 +494,7 @@
     <Content Include="Content\js\filepond.min.js" />
     <Content Include="Content\js\jquery-3.3.1.min.js" />
     <Content Include="Content\js\jquery-ui.min.js" />
+    <Content Include="Content\js\jquery.backstretch.js" />
     <Content Include="Content\js\jquery.blockui.min.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\jquery.slimscroll.min.js" />
@@ -503,6 +506,7 @@
     <Content Include="Content\js\jstree.min.js" />
     <Content Include="Content\js\ladda.min.js" />
     <Content Include="Content\js\layout.min.js" />
+    <Content Include="Content\js\login-5.min.js" />
     <Content Include="Content\js\persianumber.js" />
     <Content Include="Content\js\quick-nav.min.js" />
     <Content Include="Content\js\select2.min.js" />
@@ -600,7 +604,6 @@
     <Content Include="Content\Slider\engine1\triangle.png" />
     <Content Include="Content\Slider\engine1\wowslider.js" />
     <Content Include="Content\Slider\engine1\wowslider.mod.js" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\TagController.cs" />
@@ -617,8 +620,6 @@
     <Content Include="Areas\Admin\Views\Product\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="uploads\default_avatar_male.jpg" />
     <Content Include="uploads\noimg.png" />
     <Content Include="Web.config" />
@@ -638,9 +639,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\Shared\Ltr\_Layout.cshtml" />
     <Content Include="Views\Home\Ltr\Index.cshtml" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />

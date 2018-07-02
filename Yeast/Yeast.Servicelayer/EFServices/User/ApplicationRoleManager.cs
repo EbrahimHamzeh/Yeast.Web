@@ -107,10 +107,10 @@ namespace Yeast.Servicelayer.EFServices
             total = await customRoleList.CountAsync().ConfigureAwait(false);
 
             // Ordering data 
-            customRoleList = customRoleList.ApplyOrdering(model);
+            //customRoleList = customRoleList.ApplyOrdering(model);
 
             // Paging And Save Cach
-            customRoleList = customRoleList.ApplyPaging(model).Cacheable();
+            //customRoleList = customRoleList.ApplyPaging(model).Cacheable();
             model.offset = model.offset - 1;
             // Create List Of viewModel
             var category = (await customRoleList.ToListAsync()).Select((x, index) => new RoleAccessList

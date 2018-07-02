@@ -19,7 +19,7 @@ namespace Yeast.DomainClasses.Entities
 		public virtual string Password { get; set; }
 		public virtual string IP { get; set; }
 		public virtual bool IsBaned { get; set; }
-		public virtual DateTime CreatedDate { get; set; }
+        public virtual DateTime CreatedDate { get; set; }
 		public virtual DateTime? BanedDate { get; set; }
 		public virtual DateTime? LastLoginDate { get; set; }
 		public virtual DateTime? LastPasswordChange { get; set; }
