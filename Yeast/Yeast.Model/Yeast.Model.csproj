@@ -125,6 +125,7 @@
     <Compile Include="Admin\Category\CategoryEdit.cs" />
     <Compile Include="Admin\Category\CategoryList.cs" />
     <Compile Include="Admin\Setting\AboutusViewModel.cs" />
+    <Compile Include="Admin\Setting\SettingViewModelCultur.cs" />
     <Compile Include="Admin\Setting\SloderViewModel.cs" />
     <Compile Include="Admin\Setting\SettingViewModel.cs" />
     <Compile Include="Admin\ContactUs\ContactUsList.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="Admin\User\UserList.cs" />
     <Compile Include="FrontEnd\AboutUsViewModel.cs" />
     <Compile Include="FrontEnd\ContactUsViewModel.cs" />
+    <Compile Include="FrontEnd\FooterModel.cs" />
     <Compile Include="FrontEnd\HomeModel.cs" />
     <Compile Include="FrontEnd\HomeViewModel.cs" />
     <Compile Include="FrontEnd\PostModel.cs" />
