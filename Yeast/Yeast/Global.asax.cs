@@ -7,6 +7,8 @@ using Yeast.Datalayer.Migrations;
 using StructureMap.Web.Pipeline;
 using Yeast.IocConfig;
 using Yeast.Utilities.ModelBinder;
+using System.Linq;
+using Yeast.Attribute;
 
 namespace Yeast
 {
@@ -32,8 +34,13 @@ namespace Yeast
 
 			initStructureMap();
 
-			//CaptchaUtils.CaptchaManager.StorageProvider = new CookieStorageProvider();
-		}
+            //CaptchaUtils.CaptchaManager.StorageProvider = new CookieStorageProvider();
+
+            //Using the custom StructureMapFilterProvider
+            var filterProvider = FilterProviders.Providers.Single(provider => provider is FilterAttributeFilterProvider);
+            FilterProviders.Providers.Remove(filterProvider);
+            FilterProviders.Providers.Add(SmObjectFactory.Container.GetInstance<StructureMapFilterProvider>());
+        }
 
 		private void Application_EndRequest(object sender, EventArgs e)
 		{

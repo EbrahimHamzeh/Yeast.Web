@@ -127,6 +127,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EFServices\StatisticsService.cs" />
     <Compile Include="EFServices\ServiceCategoryService.cs" />
     <Compile Include="EFServices\OptionService.cs" />
     <Compile Include="EFServices\ServiceService.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="EFServices\User\CustomRoleStore.cs" />
     <Compile Include="EFServices\User\ApplicationSignInManager.cs" />
     <Compile Include="EFServices\User\ApplicationRoleManager.cs" />
+    <Compile Include="Interfaces\IStatisticservice.cs" />
     <Compile Include="Interfaces\IServiceCategoryService.cs" />
     <Compile Include="Interfaces\IOptiontService.cs" />
     <Compile Include="Interfaces\IServiceService.cs" />
