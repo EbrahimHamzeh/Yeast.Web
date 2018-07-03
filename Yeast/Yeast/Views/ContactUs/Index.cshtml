@@ -1,4 +1,4 @@
-﻿@model Yeast.Model.FrontEnd.AboutUsViewModel
+﻿@model Yeast.Model.Admin.Setting.SettingViewModelCultur
 @{
 	ViewBag.Title = "Index";
 }
@@ -40,7 +40,7 @@
 					<h2 class="page-heading">New Products</h2>
 					<section class="productGrid productGrid--maxCol4" dir="ltr">
                             <div class="product">
-							<h3> @Model.Title</h3>
+							<h3> @Model.Body</h3>
                                 <p> @Html.Raw(Model.Body)</p>
 						</div>
 					</section>

@@ -138,6 +138,7 @@
     <Compile Include="Admin\User\UserAdd.cs" />
     <Compile Include="Admin\User\UserEdit.cs" />
     <Compile Include="Admin\User\UserList.cs" />
+    <Compile Include="FrontEnd\AboutUsModel.cs" />
     <Compile Include="FrontEnd\AboutUsViewModel.cs" />
     <Compile Include="FrontEnd\ContactUsViewModel.cs" />
     <Compile Include="FrontEnd\FooterModel.cs" />

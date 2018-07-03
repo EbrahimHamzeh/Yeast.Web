@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using Yeast.Datalayer.Context;
+using Yeast.Model.Admin.Setting;
 using Yeast.Model.FrontEnd;
 using Yeast.Servicelayer.Interfaces;
 using Yeast.Utilities.Controllers;
@@ -22,8 +23,10 @@ namespace Yeast.Controllers
 		// GET: Home
 		public virtual ActionResult Index()
 		{
-            AboutUsViewModel aboutUsViewModel = _optionService.GetByCulterAboutUsV();
-            return View(aboutUsViewModel);
+            AboutUsModel aboutUsModel = new AboutUsModel();
+            aboutUsModel.aboutUsViewModel = _optionService.GetByCulterAboutUsV();
+            aboutUsModel.settingViewModelCultur = _optionService.GetAllSettingByCultur();
+            return View(aboutUsModel);
 		}
 	}
 }
