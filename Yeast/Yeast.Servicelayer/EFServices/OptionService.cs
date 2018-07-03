@@ -5,6 +5,7 @@ using System.Reflection;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
+using Yeast.Model.Admin.Setting;
 using Yeast.Model.FrontEnd;
 using Yeast.Servicelayer.Interfaces;
 using Yeast.Utilities.Helpers;
@@ -65,7 +66,46 @@ namespace Yeast.Servicelayer.EFServices
 
             return settingViewModel;
         }
+        public SettingViewModelCultur GetAllSettingByCultur()
+        {
+            string cultur = CultureHelper.GetCurrentNeutralCulture();
+            AboutUsViewModel aboutUsViewModel = new AboutUsViewModel();
+            var option = _option.ToList();
+            SettingViewModelCultur settingViewModel = new SettingViewModelCultur();
+            if (option.Where(x => x.Name == "Address").Any())
+                settingViewModel.Address = option.Where(x => x.Name == "Address").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "Email").Any())
+                settingViewModel.Email = option.Where(x => x.Name == "Email").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "Facebooke").Any())
+                settingViewModel.Facebooke = option.Where(x => x.Name == "Facebooke").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "Instagram").Any())
+                settingViewModel.Instagram = option.Where(x => x.Name == "Instagram").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "MetaTag").Any())
+                settingViewModel.MetaTag = option.Where(x => x.Name == "MetaTag").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "Mobile").Any())
+                settingViewModel.Mobile = option.Where(x => x.Name == "Mobile").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "Phone").Any())
+                settingViewModel.Phone = option.Where(x => x.Name == "Phone").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "Twitter").Any())
+                settingViewModel.Twitter = option.Where(x => x.Name == "Twitter").FirstOrDefault().Value;
 
+            switch (cultur)
+            {
+                case "fa":
+                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameFa").FirstOrDefault().Value;
+                    break;
+                case "en":
+                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameEn").FirstOrDefault().Value;
+                    break;
+                case "ar":
+                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameSa").FirstOrDefault().Value;
+                    break;
+                case "ru":
+                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameRu").FirstOrDefault().Value;
+                    break;
+            }
+            return settingViewModel;
+        }
         public AboutUs GetAllAboutUs()
         {
             var option = _option.ToList();

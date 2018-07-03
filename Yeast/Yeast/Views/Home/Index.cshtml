@@ -6,593 +6,259 @@
 @section CssStyle{
     <link href="~/Content/Slider/engine1/style.css" rel="stylesheet" />
 }
+<title>apollo-demoshop19</title>
+<link rel='canonical' href='http://ap-newfashion3.mybigcommerce.com/' />
 
-<div class="body stop-float-body clearfix">
 
-    <div class="not-container page-main">
-        <div class="on">
-            <div id="wowslider-container1">
-                <div class="ws_images">
-                    <ul>
-                        <li>@*<a href="http://wowslider.com">*@<img src="@Url.Content(Model.homeModel.Image1)" alt="image slider jquery" title="@Model.homeModel.TextImag1" id="wows1_0" />@*</a>*@</li>
-                        <li><img src="@Url.Content(Model.homeModel.Image2)" alt="slideshow_image_2-min" title="@Model.homeModel.TextImag2" id="wows1_1" /></li>
-                        <li><img src="@Url.Content(Model.homeModel.Image2)" alt="slideshow_image_2-min" title="@Model.homeModel.TextImag3" id="wows1_1" /></li>
-                    </ul>
-                </div>
-                <div class="ws_bullets">
-                    <div>
-                        <a href="#" title="slideshow_image_1-min-rs"><span><img src="@Url.Content(Model.homeModel.Image1)" alt="">1</span></a>
-                        <a href="#" title="slideshow_image_2-min"><span><img src="@Url.Content(Model.homeModel.Image2)" alt="">2</span></a>
-                        <a href="#" title="slideshow_image_2-min"><span><img src="@Url.Content(Model.homeModel.Image3)" alt="">3</span></a>
-                    </div>
-                </div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">slider bootstrap</a> by WOWSlider.com v7.7</div>
-                <div class="ws_shadow"></div>
-            </div>
-            <!-- snippet location home_content -->
-        </div>
+<link href="http://cdn7.bigcommerce.com/r-74638f6b4acdaa23636b5c244e4ae40279565bfe/img/bc_favicon.ico" rel="shortcut icon">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link data-stencil-stylesheet href="http://cdn7.bigcommerce.com/s-3f6ufy7gd4/stencil/b9ae4a60-9c1e-0135-548c-525400970412/e/12ee1ef0-9c20-0135-73dc-525400dfdca6/css/theme-95f52720-9c1f-0135-73de-525400dfdca6.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Oswald:300|Hind:300,700|Montserrat:400|Karla:400" rel="stylesheet">
+<script async src="http://cdn7.bigcommerce.com/s-3f6ufy7gd4/stencil/b9ae4a60-9c1e-0135-548c-525400970412/e/12ee1ef0-9c20-0135-73dc-525400dfdca6/modernizr-custom.js"></script>
+
+
+
+<div class="body stop-float-body clearfix" style="padding-top: 0px;">
+
+    <div class=" not-container  page-main">
         <div class="main full">
-            <div class="on row">
-                @*<div class="col-lg-2-4 col-md-12 col-sm-12 col-xs-12 block-product-left">
-                <div class="block_left">
-                    <div class="page-subheading ">
-                        <p class="title--main">Women</p>
-                        <p class="title--sub">
-                            <span>Shop The Look</span>
-                        </p>
-                    </div>
-                    <div class="effect_image_3">
-                        <div class="effect-img">
-                            <img src="~/Content/images/img-cate-min.jpg" alt="Women" class="img-responsive">
+            <div class="container">
+                <div class="on">
+                    <section class="heroCarousel slick-initialized slick-slider" data-slick="{
+        &quot;dots&quot;: true,
+        &quot;mobileFirst&quot;: true,
+        &quot;slidesToShow&quot;: 1,
+        &quot;slidesToScroll&quot;: 1,
+        &quot;autoplay&quot;: true,
+        &quot;autoplaySpeed&quot;: 5000
+    }">
+                        <div class="on">
+                            <div id="wowslider-container1">
+                                <div class="ws_images">
+                                    <ul>
+                                        <li>@*<a href="http://wowslider.com">*@<img src="@Url.Content(Model.homeModel.Image1)" style="width:100%;height:550px;" alt="image slider jquery" title="@Model.homeModel.TextImag1" id="wows1_0" />@*</a>*@</li>
+                                        <li><img style="width:100%;height:550px;" src="@Url.Content(Model.homeModel.Image2)" alt="slideshow_image_2-min" title="@Model.homeModel.TextImag2" id="wows1_1" /></li>
+                                        <li><img style="width:100%;height:550px;" src="@Url.Content(Model.homeModel.Image2)" alt="slideshow_image_2-min" title="@Model.homeModel.TextImag3" id="wows1_1" /></li>
+                                    </ul>
+                                </div>
+                                <div class="ws_bullets">
+                                    <div>
+                                        <a href="#" title="slideshow_image_1-min-rs"><span><img src="@Url.Content(Model.homeModel.Image1)" alt="">1</span></a>
+                                        <a href="#" title="slideshow_image_2-min"><span><img src="@Url.Content(Model.homeModel.Image2)" alt="">2</span></a>
+                                        <a href="#" title="slideshow_image_2-min"><span><img src="@Url.Content(Model.homeModel.Image3)" alt="">3</span></a>
+                                    </div>
+                                </div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">slider bootstrap</a> by WOWSlider.com v7.7</div>
+                                <div class="ws_shadow"></div>
+                            </div>
+                            <!-- snippet location home_content -->
                         </div>
-                    </div>
-                </div>
-            </div>*@
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
-                    <h2 class="page-heading">New Products</h2>
-                    <section class="productGrid productGrid--maxCol4" dir="ltr" data-slick='{
-        "dots": false,
-            "arrows": true,
-            "infinite": true,
-             "slidesToShow": 5,
-               "slidesToScroll": 1,
-           "responsive": [
-                {
-                  "breakpoint": 1024,
-                  "settings": {
-                    "slidesToShow": 3,
-                    "slidesToScroll": 1
-                  }
-                },
-                {
-                  "breakpoint": 600,
-                  "settings": {
-                    "slidesToShow": 1,
-                    "slidesToScroll": 1
-                  }
-                },
-                {
-                  "breakpoint": 480,
-                  "settings": {
-                    "slidesToShow": 1,
-                    "slidesToScroll": 1
-                  }
-                }
-            ]
-    }'>
-                        @foreach (var item in Model.ProductList.Take(4))
-                {
-                    <div class="product">
-                        <article class="card ">
-                            <figure class="card-figure" style="height:485px;background-color:#e6e0e0;">
-                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/" class="product_img_link">
-                                    <img class="card-image lazyload" data-sizes="auto" src="http://cdn8.bigcommerce.com/s-fo69q4de8e/stencil/149b9920-9df1-0135-548e-525400970412/e/bc450ef0-b325-0135-84ac-525400970412/img/loading.svg" data-src="@Url.Content(item.Image1) " alt="Aenean consequat sagittis" title="Aenean consequat sagittis">
-                                    <span class="product-additional" data-product-id="">
-                                        <img class="replace-2x img-responsive" src="@Url.Content(item.Image1) " alt="Aenean consequat sagittis" title="Aenean consequat sagittis">
-                                    </span>
-                                </a>
-                                <div class="button-quickview">
-                                    <a href="#" class="button button--small card-figcaption-button quickview" data-product-id="111">جزئیات <span class="fa fa-eye"></span></a>
-                                </div>
-                                <figcaption class="card-figcaption">
-                                    <div class="card-figcaption-body">
-                                        <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/" class="button button--small card-figcaption-button add-cart-button" data-product-id="111">انتخاب<span class="fa fa-shopping-cart"></span></a>
-                                        <div class="product-meta">
-                                            <div class="box-wishlist true-compare " title="Wishlist">
-                                                <form class="form" method="post" action="/wishlist.php?action=add&amp;product_id=111" data-wishlist-add>
-                                                    <div class="form-action">
-                                                        <input type="hidden" name="variation_id" value="">
-                                                        <button class="button button--small card-figcaption-button" type="submit">
-                                                            <span class="title-button">علاقه مندی</span>
-                                                            <span class="fa fa-heart"></span>
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <label class="button button--small card-figcaption-button button-compare" for="compare-111" title="Compare">
-                                                <span class="title-button">مقایسه</span>
-                                                <input type="checkbox" name="products[]" value="111" id="compare-111" data-compare-id="111">
-                                                <i class="fa fa-copy"></i>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                            <div class="card-body">
-                                <div class="card-body-left">
-                                    <h4 class="card-title">
-                                        <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/">@item.Name</a>
-                                    </h4>
-                                    <p class="card-text" data-test-info-type="productRating">
-                                        <span class="rating--small">
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <!-- snippet location product_rating -->
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="card-text content-price" data-test-info-type="price">
-                                    <div class="price-section price-section--withoutTax ">
-                                        <span data-product-price-without-tax class="price price--withoutTax">@item.Price ریال</span>
-                                    </div>
-                                </div>
-                                <div class="description">
-                                    <p>@item.Description</p>
-                                </div>
-                            </div>
-                            <div class="deal-clock lof-clock-111-detail">
-                                <div class="deal-clock-box">
-                                    <span>
-                                    </span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-        }
 
+                        <button type="button" data-role="none" class="slick-prev" aria-label="previous" style="display: block;">Previous</button><button type="button" data-role="none" class="slick-next" aria-label="next" style="display: block;">Next</button><ul class="slick-dots" style="display: block;"><li class="slick-active" aria-hidden="false"><button type="button" data-role="none">1</button></li><li aria-hidden="true" class=""><button type="button" data-role="none">2</button></li></ul>
                     </section>
+                    <!-- snippet location home_content -->
+
+                </div>
+                @*<div class="on">
+
+                    <h2 class="page-heading">مقالات</h2>
+                    <div class="widget-banner block">
+                        <div class="banner-content row">
+                            @foreach (var item in Model.postlist.OrderByDescending(m => m.Id).Take(3))
+                            {
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <a href="@Url.Action("Details", "Post", new { id = item.Id })">
+                                        <img style="height:100%;width:100%;" src="~/Content/upload/images/@item.ImageTitle" alt="top-banners" class="img-responsive">
+                                    </a>
+                                    <label style="float: right;">@item.Title</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>*@
+                <div class="on block-carousel-index clearfix">
+                      
+
+                    <div class="on">
+                        <div class="widget-banner block">
+                            <div class="banner-content row">
+                                @foreach (var item in Model.postlist.OrderByDescending(m => m.Id).Take(3))
+                                {
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <article class="card">
+                                            <figure class="card-figure">
+                                                <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/" class="product_img_link">
+                                                    <img style="min-height: 240px; min-width: 240px;" class="card-image lazyautosizes" data-sizes="auto" src="~/Content/upload/images/@item.TitleImg" data-src="@item.TitleImg" alt="Aenean consequat sagittis" title="Aenean consequat sagittis" sizes="277px">
+                                                </a>
+                                                <div class="button-quickview">
+                                                    <a href="@Url.Action("Details", "Post", new { id = item.Id })" class="button button--small card-figcaption-button quickview" data-product-id="111">ادامه مقاله <span class="fa fa-eye"></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="card-body">
+                                                <div class="card-body-left">
+                                                    <h4 class="card-title">
+                                                        <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/">مقاله : @item.Title  </a>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
 
                     <!-- MEGAMENU -->
 
                 </div>
-            </div>
-            <div class="on clearfix">
-                <div class="blockstore row">
-                    <div class="col-md-12 col-lg-6 no-padding blockstore__left">
-                        <div class="blockstore__left--logo">
-                            <img src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/logo-store.png" alt="@Html.Raw(Model.homeModel.Titlepart1)" class="img-responsive">
-                        </div>
-                        <h4 class="blockstore__left--title"> @Html.Raw(Model.homeModel.Titlepart1)</h4>
-                        <div class="blockstore__left--des">
-                            @Html.Raw(Model.homeModel.Bodypart1)
-                        </div>
-                        <a class="blockstore__left--btn btn btn-outline-inverse" href="http://apollo-demoshop13.mybigcommerce.com">More Detail</a>
-                    </div>
-                    <div class="col-md-12 col-lg-6 no-padding blockstore_right">
-                        <img src="~/Content/images/images.jpg" alt="We love fashion" class="img-responsive">
-                    </div>
-                </div>
-            </div>
-            <div class="on row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
-
-
-                    <h2 class="page-heading">Featured Products</h2>
-
-                    <ul class="productGrid productGrid--maxCol4" data-product-type="featured" dir="ltr" data-slick='{
-            "dots": false,
-            "arrows": true,
-            "infinite": true,
-             "slidesToShow": 4,
-  			 "slidesToScroll": 1,
-             "responsive": [
-                {
-                  "breakpoint": 1024,
-                  "settings": {
-                    "slidesToShow": 3,
-                    "slidesToScroll": 1
-                  }
-                },
-                {
-                  "breakpoint": 600,
-                  "settings": {
-                    "slidesToShow": 2,
-                    "slidesToScroll": 2
-                  }
-                },
-                {
-                  "breakpoint": 480,
-                  "settings": {
-                    "slidesToShow": 1,
-                    "slidesToScroll": 1
-                  }
-                }
-            ]
-
-        }'>
-
-                        @if (Model.ProductList.Count() > 4)
-    {
-        foreach (var item in Model.ProductList.Skip(4))
-        {
-                    <div class="product">
-                        <article class="card ">
-                            <figure class="card-figure" style="height:485px;background-color:#e6e0e0;">
-                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/" class="product_img_link">
-                                    <img class="card-image lazyload" data-sizes="auto" src="http://cdn8.bigcommerce.com/s-fo69q4de8e/stencil/149b9920-9df1-0135-548e-525400970412/e/bc450ef0-b325-0135-84ac-525400970412/img/loading.svg" data-src="@Url.Content(item.Image1) " alt="Aenean consequat sagittis" title="Aenean consequat sagittis">
-                                    <span class="product-additional" data-product-id="">
-                                        <img class="replace-2x img-responsive" src="@Url.Content(item.Image1) " alt="Aenean consequat sagittis" title="Aenean consequat sagittis">
-                                    </span>
-                                </a>
-                                <div class="button-quickview">
-                                    <a href="#" class="button button--small card-figcaption-button quickview" data-product-id="111">جزئیات <span class="fa fa-eye"></span></a>
-                                </div>
-                                <figcaption class="card-figcaption">
-                                    <div class="card-figcaption-body">
-                                        <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/" class="button button--small card-figcaption-button add-cart-button" data-product-id="111">انتخاب<span class="fa fa-shopping-cart"></span></a>
-                                        <div class="product-meta">
-                                            <div class="box-wishlist true-compare " title="Wishlist">
-                                                <form class="form" method="post" action="/wishlist.php?action=add&amp;product_id=111" data-wishlist-add>
-                                                    <div class="form-action">
-                                                        <input type="hidden" name="variation_id" value="">
-                                                        <button class="button button--small card-figcaption-button" type="submit">
-                                                            <span class="title-button">علاقه مندی</span>
-                                                            <span class="fa fa-heart"></span>
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <label class="button button--small card-figcaption-button button-compare" for="compare-111" title="Compare">
-                                                <span class="title-button">مقایسه</span>
-                                                <input type="checkbox" name="products[]" value="111" id="compare-111" data-compare-id="111">
-                                                <i class="fa fa-copy"></i>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                            <div class="card-body">
-                                <div class="card-body-left">
-                                    <h4 class="card-title">
-                                        <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/">@item.Name</a>
-                                    </h4>
-                                    <p class="card-text" data-test-info-type="productRating">
-                                        <span class="rating--small">
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <!-- snippet location product_rating -->
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="card-text content-price" data-test-info-type="price">
-                                    <div class="price-section price-section--withoutTax ">
-                                        <span data-product-price-without-tax class="price price--withoutTax">@item.Price ریال</span>
-                                    </div>
-                                </div>
-                                <div class="description">
-                                    <p>@item.Description</p>
-                                </div>
-                            </div>
-                            <div class="deal-clock lof-clock-111-detail">
-                                <div class="deal-clock-box">
-                                    <span>
-                                    </span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-}
-}
-
-                    </ul>
-
-                    <!-- MEGAMENU -->
-
-                </div>
-            </div>
-            @*<div class="on clearfix">
-                <div class="block-email" style="background:#ededeb">
-                    <div class="container">
-                        <div class="blockemail__img col-md-6 col-sm-6">
-                            <img src="~/Content/images/imgpsh-fullsize-rs.jpg" alt="BECOME A PREFERRED SUBSCRIBER" class="img-responsive">
-                        </div>
-                        <div class="col-md-6 col-sm-12 blockemail">
-                            <h3 class="title-news">BECOME A PREFERRED SUBSCRIBER</h3>
-                            <p class="des-news">
-                                Get 15% off your next order. Be the first to learn about promotions special events, new arrivals and more
-                            </p>
-                            <div class="newsletter-form">
-                                <form class="form" action="/subscribe.php" method="post">
-                                    <fieldset class="form-fieldset">
-                                        <input type="hidden" name="action" value="subscribe">
-                                        <input type="hidden" name="nl_first_name" value="bc">
-                                        <input type="hidden" name="check" value="1">
-                                        <div class="form-field">
-                                            <label class="form-label is-srOnly" for="nl_email">Email Address</label>
-                                            <div class="form-prefixPostfix wrap">
-                                                <input class="form-input" id="nl_email" name="nl_email" type="email" value="" placeholder="Your email address">
-                                                <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="Subscribe">
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
-            <div class="on clearfix">
-                <div class="blockstore row" style="background:#ededeb">
-
-                    <div class="col-md-12 col-lg-6 no-padding blockstore_right" style="background:#ededeb">
-                        <img src="/Content/images/images.jpg" alt="We love fashion" class="img-responsive">
-                    </div>
-                    <div class="col-md-12 col-lg-6 no-padding blockstore__left" style="text-align: center;background:#ededeb">
-
-                        <div class="blockstore__left--logo">
-                            <img src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/logo-store.png" alt="@Html.Raw(Model.homeModel.Titlepart2)" class="img-responsive">
-                        </div>
-                        <h4 class="blockstore__left--title" style="color: black;">@Html.Raw(Model.homeModel.Titlepart2) </h4>
-                        <div class="blockstore__left--des" style="color: black;">
-                            @Html.Raw(Model.homeModel.Bodypart2)
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="on row">
-                @*<div class="col-lg-2-4 col-md-12 col-sm-12 col-xs-12 block-product-left">
-                <div class="block_left">
-                    <div class="page-subheading ">
-                        <p class="title--main">Accessories</p>
-                        <p class="title--sub">
-                            <span>The Collections</span>
-                        </p>
-                    </div>
-                    <div class="effect_image_3">
-                        <div class="effect-img">
-                            <img src="~/Content/images/img-cate-3-min.jpg" alt="Accessories" class="img-responsive">
-                        </div>
-                    </div>
-                </div>
-            </div>*@
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
-                    <h2 class="page-heading">Most Popular Products</h2>
-                    <ul class="productGrid productGrid--maxCol4" data-product-type="top_sellers" dir="ltr" data-slick='{
-           "dots": false,
-            "arrows": true,
-            "infinite": true,
-             "slidesToShow": 4,
-  			 "slidesToScroll": 1,
-         "responsive": [
-                {
-                  "breakpoint": 1024,
-                  "settings": {
-                    "slidesToShow": 3,
-                    "slidesToScroll": 1
-                  }
-                },
-                {
-                  "breakpoint": 600,
-                  "settings": {
-                    "slidesToShow": 2,
-                    "slidesToScroll": 2
-                  }
-                },
-                {
-                  "breakpoint": 480,
-                  "settings": {
-                    "slidesToShow": 1,
-                    "slidesToScroll": 1
-                  }
-                }
-            ]
-
-        }'>
-                        @*@if (Model.ProductList.Count() > 4)
-    {
-        foreach (var item in Model.ProductList.Skip(4))
-        {
-
-                    <div class="product">
-                        <article class="card ">
-                            <figure class="card-figure" style="height:485px;background-color:#e6e0e0;">
-                                <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/" class="product_img_link">
-                                    <img class="card-image lazyload" data-sizes="auto" src="http://cdn8.bigcommerce.com/s-fo69q4de8e/stencil/149b9920-9df1-0135-548e-525400970412/e/bc450ef0-b325-0135-84ac-525400970412/img/loading.svg" data-src="@Url.Content(item.Image1) " alt="Aenean consequat sagittis" title="Aenean consequat sagittis">
-                                    <span class="product-additional" data-product-id="">
-                                        <img class="replace-2x img-responsive" src="@Url.Content(item.Image1) " alt="Aenean consequat sagittis" title="Aenean consequat sagittis">
-                                    </span>
-                                </a>
-                                <div class="button-quickview">
-                                    <a href="#" class="button button--small card-figcaption-button quickview" data-product-id="111">جزئیات <span class="fa fa-eye"></span></a>
-                                </div>
-                                <figcaption class="card-figcaption">
-                                    <div class="card-figcaption-body">
-                                        <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/" class="button button--small card-figcaption-button add-cart-button" data-product-id="111">انتخاب<span class="fa fa-shopping-cart"></span></a>
-                                        <div class="product-meta">
-                                            <div class="box-wishlist true-compare " title="Wishlist">
-                                                <form class="form" method="post" action="/wishlist.php?action=add&amp;product_id=111" data-wishlist-add>
-                                                    <div class="form-action">
-                                                        <input type="hidden" name="variation_id" value="">
-                                                        <button class="button button--small card-figcaption-button" type="submit">
-                                                            <span class="title-button">علاقه مندی</span>
-                                                            <span class="fa fa-heart"></span>
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <label class="button button--small card-figcaption-button button-compare" for="compare-111" title="Compare">
-                                                <span class="title-button">مقایسه</span>
-                                                <input type="checkbox" name="products[]" value="111" id="compare-111" data-compare-id="111">
-                                                <i class="fa fa-copy"></i>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                            <div class="card-body">
-                                <div class="card-body-left">
-                                    <h4 class="card-title">
-                                        <a href="http://ap-newfashion.mybigcommerce.com/aenean-consequat-sagittis/">@item.Name</a>
-                                    </h4>
-                                    <p class="card-text" data-test-info-type="productRating">
-                                        <span class="rating--small">
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                            <span class="icon icon--ratingEmpty">
-                                                <svg>
-                                                    <use xlink:href="#icon-star" />
-                                                </svg>
-                                            </span>
-                                             snippet location product_rating 
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="card-text content-price" data-test-info-type="price">
-                                    <div class="price-section price-section--withoutTax ">
-                                        <span data-product-price-without-tax class="price price--withoutTax">@item.Price ریال</span>
-                                    </div>
-                                </div>
-                                <div class="description">
-                                    <p>@item.Description</p>
-                                </div>
-                            </div>
-                            <div class="deal-clock lof-clock-111-detail">
-                                <div class="deal-clock-box">
-                                    <span>
-                                    </span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-}
-}*@
-                    </ul>
-                    <!-- MEGAMENU -->
-                </div>
-            </div>
-            <div class="on clearfix col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding">
-                <div class="block-testimonial-index testimmonial">
+                <div class="on block-carousel-index clearfix">
                     <div class="page-subheading">
-                        <p class="title--main">Testimonial</p>
-                        <p class="title--sub">What Clients Say</p>
+                        <p class="title--main">محصولات</p>
                     </div>
+
+
+                    <h2 class="page-heading">محصولات</h2>
+
+
+                    <div class="on">
+                        <div class="widget-banner block">
+                            <div class="banner-content row">
+                                @foreach (var item in Model.ProductList.OrderByDescending(m => m.Id).Take(4))
+                                {
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        <article class="card ">
+                                            <figure class="card-figure">
+                                                <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/" class="product_img_link">
+                                                    <img style="min-height: 240px; min-width: 100%;" class="card-image lazyautosizes" data-sizes="auto" src="@item.Image1" data-src="@item.Image1" alt="Aenean consequat sagittis" title="Aenean consequat sagittis" sizes="277px">
+                                                    <span class="product-additional" data-product-id="">
+                                                        <img style="min-height: 240px; min-width: 240px;" class="replace-2x img-responsive" src="@item.Image2" alt="Aenean consequat sagittis" title="Aenean consequat sagittis">
+                                                    </span>
+                                                </a>
+                                                <div class="button-quickview">
+                                                    <a href="@Url.Action("Detial", "Product", new { id = item.Id })" class="button button--small card-figcaption-button quickview" data-product-id="111">جزئیات <span class="fa fa-eye"></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="card-body">
+                                                <div class="card-body-left">
+                                                    <h4 class="card-title">
+                                                        <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/">@item.Name</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="card-text content-price" data-test-info-type="price">
+                                                    <div class="price-section price-section--withoutTax ">
+                                                        <span data-product-price-without-tax="" class="price price--withoutTax">@item.Price</span>
+                                                    </div>
+                                                </div>
+                                                <div class="description">
+                                                    <p>@item.Description</p>
+                                                </div>
+                                            </div>
+                                            <div class="deal-clock lof-clock-111-detail">
+                                                <div class="deal-clock-box">
+                                                    <span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- MEGAMENU -->
+
+                </div>
+                <div class="on testimonial-index clearfix">
+                    <div class="page-subheading">
+                        <p class="title--main"> @Model.homeModel.Titlepart1</p>
+                    </div>
+
+
+
                     <div class="testimonial_wrap">
                         <div class="quotes-wrapper">
                             <div class="quotes-slider" id="Quotes-block">
-                                <div class="quotes-slide-block" dir="ltr" data-slick='{
-        "dots": false,
-        "infinite": true,
-        "autoplay": true,
-        "mobileFirst": true,
-        "slidesToShow": 1,
-        "slidesToScroll": 1
-        }'>
-                                    <div class="quotes-slider__text text-center">
-                                        <span class="quote-icon"></span>
-                                        <div class="rte-setting">
-                                            I told you all this before, when you have a swimming pool, do not use chlorine, use salt water, the healing, salt water is the healing. Lion! Lion! How&#x27;s business? Boomin. It&#x27;s important to use cocoa butter. It&#x27;s the key to more success, why not live smooth? Why live rough?
+                                <div class="quotes-slide-block slick-initialized slick-slider">
+                                    <div aria-live="polite" class="slick-list draggable" tabindex="0">
+                                        <div class="slick-track" style="opacity: 1; width: 5050px; transform: translate3d(-3030px, 0px, 0px);">
+                                            <div class="quotes-slider__text text-center slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 1010px;">
+                                                <span class="quote-icon"></span>
+                                                <div class="rte-setting">
+                                                    @Html.Raw(Model.homeModel.Bodypart1)
+                                                </div>
+                                                <div class="t-avatar">
+                                                </div>
+                                                <h4 class="title_quote author_quote">
+                                                    Author's name
+                                                </h4>
+                                                <p class="descriptions_quote">
+                                                    Customer from Mango.com
+                                                </p>
+                                            </div>
+                                            <div class="quotes-slider__text text-center slick-slide" data-slick-index="0" aria-hidden="true" style="width: 1010px;">
+                                                <span class="quote-icon"></span>
+                                                <div class="rte-setting">
+                                                    @Html.Raw(Model.homeModel.Bodypart1)
+                                                </div>
+                                                <div class="t-avatar">
+                                                </div>
+                                                <h4 class="title_quote author_quote">
+                                                    Author's name
+                                                </h4>
+                                                <p class="descriptions_quote">
+                                                    Customer from Mango.com
+                                                </p>
+                                            </div>
+                                            <div class="quotes-slider__text text-center slick-slide" data-slick-index="1" aria-hidden="true" style="width: 1010px;">
+                                                <span class="quote-icon"></span>
+                                                <div class="rte-setting">
+                                                    @Html.Raw(Model.homeModel.Bodypart1)
+                                                </div>
+                                                <div class="t-avatar">
+                                                </div>
+                                                <h4 class="title_quote author_quote">
+                                                    Author's name
+                                                </h4>
+                                                <p class="descriptions_quote">
+                                                    Customer from Mango.com
+                                                </p>
+                                            </div>
+                                            <div class="quotes-slider__text text-center slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 1010px;">
+                                                <span class="quote-icon"></span>
+                                                <div class="rte-setting">
+                                                    @Html.Raw(Model.homeModel.Bodypart1)
+                                                </div>
+                                                <div class="t-avatar">
+                                                </div>
+                                                <h4 class="title_quote author_quote">
+                                                    Author's name
+                                                </h4>
+                                                <p class="descriptions_quote">
+                                                    Customer from Mango.com
+                                                </p>
+                                            </div>
+                                            <div class="quotes-slider__text text-center slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" style="width: 1010px;">
+                                                <span class="quote-icon"></span>
+                                                <div class="rte-setting">
+                                                    @Html.Raw(Model.homeModel.Bodypart1)
+                                                </div>
+                                                <div class="t-avatar">
+                                                </div>
+                                                <h4 class="title_quote author_quote">
+                                                    Author's name
+                                                </h4>
+                                                <p class="descriptions_quote">
+                                                    Customer from Mango.com
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div class="t-avatar">
-                                        </div>
-                                        <h4 class="title_quote author_quote">
-                                            Author&#x27;s name
-                                        </h4>
-                                        <p class="descriptions_quote">
-                                            Customer from Mango.com
-                                        </p>
-                                    </div>
-                                    <div class="quotes-slider__text text-center">
-                                        <span class="quote-icon"></span>
-                                        <div class="rte-setting">
-                                            I told you all this before, when you have a swimming pool, do not use chlorine, use salt water, the healing, salt water is the healing. Lion! Lion! How&#x27;s business? Boomin. It&#x27;s important to use cocoa butter. It&#x27;s the key to more success, why not live smooth? Why live rough?
-                                        </div>
-                                        <div class="t-avatar">
-                                        </div>
-                                        <h4 class="title_quote author_quote">
-                                            Author&#x27;s name
-                                        </h4>
-                                        <p class="descriptions_quote">
-                                            Customer from Mango.com
-                                        </p>
-                                    </div>
-                                    <div class="quotes-slider__text text-center">
-                                        <span class="quote-icon"></span>
-                                        <div class="rte-setting">
-                                            I told you all this before, when you have a swimming pool, do not use chlorine, use salt water, the healing, salt water is the healing. Lion! Lion! How&#x27;s business? Boomin. It&#x27;s important to use cocoa butter. It&#x27;s the key to more success, why not live smooth? Why live rough?
-                                        </div>
-                                        <div class="t-avatar">
-                                        </div>
-                                        <h4 class="title_quote author_quote">
-                                            Author&#x27;s name
-                                        </h4>
-                                        <p class="descriptions_quote">
-                                            Customer from Mango.com
-                                        </p>
                                     </div>
 
+
+
+                                    <button type="button" data-role="none" class="slick-prev" aria-label="previous" style="display: inline-block;">Previous</button><button type="button" data-role="none" class="slick-next" aria-label="next" style="display: inline-block;">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -600,113 +266,26 @@
                     <!-- MEGAMENU -->
 
                 </div>
-            </div>
-            <div class="on col-md-12 col-lg-6 col-sm-12 col-xs-12 no-padding">
-                <div class="block-testimonial-index testimmonial block-logo-list">
-                    <div class="page-subheading">
-                        <p class="title--main">Shop by</p>
-                        <p class="title--sub">Top Favourites</p>
-                    </div>
-                    <div class="brandlist-homepage" dir="ltr" data-slick='{
-            "dots": false,
-            "infinite": true,
-            "rows":"2",
-            "slidesToShow": 4,
-            "slidesToScroll": 1,
-            "responsive": [
-                {
-                    "breakpoint": 1200,
-                    "settings": {
-                        "slidesToScroll": 1,
-                        "slidesToShow": 4
-                    }
-                },
-                {
-                    "breakpoint": 992,
-                    "settings": {
-                        "slidesToScroll": 1,
-                        "slidesToShow": 3
-                    }
-                },
-                {
-                    "breakpoint": 768,
-                    "settings": {
-                        "slidesToScroll": 1,
-                        "slidesToShow": 2
-                    }
-                },
-                {
-                    "breakpoint": 480,
-                    "settings": {
-                        "slidesToScroll": 1,
-                        "slidesToShow": 1
-                    }
-                }
-            ]
-        }'>
-                        <div class="brand-logo">
-                            <a title="brand logo" href="#">
-                                <img class="img-responsive" src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/vendor-logo-1-min.png" alt="brand-logo" />
-                            </a>
-                        </div>
-                        <div class="brand-logo">
-                            <a title="brand logo" href="#">
-                                <img class="img-responsive" src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/vendor-logo-2-min.png" alt="brand-logo" />
-                            </a>
-                        </div>
-                        <div class="brand-logo">
-                            <a title="brand logo" href="#">
-                                <img class="img-responsive" src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/vendor-logo-3-min.png" alt="brand-logo" />
-                            </a>
-                        </div>
-                        <div class="brand-logo">
-                            <a title="brand logo" href="#">
-                                <img class="img-responsive" src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/vendor-logo-4-min.png" alt="brand-logo" />
-                            </a>
-                        </div>
-                        <div class="brand-logo">
-                            <a title="brand logo" href="#">
-                                <img class="img-responsive" src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/vendor-logo-5-min.png" alt="brand-logo" />
-                            </a>
-                        </div>
-                        <div class="brand-logo">
-                            <a title="brand logo" href="#">
-                                <img class="img-responsive" src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/vendor-logo-6-min.png" alt="brand-logo" />
-                            </a>
-                        </div>
-                        <div class="brand-logo">
-                            <a title="brand logo" href="#">
-                                <img class="img-responsive" src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/vendor-logo-1-min.png" alt="brand-logo" />
-                            </a>
-                        </div>
-                        <div class="brand-logo">
-                            <a title="brand logo" href="#">
-                                <img class="img-responsive" src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/vendor-logo-2-min.png" alt="brand-logo" />
-                            </a>
-                        </div>
-                    </div>
-                    <!-- MEGAMENU -->
 
-                </div>
-            </div>
 
+
+            </div>
+            <div id="modal" class="modal" data-reveal="" data-prevent-quick-search-close="">
+                <a href="#" class="modal-close" aria-label="Close" role="button">
+                    <span aria-hidden="true">×</span>
+                </a>
+                <div class="modal-content"></div>
+                <div class="loadingOverlay" style="display: none;"></div>
+            </div>
         </div>
+        @section Javascripts{
+            <script src="~/Content/Slider/engine1/wowslider.js"></script>
+            <script src="~/Content/Slider/engine1/script.js"></script>
+            @*<script src="~/Content/js/jquery-ui.min.js"></script>
+                <script src="~/Content/js/jquery.ui.touch-punch.min.js"></script>*@
+
+            <script src="http://cdn7.bigcommerce.com/s-3f6ufy7gd4/stencil/b9ae4a60-9c1e-0135-548c-525400970412/e/12ee1ef0-9c20-0135-73dc-525400dfdca6/dist/theme-bundle.main.js"></script>
 
 
-    </div>
-    <div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
-        <a href="#" class="modal-close" aria-label="Close" role="button">
-            <span aria-hidden="true">&#215;</span>
-        </a>
-        <div class="modal-content"></div>
-        <div class="loadingOverlay"></div>
-    </div>
-</div>
-@section Javascripts{
-    <script src="~/Content/Slider/engine1/wowslider.js"></script>
-    <script src="~/Content/Slider/engine1/script.js"></script>
-    @*<script src="~/Content/js/jquery-ui.min.js"></script>
-        <script src="~/Content/js/jquery.ui.touch-punch.min.js"></script>*@
-    <script>
-    </script>
-}
+
+        }

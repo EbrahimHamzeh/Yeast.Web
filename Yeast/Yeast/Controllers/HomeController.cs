@@ -3,6 +3,8 @@ using Yeast.Datalayer.Context;
 using Yeast.Servicelayer.Interfaces;
 using Yeast.Utilities.Controllers;
 using Yeast.Model.FrontEnd;
+using Yeast.Model.Admin;
+using Yeast.Model.Admin.Setting;
 
 namespace Yeast.Controllers
 {
@@ -13,14 +15,16 @@ namespace Yeast.Controllers
 		readonly IApplicationUserManager _userManager;
         readonly IProductService _productService;
         readonly IOptionService _optionService;
+        readonly IPostService _postService;
         readonly IUnitOfWork _uow;
 
-		public HomeController(IUnitOfWork uow, IProductService productService, IApplicationUserManager userManager, IOptionService optionService)
+		public HomeController(IUnitOfWork uow, IProductService productService, IApplicationUserManager userManager, IOptionService optionService, IPostService postService)
 		{
 			_uow = uow;
             _productService = productService;
 			_userManager = userManager;
             _optionService = optionService;
+            _postService = postService;
         }
 
 		// GET: Home
@@ -28,8 +32,19 @@ namespace Yeast.Controllers
 		{
             HomeViewModel homeViewModel = new HomeViewModel();
             homeViewModel.ProductList= _productService.GetAllproduct();
+            homeViewModel.postlist = _postService.GetByCulterPost();
             homeViewModel.homeModel = _optionService.GetHome();
             return View(homeViewModel);
 		}
-	}
+        [ChildActionOnly]
+        public virtual ActionResult footer()
+        {
+            FooterModel footerModel = new FooterModel();
+            footerModel.aboutUsViewModel= _optionService.GetByCulterAboutUsV();
+            footerModel.settingViewModelCultur = _optionService.GetAllSettingByCultur();
+
+            return PartialView("footer", footerModel);
+        }
+
+    }
 }

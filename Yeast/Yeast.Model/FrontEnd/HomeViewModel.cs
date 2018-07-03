@@ -6,6 +6,7 @@ namespace Yeast.Model.FrontEnd
     public class HomeViewModel
     {
         public IEnumerable<Yeast.DomainClasses.Entities.Product> ProductList { get; set; }
+        public IEnumerable<PostModel> postlist { get; set; }
         public HomeModel homeModel { get; set; }
 
     }

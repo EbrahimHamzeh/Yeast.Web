@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Yeast.Model.Admin;
+using Yeast.Model.Admin.Setting;
 using Yeast.Model.FrontEnd;
 
 namespace Yeast.Servicelayer.Interfaces
@@ -11,6 +12,7 @@ namespace Yeast.Servicelayer.Interfaces
         AboutUs GetAllAboutUs();
         AboutUsViewModel GetByCulterAboutUsV();
         SliderViewModel GetAllSliderImage();
+        SettingViewModelCultur GetAllSettingByCultur();
         HomeModel GetHome();
     }
 }

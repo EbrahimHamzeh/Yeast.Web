@@ -1,0 +1,164 @@
+﻿@model Yeast.Model.FrontEnd.FooterModel
+
+<footer class="footer clearfix" role="contentinfo">
+    <div class="container">
+        <section class="footer-info">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+
+                <article class="footer-info-col col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-categories">
+                    <h5 class="footer-info-heading">Categories</h5>
+                    <ul class="footer-info-list">
+                        <li>
+                            <a href="http://ap-newfashion3.mybigcommerce.com/home-demo/">Home Demo</a>
+                        </li>
+                        <li>
+                            <a href="http://ap-newfashion3.mybigcommerce.com/collections/">Collections</a>
+                        </li>
+                        <li>
+                            <a href="http://ap-newfashion3.mybigcommerce.com/women/">Women</a>
+                        </li>
+                        <li>
+                            <a href="http://ap-newfashion3.mybigcommerce.com/men/">Men</a>
+                        </li>
+                        <li>
+                            <a href="http://ap-newfashion3.mybigcommerce.com/accessories/">Accessories</a>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="footer-info-col col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-brands">
+                    <h5 class="footer-info-heading">Popular Brands</h5>
+                    <ul class="footer-info-list">
+                        <li>
+                            <a href="http://ap-newfashion3.mybigcommerce.com/brands/OFS.html">OFS</a>
+                        </li>
+                        <li>
+                            <a href="http://ap-newfashion3.mybigcommerce.com/brands/Common-Good.html">Common Good</a>
+                        </li>
+                        <li>
+                            <a href="http://ap-newfashion3.mybigcommerce.com/brands/Sagaform.html">Sagaform</a>
+                        </li>
+                        <li><a href="http://ap-newfashion3.mybigcommerce.com/brands/">View All</a></li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="col-md-4 col-sm-12 col-xs-12 blockemail-footer">
+                <h3 class="title-news">BECOME A PREFERRED SUBSCRIBER</h3>
+                <p class="des-news">
+                    Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!
+                </p>
+                <div class="newsletter-form">
+                    <form class="form" action="/subscribe.php" method="post">
+                        <fieldset class="form-fieldset">
+                            <input type="hidden" name="action" value="subscribe">
+                            <input type="hidden" name="nl_first_name" value="bc">
+                            <input type="hidden" name="check" value="1">
+                            <div class="form-field">
+                                <label class="form-label is-srOnly" for="nl_email">Email Address</label>
+                                <div class="form-prefixPostfix wrap">
+                                    <input class="form-input" id="nl_email" name="nl_email" type="email" value="" placeholder="Your email address">
+                                    <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="Subscribe">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-info-col col-md-4 col-sm-12 col-xs-12" data-section-type="storeInfo">
+                <h3 class="">Contact Info</h3>
+                <div class="about"> @Model.aboutUsViewModel.Title</div>
+                <div class="row">
+                    <div class="fbl col-md-6 col-xs-12 col-sm-6">
+                        <h5 class="footer-info-heading">Store</h5>
+                        <address>
+                            @Model.settingViewModelCultur.WebSiteName
+                        </address>
+                        <strong>موبایل :@Model.settingViewModelCultur.Mobile</strong><br />
+                        <strong>تلفن :@Model.settingViewModelCultur.Phone</strong>
+                    </div>
+                    <div class="fbr col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-webPages">
+                        <h5 class="footer-info-heading">Navigate</h5>
+                        <ul class="footer-info-list">
+                            <li>
+                                <a href="@Url.Action("index","ContactUs")">درباره ما</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("index","Post")">بلاگ</a>
+                            </li>
+                            <li>
+                                <a href="/sitemap.php">سایت مپ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+                        <article class="footer-info-col" data-section-type="newsletterSubscription">
+                                <h5 class="footer-info-heading">Subscribe to our newsletter</h5>
+            <p>Get the latest updates on new products and upcoming sales</p>
+
+            <form class="form" action="/subscribe.php" method="post">
+                <fieldset class="form-fieldset">
+                    <input type="hidden" name="action" value="subscribe">
+                    <input type="hidden" name="nl_first_name" value="bc">
+                    <input type="hidden" name="check" value="1">
+                    <div class="form-field">
+                        <label class="form-label is-srOnly" for="nl_email">Email Address</label>
+                        <div class="form-prefixPostfix wrap">
+                            <input class="form-input" id="nl_email" name="nl_email" type="email" value="" placeholder="Your email address">
+                            <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="Subscribe">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+                                        </article>-->
+        </section>
+
+    </div>
+    <div class="footer-bottom">
+        <article class="footer-info-col
+                footer-info-col--social" data-section-type="footer-webPages">
+            <ul class="socialLinks socialLinks--alt">
+                <li class="socialLinks-item">
+                    <a class="icon icon--facebook" href="https://www.facebook.com" target="_blank">
+                        <svg><use xlink:href="#icon-facebook"></use></svg>
+                    </a>
+                </li>
+                <li class="socialLinks-item">
+                    <a class="icon icon--twitter" href="http://www.twitter.com/" target="_blank">
+                        <svg><use xlink:href="#icon-twitter"></use></svg>
+                    </a>
+                </li>
+                <li class="socialLinks-item">
+                    <a class="icon icon--pinterest" href="https://www.pinterest.com/" target="_blank">
+                        <svg><use xlink:href="#icon-pinterest"></use></svg>
+                    </a>
+                </li>
+                <li class="socialLinks-item">
+                    <a class="icon icon--youtube" href="https://www.youtube.com/" target="_blank">
+                        <svg><use xlink:href="#icon-youtube"></use></svg>
+                    </a>
+                </li>
+                <li class="socialLinks-item">
+                    <a class="icon icon--instagram" href="https://www.instagram.com/" target="_blank">
+                        <svg><use xlink:href="#icon-instagram"></use></svg>
+                    </a>
+                </li>
+                <li class="socialLinks-item">
+                    <a class="icon icon--rss" href="https://www.rss.com/" target="_blank">
+                        <svg><use xlink:href="#icon-rss"></use></svg>
+                    </a>
+                </li>
+            </ul>
+        </article>
+        <div class="footer-copyright">
+            <p class="powered-by">طراحی شده توسط:<a href="https://www.bigcommerce.com/" rel="nofollow">پیشگامان صنعت نرم افزار</a></p>
+        </div>
+        <div class="footer-copyright">
+            <p class="powered-by">© 2018  </p>
+        </div>
+    </div>
+</footer>

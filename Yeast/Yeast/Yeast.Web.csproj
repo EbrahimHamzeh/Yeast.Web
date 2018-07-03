@@ -233,6 +233,7 @@
     <Content Include="Content\css\select2.min.css" />
     <Content Include="Content\css\simple-line-icons.css" />
     <Content Include="Content\css\sweetalert.css" />
+    <Content Include="Content\css\theme-95f52720-9c1f-0135-73de-525400dfdca6.css" />
     <Content Include="Content\css\YeastFont.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\Yeast-ltr.css" />
@@ -713,6 +714,8 @@
     <Content Include="Content\js\spin.min.js" />
     <Content Include="Content\js\sweetalert.js" />
     <Content Include="Content\js\theme-bundle.chunk.16.js" />
+    <Content Include="Content\js\theme\modernizr-custom.js" />
+    <Content Include="Content\js\theme\theme-bundle.main.js" />
     <Content Include="Content\js\Yeast.js" />
     <Content Include="Content\kartik-v-bootstrap-fileinput\css\fileinput-rtl.css" />
     <Content Include="Content\kartik-v-bootstrap-fileinput\css\fileinput-rtl.min.css" />
@@ -867,6 +870,7 @@
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Service\Details.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
