@@ -25,6 +25,8 @@ namespace Yeast.Datalayer.Context
 		public DbSet<Email> Email { get; set; }
 		public DbSet<EmailTemplate> EmailTemplates { get; set; }
         public DbSet<RoleAccess> RoleAccesses { get; set; }
+        public DbSet<Statistics> Statisticses { get; set; }
+        public DbSet<Country> Countries { get; set; }
         #endregion
 
         #region constucter and EF ModelCreating

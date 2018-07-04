@@ -73,7 +73,7 @@ namespace Yeast.Areas.Admin.Controllers
 
             if (userCreate.Result.Errors.Count() == 0)
             {
-                string[] roleIds = Request["CategoryIds"].Split(',');
+                string[] roleIds = Request["CategoryIds[]"].Split(',');
                 foreach (var item in roleIds)
                 {
                     _userService.AddToRoleAsync(userCreate.Id, _roleService.FindByIdAsync(Convert.ToInt32(item)).Result.Name);

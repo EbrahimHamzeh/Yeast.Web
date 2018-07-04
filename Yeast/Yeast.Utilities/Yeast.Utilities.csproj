@@ -111,7 +111,11 @@
     <Compile Include="Helpers\PersianHelper.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="Helpers\PropertyReflector.cs" />
+    <Compile Include="HttpClient\HttpClient.cs" />
+    <Compile Include="HttpClient\IHttpClientFactory.cs" />
+    <Compile Include="IPLocate\IPLocateWrapper.cs" />
     <Compile Include="JsTree\Helper.cs" />
+    <Compile Include="LazySingleton\LazySingleton.cs" />
     <Compile Include="ModelBinder\PersianDateModelBinder.cs" />
     <Compile Include="ModelBinder\YeKeModelBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +127,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bootstrap-fileinput\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Yeast.DomainClasses\Yeast.DomainClasses.csproj">
+      <Project>{EFA70744-FCAD-48E8-9B55-52EEDD541CC3}</Project>
+      <Name>Yeast.DomainClasses</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
