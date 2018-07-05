@@ -10,7 +10,7 @@ namespace Yeast.Model.FrontEnd
     public class ServiceModel
     {
         public int Id { get; set; }
-        public string CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         public string TitleImg { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }

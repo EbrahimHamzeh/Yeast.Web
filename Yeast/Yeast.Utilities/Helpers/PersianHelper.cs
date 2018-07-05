@@ -43,8 +43,7 @@ namespace Yeast.Utilities.Helpers
 		{
 			return PersianHelper.ConvertToIslamic(datetime, mod);
 		}
-
-		public static DateTime ConvertToGregorian(int year, int month, int day, int hour, int minute, int second, DateType dateType)
+        public static DateTime ConvertToGregorian(int year, int month, int day, int hour, int minute, int second, DateType dateType)
 		{
 			DateTime datetime = Calendar.ConvertToGregorian(year, month, day, hour, minute, second, dateType);
 			return datetime;

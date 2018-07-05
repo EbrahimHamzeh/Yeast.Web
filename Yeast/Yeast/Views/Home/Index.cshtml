@@ -15,34 +15,7 @@
 <link data-stencil-stylesheet href="http://cdn7.bigcommerce.com/s-3f6ufy7gd4/stencil/b9ae4a60-9c1e-0135-548c-525400970412/e/12ee1ef0-9c20-0135-73dc-525400dfdca6/css/theme-95f52720-9c1f-0135-73de-525400dfdca6.css" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Oswald:300|Hind:300,700|Montserrat:400|Karla:400" rel="stylesheet">
 <script async src="http://cdn7.bigcommerce.com/s-3f6ufy7gd4/stencil/b9ae4a60-9c1e-0135-548c-525400970412/e/12ee1ef0-9c20-0135-73dc-525400dfdca6/modernizr-custom.js"></script>
-<style>
-    body, html {
-        height: 100%;
-    }
 
-    /* The hero image */
-    .hero-image {
-        /* The image used */
-        background-image: url("../../Content/images/pri.jpg");
-        /* Set a specific height */
-        height: 50%;
-        /* Position and center the image to scale nicely on all screens */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-    }
-
-    /* Place text in the middle of the image */
-    .hero-text {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-    }
-</style>
 
 
 
@@ -52,14 +25,7 @@
         <div class="main full">
             <div class="container">
                 <div class="on">
-                    <section class="heroCarousel slick-initialized slick-slider" data-slick="{
-        &quot;dots&quot;: true,
-        &quot;mobileFirst&quot;: true,
-        &quot;slidesToShow&quot;: 1,
-        &quot;slidesToScroll&quot;: 1,
-        &quot;autoplay&quot;: true,
-        &quot;autoplaySpeed&quot;: 5000
-    }">
+                    <section class="heroCarousel slick-initialized slick-slider" data-slick="">
                         <div class="on">
                             <div id="wowslider-container1">
                                 <div class="ws_images">
@@ -86,51 +52,12 @@
                     <!-- snippet location home_content -->
 
                 </div>
-                <div class="on block-carousel-index clearfix">
 
-
-                    <div class="on">
-                        <div class="widget-banner block">
-                            <div class="banner-content row">
-                                @foreach (var item in Model.postlist.OrderByDescending(m => m.Id).Take(3))
-                                {
-                                    <div class="col-md-4 col-sm-4 col-xs-12">
-                                        <article class="card">
-                                            <figure class="card-figure">
-                                                <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/" class="product_img_link">
-                                                    <img style="min-height: 240px;max-height:240px; min-width: 240px;" class="card-image lazyautosizes" data-sizes="auto" src="~/Content/upload/images/@item.TitleImg" data-src="@item.TitleImg" alt="Aenean consequat sagittis" title="Aenean consequat sagittis" sizes="277px">
-                                                </a>
-                                                <div class="button-quickview">
-                                                    <a href="@Url.Action("Details", "Post", new { id = item.Id })" class="button button--small card-figcaption-button quickview" data-product-id="111">ادامه مقاله <span class="fa fa-eye"></span></a>
-                                                </div>
-                                            </figure>
-                                            <div class="card-body">
-                                                <div class="card-body-left">
-                                                    <h4 class="card-title">
-                                                        <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/">مقاله : @item.Title  </a>
-                                                    </h4>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                }
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- MEGAMENU -->
-
-                </div>
                 <div class="on block-carousel-index clearfix">
                     <div class="page-subheading">
                         <p class="title--main">محصولات</p>
                     </div>
-
-
                     <h2 class="page-heading">محصولات</h2>
-
-
                     <div class="on">
                         <div class="widget-banner block">
                             <div class="banner-content row">
@@ -152,7 +79,7 @@
                                             <div class="card-body">
                                                 <div class="card-body-left">
                                                     <h4 class="card-title">
-                                                        <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/">@item.Name</a>
+                                                        <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/">@item.Name.ConvertToPersianString()</a>
                                                     </h4>
                                                 </div>
                                                 <div class="card-text content-price" data-test-info-type="price">
@@ -161,7 +88,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="description">
-                                                    <p>@item.Description</p>
+                                                    <p>@item.Description.ConvertToPersianString()</p>
                                                 </div>
                                             </div>
                                             <div class="deal-clock lof-clock-111-detail">
@@ -176,24 +103,99 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+
+                <div class="on block-carousel-index clearfix">
+                   
+                    <div class="block-email" style="background:#ededeb">
+                        <div class="container">
+                            <div class="blockemail__img col-md-6 col-sm-6">
+                                <img src="~/Content/images/wheat_PNG51.png" style="min-height:500px;max-height:500px;" alt="BECOME A PREFERRED SUBSCRIBER" class="img-responsive">
+                            </div>
+                            <div class="col-md-6 col-sm-12 blockemail">
+                                <h6 class="title-news"> ** نمای کلی شرکت ** </h6>
+                                <h3 class="title-news">@Model.homeModel.Titlepart2.ConvertToPersianString()</h3>
+                                <p class="des-news">
+                                    @Html.Raw(Model.homeModel.Bodypart2.ConvertToPersianString())
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="on block-carousel-index clearfix">
+                    <div class="page-subheading">
+                        <p class="title--main">بلاگ ها</p>
+                    </div>
+                    <h2 class="page-heading">بلاگ ها</h2>
+                    <div class="on">
+                        <div class="widget-banner block">
+                            <div class="banner-content row">
+                                @foreach (var item in Model.postlist.OrderByDescending(m => m.Id).Take(3))
+                                {
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <article class="card">
+                                            <figure class="card-figure">
+                                                <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/" class="product_img_link">
+                                                    <img style="min-height: 240px;max-height:240px; min-width: 240px;" class="card-image lazyautosizes" data-sizes="auto" src="~/Content/upload/images/@item.TitleImg" data-src="@item.TitleImg" alt="Aenean consequat sagittis" title="Aenean consequat sagittis" sizes="277px">
+                                                </a>
+                                                <div class="button-quickview">
+                                                    <a href="@Url.Action("Details", "Post", new { id = item.Id })" class="button button--small card-figcaption-button quickview" data-product-id="111">ادامه مقاله <span class="fa fa-eye"></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="card-body">
+                                                <div class="card-body-left">
+                                                    <h4 class="card-title">
+                                                        <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/">مقاله : @item.Title.ConvertToPersianString()  </a>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
 
 
                     <!-- MEGAMENU -->
 
                 </div>
-                <div class="on">
-                    <div class="widget-banner block">
-                        <div class="banner-content row">
-                            <div class="hero-image" style="background-image:url(../../Content/images/Saf-Instant-Gree.jpg)">
-                                <div class="hero-text">
-                                    <h1>I am John Doe</h1>
-                                    <p>And I'm a Photographer</p>
-                                    <button>Hire me</button>
-                                </div>
+
+                <div class="on block-carousel-index clearfix">
+                    
+                    <h6 class="page-heading">نمای کلی</h6>
+                    <div class="blockstore row">
+                        <div class="col-md-12 col-lg-6 no-padding blockstore__left">
+                            <div class="blockstore__left--logo">
+                                <img src="https://cdn6.bigcommerce.com/s-fo69q4de8e/product_images/uploaded_images/logo-store.png" alt="We love fashion" class="img-responsive">
                             </div>
+                            <h4 class="blockstore__left--title"> @Model.homeModel.Titlepart1.ConvertToPersianString()</h4>
+                            <div class="blockstore__left--des">
+                                @Html.Raw(Model.homeModel.Bodypart1.ConvertToPersianString())
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 col-lg-6 no-padding blockstore_right">
+                            <img src="@Model.homeModel.Image1" alt="We love fashion" class="img-responsive" style="word-wrap:break-word;min-height:540px;max-height:540px;">
                         </div>
                     </div>
                 </div>
+
+                @*<div class="on">
+            <div class="widget-banner block">
+                <div class="banner-content row">
+                    <div class="hero-image" style="background-image:url(../../Content/images/Saf-Instant-Gree.jpg)">
+                        <div class="hero-text">
+                            <h1>banner</h1>
+                            <p>i am website desginer</p>
+                            <button>project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
 
             </div>
             @section Javascripts{

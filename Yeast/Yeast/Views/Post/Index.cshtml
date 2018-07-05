@@ -67,23 +67,24 @@
 }
 
 
-<div class="container-fluid no-padding">
+<div class="container-fluid no-padding" style="text-align:right;">
     <div class="well well-sm">
-        <strong>Category Title</strong>
+
         <div class="btn-group">
             <a href="#" id="list" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-th-list">
-                </span>List
+                لیست<span class="glyphicon glyphicon-th-list">
+                </span>
             </a> <a href="#" id="grid" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-th"></span>Grid
-            </a>
+    گرید<span class="glyphicon glyphicon-th"></span>
+</a>
         </div>
+        <strong>لیست بلاگ ها</strong>
     </div>
     <div id="products" class="row list-group">
         @foreach (var item in Model)
         {
 
-            <div class="item  col-xs-12 col-lg-4" style="height:70%;">
+            <div class="item  col-xs-12 col-lg-4" style="height:70%;float:right;text-align:right;">
                 <div class="thumbnail">
                     <img class="group list-group-image" style="height:250px;width:400px;" src="~/Content/upload/images/@item.TitleImg" alt="" />
                     <div class="caption">
@@ -95,8 +96,8 @@
                         </p>
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
-                                <p class="lead">
-                                    @item.CreatedDate
+                                <p class="lead" >
+                                    @item.CreatedDate.ToPersianDate("").ConvertToPersianString()
                                 </p>
                             </div>
                             <div class="col-xs-12 col-md-6">

@@ -83,7 +83,7 @@ namespace Yeast.Servicelayer.EFServices
                     postModel.Title = post.Title;
                     postModel.Body = post.Body;
                     postModel.Description = post.Description;
-                    postModel.CreatedDate = post.CreatedDate.ToString();
+                    postModel.CreatedDate = post.CreatedDate;
                     postModel.Slug = post.Slug;
                     postModel.TitleImg = post.ImageTitle;
                     postModel.TagIds = post.Tags.Select(x => x.Id).ToList();
@@ -93,7 +93,7 @@ namespace Yeast.Servicelayer.EFServices
                     postModel.Title = post.TitleEn;
                     postModel.Body = post.BodyEn;
                     postModel.Description = post.DescriptionEn;
-                    postModel.CreatedDate = post.CreatedDate.ToString();
+                    postModel.CreatedDate = post.CreatedDate;
                     postModel.Slug = post.Slug;
                     postModel.TitleImg = post.ImageTitle;
                     postModel.TagIds = post.Tags.Select(x => x.Id).ToList();
@@ -103,7 +103,7 @@ namespace Yeast.Servicelayer.EFServices
                     postModel.Title = post.TitleAr;
                     postModel.Body = post.BodyAr;
                     postModel.Description = post.DescriptionAr;
-                    postModel.CreatedDate = post.CreatedDate.ToString();
+                    postModel.CreatedDate = post.CreatedDate;
                     postModel.Slug = post.Slug;
                     postModel.TitleImg = post.ImageTitle;
                     postModel.TagIds = post.Tags.Select(x => x.Id).ToList();
@@ -113,7 +113,7 @@ namespace Yeast.Servicelayer.EFServices
                     postModel.Title = post.TitleRu;
                     postModel.Body = post.BodyRu;
                     postModel.Description = post.DescriptionRu;
-                    postModel.CreatedDate = post.CreatedDate.ToString();
+                    postModel.CreatedDate = post.CreatedDate;
                     postModel.Slug = post.Slug;
                     postModel.TitleImg = post.ImageTitle;
                     postModel.TagIds = post.Tags.Select(x => x.Id).ToList();
@@ -203,7 +203,7 @@ namespace Yeast.Servicelayer.EFServices
                 Description = cultur == "fa" ? x.Description : cultur == "en" ? x.DescriptionEn : cultur == "ar" ? x.DescriptionAr : cultur == "ru" ? x.DescriptionRu : "",
                 Slug = x.Slug,
                 Id = x.Id,
-                CreatedDate=x.CreatedDate.ToString(),
+                CreatedDate=x.CreatedDate,
                 TitleImg = x.ImageTitle
             }).ToList();
             return list;

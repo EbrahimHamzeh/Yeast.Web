@@ -23,7 +23,7 @@
                 <div class="page-content" style="text-align: center;">
                     <div class="rte">
                         <p>@Html.Raw(Model.aboutUsViewModel.Title)</p>
-                        <p style="word-wrap:break-word;">@Html.Raw(Model.aboutUsViewModel.Body) </p>
+                        <p style="word-wrap:break-word;font-weight:300;font-size:16px;">@Html.Raw(Model.aboutUsViewModel.Body.ConvertToPersianString()) </p>
                     </div>
                 </div><p></p>
             </div>
@@ -72,9 +72,9 @@
 
 
         <div class="block-contact on">
-            <div class="servicecontact__block text-center no-padding col-md-6 col-sm-12 col-xs-12" style="background:url(../../Content/images/add.jpg) center top no-repeat;color: black;">
+            <div class="servicecontact__block text-center no-padding col-md-6 col-sm-12 col-xs-12" style="background:url(../../Content/images/add.jpg) center top no-repeat;">
                 <i class="fa fa-map-marker"></i>
-                <h5 class="title_block" style="color: black;font-size: 30px;">آدرس</h5>
+                <h5 class="title_block" style="font-size: 30px;">آدرس</h5>
                 <div class="contact-content">
                     <div class="content_block" style="font-size:30px;font-weight:500">  @Model.settingViewModelCultur.WebSiteName </div>
              
@@ -84,8 +84,8 @@
                 <i class="fa fa-phone"></i>
                 <h5 class="title_block">راه های ارتباطی</h5>
                 <div class="contact-content">
-                    <div class="content_block">@Model.settingViewModelCultur.Mobile</div>
-                    <div class="content_block">@Model.settingViewModelCultur.Phone</div>
+                    <div class="content_block">@Model.settingViewModelCultur.Mobile.ConvertToPersianString()</div>
+                    <div class="content_block">@Model.settingViewModelCultur.Phone.ConvertToPersianString()</div>
                     <div class="content_block">@Model.settingViewModelCultur.Email</div>
                 </div>
                 <a class="btn btn-outline-inverse" style="text-decoration:none;" href="#">تماس با ما </a>
