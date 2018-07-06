@@ -8,24 +8,40 @@ using Yeast.Utilities.Controllers;
 namespace Yeast.Controllers
 {
 
-	public partial class ContactUsController : BaseController
-	{
+    public partial class ContactUsController : BaseController
+    {
 
-		readonly IOptionService _optionService;
-		readonly IUnitOfWork _uow;
+        readonly IContactUsService _contactUsService;
+        readonly IUnitOfWork _uow;
 
-		public ContactUsController(IUnitOfWork uow, IOptionService optionService)
-		{
-			_uow = uow;
-            _optionService = optionService;
-		}
+        public ContactUsController(IUnitOfWork uow, IContactUsService contactUsService)
+        {
+            _uow = uow;
+            _contactUsService = contactUsService;
+        }
 
-		// GET: Home
-		public virtual ActionResult Index()
-		{
-            AboutUsViewModel aboutUsViewModel = _optionService.GetByCulterAboutUsV();
-            //SettingViewModelCultur settingViewModelCultur = _optionService.GetAllSettingByCultur();
-            return View(aboutUsViewModel);
-		}
-	}
+        // GET: ContactUs
+        public virtual ActionResult Index()
+        {
+            ContactUsViewModel contactUsViewModel = new ContactUsViewModel();
+            ViewBag.State = false;
+            return View(contactUsViewModel);
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        // Post: ContactUs
+        public virtual ActionResult Index(ContactUsViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.State = false;
+                return View(model);
+            }
+
+            _contactUsService.Add(model);
+            _uow.SaveAllChanges();
+            ViewBag.State = true;
+            return View(model);
+        }
+    }
 }

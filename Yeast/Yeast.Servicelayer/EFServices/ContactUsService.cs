@@ -76,11 +76,14 @@ namespace Yeast.Servicelayer.EFServices
 
         public void Add(ContactUsViewModel model)
         {
-            _contactUs.Add(new ContactUs { Email = model.Email,
-                                           FullName = model.FullName,
-                                           Message = model.Message,
-                                           Mobile = model.Mobile,
-                                           Title = model.Title});
+            _contactUs.Add(new ContactUs
+            {
+                Email = model.Email,
+                FullName = model.FullName,
+                Message = model.Message,
+                Mobile = model.Mobile,
+                Title = model.Title
+            });
         }
 
         public ContactUs Find(int id)

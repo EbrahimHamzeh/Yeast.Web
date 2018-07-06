@@ -1,67 +1,151 @@
-﻿@model Yeast.Model.Admin.Setting.SettingViewModelCultur
+﻿@model Yeast.Model.FrontEnd.ContactUsViewModel
 @{
-	ViewBag.Title = "Index";
+    ViewBag.Title = "Index";
 }
 @section CssStyle{
-	<link href="~/Content/css/ma5slider.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-rtl.min.css" rel="stylesheet" />
 }
 
 <div class="body stop-float-body clearfix">
 
-	<div class="not-container page-main">
-		<div class="on">
-			@*<div id="example-26" class="ma5slider anim-horizontal outside-dots center-dots inside-navs loop-mode">
-				<div class="slides">
-					<a href="#slide-1"><img src="@Url.Content("~/Content/images/slideshow_image_2-min.jpg")" alt=""></a>
-					<a href="#slide-2"><img src="@Url.Content("~/Content/images/slideshow_image_1-min-rs.jpg")" alt=""></a>
-					<a href="#slide-3"><img src="@Url.Content("~/Content/images/slideshow_image_2-min.jpg")" alt=""></a>
-				</div>
-			</div>*@
-			<!-- snippet location home_content -->
-		</div>
-		<div class="main full">
-			<div class="on row">
-				@*<div class="col-lg-2-4 col-md-12 col-sm-12 col-xs-12 block-product-left">
-					<div class="block_left">
-						<div class="page-subheading ">
-							<p class="title--main">Women</p>
-							<p class="title--sub">
-								<span>Shop The Look</span>
-							</p>
-						</div>
-						<div class="effect_image_3">
-							<div class="effect-img">
-								<img src="~/Content/images/img-cate-min.jpg" alt="Women" class="img-responsive">
-							</div>
-						</div>
-					</div>
-				</div>*@
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
-					<h2 class="page-heading">New Products</h2>
-					<section class="productGrid productGrid--maxCol4" dir="ltr">
-                            <div class="product">
-							<h3> @Model.Body</h3>
-                                <p> @Html.Raw(Model.Body)</p>
-						</div>
-					</section>
-					<!-- MEGAMENU -->
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
-		<a href="#" class="modal-close" aria-label="Close" role="button">
-			<span aria-hidden="true">&#215;</span>
-		</a>
-		<div class="modal-content"></div>
-		<div class="loadingOverlay"></div>
-	</div>
+    <div class="not-container page-main">
+        <div class="on">
+            @*<div id="example-26" class="ma5slider anim-horizontal outside-dots center-dots inside-navs loop-mode">
+                    <div class="slides">
+                        <a href="#slide-1"><img src="@Url.Content("~/Content/images/slideshow_image_2-min.jpg")" alt=""></a>
+                        <a href="#slide-2"><img src="@Url.Content("~/Content/images/slideshow_image_1-min-rs.jpg")" alt=""></a>
+                        <a href="#slide-3"><img src="@Url.Content("~/Content/images/slideshow_image_2-min.jpg")" alt=""></a>
+                    </div>
+                </div>*@
+            <!-- snippet location home_content -->
+        </div>
+        <div class="main full">
+            <div class="on row">
+                @*<div class="col-lg-2-4 col-md-12 col-sm-12 col-xs-12 block-product-left">
+                        <div class="block_left">
+                            <div class="page-subheading ">
+                                <p class="title--main">Women</p>
+                                <p class="title--sub">
+                                    <span>Shop The Look</span>
+                                </p>
+                            </div>
+                            <div class="effect_image_3">
+                                <div class="effect-img">
+                                    <img src="~/Content/images/img-cate-min.jpg" alt="Women" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
+                    <h2 class="page-heading">New Products</h2>
+                    <section class="productGrid productGrid--maxCol4" dir="ltr">
+                        <div class="container">
+                            <div class="col-md-5">
+                                @if (ViewBag.State)
+                                {
+                                    <div class="alert alert-success">
+                                        <h1>@Resources.TanckYou</h1>
+                                        @Resources.AlertSsuccess
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="form-area">
+                                        <form role="form" method="post" action="@Url.Action("Index")">
+                                            @Html.AntiForgeryToken()
+                                            <br style="clear:both">
+                                            <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="FullName" name="FullName" value="@Model.FullName" placeholder="نام و نام‌خانوادگی" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email" placeholder="ایمیل" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Mobile" name="Mobile" value="@Model.Mobile" placeholder="موبایل" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" placeholder="عنوان" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="Message" name="Message" value="@Model.Message" placeholder="پبام" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+                                                <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+                                            </div>
+
+                                            <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">ارسال</button>
+                                        </form>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </section>
+                    <!-- MEGAMENU -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
+        <a href="#" class="modal-close" aria-label="Close" role="button">
+            <span aria-hidden="true">&#215;</span>
+        </a>
+        <div class="modal-content"></div>
+        <div class="loadingOverlay"></div>
+    </div>
 </div>
 @section Javascripts{
-	<script src="~/Content/js/jquery-ui.min.js"></script>
-<script src="~/Content/js/jquery.ui.touch-punch.min.js"></script>
-<script src="~/Content/js/ma5slider.min.js"></script>
-	<script>
-		$('.ma5slider').ma5slider();
-	</script>
+    <script src="~/Content/js/jquery.min.js" type="text/javascript"></script>
+    <script src="~/Content/js/jquery.validate.js"></script>
+    <script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
+    <script>
+        var form1 = $('form[data-loading-text]');
+        var error1 = $('.alert-danger', form1);
+        var success1 = $('.alert-success', form1);
+
+        form1.validate({
+            errorElement: 'span', //default input error message container
+            errorClass: 'help-block help-block-error', // default input error message class
+            focusInvalid: false, // do not focus the last invalid input
+            ignore: "",  // validate all fields including form hidden input
+            invalidHandler: function (event, validator) { //display error alert on form submit
+                success1.hide();
+                error1.show();
+                App.scrollTo(error1, -200);
+            },
+
+            errorPlacement: function (error, element) { // render error placement for each input type
+                var cont = $(element).parent('.input-group');
+                if (cont.size() > 0) {
+                    cont.after(error);
+                } else {
+                    element.after(error);
+                }
+            },
+
+            highlight: function (element) { // hightlight error inputs
+
+                $(element)
+                    .closest('.form-group').addClass('has-error'); // set error class to the control group
+            },
+
+            unhighlight: function (element) { // revert the change done by hightlight
+                $(element)
+                    .closest('.form-group').removeClass('has-error'); // set error class to the control group
+            },
+
+            success: function (label) {
+                label
+                    .closest('.form-group').removeClass('has-error'); // set success class to the control group
+            },
+
+            submitHandler: function (form) {
+                success1.show();
+                error1.hide();
+                form.submit();
+                form1.button('loading')
+            }
+        });
+    </script>
 }

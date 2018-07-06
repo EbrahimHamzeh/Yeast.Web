@@ -126,6 +126,9 @@
   <data name="Address" xml:space="preserve">
     <value>آدرس</value>
   </data>
+  <data name="AlertSsuccess" xml:space="preserve">
+    <value>موارد شما با موفیت ثبت شد.</value>
+  </data>
   <data name="Back" xml:space="preserve">
     <value>بازگشت</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Submit" xml:space="preserve">
     <value>تایید</value>
+  </data>
+  <data name="TanckYou" xml:space="preserve">
+    <value>با تشکر</value>
   </data>
   <data name="Username" xml:space="preserve">
     <value>نام‌کاربری</value>

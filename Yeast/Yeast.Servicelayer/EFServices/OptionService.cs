@@ -92,16 +92,16 @@ namespace Yeast.Servicelayer.EFServices
             switch (cultur)
             {
                 case "fa":
-                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameFa").FirstOrDefault().Value;
+                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameFa").FirstOrDefault()?.Value;
                     break;
                 case "en":
-                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameEn").FirstOrDefault().Value;
+                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameEn").FirstOrDefault()?.Value;
                     break;
                 case "ar":
-                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameSa").FirstOrDefault().Value;
+                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameSa").FirstOrDefault()?.Value;
                     break;
                 case "ru":
-                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameRu").FirstOrDefault().Value;
+                    settingViewModel.WebSiteName = option.Where(x => x.Name == "WebSiteNameRu").FirstOrDefault()?.Value;
                     break;
             }
             return settingViewModel;

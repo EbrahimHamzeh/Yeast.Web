@@ -88,6 +88,15 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to موارد شما با موفیت ثبت شد..
+        /// </summary>
+        public static string AlertSsuccess {
+            get {
+                return ResourceManager.GetString("AlertSsuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to بازگشت.
         /// </summary>
         public static string Back {
@@ -327,6 +336,15 @@ namespace Yeast.Resources {
         public static string Submit {
             get {
                 return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to با تشکر.
+        /// </summary>
+        public static string TanckYou {
+            get {
+                return ResourceManager.GetString("TanckYou", resourceCulture);
             }
         }
         
