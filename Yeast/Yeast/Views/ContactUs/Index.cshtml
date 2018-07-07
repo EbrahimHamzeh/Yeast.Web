@@ -37,13 +37,13 @@
                         </div>
                     </div>*@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
-                    <h2 class="page-heading">New Products</h2>
+                    <h2 class="page-heading">ارتباط با ما</h2>
                     <section class="productGrid productGrid--maxCol4" dir="ltr">
                         <div class="container">
-                            <div class="col-md-5">
+                            <div class="col-md-12">
                                 @if (ViewBag.State)
                                 {
-                                    <div class="alert alert-success">
+                                    <div class="alert alert-success" style="text-align:right;">
                                         <h1>@Resources.TanckYou</h1>
                                         @Resources.AlertSsuccess
                                     </div>
@@ -54,7 +54,7 @@
                                         <form role="form" method="post" action="@Url.Action("Index")">
                                             @Html.AntiForgeryToken()
                                             <br style="clear:both">
-                                            <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
+                                            <h3 style="margin-bottom: 25px; text-align: center;">ارتباط با ما</h3>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" id="FullName" name="FullName" value="@Model.FullName" placeholder="نام و نام‌خانوادگی" required>
                                             </div>
@@ -68,14 +68,20 @@
                                                 <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" placeholder="عنوان" required>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="Message" name="Message" value="@Model.Message" placeholder="پبام" required>
+                                                <input type="text" class="form-control" id="Message" name="Message" value="@Model.Message" placeholder="پیام" required>
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
-                                                <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+                                                <textarea class="form-control" type="textarea" id="message" placeholder="متن پیام" maxlength="140" rows="7"></textarea>
+                                                <span class="help-block"><p id="characterLeft" class="help-block ">تعدا کاراکتر شما به حد نصاب رسیده است.</p></span>
                                             </div>
 
                                             <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">ارسال</button>
+
+
+
+
+
+
                                         </form>
                                     </div>
                                 }

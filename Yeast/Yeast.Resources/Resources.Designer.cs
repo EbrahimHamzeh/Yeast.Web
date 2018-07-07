@@ -340,7 +340,7 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to با تشکر.
+        ///   Looks up a localized string similar to با تشکر از ارسال پیام شما.
         /// </summary>
         public static string TanckYou {
             get {
