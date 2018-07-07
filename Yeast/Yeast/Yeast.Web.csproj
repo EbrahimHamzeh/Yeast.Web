@@ -424,6 +424,7 @@
     <Content Include="Content\images\bg-about.jpg" />
     <Content Include="Content\images\bg-breadcrumb-min.jpg" />
     <Content Include="Content\images\bg-image-min.jpg" />
+    <Content Include="Content\images\bg03_2500px.jpg" />
     <Content Include="Content\images\blog2.jpg" />
     <Content Include="Content\images\bullet_shape.png" />
     <Content Include="Content\images\default_avatar_male.jpg" />
@@ -623,6 +624,9 @@
     <Content Include="Content\images\flags\za.png" />
     <Content Include="Content\images\flags\zm.png" />
     <Content Include="Content\images\flags\zw.png" />
+    <Content Include="Content\images\HEMERLOGO.png" />
+    <Content Include="Content\images\hemersinlogo.jpg" />
+    <Content Include="Content\images\hemersinlogo.png" />
     <Content Include="Content\images\images.jpg" />
     <Content Include="Content\images\img-about-min.jpg" />
     <Content Include="Content\images\img-cate-2-min.jpg" />
