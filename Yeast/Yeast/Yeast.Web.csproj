@@ -426,6 +426,7 @@
     <Content Include="Content\images\bg-image-min.jpg" />
     <Content Include="Content\images\bg03_2500px.jpg" />
     <Content Include="Content\images\blog2.jpg" />
+    <Content Include="Content\images\bread-series-v2-lrcropped2_1_orig.jpg" />
     <Content Include="Content\images\bullet_shape.png" />
     <Content Include="Content\images\default_avatar_male.jpg" />
     <Content Include="Content\images\flags\ad.png" />
@@ -634,6 +635,7 @@
     <Content Include="Content\images\img-cate-min.jpg" />
     <Content Include="Content\images\imgpsh-fullsize-rs.jpg" />
     <Content Include="Content\images\logo-min_1506501989__87899.original.png" />
+    <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\images\newletter-bg.png" />
     <Content Include="Content\images\pnewletter-bg.png" />
     <Content Include="Content\images\pri.jpg" />
