@@ -11,20 +11,20 @@
             <div class="productView productView--quickView">
                 <section class="productView-details">
                     <div class="productView-product">
-                        <h1 class="productView-title" style="text-align:right"> @Model.Name    :  نام محصول </h1>
+                        <h1 class="productView-title" style="text-align:right"> @Model.Name    :  @Resources.ProductName </h1>
 
                         <dl class="productView-info">
-                            <dt class="productView-info-name">: توضیحات</dt>
+                            <dt class="productView-info-name">: @Resources.Description</dt>
                         </dl>
                         <div class="description" style="text-align:right">
                             
                             @Html.Raw(Model.Body)
                         </div>
-                        <div class="productView-price">
+                        @*<div class="productView-price">
                             <div class="price-section price-section--withoutTax " style="text-align:right">
                                 <span data-product-price-without-tax="" class="price price--withoutTax" style="text-align:right"> ***** : قیمت </span>
                             </div>
-                        </div>
+                        </div>*@
                     </div>
                 </section>
 

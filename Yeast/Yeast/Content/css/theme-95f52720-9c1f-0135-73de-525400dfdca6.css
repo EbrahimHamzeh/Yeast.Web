@@ -8304,7 +8304,6 @@ cite {
 
         .nf-home3 .header .topbar .navUser .navUser-section.navUser-section--alt .navUser-item .navUser-action:before {
             content: "";
-            border: 1px dotted #e1e1e1;
             position: absolute;
             height: 15px;
             width: 1px;
@@ -8314,7 +8313,7 @@ cite {
         }
 
     .nf-home3 .header .topbar .navUser .socialLinks.socialLinks--alt {
-        float: right;
+        float: left;
         line-height: 33px;
         position: relative;
         padding-right: 12px
@@ -8322,7 +8321,6 @@ cite {
 
         .nf-home3 .header .topbar .navUser .socialLinks.socialLinks--alt:before {
             content: " ";
-            border: 1px dotted #666;
             position: absolute;
             height: 15px;
             width: 1px;
@@ -17785,7 +17783,7 @@ body.hasAdminBar .navPages-container.is-open {
 
 @media (min-width: 992px) {
     .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
-        float: left;
+        float: right;
     }
 
     .rtl .col-md-1, .rtl .col-md-10, .rtl .col-md-11, .rtl .col-md-12, .rtl .col-md-2, .rtl .col-md-3, .rtl .col-md-4, .rtl .col-md-5, .rtl .col-md-6, .rtl .col-md-7, .rtl .col-md-8, .rtl .col-md-9 {

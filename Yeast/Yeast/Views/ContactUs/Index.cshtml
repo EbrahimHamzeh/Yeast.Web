@@ -12,10 +12,10 @@
     <div class=" container page-main">
         <ul class="breadcrumbs" style="background:url(../../Content/images/bread-series-v2-lrcropped2_1_orig.jpg);">
             <li class="breadcrumb ">
-                <a href="@Url.Action("Index","Home")" class="breadcrumb-label">   ارتباط با ما</a>
+                <a href="@Url.Action("Index","Home")" class="breadcrumb-label">   @Resources.ContactUs</a>
             </li>
             <li class="breadcrumb is-active">
-                <span class="breadcrumb-label">صفحه  اصلی</span>
+                <span class="breadcrumb-label">@Resources.Home</span>
             </li>
         </ul>
         <h1 class="page-heading">پیام جدید</h1>
@@ -36,7 +36,7 @@
                         <div class="form-row form-row--half">
                             <div class="form-field form-field--input form-field--inputFullName" id="FormField_1" data-validation="{&quot;type&quot;:&quot;singleline&quot;,&quot;label&quot;:&quot;Email Address&quot;,&quot;required&quot;:true,&quot;maxlength&quot;:0}" data-type="FullName">
                                 <label class="form-label" for="FormField_1_input" style="text-align:right;">
-                                    نام و نام خانوادگی
+                                    @Resources.FullName
                                     <small>این فیلد نباید خای باشد</small>
                                 </label>
                                 <input type="text" id="FullName" data-label="FullName" name="FullName" class="form-input" aria-required="true" data-field-type="FullName" style="text-align:right;">
@@ -45,7 +45,7 @@
 
                             <div class="form-field form-field--input form-field--inputEmail" id="FormField_2" data-validation="{&quot;type&quot;:&quot;password&quot;,&quot;label&quot;:&quot;Password&quot;,&quot;required&quot;:true,&quot;maxlength&quot;:0}" data-type="Email">
                                 <label class="form-label" for="FormField_2_input" style="text-align:right;">
-                                    ایمیل
+                                    @Resources.Email
                                     <small>این فیلد نباید خای باشد</small>
                                 </label>
                                 <input type="text" class="form-input" id="Email" data-label="Email" name="Email" value="" autocomplete="off" aria-required="true" data-field-type="Email">
@@ -54,7 +54,7 @@
 
                             <div class="form-field form-field--input form-field--inputMobile" id="FormField_3" data-validation="{&quot;type&quot;:&quot;password&quot;,&quot;label&quot;:&quot;Confirm Password&quot;,&quot;required&quot;:true,&quot;maxlength&quot;:0}" data-type="Mobile">
                                 <label class="form-label" for="FormField_3_input" style="text-align:right;">
-                                    موبایل
+                                    @Resources.Mobil
                                     <small>این فیلد نباید خای باشد</small>
                                 </label>
                                 <input type="text" class="form-input" id="Mobile" data-label="Confirm Password" name="Mobile" value="" autocomplete="off" aria-required="true" data-field-type="ConfirmPassword">
@@ -63,7 +63,7 @@
 
                             <div class="form-field form-field--input form-field--inputText" id="FormField_4" data-validation="{&quot;type&quot;:&quot;singleline&quot;,&quot;label&quot;:&quot;First Name&quot;,&quot;required&quot;:true,&quot;maxlength&quot;:0}" data-type="Title">
                                 <label class="form-label" for="FormField_4_input" style="text-align:right;">
-                                    عنوان پیام
+                                    @Resources.Title
                                     <small>این فیلد نباید خای باشد</small>
                                 </label>
                                 <input type="text" id="FormField_4_input" data-label="Title" name="Title" class="form-input" aria-required="true" data-field-type="Title" style="text-align:right;">
@@ -72,7 +72,7 @@
 
                             <div class="form-field form-field--input form-field--inputText" id="FormField_5" data-validation="{&quot;type&quot;:&quot;singleline&quot;,&quot;label&quot;:&quot;Last Name&quot;,&quot;required&quot;:true,&quot;maxlength&quot;:0}" data-type="Message">
                                 <label class="form-label" for="FormField_5_input" style="text-align:right;">
-                                    پیام
+                                    @Resources.Body
                                     <small> این فیلد نباید خای باشد</small>
                                 </label>
                                 <textarea type="text" id="FormField_5_input" data-label="Message" name="Message" class="form-input" aria-required="true" data-field-type="Message" style="text-align:right;"></textarea>

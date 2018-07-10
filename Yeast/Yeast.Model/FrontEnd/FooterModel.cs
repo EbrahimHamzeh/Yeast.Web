@@ -11,5 +11,7 @@ namespace Yeast.Model.FrontEnd
     {
         public SettingViewModelCultur settingViewModelCultur { get; set; }
         public AboutUsViewModel aboutUsViewModel { get; set; }
+        public List<PostModel> postModeList { get; set; }
+        public List<ServiceModel> serviceModelList { get; set; }
     }
 }

@@ -54,12 +54,12 @@
                                 <a class="navUser-action has-dropdown" href="#" data-dropdown="currencySelection" aria-controls="currencySelection" aria-expanded="false">USD <i class="icon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
                                 <ul class="dropdown-menu" id="currencySelection" data-dropdown-content aria-hidden="true" tabindex="-1">
                                     <li class="dropdown-menu-item">
-                                        <a href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=1">
+                                        <a href="#">
                                             <strong>US Dollar</strong>
                                         </a>
                                     </li>
                                     <li class="dropdown-menu-item">
-                                        <a href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=2">
+                                        <a href="#">
                                             Euro
                                         </a>
                                     </li>
@@ -98,7 +98,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <ul class="navUser-section navUser-section--alt">
+                        @*<ul class="navUser-section navUser-section--alt">
                             <li class="navUser-item">
                                 <a class="navUser-action navUser-item--compare" href="/compare" data-compare-nav>Compare <span class="countPill countPill--positive countPill--alt"></span></a>
                             </li>
@@ -131,7 +131,7 @@
 
                                 <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
                             </li>
-                        </ul>
+                        </ul>*@
 
                         <div class="bg-quicksearch"></div>
                     </nav>
@@ -164,36 +164,38 @@
                         <ul class="navPages-list">
                             <li class="navPages-item">
                                 <a class="navPages-action" href="@Url.Action("index","AboutUs")" data-collapsible="navPages-35">
-                                    درباره ما
+                                   @Resources.About
                                 </a>
                             </li>
                             <li class="navPages-item">
                                 <a class="navPages-action" href="@Url.Action("index","ContactUs")">
-                                    ارتباط با ما
+                                    @Resources.ContactUs
                                 </a>
                             </li>
                             <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("index","Post")">بلاگ</a>
+                                <a class="navPages-action" href="@Url.Action("index","Post")">
+                                @Resources.Blog
+                                </a>
                             </li>
 
                             <li class="navPages-item">
                                 <a class="navPages-action" href="@Url.Action("index","Service")" data-collapsible="navPages-19">
-                                    خدمات
+                                    @Resources.Service
                                 </a>
                             </li>
                             <li class="navPages-item">
                                 <a class="navPages-action " href="@Url.Action("index","home")" data-collapsible="navPages-24">
-                                    نمایندگی ها
+                                    @Resources.Representation
                                 </a>
                             </li>
                             <li class="navPages-item">
                                 <a class="navPages-action " href="@Url.Action("index","Product")" data-collapsible="navPages-18">
-                                    محصولات
+                                    @Resources.Product
                                 </a>
                             </li>
                             <li class="navPages-item">
                                 <a class="navPages-action" href="@Url.Action("index","home")" data-collapsible="navPages-35">
-                                    صفحه اصلی
+                                    @Resources.Home
                                 </a>
                             </li>
                         </ul>

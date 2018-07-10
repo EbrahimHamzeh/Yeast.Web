@@ -14,18 +14,18 @@
 
     <div class="about-us-page">
         <ul class="breadcrumbs" style="background:url(../../Content/images/pri.jpg);">
-            <h1 class="title-page-breadcrumb">درباره ما</h1>
+            <h1 class="title-page-breadcrumb">@Resources.About</h1>
             <li class="breadcrumb ">
-                <a href="#" class="breadcrumb-label">صفحه اصلی</a> /
+                <a href="#" class="breadcrumb-label">@Resources.Home</a> /
             </li>
             <li class="breadcrumb is-active">
-                <span class="breadcrumb-label">درباره ما</span>
+                <span class="breadcrumb-label">@Resources.About</span>
             </li>
         </ul>
 
         <div class="content-about-us row" style="background:url(../../Content/images/bg-about.jpg) center top no-repeat;">
             <div class="container">
-                <p></p><h1 class="page-header bottom-indent text-center" style="text-align: center;">درباره ما</h1>
+                <p></p><h1 class="page-header bottom-indent text-center" style="text-align: center;">@Resources.About</h1>
                 <div class="page-content" style="text-align: center;">
                     <div class="rte">
                         <p>@Html.Raw(Model.aboutUsViewModel.Title)</p>
@@ -61,11 +61,11 @@
 
         <div class="on block-carousel-index clearfix">
             <div class="page-subheading">
-                <p class="title--main">ارتباط با ما</p>
+                <p class="title--main">@Resources.ContactUs</p>
             </div>
 
 
-            <h2 class="page-heading">ارتباط با ما</h2>
+            <h2 class="page-heading">@Resources.ContactUs</h2>
 
 
            
@@ -80,7 +80,7 @@
         <div class="block-contact on">
             <div class="servicecontact__block text-center no-padding col-md-6 col-sm-12 col-xs-12" style="background:url(../../Content/images/add.jpg) center top no-repeat;">
                 <i class="fa fa-map-marker"></i>
-                <h5 class="title_block" style="font-size: 30px;">آدرس</h5>
+                <h5 class="title_block" style="font-size: 30px;">@Resources.Address</h5>
                 <div class="contact-content">
                     <div class="content_block" style="font-size:30px;font-weight:500">  @Model.settingViewModelCultur.WebSiteName </div>
              
@@ -88,13 +88,13 @@
             </div>
             <div class="servicecontact__block text-center no-padding col-md-6 col-sm-12 col-xs-12" style="background:url(../../Content/images/bg-aboutus-2.jpg) center top no-repeat;">
                 <i class="fa fa-phone"></i>
-                <h5 class="title_block">راه های ارتباطی</h5>
+                <h5 class="title_block">@Resources.ContactUs</h5>
                 <div class="contact-content">
                     <div class="content_block">@Model.settingViewModelCultur.Mobile.ConvertToPersianString()</div>
                     <div class="content_block">@Model.settingViewModelCultur.Phone.ConvertToPersianString()</div>
                     <div class="content_block">@Model.settingViewModelCultur.Email</div>
                 </div>
-                <a class="btn btn-outline-inverse" style="text-decoration:none;" href="#">تماس با ما </a>
+                <a class="btn btn-outline-inverse" style="text-decoration:none;" href="#">@Resources.ContactUs </a>
             </div>
         </div>
     </div>

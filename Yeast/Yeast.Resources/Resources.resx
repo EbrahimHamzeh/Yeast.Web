@@ -129,17 +129,32 @@
   <data name="AlertSsuccess" xml:space="preserve">
     <value>موارد شما با موفیت ثبت شد.</value>
   </data>
+  <data name="Article" xml:space="preserve">
+    <value>مقاله</value>
+  </data>
   <data name="Back" xml:space="preserve">
     <value>بازگشت</value>
   </data>
   <data name="Blog" xml:space="preserve">
     <value>وبلاگ</value>
   </data>
+  <data name="BlogList" xml:space="preserve">
+    <value>لیست بلاگ ها</value>
+  </data>
+  <data name="Body" xml:space="preserve">
+    <value>متن پیام</value>
+  </data>
+  <data name="Companyoverview" xml:space="preserve">
+    <value>نمای کلی شرکت</value>
+  </data>
   <data name="ContactUs" xml:space="preserve">
     <value>تماس‌باما</value>
   </data>
   <data name="CreateAccount" xml:space="preserve">
     <value>ثبت‌نام کنید.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>توضیحات</value>
   </data>
   <data name="DontHaveAccount" xml:space="preserve">
     <value>آیا حساب کاربری ندارید؟</value>
@@ -162,14 +177,32 @@
   <data name="FullName" xml:space="preserve">
     <value>نام و نام‌خانوادگی</value>
   </data>
+  <data name="Grid" xml:space="preserve">
+    <value>گرید</value>
+  </data>
+  <data name="HemersinsNewsLetter" xml:space="preserve">
+    <value>شما با ثبت نام در خبرنامه می توانید از اخرین اخبار کارخانجات تولیدی همرسین توس با خبر شوید.</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>صفحه‌ی‌نخست</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>لیست</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>ورود</value>
   </data>
+  <data name="Mobil" xml:space="preserve">
+    <value>موبایل</value>
+  </data>
   <data name="MyBrands" xml:space="preserve">
     <value>برندهای ما</value>
+  </data>
+  <data name="NewMessage" xml:space="preserve">
+    <value>پیام جدید</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>نمای کلی</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>رمزعبور</value>
@@ -183,11 +216,17 @@
   <data name="ProductCategory" xml:space="preserve">
     <value>دسته‌بندی محصولات</value>
   </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>نام محصول</value>
+  </data>
   <data name="Quickview" xml:space="preserve">
     <value>نمایش سریع</value>
   </data>
   <data name="ReadMore" xml:space="preserve">
     <value>ادامه مطلب</value>
+  </data>
+  <data name="RegisterForNews" xml:space="preserve">
+    <value>ثبت نام برای دریافت خبر نامه</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
     <value>مرا به خاطر بسپار</value>
@@ -204,14 +243,32 @@
   <data name="Service" xml:space="preserve">
     <value>خدمات</value>
   </data>
+  <data name="ServiceList" xml:space="preserve">
+    <value>لیست خدمات</value>
+  </data>
   <data name="SignUp" xml:space="preserve">
     <value>ثبت‌نام</value>
+  </data>
+  <data name="SiteMap" xml:space="preserve">
+    <value>سایت مپ</value>
+  </data>
+  <data name="SoftwareIndustryPioneers" xml:space="preserve">
+    <value>پیشگامان صنعت نرم افزار</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>تایید</value>
   </data>
   <data name="TanckYou" xml:space="preserve">
     <value>با تشکر از ارسال پیام شما</value>
+  </data>
+  <data name="Tel" xml:space="preserve">
+    <value>تلفن</value>
+  </data>
+  <data name="Tips" xml:space="preserve">
+    <value>راهنمایی</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>عنوان پیام</value>
   </data>
   <data name="Username" xml:space="preserve">
     <value>نام‌کاربری</value>

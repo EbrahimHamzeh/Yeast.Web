@@ -5,6 +5,7 @@ using Yeast.Utilities.Controllers;
 using Yeast.Model.FrontEnd;
 using Yeast.Model.Admin;
 using Yeast.Model.Admin.Setting;
+using System.Collections.Generic;
 
 namespace Yeast.Controllers
 {
@@ -16,15 +17,17 @@ namespace Yeast.Controllers
         readonly IProductService _productService;
         readonly IOptionService _optionService;
         readonly IPostService _postService;
+        readonly IServiceService _serviceService;
         readonly IUnitOfWork _uow;
 
-		public HomeController(IUnitOfWork uow, IProductService productService, IApplicationUserManager userManager, IOptionService optionService, IPostService postService)
+		public HomeController(IUnitOfWork uow, IProductService productService, IApplicationUserManager userManager, IOptionService optionService, IPostService postService,IServiceService serviceService)
 		{
 			_uow = uow;
             _productService = productService;
 			_userManager = userManager;
             _optionService = optionService;
             _postService = postService;
+            _serviceService = serviceService;
         }
 
 		// GET: Home
@@ -42,6 +45,8 @@ namespace Yeast.Controllers
             FooterModel footerModel = new FooterModel();
             footerModel.aboutUsViewModel= _optionService.GetByCulterAboutUsV();
             footerModel.settingViewModelCultur = _optionService.GetAllSettingByCultur();
+            footerModel.postModeList = _postService.GetByCulterPost();
+            footerModel.serviceModelList = _serviceService.GetByCulterPost();
 
             return PartialView("footer", footerModel);
         }

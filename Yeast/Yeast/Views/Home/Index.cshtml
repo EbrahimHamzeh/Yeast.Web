@@ -10,11 +10,7 @@
 <link rel='canonical' href='http://ap-newfashion3.mybigcommerce.com/' />
 
 
-<link href="http://cdn7.bigcommerce.com/r-74638f6b4acdaa23636b5c244e4ae40279565bfe/img/bc_favicon.ico" rel="shortcut icon">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link data-stencil-stylesheet href="http://cdn7.bigcommerce.com/s-3f6ufy7gd4/stencil/b9ae4a60-9c1e-0135-548c-525400970412/e/12ee1ef0-9c20-0135-73dc-525400dfdca6/css/theme-95f52720-9c1f-0135-73de-525400dfdca6.css" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Oswald:300|Hind:300,700|Montserrat:400|Karla:400" rel="stylesheet">
-<script async src="http://cdn7.bigcommerce.com/s-3f6ufy7gd4/stencil/b9ae4a60-9c1e-0135-548c-525400970412/e/12ee1ef0-9c20-0135-73dc-525400dfdca6/modernizr-custom.js"></script>
+
 
 
 
@@ -30,7 +26,7 @@
                             <div id="wowslider-container1">
                                 <div class="ws_images">
                                     <ul>
-                                        <li>@*<a href="http://wowslider.com">*@<img src="@Url.Content(Model.homeModel.Image1)" style="width:100%;height:550px;" alt="image slider jquery" title="@Model.homeModel.TextImag1" id="wows1_0" />@*</a>*@</li>
+                                        <li>@*<a href="#">*@<img src="@Url.Content(Model.homeModel.Image1)" style="width:100%;height:550px;" alt="image slider jquery" title="@Model.homeModel.TextImag1" id="wows1_0" />@*</a>*@</li>
                                         <li><img style="width:100%;height:550px;" src="@Url.Content(Model.homeModel.Image2)" alt="slideshow_image_2-min" title="@Model.homeModel.TextImag2" id="wows1_1" /></li>
                                         <li><img style="width:100%;height:550px;" src="@Url.Content(Model.homeModel.Image2)" alt="slideshow_image_2-min" title="@Model.homeModel.TextImag3" id="wows1_1" /></li>
                                     </ul>
@@ -55,9 +51,9 @@
 
                 <div class="on block-carousel-index clearfix">
                     <div class="page-subheading">
-                        <p class="title--main">محصولات</p>
+                        <p class="title--main"> @Resources.Product</p>
                     </div>
-                    <h2 class="page-heading">محصولات</h2>
+                    <h2 class="page-heading">@Resources.Product</h2>
                     <div class="on">
                         <div class="widget-banner block">
                             <div class="banner-content row">
@@ -114,7 +110,7 @@
                                 <img src="~/Content/images/wheat_PNG51.png" style="min-height:500px;max-height:500px;" alt="BECOME A PREFERRED SUBSCRIBER" class="img-responsive">
                             </div>
                             <div class="col-md-6 col-sm-12 blockemail">
-                                <h6 class="title-news"> ** نمای کلی شرکت ** </h6>
+                                <h6 class="title-news"> ** @Resources.Companyoverview ** </h6>
                                 <h3 class="title-news">@Model.homeModel.Titlepart2.ConvertToPersianString()</h3>
                                 <p class="des-news">
                                     @Html.Raw(Model.homeModel.Bodypart2.ConvertToPersianString())
@@ -126,9 +122,9 @@
 
                 <div class="on block-carousel-index clearfix">
                     <div class="page-subheading">
-                        <p class="title--main">بلاگ ها</p>
+                        <p class="title--main">@Resources.Blog</p>
                     </div>
-                    <h2 class="page-heading">بلاگ ها</h2>
+                    <h2 class="page-heading">@Resources.Blog</h2>
                     <div class="on">
                         <div class="widget-banner block">
                             <div class="banner-content row">
@@ -141,13 +137,13 @@
                                                     <img style="min-height: 240px;max-height:240px; min-width: 240px;" class="card-image lazyautosizes" data-sizes="auto" src="~/Content/upload/images/@item.TitleImg" data-src="@item.TitleImg" alt="Aenean consequat sagittis" title="Aenean consequat sagittis" sizes="277px">
                                                 </a>
                                                 <div class="button-quickview">
-                                                    <a href="@Url.Action("Details", "Post", new { id = item.Id })" class="button button--small card-figcaption-button quickview" data-product-id="111">ادامه مقاله <span class="fa fa-eye"></span></a>
+                                                    <a href="@Url.Action("Details", "Post", new { id = item.Id })" class="button button--small card-figcaption-button quickview" data-product-id="111">@Resources.ReadMore <span class="fa fa-eye"></span></a>
                                                 </div>
                                             </figure>
                                             <div class="card-body">
                                                 <div class="card-body-left">
                                                     <h4 class="card-title">
-                                                        <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/">مقاله : @item.Title.ConvertToPersianString()  </a>
+                                                        <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/">@Resources.Article : @item.Title.ConvertToPersianString()  </a>
                                                     </h4>
                                                 </div>
                                             </div>
@@ -165,7 +161,7 @@
 
                 <div class="on block-carousel-index clearfix">
                     
-                    <h6 class="page-heading">نمای کلی</h6>
+                    <h6 class="page-heading">@Resources.Overview</h6>
                     <div class="blockstore row">
                         <div class="col-md-12 col-lg-6 no-padding blockstore__left">
                             <div class="blockstore__left--logo">

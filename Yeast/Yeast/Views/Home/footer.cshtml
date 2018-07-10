@@ -4,45 +4,57 @@
         <section class="footer-info">
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <article class="footer-info-col col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-categories">
-                    <h5 class="footer-info-heading">خدمات</h5>
-                    <ul class="footer-info-list">
-                        <li>
-                            <a href="http://ap-newfashion3.mybigcommerce.com/home-demo/">خدمات یکک</a>
-                        </li>
-                        <li>
-                            <a href="http://ap-newfashion3.mybigcommerce.com/collections/">خدمت 2</a>
-                        </li>
-                        <li>
-                            <a href="http://ap-newfashion3.mybigcommerce.com/women/">خدمت 3</a>
-                        </li>
-                        <li>
-                            <a href="http://ap-newfashion3.mybigcommerce.com/men/">خدمت 4</a>
-                        </li>
-                        <li>
-                            <a href="http://ap-newfashion3.mybigcommerce.com/accessories/">خدمت 4</a>
-                        </li>
+                    <h5 class="footer-info-heading" style="text-align:center">خدمات</h5>
+                    <ul class="footer-info-list" style="text-align:center">
+                        @if (Model.serviceModelList.Count > 5)
+                        {
+                            foreach (var item in Model.serviceModelList.OrderByDescending(m => m.Id).Take(5))
+                            {
+                                <li>
+                                    <a href="@Url.Action("Details", "Service", new { id = item.Id })">@item.Title</a>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            foreach (var item in Model.serviceModelList)
+                            {
+                                <li>
+                                    <a href="@Url.Action("Details", "Service", new { id = item.Id })">@item.Title</a>
+                                </li>
+                            }
+                        }
+
                     </ul>
                 </article>
                 <article class="footer-info-col col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-brands">
-                    <h5 class="footer-info-heading">بلاگ های مهم</h5>
-                    <ul class="footer-info-list">
+                    <h5 class="footer-info-heading" style="text-align:center">بلاگ های مهم</h5>
+                    <ul class="footer-info-list" style="text-align:center">
+                        @if (Model.postModeList.Count > 5)
+                        {
+                            foreach (var item in Model.postModeList.OrderByDescending(m => m.Id).Take(5))
+                            {
                         <li>
-                            <a href="http://ap-newfashion3.mybigcommerce.com/brands/OFS.html">بلگ1</a>
+                            <a href="@Url.Action("Details", "Post", new { id = item.Id })">@item.Title</a>
                         </li>
-                        <li>
-                            <a href="http://ap-newfashion3.mybigcommerce.com/brands/Common-Good.html">4</a>
-                        </li>
-                        <li>
-                            <a href="http://ap-newfashion3.mybigcommerce.com/brands/Sagaform.html">بلگ2</a>
-                        </li>
-                        <li><a href="http://ap-newfashion3.mybigcommerce.com/brands/">بلگ3</a></li>
+                            }
+                        }
+                        else
+                        {
+                            foreach (var item in Model.postModeList)
+                            {
+                                <li>
+                                    <a href="@Url.Action("Details", "Post", new { id = item.Id })">@item.Title</a>
+                                </li>
+                            }
+                        }
                     </ul>
                 </article>
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12 blockemail-footer">
-                <h3 class="title-news">ثبت نام برای دریافت خبر نامه</h3>
-                <p class="des-news">
-                    شما با ثبت نام در خبرنامه می توانید از اخرین اخبار کارخانجات تولیدی همرسین توس با خبر شوید.
+                <h3 class="title-news" style="text-align:center">@Resources.RegisterForNews</h3>
+                <p class="des-news" style="text-align:center">
+                   @Resources.HemersinsNewsLetter
                 </p>
                 <div class="newsletter-form">
                     <form class="form" action="/subscribe.php" method="post">
@@ -51,7 +63,7 @@
                             <input type="hidden" name="nl_first_name" value="bc">
                             <input type="hidden" name="check" value="1">
                             <div class="form-field">
-                                <label class="form-label is-srOnly" for="nl_email">آدرس ایمیل</label>
+                                <label class="form-label is-srOnly" for="nl_email">@Resources.Email</label>
                                 <div class="form-prefixPostfix wrap">
                                     <input class="form-input" id="nl_email" name="nl_email" type="email" value="" placeholder="ایمیل خود را وارد کنید">
                                     <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="ارسال">
@@ -65,25 +77,25 @@
                 @*<h3 class="">درباره ما</h3>
                 <div class="about" style="word-wrap:break-word;">@Html.Raw(Model.aboutUsViewModel.Body)</div>*@
                 <div class="row">
-                    <div class="fbl col-md-6 col-xs-12 col-sm-6">
-                        <h5 class="footer-info-heading">تماس با ما</h5>
+                    <div class="fbl col-md-6 col-xs-12 col-sm-6" style="text-align:center">
+                        <h5 class="footer-info-heading" style="text-align:center">@Resources.ContactUs</h5>
                         <address>
                             @Model.settingViewModelCultur.WebSiteName
                         </address>
-                        <strong>موبایل :@Model.settingViewModelCultur.Mobile</strong><br />
-                        <strong>تلفن :@Model.settingViewModelCultur.Phone</strong>
+                        <strong>@Resources.Mobil :@Model.settingViewModelCultur.Mobile</strong><br />
+                        <strong>@Resources.Tel :@Model.settingViewModelCultur.Phone</strong>
                     </div>
-                    <div class="fbr col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-webPages">
-                        <h5 class="footer-info-heading">راهنمایی</h5>
-                        <ul class="footer-info-list">
+                    <div class="fbr col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-webPages" style="text-align:center">
+                        <h5 class="footer-info-heading" style="text-align:center">@Resources.Tips</h5>
+                        <ul class="footer-info-list" style="text-align:center">
                             <li>
-                                <a href="@Url.Action("index","ContactUs")">درباره ما</a>
+                                <a href="@Url.Action("index","ContactUs")">@Resources.ContactUs</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("index","Post")">بلاگ</a>
+                                <a href="@Url.Action("index","Post")">@Resources.Blog</a>
                             </li>
                             <li>
-                                <a href="/sitemap.php">سایت مپ</a>
+                                <a href="/sitemap.php">@Resources.SiteMap</a>
                             </li>
                         </ul>
                     </div>
@@ -114,7 +126,7 @@
     <div class="footer-bottom">
         <article class="footer-info-col
                 footer-info-col--social" data-section-type="footer-webPages">
-            <ul class="socialLinks socialLinks--alt">
+            <ul class="socialLinks socialLinks--alt" >
                 <li class="socialLinks-item">
                     <a class="icon icon--facebook" href="https://www.facebook.com" target="_blank">
                         <svg><use xlink:href="#icon-facebook"></use></svg>
@@ -148,7 +160,7 @@
             </ul>
         </article>
         <div class="footer-copyright">
-            <p class="powered-by"><a href="#" rel="nofollow">پیشگامان صنعت نرم افزار</a></p>
+            <p class="powered-by"><a href="#" rel="nofollow">@Resources.SoftwareIndustryPioneers</a></p>
         </div>
         <div class="footer-copyright">
             <p class="powered-by">© 2018  </p>

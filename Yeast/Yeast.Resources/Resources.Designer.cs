@@ -97,6 +97,15 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مقاله.
+        /// </summary>
+        public static string Article {
+            get {
+                return ResourceManager.GetString("Article", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to بازگشت.
         /// </summary>
         public static string Back {
@@ -115,6 +124,33 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لیست بلاگ ها.
+        /// </summary>
+        public static string BlogList {
+            get {
+                return ResourceManager.GetString("BlogList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to متن پیام.
+        /// </summary>
+        public static string Body {
+            get {
+                return ResourceManager.GetString("Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نمای کلی شرکت.
+        /// </summary>
+        public static string Companyoverview {
+            get {
+                return ResourceManager.GetString("Companyoverview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تماس‌باما.
         /// </summary>
         public static string ContactUs {
@@ -129,6 +165,15 @@ namespace Yeast.Resources {
         public static string CreateAccount {
             get {
                 return ResourceManager.GetString("CreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to توضیحات.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
             }
         }
         
@@ -196,11 +241,38 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to گرید.
+        /// </summary>
+        public static string Grid {
+            get {
+                return ResourceManager.GetString("Grid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شما با ثبت نام در خبرنامه می توانید از اخرین اخبار کارخانجات تولیدی همرسین توس با خبر شوید..
+        /// </summary>
+        public static string HemersinsNewsLetter {
+            get {
+                return ResourceManager.GetString("HemersinsNewsLetter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to صفحه‌ی‌نخست.
         /// </summary>
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لیست.
+        /// </summary>
+        public static string List {
+            get {
+                return ResourceManager.GetString("List", resourceCulture);
             }
         }
         
@@ -214,11 +286,38 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to موبایل.
+        /// </summary>
+        public static string Mobil {
+            get {
+                return ResourceManager.GetString("Mobil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to برندهای ما.
         /// </summary>
         public static string MyBrands {
             get {
                 return ResourceManager.GetString("MyBrands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to پیام جدید.
+        /// </summary>
+        public static string NewMessage {
+            get {
+                return ResourceManager.GetString("NewMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نمای کلی.
+        /// </summary>
+        public static string Overview {
+            get {
+                return ResourceManager.GetString("Overview", resourceCulture);
             }
         }
         
@@ -259,6 +358,15 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نام محصول.
+        /// </summary>
+        public static string ProductName {
+            get {
+                return ResourceManager.GetString("ProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نمایش سریع.
         /// </summary>
         public static string Quickview {
@@ -273,6 +381,15 @@ namespace Yeast.Resources {
         public static string ReadMore {
             get {
                 return ResourceManager.GetString("ReadMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ثبت نام برای دریافت خبر نامه.
+        /// </summary>
+        public static string RegisterForNews {
+            get {
+                return ResourceManager.GetString("RegisterForNews", resourceCulture);
             }
         }
         
@@ -322,11 +439,38 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لیست خدمات.
+        /// </summary>
+        public static string ServiceList {
+            get {
+                return ResourceManager.GetString("ServiceList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ثبت‌نام.
         /// </summary>
         public static string SignUp {
             get {
                 return ResourceManager.GetString("SignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to سایت مپ.
+        /// </summary>
+        public static string SiteMap {
+            get {
+                return ResourceManager.GetString("SiteMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to پیشگامان صنعت نرم افزار.
+        /// </summary>
+        public static string SoftwareIndustryPioneers {
+            get {
+                return ResourceManager.GetString("SoftwareIndustryPioneers", resourceCulture);
             }
         }
         
@@ -345,6 +489,33 @@ namespace Yeast.Resources {
         public static string TanckYou {
             get {
                 return ResourceManager.GetString("TanckYou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تلفن.
+        /// </summary>
+        public static string Tel {
+            get {
+                return ResourceManager.GetString("Tel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to راهنمایی.
+        /// </summary>
+        public static string Tips {
+            get {
+                return ResourceManager.GetString("Tips", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عنوان پیام.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
         

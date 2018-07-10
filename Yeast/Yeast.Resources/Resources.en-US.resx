@@ -118,21 +118,159 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>About Us</value>
+  </data>
+  <data name="AboutUsOnFooter" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AlertSsuccess" xml:space="preserve">
+    <value>Register suc</value>
+  </data>
+  <data name="Article" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
   </data>
   <data name="Blog" xml:space="preserve">
     <value>Blog</value>
   </data>
+  <data name="BlogList" xml:space="preserve">
+    <value>Blog List</value>
+  </data>
+  <data name="Body" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="Companyoverview" xml:space="preserve">
+    <value>Company Overview</value>
+  </data>
   <data name="ContactUs" xml:space="preserve">
     <value>ContactUs</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Dont Have Account?</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EnterEmailToResetPassword" xml:space="preserve">
+    <value>Enter Email To Reset Password</value>
+  </data>
+  <data name="EnterYourPersonData" xml:space="preserve">
+    <value>Enter Your Person Data</value>
+  </data>
+  <data name="Factor" xml:space="preserve">
+    <value>Factory</value>
+  </data>
+  <data name="ForgotYourPassword" xml:space="preserve">
+    <value>Forgot Your Password?</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>FullName</value>
+  </data>
+  <data name="Grid" xml:space="preserve">
+    <value>Grid</value>
+  </data>
+  <data name="HemersinsNewsLetter" xml:space="preserve">
+    <value>By registering in the newsletter, you can get information about the latest news from hemersin Toos  manufactures.</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="List" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Mobil" xml:space="preserve">
+    <value>Mobil</value>
+  </data>
+  <data name="MyBrands" xml:space="preserve">
+    <value>My Brands</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordIsRequired" xml:space="preserve">
+    <value>Password Is Required</value>
+  </data>
   <data name="Product" xml:space="preserve">
     <value>Product</value>
   </data>
+  <data name="ProductCategory" xml:space="preserve">
+    <value>Product Category</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Quickview" xml:space="preserve">
+    <value>Quick View</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="RegisterForNews" xml:space="preserve">
+    <value>Register For Geting Newsletters</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
   <data name="Representation" xml:space="preserve">
-    <value>Representation</value>
+    <value>Branches</value>
+  </data>
+  <data name="RepresentationMyOnWorld" xml:space="preserve">
+    <value>Branches List</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="ServiceList" xml:space="preserve">
+    <value>Service List</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>SignUp</value>
+  </data>
+  <data name="SiteMap" xml:space="preserve">
+    <value>Site Map</value>
+  </data>
+  <data name="SoftwareIndustryPioneers" xml:space="preserve">
+    <value>Software industry pioneers</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="TanckYou" xml:space="preserve">
+    <value>Thank You</value>
+  </data>
+  <data name="Tel" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="Tips" xml:space="preserve">
+    <value>Tips</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="UsernameIsRequired" xml:space="preserve">
+    <value>Username Is Required</value>
   </data>
 </root>
