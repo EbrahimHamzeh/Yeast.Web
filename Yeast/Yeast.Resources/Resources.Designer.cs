@@ -178,6 +178,15 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to جزئیات.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to آیا حساب کاربری ندارید؟.
         /// </summary>
         public static string DontHaveAccount {
@@ -417,6 +426,15 @@ namespace Yeast.Resources {
         public static string RepresentationMyOnWorld {
             get {
                 return ResourceManager.GetString("RepresentationMyOnWorld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to این فیلد نباید خای باشد.
+        /// </summary>
+        public static string Required {
+            get {
+                return ResourceManager.GetString("Required", resourceCulture);
             }
         }
         

@@ -1,10 +1,9 @@
 ﻿@model IList<Yeast.Model.FrontEnd.Product>
 @{
-	ViewBag.Title = "Index";
+    ViewBag.Title = "Index";
+    
 }
-@section CssStyle{
-	<link href="~/Content/css/ma5slider.min.css" rel="stylesheet" />
-}
+
 
 <div class="body stop-float-body clearfix">
 
@@ -23,7 +22,7 @@
                                 <div class="col-md-3 col-sm-4 col-xs-12">
                                     <article class="card ">
                                         <figure class="card-figure">
-                                            <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/" class="product_img_link">
+                                            <a href="#" class="product_img_link">
                                                 <img style="min-height: 240px;max-height:240px; min-width: 100%;" class="card-image lazyautosizes" data-sizes="auto" src="@item.Image1" data-src="@item.Image1" alt="Aenean consequat sagittis" title="Aenean consequat sagittis" sizes="277px">
                                                 <span class="product-additional" data-product-id="">
                                                     <img style="min-height: 240px; min-width: 240px;" class="replace-2x img-responsive" src="@item.Image2" alt="Aenean consequat sagittis" title="Aenean consequat sagittis">
@@ -36,7 +35,7 @@
                                         <div class="card-body">
                                             <div class="card-body-left">
                                                 <h4 class="card-title">
-                                                    <a href="http://ap-newfashion3.mybigcommerce.com/aenean-consequat-sagittis/">@item.Name</a>
+                                                    <a href="#">@item.Name</a>
                                                 </h4>
                                             </div>
                                             <div class="card-text content-price" data-test-info-type="price">
@@ -71,11 +70,4 @@
 		<div class="loadingOverlay"></div>
 	</div>
 </div>
-@section Javascripts{
-	<script src="~/Content/js/jquery-ui.min.js"></script>
-<script src="~/Content/js/jquery.ui.touch-punch.min.js"></script>
-<script src="~/Content/js/ma5slider.min.js"></script>
-	<script>
-		$('.ma5slider').ma5slider();
-	</script>
-}
+

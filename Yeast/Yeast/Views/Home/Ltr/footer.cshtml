@@ -1,0 +1,170 @@
+﻿
+@model Yeast.Model.FrontEnd.FooterModel
+<footer class="footer clearfix" role="contentinfo">
+    <div class="container">
+        <section class="footer-info">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <article class="footer-info-col col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-categories">
+                    <h5 class="footer-info-heading" style="text-align:center">خدمات</h5>
+                    <ul class="footer-info-list" style="text-align:center">
+                        @if (Model.serviceModelList.Count > 5)
+                        {
+                            foreach (var item in Model.serviceModelList.OrderByDescending(m => m.Id).Take(5))
+                            {
+                                <li>
+                                    <a href="@Url.Action("Details", "Service", new { id = item.Id })">@item.Title</a>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            foreach (var item in Model.serviceModelList)
+                            {
+                                <li>
+                                    <a href="@Url.Action("Details", "Service", new { id = item.Id })">@item.Title</a>
+                                </li>
+                            }
+                        }
+
+                    </ul>
+                </article>
+                <article class="footer-info-col col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-brands">
+                    <h5 class="footer-info-heading" style="text-align:center">بلاگ های مهم</h5>
+                    <ul class="footer-info-list" style="text-align:center">
+                        @if (Model.postModeList.Count > 5)
+                        {
+                            foreach (var item in Model.postModeList.OrderByDescending(m => m.Id).Take(5))
+                            {
+                                <li>
+                                    <a href="@Url.Action("Details", "Post", new { id = item.Id })">@item.Title</a>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            foreach (var item in Model.postModeList)
+                            {
+                                <li>
+                                    <a href="@Url.Action("Details", "Post", new { id = item.Id })">@item.Title</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 blockemail-footer">
+                <h3 class="title-news" style="text-align:center">@Resources.RegisterForNews</h3>
+                <p class="des-news" style="text-align:center">
+                    @Resources.HemersinsNewsLetter
+                </p>
+                <div class="newsletter-form">
+                    <form class="form" action="/subscribe.php" method="post">
+                        <fieldset class="form-fieldset">
+                            <input type="hidden" name="action" value="subscribe">
+                            <input type="hidden" name="nl_first_name" value="bc">
+                            <input type="hidden" name="check" value="1">
+                            <div class="form-field">
+                                <label class="form-label is-srOnly" for="nl_email">@Resources.Email</label>
+                                <div class="form-prefixPostfix wrap">
+                                    <input class="form-input" id="nl_email" name="nl_email" type="email" value="" placeholder="ایمیل خود را وارد کنید">
+                                    <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="ارسال">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-info-col col-md-4 col-sm-12 col-xs-12" data-section-type="storeInfo">
+                @*<h3 class="">درباره ما</h3>
+                    <div class="about" style="word-wrap:break-word;">@Html.Raw(Model.aboutUsViewModel.Body)</div>*@
+                <div class="row">
+                    <div class="fbl col-md-6 col-xs-12 col-sm-6" style="text-align:center">
+                        <h5 class="footer-info-heading" style="text-align:center">@Resources.ContactUs</h5>
+                        <address>
+                            @Model.settingViewModelCultur.WebSiteName
+                        </address>
+                        <strong>@Resources.Mobil :@Model.settingViewModelCultur.Mobile</strong><br />
+                        <strong>@Resources.Tel :@Model.settingViewModelCultur.Phone</strong>
+                    </div>
+                    <div class="fbr col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-webPages" style="text-align:center">
+                        <h5 class="footer-info-heading" style="text-align:center">@Resources.Tips</h5>
+                        <ul class="footer-info-list" style="text-align:center">
+                            <li>
+                                <a href="@Url.Action("index","ContactUs")">@Resources.ContactUs</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("index","Post")">@Resources.Blog</a>
+                            </li>
+                            <li>
+                                <a href="/sitemap.php">@Resources.SiteMap</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--
+                        <article class="footer-info-col" data-section-type="newsletterSubscription">
+                                <h5 class="footer-info-heading">Subscribe to our newsletter</h5>
+            <p>Get the latest updates on new products and upcoming sales</p>
+
+            <form class="form" action="/subscribe.php" method="post">
+                <fieldset class="form-fieldset">
+                    <input type="hidden" name="action" value="subscribe">
+                    <input type="hidden" name="nl_first_name" value="bc">
+                    <input type="hidden" name="check" value="1">
+                    <div class="form-field">
+                        <label class="form-label is-srOnly" for="nl_email">Email Address</label>
+                        <div class="form-prefixPostfix wrap">
+                            <input class="form-input" id="nl_email" name="nl_email" type="email" value="" placeholder="Your email address">
+                            <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="Subscribe">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+                                        </article>-->
+        </section>
+    </div>
+    <div class="footer-bottom">
+        <article class="footer-info-col
+                footer-info-col--social" data-section-type="footer-webPages">
+            <ul class="socialLinks socialLinks--alt">
+                <li class="socialLinks-item">
+                    <a class="icon icon--facebook" href="https://www.facebook.com" target="_blank">
+                        <svg><use xlink:href="#icon-facebook"></use></svg>
+                    </a>
+                </li>
+                <li class="socialLinks-item">
+                    <a class="icon icon--twitter" href="http://www.twitter.com/" target="_blank">
+                        <svg><use xlink:href="#icon-twitter"></use></svg>
+                    </a>
+                </li>
+                <li class="socialLinks-item">
+                    <a class="icon icon--pinterest" href="https://www.pinterest.com/" target="_blank">
+                        <svg><use xlink:href="#icon-pinterest"></use></svg>
+                    </a>
+                </li>
+                <li class="socialLinks-item">
+                    <a class="icon icon--youtube" href="https://www.youtube.com/" target="_blank">
+                        <svg><use xlink:href="#icon-youtube"></use></svg>
+                    </a>
+                </li>
+                <li class="socialLinks-item">
+                    <a class="icon icon--instagram" href="https://www.instagram.com/" target="_blank">
+                        <svg><use xlink:href="#icon-instagram"></use></svg>
+                    </a>
+                </li>
+                <li class="socialLinks-item">
+                    <a class="icon icon--rss" href="https://www.rss.com/" target="_blank">
+                        <svg><use xlink:href="#icon-rss"></use></svg>
+                    </a>
+                </li>
+            </ul>
+        </article>
+        <div class="footer-copyright">
+            <p class="powered-by"><a href="#" rel="nofollow">@Resources.SoftwareIndustryPioneers</a></p>
+        </div>
+        <div class="footer-copyright">
+            <p class="powered-by">© 2018  </p>
+        </div>
+    </div>
+</footer>

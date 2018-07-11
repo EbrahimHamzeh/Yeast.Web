@@ -156,6 +156,9 @@
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="DontHaveAccount" xml:space="preserve">
     <value>Dont Have Account?</value>
   </data>
@@ -193,10 +196,13 @@
     <value>Login</value>
   </data>
   <data name="Mobil" xml:space="preserve">
-    <value>Mobil</value>
+    <value>Mobile</value>
   </data>
   <data name="MyBrands" xml:space="preserve">
     <value>My Brands</value>
+  </data>
+  <data name="NewMessage" xml:space="preserve">
+    <value>New Message</value>
   </data>
   <data name="Overview" xml:space="preserve">
     <value>Overview</value>
@@ -233,6 +239,9 @@
   </data>
   <data name="RepresentationMyOnWorld" xml:space="preserve">
     <value>Branches List</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Required</value>
   </data>
   <data name="Reset" xml:space="preserve">
     <value>Reset</value>

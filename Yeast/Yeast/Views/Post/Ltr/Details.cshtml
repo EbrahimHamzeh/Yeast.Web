@@ -1,0 +1,41 @@
+﻿
+@model Yeast.Model.FrontEnd.PostModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Ltr/_Layout.cshtml";
+}
+
+
+<article class="blog grid-item  blog-detail-page">
+    <div class="blog-post-figure">
+        <figure class="blog-thumbnail">
+            <a href="http://ap-newfashion.mybigcommerce.com/blog/blog-newfashion/">
+                <img style="height:400px;width:80%;" src="~/Content/upload/images/@Model.TitleImg" alt="Blog NewFashion" title="Blog NewFashion">
+            </a>
+        </figure>
+    </div>
+
+    <div class="blog-post-body" style="width: 80%;">
+        <header class="blog-header">
+            <h2 class="blog-title">
+                <a href="http://ap-newfashion.mybigcommerce.com/blog/blog-newfashion/">@Model.Title</a>
+            </h2>
+            <p class="blog-date">@Model.CreatedDate</p>
+        </header>
+        <div class="blog-post">
+            @Html.Raw(Model.Body)
+        </div>
+
+
+        <ul class="tags">
+            @foreach (var item in Model.TagList)
+            {
+                <li class="tag">
+                    <a href="#">@item.Text</a>
+                </li>
+            }
+
+        </ul>
+    </div>
+</article>

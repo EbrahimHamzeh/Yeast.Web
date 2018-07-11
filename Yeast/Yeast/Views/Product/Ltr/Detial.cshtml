@@ -1,0 +1,66 @@
+﻿@model Yeast.DomainClasses.Entities.Product
+@{
+
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/Ltr/_Layout.cshtml";
+}
+@*@section CssStyle{
+    <link href="~/Content/css/ma5slider.min.css" rel="stylesheet" />
+}*@
+
+
+
+
+
+
+<div class="modal-content">
+    <div class="modal-body quickView" style="max-height: 690.3px;">
+        <div class="productView productView--quickView">
+
+
+            <section class="productView-images" data-image-gallery="">
+                <figure class="productView-image" data-image-gallery-main="" data-zoom-image="#" style="position: relative; overflow: hidden;">
+                    <a href="#">
+                        <img style="min-width: 500px;max-width:500px; min-height: 400px;max-height: 400px;" class="productView-image--default" src="@Model.Image1" alt="Commodo habitasse lacus" title="Commodo habitasse lacus" data-main-image="">
+                    </a>
+                    <img role="presentation" src="@Model.Image1" class="zoomImg" style="position: absolute; top: -67.6852px; left: -173.258px; opacity: 0; width: 760px; height: 985px; border: none; max-width: none; max-height: none;">
+                </figure>
+                <ul class="productView-thumbnails">
+                    <li class="productView-thumbnail" style="min-width: 100px;max-width:100px; min-height: 70px;max-height: 70px;">
+                        <a class="productView-thumbnail-link" href="@Model.Image2" data-image-gallery-item="" data-image-gallery-new-image-url=@Model.Image2" data-image-gallery-zoom-image-url="@Model.Image2">
+                            <img style="min-width: 80px;max-width:80px; min-height: 70px;max-height: 70px;" src="@Model.Image2" alt="Commodo habitasse lacus" title="Commodo habitasse lacus">
+                        </a>
+                    </li>
+                    <li class="productView-thumbnail" style="min-width: 100px;max-width:100px; min-height: 70px;max-height: 70px;">
+                        <a class="productView-thumbnail-link" href="@Model.Image3" data-image-gallery-item="" data-image-gallery-new-image-url="@Model.Image3" data-image-gallery-zoom-image-url="@Model.Image3">
+                            <img style="min-width:80px;max-width:80px; min-height: 70px;max-height: 70px;" src="@Model.Image3" alt="Commodo habitasse lacus" title="Commodo habitasse lacus">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="productView-details">
+                <div class="productView-product">
+                    <h1 class="productView-title" style="text-align:left"> @Model.Name    :  @Resources.ProductName </h1>
+
+                    <dl class="productView-info" style="text-align:left">
+                        <dt class="productView-info-name" style="text-align:left">: @Resources.Description</dt>
+                    </dl>
+                    <div class="description" style="text-align:left">
+
+                        @Html.Raw(Model.Body)
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+@section Javascripts{
+    @*<script src="~/Content/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="~/Content/js/ma5slider.min.js"></script>
+    <script>
+        $('.ma5slider').ma5slider();
+    </script>*@
+}
+
