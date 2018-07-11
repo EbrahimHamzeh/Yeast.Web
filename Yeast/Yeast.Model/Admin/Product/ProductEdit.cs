@@ -16,6 +16,21 @@ namespace Yeast.Model.Admin
 
         [AllowHtml]
         public virtual string Body { get; set; }
+        public string NameEn { get; set; }
+        [MaxLength(ErrorMessage = "حداکثر ۱۰۰۰ کاراکتر می‌توانید وارد کنید")]
+        public string DescriptionEn { get; set; }
+        [AllowHtml]
+        public string BodyEn { get; set; }
+        public string NameAr { get; set; }
+        [MaxLength(ErrorMessage = "حداکثر ۱۰۰۰ کاراکتر می‌توانید وارد کنید")]
+        public string DescriptionAr { get; set; }
+        [AllowHtml]
+        public string BodyAr { get; set; }
+        public string NameRu { get; set; }
+        [MaxLength(ErrorMessage = "حداکثر ۱۰۰۰ کاراکتر می‌توانید وارد کنید")]
+        public string DescriptionRu { get; set; }
+        [AllowHtml]
+        public string BodyRu { get; set; }
         public decimal Price { get; set; }
         public string ImageName { get; set; }
         public string ImageNameDeleted { get; set; }

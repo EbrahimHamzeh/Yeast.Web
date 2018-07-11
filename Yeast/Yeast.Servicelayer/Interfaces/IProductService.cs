@@ -4,6 +4,7 @@ using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
 using System.Runtime.CompilerServices;
 
+
 namespace Yeast.Servicelayer.Interfaces
 {
 	public interface IProductService
@@ -17,5 +18,7 @@ namespace Yeast.Servicelayer.Interfaces
         Task<IList<Model.FrontEnd.Product>> GetAllAsync();
         IList<Product> GetAllproduct();
         Task<DataTableList<ProductList>> GetDataTableAsync(string search = "", string sort = "Title", string order = "asc", int offset = 0, int limit = 10);
-	}
+        List<Model.FrontEnd.Product> GetByCulterProduct();
+
+    }
 }

@@ -23,7 +23,7 @@ namespace Yeast.Controllers
         // GET: /{lang}/Product
         public virtual ActionResult Index()
         {
-            IList<Model.FrontEnd.Product> products = _productService.GetAllAsync().Result;
+            IList<Model.FrontEnd.Product> products = _productService.GetByCulterProduct();
 
             return View(products);
         }

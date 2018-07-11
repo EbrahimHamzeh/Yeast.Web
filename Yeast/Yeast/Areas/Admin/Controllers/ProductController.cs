@@ -79,7 +79,7 @@ namespace Yeast.Areas.Admin.Controllers
 			Product ProductUpdate = _ProductService.Find(id);
 			if (ProductUpdate == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-			if (TryUpdateModel(ProductUpdate, "", new string[] { "Name", "Description", "Price", "Body"}))
+			if (TryUpdateModel(ProductUpdate, "", new string[] { "Name", "NameEn", "NameAr", "NameRu", "Description", "DescriptionEn", "DescriptionAr", "DescriptionRu", "Price", "Body", "BodyEn", "BodyAr", "BodyRu" }))
 			{
                 string imageText = Request["ImageName"].Replace("||/","|/");
                 string[] images = imageText.Split('|').Where(x => !string.IsNullOrEmpty(x)).ToArray();

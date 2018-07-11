@@ -91,10 +91,34 @@
                             <div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
                             <div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Name">عنوان</label>
+                                <label class="col-md-1 control-label" for="Name">عنوان(فارسی)</label>
                                 <div class="col-md-11">
                                     <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" required placeholder="عنوان را وارد نمایید">
                                     @Html.ValidationMessageFor(model => model.Name)
+                                    <div class="form-control-focus"> </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="NameEn">عنوان(انگلیسی)</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="NameEn" name="NameEn" value="@Model.NameEn" required placeholder="عنوان را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.NameEn)
+                                    <div class="form-control-focus"> </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="NameAr">عنوان(عربی)</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="NameAr" name="NameAr" value="@Model.NameAr" required placeholder="عنوان را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.NameAr)
+                                    <div class="form-control-focus"> </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="NameRu">عنوان(روسی)</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="NameRu" name="NameRu" value="@Model.NameRu" required placeholder="عنوان را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.NameRu)
                                     <div class="form-control-focus"> </div>
                                 </div>
                             </div>
@@ -107,10 +131,37 @@
                                 </div>
                             </div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Description">توضیحات</label>
+                                <label class="col-md-1 control-label" for="Description">توضیحات (فارسی) </label>
                                 <div class="col-md-11">
                                     <input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" placeholder="توضیحات را وارد نمایید">
                                     @Html.ValidationMessageFor(model => model.Description)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="DescriptionEn">توضیحات (انگلیسی)</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="DescriptionEn" name="DescriptionEn" value="@Model.DescriptionEn" placeholder="توضیحات را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.DescriptionEn)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="DescriptionAr">توضیحات (عربی)</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="DescriptionAr" name="DescriptionAr" value="@Model.DescriptionAr" placeholder="توضیحات را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.DescriptionAr)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="DescriptionAr">توضیحات (روسی)</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="DescriptionAr" name="DescriptionAr" value="@Model.DescriptionAr" placeholder="توضیحات را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.DescriptionRu)
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
                                 </div>
@@ -124,10 +175,37 @@
                                 </div>
                             </div>
                             <div class="form-group form-md-line-input">
-                                <label class="col-md-1 control-label" for="Name">محتوا</label>
+                                <label class="col-md-1 control-label" for="Name">محتوا(فارسی)</label>
                                 <div class="col-md-11">
                                     <textarea id="Body" name="Body" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.Body</textarea>
                                     @Html.ValidationMessageFor(model => model.Body)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Name">محتوا(انگلیسی)</label>
+                                <div class="col-md-11">
+                                    <textarea id="BodyEn" name="BodyEn" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.BodyEn</textarea>
+                                    @Html.ValidationMessageFor(model => model.BodyEn)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Name">محتوا(عربی)</label>
+                                <div class="col-md-11">
+                                    <textarea id="BodyAr" name="BodyAr" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.BodyAr</textarea>
+                                    @Html.ValidationMessageFor(model => model.BodyAr)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Name">محتوا(روسی)</label>
+                                <div class="col-md-11">
+                                    <textarea id="BodyRu" name="BodyRu" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.BodyRu</textarea>
+                                    @Html.ValidationMessageFor(model => model.BodyRu)
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
                                 </div>
@@ -210,6 +288,58 @@
 				enableScript: false
 			})
 		});
+
+               $(function ()
+		{
+			$('#BodyEn').froalaEditor({
+				allowedImageTypes: ["jpeg", "jpg", "png"],
+				height: 300,
+				language: "fa",
+				direction: "rtl",
+				fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
+				plainPaste: true,
+				borderColor: '#00008b',
+				imageUploadURL: '@Url.Action("FroalaUploadImage", "Post", new { Area = "Admin" })',
+				fileUploadURL: '@Url.Action("FroalaUploadFile", "Post", new { Area = "Admin" }))',
+				videoUploadURL: '@Url.Action("FroalaUploadVideo", "Post", new { Area = "Admin" })',
+				enableScript: false
+			})
+		});
+
+               $(function ()
+		{
+			$('#BodyAr').froalaEditor({
+				allowedImageTypes: ["jpeg", "jpg", "png"],
+				height: 300,
+				language: "fa",
+				direction: "rtl",
+				fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
+				plainPaste: true,
+				borderColor: '#00008b',
+				imageUploadURL: '@Url.Action("FroalaUploadImage", "Post", new { Area = "Admin" })',
+				fileUploadURL: '@Url.Action("FroalaUploadFile", "Post", new { Area = "Admin" }))',
+				videoUploadURL: '@Url.Action("FroalaUploadVideo", "Post", new { Area = "Admin" })',
+				enableScript: false
+			})
+        });
+
+               $(function ()
+		{
+			$('#BodyRu').froalaEditor({
+				allowedImageTypes: ["jpeg", "jpg", "png"],
+				height: 300,
+				language: "fa",
+				direction: "rtl",
+				fontList: ["IranSans", "Tahoma, Geneva", "Arial, Helvetica", "Impact, Charcoal"],
+				plainPaste: true,
+				borderColor: '#00008b',
+				imageUploadURL: '@Url.Action("FroalaUploadImage", "Post", new { Area = "Admin" })',
+				fileUploadURL: '@Url.Action("FroalaUploadFile", "Post", new { Area = "Admin" }))',
+				videoUploadURL: '@Url.Action("FroalaUploadVideo", "Post", new { Area = "Admin" })',
+				enableScript: false
+			})
+		});
+
 
         var form1 = $('form[data-loading-text]');
         var error1 = $('.alert-danger', form1);
