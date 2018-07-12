@@ -225,7 +225,6 @@
 	margin: 0;
 	width:16px;
 	height:15px;
-	background: url(./bullet.png) right top;
 	float: right; 
 	text-indent: -4000px; 
 	position:relative;
@@ -326,7 +325,7 @@
 @-webkit-keyframes wsBasic{0%{right:-0%} 25%{right:-0%} 50%{right:-100%} 75%{right:-100%} }
 
 #wowslider-container1  .ws_shadow{
-	background-image: url(./bg.png);
+	background-image: url(../../images/bg-about.jpg);
 	background-repeat: no-repeat;
 	background-size:100%;
 	position:absolute;
