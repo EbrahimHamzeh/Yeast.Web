@@ -90,6 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Representation.cs" />
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Statistics.cs" />
     <Compile Include="Entities\RoleAccess.cs" />

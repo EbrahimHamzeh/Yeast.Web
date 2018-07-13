@@ -1,0 +1,174 @@
+﻿@using Yeast.Utilities.Helpers;
+@{
+	ViewBag.Title = "نمایندگی‌ها";
+	ViewBag.SelectedPage = "Representation";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section CssStyle{
+	<link href="~/Content/css/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
+	<link href="~/Content/css/bootstrap-table/bootstrap-table-sticky-header.css" rel="stylesheet" />
+	<link href="~/Content/css/sweetalert.css" rel="stylesheet" />
+}
+<div class="page-content">
+	<!-- BEGIN PAGE HEADER-->
+	<!-- BEGIN PAGE BAR -->
+	<div class="page-bar">
+		<ul class="page-breadcrumb">
+			<li>
+				<a href="@Url.Action("Index","Dashboard", new { Area = "Admin" })">داشبورد</a>
+				<i class="fa fa-circle"></i>
+			</li>
+			<li>
+				<a href="#">مطلب</a>
+				<i class="fa fa-circle"></i>
+			</li>
+			<li>
+				<span>نمایندگی‌ها</span>
+			</li>
+		</ul>
+	</div>
+	<!-- END PAGE BAR -->
+	<!-- BEGIN PAGE TITLE-->
+	<h1 class="page-title">
+		<small></small>
+	</h1>
+	<!-- END PAGE TITLE-->
+	<!-- END PAGE HEADER-->
+	<div class="note note-info">
+		<p> گروه بندی مطالب اصلی وب سایت </p>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<!-- BEGIN SAMPLE FORM PORTLET-->
+			<div class="portlet light bordered">
+				<div class="portlet-title">
+					<div class="caption font-green-haze">
+						<i class="fa fa-list-ul font-green-haze"></i>
+						<span class="caption-subject bold uppercase"> لیست</span>
+					</div>
+					<div class="actions">
+						<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="تمام صفحه" title=""> </a>
+					</div>
+				</div>
+				<div class="portlet-body form">
+					@Html.AntiForgeryToken()
+					<a href="@Url.Action("Add")" class="btn btn-default popovers" data-container="body" data-trigger="hover" data-placement="bottom" data-content="میتوانید نوع جدید ایجاد کنید" data-original-title="ایحاد">جدید</a>
+					<div id="toolbar">
+						<select class="form-control">
+							<option value="">اصلی</option>
+							<option value="all">همه</option>
+							<option value="selected">انتخاب شده‌ها</option>
+						</select>
+					</div>
+					<table id="tableRepresentationist"
+								 data-toggle="table"
+								 data-url="@Url.Action("DataList")"
+								 data-unique-id="Id"
+								 data-pagination="true"
+								 data-side-pagination="server"
+								 data-page-list="[10, 20, 50, 100, 200]"
+								 data-search="true"
+								 data-search-on-enter-key="true"
+								 data-maintain-selected="true"
+								 data-cookie="true"
+								 data-cookie-id-table="tableRepresentationist"
+								 data-mobile-responsive="true"
+								 data-check-on-init="true"
+								 data-show-refresh="true"
+								 data-show-toggle="true"
+								 data-show-columns="true"
+								 data-buttons-align="right"
+								 data-filter-control="true"
+								 data-click-to-select="true"
+								 data-toolbar="#toolbar"
+								 data-show-export="true"
+								 data-export-options='{"fileName": "Tags"}'
+								 data-export-types="['json','xml','csv', 'txt',, 'doc','excel']"
+								 data-sticky-header="true"
+								 data-sticky-header-Offset-y="50px">
+						<thead>
+							<tr>
+								<th data-field="state" data-checkbox="true"></th>
+								<th data-field="No" data-align="center" data-width="10px">ردیف</th>
+								<th data-field="Title" data-align="center" data-sortable="true" data-filter-control="input">عنوان</th>
+								<th data-field="Description" data-align="center" data-sortable="true" data-filter-control="input">توضیحات</th>
+								<th data-formatter="actionFormatter" data-events="actionEvents" data-align="center">عملیات</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<!-- END SAMPLE FORM PORTLET-->
+		</div>
+	</div>
+</div>
+@section Javascripts{
+	<script src="~/Content/js/bootstrap-table/bootstrap-table.js"></script>
+	<script src="~/Content/js/bootstrap-table/bootstrap-table-export.js"></script>
+	<script src="~/Content/js/bootstrap-table/tableExport.js"></script>
+	<script src="~/Content/js/bootstrap-table/bootstrap-table-cookie.min.js"></script>
+	<script src="~/Content/js/bootstrap-table/bootstrap-table-select2-filter.js"></script>
+	<script src="~/Content/js/bootstrap-table/bootstrap-table-mobile.js"></script>
+	<script src="~/Content/js/bootstrap-table/bootstrap-table-sticky-header.js"></script>
+	<script src="~/Content/js/sweetalert.js"></script>
+	<script type="text/javascript">
+        var $table = $('#tableRepresentationist');
+		$(function ()
+		{
+			$('#toolbar').find('select').change(function ()
+			{
+				$table.bootstrapTable('destroy').bootstrapTable({
+					exportDataType: $(this).val()
+				});
+			});
+		})
+		function actionFormatter(value, row, index)
+		{
+			return [
+					'<a class="edit ml10" href="@Url.Action("Edit")/' + row.Id + '" data-placement="top" data-toggle="tooltip" data-original-title ="ویرایش" title ="ویرایش این ردیف" style="color:green; font-size:24px; padding:0 5px;">',
+					'<i class="fa fa-edit"></i>',
+					'</a>',
+					'<a class="remove ml10" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title ="حذف" title ="حذف این ردیف" style="color:#f86c6b; font-size:24px; padding:0 5px;">',
+					'<i class="fa fa-remove"></i>',
+					'</a>'
+			].join('');
+		}
+		window.actionEvents = {
+			'click .remove': function (e, value, row, index)
+			{
+				swal({
+					title: 'هشدار',
+					text: 'آیا از حذف' + ' ' + row.Name + ' ' + 'مظمئن هستید؟',
+					type: "warning",
+					showCancelButton: true,
+					confirmButtonColor: '#DD6B55',
+					confirmButtonText: 'بله',
+					cancelButtonText: 'نه',
+					closeOnConfirm: false,
+					closeOnCancel: false
+				},
+			function (isConfirm)
+			{
+				if (isConfirm) {
+					var url = '@Url.Action("Delete")';
+					var data = { id: row.Id, @Html.AntiForgeryTokenForAjaxPost() };
+					$.ajax({
+						type: "POST",
+						url: url,
+						data: data
+					}).done(function (msg)
+					{
+						swal("موفیت آمیز", "با موفقیت حذف شد", "success")
+						$table.bootstrapTable('removeByUniqueId', row.Id);
+					}).fail(function (jqXHR, textStatus)
+					{
+						swal("خطا", "متاسفانه با شکست مواجه شد", "error");
+					});
+				} else {
+					swal("کنسل", "روند حذف کنسل شد", "error");
+				}
+			});
+			}
+		};
+	</script>
+}

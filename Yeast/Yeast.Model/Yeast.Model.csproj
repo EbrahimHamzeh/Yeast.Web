@@ -107,6 +107,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Representation\RepresentationAdd.cs" />
+    <Compile Include="Admin\Representation\RepresentationEdit.cs" />
+    <Compile Include="Admin\Representation\RepresentationList.cs" />
     <Compile Include="Admin\Email\EmailAdd.cs" />
     <Compile Include="Admin\Email\EmailList.cs" />
     <Compile Include="Admin\ServiceCategory\ServiceCategoryAdd.cs" />

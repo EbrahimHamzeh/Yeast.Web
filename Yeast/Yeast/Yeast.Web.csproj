@@ -190,6 +190,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\RepresentationController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServiceController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServiceCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\SliderSettingController.cs" />
@@ -777,6 +778,9 @@
     <Content Include="Content\css\fonts\woff2\IRANSansWeb_Light.woff2" />
     <Content Include="Content\css\fonts\woff2\IRANSansWeb_Medium.woff2" />
     <Content Include="Content\css\fonts\woff2\IRANSansWeb_UltraLight.woff2" />
+    <Content Include="Areas\Admin\Views\Representation\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Representation\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Representation\Index.cshtml" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\enjoyhint.js" />
     <Content Include="Content\js\filepond-plugin-file-validate-size.min.js" />

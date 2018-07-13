@@ -27,6 +27,7 @@ namespace Yeast.Datalayer.Context
         public DbSet<RoleAccess> RoleAccesses { get; set; }
         public DbSet<Statistics> Statisticses { get; set; }
         public DbSet<Country> Countries { get; set; }
+        public DbSet<Representation> Representations { get; set; }
         #endregion
 
         #region constucter and EF ModelCreating
