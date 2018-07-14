@@ -2,51 +2,22 @@
     ViewBag.Title = "Index";
 }
 @section CssStyle{
-    <link href="https://code.highcharts.com/css/highcharts.css" />
-    <style type="text/css">
-        #container { height: 500px; width: 800px; margin: 0 auto; }
-        .highcharts-data-label-box { fill: #a4edba; stroke: gray; stroke-width: 1px; }
-        .highcharts-data-label { font-weight: normal; }
-        .highlight .highcharts-data-label-box { fill: red; stroke-width: 2px; stroke: black; }
-        .highlight.highcharts-data-label text { font-weight: bold; fill: white; }
-    </style>
-
-
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <style>#map { height: 600px; }</style>
 }
 
 <div class="body stop-float-body clearfix">
 
     <div class="not-container page-main">
         <div class="on">
-            @*<div id="example-26" class="ma5slider anim-horizontal outside-dots center-dots inside-navs loop-mode">
-                    <div class="slides">
-                        <a href="#slide-1"><img src="@Url.Content("~/Content/images/slideshow_image_2-min.jpg")" alt=""></a>
-                        <a href="#slide-2"><img src="@Url.Content("~/Content/images/slideshow_image_1-min-rs.jpg")" alt=""></a>
-                        <a href="#slide-3"><img src="@Url.Content("~/Content/images/slideshow_image_2-min.jpg")" alt=""></a>
-                    </div>
-                </div>*@
-            <!-- snippet location home_content -->
         </div>
         <div class="main full">
             <div class="on row">
-                @*<div class="col-lg-2-4 col-md-12 col-sm-12 col-xs-12 block-product-left">
-                        <div class="block_left">
-                            <div class="page-subheading ">
-                                <p class="title--main">Women</p>
-                                <p class="title--sub">
-                                    <span>Shop The Look</span>
-                                </p>
-                            </div>
-                            <div class="effect_image_3">
-                                <div class="effect-img">
-                                    <img src="~/Content/images/img-cate-min.jpg" alt="Women" class="img-responsive">
-                                </div>
-                            </div>
-                        </div>
-                    </div>*@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
                     <h2 class="page-heading">@Resources.RepresentationMyOnWorld</h2>
-                    <div id="container"></div>
+                    <div id="container">
+                        <div id="map"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,117 +31,15 @@
     </div>
 </div>
 @section Javascripts{
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
-    <script src="https://code.highcharts.com/maps/js/highmaps.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
-
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script type="text/javascript">
-        $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=world-population-density.json&callback=?', function (data) {
-
-            var countryData = [{
-                "key": "in",
-                "index": 2
-            }, {
-                "key": "us",
-                "index": 2
-            }];
-
-            var pointData = [{
-                "countryCode": "in",
-                "site_id": 3,
-                "center_count": 2,
-                "location": "(Ahmedabad,India,APAC)",
-                "headcount": 600,
-                "lat": 23.022505,
-                "lon": 72.5713621
-            }, {
-                "countryCode": "us",
-                "site_id": 4,
-                "center_count": 2,
-                "location": "(Arcadia,Greece,EMEA)",
-                "headcount": 700,
-                "lat": 34.1397292,
-                "lon": -118.0353449
-            }];
-
-            // Initiate the chart
-            Highcharts.mapChart('container', {
-                title: {
-                    text: 'Test map'
-                },
-                tooltip: {
-                    enabled: true
-                },
-                mapNavigation: {
-                    enabled: true
-                },
-                series: [{
-                    mapData: Highcharts.maps["custom/world"],
-                    data: countryData,
-                    joinBy: ['hc-key', 'key'],
-                    name: "Country Info",
-                    states: {
-                        hover: {
-                            color: "#00b700"
-                        }
-                    },
-                    tooltip: {
-                        headerFormat: '',
-                        pointFormat: '{point.name}'
-                    },
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function () {
-                            return this.point.name;
-                        },
-                        borderRadius: 2,
-                        y: -10,
-                        shape: 'callout',
-                        className: 'highlight'
-                    },
-                    point: {
-                        events: {
-                            click() {
-                                console.log("Code : ", this.key)
-                            }
-                        }
-                    }
-                }, {
-                    type: 'mappoint',
-                    mapData: Highcharts.maps["custom/world"],
-                    data: pointData,
-                    name: 'Point Info',
-                    states: {
-                        hover: {
-                            color: "#abb700"
-                        }
-                    },
-                    tooltip: {
-                        headerFormat: '',
-                        pointFormat: '{point.location}'
-                    },
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function () {
-                            return this.point.name;
-                        }
-                    },
-                    point: {
-                        events: {
-                            click() {
-                                console.log("Code : ", this.options.countryCode)
-                            }
-                        }
-                    },
-                    legend: {
-                        layout: 'vertical',
-                        align: 'left',
-                        verticalAlign: 'bottom'
-                    }
-                }]
-            });
-        });
+        var map = L.map('map').setView([29.6760859, 52.4950737], 3);
+        var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+        var osm = new L.TileLayer(osmUrl, { maxZoom: 18, attribution: osmAttrib }).addTo(map);
+        var marker = L.marker([29.623116, 52.497856]).addTo(map);
+        marker.bindPopup("باغ عفیف آباد", { closeOnClick: false, autoClose: false }).openPopup();
+        marker = L.marker([34.71649, 65.89456]).addTo(map);
+        marker.bindPopup("نمایندگی افغانستان", { closeOnClick: false, autoClose: false }).openPopup();
     </script>
 }
