@@ -1,35 +1,67 @@
-﻿@{
+﻿@model  List<Yeast.DomainClasses.Entities.Representation>
+@{
     ViewBag.Title = "Index";
 }
 @section CssStyle{
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-    <style>#map { height: 600px; }</style>
+    <link href="~/Content/css/components-rtl.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins-rtl.css" rel="stylesheet" />
+    <style>
+        #map { height: 600px; }
+    </style>
 }
 
-<div class="body stop-float-body clearfix">
+    <div class="body stop-float-body clearfix">
 
-    <div class="not-container page-main">
-        <div class="on">
-        </div>
-        <div class="main full">
-            <div class="on row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
-                    <h2 class="page-heading">@Resources.RepresentationMyOnWorld</h2>
-                    <div id="container">
-                        <div id="map"></div>
+        <div class="not-container page-main">
+            <div class="on">
+            </div>
+            <div class="main full">
+                <div class="on row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 block-product-right">
+                        <h2 class="page-heading">@Resources.RepresentationMyOnWorld</h2>
+                        <div id="container">
+                            <div id="map"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="portlet-body">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="mt-element-ribbon bg-grey-steel">
+                            <div class="ribbon ribbon-right ribbon-vertical-right ribbon-shadow ribbon-border-dash-vert ribbon-color-primary uppercase">
+                                <div class="ribbon-sub ribbon-bookmark"></div>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="ribbon ribbon-right ribbon-vertical-right ribbon-shadow ribbon-border-dash-vert ribbon-color-default uppercase">
+                                <div class="ribbon-sub ribbon-bookmark"></div>
+                                <i class="fa fa-heart"></i>
+                            </div>
+                            <div class="ribbon ribbon-border-hor ribbon-clip ribbon-color-danger ribbon-border-dash-hor uppercase">
+                                <div class="ribbon-sub ribbon-clip"></div> @item.Title
+                            </div>
+                            <div class="ribbon ribbon-border-hor ribbon-clip ribbon-color-warning uppercase">
+                                <div class="ribbon-sub ribbon-clip"></div> @item.Telephone
+                            </div>
+                            <p class="ribbon-content">@item.Description</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
+            <a href="#" class="modal-close" aria-label="Close" role="button">
+                <span aria-hidden="true">&#215;</span>
+            </a>
+            <div class="modal-content"></div>
+            <div class="loadingOverlay"></div>
+        </div>
     </div>
-    <div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
-        <a href="#" class="modal-close" aria-label="Close" role="button">
-            <span aria-hidden="true">&#215;</span>
-        </a>
-        <div class="modal-content"></div>
-        <div class="loadingOverlay"></div>
-    </div>
-</div>
 @section Javascripts{
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script type="text/javascript">
@@ -37,9 +69,13 @@
         var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
         var osm = new L.TileLayer(osmUrl, { maxZoom: 18, attribution: osmAttrib }).addTo(map);
-        var marker = L.marker([29.623116, 52.497856]).addTo(map);
-        marker.bindPopup("باغ عفیف آباد", { closeOnClick: false, autoClose: false }).openPopup();
-        marker = L.marker([34.71649, 65.89456]).addTo(map);
-        marker.bindPopup("نمایندگی افغانستان", { closeOnClick: false, autoClose: false }).openPopup();
+        @foreach (var item in Model)
+        {
+            <text>
+                var marker = L.marker([@item.Latitude, @item.Longitude]).addTo(map);
+                marker.bindPopup("@item.Description", { closeOnClick: false, autoClose: false }).openPopup();
+            </text>
+        }
+
     </script>
 }

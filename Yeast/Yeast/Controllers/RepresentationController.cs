@@ -11,19 +11,19 @@ namespace Yeast.Controllers
 	public class RepresentationController : BaseController
 	{
 
-		//readonly IProductService _productService;
-		//readonly IUnitOfWork _uow;
+		readonly IRepresentationService _representationService;
+		readonly IUnitOfWork _uow;
 
-		//public ProductController(IUnitOfWork uow, IProductService productService)
-		//{
-		//	_uow = uow;
-  //          _productService = productService;
-		//}
+        public RepresentationController(IUnitOfWork uow, IRepresentationService representationService)
+        {
+            _uow = uow;
+            _representationService = representationService;
+        }
 
         // GET: /{lang}/Product
         public virtual ActionResult Index()
         {
-            return View();
+            return View(_representationService.GetAllAsync().Result);
         }
 
 	}
