@@ -9,8 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
     <script src="~/Content/js/theme/modernizr-custom.js"></script>
+    <script src="~/Content/js/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        .styled-offer select.offer-select {
+            color: white;
+            border: none;
+            background-color: #333;
+        }
 
-
+            .styled-offer select.offer-select option {
+                color: white;
+                border: none;
+                background-color: #333;
+            }
+    </style>
     @RenderSection("CssStyle", false)
 </head>
 <body class="nf-home3  pace-done">
@@ -33,20 +45,39 @@
 
                         </div>
                         <ul class="navUser-section">
-                            <li class="navUser-item">
-                                <a class="navUser-action has-dropdown" href="#" data-dropdown="currencySelection" aria-controls="currencySelection" aria-expanded="false">USD <i class="icon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
-                                <ul class="dropdown-menu" id="currencySelection" data-dropdown-content aria-hidden="true" tabindex="-1">
-                                    <li class="dropdown-menu-item">
-                                        <a href="#">
-                                            <strong>US Dollar</strong>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown-menu-item">
-                                        <a href="#">
-                                            Euro
-                                        </a>
-                                    </li>
-                                </ul>
+                            <li class="navUser-item styled-offer">
+
+                                <select id="lang" class="target select offer-select">
+                                    @if (CultureHelper.GetCurrentNeutralCulture() == "fa")
+                                    {
+                                        <option value="option1" selected="selected">فارسی</option>
+                                        <option value="option2">English</option>
+                                        <option value="option2">Arabic</option>
+                                        <option value="option2">Russian</option>
+                                    }
+                                    else if (CultureHelper.GetCurrentNeutralCulture() == "en")
+                                    {
+                                        <option value="option1">فارسی</option>
+                                        <option value="option2" selected="selected">English</option>
+                                        <option value="option2">Arabic</option>
+                                        <option value="option2">Russian</option>
+                                    }
+                                    else if (CultureHelper.GetCurrentNeutralCulture() == "ar")
+                                    {
+                                        <option value="option1">فارسی</option>
+                                        <option value="option2">English</option>
+                                        <option value="option2" selected="selected">Arabic</option>
+                                        <option value="option2">Russian</option>
+                                    }
+                                    else if (CultureHelper.GetCurrentNeutralCulture() == "ru")
+                                    {
+                                        <option value="option1">فارسی</option>
+                                        <option value="option2">English</option>
+                                        <option value="option2">Arabic</option>
+                                        <option value="option2" selected="selected">Russian</option>
+                                    }
+
+                                </select>
                             </li>
                         </ul>
                         <ul class="socialLinks socialLinks--alt">
@@ -81,7 +112,7 @@
                                 </a>
                             </li>
                         </ul>
-    
+
 
                         <div class="bg-quicksearch"></div>
                     </nav>
@@ -224,5 +255,132 @@
         <!-- snippet location footer -->
         @RenderSection("Javascripts", false)
     </div>
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        $("#lang")
+            .change(function () {
+                var url = window.location.href;
+                var str = "";
+                $("#lang option:selected").each(function () {
+                    str += $(this).text();
+                    if (str === "فارسی") {
+                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                            url = url.replace("en", "fa");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                            url = url.replace("ar", "fa");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                            url = url.replace("ru", "fa");
+                            window.location.href = url;
+                        } else {
+                                if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                    url = url.replace("fa", "fa");
+                                    window.location.href = url;
+                                }
+                                else {
+                                    url = url + "fa";
+                                    window.location.href = url;
+
+                                }
+                        }
+                    }
+                    else if (str === "English") {
+                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                            url = url.replace("en", "en");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                            url = url.replace("ar", "en");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                            url = url.replace("ru", "en");
+                            window.location.href = url;
+                        } else {
+                                if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                    url = url.replace("fa", "en");
+                                    window.location.href = url;
+                                }
+                                else {
+                                    url = url + "en";
+                                    window.location.href = url;
+                                }
+                        }
+                    }
+                    else if (str === "Arabic") {
+                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                            url = url.replace("en", "ar");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                            url = url.replace("ar", "ar");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                            url = url.replace("ru", "ar");
+                            window.location.href = url;
+                        } else {
+                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                url = url.replace("fa", "ar");
+                                window.location.href = url;
+                            }
+                            else {
+                                url = url = url + "ar";
+                                window.location.href = url;
+                            }
+                        }
+                    }
+                    else if (str === "Russian") {
+                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                            url = url.replace("en", "ru");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                            url = url.replace("ar", "ru");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                            url = url.replace("ru", "ru");
+                            window.location.href = url;
+                        } else {
+                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                url = url.replace("fa", "ru");
+                                window.location.href = url;
+                            }
+                            else {
+                                url = url = url + "ru";
+                                window.location.href = url;
+                            }
+                        }
+                    }
+                });
+            });
+
+                 //# sourceURL=asdsdfas.js
+    </script>
 </body>
 </html>

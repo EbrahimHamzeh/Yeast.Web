@@ -9,8 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
     <script src="~/Content/js/theme/modernizr-custom.js"></script>
+    <script src="~/Content/js/jquery-3.3.1.min.js"></script>
 
+    <style type="text/css">
+        .styled-offer select.offer-select {
+            color: white;
+            border: none;
+            background-color: #333;
+        }
 
+            .styled-offer select.offer-select option {
+                color: white;
+                border: none;
+                background-color: #333;
+            }
+    </style>
 
     @RenderSection("CssStyle", false)
 </head>
@@ -28,26 +41,42 @@
                     <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
                         <span class="mobileMenu-toggleIcon">Toggle menu</span>
                     </a>
-
                     <nav class="navUser">
                         <div class="navUser-item navUser-item--account">
-                           
                         </div>
                         <ul class="navUser-section">
-                            <li class="navUser-item">
-                                <a class="navUser-action has-dropdown" href="#" data-dropdown="currencySelection" aria-controls="currencySelection" aria-expanded="false">USD <i class="icon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i></a>
-                                <ul class="dropdown-menu" id="currencySelection" data-dropdown-content aria-hidden="true" tabindex="-1">
-                                    <li class="dropdown-menu-item">
-                                        <a href="#">
-                                            <strong>US Dollar</strong>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown-menu-item">
-                                        <a href="#">
-                                            Euro
-                                        </a>
-                                    </li>
-                                </ul>
+                            <li class="navUser-item styled-offer">
+
+                                <select id="lang" class="target select offer-select" style="direction:rtl">
+                                    @if (CultureHelper.GetCurrentNeutralCulture() == "fa")
+                                    {
+                                        <option value="option1" selected="selected">فارسی</option>
+                                        <option value="option2">English</option>
+                                        <option value="option2">Arabic</option>
+                                        <option value="option2">Russian</option>
+                                    }
+                                    else if (CultureHelper.GetCurrentNeutralCulture() == "en")
+                                    {
+                                        <option value="option1">فارسی</option>
+                                        <option value="option2" selected="selected">English</option>
+                                        <option value="option2">Arabic</option>
+                                        <option value="option2">Russian</option>
+                                    }
+                                    else if (CultureHelper.GetCurrentNeutralCulture() == "ar")
+                                    {
+                                        <option value="option1">فارسی</option>
+                                        <option value="option2">English</option>
+                                        <option value="option2" selected="selected">Arabic</option>
+                                        <option value="option2">Russian</option>
+                                    }
+                                    else if (CultureHelper.GetCurrentNeutralCulture() == "ru")
+                                    {
+                                        <option value="option1">فارسی</option>
+                                        <option value="option2">English</option>
+                                        <option value="option2">Arabic</option>
+                                        <option value="option2" selected="selected">Russian</option>
+                                    }
+                                </select>
                             </li>
                         </ul>
                         <ul class="socialLinks socialLinks--alt">
@@ -82,14 +111,14 @@
                                 </a>
                             </li>
                         </ul>
-           
+
 
                         <div class="bg-quicksearch"></div>
                     </nav>
                 </div>
             </div>
-            <div class="header_nav stop-float" >
-                <h1 class="header-logo header-logo--center" >
+            <div class="header_nav stop-float">
+                <h1 class="header-logo header-logo--center">
                     <a href="@Url.Action("Index","Home")">
                         <div style="height:400px;width:400px;" class="header-logo-image" alt="" title=""></div>
                     </a>
@@ -114,68 +143,77 @@
                         </div>
                         <ul class="navPages-list">
                             <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("Index","AboutUs")" data-collapsible="navPages-35">
-                                   @Resources.About
+                                <a class="navPages-action" href="@Url.Action("index","AboutUs")" data-collapsible="navPages-35">
+                                    @Resources.About
                                 </a>
                             </li>
                             <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("Index","ContactUs")">
+                                <a class="navPages-action" href="@Url.Action("index","ContactUs")">
                                     @Resources.ContactUs
                                 </a>
                             </li>
                             <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("Index","Post")">
-                                @Resources.Blog
+                                <a class="navPages-action" href="@Url.Action("index","Post")">
+                                    @Resources.Blog
                                 </a>
                             </li>
 
                             <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("Index","Service")" data-collapsible="navPages-19">
+                                <a class="navPages-action" href="@Url.Action("index","Service")" data-collapsible="navPages-19">
                                     @Resources.Service
                                 </a>
                             </li>
                             <li class="navPages-item">
-                                <a class="navPages-action " href="@Url.Action("Index","Representation")" data-collapsible="navPages-24">
+                                <a class="navPages-action " href="@Url.Action("index","home")" data-collapsible="navPages-24">
                                     @Resources.Representation
                                 </a>
                             </li>
                             <li class="navPages-item">
-                                <a class="navPages-action " href="@Url.Action("Index","Product")" data-collapsible="navPages-18">
+                                <a class="navPages-action " href="@Url.Action("index","Product")" data-collapsible="navPages-18">
                                     @Resources.Product
                                 </a>
                             </li>
                             <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("Index","home")" data-collapsible="navPages-35">
+                                <a class="navPages-action" href="@Url.Action("index","home")" data-collapsible="navPages-35">
                                     @Resources.Home
                                 </a>
                             </li>
                         </ul>
                         <ul class="navPages-list navPages-list--user">
                             <li class="navPages-item">
-                                <a class="navPages-action has-subMenu" href="#" data-collapsible="navPages-currency" aria-controls="navPages-currency" aria-expanded="false">
-                                    USD <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-down"></use></svg></i>
-                                </a>
-                                <div class="navPage-subMenu" id="navPages-currency" aria-hidden="true" tabindex="-1">
-                                    <ul class="navPage-subMenu-list">
-                                        <li class="navPage-subMenu-item">
-                                            <a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=1">
-                                                <strong>US Dollar</strong>
-                                            </a>
-                                        </li>
-                                        <li class="navPage-subMenu-item">
-                                            <a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=2">
-                                                Euro
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="/giftcertificates.php">Gift Certificates</a>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="/login.php">Sign in</a>
-                                or <a class="navPages-action" href="/login.php?action=create_account">Register</a>
+                                @*<a class="navPages-action has-subMenu" href="#" data-collapsible="navPages-currency" aria-controls="navPages-currency" aria-expanded="false">
+                                        USD <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-down"></use></svg></i>
+                                    </a>
+                                    <div class="navPage-subMenu" id="navPages-currency" aria-hidden="true" tabindex="-1">
+                                        <ul class="navPage-subMenu-list">
+                                            <li class="navPage-subMenu-item">
+                                                <a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=1">
+                                                    <strong>US Dollar</strong>
+                                                </a>
+                                            </li>
+                                            <li class="navPage-subMenu-item">
+                                                <a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=2">
+                                                    Euro
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>*@
+
+                                @*<div class="container">
+                                        <div class="btn-group">
+
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                    Sony <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Tablet</a></li>
+                                                    <li><a href="#">Smartphone</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>*@
+
                             </li>
                             <li class="navPages-item">
                                 <ul class="socialLinks socialLinks--alt">
@@ -225,5 +263,114 @@
         <!-- snippet location footer -->
         @RenderSection("Javascripts", false)
     </div>
+    @*<script>
+
+            var url = window.location.href;
+        </script>*@
+    <script>
+        $("#lang")
+            .change(function () {
+                var url = window.location.href;
+                var str = "";
+                $("#lang option:selected").each(function () {
+                    str += $(this).text();
+                    if (str === "فارسی") {
+                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                            url = url.replace("en", "fa");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                            url = url.replace("ar", "fa");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                            url = url.replace("ru", "fa");
+                            window.location.href = url;
+                        } else {
+                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                url = url.replace("fa", "fa");
+                                window.location.href = url;
+                            }
+                            else {
+                                url = url + "fa";
+                                window.location.href = url;
+
+                            }
+                        }
+                    }
+                    else if (str === "English") {
+                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                            url = url.replace("en", "en");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                            url = url.replace("ar", "en");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                            url = url.replace("ru", "en");
+                            window.location.href = url;
+                        } else {
+                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                url = url.replace("fa", "en");
+                                window.location.href = url;
+                            }
+                            else {
+                                url = url + "en";
+                                window.location.href = url;
+                            }
+                        }
+                    }
+                    else if (str === "Arabic") {
+                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                            url = url.replace("en", "ar");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                            url = url.replace("ar", "ar");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                            url = url.replace("ru", "ar");
+                            window.location.href = url;
+                        } else {
+                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                url = url.replace("fa", "ar");
+                                window.location.href = url;
+                            }
+                            else {
+                                url = url = url + "ar";
+                                window.location.href = url;
+                            }
+                        }
+                    }
+                    else if (str === "Russian") {
+                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                            url = url.replace("en", "ru");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                            url = url.replace("ar", "ru");
+                            window.location.href = url;
+                        }
+                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                            url = url.replace("ru", "ru");
+                            window.location.href = url;
+                        } else {
+                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                url = url.replace("fa", "ru");
+                                window.location.href = url;
+                            }
+                            else {
+                                url = url = url + "ru";
+                                window.location.href = url;
+                            }
+                        }
+                    }
+                });
+            });
+
+                     //# sourceURL=asdsdfas.js
+    </script>
 </body>
 </html>
