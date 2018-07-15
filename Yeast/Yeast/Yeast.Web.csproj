@@ -190,6 +190,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Admin\Controllers\RepresentationController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServiceController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServiceCategoryController.cs" />
@@ -781,6 +782,9 @@
     <Content Include="Areas\Admin\Views\Representation\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Representation\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Representation\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\Index.cshtml" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\enjoyhint.js" />
     <Content Include="Content\js\filepond-plugin-file-validate-size.min.js" />
