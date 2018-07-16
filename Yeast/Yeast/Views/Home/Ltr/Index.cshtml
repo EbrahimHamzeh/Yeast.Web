@@ -43,6 +43,42 @@
                 </div>
 
                 <div class="on block-carousel-index clearfix">
+                    <div class="on">
+                        <div class="widget-banner block">
+                            <div class="banner-content row">
+                                @foreach (var item in Model.postlist.OrderByDescending(m => m.Id).Take(3))
+                                {
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <article class="card">
+                                            <figure class="card-figure">
+                                                <a href="#" class="product_img_link">
+                                                    <img style="min-height: 240px;max-height:240px; min-width: 240px;" class="card-image lazyautosizes" data-sizes="auto" src="~/Content/upload/images/@item.TitleImg" data-src="@item.TitleImg" alt="Aenean consequat sagittis" title="Aenean consequat sagittis" sizes="277px">
+                                                </a>
+                                                <div class="button-quickview">
+                                                    <a href="@Url.Action("Details", "Post", new { id = item.Id })" class="button button--small card-figcaption-button quickview" data-product-id="111">@Resources.ReadMore <span class="fa fa-eye"></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="card-body">
+                                                <div class="card-body-left">
+                                                    <h4 class="card-title">
+                                                        <a href="#">@Resources.Article : @item.Title.ConvertToPersianString()  </a>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- MEGAMENU -->
+
+                </div>
+
+
+                <div class="on block-carousel-index clearfix">
                     <div class="page-subheading">
                         <p class="title--main"> @Resources.Product</p>
                     </div>
