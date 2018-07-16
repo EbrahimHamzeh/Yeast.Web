@@ -34,11 +34,21 @@ namespace Yeast.Areas.Admin.Controllers
 			return Json(await _contactUservice.GetDataTableAsync(model).ConfigureAwait(false), JsonRequestBehavior.AllowGet);
 		}
 
-		// GET: Admin/Tag/Add
+		// GET: Admin/ContacyUsC/Add
 		public virtual ActionResult Add()
 		{
 			TagAdd Tag = new TagAdd();
 			return View(Tag);
+		}
+
+
+		// GET: Admin/ContacyUsC/View
+		public virtual ActionResult View(int? id)
+		{
+			if (id == 0) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			ContactUs customer = _contactUservice.Find(id ?? 0);
+			if (customer == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			return View(customer);
 		}
 
 		[HttpPost]

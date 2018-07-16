@@ -1,4 +1,4 @@
-﻿@model Yeast.Model.FrontEnd.ContactUsViewModel
+﻿@model Yeast.DomainClasses.Entities.ContactUs
 @{
     ViewBag.Title = "ارتباط با ما";
     ViewBag.SelectedPage = "ContactUs";
@@ -57,7 +57,7 @@
                             <div class="form-group form-md-line-input">
                                 <label class="col-md-1 control-label" for="Name">عنوان</label>
                                 <div class="col-md-11">
-                                    <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required placeholder="عنوان را وارد نمایید">
+                                    <input disabled type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required placeholder="عنوان را وارد نمایید">
                                     @Html.ValidationMessageFor(model => model.Title)
                                     <div class="form-control-focus"> </div>
                                 </div>
@@ -65,7 +65,7 @@
                             <div class="form-group form-md-line-input">
                                 <label class="col-md-1 control-label" for="Name">نام و نام‌خانوادگی</label>
                                 <div class="col-md-11">
-                                    <input type="text" class="form-control" id="FullName" name="FullName" value="@Model.FullName" required placeholder="عنوان را وارد نمایید">
+                                    <input disabled type="text" class="form-control" id="FullName" name="FullName" value="@Model.FullName" required placeholder="عنوان را وارد نمایید">
                                     @Html.ValidationMessageFor(model => model.FullName)
                                     <div class="form-control-focus"> </div>
                                 </div>
@@ -73,7 +73,7 @@
                             <div class="form-group form-md-line-input">
                                 <label class="col-md-1 control-label" for="Name">ایمیل</label>
                                 <div class="col-md-11">
-                                    <input type="Email" class="form-control" id="Email" name="Email" value="@Model.Email" required placeholder="عنوان را وارد نمایید">
+                                    <input disabled type="Email" class="form-control" id="Email" name="Email" value="@Model.Email" required placeholder="عنوان را وارد نمایید">
                                     @Html.ValidationMessageFor(model => model.Email)
                                     <div class="form-control-focus"> </div>
                                 </div>
@@ -81,7 +81,7 @@
                             <div class="form-group form-md-line-input">
                                 <label class="col-md-1 control-label" for="Name">شماره همراه</label>
                                 <div class="col-md-11">
-                                    <input type="text" class="form-control" id="Mobile" name="Mobile" value="@Model.Mobile" required placeholder="عنوان را وارد نمایید">
+                                    <input disabled type="text" class="form-control" id="Mobile" name="Mobile" value="@Model.Mobile" required placeholder="عنوان را وارد نمایید">
                                     @Html.ValidationMessageFor(model => model.Mobile)
                                     <div class="form-control-focus"> </div>
                                 </div>
@@ -89,7 +89,7 @@
                             <div class="form-group form-md-line-input">
                                 <label class="col-md-1 control-label" for="Name">پیام</label>
                                 <div class="col-md-11">
-                                    <textarea id="Message" name="Message" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.Message</textarea>
+                                    <textarea disabled id="Message" name="Message" rows="9" data-val="true" required data-val-required="حتما این فیلد باید پر شده باشد." class="form-control">@Model.Message</textarea>
                                     @Html.ValidationMessageFor(model => model.Message)
                                     <div class="form-control-focus"> </div>
                                     <span class="help-block">تگ کورد نظرتون جستجو کنید و اگر وجود ندارد می‌توانید آن را همینجا بنویسید و دکمه اینتر را بزنید</span>
@@ -100,8 +100,7 @@
                         <div class="form-actions">
                             <div class="row">
                                 <div class="col-md-offset-2 col-md-10">
-                                    <button type="reset" class="btn default">کنسل</button>
-                                    <button type="submit" data-loading-text="ارسال..." class="btn blue btn-loading ">تایید</button>
+                                    <a type="submit" href="@Url.Action("Index" , "ContactUs" , new { Area = "Admin" })" data-loading-text="ارسال..." class="btn blue btn-loading ">بازگشت</a>
                                 </div>
                             </div>
                         </div>
