@@ -58,6 +58,7 @@ namespace Yeast.Controllers
         // Post: Admin/Category/Delete/id
         public virtual ActionResult EmailSubscribe(string email)
         {
+			// چک کردن تکراری ثبت نشه!!!
             _customerService.Add(new CustomerAdd { Email = email });
             _uow.SaveAllChanges();
             return Json(new { success = true });
