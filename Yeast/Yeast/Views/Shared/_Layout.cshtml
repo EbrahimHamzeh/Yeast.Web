@@ -276,7 +276,8 @@
                 alert("درخواست با خطا مواجه شد.")
 			});
         });
-
+        </script>
+         <script>
         $("#lang")
             .change(function () {
                 var url = window.location.href;
@@ -296,19 +297,19 @@
                             url = url.replace("ru", "fa");
                             window.location.href = url;
                         } else {
-                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                                url = url.replace("fa", "fa");
-                                window.location.href = url;
-                            }
-                            else {
-                                url = url + "fa";
-                                window.location.href = url;
+                                if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                    url = url.replace("fa", "fa");
+                                    window.location.href = url;
+                                }
+                                else {
+                                    url = url + "fa";
+                                    window.location.href = url;
 
-                            }
+                                }
                         }
                     }
                     else if (str === "English") {
-                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                        if (url.toLocaleLowerCase().indexOf("en") != -1 & url.toLocaleLowerCase().indexOf("representation")!=26) {
                             url = url.replace("en", "en");
                             window.location.href = url;
                         }
@@ -320,14 +321,14 @@
                             url = url.replace("ru", "en");
                             window.location.href = url;
                         } else {
-                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                                url = url.replace("fa", "en");
-                                window.location.href = url;
-                            }
-                            else {
-                                url = url + "en";
-                                window.location.href = url;
-                            }
+                                if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                    url = url.replace("fa", "en");
+                                    window.location.href = url;
+                                }
+                                else {
+                                    url = url + "en";
+                                    window.location.href = url;
+                                }
                         }
                     }
                     else if (str === "Arabic") {
@@ -348,7 +349,7 @@
                                 window.location.href = url;
                             }
                             else {
-                                url = url = url + "ar";
+                                url = url + "ar";
                                 window.location.href = url;
                             }
                         }
@@ -371,15 +372,15 @@
                                 window.location.href = url;
                             }
                             else {
-                                url = url = url + "ru";
+                                url = url + "ru";
                                 window.location.href = url;
                             }
                         }
                     }
                 });
             });
+         //# sourceURL=lang.js
 
-                     //# sourceURL=yeast-detail.js
     </script>
 </body>
 </html>

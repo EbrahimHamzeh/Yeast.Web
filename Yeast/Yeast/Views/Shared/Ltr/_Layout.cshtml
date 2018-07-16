@@ -277,6 +277,7 @@
             }
         }
     </script>
+
     <script>
         $("#lang")
             .change(function () {
@@ -309,7 +310,7 @@
                         }
                     }
                     else if (str === "English") {
-                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                        if (url.toLocaleLowerCase().indexOf("en") != -1 & url.toLocaleLowerCase().indexOf("representation") != 26) {
                             url = url.replace("en", "en");
                             window.location.href = url;
                         }
@@ -349,7 +350,7 @@
                                 window.location.href = url;
                             }
                             else {
-                                url = url = url + "ar";
+                                url = url + "ar";
                                 window.location.href = url;
                             }
                         }
@@ -372,15 +373,15 @@
                                 window.location.href = url;
                             }
                             else {
-                                url = url = url + "ru";
+                                url = url + "ru";
                                 window.location.href = url;
                             }
                         }
                     }
                 });
             });
-
-                 //# sourceURL=asdsdfas.js
+         //# sourceURL=lang.js
+                
     </script>
 </body>
 </html>
