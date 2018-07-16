@@ -160,6 +160,13 @@ foreach (string item in args)
                     @GetSelectedTag("ContactUs")
                 </a>
             </li>
+            <li class="nav-item @GetActive("Customer")">
+                <a href="@Url.Action("Index","Customer", new { Area = "Admin" })" class="nav-link nav-toggle">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="title">مشتریان</span>
+                    @GetSelectedTag("Customer")
+                </a>
+            </li>
             <li class="heading">
                 <h3 class="uppercase">تنظیمات</h3>
             </li>

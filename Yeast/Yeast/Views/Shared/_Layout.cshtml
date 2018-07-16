@@ -12,17 +12,9 @@
     <script src="~/Content/js/jquery-3.3.1.min.js"></script>
 
     <style type="text/css">
-        .styled-offer select.offer-select {
-            color: white;
-            border: none;
-            background-color: #333;
-        }
+        .styled-offer select.offer-select { color: white; border: none; background-color: #333; }
 
-            .styled-offer select.offer-select option {
-                color: white;
-                border: none;
-                background-color: #333;
-            }
+            .styled-offer select.offer-select option { color: white; border: none; background-color: #333; }
     </style>
 
     @RenderSection("CssStyle", false)
@@ -268,6 +260,23 @@
             var url = window.location.href;
         </script>*@
     <script>
+        $("#sendEmail").click(function () {
+            var url = '@Url.Action("EmailSubscribe", "Home", new { lang = "fa" })';
+            var email = $("#email").val();
+            var data = { email: email, @Html.AntiForgeryTokenForAjaxPost() };
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data
+			}).done(function (msg)
+            {
+                alert("شما با موفقیت عضو شدید")
+			}).fail(function (jqXHR, textStatus)
+			{
+                alert("درخواست با خطا مواجه شد.")
+			});
+        });
+
         $("#lang")
             .change(function () {
                 var url = window.location.href;
@@ -370,7 +379,7 @@
                 });
             });
 
-                     //# sourceURL=asdsdfas.js
+                     //# sourceURL=yeast-detail.js
     </script>
 </body>
 </html>
