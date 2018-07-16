@@ -109,6 +109,7 @@ namespace Yeast.Servicelayer.EFServices
 
             List<Model.FrontEnd.Product> list = _products.AsNoTracking().Select(x => new Model.FrontEnd.Product
             {
+                Id=x.Id,
                 Body = cultur == "fa" ? x.Body : cultur == "en" ? x.BodyEn : cultur == "ar" ? x.BodyAr : cultur == "ru" ? x.BodyRu : "",
                 Name = cultur == "fa" ? x.Name : cultur == "en" ? x.NameEn : cultur == "ar" ? x.NameAr : cultur == "ru" ? x.NameRu : "",
                 Description = cultur == "fa" ? x.Description : cultur == "en" ? x.DescriptionEn : cultur == "ar" ? x.DescriptionAr : cultur == "ru" ? x.DescriptionRu : "",

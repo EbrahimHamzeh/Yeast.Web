@@ -11,7 +11,7 @@
             <div class="productView productView--quickView">
                 <section class="productView-details">
                     <div class="productView-product">
-                        <h1 class="productView-title" style="text-align:right"> @Model.Name    :  @Resources.ProductName </h1>
+                        <h1 class="productView-title" style="text-align:right">@Resources.ProductName : @Model.Name       </h1>
 
                         <dl class="productView-info">
                             <dt class="productView-info-name">: @Resources.Description</dt>
@@ -50,13 +50,6 @@
                 </section>  
             </div>
            
-            <div id="previewModal" class="modal modal--large" data-reveal="">
-                <a href="#" class="modal-close" aria-label="Close" role="button">
-                    <span aria-hidden="true">×</span>
-                </a>
-                <div class="modal-content"></div>
-                <div class="loadingOverlay" style="display: none;"></div>
-            </div>
         </div>
     </div>
 @section Javascripts{
