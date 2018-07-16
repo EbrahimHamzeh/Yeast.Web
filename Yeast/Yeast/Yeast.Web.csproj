@@ -434,9 +434,12 @@
     <Content Include="Content\images\90-thickbox_default-min__24015.1499250559.jpg" />
     <Content Include="Content\images\93-thickbox_default-min__61912.1499246850.jpg" />
     <Content Include="Content\images\94-thickbox_default-min__52854.1499246844.jpg" />
+    <Content Include="Content\images\aboutus.jpg" />
+    <Content Include="Content\images\ad.jpg" />
     <Content Include="Content\images\add.jpg" />
     <Content Include="Content\images\arrow.png" />
     <Content Include="Content\images\bg-about.jpg" />
+    <Content Include="Content\images\bg-aboutus-2.jpg" />
     <Content Include="Content\images\bg-breadcrumb-min.jpg" />
     <Content Include="Content\images\bg-image-min.jpg" />
     <Content Include="Content\images\bg03_2500px.jpg" />

@@ -35,6 +35,7 @@ namespace Yeast.Controllers
         // GET: Home
         public ActionResult Index()
         {
+
             HomeViewModel homeViewModel = new HomeViewModel();
             homeViewModel.ProductList = _productService.GetByCulterProduct();
             homeViewModel.postlist = _postService.GetByCulterPost();
