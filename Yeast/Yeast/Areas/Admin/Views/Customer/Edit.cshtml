@@ -1,4 +1,4 @@
-﻿@model Yeast.Model.Admin.CategoryEdit
+﻿@model Yeast.Model.Admin.CustomerEdit
 @{
 	ViewBag.Title = "دسته‌بندی";
 	ViewBag.SelectedPage = "Category";
@@ -51,45 +51,63 @@
 				<div class="portlet-body form">
 					<form role="form" class="form-horizontal" method="post" action="@Url.Action("Edit")">
 						@Html.AntiForgeryToken()
-						<div class="form-body">
-							<div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
-							<div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
-							<div class="form-group form-md-line-input">
-								<label class="col-md-1 control-label" for="Title">عنوان</label>
-								<div class="col-md-11">
-									<input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required placeholder="عنوان را وارد نمایید">
-									@Html.ValidationMessageFor(model => model.Title)
-									<div class="form-control-focus"> </div>
-								</div>
-							</div>
-							<div class="form-group form-md-line-input">
-								<label class="col-md-1 control-label" for="Slug">نامک</label>
-								<div class="col-md-11">
-									<input type="text" class="form-control" id="Slug" name="Slug" value="@Model.Slug" required placeholder="نامک را وارد نمایید">
-									@Html.ValidationMessageFor(model => model.Slug)
-									<div class="form-control-focus"> </div>
-									<span class="help-block">بهتر است که انگلیسی باشد</span>
-								</div>
-							</div>
-							<div class="form-group form-md-line-input">
-								<label class="col-md-1 control-label" for="Title">الویت</label>
-								<div class="col-md-11">
-									<input type="number" class="form-control" id="Title" name="Order" value="@Model.Order" required placeholder="الویت را وارد نمایید">
-									@Html.ValidationMessageFor(model => model.Order)
-									<div class="form-control-focus"> </div>
-									<span class="help-block">ترتیب قرار گیری دسته‎بندی‎ها</span>
-								</div>
-							</div>
-							<div class="form-group form-md-line-input">
-								<label class="col-md-1 control-label" for="Description">توضیحات</label>
-								<div class="col-md-11">
-									<input type="text" class="form-control" id="Description" name="Description" value="@Model.Description" placeholder="توضیحات را وارد نمایید">
-									@Html.ValidationMessageFor(model => model.Description)
-									<div class="form-control-focus"> </div>
-									<span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
-								</div>
-							</div>
-						</div>
+                        <div class="form-body">
+                            <div class="alert alert-danger display-hide"><button class="close" data-close="alert"></button> لطفا موراد زیر را اصلاح نمایید.</div>
+                            <div class="alert alert-success display-hide"><button class="close" data-close="alert"></button> فرم شما با موفقیت تایید اعتبار شد.</div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Title">عنوان</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required placeholder="عنوان را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.Title)
+                                    <div class="form-control-focus"> </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Slug">نامک</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" required placeholder="نام را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.Name)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">بهتر است که انگلیسی باشد</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Description">نام خانوادگی</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="Family" name="Family" value="@Model.Family" placeholder="نام خانوادگی را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.Family)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Description">ایمیل</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email" placeholder="ایمیل را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.Email)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Description">موبایل</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="Mobile" name="Mobile" value="@Model.Mobile" placeholder="موبایل را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.Mobile)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-1 control-label" for="Description">تلفن</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="Telephone" name="Telephone" value="@Model.Telephone" placeholder="تلفن را وارد نمایید">
+                                    @Html.ValidationMessageFor(model => model.Telephone)
+                                    <div class="form-control-focus"> </div>
+                                    <span class="help-block">این توضیحات فقط برای راهنمایی است.</span>
+                                </div>
+                            </div>
+                        </div>
 						<div class="form-actions">
 							<div class="row">
 								<div class="col-md-offset-2 col-md-10">

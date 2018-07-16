@@ -123,6 +123,9 @@
   <data name="AboutUsOnFooter" xml:space="preserve">
     <value>درباره ما</value>
   </data>
+  <data name="AddEmail" xml:space="preserve">
+    <value>ایمیل خود را وارد کنید</value>
+  </data>
   <data name="Address" xml:space="preserve">
     <value>آدرس</value>
   </data>
@@ -188,6 +191,9 @@
   </data>
   <data name="Home" xml:space="preserve">
     <value>صفحه‌ی‌نخست</value>
+  </data>
+  <data name="ImportantBlog" xml:space="preserve">
+    <value>بلاگ های مهم</value>
   </data>
   <data name="List" xml:space="preserve">
     <value>لیست</value>

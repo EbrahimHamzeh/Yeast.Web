@@ -4,7 +4,7 @@
         <section class="footer-info">
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <article class="footer-info-col col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-categories">
-                    <h5 class="footer-info-heading" style="text-align:center">خدمات</h5>
+                    <h5 class="footer-info-heading" style="text-align:center">@Resources.Service</h5>
                     <ul class="footer-info-list" style="text-align:center">
                         @if (Model.serviceModelList.Count > 5)
                         {
@@ -28,7 +28,7 @@
                     </ul>
                 </article>
                 <article class="footer-info-col col-md-6 col-sm-6 col-xs-12 no-padding" data-section-type="footer-brands">
-                    <h5 class="footer-info-heading" style="text-align:center">بلاگ های مهم</h5>
+                    <h5 class="footer-info-heading" style="text-align:center">@Resources.ImportantBlog</h5>
                     <ul class="footer-info-list" style="text-align:center">
                         @if (Model.postModeList.Count > 5)
                         {
@@ -61,8 +61,8 @@
                             <div class="form-field">
                                 <label class="form-label is-srOnly" for="nl_email">@Resources.Email</label>
                                 <div class="form-prefixPostfix wrap">
-                                    <input class="form-input" id="email" name="email" type="email" value="" placeholder="ایمیل خود را وارد کنید">
-                                    <input class="button button--primary form-prefixPostfix-button--postfix" id="sendEmail" type="button" value="ارسال">
+                                    <input class="form-input" id="email" name="email" type="email" value="" placeholder="@Resources.AddEmail">
+                                    <input class="button button--primary form-prefixPostfix-button--postfix" id="sendEmail" type="button" value="@Resources.Submit">
                                 </div>
                             </div>
                         </fieldset>
@@ -96,26 +96,7 @@
                     </div>
                 </div>
             </div>
-            <!--
-                        <article class="footer-info-col" data-section-type="newsletterSubscription">
-                                <h5 class="footer-info-heading">Subscribe to our newsletter</h5>
-            <p>Get the latest updates on new products and upcoming sales</p>
 
-            <form class="form" action="/subscribe.php" method="post">
-                <fieldset class="form-fieldset">
-                    <input type="hidden" name="action" value="subscribe">
-                    <input type="hidden" name="nl_first_name" value="bc">
-                    <input type="hidden" name="check" value="1">
-                    <div class="form-field">
-                        <label class="form-label is-srOnly" for="nl_email">Email Address</label>
-                        <div class="form-prefixPostfix wrap">
-                            <input class="form-input" id="nl_email" name="nl_email" type="email" value="" placeholder="Your email address">
-                            <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="Subscribe">
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-                                        </article>-->
         </section>
     </div>
     <div class="footer-bottom">

@@ -30,41 +30,51 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="portlet-body">
-            @foreach (var item in Model)
-            {
-                <div class="col-md-4">
-                    <div class="mt-element-ribbon bg-grey-steel">
-                        <div class="ribbon ribbon-right ribbon-vertical-right ribbon-shadow ribbon-border-dash-vert ribbon-color-primary uppercase">
-                            <div class="ribbon-sub ribbon-bookmark"></div>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="ribbon ribbon-right ribbon-vertical-right ribbon-shadow ribbon-border-dash-vert ribbon-color-default uppercase">
-                            <div class="ribbon-sub ribbon-bookmark"></div>
-                            <i class="fa fa-heart"></i>
-                        </div>
-                        <div class="ribbon ribbon-border-hor ribbon-clip ribbon-color-danger ribbon-border-dash-hor uppercase">
-                            <div class="ribbon-sub ribbon-clip"></div> @item.Title
-                        </div>
-                        <div class="ribbon ribbon-border-hor ribbon-clip ribbon-color-warning uppercase">
-                            <div class="ribbon-sub ribbon-clip"></div> @item.Telephone
-                        </div>
-                        <p class="ribbon-content" style="text-align:left;">@item.Description</p>
-                    </div>
-                </div>
-            }
+    <div class="on block-carousel-index clearfix">
+        <div class="on">
+            <div class="widget-banner block">
+                <div class="banner-content row">
+                    @foreach (var item in Model)
+                {
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <article class="card">
+                            <figure class="card-figure">
+                                <a href="#" class="product_img_link">
+                                    <img style="min-height: 240px;max-height:240px; min-width: 240px;" class="card-image lazyautosizes" data-sizes="auto" src="~/Content/images/mapicon.png" data-src="" alt="Aenean consequat sagittis" title="mapicon" sizes="277px">
+                                </a>
 
+                            </figure>
+                            <div class="card-body">
+                                <div class="card-body-left">
+                                    <h4 class="card-title">
+                                        <a href="#">@item.Title</a>
+                                    </h4>
+                                    <p class="card-text brand-name" data-test-info-type="brandName">@item.Telephone</p>
+                                </div>
+                                <div class="card-text content-price" data-test-info-type="price">
+                                    <div class="price-section price-section--withoutTax ">
+                                        <span data-product-price-without-tax="" class="price price--withoutTax">@item.Description</span>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <p>@item.Description</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+            }
+                </div>
+            </div>
+        </div>
+
+        <div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
+            <a href="#" class="modal-close" aria-label="Close" role="button">
+                <span aria-hidden="true">&#215;</span>
+            </a>
+            <div class="modal-content"></div>
+            <div class="loadingOverlay"></div>
         </div>
     </div>
-    <div id="modal" class="modal" data-reveal data-prevent-quick-search-close>
-        <a href="#" class="modal-close" aria-label="Close" role="button">
-            <span aria-hidden="true">&#215;</span>
-        </a>
-        <div class="modal-content"></div>
-        <div class="loadingOverlay"></div>
-    </div>
-</div>
 @section Javascripts{
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script type="text/javascript">

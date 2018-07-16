@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRighToLeft() ? "rtl" : "ltr")">
+<html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRighToLeft() ? " rtl" : "ltr" )">
 <head>
     <title>HEMERSINTOOS</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -34,217 +34,217 @@
     </p>
     <div class="nf3-box">
         <header id="header" class="header" role="banner" style="background-image:url(@Url.Content("~/Content/images/logo.jpg"))">
-            <div class="topbar">
-                <div class="container">
-                    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
-                        <span class="mobileMenu-toggleIcon">Toggle menu</span>
-                    </a>
+        <div class="topbar">
+            <div class="container">
+                <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+                    <span class="mobileMenu-toggleIcon">Toggle menu</span>
+                </a>
 
-                    <nav class="navUser">
-                        <div class="navUser-item navUser-item--account">
+                <nav class="navUser">
+                    <div class="navUser-item navUser-item--account">
 
-                        </div>
-                        <ul class="navUser-section">
-                            <li class="navUser-item styled-offer">
+                    </div>
+                    <ul class="navUser-section">
+                        <li class="navUser-item styled-offer">
 
-                                <select id="lang" class="target select offer-select">
-                                    @if (CultureHelper.GetCurrentNeutralCulture() == "fa")
-                                    {
-                                        <option value="option1" selected="selected">فارسی</option>
-                                        <option value="option2">English</option>
-                                        <option value="option2">Arabic</option>
-                                        <option value="option2">Russian</option>
-                                    }
-                                    else if (CultureHelper.GetCurrentNeutralCulture() == "en")
-                                    {
-                                        <option value="option1">فارسی</option>
-                                        <option value="option2" selected="selected">English</option>
-                                        <option value="option2">Arabic</option>
-                                        <option value="option2">Russian</option>
-                                    }
-                                    else if (CultureHelper.GetCurrentNeutralCulture() == "ar")
-                                    {
-                                        <option value="option1">فارسی</option>
-                                        <option value="option2">English</option>
-                                        <option value="option2" selected="selected">Arabic</option>
-                                        <option value="option2">Russian</option>
-                                    }
-                                    else if (CultureHelper.GetCurrentNeutralCulture() == "ru")
-                                    {
-                                        <option value="option1">فارسی</option>
-                                        <option value="option2">English</option>
-                                        <option value="option2">Arabic</option>
-                                        <option value="option2" selected="selected">Russian</option>
-                                    }
+                            <select id="lang" class="target select offer-select">
+                                @if (CultureHelper.GetCurrentNeutralCulture() == "fa")
+                                {
+                                <option value="option1" selected="selected">فارسی</option>
+                                <option value="option2">English</option>
+                                <option value="option2">Arabic</option>
+                                <option value="option2">Russian</option>
+                                }
+                                else if (CultureHelper.GetCurrentNeutralCulture() == "en")
+                                {
+                                <option value="option1">فارسی</option>
+                                <option value="option2" selected="selected">English</option>
+                                <option value="option2">Arabic</option>
+                                <option value="option2">Russian</option>
+                                }
+                                else if (CultureHelper.GetCurrentNeutralCulture() == "ar")
+                                {
+                                <option value="option1">فارسی</option>
+                                <option value="option2">English</option>
+                                <option value="option2" selected="selected">Arabic</option>
+                                <option value="option2">Russian</option>
+                                }
+                                else if (CultureHelper.GetCurrentNeutralCulture() == "ru")
+                                {
+                                <option value="option1">فارسی</option>
+                                <option value="option2">English</option>
+                                <option value="option2">Arabic</option>
+                                <option value="option2" selected="selected">Russian</option>
+                                }
 
-                                </select>
-                            </li>
-                        </ul>
-                        <ul class="socialLinks socialLinks--alt">
-                            <li class="socialLinks-item">
-                                <a class="icon icon--facebook" href="https://www.facebook.com" target="_blank">
-                                    <svg><use xlink:href="#icon-facebook" /></svg>
-                                </a>
-                            </li>
-                            <li class="socialLinks-item">
-                                <a class="icon icon--twitter" href="http://www.twitter.com/" target="_blank">
-                                    <svg><use xlink:href="#icon-twitter" /></svg>
-                                </a>
-                            </li>
-                            <li class="socialLinks-item">
-                                <a class="icon icon--pinterest" href="https://www.pinterest.com/" target="_blank">
-                                    <svg><use xlink:href="#icon-pinterest" /></svg>
-                                </a>
-                            </li>
-                            <li class="socialLinks-item">
-                                <a class="icon icon--youtube" href="https://www.youtube.com/" target="_blank">
-                                    <svg><use xlink:href="#icon-youtube" /></svg>
-                                </a>
-                            </li>
-                            <li class="socialLinks-item">
-                                <a class="icon icon--instagram" href="https://www.instagram.com/" target="_blank">
-                                    <svg><use xlink:href="#icon-instagram" /></svg>
-                                </a>
-                            </li>
-                            <li class="socialLinks-item">
-                                <a class="icon icon--rss" href="https://www.rss.com/" target="_blank">
-                                    <svg><use xlink:href="#icon-rss" /></svg>
-                                </a>
-                            </li>
-                        </ul>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul class="socialLinks socialLinks--alt">
+                        <li class="socialLinks-item">
+                            <a class="icon icon--facebook" href="https://www.facebook.com" target="_blank">
+                                <svg><use xlink:href="#icon-facebook" /></svg>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a class="icon icon--twitter" href="http://www.twitter.com/" target="_blank">
+                                <svg><use xlink:href="#icon-twitter" /></svg>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a class="icon icon--pinterest" href="https://www.pinterest.com/" target="_blank">
+                                <svg><use xlink:href="#icon-pinterest" /></svg>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a class="icon icon--youtube" href="https://www.youtube.com/" target="_blank">
+                                <svg><use xlink:href="#icon-youtube" /></svg>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a class="icon icon--instagram" href="https://www.instagram.com/" target="_blank">
+                                <svg><use xlink:href="#icon-instagram" /></svg>
+                            </a>
+                        </li>
+                        <li class="socialLinks-item">
+                            <a class="icon icon--rss" href="https://www.rss.com/" target="_blank">
+                                <svg><use xlink:href="#icon-rss" /></svg>
+                            </a>
+                        </li>
+                    </ul>
 
 
-                        <div class="bg-quicksearch"></div>
-                    </nav>
-                </div>
+                    <div class="bg-quicksearch"></div>
+                </nav>
             </div>
-            <div class="header_nav stop-float">
-                <h1 class="header-logo header-logo--center">
-                    <a href="@Url.Action("Index","Home")">
-                        <div style="height:400px;width:400px;" class="header-logo-image" alt="" title=""></div>
-                    </a>
-                </h1>
+        </div>
+        <div class="header_nav stop-float">
+            <h1 class="header-logo header-logo--center">
+                <a href="@Url.Action(" Index","Home")">
+                    <div style="height:400px;width:400px;" class="header-logo-image" alt="" title=""></div>
+                </a>
+            </h1>
 
 
-                <div class="navPages-container" id="menu" data-menu>
-                    <nav class="navPages">
-                        <div class="navPages-quickSearch">
-                            <div class="container1">
-                                <!-- snippet location forms_search -->
-                                <form class="form" action="/search.php">
-                                    <fieldset class="form-fieldset">
-                                        <div class="form-field">
-                                            <label class="is-srOnly" for="search_query">جست و جو</label>
-                                            <input class="form-input" id="search_query" data-search-quick name="search_query" data-error-message="Search field cannot be empty." placeholder="Search the store" autocomplete="off">
-                                        </div>
-                                    </fieldset>
-                                </form>
-                                <section class="quickSearchResults" data-bind="html: results"></section>
-                            </div>
+            <div class="navPages-container" id="menu" data-menu>
+                <nav class="navPages">
+                    <div class="navPages-quickSearch">
+                        <div class="container1">
+                            <!-- snippet location forms_search -->
+                            <form class="form" action="/search.php">
+                                <fieldset class="form-fieldset">
+                                    <div class="form-field">
+                                        <label class="is-srOnly" for="search_query">جست و جو</label>
+                                        <input class="form-input" id="search_query" data-search-quick name="search_query" data-error-message="Search field cannot be empty." placeholder="Search the store" autocomplete="off">
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <section class="quickSearchResults" data-bind="html: results"></section>
                         </div>
-                        <ul class="navPages-list">
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("index","AboutUs")" data-collapsible="navPages-35">
-                                    @Resources.About
-                                </a>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("index","ContactUs")">
-                                    @Resources.ContactUs
-                                </a>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("index","Post")">
-                                    @Resources.Blog
-                                </a>
-                            </li>
+                    </div>
+                    <ul class="navPages-list">
+                        <li class="navPages-item">
+                            <a class="navPages-action" href="@Url.Action(" index","AboutUs")" data-collapsible="navPages-35">
+                                @Resources.About
+                            </a>
+                        </li>
+                        <li class="navPages-item">
+                            <a class="navPages-action" href="@Url.Action(" index","ContactUs")">
+                                @Resources.ContactUs
+                            </a>
+                        </li>
+                        <li class="navPages-item">
+                            <a class="navPages-action" href="@Url.Action(" index","Post")">
+                                @Resources.Blog
+                            </a>
+                        </li>
 
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("index","Service")" data-collapsible="navPages-19">
-                                    @Resources.Service
-                                </a>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action " href="@Url.Action("Index","Representation")" data-collapsible="navPages-24">
-                                    @Resources.Representation
-                                </a>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action " href="@Url.Action("index","Product")" data-collapsible="navPages-18">
-                                    @Resources.Product
-                                </a>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("index","home")" data-collapsible="navPages-35">
-                                    @Resources.Home
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="navPages-list navPages-list--user">
-                            <li class="navPages-item">
-                                <a class="navPages-action has-subMenu" href="#" data-collapsible="navPages-currency" aria-controls="navPages-currency" aria-expanded="false">
-                                    USD <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-down"></use></svg></i>
-                                </a>
-                                <div class="navPage-subMenu" id="navPages-currency" aria-hidden="true" tabindex="-1">
-                                    <ul class="navPage-subMenu-list">
-                                        <li class="navPage-subMenu-item">
-                                            <a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=1">
-                                                <strong>US Dollar</strong>
-                                            </a>
-                                        </li>
-                                        <li class="navPage-subMenu-item">
-                                            <a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=2">
-                                                Euro
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="/giftcertificates.php">Gift Certificates</a>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="/login.php">Sign in</a>
-                                or <a class="navPages-action" href="/login.php?action=create_account">Register</a>
-                            </li>
-                            <li class="navPages-item">
-                                <ul class="socialLinks socialLinks--alt">
-                                    <li class="socialLinks-item">
-                                        <a class="icon icon--facebook" href="https://www.facebook.com" target="_blank">
-                                            <svg><use xlink:href="#icon-facebook" /></svg>
+                        <li class="navPages-item">
+                            <a class="navPages-action" href="@Url.Action(" index","Service")" data-collapsible="navPages-19">
+                                @Resources.Service
+                            </a>
+                        </li>
+                        <li class="navPages-item">
+                            <a class="navPages-action " href="@Url.Action(" Index","Representation")" data-collapsible="navPages-24">
+                                @Resources.Representation
+                            </a>
+                        </li>
+                        <li class="navPages-item">
+                            <a class="navPages-action " href="@Url.Action(" index","Product")" data-collapsible="navPages-18">
+                                @Resources.Product
+                            </a>
+                        </li>
+                        <li class="navPages-item">
+                            <a class="navPages-action" href="@Url.Action(" index","home")" data-collapsible="navPages-35">
+                                @Resources.Home
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navPages-list navPages-list--user">
+                        <li class="navPages-item">
+                            <a class="navPages-action has-subMenu" href="#" data-collapsible="navPages-currency" aria-controls="navPages-currency" aria-expanded="false">
+                                USD <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-down"></use></svg></i>
+                            </a>
+                            <div class="navPage-subMenu" id="navPages-currency" aria-hidden="true" tabindex="-1">
+                                <ul class="navPage-subMenu-list">
+                                    <li class="navPage-subMenu-item">
+                                        <a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=1">
+                                            <strong>US Dollar</strong>
                                         </a>
                                     </li>
-                                    <li class="socialLinks-item">
-                                        <a class="icon icon--twitter" href="http://www.twitter.com/" target="_blank">
-                                            <svg><use xlink:href="#icon-twitter" /></svg>
-                                        </a>
-                                    </li>
-                                    <li class="socialLinks-item">
-                                        <a class="icon icon--pinterest" href="https://www.pinterest.com/" target="_blank">
-                                            <svg><use xlink:href="#icon-pinterest" /></svg>
-                                        </a>
-                                    </li>
-                                    <li class="socialLinks-item">
-                                        <a class="icon icon--youtube" href="https://www.youtube.com/" target="_blank">
-                                            <svg><use xlink:href="#icon-youtube" /></svg>
-                                        </a>
-                                    </li>
-                                    <li class="socialLinks-item">
-                                        <a class="icon icon--instagram" href="https://www.instagram.com/" target="_blank">
-                                            <svg><use xlink:href="#icon-instagram" /></svg>
-                                        </a>
-                                    </li>
-                                    <li class="socialLinks-item">
-                                        <a class="icon icon--rss" href="https://www.rss.com/" target="_blank">
-                                            <svg><use xlink:href="#icon-rss" /></svg>
+                                    <li class="navPage-subMenu-item">
+                                        <a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=2">
+                                            Euro
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                            </div>
+                        </li>
+                        <li class="navPages-item">
+                            <a class="navPages-action" href="/giftcertificates.php">Gift Certificates</a>
+                        </li>
+                        <li class="navPages-item">
+                            <a class="navPages-action" href="/login.php">Sign in</a>
+                            or <a class="navPages-action" href="/login.php?action=create_account">Register</a>
+                        </li>
+                        <li class="navPages-item">
+                            <ul class="socialLinks socialLinks--alt">
+                                <li class="socialLinks-item">
+                                    <a class="icon icon--facebook" href="https://www.facebook.com" target="_blank">
+                                        <svg><use xlink:href="#icon-facebook" /></svg>
+                                    </a>
+                                </li>
+                                <li class="socialLinks-item">
+                                    <a class="icon icon--twitter" href="http://www.twitter.com/" target="_blank">
+                                        <svg><use xlink:href="#icon-twitter" /></svg>
+                                    </a>
+                                </li>
+                                <li class="socialLinks-item">
+                                    <a class="icon icon--pinterest" href="https://www.pinterest.com/" target="_blank">
+                                        <svg><use xlink:href="#icon-pinterest" /></svg>
+                                    </a>
+                                </li>
+                                <li class="socialLinks-item">
+                                    <a class="icon icon--youtube" href="https://www.youtube.com/" target="_blank">
+                                        <svg><use xlink:href="#icon-youtube" /></svg>
+                                    </a>
+                                </li>
+                                <li class="socialLinks-item">
+                                    <a class="icon icon--instagram" href="https://www.instagram.com/" target="_blank">
+                                        <svg><use xlink:href="#icon-instagram" /></svg>
+                                    </a>
+                                </li>
+                                <li class="socialLinks-item">
+                                    <a class="icon icon--rss" href="https://www.rss.com/" target="_blank">
+                                        <svg><use xlink:href="#icon-rss" /></svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
+        </div>
         </header>
         <div class="container body-content">
             @RenderBody()
@@ -277,7 +277,26 @@
             }
         }
     </script>
-
+    <script>
+        $("#sendEmail").click(function () {
+            /**/
+            var url = '@Url.Action("EmailSubscribe", "Home", new { lang = "fa" })';
+        /**/
+        var email = $("#email").val();
+        /**/
+        var data = { email: email, @Html.AntiForgeryTokenForAjaxPost() };
+        /**/
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data
+        }).done(function (msg) {
+            alert("You Email Registered")
+        }).fail(function (jqXHR, textStatus) {
+            alert("You Email Not Registered")
+        });
+    });
+    </script>
     <script>
         $("#lang")
             .change(function () {
@@ -298,15 +317,15 @@
                             url = url.replace("ru", "fa");
                             window.location.href = url;
                         } else {
-                                if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                                    url = url.replace("fa", "fa");
-                                    window.location.href = url;
-                                }
-                                else {
-                                    url = url + "fa";
-                                    window.location.href = url;
+                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                url = url.replace("fa", "fa");
+                                window.location.href = url;
+                            }
+                            else {
+                                url = url + "fa";
+                                window.location.href = url;
 
-                                }
+                            }
                         }
                     }
                     else if (str === "English") {
@@ -322,14 +341,14 @@
                             url = url.replace("ru", "en");
                             window.location.href = url;
                         } else {
-                                if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                                    url = url.replace("fa", "en");
-                                    window.location.href = url;
-                                }
-                                else {
-                                    url = url + "en";
-                                    window.location.href = url;
-                                }
+                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                                url = url.replace("fa", "en");
+                                window.location.href = url;
+                            }
+                            else {
+                                url = url + "en";
+                                window.location.href = url;
+                            }
                         }
                     }
                     else if (str === "Arabic") {
@@ -380,8 +399,8 @@
                     }
                 });
             });
-         //# sourceURL=lang.js
-                
+                         //# sourceURL=lang.js
+
     </script>
 </body>
 </html>

@@ -79,6 +79,15 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ایمیل خود را وارد کنید.
+        /// </summary>
+        public static string AddEmail {
+            get {
+                return ResourceManager.GetString("AddEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to آدرس.
         /// </summary>
         public static string Address {
@@ -273,6 +282,15 @@ namespace Yeast.Resources {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to بلاگ های مهم.
+        /// </summary>
+        public static string ImportantBlog {
+            get {
+                return ResourceManager.GetString("ImportantBlog", resourceCulture);
             }
         }
         

@@ -123,6 +123,9 @@
   <data name="AboutUsOnFooter" xml:space="preserve">
     <value>About Us</value>
   </data>
+  <data name="AddEmail" xml:space="preserve">
+    <value>Add Your Email Here</value>
+  </data>
   <data name="Address" xml:space="preserve">
     <value>Address</value>
   </data>
@@ -184,10 +187,13 @@
     <value>Grid</value>
   </data>
   <data name="HemersinsNewsLetter" xml:space="preserve">
-    <value>By registering in the newsletter, you can get information about the latest news from hemersin Toos  manufactures.</value>
+    <value>By registering in the newsletter, you can get information about the latest news from hemersin Toos  manufactures</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="ImportantBlog" xml:space="preserve">
+    <value>Important Blog</value>
   </data>
   <data name="List" xml:space="preserve">
     <value>List</value>
