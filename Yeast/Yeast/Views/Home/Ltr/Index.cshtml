@@ -5,7 +5,9 @@
     Layout = "~/Views/Shared/Ltr/_Layout.cshtml";
 }
 @section CssStyle{
-    <link href="~/Content/css/ltr/styleltr.css" rel="stylesheet" />
+    <link href="~/Content/Slider/engine1/style.css" rel="stylesheet" />
+    <script src="~/Content/Slider/engine1/jquery.js"></script>
+
 }
 <title>apollo-demoshop19</title>
 <link rel='canonical' href='#' />
@@ -16,21 +18,21 @@
                 <div class="on">
                     <section class="heroCarousel slick-initialized slick-slider" data-slick="">
                         <div class="on">
-                            <div id="wowslider-container1">
-                                <div class="ws_images">
+                            <div id="wowslider-container1" style="height:550px;">
+                                <div class="ws_images" style="height:550px;">
                                     <ul>
-                                        <li>@*<a href="#">*@<img src="@Url.Content(Model.homeModel.Image1)" style="width:100%;height:550px;" alt="image slider jquery" title="@Model.homeModel.TextImag1" id="wows1_0" />@*</a>*@</li>
-                                        <li><img style="width:100%;height:550px;" src="@Url.Content(Model.homeModel.Image2)" alt="slideshow_image_2-min" title="@Model.homeModel.TextImag2" id="wows1_1" /></li>
-                                        <li><img style="width:100%;height:550px;" src="@Url.Content(Model.homeModel.Image2)" alt="slideshow_image_2-min" title="@Model.homeModel.TextImag3" id="wows1_1" /></li>
+                                        <li><img style="min-width:100%;min-height:100%;" src="@Url.Content(Model.homeModel.Image1)" alt="@Model.homeModel.TextImag1" title="" id="wows1_0" /></li>
+                                        <li><img style="min-width:100%;min-height:100%;" src="@Url.Content(Model.homeModel.Image2)" alt="@Model.homeModel.TextImag2" title="" id="wows1_1" /></li>
+                                        <li><img style="min-width:100%;min-height:100%;" src="@Url.Content(Model.homeModel.Image3)" alt="@Model.homeModel.TextImag3" title="" id="wows1_2" /></li>
                                     </ul>
                                 </div>
                                 <div class="ws_bullets">
                                     <div>
-                                        <a href="#" title="slideshow_image_1-min-rs"><span><img src="@Url.Content(Model.homeModel.Image1)" alt="">1</span></a>
-                                        <a href="#" title="slideshow_image_2-min"><span><img src="@Url.Content(Model.homeModel.Image2)" alt="">2</span></a>
-                                        <a href="#" title="slideshow_image_2-min"><span><img src="@Url.Content(Model.homeModel.Image3)" alt="">3</span></a>
+                                        <a href="#" title="@Model.homeModel.TextImag1"><span><img src="@Url.Content(Model.homeModel.Image1)" alt="@Model.homeModel.TextImag1" />1</span></a>
+                                        <a href="#" title="@Model.homeModel.TextImag2"><span><img src="@Url.Content(Model.homeModel.Image2)" alt="@Model.homeModel.TextImag2" />2</span></a>
+                                        <a href="#" title="@Model.homeModel.TextImag3"><span><img src="@Url.Content(Model.homeModel.Image3)" alt="@Model.homeModel.TextImag3" />3</span></a>
                                     </div>
-                                </div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">slider bootstrap</a> by WOWSlider.com v7.7</div>
+                                </div><div class="ws_script" style="position:absolute;left:-99%"><a href="#"></a> </div>
                                 <div class="ws_shadow"></div>
                             </div>
                             <!-- snippet location home_content -->
@@ -113,7 +115,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="description">
-                                                    <p>@item.Description.ConvertToPersianString()</p>
+                                                    <p>@item.Description?.ConvertToPersianString()</p>
                                                 </div>
                                             </div>
                                             <div class="deal-clock lof-clock-111-detail">
@@ -211,3 +213,7 @@
         </div>
     </div>
 </div>
+@section Javascripts{
+    <script src="~/Content/Slider/engine1/wowslider.js"></script>
+    <script src="~/Content/Slider/engine1/script.js"></script>
+}

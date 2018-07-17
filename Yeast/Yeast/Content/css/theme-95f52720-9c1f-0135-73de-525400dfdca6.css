@@ -16496,8 +16496,8 @@ body.hasAdminBar .navPages-container.is-open {
 .container, .container-fluid {
     margin-left: auto;
     margin-right: auto;
-    padding-right: 15px;
-    padding-left: 15px
+    padding-right: 0px;
+    padding-left: 0px
 }
 
 @font-face {

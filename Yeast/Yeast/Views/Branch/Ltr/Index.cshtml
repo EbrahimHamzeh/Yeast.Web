@@ -5,8 +5,8 @@
 }
 @section CssStyle{
     <link href="~/Content/css/leaflet-ltr.css" rel="stylesheet" />
-    <link href="~/Content/css/components-ltr.css" rel="stylesheet" />
-    <link href="~/Content/css/plugin-ltr.css" rel="stylesheet" />
+    @*<link href="~/Content/css/components-ltr.css" rel="stylesheet" />
+    <link href="~/Content/css/plugin-ltr.css" rel="stylesheet" />*@
     <style>
         #map {
             height: 600px;
@@ -35,34 +35,34 @@
             <div class="widget-banner block">
                 <div class="banner-content row">
                     @foreach (var item in Model)
-                {
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <article class="card">
-                            <figure class="card-figure">
-                                <a href="#" class="product_img_link">
-                                    <img style="min-height: 240px;max-height:240px; min-width: 240px;" class="card-image lazyautosizes" data-sizes="auto" src="~/Content/images/mapicon.png" data-src="" alt="Aenean consequat sagittis" title="mapicon" sizes="277px">
-                                </a>
+                    {
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <article class="card">
+                                <figure class="card-figure">
+                                    <a href="#" class="product_img_link">
+                                        <img style="min-height: 240px;max-height:240px; min-width: 240px;" class="card-image lazyautosizes" data-sizes="auto" src="~/Content/images/mapicon.png" data-src="" alt="Aenean consequat sagittis" title="mapicon" sizes="277px">
+                                    </a>
 
-                            </figure>
-                            <div class="card-body">
-                                <div class="card-body-left">
-                                    <h4 class="card-title">
-                                        <a href="#">@item.Title</a>
-                                    </h4>
-                                    <p class="card-text brand-name" data-test-info-type="brandName">@item.Telephone</p>
-                                </div>
-                                <div class="card-text content-price" data-test-info-type="price">
-                                    <div class="price-section price-section--withoutTax ">
-                                        <span data-product-price-without-tax="" class="price price--withoutTax">@item.Description</span>
+                                </figure>
+                                <div class="card-body">
+                                    <div class="card-body-left">
+                                        <h4 class="card-title">
+                                            <a href="#">@item.Title</a>
+                                        </h4>
+                                        <p class="card-text brand-name" data-test-info-type="brandName">@item.Telephone</p>
+                                    </div>
+                                    <div class="card-text content-price" data-test-info-type="price">
+                                        <div class="price-section price-section--withoutTax ">
+                                            <span data-product-price-without-tax="" class="price price--withoutTax">@item.Description</span>
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <p>@item.Description</p>
                                     </div>
                                 </div>
-                                <div class="description">
-                                    <p>@item.Description</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-            }
+                            </article>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
@@ -75,6 +75,7 @@
             <div class="loadingOverlay"></div>
         </div>
     </div>
+</div>
 @section Javascripts{
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script type="text/javascript">

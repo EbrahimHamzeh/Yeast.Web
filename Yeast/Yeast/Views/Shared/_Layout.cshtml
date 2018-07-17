@@ -10,11 +10,19 @@
     <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
     <script src="~/Content/js/theme/modernizr-custom.js"></script>
     <script src="~/Content/js/jquery-3.3.1.min.js"></script>
-
+    <script src="~/Content/Slider/engine1/jquery.js"></script>
     <style type="text/css">
-        .styled-offer select.offer-select { color: white; border: none; background-color: #333; }
+        .styled-offer select.offer-select {
+            color: white;
+            border: none;
+            background-color: #333;
+        }
 
-            .styled-offer select.offer-select option { color: white; border: none; background-color: #333; }
+            .styled-offer select.offer-select option {
+                color: white;
+                border: none;
+                background-color: #333;
+            }
     </style>
 
     @RenderSection("CssStyle", false)
@@ -36,41 +44,69 @@
                     <nav class="navUser">
                         <div class="navUser-item navUser-item--account">
                         </div>
-                        <ul class="navUser-section">
-                            <li class="navUser-item styled-offer">
+                        @*<ul class="navUser-section">
+                                <li class="navUser-item styled-offer">
 
-                                <select id="lang" class="target select offer-select" style="direction:rtl">
-                                    @if (CultureHelper.GetCurrentNeutralCulture() == "fa")
-                                    {
-                                        <option value="option1" selected="selected">فارسی</option>
-                                        <option value="option2">English</option>
-                                        <option value="option2">Arabic</option>
-                                        <option value="option2">Russian</option>
-                                    }
-                                    else if (CultureHelper.GetCurrentNeutralCulture() == "en")
-                                    {
-                                        <option value="option1">فارسی</option>
-                                        <option value="option2" selected="selected">English</option>
-                                        <option value="option2">Arabic</option>
-                                        <option value="option2">Russian</option>
-                                    }
-                                    else if (CultureHelper.GetCurrentNeutralCulture() == "ar")
-                                    {
-                                        <option value="option1">فارسی</option>
-                                        <option value="option2">English</option>
-                                        <option value="option2" selected="selected">Arabic</option>
-                                        <option value="option2">Russian</option>
-                                    }
-                                    else if (CultureHelper.GetCurrentNeutralCulture() == "ru")
-                                    {
-                                        <option value="option1">فارسی</option>
-                                        <option value="option2">English</option>
-                                        <option value="option2">Arabic</option>
-                                        <option value="option2" selected="selected">Russian</option>
-                                    }
-                                </select>
+                                    <select id="lang" class="target select offer-select" style="direction:rtl">
+                                        @if (CultureHelper.GetCurrentNeutralCulture() == "fa")
+                                        {
+                                            <option value="option1" selected="selected">فارسی</option>
+                                            <option value="option2">English</option>
+                                            <option value="option2">Arabic</option>
+                                            <option value="option2">Russian</option>
+                                        }
+                                        else if (CultureHelper.GetCurrentNeutralCulture() == "en")
+                                        {
+                                            <option value="option1">فارسی</option>
+                                            <option value="option2" selected="selected">English</option>
+                                            <option value="option2">Arabic</option>
+                                            <option value="option2">Russian</option>
+                                        }
+                                        else if (CultureHelper.GetCurrentNeutralCulture() == "ar")
+                                        {
+                                            <option value="option1">فارسی</option>
+                                            <option value="option2">English</option>
+                                            <option value="option2" selected="selected">Arabic</option>
+                                            <option value="option2">Russian</option>
+                                        }
+                                        else if (CultureHelper.GetCurrentNeutralCulture() == "ru")
+                                        {
+                                            <option value="option1">فارسی</option>
+                                            <option value="option2">English</option>
+                                            <option value="option2">Arabic</option>
+                                            <option value="option2" selected="selected">Russian</option>
+                                        }
+                                    </select>
+
+                                </li>
+                            </ul>*@
+
+                        <ul class="navUser-section">
+                            <li class="navUser-item">
+                                <a class="navUser-action"  href="" title="فارسی">
+                                    <img onclick="ChangeLang(1)" src="~/Content/images/flags/ir.png" />
+                                </a>
+                            </li>
+                            <li class="navUser-item">
+                                <a class="navUser-action"  href="" title="English">
+                                    <img onclick="ChangeLang(2)" src="~/Content/images/flags/us.png" />
+                                </a>
+                            </li>
+                            <li class="navUser-item">
+                                <a class="navUser-action" onclick="ChangeLang(3)" href="" title="Arabic">
+                                    <img src="~/Content/images/flags/sa.png" />
+                                </a>
+                            </li>
+                            <li class="navUser-item">
+                                <a class="navUser-action" onclick="ChangeLang(4)" href="" title="russian">
+                                    <img src="~/Content/images/flags/ru.png" />
+                                </a>
                             </li>
                         </ul>
+
+
+
+
                         <ul class="socialLinks socialLinks--alt">
                             <li class="socialLinks-item">
                                 <a class="icon icon--facebook" href="https://www.facebook.com" target="_blank">
@@ -117,6 +153,8 @@
                 </h1>
 
 
+
+
                 <div class="navPages-container" id="menu" data-menu>
                     <nav class="navPages">
                         <div class="navPages-quickSearch">
@@ -156,7 +194,7 @@
                                 </a>
                             </li>
                             <li class="navPages-item">
-                                <a class="navPages-action " href="@Url.Action("Index","Representation")" data-collapsible="navPages-24">
+                                <a class="navPages-action " href="@Url.Action("Index","branch")" data-collapsible="navPages-24">
                                     @Resources.Representation
                                 </a>
                             </li>
@@ -246,6 +284,25 @@
                 </div>
             </div>
         </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="container body-content">
             @RenderBody()
             <hr />
@@ -276,111 +333,108 @@
                 alert("درخواست با خطا مواجه شد.")
 			});
         });
-        </script>
-         <script>
-        $("#lang")
-            .change(function () {
-                var url = window.location.href;
-                var str = "";
-                $("#lang option:selected").each(function () {
-                    str += $(this).text();
-                    if (str === "فارسی") {
-                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
-                            url = url.replace("en", "fa");
-                            window.location.href = url;
-                        }
-                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
-                            url = url.replace("ar", "fa");
-                            window.location.href = url;
-                        }
-                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
-                            url = url.replace("ru", "fa");
-                            window.location.href = url;
-                        } else {
-                                if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                                    url = url.replace("fa", "fa");
-                                    window.location.href = url;
-                                }
-                                else {
-                                    url = url + "fa";
-                                    window.location.href = url;
-
-                                }
-                        }
-                    }
-                    else if (str === "English") {
-                        if (url.toLocaleLowerCase().indexOf("en") != -1 & url.toLocaleLowerCase().indexOf("representation")!=26) {
-                            url = url.replace("en", "en");
-                            window.location.href = url;
-                        }
-                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
-                            url = url.replace("ar", "en");
-                            window.location.href = url;
-                        }
-                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
-                            url = url.replace("ru", "en");
-                            window.location.href = url;
-                        } else {
-                                if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                                    url = url.replace("fa", "en");
-                                    window.location.href = url;
-                                }
-                                else {
-                                    url = url + "en";
-                                    window.location.href = url;
-                                }
-                        }
-                    }
-                    else if (str === "Arabic") {
-                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
-                            url = url.replace("en", "ar");
-                            window.location.href = url;
-                        }
-                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
-                            url = url.replace("ar", "ar");
-                            window.location.href = url;
-                        }
-                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
-                            url = url.replace("ru", "ar");
-                            window.location.href = url;
-                        } else {
-                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                                url = url.replace("fa", "ar");
-                                window.location.href = url;
-                            }
-                            else {
-                                url = url + "ar";
-                                window.location.href = url;
-                            }
-                        }
-                    }
-                    else if (str === "Russian") {
-                        if (url.toLocaleLowerCase().indexOf("en") != -1) {
-                            url = url.replace("en", "ru");
-                            window.location.href = url;
-                        }
-                        else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
-                            url = url.replace("ar", "ru");
-                            window.location.href = url;
-                        }
-                        else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
-                            url = url.replace("ru", "ru");
-                            window.location.href = url;
-                        } else {
-                            if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                                url = url.replace("fa", "ru");
-                                window.location.href = url;
-                            }
-                            else {
-                                url = url + "ru";
-                                window.location.href = url;
-                            }
-                        }
-                    }
-                });
-            });
-         //# sourceURL=lang.js
-
     </script>
+    <script>
+        function ChangeLang(landid) {
+            var url = window.location.href;
+            if (landid === 1) {
+                if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                    url = url.replace("en", "fa");
+                    window.location.href = url;
+                }
+                else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                    url = url.replace("ar", "fa");
+                    window.location.href = url;
+                }
+                else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                    url = url.replace("ru", "fa");
+                    window.location.href = url;
+                } else {
+                    if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                        url = url.replace("fa", "fa");
+                        window.location.href = url;
+                    }
+                    else {
+                        url = url + "fa";
+                        window.location.href = url;
+
+                    }
+                }
+            }
+            else if (landid === 2) {
+                if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                    url = url.replace("en", "en");
+                    window.location.href = url;
+                }
+                else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                    url = url.replace("ar", "en");
+                    window.location.href = url;
+                }
+                else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                    url = url.replace("ru", "en");
+                    window.location.href = url;
+                } else {
+                    if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                        url = url.replace("fa", "en");
+                        window.location.href =  url;
+                    }
+                    else {
+                        url = url + "en";
+                        var pageURL = $(location).attr(url);
+                        window.location.href = url;
+                        
+                    }
+                }
+            }
+            else if (landid === 3) {
+                if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                    url = url.replace("en", "ar");
+                    window.location.href = url;
+                }
+                else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                    url = url.replace("ar", "ar");
+                    window.location.href = url;
+                }
+                else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                    url = url.replace("ru", "ar");
+                    window.location.href = url;
+                } else {
+                    if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                        url = url.replace("fa", "ar");
+                        window.location.href = url;
+                    }
+                    else {
+                        url = url + "ar";
+                        window.location.href = url;
+                    }
+                }
+            }
+            else if (landid === 4) {
+                if (url.toLocaleLowerCase().indexOf("en") != -1) {
+                    url = url.replace("en", "ru");
+                    window.location.href = url;
+                }
+                else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
+                    url = url.replace("ar", "ru");
+                    window.location.href = url;
+                }
+                else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
+                    url = url.replace("ru", "ru");
+                    window.location.href = url;
+                } else {
+                    if (url.toLocaleLowerCase().indexOf("fa") != -1) {
+                        url = url.replace("fa", "ru");
+                        window.location.href = url;
+                    }
+                    else {
+                        url = url + "ru";
+                        window.location.href = url;
+                    }
+                }
+            }
+        }
+        //# sourceURL=lang1.js
+    </script>
+   
 </body>
 </html>

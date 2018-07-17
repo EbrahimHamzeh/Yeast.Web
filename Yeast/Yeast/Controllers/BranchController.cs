@@ -8,13 +8,13 @@ using Yeast.Utilities.Controllers;
 namespace Yeast.Controllers
 {
 
-	public class RepresentationController : BaseController
+	public class BranchController : BaseController
 	{
 
 		readonly IRepresentationService _representationService;
 		readonly IUnitOfWork _uow;
 
-        public RepresentationController(IUnitOfWork uow, IRepresentationService representationService)
+        public BranchController(IUnitOfWork uow, IRepresentationService representationService)
         {
             _uow = uow;
             _representationService = representationService;
