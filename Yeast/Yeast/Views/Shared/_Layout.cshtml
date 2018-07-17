@@ -44,61 +44,26 @@
                     <nav class="navUser">
                         <div class="navUser-item navUser-item--account">
                         </div>
-                        @*<ul class="navUser-section">
-                                <li class="navUser-item styled-offer">
-
-                                    <select id="lang" class="target select offer-select" style="direction:rtl">
-                                        @if (CultureHelper.GetCurrentNeutralCulture() == "fa")
-                                        {
-                                            <option value="option1" selected="selected">فارسی</option>
-                                            <option value="option2">English</option>
-                                            <option value="option2">Arabic</option>
-                                            <option value="option2">Russian</option>
-                                        }
-                                        else if (CultureHelper.GetCurrentNeutralCulture() == "en")
-                                        {
-                                            <option value="option1">فارسی</option>
-                                            <option value="option2" selected="selected">English</option>
-                                            <option value="option2">Arabic</option>
-                                            <option value="option2">Russian</option>
-                                        }
-                                        else if (CultureHelper.GetCurrentNeutralCulture() == "ar")
-                                        {
-                                            <option value="option1">فارسی</option>
-                                            <option value="option2">English</option>
-                                            <option value="option2" selected="selected">Arabic</option>
-                                            <option value="option2">Russian</option>
-                                        }
-                                        else if (CultureHelper.GetCurrentNeutralCulture() == "ru")
-                                        {
-                                            <option value="option1">فارسی</option>
-                                            <option value="option2">English</option>
-                                            <option value="option2">Arabic</option>
-                                            <option value="option2" selected="selected">Russian</option>
-                                        }
-                                    </select>
-
-                                </li>
-                            </ul>*@
+ 
 
                         <ul class="navUser-section">
                             <li class="navUser-item">
-                                <a class="navUser-action"  href="" title="فارسی">
-                                    <img onclick="ChangeLang(1)" src="~/Content/images/flags/ir.png" />
+                                <a class="navUser-action"  href="@Url.Action("Index","Home" , new { lang = "fa" })" title="فارسی">
+                                    <img src="~/Content/images/flags/ir.png" />
                                 </a>
                             </li>
                             <li class="navUser-item">
-                                <a class="navUser-action"  href="" title="English">
-                                    <img onclick="ChangeLang(2)" src="~/Content/images/flags/us.png" />
+                                <a class="navUser-action"  href="@Url.Action("Index","Home" , new { lang = "en" })" title="English">
+                                    <img src="~/Content/images/flags/us.png" />
                                 </a>
                             </li>
                             <li class="navUser-item">
-                                <a class="navUser-action" onclick="ChangeLang(3)" href="" title="Arabic">
+                                <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "ar" })" title="Arabic">
                                     <img src="~/Content/images/flags/sa.png" />
                                 </a>
                             </li>
                             <li class="navUser-item">
-                                <a class="navUser-action" onclick="ChangeLang(4)" href="" title="russian">
+                                <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "ru" })" title="russian">
                                     <img src="~/Content/images/flags/ru.png" />
                                 </a>
                             </li>
@@ -334,107 +299,7 @@
 			});
         });
     </script>
-    <script>
-        function ChangeLang(landid) {
-            var url = window.location.href;
-            if (landid === 1) {
-                if (url.toLocaleLowerCase().indexOf("en") != -1) {
-                    url = url.replace("en", "fa");
-                    window.location.href = url;
-                }
-                else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
-                    url = url.replace("ar", "fa");
-                    window.location.href = url;
-                }
-                else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
-                    url = url.replace("ru", "fa");
-                    window.location.href = url;
-                } else {
-                    if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                        url = url.replace("fa", "fa");
-                        window.location.href = url;
-                    }
-                    else {
-                        url = url + "fa";
-                        window.location.href = url;
 
-                    }
-                }
-            }
-            else if (landid === 2) {
-                if (url.toLocaleLowerCase().indexOf("en") != -1) {
-                    url = url.replace("en", "en");
-                    window.location.href = url;
-                }
-                else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
-                    url = url.replace("ar", "en");
-                    window.location.href = url;
-                }
-                else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
-                    url = url.replace("ru", "en");
-                    window.location.href = url;
-                } else {
-                    if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                        url = url.replace("fa", "en");
-                        window.location.href =  url;
-                    }
-                    else {
-                        url = url + "en";
-                        var pageURL = $(location).attr(url);
-                        window.location.href = url;
-                        
-                    }
-                }
-            }
-            else if (landid === 3) {
-                if (url.toLocaleLowerCase().indexOf("en") != -1) {
-                    url = url.replace("en", "ar");
-                    window.location.href = url;
-                }
-                else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
-                    url = url.replace("ar", "ar");
-                    window.location.href = url;
-                }
-                else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
-                    url = url.replace("ru", "ar");
-                    window.location.href = url;
-                } else {
-                    if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                        url = url.replace("fa", "ar");
-                        window.location.href = url;
-                    }
-                    else {
-                        url = url + "ar";
-                        window.location.href = url;
-                    }
-                }
-            }
-            else if (landid === 4) {
-                if (url.toLocaleLowerCase().indexOf("en") != -1) {
-                    url = url.replace("en", "ru");
-                    window.location.href = url;
-                }
-                else if (url.toLocaleLowerCase().indexOf("ar") != -1) {
-                    url = url.replace("ar", "ru");
-                    window.location.href = url;
-                }
-                else if (url.toLocaleLowerCase().indexOf("ru") != -1) {
-                    url = url.replace("ru", "ru");
-                    window.location.href = url;
-                } else {
-                    if (url.toLocaleLowerCase().indexOf("fa") != -1) {
-                        url = url.replace("fa", "ru");
-                        window.location.href = url;
-                    }
-                    else {
-                        url = url + "ru";
-                        window.location.href = url;
-                    }
-                }
-            }
-        }
-        //# sourceURL=lang1.js
-    </script>
    
 </body>
 </html>
