@@ -31,7 +31,7 @@ namespace Yeast.Controllers
         // GET: /{lang}/Product/5
         public virtual ActionResult Detial(int id)
 		{
-            Product product = _productService.Find(id);
+            Model.FrontEnd.Product product = _productService.FindByCulter(id);
 
             return View(product);
 		}
