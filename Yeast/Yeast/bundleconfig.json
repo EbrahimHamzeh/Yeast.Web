@@ -1,0 +1,25 @@
+[
+  {
+    "outputFileName": "Content/css/bundleLayoutrtl.css",
+    "inputFiles": [
+      "Content/css/font-awesome.min.css",
+      "Content/css/theme-95f52720-9c1f-0135-73de-525400dfdca6.css",
+      "Content/css/YeastFont.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/js/bundlelayoutrtl.js",
+    "inputFiles": [
+      "Content/js/theme/modernizr-custom.js",
+      "Content/js/jquery-3.3.1.min.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/css/ltr/bundleltr.css",
+    "inputFiles": [
+      "Content/css/ltr/ltr.css",
+      "Content/css/font-awesome.min.css",
+      "Content/css/YeastFont.css"
+    ]
+  }
+]

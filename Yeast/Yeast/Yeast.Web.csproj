@@ -220,6 +220,10 @@
     <Content Include="Content\css\bootstrap-table\bootstrap-editable.css" />
     <Content Include="Content\css\bootstrap-table\bootstrap-table-sticky-header.css" />
     <Content Include="Content\css\bootstrap-table\bootstrap-table.css" />
+    <Content Include="Content\css\bundleLayoutrtl.css" />
+    <Content Include="Content\css\bundleLayoutrtl.min.css">
+      <DependentUpon>bundleLayoutrtl.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\components-ltr.css" />
     <Content Include="Content\css\components-rtl.css" />
     <Content Include="Content\css\default-rtl.css" />
@@ -240,6 +244,10 @@
     <Content Include="Content\css\leaflet.css" />
     <Content Include="Content\css\login-5-rtl.min.css" />
     <Content Include="Content\css\ltr\bootstrap-ltr.css" />
+    <Content Include="Content\css\ltr\bundleltr.css" />
+    <Content Include="Content\css\ltr\bundleltr.min.css">
+      <DependentUpon>bundleltr.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\ltr\ltr.css" />
     <Content Include="Content\css\ltr\styleltr.css" />
     <Content Include="Content\css\plugin-ltr.css" />
@@ -793,7 +801,12 @@
     <Content Include="Areas\Admin\Views\Customer\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Customer\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Customer\Index.cshtml" />
+    <None Include="bundleconfig.json" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
+    <Content Include="Content\js\bundlelayoutrtl.js" />
+    <Content Include="Content\js\bundlelayoutrtl.min.js">
+      <DependentUpon>bundlelayoutrtl.js</DependentUpon>
+    </Content>
     <Content Include="Content\js\enjoyhint.js" />
     <Content Include="Content\js\filepond-plugin-file-validate-size.min.js" />
     <Content Include="Content\js\filepond-plugin-file-validate-type.min.js" />

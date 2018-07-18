@@ -1,31 +1,26 @@
 ﻿<!DOCTYPE html>
 <html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRighToLeft() ? "rtl" : "ltr")">
 <head>
-    <title>HEMERSINTOOS</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <link href="~/Content/css/YeastFont.css" rel="stylesheet" />
-    <link href="http://cdn8.bigcommerce.com/r-1eed8bf5c3eb25ab7b98ca46ba9f43c2f08cda74/img/bc_favicon.ico" rel="shortcut icon">
-    <link href="~/Content/css/theme-95f52720-9c1f-0135-73de-525400dfdca6.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
-    <script src="~/Content/js/theme/modernizr-custom.js"></script>
-    <script src="~/Content/js/jquery-3.3.1.min.js"></script>
-    <script src="~/Content/Slider/engine1/jquery.js"></script>
-    <style type="text/css">
-        .styled-offer select.offer-select {
-            color: white;
-            border: none;
-            background-color: #333;
-        }
+	<title>HEMERSINTOOS</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<link href="http://cdn8.bigcommerce.com/r-1eed8bf5c3eb25ab7b98ca46ba9f43c2f08cda74/img/bc_favicon.ico" rel="shortcut icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	@*<link href="~/Content/css/theme-95f52720-9c1f-0135-73de-525400dfdca6.css" rel="stylesheet" />
+		<link href="~/Content/css/YeastFont.css" rel="stylesheet" />
+		<link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />*@
 
-            .styled-offer select.offer-select option {
-                color: white;
-                border: none;
-                background-color: #333;
-            }
-    </style>
+	<link href="~/Content/css/bundleLayoutrtl.min.css" rel="stylesheet" />
 
-    @RenderSection("CssStyle", false)
+	@*<script src="~/Content/js/theme/modernizr-custom.js"></script>
+		<script src="~/Content/js/jquery-3.3.1.min.js"></script>*@
+	<script src="~/Content/js/bundlelayoutrtl.min.js"></script>
+	<style type="text/css">
+		.styled-offer select.offer-select { color: white; border: none; background-color: #333; }
+
+			.styled-offer select.offer-select option { color: white; border: none; background-color: #333; }
+	</style>
+
+	@RenderSection("CssStyle", false)
 </head>
 <body class="nf-home3  pace-done">
     <div class="icons-svg-sprite">
