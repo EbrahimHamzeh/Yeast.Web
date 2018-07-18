@@ -59,7 +59,58 @@ namespace Yeast.Servicelayer.EFServices
         {
             return _products.Find(id);
         }
-
+        public Model.FrontEnd.Product FindByCulter(int id)
+        {
+            string cultur = CultureHelper.GetCurrentNeutralCulture();
+            Model.FrontEnd.Product postModel = new Model.FrontEnd.Product();
+            Product service = _products.Find(id);
+            switch (cultur)
+            {
+                case "fa":
+                    postModel.Id = service.Id;
+                    postModel.Name = service.Name;
+                    postModel.Body = service.Body;
+                    postModel.Description = service.Description;
+                    postModel.Price = service.Price;
+                    postModel.Image1 = service.Image1;
+                    postModel.Image2 = service.Image2;
+                    postModel.Image3 = service.Image3;
+                    break;
+                case "en":
+                    postModel.Id = service.Id;
+                    postModel.Name = service.NameEn;
+                    postModel.Body = service.BodyEn;
+                    postModel.Description = service.DescriptionEn;
+                    postModel.Price = service.Price;
+                    postModel.Image1 = service.Image1;
+                    postModel.Image2 = service.Image2;
+                    postModel.Image3 = service.Image3;
+                    break;
+                case "ar":
+                    postModel.Id = service.Id;
+                    postModel.Name = service.NameAr;
+                    postModel.Body = service.BodyAr;
+                    postModel.Description = service.DescriptionAr;
+                    postModel.Price = service.Price;
+                    postModel.Image1 = service.Image1;
+                    postModel.Image2 = service.Image2;
+                    postModel.Image3 = service.Image3;
+                    break;
+                case "ru":
+                    postModel.Id = service.Id;
+                    postModel.Name = service.NameRu;
+                    postModel.Body = service.BodyRu;
+                    postModel.Description = service.DescriptionRu;
+                    postModel.Price = service.Price;
+                    postModel.Image1 = service.Image1;
+                    postModel.Image2 = service.Image2;
+                    postModel.Image3 = service.Image3;
+                    break;
+                default:
+                    break;
+            }
+            return postModel;
+        }
         public ProductEdit FindForEdit(int id)
         {
             Product Product = _products.Find(id);

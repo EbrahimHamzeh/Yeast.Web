@@ -1,4 +1,4 @@
-﻿@model Yeast.DomainClasses.Entities.Product
+﻿@model Yeast.Model.FrontEnd.Product
 @{
 
     ViewBag.Title = "Product";
@@ -40,7 +40,7 @@
             </section>
             <section class="productView-details">
                 <div class="productView-product">
-                    <h1 class="productView-title" style="text-align:left"> @Model.Name    :  @Resources.ProductName </h1>
+                    <h1 class="productView-title" style="text-align:left">@Resources.ProductName : @Model.Name       </h1>
 
                     <dl class="productView-info" style="text-align:left">
                         <dt class="productView-info-name" style="text-align:left">: @Resources.Description</dt>
