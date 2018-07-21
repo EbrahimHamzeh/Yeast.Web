@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Yeast.Attribute;
 using Yeast.Datalayer.Context;
 using Yeast.Servicelayer.Interfaces;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class DashboardController : Controller
+	[CustomAuthorize]
+	public class DashboardController : Controller
 	{
         readonly IStatisticsService _statisticsService;
         readonly IUnitOfWork _uow;

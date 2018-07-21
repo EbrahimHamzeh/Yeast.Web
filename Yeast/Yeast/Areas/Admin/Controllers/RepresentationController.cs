@@ -10,6 +10,7 @@ using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Areas.Admin.Controllers
 {
+	[CustomAuthorize]
 	public class RepresentationController : Controller
 	{
 		readonly IRepresentationService _representationService;

@@ -10,7 +10,8 @@ using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class EmailController : Controller
+	[CustomAuthorize]
+	public class EmailController : Controller
 	{
 		readonly IEmailService _emailService;
 		readonly IEmailTemplateService _emailTemplateService;

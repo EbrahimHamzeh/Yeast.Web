@@ -10,7 +10,8 @@ using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class ContactUsController : Controller
+	[CustomAuthorize]
+	public class ContactUsController : Controller
 	{
 		readonly IContactUsService _contactUservice;
 		readonly IUnitOfWork _uow;

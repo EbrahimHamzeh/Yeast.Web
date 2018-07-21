@@ -70,6 +70,13 @@ namespace Yeast.IocConfig
 				x.For<IStatisticsService>().Use<StatisticsService>();
 				x.For<IRepresentationService>().Use<RepresentationService>();
 				x.For<ICustomerService>().Use<CustomerService>();
+
+				x.Policies.SetAllProperties(y =>
+				{
+					y.OfType<IApplicationRoleManager>();
+					y.OfType<IApplicationUserManager>();
+					y.OfType<IUnitOfWork>();
+				});
 			});
 		}
 		

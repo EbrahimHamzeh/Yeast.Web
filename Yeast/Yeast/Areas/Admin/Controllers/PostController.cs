@@ -15,6 +15,7 @@ using Yeast.Model.FrontEnd;
 
 namespace Yeast.Areas.Admin.Controllers
 {
+	[CustomAuthorize]
 	public partial class PostController : Controller
 	{
 		readonly IPostService _postService;

@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
-using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
 using Yeast.Attribute;
 using Yeast.Utilities.BootstrapTable;
@@ -11,11 +10,11 @@ using System.Web;
 using System.IO;
 using System.Linq;
 using System;
-using System.Collections.Generic;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class UserController : Controller
+	[CustomAuthorize]
+	public class UserController : Controller
 	{
         readonly IApplicationRoleManager _roleService;
         readonly IApplicationUserManager _userService;

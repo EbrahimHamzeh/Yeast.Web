@@ -1,11 +1,13 @@
 ﻿using System.Web.Mvc;
+using Yeast.Attribute;
 using Yeast.Datalayer.Context;
 using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class AboutUsController : Controller
+	[CustomAuthorize]
+	public class AboutUsController : Controller
 	{
 		readonly IOptionService _optionService;
 		readonly IUnitOfWork _uow;

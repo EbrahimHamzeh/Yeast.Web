@@ -7,10 +7,12 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Yeast.Attribute;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class SliderSettingController : Controller
+	[CustomAuthorize]
+	public class SliderSettingController : Controller
 	{
 		readonly IOptionService _optionService;
 		readonly IUnitOfWork _uow;

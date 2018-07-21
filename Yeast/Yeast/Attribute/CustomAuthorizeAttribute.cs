@@ -17,14 +17,7 @@ namespace Yeast.Attribute
         private string _requestControllerName;
         private string _requestedActionName;
 
-        public CustomAuthorizeAttribute(IUnitOfWork uow, IApplicationUserManager userService, IApplicationRoleManager roleService)
-        {
-            _uow = uow;
-            _userService = userService;
-            _roleService = roleService;
-        }
-
-        public override void OnAuthorization(AuthorizationContext filterContext)
+		public override void OnAuthorization(AuthorizationContext filterContext)
         {
             _requestControllerName = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
             _requestedActionName = filterContext.ActionDescriptor.ActionName;
@@ -68,5 +61,11 @@ namespace Yeast.Attribute
 
             base.HandleUnauthorizedRequest(filterContext);
         }
-    }
+
+		public IApplicationRoleManager ApplicationRoleManager { get; set; }
+
+		public IApplicationUserManager ApplicationUserManager { get; set; }
+
+		public IUnitOfWork UnitOfWork { get; set; }
+	}
 }

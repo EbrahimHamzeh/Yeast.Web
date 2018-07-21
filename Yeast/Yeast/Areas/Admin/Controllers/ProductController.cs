@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -12,12 +10,11 @@ using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
-using System.Web.Script.Serialization;
-using Newtonsoft.Json.Linq;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class ProductController : Controller
+	[CustomAuthorize]
+	public class ProductController : Controller
 	{
 		readonly IProductService _ProductService;
 		readonly IUnitOfWork _uow;

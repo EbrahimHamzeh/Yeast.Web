@@ -14,7 +14,8 @@ using Yeast.Servicelayer.EFServices;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class RoleAccessController : Controller
+	[CustomAuthorize]
+	public class RoleAccessController : Controller
 	{
         readonly IApplicationRoleManager _roleService;
         readonly IUnitOfWork _uow;

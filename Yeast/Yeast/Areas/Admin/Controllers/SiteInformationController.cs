@@ -1,13 +1,14 @@
 ﻿using System.Web.Mvc;
+using Yeast.Attribute;
 using Yeast.Datalayer.Context;
 using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-    public partial class SiteInformationController : Controller
+	[CustomAuthorize]
+    public class SiteInformationController : Controller
 	{
-        //readonly ISiteInformationService _postService;
         readonly IOptionService _optionService;
         readonly IUnitOfWork _uow;
 

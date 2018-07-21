@@ -10,7 +10,8 @@ using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class TagController : Controller
+	[CustomAuthorize]
+	public class TagController : Controller
 	{
 		readonly ITagService _tagService;
 		readonly IUnitOfWork _uow;

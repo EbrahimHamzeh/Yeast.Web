@@ -10,7 +10,7 @@ using Yeast.Utilities.BootstrapTable;
 
 namespace Yeast.Areas.Admin.Controllers
 {
-	public partial class ServiceCategoryController : Controller
+	public class ServiceCategoryController : Controller
 	{
 		readonly IServiceCategoryService _serviceCategoryService;
 		readonly IUnitOfWork _uow;
