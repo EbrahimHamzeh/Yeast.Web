@@ -33,38 +33,10 @@
         <header id="header" class="header" role="banner" style="background-image:url(@Url.Content("~/Content/images/logo.jpg"))">
             <div class="topbar">
                 <div class="container">
-                    @*<a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
-                        <span class="mobileMenu-toggleIcon">Toggle menu</span>
-                    </a>*@
+
                     <nav class="navUser">
                         <div class="navUser-item navUser-item--account">
                         </div>
-
-
-                        @*<ul class="navUser-section">
-            <li class="navUser-item">
-                <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "fa" })" title="فارسی">
-                    <img style="width: 30px;height: 17px;" src="~/Content/images/flags/ir.png" />
-                </a>
-            </li>
-            <li class="navUser-item">
-                <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "en" })" title="English">
-                    <img style="width: 30px;height: 17px;" src="~/Content/images/flags/us.png" />
-                </a>
-            </li>
-            <li class="navUser-item">
-                <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "ar" })" title="Arabic">
-                    <img style="width: 30px;height: 17px;" src="~/Content/images/flags/sa.png" />
-                </a>
-            </li>
-            <li class="navUser-item">
-                <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "ru" })" title="russian">
-                    <img style="width: 30px;height: 17px;" src="~/Content/images/flags/ru.png" />
-                </a>
-            </li>
-        </ul>*@
-
-
 
 
                         <ul class="socialLinks socialLinks--alt">
@@ -172,29 +144,8 @@
                         </div>
                         <ul class="navPages-list">
                             <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("Index","AboutUs")" data-collapsible="navPages-35">
-                                    @Resources.About
-                                </a>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("Index","ContactUs")">
-                                    @Resources.ContactUs
-                                </a>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("Index","Post")">
-                                    @Resources.Blog
-                                </a>
-                            </li>
-
-                            <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("Index","Service")" data-collapsible="navPages-19">
-                                    @Resources.Service
-                                </a>
-                            </li>
-                            <li class="navPages-item">
-                                <a class="navPages-action " href="@Url.Action("Index","branch")" data-collapsible="navPages-24">
-                                    @Resources.Representation
+                                <a class="navPages-action" href="@Url.Action("Index","home")" data-collapsible="navPages-35">
+                                    @Resources.Home
                                 </a>
                             </li>
                             <li class="navPages-item">
@@ -203,45 +154,34 @@
                                 </a>
                             </li>
                             <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("Index","home")" data-collapsible="navPages-35">
-                                    @Resources.Home
+                                <a class="navPages-action " href="@Url.Action("Index","branch")" data-collapsible="navPages-24">
+                                    @Resources.Representation
+                                </a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="@Url.Action("Index","Service")" data-collapsible="navPages-19">
+                                    @Resources.Service
+                                </a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="@Url.Action("Index","Post")">
+                                    @Resources.Blog
+                                </a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="@Url.Action("Index","ContactUs")">
+                                    @Resources.ContactUs
+                                </a>
+                            </li>
+                            <li class="navPages-item">
+                                <a class="navPages-action" href="@Url.Action("Index","AboutUs")" data-collapsible="navPages-35">
+                                    @Resources.About
                                 </a>
                             </li>
                         </ul>
                         <ul class="navPages-list navPages-list--user">
                             <li class="navPages-item">
-                                @*<a class="navPages-action has-subMenu" href="#" data-collapsible="navPages-currency" aria-controls="navPages-currency" aria-expanded="false">
-                                        USD <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-down"></use></svg></i>
-                                    </a>
-                                    <div class="navPage-subMenu" id="navPages-currency" aria-hidden="true" tabindex="-1">
-                                        <ul class="navPage-subMenu-list">
-                                            <li class="navPage-subMenu-item">
-                                                <a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=1">
-                                                    <strong>US Dollar</strong>
-                                                </a>
-                                            </li>
-                                            <li class="navPage-subMenu-item">
-                                                <a class="navPage-subMenu-action navPages-action" href="http://ap-newfashion3.mybigcommerce.com/?setCurrencyId=2">
-                                                    Euro
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>*@
-
-                                @*<div class="container">
-                                        <div class="btn-group">
-
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                    Sony <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="#">Tablet</a></li>
-                                                    <li><a href="#">Smartphone</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>*@
+          
 
                             </li>
                             <li class="navPages-item">
@@ -283,24 +223,6 @@
                 </div>
             </div>
         </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <div class="container body-content">
             @RenderBody()
