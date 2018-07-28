@@ -48,7 +48,7 @@ namespace Yeast.Attribute
             //        ra.Action.Equals(_requestedActionName, StringComparison.InvariantCultureIgnoreCase)))
             //    return true;
 
-            return false;
+            return true;
         }
 
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)

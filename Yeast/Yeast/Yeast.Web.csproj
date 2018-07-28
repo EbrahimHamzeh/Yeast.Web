@@ -452,6 +452,7 @@
     <Content Include="Content\images\bg-image-min.jpg" />
     <Content Include="Content\images\bg03_2500px.jpg" />
     <Content Include="Content\images\blog2.jpg" />
+    <Content Include="Content\images\bluebackground1.png" />
     <Content Include="Content\images\bread-series-v2-lrcropped2_1_orig.jpg" />
     <Content Include="Content\images\bullet_shape.png" />
     <Content Include="Content\images\default_avatar_male.jpg" />
@@ -942,6 +943,7 @@
     <Compile Include="IocConfig\Helper\SystemWebCookieManager.cs" />
     <Compile Include="Modules\StatModule.cs" />
     <Compile Include="Startup.cs" />
+    <Content Include="Content\Slider\engine1\ws-ctrl-convex.svg" />
     <Content Include="Content\Slider\engine1\ws-ctrl-twist.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\fonts\Simple-Line-Icons.eot" />
@@ -997,6 +999,9 @@
     <Content Include="Content\Slider\engine1\ws-ctrl-twist.eot" />
     <Content Include="Content\Slider\engine1\ws-ctrl-twist.ttf" />
     <Content Include="Content\Slider\engine1\ws-ctrl-twist.woff" />
+    <Content Include="Content\Slider\engine1\ws-ctrl-convex.eot" />
+    <Content Include="Content\Slider\engine1\ws-ctrl-convex.ttf" />
+    <Content Include="Content\Slider\engine1\ws-ctrl-convex.woff" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\Post\Index.cshtml" />
     <Content Include="Views\Post\Details.cshtml" />

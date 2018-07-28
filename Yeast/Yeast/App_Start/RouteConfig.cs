@@ -13,12 +13,21 @@ namespace Yeast
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-						routes.MapRoute(
-										name: "Localization",
-										url: "{lang}/{controller}/{action}/{id}",
-										defaults: new { controller = "Home", action = "Index", lang = "fa", id = UrlParameter.Optional },
-                                        namespaces: new string[] { "Yeast.Controllers" }
-                                    );
+            routes.MapRoute(
+                            name: "Account",
+                            url: "Account/Login/{id}",
+                            defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },
+                            namespaces: new string[] { "Yeast.Controllers" }
+                        );
+
+            routes.MapRoute(
+						    name: "Localization",
+						    url: "{lang}/{controller}/{action}/{id}",
+						    defaults: new { controller = "Home", action = "Index", lang = "fa", id = UrlParameter.Optional },
+                            namespaces: new string[] { "Yeast.Controllers" }
+                        );
+
+            
         }
     }
 }

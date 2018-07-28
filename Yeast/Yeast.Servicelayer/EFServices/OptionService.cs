@@ -183,6 +183,27 @@ namespace Yeast.Servicelayer.EFServices
             if (option.Where(x => x.Name == "TextImag3").Any())
                 sliderViewModel.TextImag3 = option.Where(x => x.Name == "TextImag3").FirstOrDefault().Value;
 
+            if (option.Where(x => x.Name == "TextImag1En").Any())
+                sliderViewModel.TextImag1En = option.Where(x => x.Name == "TextImag1En").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "TextImag2En").Any())
+                sliderViewModel.TextImag2En = option.Where(x => x.Name == "TextImag2En").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "TextImag3En").Any())
+                sliderViewModel.TextImag3En = option.Where(x => x.Name == "TextImag3En").FirstOrDefault().Value;
+
+            if (option.Where(x => x.Name == "TextImag1Ar").Any())
+                sliderViewModel.TextImag1Ar = option.Where(x => x.Name == "TextImag1Ar").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "TextImag2Ar").Any())
+                sliderViewModel.TextImag2Ar = option.Where(x => x.Name == "TextImag2Ar").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "TextImag3Ar").Any())
+                sliderViewModel.TextImag3Ar = option.Where(x => x.Name == "TextImag3Ar").FirstOrDefault().Value;
+
+            if (option.Where(x => x.Name == "TextImag1Ru").Any())
+                sliderViewModel.TextImag1Ru = option.Where(x => x.Name == "TextImag1Ru").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "TextImag2Ru").Any())
+                sliderViewModel.TextImag2Ru = option.Where(x => x.Name == "TextImag2Ru").FirstOrDefault().Value;
+            if (option.Where(x => x.Name == "TextImag3Ru").Any())
+                sliderViewModel.TextImag3Ru = option.Where(x => x.Name == "TextImag3Ru").FirstOrDefault().Value;
+
             sliderViewModel.BodyEn = option.Where(x => x.Name == "BodyEn").FirstOrDefault().Value; ;
             sliderViewModel.BodyEn1 = option.Where(x => x.Name == "BodyEn1").FirstOrDefault().Value; 
             sliderViewModel.BodyFa = option.Where(x => x.Name == "BodyFa").FirstOrDefault().Value; ;
@@ -243,11 +264,11 @@ namespace Yeast.Servicelayer.EFServices
                         home.Image3 = option.Where(x => x.Name == "Image3").FirstOrDefault().Value;
 
                     if (option.Where(x => x.Name == "TextImag1").Any())
-                        home.TextImag1 = option.Where(x => x.Name == "TextImag1").FirstOrDefault().Value;
+                        home.TextImag1 = option.Where(x => x.Name == "TextImag1En").FirstOrDefault().Value;
                     if (option.Where(x => x.Name == "TextImag2").Any())
-                        home.TextImag2 = option.Where(x => x.Name == "TextImag2").FirstOrDefault().Value;
+                        home.TextImag2 = option.Where(x => x.Name == "TextImag2En").FirstOrDefault().Value;
                     if (option.Where(x => x.Name == "TextImag3").Any())
-                        home.TextImag3 = option.Where(x => x.Name == "TextImag3").FirstOrDefault().Value;
+                        home.TextImag3 = option.Where(x => x.Name == "TextImag3En").FirstOrDefault().Value;
 
                     home.Bodypart1 = _option.Where(x => x.Name == "BodyEn").FirstOrDefault().Value;
                     home.Bodypart2 = _option.Where(x => x.Name == "BodyEn1").FirstOrDefault().Value;
@@ -263,11 +284,11 @@ namespace Yeast.Servicelayer.EFServices
                         home.Image3 = option.Where(x => x.Name == "Image3").FirstOrDefault().Value;
 
                     if (option.Where(x => x.Name == "TextImag1").Any())
-                        home.TextImag1 = option.Where(x => x.Name == "TextImag1").FirstOrDefault().Value;
+                        home.TextImag1 = option.Where(x => x.Name == "TextImag1Ar").FirstOrDefault().Value;
                     if (option.Where(x => x.Name == "TextImag2").Any())
-                        home.TextImag2 = option.Where(x => x.Name == "TextImag2").FirstOrDefault().Value;
+                        home.TextImag2 = option.Where(x => x.Name == "TextImag2Ar").FirstOrDefault().Value;
                     if (option.Where(x => x.Name == "TextImag3").Any())
-                        home.TextImag3 = option.Where(x => x.Name == "TextImag3").FirstOrDefault().Value;
+                        home.TextImag3 = option.Where(x => x.Name == "TextImag3Ar").FirstOrDefault().Value;
 
                     home.Bodypart1 = _option.Where(x => x.Name == "BodySa").FirstOrDefault().Value;
                     home.Bodypart2 = _option.Where(x => x.Name == "BodySa1").FirstOrDefault().Value;
@@ -283,11 +304,11 @@ namespace Yeast.Servicelayer.EFServices
                         home.Image3 = option.Where(x => x.Name == "Image3").FirstOrDefault().Value;
 
                     if (option.Where(x => x.Name == "TextImag1").Any())
-                        home.TextImag1 = option.Where(x => x.Name == "TextImag1").FirstOrDefault().Value;
+                        home.TextImag1 = option.Where(x => x.Name == "TextImag1Ru").FirstOrDefault().Value;
                     if (option.Where(x => x.Name == "TextImag2").Any())
-                        home.TextImag2 = option.Where(x => x.Name == "TextImag2").FirstOrDefault().Value;
+                        home.TextImag2 = option.Where(x => x.Name == "TextImag2Ru").FirstOrDefault().Value;
                     if (option.Where(x => x.Name == "TextImag3").Any())
-                        home.TextImag3 = option.Where(x => x.Name == "TextImag3").FirstOrDefault().Value;
+                        home.TextImag3 = option.Where(x => x.Name == "TextImag3Ru").FirstOrDefault().Value;
 
                     home.Bodypart1 = _option.Where(x => x.Name == "BodyRu").FirstOrDefault().Value;
                     home.Bodypart2 = _option.Where(x => x.Name == "BodyRu1").FirstOrDefault().Value;

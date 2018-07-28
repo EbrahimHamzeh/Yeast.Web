@@ -9,7 +9,7 @@ using Yeast.Utilities.Controllers;
 namespace Yeast.Controllers
 {
 
-    public partial class AccountController : BaseController
+    public partial class AccountController : Controller
     {
 
         readonly IOptionService _optionService;

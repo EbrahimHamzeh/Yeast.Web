@@ -15,6 +15,15 @@ namespace Yeast.Model.Admin
         public string TextImag1 { get; set; }
         public string TextImag2 { get; set; }
         public string TextImag3 { get; set; }
+        public string TextImag1En { get; set; }
+        public string TextImag2En { get; set; }
+        public string TextImag3En { get; set; }
+        public string TextImag1Ar { get; set; }
+        public string TextImag2Ar { get; set; }
+        public string TextImag3Ar { get; set; }
+        public string TextImag1Ru { get; set; }
+        public string TextImag2Ru { get; set; }
+        public string TextImag3Ru { get; set; }
         public string TitleFa { get; set; }
         [AllowHtml]
         public string BodyFa { get; set; }
