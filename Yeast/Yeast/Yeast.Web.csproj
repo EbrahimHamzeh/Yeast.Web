@@ -940,6 +940,7 @@
     <Compile Include="Areas\Admin\Controllers\TagController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\XMLController.cs" />
     <Compile Include="IocConfig\Helper\SystemWebCookieManager.cs" />
     <Compile Include="Modules\StatModule.cs" />
     <Compile Include="Startup.cs" />
@@ -1015,6 +1016,7 @@
     <Content Include="Views\Service\Ltr\Index.cshtml" />
     <Content Include="Views\Service\Ltr\Details.cshtml" />
     <Content Include="Views\Product\Ltr\Detial.cshtml" />
+    <Content Include="Views\Home\MetaTag.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1028,6 +1030,7 @@
     <Folder Include="Content\upload\files\" />
     <Folder Include="Content\upload\images\" />
     <Folder Include="Content\upload\videos\" />
+    <Folder Include="Views\XML\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Yeast.Datalayer\Yeast.Datalayer.csproj">

@@ -14,5 +14,7 @@ namespace Yeast.Servicelayer.Interfaces
         SliderViewModel GetAllSliderImage();
         SettingViewModelCultur GetAllSettingByCultur();
         HomeModel GetHome();
-    }
+		MetaTagModel GetByCulterMetaTag();
+
+	}
 }

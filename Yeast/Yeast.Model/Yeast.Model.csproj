@@ -148,6 +148,7 @@
     <Compile Include="FrontEnd\AboutUsModel.cs" />
     <Compile Include="FrontEnd\AboutUsViewModel.cs" />
     <Compile Include="FrontEnd\ContactUsViewModel.cs" />
+    <Compile Include="FrontEnd\MetaTagModel.cs" />
     <Compile Include="FrontEnd\FooterModel.cs" />
     <Compile Include="FrontEnd\HomeModel.cs" />
     <Compile Include="FrontEnd\HomeViewModel.cs" />

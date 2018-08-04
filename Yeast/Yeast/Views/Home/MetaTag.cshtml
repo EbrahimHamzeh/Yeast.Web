@@ -1,0 +1,13 @@
+﻿@model Yeast.Model.FrontEnd.MetaTagModel
+@{
+	ViewBag.MetaTag = Model.MetaDescription;
+}
+@if (ViewBag.Title == null)
+{
+	<title>@Model.Title</title>
+}
+else
+{
+	<title>@(string.Format("{0} - {1}", Model.Title, ViewBag.Title))</title>
+}
+

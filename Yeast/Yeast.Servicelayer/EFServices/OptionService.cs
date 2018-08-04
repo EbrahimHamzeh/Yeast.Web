@@ -321,5 +321,38 @@ namespace Yeast.Servicelayer.EFServices
 
             return home;
         }
-    }
+
+		public MetaTagModel GetByCulterMetaTag()
+		{
+			var option = _option.ToList();
+
+			MetaTagModel metaTagModel = new MetaTagModel();
+			string cultur = CultureHelper.GetCurrentNeutralCulture();
+
+			if (option.Where(x => x.Name == "MetaTag").Any())
+				metaTagModel.MetaDescription = option.Where(x => x.Name == "MetaTag").FirstOrDefault().Value;
+
+			switch (cultur)
+			{
+				case "fa":
+					if (option.Where(x => x.Name == "WebSiteNameFa").Any())
+						metaTagModel.Title = option.Where(x => x.Name == "WebSiteNameFa").FirstOrDefault().Value;
+					break;
+				case "en":
+					if (option.Where(x => x.Name == "WebSiteNameFa").Any())
+						metaTagModel.Title = option.Where(x => x.Name == "WebSiteNameFa").FirstOrDefault().Value;
+					break;
+				case "ar":
+					if (option.Where(x => x.Name == "WebSiteNameFa").Any())
+						metaTagModel.Title = option.Where(x => x.Name == "WebSiteNameFa").FirstOrDefault().Value;
+					break;
+				case "ru":
+					if (option.Where(x => x.Name == "WebSiteNameFa").Any())
+						metaTagModel.Title = option.Where(x => x.Name == "WebSiteNameFa").FirstOrDefault().Value;
+					break;
+			}
+
+			return metaTagModel;
+		}
+	}
 }

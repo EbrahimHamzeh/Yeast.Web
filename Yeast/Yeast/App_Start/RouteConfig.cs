@@ -13,7 +13,10 @@ namespace Yeast
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
+			routes.MapRoute("Sitemap", "sitemap", new { controller = "XML", action = "Sitemap" }, new[] { "Yeast.Controllers" });
+			routes.MapRoute("RSS", "rss", new { controller = "XML", action = "RSS" }, new[] { "Yeast.Controllers" });
+
+			routes.MapRoute(
                             name: "Account",
                             url: "Account/Login/{id}",
                             defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },

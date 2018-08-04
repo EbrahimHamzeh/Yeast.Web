@@ -42,7 +42,9 @@ namespace Yeast.Controllers
             homeViewModel.homeModel = _optionService.GetHome();
             return View(homeViewModel);
         }
-        [ChildActionOnly]
+
+		#region " ChildAction "
+		[ChildActionOnly]
         public virtual ActionResult footer()
         {
             FooterModel footerModel = new FooterModel();
@@ -54,7 +56,17 @@ namespace Yeast.Controllers
             return PartialView("footer", footerModel);
         }
 
-        [HttpPost]
+        [ChildActionOnly]
+        public virtual ActionResult MetaTag()
+        {
+			MetaTagModel mtaTagModel = new MetaTagModel();
+			mtaTagModel = _optionService.GetByCulterMetaTag();
+
+            return PartialView("MetaTag", mtaTagModel);
+        }
+		#endregion
+
+		[HttpPost]
         [ValidateAntiForgeryToken]
         // Post: Admin/Category/Delete/id
         public virtual ActionResult EmailSubscribe(string email)
