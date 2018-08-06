@@ -466,6 +466,15 @@ namespace Yeast.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ارسال.
+        /// </summary>
+        public static string Send {
+            get {
+                return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خدمات.
         /// </summary>
         public static string Service {

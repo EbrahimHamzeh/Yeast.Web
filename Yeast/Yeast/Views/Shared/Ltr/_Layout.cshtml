@@ -1,23 +1,31 @@
 ﻿<!DOCTYPE html>
 <html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRighToLeft() ? " rtl" : "ltr" )">
 <head>
-	<title>HEMERSINTOOS</title>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<link href="http://cdn8.bigcommerce.com/r-1eed8bf5c3eb25ab7b98ca46ba9f43c2f08cda74/img/bc_favicon.ico" rel="shortcut icon">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	@*<link href="~/Content/css/YeastFont.css" rel="stylesheet" />
-		<link href="~/Content/css/ltr/ltr.css" rel="stylesheet" />
-		<link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />*@
-	<link href="~/Content/css/ltr/bundleltr.min.css" rel="stylesheet" />
-	@*<script src="~/Content/js/theme/modernizr-custom.js"></script>
-		<script src="~/Content/js/jquery-3.3.1.min.js"></script>*@
-	<script src="~/Content/js/bundlelayoutrtl.min.js"></script>
-	<style type="text/css">
-		.styled-offer select.offer-select { color: white; border: none; background-color: #333; }
+    <title>HEMERSINTOOS</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link href="~/Content/images/hemerlogo.png" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    @*<link href="~/Content/css/YeastFont.css" rel="stylesheet" />
+        <link href="~/Content/css/ltr/ltr.css" rel="stylesheet" />
+        <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />*@
+    <link href="~/Content/css/ltr/bundleltr.min.css" rel="stylesheet" />
+    @*<script src="~/Content/js/theme/modernizr-custom.js"></script>
+        <script src="~/Content/js/jquery-3.3.1.min.js"></script>*@
+    <script src="~/Content/js/bundlelayoutrtl.min.js"></script>
+    <style type="text/css">
+        .styled-offer select.offer-select {
+            color: white;
+            border: none;
+            background-color: #333;
+        }
 
-			.styled-offer select.offer-select option { color: white; border: none; background-color: #333; }
-	</style>
-	@RenderSection("CssStyle", false)
+            .styled-offer select.offer-select option {
+                color: white;
+                border: none;
+                background-color: #333;
+            }
+    </style>
+    @RenderSection("CssStyle", false)
 </head>
 <body class="nf-home3  pace-done">
     <div class="icons-svg-sprite">
@@ -31,8 +39,8 @@
             <div class="topbar">
                 <div class="container">
                     @*<a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
-                        <span class="mobileMenu-toggleIcon">Toggle menu</span>
-                    </a>*@
+                            <span class="mobileMenu-toggleIcon">Toggle menu</span>
+                        </a>*@
 
                     <nav class="navUser">
                         <div class="navUser-item navUser-item--account">
@@ -41,27 +49,27 @@
 
 
                         @*<ul class="navUser-section">
-            <li class="navUser-item">
-                <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "fa" })" title="فارسی">
-                    <img style="width: 30px;height: 17px;" src="~/Content/images/flags/ir.png" />
-                </a>
-            </li>
-            <li class="navUser-item">
-                <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "en" })" title="English">
-                    <img style="width: 30px;height: 17px;" src="~/Content/images/flags/us.png" />
-                </a>
-            </li>
-            <li class="navUser-item">
-                <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "ar" })" title="Arabic">
-                    <img style="width: 30px;height: 17px;" src="~/Content/images/flags/sa.png" />
-                </a>
-            </li>
-            <li class="navUser-item">
-                <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "ru" })" title="russian">
-                    <img style="width: 30px;height: 17px;" src="~/Content/images/flags/ru.png" />
-                </a>
-            </li>
-        </ul>*@
+                                <li class="navUser-item">
+                                    <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "fa" })" title="فارسی">
+                                        <img style="width: 30px;height: 17px;" src="~/Content/images/flags/ir.png" />
+                                    </a>
+                                </li>
+                                <li class="navUser-item">
+                                    <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "en" })" title="English">
+                                        <img style="width: 30px;height: 17px;" src="~/Content/images/flags/us.png" />
+                                    </a>
+                                </li>
+                                <li class="navUser-item">
+                                    <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "ar" })" title="Arabic">
+                                        <img style="width: 30px;height: 17px;" src="~/Content/images/flags/sa.png" />
+                                    </a>
+                                </li>
+                                <li class="navUser-item">
+                                    <a class="navUser-action" href="@Url.Action("Index","Home" , new { lang = "ru" })" title="russian">
+                                        <img style="width: 30px;height: 17px;" src="~/Content/images/flags/ru.png" />
+                                    </a>
+                                </li>
+                            </ul>*@
 
 
 
@@ -103,7 +111,7 @@
 
                         <ul class="navUser-section navUser-section--alt" style="float:left;">
                             <li class="navUser-item navUser-item--cart">
-                                <a class="navUser-action" data-cart-preview="" data-dropdown="cart-preview-dropdown" data-options="align:right" href="@Url.Action("Index","Home" , new { lang = "fa" })" title="Cart" aria-expanded="false">
+                                <a class="navUser-action" data-cart-preview="" data-dropdown="cart-preview-dropdown" data-options="align:right" href="@Url.Action("Index","Home" , new { lang = "fa" })" title="فارسی" aria-expanded="false">
                                     <img style="width: 30px;height: 17px;" src="~/Content/images/flags/ir.png" />
                                     <span class="navUser-item-cartLabel"></span>
                                     <span class="countPill cart-quantity"></span>
@@ -112,7 +120,7 @@
                                 <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content="" aria-hidden="true"></div>
                             </li>
                             <li class="navUser-item navUser-item--cart">
-                                <a class="navUser-action" data-cart-preview="" data-dropdown="cart-preview-dropdown" data-options="align:right" href="@Url.Action("Index","Home" , new { lang = "en" })" title="Cart" aria-expanded="false">
+                                <a class="navUser-action" data-cart-preview="" data-dropdown="cart-preview-dropdown" data-options="align:right" href="@Url.Action("Index","Home" , new { lang = "en" })" title="English" aria-expanded="false">
                                     <img style="width: 30px;height: 17px;" src="~/Content/images/flags/us.png" />
                                     <span class="navUser-item-cartLabel"></span>
                                     <span class="countPill cart-quantity"></span>
@@ -121,7 +129,7 @@
                                 <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content="" aria-hidden="true"></div>
                             </li>
                             <li class="navUser-item navUser-item--cart">
-                                <a class="navUser-action" data-cart-preview="" data-dropdown="cart-preview-dropdown" data-options="align:right" href="@Url.Action("Index","Home" , new { lang = "ar" })" title="Cart" aria-expanded="false">
+                                <a class="navUser-action" data-cart-preview="" data-dropdown="cart-preview-dropdown" data-options="align:right" href="@Url.Action("Index","Home" , new { lang = "ar" })" title="Arabic" aria-expanded="false">
                                     <img style="width: 30px;height: 17px;" src="~/Content/images/flags/sa.png" />
                                     <span class="navUser-item-cartLabel"></span>
                                     <span class="countPill cart-quantity"></span>
@@ -130,7 +138,7 @@
                                 <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content="" aria-hidden="true"></div>
                             </li>
                             <li class="navUser-item navUser-item--cart">
-                                <a class="navUser-action" data-cart-preview="" data-dropdown="cart-preview-dropdown" data-options="align:right" href="@Url.Action("Index","Home" , new { lang = "ru" })" title="Cart" aria-expanded="false">
+                                <a class="navUser-action" data-cart-preview="" data-dropdown="cart-preview-dropdown" data-options="align:right" href="@Url.Action("Index","Home" , new { lang = "ru" })" title="Russian" aria-expanded="false">
                                     <img style="width: 30px;height: 17px;" src="~/Content/images/flags/ru.png" />
                                     <span class="navUser-item-cartLabel"></span>
                                     <span class="countPill cart-quantity"></span>
@@ -178,16 +186,15 @@
                                 </a>
                             </li>
                             <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("index","ContactUs")">
+                                <a class="navPages-action" href="@Url.Action("index","ContactUs")" data-collapsible="navPages-35">
                                     @Resources.ContactUs
                                 </a>
                             </li>
                             <li class="navPages-item">
-                                <a class="navPages-action" href="@Url.Action("index","Post")">
+                                <a class="navPages-action" href="@Url.Action("index","Post")" data-collapsible="navPages-35">
                                     @Resources.Blog
                                 </a>
                             </li>
-
                             <li class="navPages-item">
                                 <a class="navPages-action" href="@Url.Action("index","Service")" data-collapsible="navPages-19">
                                     @Resources.Service

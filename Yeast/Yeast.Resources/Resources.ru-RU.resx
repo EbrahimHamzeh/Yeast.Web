@@ -252,6 +252,9 @@
   <data name="Reset" xml:space="preserve">
     <value>Сброс</value>
   </data>
+  <data name="Send" xml:space="preserve">
+    <value>послать</value>
+  </data>
   <data name="Service" xml:space="preserve">
     <value>услуги</value>
   </data>

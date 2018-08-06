@@ -252,6 +252,9 @@
   <data name="Reset" xml:space="preserve">
     <value>إعادة</value>
   </data>
+  <data name="Send" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
   <data name="Service" xml:space="preserve">
     <value>الخدمات</value>
   </data>
