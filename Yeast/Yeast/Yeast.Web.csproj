@@ -955,6 +955,7 @@
     <Content Include="Areas\Admin\Views\Product\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="robots.txt" />
     <Content Include="uploads\default_avatar_male.jpg" />
     <Content Include="uploads\noimg.png" />
     <Content Include="Web.config" />

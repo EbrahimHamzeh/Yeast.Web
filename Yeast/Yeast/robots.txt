@@ -1,0 +1,4 @@
+﻿User-agent: *
+Sitemap: http://hemersintoos.ir/Sitemap
+Disallow: //Account/Login/
+Disallow: /Admin/
