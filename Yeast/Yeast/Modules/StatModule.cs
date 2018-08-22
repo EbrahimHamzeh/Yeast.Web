@@ -58,11 +58,11 @@ namespace Yeast.Web.Modules
 
             using (var db = new YeastDbContext())
             {
-                if (db.Countries.Any(c => c.CountryCode.Equals(countryData.country_code)))
+                if (db.Countries.Any(c => c.CountryCode.Equals(countryData.countryCode)))
                 {
                     //then Update the ViewCount
                     Country currentCountry =
-                        db.Countries.First(cc => cc.CountryCode.Equals(countryData.country_code));
+                        db.Countries.First(cc => cc.CountryCode.Equals(countryData.countryCode));
                     currentCountry.ViewCount++;
                     db.SaveAllChanges();
                 }
@@ -71,10 +71,8 @@ namespace Yeast.Web.Modules
                     //then add this Country To Database
                     var newCountry = new Country()
                     {
-                        CountryCode = countryData.country_code,
-                        CountryName = countryData.country,
-                        Latitude = countryData.latitude,
-                        Longitude = countryData.longitude,
+                        CountryCode = countryData.countryCode,
+                        CountryName = countryData.countryName,
                         ViewCount = 1
                     };
 

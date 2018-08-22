@@ -9,22 +9,16 @@ namespace Yeast.Utilities.IPLocate
 {
     public class IPLocateViewModel
     {
-        public string ip { get; set; }
-        public string country { get; set; }
-        public string country_code { get; set; }
-        public string continent { get; set; }
-        public string latitude { get; set; }
-        public string longitude { get; set; }
-        public string time_zone { get; set; }
-        public string postal_code { get; set; }
-        public string org { get; set; }
-        public string asn { get; set; }
-        public string subdivision { get; set; }
-        public string subdivision2 { get; set; }
+        public string ipAddress { get; set; }
+        public string statusCode { get; set; }
+        public string statusMessage { get; set; }
+        public string countryCode { get; set; }
+        public string countryName { get; set; }
     }
 
     public static class IPLocateWrapper
     {
+		private const string Key = "82101a4ab2d659e6d8c5846b31f5ee4c80ebb0b5430bf7f65c01ff302dc6faaf";
         public static IPLocateViewModel DeserializeObject(string json)
         {
             Newtonsoft.Json.JsonSerializerSettings setting = new Newtonsoft.Json.JsonSerializerSettings();
@@ -38,9 +32,9 @@ namespace Yeast.Utilities.IPLocate
 
         public static IPLocateViewModel HttpClient(string ip)
         {
-            var host = new Uri("https://www.iplocate.io/");
+            var host = new Uri("http://api.ipinfodb.com/");
             var httpClient = LazySingletonHttpClient.Instance.GetOrCreate(host);
-            var responseMessage = httpClient.GetAsync("api/lookup/" + ip).Result;
+            var responseMessage = httpClient.GetAsync($"v3/ip-country/?ip={ip}&key={Key}&format=json").Result;
             var responseContent = responseMessage.Content.ReadAsStringAsync().Result;
             return DeserializeObject(responseContent);
         }
