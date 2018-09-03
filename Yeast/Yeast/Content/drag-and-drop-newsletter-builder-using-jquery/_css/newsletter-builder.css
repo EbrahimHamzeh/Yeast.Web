@@ -27,7 +27,7 @@ body { margin: 0px; padding: 0px; font-family: 'Source Sans Pro', sans-serif; ba
     #newsletter-builder-sidebar-buttons-abutton:hover { background-color: rgba(51,175,222,1); }
 #newsletter-builder-sidebar-buttons-bbutton { height: 40px; width: 160px; margin-left: auto; margin-right: auto; text-align: center; line-height: 40px; color: rgba(84,101,122,1); font-weight: 600; font-size: 14px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-transition: background 0.5s; -moz-transition: background 0.5s; -o-transition: background 0.5s; transition: background 0.5s; cursor: pointer; margin-bottom: 25px; border: 1px solid #e4e4e5; }
     #newsletter-builder-sidebar-buttons-bbutton:hover { background-color: rgba(153,153,153,0.1); }
-#newsletter-builder-area { float: left; overflow: auto; }
+#newsletter-builder-area { float: right; overflow: auto; }
 #newsletter-builder-area-center { margin-left: auto; margin-right: auto; width: 900px; height: 100%; }
 #newsletter-builder-area-center-frame { float: right; width: 800px; margin-top: 50px; margin-bottom: 200px; margin-right: 50px; }
 #newsletter-builder-area-center-frame-buttons { width: 100%; float: right; height: 30px; }
