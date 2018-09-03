@@ -11,6 +11,7 @@ namespace Yeast.DomainClasses.Entities
         public virtual string Body { get; set; }
 		public virtual string Description { get; set; }
 		public virtual string AttachFile { get; set; }
+		public virtual string EmailAddress { get; set; }
         public virtual User User { get; set; }
         public virtual EmailTemplate EmailTemplate { get; set; }
     }

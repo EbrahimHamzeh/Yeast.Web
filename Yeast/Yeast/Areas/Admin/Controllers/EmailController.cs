@@ -7,6 +7,7 @@ using Yeast.Model.Admin;
 using Yeast.Servicelayer.Interfaces;
 using Yeast.Attribute;
 using Yeast.Utilities.BootstrapTable;
+using System;
 
 namespace Yeast.Areas.Admin.Controllers
 {
@@ -16,16 +17,16 @@ namespace Yeast.Areas.Admin.Controllers
 		readonly IEmailService _emailService;
 		readonly IEmailTemplateService _emailTemplateService;
 		readonly IUnitOfWork _uow;
-        readonly IApplicationUserManager _userService;
+		readonly IApplicationUserManager _userService;
 
-        public EmailController(IUnitOfWork uow, IEmailService emailService, IEmailTemplateService emailTemplateService, IApplicationUserManager userService)
+		public EmailController(IUnitOfWork uow, IEmailService emailService, IEmailTemplateService emailTemplateService, IApplicationUserManager userService)
 		{
 			_uow = uow;
-            _emailService = emailService;
-            _emailTemplateService = emailTemplateService;
-            _userService = userService;
+			_emailService = emailService;
+			_emailTemplateService = emailTemplateService;
+			_userService = userService;
 
-        }
+		}
 
 		// GET: Admin/Tag
 		public virtual ActionResult Index()
@@ -44,9 +45,9 @@ namespace Yeast.Areas.Admin.Controllers
 		public virtual ActionResult Add()
 		{
 			EmailAdd emailAdd = new EmailAdd();
-            emailAdd.EmailTemplateList = _emailTemplateService.DropDownList();
-            emailAdd.UserList = _userService.DropDownList();
-            return View(emailAdd);
+			emailAdd.EmailTemplateList = _emailTemplateService.DropDownList();
+			emailAdd.UserList = _userService.DropDownList();
+			return View(emailAdd);
 		}
 
 		[HttpPost]
@@ -59,7 +60,18 @@ namespace Yeast.Areas.Admin.Controllers
 				return View(model);
 			}
 
-            _emailService.Add(model);
+			string[] emails;
+			bool result;
+			if (!string.IsNullOrEmpty(Request["Emails[]"]))
+			{
+				emails = Request["Emails[]"].Split(',');
+				foreach (string email in emails)
+				{
+					result = Utilities.Email.MailSender.SendMail(model.Title, model.Body, email);
+					if (result) _emailService.Add(new Email { Title = model.Title, Body = model.Body, SendTime = DateTime.Now, EmailAddress = email});
+				}
+			}
+
 			_uow.SaveAllChanges();
 			return RedirectToAction("Index");
 		}
@@ -71,7 +83,7 @@ namespace Yeast.Areas.Admin.Controllers
 		{
 			Email tag = _emailService.Find(id);
 			if (tag == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            _emailService.Remove(id);
+			_emailService.Remove(id);
 			_uow.SaveAllChanges();
 			return Json(new { success = true });
 		}

@@ -9,3 +9,19 @@ Response = {
 	"countryName" : "-"
 }
 -----------------------------12/06/1397 23:00:23-----------------------------
+Response = {
+	"statusCode" : "OK",
+	"statusMessage" : "",
+	"ipAddress" : "::1",
+	"countryCode" : "-",
+	"countryName" : "-"
+}
+-----------------------------12/06/1397 23:49:47-----------------------------
+Response = {
+	"statusCode" : "OK",
+	"statusMessage" : "",
+	"ipAddress" : "::1",
+	"countryCode" : "-",
+	"countryName" : "-"
+}
+-----------------------------12/06/1397 23:49:53-----------------------------

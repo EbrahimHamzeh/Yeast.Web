@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Web;
 using System.Web.Hosting;
+using System.Web;
 using System.Web.SessionState;
 using UAParser;
 using Yeast.Datalayer.Context;
 using Yeast.DomainClasses.Entities;
 using Yeast.Utilities;
 using Yeast.Utilities.IPLocate;
+
 
 namespace Yeast.Web.Modules
 {
@@ -40,48 +40,51 @@ namespace Yeast.Web.Modules
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            System.Web.HttpContext context = System.Web.HttpContext.Current;
+			//HostingEnvironment.QueueBackgroundWorkItem(canccellationToken =>
+		 //  {
+			//   System.Web.HttpContext context = System.Web.HttpContext.Current;
 
-            var statistic = new Statistics();
-            statistic.IpAddress = GetIPAddress();
-            statistic.UserOs = GetUserOS(context.Request.UserAgent);
-            statistic.PageViewed = context.Request.Url.AbsolutePath;
-            statistic.Referer = context.Request.UrlReferrer?.ToString() ?? "Direct";
-            statistic.UserAgent = context.Request.Browser.Browser;
-            statistic.DateStamp = DateTime.Now;
+			//   var statistic = new Statistics();
+			//   statistic.IpAddress = GetIPAddress();
+			//   statistic.UserOs = GetUserOS(context.Request.UserAgent);
+			//   statistic.PageViewed = context.Request.Url.AbsolutePath;
+			//   statistic.Referer = context.Request.UrlReferrer?.ToString() ?? "Direct";
+			//   statistic.UserAgent = context.Request.Browser.Browser;
+			//   statistic.DateStamp = DateTime.Now;
 
-            using (var db = new YeastDbContext())
-            {
-                db.Statisticses.Add(statistic);
-                db.SaveChanges();
-            }
+			//   using (var db = new YeastDbContext())
+			//   {
+			//	   db.Statisticses.Add(statistic);
+			//	   db.SaveChanges();
+			//   }
 
-            var countryData = IPLocateWrapper.HttpClient(GetIPAddress());
+			//   var countryData = IPLocateWrapper.HttpClient(GetIPAddress());
 
-			using (var db = new YeastDbContext())
-            {
-                if (db.Countries.Any(c => c.CountryCode.Equals(countryData.countryCode)))
-                {
-                    //then Update the ViewCount
-                    Country currentCountry =
-                        db.Countries.First(cc => cc.CountryCode.Equals(countryData.countryCode));
-                    currentCountry.ViewCount++;
-                    db.SaveAllChanges();
-                }
-                else
-                {
-                    //then add this Country To Database
-                    var newCountry = new Country()
-                    {
-                        CountryCode = countryData.countryCode,
-                        CountryName = countryData.countryName,
-                        ViewCount = 1
-                    };
+			//   using (var db = new YeastDbContext())
+			//   {
+			//	   if (db.Countries.Any(c => c.CountryCode.Equals(countryData.countryCode)))
+			//	   {
+			//			//then Update the ViewCount
+			//			Country currentCountry =
+			//			   db.Countries.First(cc => cc.CountryCode.Equals(countryData.countryCode));
+			//		   currentCountry.ViewCount++;
+			//		   db.SaveAllChanges();
+			//	   }
+			//	   else
+			//	   {
+			//			//then add this Country To Database
+			//			var newCountry = new Country()
+			//		   {
+			//			   CountryCode = countryData.countryCode,
+			//			   CountryName = countryData.countryName,
+			//			   ViewCount = 1
+			//		   };
 
-                    db.Countries.Add(newCountry);
-                    db.SaveAllChanges();
-                }
-            }
+			//		   db.Countries.Add(newCountry);
+			//		   db.SaveAllChanges();
+			//	   }
+			//   }
+		 //  });
         }
 
         private static readonly List<string> KnownCrawlers = new List<string>

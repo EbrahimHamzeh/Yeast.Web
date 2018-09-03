@@ -10,7 +10,7 @@ namespace Yeast.Servicelayer.Interfaces
 	public interface IEmailService
     {
 		ConfiguredTaskAwaitable<int> CountAsync { get; }
-		void Add(EmailAdd tag);
+		void Add(Email email);
 		void Remove(int id);
 		Task<IList<Email>> GetAllAsync();
         Email Find(int id);

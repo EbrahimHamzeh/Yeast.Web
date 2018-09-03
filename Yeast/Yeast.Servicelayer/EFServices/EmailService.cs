@@ -33,9 +33,9 @@ namespace Yeast.Servicelayer.EFServices
 			}
 		}
 
-		public void Add(EmailAdd tag)
+		public void Add(Email email)
 		{
-            _email.Add(new Email { Title = tag.Title, Description = tag.Description, SendTime = DateTime.Now });
+            _email.Add(email);
 		}
 
 		public async Task<IList<Email>> GetAllAsync()
