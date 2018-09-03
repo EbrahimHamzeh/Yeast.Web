@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Elmah;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.SessionState;
 using UAParser;
 using Yeast.Datalayer.Context;
@@ -56,7 +58,7 @@ namespace Yeast.Web.Modules
 
             var countryData = IPLocateWrapper.HttpClient(GetIPAddress());
 
-            using (var db = new YeastDbContext())
+			using (var db = new YeastDbContext())
             {
                 if (db.Countries.Any(c => c.CountryCode.Equals(countryData.countryCode)))
                 {

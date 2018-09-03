@@ -1,0 +1,11 @@
+﻿Ip = ::1
+Response = Yeast.Utilities.IPLocate.IPLocateViewModel
+-----------------------------05/06/1397 01:06:25-----------------------------
+Response = {
+	"statusCode" : "OK",
+	"statusMessage" : "",
+	"ipAddress" : "::1",
+	"countryCode" : "-",
+	"countryName" : "-"
+}
+-----------------------------12/06/1397 23:00:23-----------------------------
